@@ -36,6 +36,10 @@ private:
         triplet
     };
     
+    // Private function members
+    void calculateDelayTimeBasedOnInterval();
+    void calculateDelayTiemBasedOnModification();
+    
 public:
     DelayTime();
     
@@ -45,8 +49,6 @@ public:
     int getIntervalChosen();
     int getValueModificationChosen();
     float calculateDelayTime();
-    void calculateDelayTimeBasedOnInterval();
-    void calculateDelayTiemBasedOnModification();
 };
 
 #endif /* DelayTime_hpp */
