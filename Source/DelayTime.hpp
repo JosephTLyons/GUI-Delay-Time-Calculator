@@ -14,12 +14,11 @@ class DelayTime
 private:
     float tempo;
     float delayTime;
-    bool  isDotted;
-    bool  isTriplet;
+    
     int   intervalChosen;
     enum  intervals
     {
-        wholeNote,
+        wholeNote = 1,
         halfNote,
         quarterNote,
         eigthNote,
@@ -28,11 +27,21 @@ private:
         sixtyForthNote
     };
     
+    int   valueModificationChosen;
+    enum  valueModification
+    {
+        normal = 1,
+        dotted,
+        triplet
+    };
+    
 public:
     DelayTime();
     
     void setTempo(const float &input);
     float getDelayTime();
+    int getIntervalChosen();
+    int getValueModificationChosen();
     void calculateDelayTime();
 };
 

@@ -41,19 +41,10 @@ MainComponent::MainComponent ()
     delayTimeTextEditor->setPopupMenuEnabled (true);
     delayTimeTextEditor->setText (String());
 
-    addAndMakeVisible (tempoInputTextEditor = new TextEditor ("tempoInputTextEditor"));
-    tempoInputTextEditor->setMultiLine (false);
-    tempoInputTextEditor->setReturnKeyStartsNewLine (false);
-    tempoInputTextEditor->setReadOnly (false);
-    tempoInputTextEditor->setScrollbarsShown (true);
-    tempoInputTextEditor->setCaretVisible (true);
-    tempoInputTextEditor->setPopupMenuEnabled (true);
-    tempoInputTextEditor->setText (String());
-
     addAndMakeVisible (modificationComboBox = new ComboBox ("modificationComboBox"));
     modificationComboBox->setEditableText (false);
     modificationComboBox->setJustificationType (Justification::centredLeft);
-    modificationComboBox->setTextWhenNothingSelected (TRANS("Normal"));
+    modificationComboBox->setTextWhenNothingSelected (String());
     modificationComboBox->setTextWhenNoChoicesAvailable (TRANS("(no choices)"));
     modificationComboBox->addItem (TRANS("Normal"), 1);
     modificationComboBox->addItem (TRANS("Dotted"), 2);
@@ -63,7 +54,7 @@ MainComponent::MainComponent ()
     addAndMakeVisible (intervalsComboBox = new ComboBox ("intervalsComboBox"));
     intervalsComboBox->setEditableText (false);
     intervalsComboBox->setJustificationType (Justification::centredLeft);
-    intervalsComboBox->setTextWhenNothingSelected (TRANS("1/4"));
+    intervalsComboBox->setTextWhenNothingSelected (String());
     intervalsComboBox->setTextWhenNoChoicesAvailable (String());
     intervalsComboBox->addItem (TRANS("1"), 1);
     intervalsComboBox->addItem (TRANS("1/2"), 2);
@@ -105,19 +96,27 @@ MainComponent::MainComponent ()
     alterTheCodeHyperlink->setButtonText (TRANS("Download the Source Code"));
     alterTheCodeHyperlink->setColour (HyperlinkButton::textColourId, Colour (0xccffffff));
 
-    addAndMakeVisible (calculate = new TextButton ("calculate"));
-    calculate->setButtonText (TRANS("Calculate"));
-    calculate->setConnectedEdges (Button::ConnectedOnLeft | Button::ConnectedOnRight);
-    calculate->addListener (this);
+    addAndMakeVisible (tempoSlider = new Slider ("tempoSlider"));
+    tempoSlider->setRange (1, 1000, 0.01);
+    tempoSlider->setSliderStyle (Slider::LinearHorizontal);
+    tempoSlider->setTextBoxStyle (Slider::TextBoxLeft, false, 80, 20);
+    tempoSlider->setColour (Slider::textBoxTextColourId, Colour (0xffadaaaa));
+    tempoSlider->setColour (Slider::textBoxBackgroundColourId, Colour (0xff353535));
+    tempoSlider->setColour (Slider::textBoxOutlineColourId, Colour (0xff353535));
+    tempoSlider->addListener (this);
 
 
     //[UserPreSize]
     //[/UserPreSize]
 
-    setSize (600, 130);
+    setSize (600, 150);
 
 
     //[Constructor] You can add your own custom stuff here..
+
+    intervalsComboBox->setSelectedId(delayTimeObject.getIntervalChosen());
+    modificationComboBox->setSelectedId(delayTimeObject.getValueModificationChosen());
+
     //[/Constructor]
 }
 
@@ -127,7 +126,6 @@ MainComponent::~MainComponent()
     //[/Destructor_pre]
 
     delayTimeTextEditor = nullptr;
-    tempoInputTextEditor = nullptr;
     modificationComboBox = nullptr;
     intervalsComboBox = nullptr;
     doubleTempoButton = nullptr;
@@ -135,7 +133,7 @@ MainComponent::~MainComponent()
     emailHyperlink = nullptr;
     theLyonsDenDelayTimeCalculator = nullptr;
     alterTheCodeHyperlink = nullptr;
-    calculate = nullptr;
+    tempoSlider = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -159,16 +157,15 @@ void MainComponent::resized()
     //[UserPreResize] Add your own custom resize code here..
     //[/UserPreResize]
 
-    delayTimeTextEditor->setBounds (500, 70, 100, 30);
-    tempoInputTextEditor->setBounds (0, 70, 100, 30);
-    modificationComboBox->setBounds (300, 70, 100, 30);
-    intervalsComboBox->setBounds (200, 70, 100, 30);
-    doubleTempoButton->setBounds (150, 70, 50, 30);
-    halfTempoButton->setBounds (100, 70, 50, 30);
-    emailHyperlink->setBounds (0, 104, 80, 25);
+    delayTimeTextEditor->setBounds (300, 86, 300, 30);
+    modificationComboBox->setBounds (200, 86, 100, 30);
+    intervalsComboBox->setBounds (100, 86, 100, 30);
+    doubleTempoButton->setBounds (50, 86, 50, 30);
+    halfTempoButton->setBounds (0, 86, 50, 30);
+    emailHyperlink->setBounds (0, 120, 80, 25);
     theLyonsDenDelayTimeCalculator->setBounds (0, 0, 600, 56);
-    alterTheCodeHyperlink->setBounds (394, 104, 200, 25);
-    calculate->setBounds (400, 70, 100, 30);
+    alterTheCodeHyperlink->setBounds (394, 120, 200, 25);
+    tempoSlider->setBounds (0, 54, 600, 25);
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
 }
@@ -201,21 +198,37 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     if (buttonThatWasClicked == doubleTempoButton)
     {
         //[UserButtonCode_doubleTempoButton] -- add your button handler code here..
+
+        tempoSlider->setValue(tempoSlider->getValue() * 2);
+
         //[/UserButtonCode_doubleTempoButton]
     }
     else if (buttonThatWasClicked == halfTempoButton)
     {
         //[UserButtonCode_halfTempoButton] -- add your button handler code here..
+
+        tempoSlider->setValue(tempoSlider->getValue() / 2);
+
         //[/UserButtonCode_halfTempoButton]
-    }
-    else if (buttonThatWasClicked == calculate)
-    {
-        //[UserButtonCode_calculate] -- add your button handler code here..
-        //[/UserButtonCode_calculate]
     }
 
     //[UserbuttonClicked_Post]
     //[/UserbuttonClicked_Post]
+}
+
+void MainComponent::sliderValueChanged (Slider* sliderThatWasMoved)
+{
+    //[UsersliderValueChanged_Pre]
+    //[/UsersliderValueChanged_Pre]
+
+    if (sliderThatWasMoved == tempoSlider)
+    {
+        //[UserSliderCode_tempoSlider] -- add your slider handling code here..
+        //[/UserSliderCode_tempoSlider]
+    }
+
+    //[UsersliderValueChanged_Post]
+    //[/UsersliderValueChanged_Post]
 }
 
 
@@ -236,32 +249,28 @@ BEGIN_JUCER_METADATA
 <JUCER_COMPONENT documentType="Component" className="MainComponent" componentName=""
                  parentClasses="public Component" constructorParams="" variableInitialisers=""
                  snapPixels="8" snapActive="1" snapShown="1" overlayOpacity="0.330"
-                 fixedSize="1" initialWidth="600" initialHeight="130">
+                 fixedSize="1" initialWidth="600" initialHeight="150">
   <BACKGROUND backgroundColour="ff353535"/>
   <TEXTEDITOR name="delayTimeTextEditor" id="bf6dfd83597fb1a6" memberName="delayTimeTextEditor"
-              virtualName="" explicitFocusOrder="0" pos="500 70 100 30" initialText=""
+              virtualName="" explicitFocusOrder="0" pos="300 86 300 30" initialText=""
               multiline="0" retKeyStartsLine="0" readonly="1" scrollbars="1"
               caret="0" popupmenu="1"/>
-  <TEXTEDITOR name="tempoInputTextEditor" id="360064ad70e7a23" memberName="tempoInputTextEditor"
-              virtualName="" explicitFocusOrder="0" pos="0 70 100 30" initialText=""
-              multiline="0" retKeyStartsLine="0" readonly="0" scrollbars="1"
-              caret="1" popupmenu="1"/>
   <COMBOBOX name="modificationComboBox" id="3b8465bdbe8efc8f" memberName="modificationComboBox"
-            virtualName="" explicitFocusOrder="0" pos="300 70 100 30" editable="0"
-            layout="33" items="Normal&#10;Dotted&#10;Triplet" textWhenNonSelected="Normal"
+            virtualName="" explicitFocusOrder="0" pos="200 86 100 30" editable="0"
+            layout="33" items="Normal&#10;Dotted&#10;Triplet" textWhenNonSelected=""
             textWhenNoItems="(no choices)"/>
   <COMBOBOX name="intervalsComboBox" id="2cf26b790b8239bc" memberName="intervalsComboBox"
-            virtualName="" explicitFocusOrder="0" pos="200 70 100 30" editable="0"
+            virtualName="" explicitFocusOrder="0" pos="100 86 100 30" editable="0"
             layout="33" items="1&#10;1/2&#10;1/4&#10;1/8&#10;1/16&#10;1/32&#10;1/64"
-            textWhenNonSelected="1/4" textWhenNoItems=""/>
+            textWhenNonSelected="" textWhenNoItems=""/>
   <TEXTBUTTON name="doubleTempoButton" id="74a1161b6a8bd75d" memberName="doubleTempoButton"
-              virtualName="" explicitFocusOrder="0" pos="150 70 50 30" buttonText="2x"
+              virtualName="" explicitFocusOrder="0" pos="50 86 50 30" buttonText="2x"
               connectedEdges="3" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="halfTempoButton" id="edac6a2aecdd8ef5" memberName="halfTempoButton"
-              virtualName="" explicitFocusOrder="0" pos="100 70 50 30" buttonText="1/2"
+              virtualName="" explicitFocusOrder="0" pos="0 86 50 30" buttonText="1/2"
               connectedEdges="3" needsCallback="1" radioGroupId="0"/>
   <HYPERLINKBUTTON name="emailHyperlink" id="61f33ae81920857e" memberName="emailHyperlink"
-                   virtualName="" explicitFocusOrder="0" pos="0 104 80 25" tooltip="josephtlyons@gmail.com"
+                   virtualName="" explicitFocusOrder="0" pos="0 120 80 25" tooltip="josephtlyons@gmail.com"
                    textCol="ccffffff" buttonText="Email Me" connectedEdges="0" needsCallback="0"
                    radioGroupId="0" url="josephtlyons@gmail.com"/>
   <LABEL name="theLyonsDenDelayTimeCalculator" id="30efee6a53c20dfb" memberName="theLyonsDenDelayTimeCalculator"
@@ -271,12 +280,15 @@ BEGIN_JUCER_METADATA
          fontname="Bodoni 72 Oldstyle" fontsize="47.399999999999998579"
          bold="0" italic="0" justification="36"/>
   <HYPERLINKBUTTON name="alterTheCodeHyperlink" id="1c00e9554abf8ce9" memberName="alterTheCodeHyperlink"
-                   virtualName="" explicitFocusOrder="0" pos="394 104 200 25" tooltip="https://github.com/JosephTLyons/GUI-Delay-Time-Calculator"
+                   virtualName="" explicitFocusOrder="0" pos="394 120 200 25" tooltip="https://github.com/JosephTLyons/GUI-Delay-Time-Calculator"
                    textCol="ccffffff" buttonText="Download the Source Code" connectedEdges="0"
                    needsCallback="0" radioGroupId="0" url="https://github.com/JosephTLyons/GUI-Delay-Time-Calculator"/>
-  <TEXTBUTTON name="calculate" id="ebe78f4f85b7ce90" memberName="calculate"
-              virtualName="" explicitFocusOrder="0" pos="400 70 100 30" buttonText="Calculate"
-              connectedEdges="3" needsCallback="1" radioGroupId="0"/>
+  <SLIDER name="tempoSlider" id="1b36c66db8e52ea5" memberName="tempoSlider"
+          virtualName="" explicitFocusOrder="0" pos="0 54 600 25" textboxtext="ffadaaaa"
+          textboxbkgd="ff353535" textboxoutline="ff353535" min="1" max="1000"
+          int="0.010000000000000000208" style="LinearHorizontal" textBoxPos="TextBoxLeft"
+          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1"
+          needsCallback="1"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA

@@ -10,11 +10,10 @@
 
 DelayTime::DelayTime()
 {
-    tempo          = 0;
-    delayTime      = 0;
-    isDotted       = false;
-    isTriplet      = false;
-    intervalChosen = quarterNote;
+    tempo                   = 0;
+    delayTime               = 0;
+    intervalChosen          = quarterNote;
+    valueModificationChosen = normal;
 }
 
 void DelayTime::setTempo(const float &input)
@@ -25,6 +24,16 @@ void DelayTime::setTempo(const float &input)
 float DelayTime::getDelayTime()
 {
     return delayTime;
+}
+
+int DelayTime::getIntervalChosen()
+{
+    return intervalChosen;
+}
+
+int DelayTime::getValueModificationChosen()
+{
+    return valueModificationChosen;
 }
 
 void DelayTime::calculateDelayTime()

@@ -37,7 +37,8 @@
 */
 class MainComponent  : public Component,
                        public ComboBoxListener,
-                       public ButtonListener
+                       public ButtonListener,
+                       public SliderListener
 {
 public:
     //==============================================================================
@@ -52,6 +53,7 @@ public:
     void resized() override;
     void comboBoxChanged (ComboBox* comboBoxThatHasChanged) override;
     void buttonClicked (Button* buttonThatWasClicked) override;
+    void sliderValueChanged (Slider* sliderThatWasMoved) override;
 
 
 
@@ -64,7 +66,6 @@ private:
 
     //==============================================================================
     ScopedPointer<TextEditor> delayTimeTextEditor;
-    ScopedPointer<TextEditor> tempoInputTextEditor;
     ScopedPointer<ComboBox> modificationComboBox;
     ScopedPointer<ComboBox> intervalsComboBox;
     ScopedPointer<TextButton> doubleTempoButton;
@@ -72,7 +73,7 @@ private:
     ScopedPointer<HyperlinkButton> emailHyperlink;
     ScopedPointer<Label> theLyonsDenDelayTimeCalculator;
     ScopedPointer<HyperlinkButton> alterTheCodeHyperlink;
-    ScopedPointer<TextButton> calculate;
+    ScopedPointer<Slider> tempoSlider;
 
 
     //==============================================================================
