@@ -92,7 +92,7 @@ MainComponent::MainComponent ()
 
     addAndMakeVisible (theLyonsDenDelayTimeCalculator = new Label ("theLyonsDenDelayTimeCalculator",
                                                                    TRANS("The Lyons\' Den Delay Time Calculator")));
-    theLyonsDenDelayTimeCalculator->setFont (Font ("Bodoni 72 Oldstyle", 40.30f, Font::plain));
+    theLyonsDenDelayTimeCalculator->setFont (Font ("Bodoni 72 Oldstyle", 47.40f, Font::plain));
     theLyonsDenDelayTimeCalculator->setJustificationType (Justification::centred);
     theLyonsDenDelayTimeCalculator->setEditable (false, false, false);
     theLyonsDenDelayTimeCalculator->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -105,11 +105,16 @@ MainComponent::MainComponent ()
     alterTheCodeHyperlink->setButtonText (TRANS("Download the Source Code"));
     alterTheCodeHyperlink->setColour (HyperlinkButton::textColourId, Colour (0xccffffff));
 
+    addAndMakeVisible (calculate = new TextButton ("calculate"));
+    calculate->setButtonText (TRANS("Calculate"));
+    calculate->setConnectedEdges (Button::ConnectedOnLeft | Button::ConnectedOnRight);
+    calculate->addListener (this);
+
 
     //[UserPreSize]
     //[/UserPreSize]
 
-    setSize (500, 130);
+    setSize (600, 130);
 
 
     //[Constructor] You can add your own custom stuff here..
@@ -130,6 +135,7 @@ MainComponent::~MainComponent()
     emailHyperlink = nullptr;
     theLyonsDenDelayTimeCalculator = nullptr;
     alterTheCodeHyperlink = nullptr;
+    calculate = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -153,15 +159,16 @@ void MainComponent::resized()
     //[UserPreResize] Add your own custom resize code here..
     //[/UserPreResize]
 
-    delayTimeTextEditor->setBounds (400, 70, 100, 30);
+    delayTimeTextEditor->setBounds (500, 70, 100, 30);
     tempoInputTextEditor->setBounds (0, 70, 100, 30);
     modificationComboBox->setBounds (300, 70, 100, 30);
     intervalsComboBox->setBounds (200, 70, 100, 30);
     doubleTempoButton->setBounds (150, 70, 50, 30);
     halfTempoButton->setBounds (100, 70, 50, 30);
     emailHyperlink->setBounds (0, 104, 80, 25);
-    theLyonsDenDelayTimeCalculator->setBounds (0, 0, 500, 48);
-    alterTheCodeHyperlink->setBounds (296, 104, 200, 25);
+    theLyonsDenDelayTimeCalculator->setBounds (0, 0, 600, 56);
+    alterTheCodeHyperlink->setBounds (394, 104, 200, 25);
+    calculate->setBounds (400, 70, 100, 30);
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
 }
@@ -201,6 +208,11 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
         //[UserButtonCode_halfTempoButton] -- add your button handler code here..
         //[/UserButtonCode_halfTempoButton]
     }
+    else if (buttonThatWasClicked == calculate)
+    {
+        //[UserButtonCode_calculate] -- add your button handler code here..
+        //[/UserButtonCode_calculate]
+    }
 
     //[UserbuttonClicked_Post]
     //[/UserbuttonClicked_Post]
@@ -224,10 +236,10 @@ BEGIN_JUCER_METADATA
 <JUCER_COMPONENT documentType="Component" className="MainComponent" componentName=""
                  parentClasses="public Component" constructorParams="" variableInitialisers=""
                  snapPixels="8" snapActive="1" snapShown="1" overlayOpacity="0.330"
-                 fixedSize="1" initialWidth="500" initialHeight="130">
+                 fixedSize="1" initialWidth="600" initialHeight="130">
   <BACKGROUND backgroundColour="ff353535"/>
   <TEXTEDITOR name="delayTimeTextEditor" id="bf6dfd83597fb1a6" memberName="delayTimeTextEditor"
-              virtualName="" explicitFocusOrder="0" pos="400 70 100 30" initialText=""
+              virtualName="" explicitFocusOrder="0" pos="500 70 100 30" initialText=""
               multiline="0" retKeyStartsLine="0" readonly="1" scrollbars="1"
               caret="0" popupmenu="1"/>
   <TEXTEDITOR name="tempoInputTextEditor" id="360064ad70e7a23" memberName="tempoInputTextEditor"
@@ -253,15 +265,18 @@ BEGIN_JUCER_METADATA
                    textCol="ccffffff" buttonText="Email Me" connectedEdges="0" needsCallback="0"
                    radioGroupId="0" url="josephtlyons@gmail.com"/>
   <LABEL name="theLyonsDenDelayTimeCalculator" id="30efee6a53c20dfb" memberName="theLyonsDenDelayTimeCalculator"
-         virtualName="" explicitFocusOrder="0" pos="0 0 500 48" textCol="ffadaaaa"
+         virtualName="" explicitFocusOrder="0" pos="0 0 600 56" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="The Lyons' Den Delay Time Calculator"
          editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
-         fontname="Bodoni 72 Oldstyle" fontsize="40.299999999999997158"
+         fontname="Bodoni 72 Oldstyle" fontsize="47.399999999999998579"
          bold="0" italic="0" justification="36"/>
   <HYPERLINKBUTTON name="alterTheCodeHyperlink" id="1c00e9554abf8ce9" memberName="alterTheCodeHyperlink"
-                   virtualName="" explicitFocusOrder="0" pos="296 104 200 25" tooltip="https://github.com/JosephTLyons/GUI-Delay-Time-Calculator"
+                   virtualName="" explicitFocusOrder="0" pos="394 104 200 25" tooltip="https://github.com/JosephTLyons/GUI-Delay-Time-Calculator"
                    textCol="ccffffff" buttonText="Download the Source Code" connectedEdges="0"
                    needsCallback="0" radioGroupId="0" url="https://github.com/JosephTLyons/GUI-Delay-Time-Calculator"/>
+  <TEXTBUTTON name="calculate" id="ebe78f4f85b7ce90" memberName="calculate"
+              virtualName="" explicitFocusOrder="0" pos="400 70 100 30" buttonText="Calculate"
+              connectedEdges="3" needsCallback="1" radioGroupId="0"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA

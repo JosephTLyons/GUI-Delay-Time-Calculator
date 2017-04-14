@@ -72,6 +72,7 @@ private:
     ScopedPointer<HyperlinkButton> emailHyperlink;
     ScopedPointer<Label> theLyonsDenDelayTimeCalculator;
     ScopedPointer<HyperlinkButton> alterTheCodeHyperlink;
+    ScopedPointer<TextButton> calculate;
 
 
     //==============================================================================
