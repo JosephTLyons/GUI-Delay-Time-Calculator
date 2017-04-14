@@ -92,7 +92,20 @@ void DelayTime::calculateDelayTimeBasedOnInterval()
 
 void DelayTime::calculateDelayTiemBasedOnModification()
 {
+    if(valueModificationChosen == normal)
+    {
+        // Do Nothing
+    }
     
+    else if(valueModificationChosen == dotted)
+    {
+        delayTime *= 1.5;
+    }
+    
+    else if(valueModificationChosen == triplet)
+    {
+        delayTime *= ((float) 2 / 3);
+    }
 }
 
 

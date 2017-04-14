@@ -74,6 +74,8 @@ private:
     ScopedPointer<Label> theLyonsDenDelayTimeCalculator;
     ScopedPointer<HyperlinkButton> alterTheCodeHyperlink;
     ScopedPointer<Slider> tempoSlider;
+    ScopedPointer<Label> theLyonsDenDelayTimeCalculator2;
+    ScopedPointer<Label> msLabel;
 
 
     //==============================================================================
