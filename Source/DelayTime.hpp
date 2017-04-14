@@ -13,6 +13,7 @@ class DelayTime
 {
 private:
     float tempo;
+    float delayTime;
     bool  isDotted;
     bool  isTriplet;
     int   intervalChosen;
@@ -31,6 +32,7 @@ public:
     DelayTime();
     
     void setTempo(const float &input);
+    float getDelayTime();
     void calculateDelayTime();
 };
 

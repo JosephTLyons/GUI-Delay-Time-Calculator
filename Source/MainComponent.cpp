@@ -50,29 +50,29 @@ MainComponent::MainComponent ()
     tempoInputTextEditor->setPopupMenuEnabled (true);
     tempoInputTextEditor->setText (String());
 
-    addAndMakeVisible (comboBox = new ComboBox ("new combo box"));
-    comboBox->setEditableText (false);
-    comboBox->setJustificationType (Justification::centredLeft);
-    comboBox->setTextWhenNothingSelected (TRANS("Normal"));
-    comboBox->setTextWhenNoChoicesAvailable (TRANS("(no choices)"));
-    comboBox->addItem (TRANS("Normal"), 1);
-    comboBox->addItem (TRANS("Dotted"), 2);
-    comboBox->addItem (TRANS("Triplet"), 3);
-    comboBox->addListener (this);
+    addAndMakeVisible (modificationComboBox = new ComboBox ("modificationComboBox"));
+    modificationComboBox->setEditableText (false);
+    modificationComboBox->setJustificationType (Justification::centredLeft);
+    modificationComboBox->setTextWhenNothingSelected (TRANS("Normal"));
+    modificationComboBox->setTextWhenNoChoicesAvailable (TRANS("(no choices)"));
+    modificationComboBox->addItem (TRANS("Normal"), 1);
+    modificationComboBox->addItem (TRANS("Dotted"), 2);
+    modificationComboBox->addItem (TRANS("Triplet"), 3);
+    modificationComboBox->addListener (this);
 
-    addAndMakeVisible (comboBox2 = new ComboBox ("new combo box"));
-    comboBox2->setEditableText (false);
-    comboBox2->setJustificationType (Justification::centredLeft);
-    comboBox2->setTextWhenNothingSelected (TRANS("1/4"));
-    comboBox2->setTextWhenNoChoicesAvailable (String());
-    comboBox2->addItem (TRANS("1"), 1);
-    comboBox2->addItem (TRANS("1/2"), 2);
-    comboBox2->addItem (TRANS("1/4"), 3);
-    comboBox2->addItem (TRANS("1/8"), 4);
-    comboBox2->addItem (TRANS("1/16"), 5);
-    comboBox2->addItem (TRANS("1/32"), 6);
-    comboBox2->addItem (TRANS("1/64"), 7);
-    comboBox2->addListener (this);
+    addAndMakeVisible (intervalsComboBox = new ComboBox ("intervalsComboBox"));
+    intervalsComboBox->setEditableText (false);
+    intervalsComboBox->setJustificationType (Justification::centredLeft);
+    intervalsComboBox->setTextWhenNothingSelected (TRANS("1/4"));
+    intervalsComboBox->setTextWhenNoChoicesAvailable (String());
+    intervalsComboBox->addItem (TRANS("1"), 1);
+    intervalsComboBox->addItem (TRANS("1/2"), 2);
+    intervalsComboBox->addItem (TRANS("1/4"), 3);
+    intervalsComboBox->addItem (TRANS("1/8"), 4);
+    intervalsComboBox->addItem (TRANS("1/16"), 5);
+    intervalsComboBox->addItem (TRANS("1/32"), 6);
+    intervalsComboBox->addItem (TRANS("1/64"), 7);
+    intervalsComboBox->addListener (this);
 
     addAndMakeVisible (doubleTempoButton = new TextButton ("doubleTempoButton"));
     doubleTempoButton->setButtonText (TRANS("2x"));
@@ -101,7 +101,7 @@ MainComponent::MainComponent ()
 
     addAndMakeVisible (alterTheCodeHyperlink = new HyperlinkButton (TRANS("Download the Source Code"),
                                                                     URL ("https://github.com/JosephTLyons/GUI-Delay-Time-Calculator")));
-    alterTheCodeHyperlink->setTooltip (TRANS("This is a link to the GitHub repository, so you can download and edit the code yourself.  I\'m using the JUCE library and the Projucer as well."));
+    alterTheCodeHyperlink->setTooltip (TRANS("https://github.com/JosephTLyons/GUI-Delay-Time-Calculator"));
     alterTheCodeHyperlink->setButtonText (TRANS("Download the Source Code"));
     alterTheCodeHyperlink->setColour (HyperlinkButton::textColourId, Colour (0xccffffff));
 
@@ -123,8 +123,8 @@ MainComponent::~MainComponent()
 
     delayTimeTextEditor = nullptr;
     tempoInputTextEditor = nullptr;
-    comboBox = nullptr;
-    comboBox2 = nullptr;
+    modificationComboBox = nullptr;
+    intervalsComboBox = nullptr;
     doubleTempoButton = nullptr;
     halfTempoButton = nullptr;
     emailHyperlink = nullptr;
@@ -155,8 +155,8 @@ void MainComponent::resized()
 
     delayTimeTextEditor->setBounds (400, 70, 100, 30);
     tempoInputTextEditor->setBounds (0, 70, 100, 30);
-    comboBox->setBounds (300, 70, 100, 30);
-    comboBox2->setBounds (200, 70, 100, 30);
+    modificationComboBox->setBounds (300, 70, 100, 30);
+    intervalsComboBox->setBounds (200, 70, 100, 30);
     doubleTempoButton->setBounds (150, 70, 50, 30);
     halfTempoButton->setBounds (100, 70, 50, 30);
     emailHyperlink->setBounds (0, 104, 80, 25);
@@ -171,15 +171,15 @@ void MainComponent::comboBoxChanged (ComboBox* comboBoxThatHasChanged)
     //[UsercomboBoxChanged_Pre]
     //[/UsercomboBoxChanged_Pre]
 
-    if (comboBoxThatHasChanged == comboBox)
+    if (comboBoxThatHasChanged == modificationComboBox)
     {
-        //[UserComboBoxCode_comboBox] -- add your combo box handling code here..
-        //[/UserComboBoxCode_comboBox]
+        //[UserComboBoxCode_modificationComboBox] -- add your combo box handling code here..
+        //[/UserComboBoxCode_modificationComboBox]
     }
-    else if (comboBoxThatHasChanged == comboBox2)
+    else if (comboBoxThatHasChanged == intervalsComboBox)
     {
-        //[UserComboBoxCode_comboBox2] -- add your combo box handling code here..
-        //[/UserComboBoxCode_comboBox2]
+        //[UserComboBoxCode_intervalsComboBox] -- add your combo box handling code here..
+        //[/UserComboBoxCode_intervalsComboBox]
     }
 
     //[UsercomboBoxChanged_Post]
@@ -234,11 +234,11 @@ BEGIN_JUCER_METADATA
               virtualName="" explicitFocusOrder="0" pos="0 70 100 30" initialText=""
               multiline="0" retKeyStartsLine="0" readonly="0" scrollbars="1"
               caret="1" popupmenu="1"/>
-  <COMBOBOX name="new combo box" id="3b8465bdbe8efc8f" memberName="comboBox"
+  <COMBOBOX name="modificationComboBox" id="3b8465bdbe8efc8f" memberName="modificationComboBox"
             virtualName="" explicitFocusOrder="0" pos="300 70 100 30" editable="0"
             layout="33" items="Normal&#10;Dotted&#10;Triplet" textWhenNonSelected="Normal"
             textWhenNoItems="(no choices)"/>
-  <COMBOBOX name="new combo box" id="2cf26b790b8239bc" memberName="comboBox2"
+  <COMBOBOX name="intervalsComboBox" id="2cf26b790b8239bc" memberName="intervalsComboBox"
             virtualName="" explicitFocusOrder="0" pos="200 70 100 30" editable="0"
             layout="33" items="1&#10;1/2&#10;1/4&#10;1/8&#10;1/16&#10;1/32&#10;1/64"
             textWhenNonSelected="1/4" textWhenNoItems=""/>
@@ -259,7 +259,7 @@ BEGIN_JUCER_METADATA
          fontname="Bodoni 72 Oldstyle" fontsize="40.299999999999997158"
          bold="0" italic="0" justification="36"/>
   <HYPERLINKBUTTON name="alterTheCodeHyperlink" id="1c00e9554abf8ce9" memberName="alterTheCodeHyperlink"
-                   virtualName="" explicitFocusOrder="0" pos="296 104 200 25" tooltip="This is a link to the GitHub repository, so you can download and edit the code yourself.  I'm using the JUCE library and the Projucer as well."
+                   virtualName="" explicitFocusOrder="0" pos="296 104 200 25" tooltip="https://github.com/JosephTLyons/GUI-Delay-Time-Calculator"
                    textCol="ccffffff" buttonText="Download the Source Code" connectedEdges="0"
                    needsCallback="0" radioGroupId="0" url="https://github.com/JosephTLyons/GUI-Delay-Time-Calculator"/>
 </JUCER_COMPONENT>

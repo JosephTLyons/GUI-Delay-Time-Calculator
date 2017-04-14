@@ -65,8 +65,8 @@ private:
     //==============================================================================
     ScopedPointer<TextEditor> delayTimeTextEditor;
     ScopedPointer<TextEditor> tempoInputTextEditor;
-    ScopedPointer<ComboBox> comboBox;
-    ScopedPointer<ComboBox> comboBox2;
+    ScopedPointer<ComboBox> modificationComboBox;
+    ScopedPointer<ComboBox> intervalsComboBox;
     ScopedPointer<TextButton> doubleTempoButton;
     ScopedPointer<TextButton> halfTempoButton;
     ScopedPointer<HyperlinkButton> emailHyperlink;
