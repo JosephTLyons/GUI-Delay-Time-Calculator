@@ -66,6 +66,7 @@ private:
     ScopedPointer<TextButton> doubleTempoButton;
     ScopedPointer<TextButton> halfTempoButton;
     ScopedPointer<HyperlinkButton> emailHyperlink;
+    ScopedPointer<Label> theLyonsDenDelayTimeCalculator;
 
 
     //==============================================================================

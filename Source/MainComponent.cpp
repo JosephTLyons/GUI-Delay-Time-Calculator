@@ -90,6 +90,15 @@ MainComponent::MainComponent ()
     emailHyperlink->setButtonText (TRANS("Email Me"));
     emailHyperlink->setColour (HyperlinkButton::textColourId, Colour (0xccffffff));
 
+    addAndMakeVisible (theLyonsDenDelayTimeCalculator = new Label ("theLyonsDenDelayTimeCalculator",
+                                                                   TRANS("The Lyons\' Den Delay Time Calculator")));
+    theLyonsDenDelayTimeCalculator->setFont (Font ("Bodoni 72 Oldstyle", 40.30f, Font::plain));
+    theLyonsDenDelayTimeCalculator->setJustificationType (Justification::centred);
+    theLyonsDenDelayTimeCalculator->setEditable (false, false, false);
+    theLyonsDenDelayTimeCalculator->setColour (Label::textColourId, Colour (0xffadaaaa));
+    theLyonsDenDelayTimeCalculator->setColour (TextEditor::textColourId, Colours::black);
+    theLyonsDenDelayTimeCalculator->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+
 
     //[UserPreSize]
     //[/UserPreSize]
@@ -113,6 +122,7 @@ MainComponent::~MainComponent()
     doubleTempoButton = nullptr;
     halfTempoButton = nullptr;
     emailHyperlink = nullptr;
+    theLyonsDenDelayTimeCalculator = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -143,6 +153,7 @@ void MainComponent::resized()
     doubleTempoButton->setBounds (150, 70, 50, 30);
     halfTempoButton->setBounds (100, 70, 50, 30);
     emailHyperlink->setBounds (0, 104, 80, 24);
+    theLyonsDenDelayTimeCalculator->setBounds (0, 0, 500, 48);
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
 }
@@ -233,6 +244,12 @@ BEGIN_JUCER_METADATA
                    virtualName="" explicitFocusOrder="0" pos="0 104 80 24" tooltip="josephtlyons@gmail.com"
                    textCol="ccffffff" buttonText="Email Me" connectedEdges="0" needsCallback="0"
                    radioGroupId="0" url="josephtlyons@gmail.com"/>
+  <LABEL name="theLyonsDenDelayTimeCalculator" id="30efee6a53c20dfb" memberName="theLyonsDenDelayTimeCalculator"
+         virtualName="" explicitFocusOrder="0" pos="0 0 500 48" textCol="ffadaaaa"
+         edTextCol="ff000000" edBkgCol="0" labelText="The Lyons' Den Delay Time Calculator"
+         editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
+         fontname="Bodoni 72 Oldstyle" fontsize="40.299999999999997158"
+         bold="0" italic="0" justification="36"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA
