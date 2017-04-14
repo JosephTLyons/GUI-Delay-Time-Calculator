@@ -74,7 +74,7 @@ MainComponent::MainComponent ()
     doubleTempoButton->addListener (this);
 
     addAndMakeVisible (halfTempoButton = new TextButton ("halfTempoButton"));
-    halfTempoButton->setButtonText (TRANS("1/2"));
+    halfTempoButton->setButtonText (TRANS("1/2x"));
     halfTempoButton->setConnectedEdges (Button::ConnectedOnLeft | Button::ConnectedOnRight);
     halfTempoButton->addListener (this);
 
@@ -318,7 +318,7 @@ BEGIN_JUCER_METADATA
               virtualName="" explicitFocusOrder="0" pos="550 50 50 30" buttonText="2x"
               connectedEdges="3" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="halfTempoButton" id="edac6a2aecdd8ef5" memberName="halfTempoButton"
-              virtualName="" explicitFocusOrder="0" pos="500 50 50 30" buttonText="1/2"
+              virtualName="" explicitFocusOrder="0" pos="500 50 50 30" buttonText="1/2x"
               connectedEdges="3" needsCallback="1" radioGroupId="0"/>
   <HYPERLINKBUTTON name="emailHyperlink" id="61f33ae81920857e" memberName="emailHyperlink"
                    virtualName="" explicitFocusOrder="0" pos="0 120 80 25" tooltip="josephtlyons@gmail.com"
