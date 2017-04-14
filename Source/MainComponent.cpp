@@ -65,6 +65,7 @@ MainComponent::MainComponent ()
     intervalsComboBox->addItem (TRANS("1/16"), 5);
     intervalsComboBox->addItem (TRANS("1/32"), 6);
     intervalsComboBox->addItem (TRANS("1/64"), 7);
+    intervalsComboBox->addItem (TRANS("1/128"), 8);
     intervalsComboBox->addListener (this);
 
     addAndMakeVisible (doubleTempoButton = new TextButton ("doubleTempoButton"));
@@ -311,7 +312,7 @@ BEGIN_JUCER_METADATA
             textWhenNoItems="(no choices)"/>
   <COMBOBOX name="intervalsComboBox" id="2cf26b790b8239bc" memberName="intervalsComboBox"
             virtualName="" explicitFocusOrder="0" pos="0 80 150 30" editable="0"
-            layout="33" items="1&#10;1/2&#10;1/4&#10;1/8&#10;1/16&#10;1/32&#10;1/64"
+            layout="33" items="1&#10;1/2&#10;1/4&#10;1/8&#10;1/16&#10;1/32&#10;1/64&#10;1/128"
             textWhenNonSelected="" textWhenNoItems=""/>
   <TEXTBUTTON name="doubleTempoButton" id="74a1161b6a8bd75d" memberName="doubleTempoButton"
               virtualName="" explicitFocusOrder="0" pos="550 50 50 30" buttonText="2x"

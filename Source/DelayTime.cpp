@@ -88,6 +88,11 @@ void DelayTime::calculateDelayTimeBasedOnInterval()
     {
         delayTime /= 16;
     }
+    
+    else if(intervalChosen == oneHundredAndTwenthyEighth)
+    {
+        delayTime /= 32;
+    }
 }
 
 void DelayTime::calculateDelayTiemBasedOnModification()

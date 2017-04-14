@@ -24,7 +24,8 @@ private:
         eighthNote,
         sixteenthNote,
         thirtySecondNote,
-        sixtyForthNote
+        sixtyForthNote,
+        oneHundredAndTwenthyEighth
     };
     
     int   valueModificationChosen;
