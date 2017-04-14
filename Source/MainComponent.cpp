@@ -97,11 +97,12 @@ MainComponent::MainComponent ()
     alterTheCodeHyperlink->setColour (HyperlinkButton::textColourId, Colour (0xccffffff));
 
     addAndMakeVisible (tempoSlider = new Slider ("tempoSlider"));
-    tempoSlider->setRange (1, 1000, 0.01);
+    tempoSlider->setRange (1, 1000, 0.1);
     tempoSlider->setSliderStyle (Slider::LinearHorizontal);
-    tempoSlider->setTextBoxStyle (Slider::TextBoxLeft, false, 80, 20);
+    tempoSlider->setTextBoxStyle (Slider::TextBoxLeft, false, 50, 20);
     tempoSlider->setColour (Slider::textBoxTextColourId, Colour (0xffadaaaa));
     tempoSlider->setColour (Slider::textBoxBackgroundColourId, Colour (0xff353535));
+    tempoSlider->setColour (Slider::textBoxHighlightColourId, Colour (0x40ffffff));
     tempoSlider->setColour (Slider::textBoxOutlineColourId, Colour (0xff353535));
     tempoSlider->addListener (this);
 
@@ -114,6 +115,7 @@ MainComponent::MainComponent ()
 
     //[Constructor] You can add your own custom stuff here..
 
+    // Initialize combo boxes to 1/4 and normal from DelayTime class enums
     intervalsComboBox->setSelectedId(delayTimeObject.getIntervalChosen());
     modificationComboBox->setSelectedId(delayTimeObject.getValueModificationChosen());
 
@@ -178,15 +180,30 @@ void MainComponent::comboBoxChanged (ComboBox* comboBoxThatHasChanged)
     if (comboBoxThatHasChanged == modificationComboBox)
     {
         //[UserComboBoxCode_modificationComboBox] -- add your combo box handling code here..
+
+        // Set new interval value in class
+        delayTimeObject.setValueModificationChosen(modificationComboBox->getSelectedId());
+
         //[/UserComboBoxCode_modificationComboBox]
     }
     else if (comboBoxThatHasChanged == intervalsComboBox)
     {
         //[UserComboBoxCode_intervalsComboBox] -- add your combo box handling code here..
+
+        // Set new interval value in class
+        delayTimeObject.setIntervalChosen(intervalsComboBox->getSelectedId());
+
         //[/UserComboBoxCode_intervalsComboBox]
     }
 
     //[UsercomboBoxChanged_Post]
+
+    // Recalculate delay time
+    delayTimeObject.calculateDelayTime();
+
+    // Reset text editor with new value
+    delayTimeTextEditor->setText((String) delayTimeObject.calculateDelayTime());
+
     //[/UsercomboBoxChanged_Post]
 }
 
@@ -224,6 +241,10 @@ void MainComponent::sliderValueChanged (Slider* sliderThatWasMoved)
     if (sliderThatWasMoved == tempoSlider)
     {
         //[UserSliderCode_tempoSlider] -- add your slider handling code here..
+
+        delayTimeObject.setTempo(tempoSlider->getValue());
+        delayTimeTextEditor->setText((String) delayTimeObject.calculateDelayTime());
+
         //[/UserSliderCode_tempoSlider]
     }
 
@@ -285,10 +306,10 @@ BEGIN_JUCER_METADATA
                    needsCallback="0" radioGroupId="0" url="https://github.com/JosephTLyons/GUI-Delay-Time-Calculator"/>
   <SLIDER name="tempoSlider" id="1b36c66db8e52ea5" memberName="tempoSlider"
           virtualName="" explicitFocusOrder="0" pos="0 54 600 25" textboxtext="ffadaaaa"
-          textboxbkgd="ff353535" textboxoutline="ff353535" min="1" max="1000"
-          int="0.010000000000000000208" style="LinearHorizontal" textBoxPos="TextBoxLeft"
-          textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1"
-          needsCallback="1"/>
+          textboxbkgd="ff353535" textboxhighlight="40ffffff" textboxoutline="ff353535"
+          min="1" max="1000" int="0.10000000000000000555" style="LinearHorizontal"
+          textBoxPos="TextBoxLeft" textBoxEditable="1" textBoxWidth="50"
+          textBoxHeight="20" skewFactor="1" needsCallback="1"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA

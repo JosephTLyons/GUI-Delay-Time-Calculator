@@ -39,10 +39,13 @@ public:
     DelayTime();
     
     void setTempo(const float &input);
-    float getDelayTime();
+    void setIntervalChosen(const int &input);
+    void setValueModificationChosen(const int &input);
     int getIntervalChosen();
     int getValueModificationChosen();
-    void calculateDelayTime();
+    float calculateDelayTime();
+    void calculateDelayTimeBasedOnInterval();
+    void calculateDelayTiemBasedOnModification();
 };
 
 #endif /* DelayTime_hpp */

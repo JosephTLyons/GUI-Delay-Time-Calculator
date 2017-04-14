@@ -21,9 +21,14 @@ void DelayTime::setTempo(const float &input)
     tempo = input;
 }
 
-float DelayTime::getDelayTime()
+void DelayTime::setIntervalChosen(const int &input)
 {
-    return delayTime;
+    intervalChosen = input;
+}
+
+void DelayTime::setValueModificationChosen(const int &input)
+{
+    valueModificationChosen = input;
 }
 
 int DelayTime::getIntervalChosen()
@@ -36,9 +41,58 @@ int DelayTime::getValueModificationChosen()
     return valueModificationChosen;
 }
 
-void DelayTime::calculateDelayTime()
+float DelayTime::calculateDelayTime()
 {
     const int milliseconds = 60000;
     
-    delayTime = tempo / milliseconds;
+    delayTime = milliseconds / tempo;
+    calculateDelayTimeBasedOnInterval();
+    calculateDelayTiemBasedOnModification();
+    
+    return delayTime;
 }
+
+void DelayTime::calculateDelayTimeBasedOnInterval()
+{
+    if(intervalChosen == wholeNote)
+    {
+        delayTime *= 4;
+    }
+    
+    else if(intervalChosen == halfNote)
+    {
+        delayTime *= 2;
+    }
+    
+    else if(intervalChosen == quarterNote)
+    {
+        // Do nothing
+    }
+    
+    else if(intervalChosen == eigthNote)
+    {
+        delayTime /= 2;
+    }
+    
+    else if(intervalChosen == sixteenthNote)
+    {
+        delayTime /= 4;
+    }
+
+    else if(intervalChosen == thirtySecondNote)
+    {
+        delayTime /= 8;
+    }
+    
+    else if(intervalChosen == sixtyForthNote)
+    {
+        delayTime /= 16;
+    }
+}
+
+void DelayTime::calculateDelayTiemBasedOnModification()
+{
+    
+}
+
+
