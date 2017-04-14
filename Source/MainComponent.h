@@ -34,7 +34,9 @@
     Describe your class and how it works here!
                                                                     //[/Comments]
 */
-class MainComponent  : public Component
+class MainComponent  : public Component,
+                       public ComboBoxListener,
+                       public ButtonListener
 {
 public:
     //==============================================================================
@@ -47,6 +49,8 @@ public:
 
     void paint (Graphics& g) override;
     void resized() override;
+    void comboBoxChanged (ComboBox* comboBoxThatHasChanged) override;
+    void buttonClicked (Button* buttonThatWasClicked) override;
 
 
 
@@ -55,6 +59,13 @@ private:
     //[/UserVariables]
 
     //==============================================================================
+    ScopedPointer<TextEditor> delayTimeTextEditor;
+    ScopedPointer<TextEditor> tempoInputTextEditor;
+    ScopedPointer<ComboBox> comboBox;
+    ScopedPointer<ComboBox> comboBox2;
+    ScopedPointer<TextButton> doubleTempoButton;
+    ScopedPointer<TextButton> halfTempoButton;
+    ScopedPointer<HyperlinkButton> emailHyperlink;
 
 
     //==============================================================================
