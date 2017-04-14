@@ -21,7 +21,7 @@ private:
         wholeNote = 1,
         halfNote,
         quarterNote,
-        eigthNote,
+        eighthNote,
         sixteenthNote,
         thirtySecondNote,
         sixtyForthNote

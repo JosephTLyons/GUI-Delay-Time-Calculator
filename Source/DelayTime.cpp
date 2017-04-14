@@ -69,7 +69,7 @@ void DelayTime::calculateDelayTimeBasedOnInterval()
         // Do nothing
     }
     
-    else if(intervalChosen == eigthNote)
+    else if(intervalChosen == eighthNote)
     {
         delayTime /= 2;
     }
