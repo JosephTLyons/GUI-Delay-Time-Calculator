@@ -10,7 +10,13 @@
 
 DelayTime::DelayTime()
 {
+    tempo          = 0;
     isDotted       = false;
     isTriplet      = false;
     intervalChosen = quarterNote;
+}
+
+void DelayTime::inputTempo(const float &tempo)
+{
+    
 }

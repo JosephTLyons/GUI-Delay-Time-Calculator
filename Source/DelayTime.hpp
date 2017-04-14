@@ -12,10 +12,11 @@
 class DelayTime
 {
 private:
-    bool isDotted;
-    bool isTriplet;
-    int  intervalChosen;
-    enum intervals
+    float tempo;
+    bool  isDotted;
+    bool  isTriplet;
+    int   intervalChosen;
+    enum  intervals
     {
         wholeNote,
         halfNote,
@@ -28,6 +29,8 @@ private:
     
 public:
     DelayTime();
+    
+    void inputTempo(const float &tempo);
 };
 
 #endif /* DelayTime_hpp */
