@@ -16,7 +16,12 @@ DelayTime::DelayTime()
     intervalChosen = quarterNote;
 }
 
-void DelayTime::inputTempo(const float &tempo)
+void DelayTime::setTempo(const float &input)
+{
+    tempo = input;
+}
+
+void DelayTime::calculateDelayTime()
 {
     
 }

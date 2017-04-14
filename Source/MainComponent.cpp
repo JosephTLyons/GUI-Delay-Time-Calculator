@@ -99,6 +99,12 @@ MainComponent::MainComponent ()
     theLyonsDenDelayTimeCalculator->setColour (TextEditor::textColourId, Colours::black);
     theLyonsDenDelayTimeCalculator->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
+    addAndMakeVisible (alterTheCodeHyperlink = new HyperlinkButton (TRANS("Download the Source Code"),
+                                                                    URL ("https://github.com/JosephTLyons/GUI-Delay-Time-Calculator")));
+    alterTheCodeHyperlink->setTooltip (TRANS("This is a link to the GitHub repository, so you can download and edit the code yourself.  I\'m using the JUCE library and the Projucer as well."));
+    alterTheCodeHyperlink->setButtonText (TRANS("Download the Source Code"));
+    alterTheCodeHyperlink->setColour (HyperlinkButton::textColourId, Colour (0xccffffff));
+
 
     //[UserPreSize]
     //[/UserPreSize]
@@ -123,6 +129,7 @@ MainComponent::~MainComponent()
     halfTempoButton = nullptr;
     emailHyperlink = nullptr;
     theLyonsDenDelayTimeCalculator = nullptr;
+    alterTheCodeHyperlink = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -152,8 +159,9 @@ void MainComponent::resized()
     comboBox2->setBounds (200, 70, 100, 30);
     doubleTempoButton->setBounds (150, 70, 50, 30);
     halfTempoButton->setBounds (100, 70, 50, 30);
-    emailHyperlink->setBounds (0, 104, 80, 24);
+    emailHyperlink->setBounds (0, 104, 80, 25);
     theLyonsDenDelayTimeCalculator->setBounds (0, 0, 500, 48);
+    alterTheCodeHyperlink->setBounds (296, 104, 200, 25);
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
 }
@@ -241,7 +249,7 @@ BEGIN_JUCER_METADATA
               virtualName="" explicitFocusOrder="0" pos="100 70 50 30" buttonText="1/2"
               connectedEdges="3" needsCallback="1" radioGroupId="0"/>
   <HYPERLINKBUTTON name="emailHyperlink" id="61f33ae81920857e" memberName="emailHyperlink"
-                   virtualName="" explicitFocusOrder="0" pos="0 104 80 24" tooltip="josephtlyons@gmail.com"
+                   virtualName="" explicitFocusOrder="0" pos="0 104 80 25" tooltip="josephtlyons@gmail.com"
                    textCol="ccffffff" buttonText="Email Me" connectedEdges="0" needsCallback="0"
                    radioGroupId="0" url="josephtlyons@gmail.com"/>
   <LABEL name="theLyonsDenDelayTimeCalculator" id="30efee6a53c20dfb" memberName="theLyonsDenDelayTimeCalculator"
@@ -250,6 +258,10 @@ BEGIN_JUCER_METADATA
          editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
          fontname="Bodoni 72 Oldstyle" fontsize="40.299999999999997158"
          bold="0" italic="0" justification="36"/>
+  <HYPERLINKBUTTON name="alterTheCodeHyperlink" id="1c00e9554abf8ce9" memberName="alterTheCodeHyperlink"
+                   virtualName="" explicitFocusOrder="0" pos="296 104 200 25" tooltip="This is a link to the GitHub repository, so you can download and edit the code yourself.  I'm using the JUCE library and the Projucer as well."
+                   textCol="ccffffff" buttonText="Download the Source Code" connectedEdges="0"
+                   needsCallback="0" radioGroupId="0" url="https://github.com/JosephTLyons/GUI-Delay-Time-Calculator"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA

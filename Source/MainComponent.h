@@ -57,9 +57,9 @@ public:
 
 private:
     //[UserVariables]   -- You can add your own custom variables in this section.
-    
+
     DelayTime delayTimeObject;
-    
+
     //[/UserVariables]
 
     //==============================================================================
@@ -71,6 +71,7 @@ private:
     ScopedPointer<TextButton> halfTempoButton;
     ScopedPointer<HyperlinkButton> emailHyperlink;
     ScopedPointer<Label> theLyonsDenDelayTimeCalculator;
+    ScopedPointer<HyperlinkButton> alterTheCodeHyperlink;
 
 
     //==============================================================================

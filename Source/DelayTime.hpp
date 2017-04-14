@@ -30,7 +30,8 @@ private:
 public:
     DelayTime();
     
-    void inputTempo(const float &tempo);
+    void setTempo(const float &input);
+    void calculateDelayTime();
 };
 
 #endif /* DelayTime_hpp */
