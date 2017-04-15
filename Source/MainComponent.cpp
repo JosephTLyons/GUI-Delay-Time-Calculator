@@ -211,7 +211,7 @@ void MainComponent::comboBoxChanged (ComboBox* comboBoxThatHasChanged)
     {
         //[UserComboBoxCode_modificationComboBox] -- add your combo box handling code here..
 
-        // Set new interval value in class
+        // Set new modification value in class
         delayTimeObject.setValueModificationChosen(modificationComboBox->getSelectedId());
 
         //[/UserComboBoxCode_modificationComboBox]
