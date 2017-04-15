@@ -108,6 +108,7 @@ MainComponent::MainComponent ()
     tempoSlider->setColour (Slider::textBoxHighlightColourId, Colour (0x40ffffff));
     tempoSlider->setColour (Slider::textBoxOutlineColourId, Colour (0xff353535));
     tempoSlider->addListener (this);
+    tempoSlider->setSkewFactor (0.5);
 
     addAndMakeVisible (theLyonsDenDelayTimeCalculator2 = new Label ("theLyonsDenDelayTimeCalculator",
                                                                     TRANS("The Lyons\' Den Delay Time Calculator")));
@@ -339,7 +340,7 @@ BEGIN_JUCER_METADATA
           textboxbkgd="ff353535" textboxhighlight="40ffffff" textboxoutline="ff353535"
           min="1" max="1000" int="0.10000000000000000555" style="LinearHorizontal"
           textBoxPos="TextBoxLeft" textBoxEditable="1" textBoxWidth="50"
-          textBoxHeight="20" skewFactor="1" needsCallback="1"/>
+          textBoxHeight="20" skewFactor="0.5" needsCallback="1"/>
   <LABEL name="theLyonsDenDelayTimeCalculator" id="951f8323b93b29f2" memberName="theLyonsDenDelayTimeCalculator2"
          virtualName="" explicitFocusOrder="0" pos="0 0 600 50" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="The Lyons' Den Delay Time Calculator"
