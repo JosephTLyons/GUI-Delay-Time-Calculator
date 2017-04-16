@@ -71,11 +71,11 @@ private:
     ScopedPointer<TextButton> doubleTempoButton;
     ScopedPointer<TextButton> halfTempoButton;
     ScopedPointer<HyperlinkButton> emailHyperlink;
-    ScopedPointer<Label> theLyonsDenDelayTimeCalculator;
     ScopedPointer<HyperlinkButton> alterTheCodeHyperlink;
     ScopedPointer<Slider> tempoSlider;
     ScopedPointer<Label> theLyonsDenDelayTimeCalculator2;
     ScopedPointer<Label> msLabel;
+    ScopedPointer<TextButton> tapTempoButton;
 
 
     //==============================================================================
