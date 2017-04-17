@@ -6,6 +6,7 @@
               companyEmail="josephtlyons@gmail.com">
   <MAINGROUP id="wVdkZw" name="Delay Time Calculator">
     <GROUP id="{35A3474B-79D8-920E-E136-88F8E58081F5}" name="Source">
+      <FILE id="Ltw8fF" name="README.md" compile="0" resource="1" file="README.md"/>
       <FILE id="WYZacz" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
       <FILE id="SyC7oU" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
       <FILE id="BhkZlp" name="MainComponent.cpp" compile="1" resource="0"
