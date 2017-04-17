@@ -150,9 +150,8 @@ MainComponent::MainComponent ()
     // Set delay time editor font size
     delayTimeTextEditor->setFont(60);
 
-//    Colour->white
-//
-//    modificationComboBox->setColour(modificationComboBox->backgroundColourId,   );
+    // Right click for velocity sensitive sliding
+    tempoSlider->setPopupMenuEnabled(true);
 
     //[/Constructor]
 }
