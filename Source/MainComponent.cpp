@@ -39,8 +39,8 @@ MainComponent::MainComponent ()
     delayTimeTextEditor->setScrollbarsShown (true);
     delayTimeTextEditor->setCaretVisible (false);
     delayTimeTextEditor->setPopupMenuEnabled (true);
-    delayTimeTextEditor->setColour (TextEditor::textColourId, Colour (0xffefefef));
-    delayTimeTextEditor->setColour (TextEditor::backgroundColourId, Colour (0xff5a5a5a));
+    delayTimeTextEditor->setColour (TextEditor::textColourId, Colour (0xffadaaaa));
+    delayTimeTextEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
     delayTimeTextEditor->setText (String());
 
     addAndMakeVisible (modificationComboBox = new ComboBox ("modificationComboBox"));
@@ -72,19 +72,19 @@ MainComponent::MainComponent ()
     doubleTempoButton->setButtonText (TRANS("2x"));
     doubleTempoButton->setConnectedEdges (Button::ConnectedOnLeft | Button::ConnectedOnRight);
     doubleTempoButton->addListener (this);
-    doubleTempoButton->setColour (TextButton::buttonColourId, Colour (0xffefefef));
+    doubleTempoButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
 
     addAndMakeVisible (halfTempoButton = new TextButton ("halfTempoButton"));
     halfTempoButton->setButtonText (TRANS("1/2x"));
     halfTempoButton->setConnectedEdges (Button::ConnectedOnLeft | Button::ConnectedOnRight);
     halfTempoButton->addListener (this);
-    halfTempoButton->setColour (TextButton::buttonColourId, Colour (0xffefefef));
+    halfTempoButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
 
     addAndMakeVisible (emailHyperlink = new HyperlinkButton (TRANS("Email Me"),
                                                              URL ("josephtlyons@gmail.com")));
     emailHyperlink->setTooltip (TRANS("josephtlyons@gmail.com"));
     emailHyperlink->setButtonText (TRANS("Email Me"));
-    emailHyperlink->setColour (HyperlinkButton::textColourId, Colour (0xffefefef));
+    emailHyperlink->setColour (HyperlinkButton::textColourId, Colour (0xffadaaaa));
 
     addAndMakeVisible (theLyonsDenDelayTimeCalculator = new Label ("theLyonsDenDelayTimeCalculator",
                                                                    TRANS("The Lyons\' Den Delay Time Calculator")));
@@ -99,7 +99,7 @@ MainComponent::MainComponent ()
                                                                     URL ("https://github.com/JosephTLyons/GUI-Delay-Time-Calculator")));
     alterTheCodeHyperlink->setTooltip (TRANS("https://github.com/JosephTLyons/GUI-Delay-Time-Calculator"));
     alterTheCodeHyperlink->setButtonText (TRANS("Download the Source Code"));
-    alterTheCodeHyperlink->setColour (HyperlinkButton::textColourId, Colour (0xffefefef));
+    alterTheCodeHyperlink->setColour (HyperlinkButton::textColourId, Colour (0xffadaaaa));
 
     addAndMakeVisible (tempoSlider = new Slider ("tempoSlider"));
     tempoSlider->setRange (1, 1000, 0.1);
@@ -107,10 +107,10 @@ MainComponent::MainComponent ()
     tempoSlider->setTextBoxStyle (Slider::TextBoxLeft, false, 50, 20);
     tempoSlider->setColour (Slider::thumbColourId, Colour (0xffefefef));
     tempoSlider->setColour (Slider::trackColourId, Colour (0xffefefef));
-    tempoSlider->setColour (Slider::textBoxTextColourId, Colour (0xffefefef));
-    tempoSlider->setColour (Slider::textBoxBackgroundColourId, Colour (0xff5a5a5a));
-    tempoSlider->setColour (Slider::textBoxHighlightColourId, Colour (0xffefefef));
-    tempoSlider->setColour (Slider::textBoxOutlineColourId, Colour (0xff5a5a5a));
+    tempoSlider->setColour (Slider::textBoxTextColourId, Colour (0xffadaaaa));
+    tempoSlider->setColour (Slider::textBoxBackgroundColourId, Colour (0xff353535));
+    tempoSlider->setColour (Slider::textBoxHighlightColourId, Colour (0xffadaaaa));
+    tempoSlider->setColour (Slider::textBoxOutlineColourId, Colour (0xff353535));
     tempoSlider->addListener (this);
     tempoSlider->setSkewFactor (0.5);
 
@@ -119,7 +119,7 @@ MainComponent::MainComponent ()
     theLyonsDenDelayTimeCalculator2->setFont (Font ("Bodoni 72 Oldstyle", 47.40f, Font::plain));
     theLyonsDenDelayTimeCalculator2->setJustificationType (Justification::centred);
     theLyonsDenDelayTimeCalculator2->setEditable (false, false, false);
-    theLyonsDenDelayTimeCalculator2->setColour (Label::textColourId, Colour (0xffefefef));
+    theLyonsDenDelayTimeCalculator2->setColour (Label::textColourId, Colour (0xffadaaaa));
     theLyonsDenDelayTimeCalculator2->setColour (TextEditor::textColourId, Colours::black);
     theLyonsDenDelayTimeCalculator2->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
@@ -128,7 +128,7 @@ MainComponent::MainComponent ()
     msLabel->setFont (Font ("Bodoni 72 Oldstyle", 47.40f, Font::plain));
     msLabel->setJustificationType (Justification::centred);
     msLabel->setEditable (false, false, false);
-    msLabel->setColour (Label::textColourId, Colour (0xffefefef));
+    msLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
     msLabel->setColour (TextEditor::textColourId, Colours::black);
     msLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
@@ -184,7 +184,7 @@ void MainComponent::paint (Graphics& g)
     //[UserPrePaint] Add your own custom painting code here..
     //[/UserPrePaint]
 
-    g.fillAll (Colour (0xff5a5a5a));
+    g.fillAll (Colour (0xff353535));
 
     //[UserPaint] Add your own custom painting code here..
     //[/UserPaint]
@@ -309,10 +309,10 @@ BEGIN_JUCER_METADATA
                  parentClasses="public Component" constructorParams="" variableInitialisers=""
                  snapPixels="8" snapActive="1" snapShown="1" overlayOpacity="0.330"
                  fixedSize="1" initialWidth="600" initialHeight="150">
-  <BACKGROUND backgroundColour="ff5a5a5a"/>
+  <BACKGROUND backgroundColour="ff353535"/>
   <TEXTEDITOR name="delayTimeTextEditor" id="bf6dfd83597fb1a6" memberName="delayTimeTextEditor"
-              virtualName="" explicitFocusOrder="0" pos="300 80 218 70" textcol="ffefefef"
-              bkgcol="ff5a5a5a" initialText="" multiline="0" retKeyStartsLine="0"
+              virtualName="" explicitFocusOrder="0" pos="300 80 218 70" textcol="ffadaaaa"
+              bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
               readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <COMBOBOX name="modificationComboBox" id="3b8465bdbe8efc8f" memberName="modificationComboBox"
             virtualName="" explicitFocusOrder="0" pos="150 80 150 30" editable="0"
@@ -323,14 +323,14 @@ BEGIN_JUCER_METADATA
             layout="33" items="1&#10;1/2&#10;1/4&#10;1/8&#10;1/16&#10;1/32&#10;1/64&#10;1/128"
             textWhenNonSelected="" textWhenNoItems=""/>
   <TEXTBUTTON name="doubleTempoButton" id="74a1161b6a8bd75d" memberName="doubleTempoButton"
-              virtualName="" explicitFocusOrder="0" pos="550 50 50 30" bgColOff="ffefefef"
+              virtualName="" explicitFocusOrder="0" pos="550 50 50 30" bgColOff="ffadaaaa"
               buttonText="2x" connectedEdges="3" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="halfTempoButton" id="edac6a2aecdd8ef5" memberName="halfTempoButton"
-              virtualName="" explicitFocusOrder="0" pos="500 50 50 30" bgColOff="ffefefef"
+              virtualName="" explicitFocusOrder="0" pos="500 50 50 30" bgColOff="ffadaaaa"
               buttonText="1/2x" connectedEdges="3" needsCallback="1" radioGroupId="0"/>
   <HYPERLINKBUTTON name="emailHyperlink" id="61f33ae81920857e" memberName="emailHyperlink"
                    virtualName="" explicitFocusOrder="0" pos="0 120 80 25" tooltip="josephtlyons@gmail.com"
-                   textCol="ffefefef" buttonText="Email Me" connectedEdges="0" needsCallback="0"
+                   textCol="ffadaaaa" buttonText="Email Me" connectedEdges="0" needsCallback="0"
                    radioGroupId="0" url="josephtlyons@gmail.com"/>
   <LABEL name="theLyonsDenDelayTimeCalculator" id="30efee6a53c20dfb" memberName="theLyonsDenDelayTimeCalculator"
          virtualName="" explicitFocusOrder="0" pos="0 0 600 50" textCol="ffadaaaa"
@@ -340,23 +340,23 @@ BEGIN_JUCER_METADATA
          bold="0" italic="0" justification="36"/>
   <HYPERLINKBUTTON name="alterTheCodeHyperlink" id="1c00e9554abf8ce9" memberName="alterTheCodeHyperlink"
                    virtualName="" explicitFocusOrder="0" pos="97 120 200 25" tooltip="https://github.com/JosephTLyons/GUI-Delay-Time-Calculator"
-                   textCol="ffefefef" buttonText="Download the Source Code" connectedEdges="0"
+                   textCol="ffadaaaa" buttonText="Download the Source Code" connectedEdges="0"
                    needsCallback="0" radioGroupId="0" url="https://github.com/JosephTLyons/GUI-Delay-Time-Calculator"/>
   <SLIDER name="tempoSlider" id="1b36c66db8e52ea5" memberName="tempoSlider"
           virtualName="" explicitFocusOrder="0" pos="0 50 500 30" thumbcol="ffefefef"
-          trackcol="ffefefef" textboxtext="ffefefef" textboxbkgd="ff5a5a5a"
-          textboxhighlight="ffefefef" textboxoutline="ff5a5a5a" min="1"
+          trackcol="ffefefef" textboxtext="ffadaaaa" textboxbkgd="ff353535"
+          textboxhighlight="ffadaaaa" textboxoutline="ff353535" min="1"
           max="1000" int="0.10000000000000000555" style="LinearHorizontal"
           textBoxPos="TextBoxLeft" textBoxEditable="1" textBoxWidth="50"
           textBoxHeight="20" skewFactor="0.5" needsCallback="1"/>
   <LABEL name="theLyonsDenDelayTimeCalculator" id="951f8323b93b29f2" memberName="theLyonsDenDelayTimeCalculator2"
-         virtualName="" explicitFocusOrder="0" pos="0 0 600 50" textCol="ffefefef"
+         virtualName="" explicitFocusOrder="0" pos="0 0 600 50" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="The Lyons' Den Delay Time Calculator"
          editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
          fontname="Bodoni 72 Oldstyle" fontsize="47.399999999999998579"
          bold="0" italic="0" justification="36"/>
   <LABEL name="msLabel" id="28c03c389359c67" memberName="msLabel" virtualName=""
-         explicitFocusOrder="0" pos="518 80 82 70" textCol="ffefefef"
+         explicitFocusOrder="0" pos="518 80 82 70" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="ms" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Bodoni 72 Oldstyle"
          fontsize="47.399999999999998579" bold="0" italic="0" justification="36"/>
