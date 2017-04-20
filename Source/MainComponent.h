@@ -36,7 +36,6 @@
                                                                     //[/Comments]
 */
 class MainComponent  : public Component,
-                       public ComboBoxListener,
                        public ButtonListener,
                        public SliderListener
 {
@@ -51,7 +50,6 @@ public:
 
     void paint (Graphics& g) override;
     void resized() override;
-    void comboBoxChanged (ComboBox* comboBoxThatHasChanged) override;
     void buttonClicked (Button* buttonThatWasClicked) override;
     void sliderValueChanged (Slider* sliderThatWasMoved) override;
 
@@ -65,9 +63,6 @@ private:
     //[/UserVariables]
 
     //==============================================================================
-    ScopedPointer<TextEditor> delayTimeTextEditor;
-    ScopedPointer<ComboBox> modificationComboBox;
-    ScopedPointer<ComboBox> intervalsComboBox;
     ScopedPointer<TextButton> doubleTempoButton;
     ScopedPointer<TextButton> halfTempoButton;
     ScopedPointer<HyperlinkButton> emailHyperlink;
@@ -75,7 +70,22 @@ private:
     ScopedPointer<HyperlinkButton> alterTheCodeHyperlink;
     ScopedPointer<Slider> tempoSlider;
     ScopedPointer<Label> theLyonsDenDelayTimeCalculator2;
-    ScopedPointer<Label> msLabel;
+    ScopedPointer<HyperlinkButton> donateHyperlink;
+    ScopedPointer<Label> normalLabel;
+    ScopedPointer<Label> dottedLabel;
+    ScopedPointer<Label> tripletLabel;
+    ScopedPointer<Label> wholeLabel;
+    ScopedPointer<Label> halfLabel;
+    ScopedPointer<Label> quarterLabel;
+    ScopedPointer<Label> eighthLabel;
+    ScopedPointer<Label> sixteenthLabel;
+    ScopedPointer<Label> thirtySecondLabel;
+    ScopedPointer<Label> thirtySecondLabel2;
+    ScopedPointer<Label> sixtyFourthLabel;
+    ScopedPointer<Label> oneHundreAndTwentyEighthLabel;
+    ScopedPointer<TextEditor> wholeNormalEditor;
+    ScopedPointer<TextEditor> wholeDottedEditor;
+    ScopedPointer<TextEditor> wholeTripletEditor;
 
 
     //==============================================================================

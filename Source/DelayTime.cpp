@@ -10,107 +10,55 @@
 
 DelayTime::DelayTime()
 {
-    tempo                   = 0;
-    delayTime               = 0;
-    intervalChosen          = quarterNote;
-    valueModificationChosen = normal;
+    tempo                     = 0;
+    
+    whole                     = 0;
+    half                      = 0;
+    quarter                   = 0;
+    eighth                    = 0;
+    sixteenth                 = 0;
+    thirtySecond              = 0;
+    sixtyFourth               = 0;
+    oneHundredAndTwentyEighth = 0;
+    
+    dotted                    = 1.5;
+    triplet                   = 2 / 3.0f;
 }
 
 void DelayTime::setTempo(const float &input)
 {
     tempo = input;
+    calculateDelayTimes();
 }
 
-void DelayTime::setIntervalChosen(const int &input)
+void DelayTime::calculateDelayTimes()
 {
-    intervalChosen = input;
+    quarter                   = 60000 / tempo;
+    
+    whole                     = quarter * 4;
+    
+    half                      = quarter * 2;
+    
+    eighth                    = quarter / 2;
+    
+    sixteenth                 = quarter / 4;
+    
+    thirtySecond              = quarter / 8;
+    
+    sixtyFourth               = quarter / 16;
+    
+    oneHundredAndTwentyEighth = quarter / 32;
 }
 
-void DelayTime::setValueModificationChosen(const int &input)
+float DelayTime::getWholeNormal()
 {
-    valueModificationChosen = input;
+    return whole;
 }
 
-int DelayTime::getIntervalChosen()
+float DelayTime::getWholeDottedNormal()
 {
-    return intervalChosen;
+    return whole * dotted;
 }
 
-int DelayTime::getValueModificationChosen()
-{
-    return valueModificationChosen;
-}
-
-float DelayTime::calculateDelayTime()
-{
-    const int milliseconds = 60000;
-    
-    delayTime = milliseconds / tempo;
-    calculateDelayTimeBasedOnInterval();
-    calculateDelayTiemBasedOnModification();
-    
-    return delayTime;
-}
-
-void DelayTime::calculateDelayTimeBasedOnInterval()
-{
-    if(intervalChosen == wholeNote)
-    {
-        delayTime *= 4;
-    }
-    
-    else if(intervalChosen == halfNote)
-    {
-        delayTime *= 2;
-    }
-    
-    else if(intervalChosen == quarterNote)
-    {
-        // Do nothing
-    }
-    
-    else if(intervalChosen == eighthNote)
-    {
-        delayTime /= 2;
-    }
-    
-    else if(intervalChosen == sixteenthNote)
-    {
-        delayTime /= 4;
-    }
-
-    else if(intervalChosen == thirtySecondNote)
-    {
-        delayTime /= 8;
-    }
-    
-    else if(intervalChosen == sixtyForthNote)
-    {
-        delayTime /= 16;
-    }
-    
-    else if(intervalChosen == oneHundredAndTwenthyEighth)
-    {
-        delayTime /= 32;
-    }
-}
-
-void DelayTime::calculateDelayTiemBasedOnModification()
-{
-    if(valueModificationChosen == normal)
-    {
-        // Do Nothing
-    }
-    
-    else if(valueModificationChosen == dotted)
-    {
-        delayTime *= 1.5;
-    }
-    
-    else if(valueModificationChosen == triplet)
-    {
-        delayTime *= ((float) 2 / 3);
-    }
-}
 
 

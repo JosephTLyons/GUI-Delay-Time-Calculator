@@ -13,42 +13,28 @@ class DelayTime
 {
 private:
     float tempo;
-    float delayTime;
     
-    int   intervalChosen;
-    enum  intervals
-    {
-        wholeNote = 1,
-        halfNote,
-        quarterNote,
-        eighthNote,
-        sixteenthNote,
-        thirtySecondNote,
-        sixtyForthNote,
-        oneHundredAndTwenthyEighth
-    };
+    float whole;
+    float half;
+    float quarter;
+    float eighth;
+    float sixteenth;
+    float thirtySecond;
+    float sixtyFourth;
+    float oneHundredAndTwentyEighth;
     
-    int   valueModificationChosen;
-    enum  valueModification
-    {
-        normal = 1,
-        dotted,
-        triplet
-    };
+    float dotted;
+    float triplet;
     
-    // Private function members
-    void calculateDelayTimeBasedOnInterval();
-    void calculateDelayTiemBasedOnModification();
     
 public:
     DelayTime();
     
     void setTempo(const float &input);
-    void setIntervalChosen(const int &input);
-    void setValueModificationChosen(const int &input);
-    int getIntervalChosen();
-    int getValueModificationChosen();
-    float calculateDelayTime();
+    void calculateDelayTimes();
+    
+    float getWholeNormal();
+    float getWholeDottedNormal();
 };
 
 #endif /* DelayTime_hpp */
