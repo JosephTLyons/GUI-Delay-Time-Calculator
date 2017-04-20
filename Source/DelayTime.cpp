@@ -94,3 +94,18 @@ float DelayTime::getQuarterTriplet()
 {
     return quarter * triplet;
 }
+
+float DelayTime::getEighthNormal()
+{
+    return eighth;
+}
+
+float DelayTime::getEighthDotted()
+{
+    return eighth * dotted;
+}
+
+float DelayTime::getEighthTriplet()
+{
+    return eighth * triplet;
+}

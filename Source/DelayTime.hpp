@@ -44,6 +44,10 @@ public:
     float getQuarterNormal();
     float getQuarterDotted();
     float getQuarterTriplet();
+    
+    float getEighthNormal();
+    float getEighthDotted();
+    float getEighthTriplet();
 };
 
 #endif /* DelayTime_hpp */

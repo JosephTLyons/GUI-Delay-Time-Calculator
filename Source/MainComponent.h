@@ -59,6 +59,7 @@ private:
     //[UserVariables]   -- You can add your own custom variables in this section.
 
     DelayTime delayTimeObject;
+    int textEditorFontSize;
 
     //[/UserVariables]
 
@@ -92,6 +93,9 @@ private:
     ScopedPointer<TextEditor> quarterNormalEditor;
     ScopedPointer<TextEditor> quarterDottedEditor;
     ScopedPointer<TextEditor> quarterTripletEditor;
+    ScopedPointer<TextEditor> eighthNormalEditor;
+    ScopedPointer<TextEditor> eighthDottedEditor;
+    ScopedPointer<TextEditor> eighthTripletEditor;
 
 
     //==============================================================================

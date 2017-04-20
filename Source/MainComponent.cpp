@@ -300,6 +300,39 @@ MainComponent::MainComponent ()
     quarterTripletEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
     quarterTripletEditor->setText (String());
 
+    addAndMakeVisible (eighthNormalEditor = new TextEditor ("eighthNormalEditor"));
+    eighthNormalEditor->setMultiLine (false);
+    eighthNormalEditor->setReturnKeyStartsNewLine (false);
+    eighthNormalEditor->setReadOnly (true);
+    eighthNormalEditor->setScrollbarsShown (true);
+    eighthNormalEditor->setCaretVisible (false);
+    eighthNormalEditor->setPopupMenuEnabled (true);
+    eighthNormalEditor->setColour (TextEditor::textColourId, Colours::white);
+    eighthNormalEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
+    eighthNormalEditor->setText (String());
+
+    addAndMakeVisible (eighthDottedEditor = new TextEditor ("eighthDottedEditor"));
+    eighthDottedEditor->setMultiLine (false);
+    eighthDottedEditor->setReturnKeyStartsNewLine (false);
+    eighthDottedEditor->setReadOnly (true);
+    eighthDottedEditor->setScrollbarsShown (true);
+    eighthDottedEditor->setCaretVisible (false);
+    eighthDottedEditor->setPopupMenuEnabled (true);
+    eighthDottedEditor->setColour (TextEditor::textColourId, Colours::white);
+    eighthDottedEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
+    eighthDottedEditor->setText (String());
+
+    addAndMakeVisible (eighthTripletEditor = new TextEditor ("eighthTripletEditor"));
+    eighthTripletEditor->setMultiLine (false);
+    eighthTripletEditor->setReturnKeyStartsNewLine (false);
+    eighthTripletEditor->setReadOnly (true);
+    eighthTripletEditor->setScrollbarsShown (true);
+    eighthTripletEditor->setCaretVisible (false);
+    eighthTripletEditor->setPopupMenuEnabled (true);
+    eighthTripletEditor->setColour (TextEditor::textColourId, Colours::white);
+    eighthTripletEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
+    eighthTripletEditor->setText (String());
+
 
     //[UserPreSize]
     //[/UserPreSize]
@@ -313,6 +346,26 @@ MainComponent::MainComponent ()
 
     // Right click for velocity sensitive sliding
     tempoSlider->setPopupMenuEnabled(true);
+    
+    // Set text editor font sizes;
+    textEditorFontSize = 25;
+    
+    wholeNormalEditor->setFont(textEditorFontSize);
+    wholeDottedEditor->setFont(textEditorFontSize);
+    wholeTripletEditor->setFont(textEditorFontSize);
+    
+    halfNormalEditor->setFont(textEditorFontSize);
+    halfDottedEditor->setFont(textEditorFontSize);
+    halfTripletEditor->setFont(textEditorFontSize);
+    
+    quarterNormalEditor->setFont(textEditorFontSize);
+    quarterDottedEditor->setFont(textEditorFontSize);
+    quarterTripletEditor->setFont(textEditorFontSize);
+    
+    eighthNormalEditor->setFont(textEditorFontSize);
+    eighthDottedEditor->setFont(textEditorFontSize);
+    eighthTripletEditor->setFont(textEditorFontSize);
+    
 
     //[/Constructor]
 }
@@ -351,6 +404,9 @@ MainComponent::~MainComponent()
     quarterNormalEditor = nullptr;
     quarterDottedEditor = nullptr;
     quarterTripletEditor = nullptr;
+    eighthNormalEditor = nullptr;
+    eighthDottedEditor = nullptr;
+    eighthTripletEditor = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -403,6 +459,9 @@ void MainComponent::resized()
     quarterNormalEditor->setBounds (150, 190, 150, 30);
     quarterDottedEditor->setBounds (300, 190, 150, 30);
     quarterTripletEditor->setBounds (450, 190, 150, 30);
+    eighthNormalEditor->setBounds (150, 230, 150, 30);
+    eighthDottedEditor->setBounds (300, 230, 150, 30);
+    eighthTripletEditor->setBounds (450, 230, 150, 30);
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
 }
@@ -456,6 +515,10 @@ void MainComponent::sliderValueChanged (Slider* sliderThatWasMoved)
         quarterNormalEditor->setText((String) delayTimeObject.getQuarterNormal());
         quarterDottedEditor->setText((String) delayTimeObject.getQuarterDotted());
         quarterTripletEditor->setText((String) delayTimeObject.getQuarterTriplet());
+        
+        eighthNormalEditor->setText((String) delayTimeObject.getEighthNormal());
+        eighthDottedEditor->setText((String) delayTimeObject.getEighthDotted());
+        eighthTripletEditor->setText((String) delayTimeObject.getEighthTriplet());
 
         //[/UserSliderCode_tempoSlider]
     }
@@ -617,6 +680,18 @@ BEGIN_JUCER_METADATA
               readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="quarterTripletEditor" id="d2aae6e014d232dc" memberName="quarterTripletEditor"
               virtualName="" explicitFocusOrder="0" pos="450 190 150 30" textcol="ffffffff"
+              bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
+              readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
+  <TEXTEDITOR name="eighthNormalEditor" id="9d2ae2448e7900db" memberName="eighthNormalEditor"
+              virtualName="" explicitFocusOrder="0" pos="150 230 150 30" textcol="ffffffff"
+              bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
+              readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
+  <TEXTEDITOR name="eighthDottedEditor" id="a4a8910a489e585b" memberName="eighthDottedEditor"
+              virtualName="" explicitFocusOrder="0" pos="300 230 150 30" textcol="ffffffff"
+              bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
+              readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
+  <TEXTEDITOR name="eighthTripletEditor" id="156bf5d61b16ddce" memberName="eighthTripletEditor"
+              virtualName="" explicitFocusOrder="0" pos="450 230 150 30" textcol="ffffffff"
               bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
               readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
 </JUCER_COMPONENT>
