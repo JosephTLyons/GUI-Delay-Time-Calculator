@@ -5,8 +5,6 @@ A simple application that calculates delay and reverb pre-delay times based on t
 
 Changelog:
 
-April 15, 2017 - V 1.0 intial release:
-
 April 20, 2017 - V 1.1:
 1. Displays all values at once
 2. Changed skewing of slider so that most frequent tempos are in the first half of the slider (1 - 250ish).  This gives the user a bit more accuracy when using these values.
@@ -14,8 +12,10 @@ April 20, 2017 - V 1.1:
 4. Right Click to access velocity sensitve scrolling on slider
 5. Repositioned all controls to be in close proximity and left room for tap to set delay button
 
-Features to add:
+April 15, 2017 - V 1.0 intial release:
+
+Features still to add:
 
 * App Icon
-* Tap Tempo Feature from BPM app
+* Tap Tempo Feature from BPM app (coming in 1.2 - soon)
 * Change to whole BPM values and use modifier buttons to access 1/10th notes (or any other method to access these values
