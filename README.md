@@ -11,6 +11,7 @@ April 20, 2017 - V 1.1:
 3. Unified theme of GUI a bit by changing color of 1/2x and 2x buttons to match other colors,
 4. Right Click to access velocity sensitve scrolling on slider
 5. Repositioned all controls to be in close proximity and left room for tap to set delay button
+6. App is now code signed (I'm officially an Apple Developer)
 
 April 15, 2017 - V 1.0 intial release:
 
