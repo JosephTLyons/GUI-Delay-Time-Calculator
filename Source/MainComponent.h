@@ -96,6 +96,9 @@ private:
     ScopedPointer<TextEditor> eighthNormalEditor;
     ScopedPointer<TextEditor> eighthDottedEditor;
     ScopedPointer<TextEditor> eighthTripletEditor;
+    ScopedPointer<TextEditor> sixteenthNormalEditor;
+    ScopedPointer<TextEditor> sixteenthDottedEditor;
+    ScopedPointer<TextEditor> sixteenthTripletEditor;
 
 
     //==============================================================================

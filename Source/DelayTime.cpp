@@ -109,3 +109,18 @@ float DelayTime::getEighthTriplet()
 {
     return eighth * triplet;
 }
+
+float DelayTime::getSixteenthNormal()
+{
+    return sixteenth;
+}
+
+float DelayTime::getSixteenthDotted()
+{
+    return sixteenth * dotted;
+}
+
+float DelayTime::getSixteenthTriplet()
+{
+    return sixteenth * triplet;
+}

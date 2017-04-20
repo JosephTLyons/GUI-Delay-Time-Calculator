@@ -48,6 +48,10 @@ public:
     float getEighthNormal();
     float getEighthDotted();
     float getEighthTriplet();
+    
+    float getSixteenthNormal();
+    float getSixteenthDotted();
+    float getSixteenthTriplet();
 };
 
 #endif /* DelayTime_hpp */
