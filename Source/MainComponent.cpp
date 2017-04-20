@@ -423,6 +423,39 @@ MainComponent::MainComponent ()
     sixtyFourthTripletEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
     sixtyFourthTripletEditor->setText (String());
 
+    addAndMakeVisible (oneTwentyEighthNormalEditor = new TextEditor ("oneTwentyEighthNormalEditor"));
+    oneTwentyEighthNormalEditor->setMultiLine (false);
+    oneTwentyEighthNormalEditor->setReturnKeyStartsNewLine (false);
+    oneTwentyEighthNormalEditor->setReadOnly (true);
+    oneTwentyEighthNormalEditor->setScrollbarsShown (true);
+    oneTwentyEighthNormalEditor->setCaretVisible (false);
+    oneTwentyEighthNormalEditor->setPopupMenuEnabled (true);
+    oneTwentyEighthNormalEditor->setColour (TextEditor::textColourId, Colours::white);
+    oneTwentyEighthNormalEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
+    oneTwentyEighthNormalEditor->setText (String());
+
+    addAndMakeVisible (oneTwentyEighthDottedEditor = new TextEditor ("oneTwentyEighthDottedEditor"));
+    oneTwentyEighthDottedEditor->setMultiLine (false);
+    oneTwentyEighthDottedEditor->setReturnKeyStartsNewLine (false);
+    oneTwentyEighthDottedEditor->setReadOnly (true);
+    oneTwentyEighthDottedEditor->setScrollbarsShown (true);
+    oneTwentyEighthDottedEditor->setCaretVisible (false);
+    oneTwentyEighthDottedEditor->setPopupMenuEnabled (true);
+    oneTwentyEighthDottedEditor->setColour (TextEditor::textColourId, Colours::white);
+    oneTwentyEighthDottedEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
+    oneTwentyEighthDottedEditor->setText (String());
+
+    addAndMakeVisible (oneTwentyEighthTripletEditor = new TextEditor ("oneTwentyEighthTripletEditor"));
+    oneTwentyEighthTripletEditor->setMultiLine (false);
+    oneTwentyEighthTripletEditor->setReturnKeyStartsNewLine (false);
+    oneTwentyEighthTripletEditor->setReadOnly (true);
+    oneTwentyEighthTripletEditor->setScrollbarsShown (true);
+    oneTwentyEighthTripletEditor->setCaretVisible (false);
+    oneTwentyEighthTripletEditor->setPopupMenuEnabled (true);
+    oneTwentyEighthTripletEditor->setColour (TextEditor::textColourId, Colours::white);
+    oneTwentyEighthTripletEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
+    oneTwentyEighthTripletEditor->setText (String());
+
 
     //[UserPreSize]
     //[/UserPreSize]
@@ -463,10 +496,14 @@ MainComponent::MainComponent ()
     thirtySecondNormalEditor->setFont(textEditorFontSize);
     thirtySecondDottedEditor->setFont(textEditorFontSize);
     thirtySecondTripletEditor->setFont(textEditorFontSize);
-    
+
     sixtyFourthNormalEditor->setFont(textEditorFontSize);
     sixtyFourthDottedEditor->setFont(textEditorFontSize);
     sixtyFourthTripletEditor->setFont(textEditorFontSize);
+    
+    oneTwentyEighthNormalEditor->setFont(textEditorFontSize);
+    oneTwentyEighthDottedEditor->setFont(textEditorFontSize);
+    oneTwentyEighthTripletEditor->setFont(textEditorFontSize);
 
     //[/Constructor]
 }
@@ -516,6 +553,9 @@ MainComponent::~MainComponent()
     sixtyFourthNormalEditor = nullptr;
     sixtyFourthDottedEditor = nullptr;
     sixtyFourthTripletEditor = nullptr;
+    oneTwentyEighthNormalEditor = nullptr;
+    oneTwentyEighthDottedEditor = nullptr;
+    oneTwentyEighthTripletEditor = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -579,6 +619,9 @@ void MainComponent::resized()
     sixtyFourthNormalEditor->setBounds (150, 350, 150, 30);
     sixtyFourthDottedEditor->setBounds (300, 350, 150, 30);
     sixtyFourthTripletEditor->setBounds (450, 350, 150, 30);
+    oneTwentyEighthNormalEditor->setBounds (150, 390, 150, 30);
+    oneTwentyEighthDottedEditor->setBounds (300, 390, 150, 30);
+    oneTwentyEighthTripletEditor->setBounds (450, 390, 150, 30);
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
 }
@@ -644,10 +687,14 @@ void MainComponent::sliderValueChanged (Slider* sliderThatWasMoved)
         thirtySecondNormalEditor->setText((String) delayTimeObject.getThirtySecondNormal());
         thirtySecondDottedEditor->setText((String) delayTimeObject.getThirtySecondDotted());
         thirtySecondTripletEditor->setText((String) delayTimeObject.getThirtySecondTriplet());
-        
+
         sixtyFourthNormalEditor->setText((String) delayTimeObject.getSixtyFouthNormal());
         sixtyFourthDottedEditor->setText((String) delayTimeObject.getSixtyFouthDotted());
         sixtyFourthTripletEditor->setText((String) delayTimeObject.getSixtyFouthTriplet());
+        
+        oneTwentyEighthNormalEditor->setText((String) delayTimeObject.getOneHundredAndTwentyEighthNormal());
+        oneTwentyEighthDottedEditor->setText((String) delayTimeObject.getOneHundredAndTwentyEighthDotted());
+        oneTwentyEighthTripletEditor->setText((String) delayTimeObject.getOneHundredAndTwentyEighthTriplet());
 
         //[/UserSliderCode_tempoSlider]
     }
@@ -851,6 +898,18 @@ BEGIN_JUCER_METADATA
               readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="sixtyFourthTripletEditor" id="39510d40072f9d4d" memberName="sixtyFourthTripletEditor"
               virtualName="" explicitFocusOrder="0" pos="450 350 150 30" textcol="ffffffff"
+              bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
+              readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
+  <TEXTEDITOR name="oneTwentyEighthNormalEditor" id="60cb84b268764f6" memberName="oneTwentyEighthNormalEditor"
+              virtualName="" explicitFocusOrder="0" pos="150 390 150 30" textcol="ffffffff"
+              bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
+              readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
+  <TEXTEDITOR name="oneTwentyEighthDottedEditor" id="e78e5d3aa66c7f4" memberName="oneTwentyEighthDottedEditor"
+              virtualName="" explicitFocusOrder="0" pos="300 390 150 30" textcol="ffffffff"
+              bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
+              readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
+  <TEXTEDITOR name="oneTwentyEighthTripletEditor" id="56dcaea61d27bce1" memberName="oneTwentyEighthTripletEditor"
+              virtualName="" explicitFocusOrder="0" pos="450 390 150 30" textcol="ffffffff"
               bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
               readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
 </JUCER_COMPONENT>

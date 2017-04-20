@@ -154,3 +154,18 @@ float DelayTime::getSixtyFouthTriplet()
 {
     return sixtyFourth * triplet;
 }
+
+float DelayTime::getOneHundredAndTwentyEighthNormal()
+{
+    return oneHundredAndTwentyEighth;
+}
+
+float DelayTime::getOneHundredAndTwentyEighthDotted()
+{
+    return oneHundredAndTwentyEighth * dotted;
+}
+
+float DelayTime::getOneHundredAndTwentyEighthTriplet()
+{
+    return oneHundredAndTwentyEighth * triplet;
+}

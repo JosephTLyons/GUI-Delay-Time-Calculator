@@ -60,6 +60,10 @@ public:
     float getSixtyFouthNormal();
     float getSixtyFouthDotted();
     float getSixtyFouthTriplet();
+    
+    float getOneHundredAndTwentyEighthNormal();
+    float getOneHundredAndTwentyEighthDotted();
+    float getOneHundredAndTwentyEighthTriplet();
 };
 
 #endif /* DelayTime_hpp */
