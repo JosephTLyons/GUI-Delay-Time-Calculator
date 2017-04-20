@@ -139,3 +139,18 @@ float DelayTime::getThirtySecondTriplet()
 {
     return thirtySecond * triplet;
 }
+
+float DelayTime::getSixtyFouthNormal()
+{
+    return sixtyFourth;
+}
+
+float DelayTime::getSixtyFouthDotted()
+{
+    return sixtyFourth * dotted;
+}
+
+float DelayTime::getSixtyFouthTriplet()
+{
+    return sixtyFourth * triplet;
+}

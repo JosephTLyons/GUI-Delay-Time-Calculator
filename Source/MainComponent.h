@@ -101,6 +101,9 @@ private:
     ScopedPointer<TextEditor> thirtySecondNormalEditor;
     ScopedPointer<TextEditor> thirtySecondDottedEditor;
     ScopedPointer<TextEditor> thirtySecondTripletEditor;
+    ScopedPointer<TextEditor> sixtyFourthNormalEditor;
+    ScopedPointer<TextEditor> sixtyFourthDottedEditor;
+    ScopedPointer<TextEditor> sixtyFourthTripletEditor;
 
 
     //==============================================================================

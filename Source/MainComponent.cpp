@@ -390,6 +390,39 @@ MainComponent::MainComponent ()
     thirtySecondTripletEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
     thirtySecondTripletEditor->setText (String());
 
+    addAndMakeVisible (sixtyFourthNormalEditor = new TextEditor ("sixtyFourthNormalEditor"));
+    sixtyFourthNormalEditor->setMultiLine (false);
+    sixtyFourthNormalEditor->setReturnKeyStartsNewLine (false);
+    sixtyFourthNormalEditor->setReadOnly (true);
+    sixtyFourthNormalEditor->setScrollbarsShown (true);
+    sixtyFourthNormalEditor->setCaretVisible (false);
+    sixtyFourthNormalEditor->setPopupMenuEnabled (true);
+    sixtyFourthNormalEditor->setColour (TextEditor::textColourId, Colours::white);
+    sixtyFourthNormalEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
+    sixtyFourthNormalEditor->setText (String());
+
+    addAndMakeVisible (sixtyFourthDottedEditor = new TextEditor ("sixtyFourthDottedEditor"));
+    sixtyFourthDottedEditor->setMultiLine (false);
+    sixtyFourthDottedEditor->setReturnKeyStartsNewLine (false);
+    sixtyFourthDottedEditor->setReadOnly (true);
+    sixtyFourthDottedEditor->setScrollbarsShown (true);
+    sixtyFourthDottedEditor->setCaretVisible (false);
+    sixtyFourthDottedEditor->setPopupMenuEnabled (true);
+    sixtyFourthDottedEditor->setColour (TextEditor::textColourId, Colours::white);
+    sixtyFourthDottedEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
+    sixtyFourthDottedEditor->setText (String());
+
+    addAndMakeVisible (sixtyFourthTripletEditor = new TextEditor ("sixtyFourthTripletEditor"));
+    sixtyFourthTripletEditor->setMultiLine (false);
+    sixtyFourthTripletEditor->setReturnKeyStartsNewLine (false);
+    sixtyFourthTripletEditor->setReadOnly (true);
+    sixtyFourthTripletEditor->setScrollbarsShown (true);
+    sixtyFourthTripletEditor->setCaretVisible (false);
+    sixtyFourthTripletEditor->setPopupMenuEnabled (true);
+    sixtyFourthTripletEditor->setColour (TextEditor::textColourId, Colours::white);
+    sixtyFourthTripletEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
+    sixtyFourthTripletEditor->setText (String());
+
 
     //[UserPreSize]
     //[/UserPreSize]
@@ -430,6 +463,10 @@ MainComponent::MainComponent ()
     thirtySecondNormalEditor->setFont(textEditorFontSize);
     thirtySecondDottedEditor->setFont(textEditorFontSize);
     thirtySecondTripletEditor->setFont(textEditorFontSize);
+    
+    sixtyFourthNormalEditor->setFont(textEditorFontSize);
+    sixtyFourthDottedEditor->setFont(textEditorFontSize);
+    sixtyFourthTripletEditor->setFont(textEditorFontSize);
 
     //[/Constructor]
 }
@@ -476,6 +513,9 @@ MainComponent::~MainComponent()
     thirtySecondNormalEditor = nullptr;
     thirtySecondDottedEditor = nullptr;
     thirtySecondTripletEditor = nullptr;
+    sixtyFourthNormalEditor = nullptr;
+    sixtyFourthDottedEditor = nullptr;
+    sixtyFourthTripletEditor = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -536,6 +576,9 @@ void MainComponent::resized()
     thirtySecondNormalEditor->setBounds (150, 310, 150, 30);
     thirtySecondDottedEditor->setBounds (300, 310, 150, 30);
     thirtySecondTripletEditor->setBounds (450, 310, 150, 30);
+    sixtyFourthNormalEditor->setBounds (150, 350, 150, 30);
+    sixtyFourthDottedEditor->setBounds (300, 350, 150, 30);
+    sixtyFourthTripletEditor->setBounds (450, 350, 150, 30);
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
 }
@@ -597,10 +640,14 @@ void MainComponent::sliderValueChanged (Slider* sliderThatWasMoved)
         sixteenthNormalEditor->setText((String) delayTimeObject.getSixteenthNormal());
         sixteenthDottedEditor->setText((String) delayTimeObject.getSixteenthDotted());
         sixteenthTripletEditor->setText((String) delayTimeObject.getSixteenthTriplet());
-        
+
         thirtySecondNormalEditor->setText((String) delayTimeObject.getThirtySecondNormal());
         thirtySecondDottedEditor->setText((String) delayTimeObject.getThirtySecondDotted());
         thirtySecondTripletEditor->setText((String) delayTimeObject.getThirtySecondTriplet());
+        
+        sixtyFourthNormalEditor->setText((String) delayTimeObject.getSixtyFouthNormal());
+        sixtyFourthDottedEditor->setText((String) delayTimeObject.getSixtyFouthDotted());
+        sixtyFourthTripletEditor->setText((String) delayTimeObject.getSixtyFouthTriplet());
 
         //[/UserSliderCode_tempoSlider]
     }
@@ -792,6 +839,18 @@ BEGIN_JUCER_METADATA
               readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="thirtySecondTripletEditor" id="50a7d2c7366628ee" memberName="thirtySecondTripletEditor"
               virtualName="" explicitFocusOrder="0" pos="450 310 150 30" textcol="ffffffff"
+              bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
+              readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
+  <TEXTEDITOR name="sixtyFourthNormalEditor" id="ba43e4d041dac5a5" memberName="sixtyFourthNormalEditor"
+              virtualName="" explicitFocusOrder="0" pos="150 350 150 30" textcol="ffffffff"
+              bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
+              readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
+  <TEXTEDITOR name="sixtyFourthDottedEditor" id="551428071b2d2a98" memberName="sixtyFourthDottedEditor"
+              virtualName="" explicitFocusOrder="0" pos="300 350 150 30" textcol="ffffffff"
+              bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
+              readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
+  <TEXTEDITOR name="sixtyFourthTripletEditor" id="39510d40072f9d4d" memberName="sixtyFourthTripletEditor"
+              virtualName="" explicitFocusOrder="0" pos="450 350 150 30" textcol="ffffffff"
               bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
               readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
 </JUCER_COMPONENT>
