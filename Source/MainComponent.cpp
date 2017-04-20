@@ -455,7 +455,7 @@ void MainComponent::sliderValueChanged (Slider* sliderThatWasMoved)
 
         quarterNormalEditor->setText((String) delayTimeObject.getQuarterNormal());
         quarterDottedEditor->setText((String) delayTimeObject.getQuarterDotted());
-        quarterTripletEditor->setText((String) delayTimeObject.getHalfTriplet());
+        quarterTripletEditor->setText((String) delayTimeObject.getQuarterTriplet());
 
         //[/UserSliderCode_tempoSlider]
     }
