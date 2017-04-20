@@ -174,15 +174,6 @@ MainComponent::MainComponent ()
     thirtySecondLabel->setColour (TextEditor::textColourId, Colours::black);
     thirtySecondLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (thirtySecondLabel2 = new Label ("thirtySecondLabel",
-                                                       TRANS("Thirty-Second:")));
-    thirtySecondLabel2->setFont (Font ("Bodoni 72 Oldstyle", 30.00f, Font::plain));
-    thirtySecondLabel2->setJustificationType (Justification::centredLeft);
-    thirtySecondLabel2->setEditable (false, false, false);
-    thirtySecondLabel2->setColour (Label::textColourId, Colour (0xffadaaaa));
-    thirtySecondLabel2->setColour (TextEditor::textColourId, Colours::black);
-    thirtySecondLabel2->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
-
     addAndMakeVisible (sixtyFourthLabel = new Label ("sixtyFourthLabel",
                                                      TRANS("Sixty-Fourth:")));
     sixtyFourthLabel->setFont (Font ("Bodoni 72 Oldstyle", 30.00f, Font::plain));
@@ -366,6 +357,39 @@ MainComponent::MainComponent ()
     sixteenthTripletEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
     sixteenthTripletEditor->setText (String());
 
+    addAndMakeVisible (thirtySecondNormalEditor = new TextEditor ("thirtySecondNormalEditor"));
+    thirtySecondNormalEditor->setMultiLine (false);
+    thirtySecondNormalEditor->setReturnKeyStartsNewLine (false);
+    thirtySecondNormalEditor->setReadOnly (true);
+    thirtySecondNormalEditor->setScrollbarsShown (true);
+    thirtySecondNormalEditor->setCaretVisible (false);
+    thirtySecondNormalEditor->setPopupMenuEnabled (true);
+    thirtySecondNormalEditor->setColour (TextEditor::textColourId, Colours::white);
+    thirtySecondNormalEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
+    thirtySecondNormalEditor->setText (String());
+
+    addAndMakeVisible (thirtySecondDottedEditor = new TextEditor ("thirtySecondDottedEditor"));
+    thirtySecondDottedEditor->setMultiLine (false);
+    thirtySecondDottedEditor->setReturnKeyStartsNewLine (false);
+    thirtySecondDottedEditor->setReadOnly (true);
+    thirtySecondDottedEditor->setScrollbarsShown (true);
+    thirtySecondDottedEditor->setCaretVisible (false);
+    thirtySecondDottedEditor->setPopupMenuEnabled (true);
+    thirtySecondDottedEditor->setColour (TextEditor::textColourId, Colours::white);
+    thirtySecondDottedEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
+    thirtySecondDottedEditor->setText (String());
+
+    addAndMakeVisible (thirtySecondTripletEditor = new TextEditor ("thirtySecondTripletEditor"));
+    thirtySecondTripletEditor->setMultiLine (false);
+    thirtySecondTripletEditor->setReturnKeyStartsNewLine (false);
+    thirtySecondTripletEditor->setReadOnly (true);
+    thirtySecondTripletEditor->setScrollbarsShown (true);
+    thirtySecondTripletEditor->setCaretVisible (false);
+    thirtySecondTripletEditor->setPopupMenuEnabled (true);
+    thirtySecondTripletEditor->setColour (TextEditor::textColourId, Colours::white);
+    thirtySecondTripletEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
+    thirtySecondTripletEditor->setText (String());
+
 
     //[UserPreSize]
     //[/UserPreSize]
@@ -402,8 +426,10 @@ MainComponent::MainComponent ()
     sixteenthNormalEditor->setFont(textEditorFontSize);
     sixteenthDottedEditor->setFont(textEditorFontSize);
     sixteenthTripletEditor->setFont(textEditorFontSize);
-    
 
+    thirtySecondNormalEditor->setFont(textEditorFontSize);
+    thirtySecondDottedEditor->setFont(textEditorFontSize);
+    thirtySecondTripletEditor->setFont(textEditorFontSize);
 
     //[/Constructor]
 }
@@ -430,7 +456,6 @@ MainComponent::~MainComponent()
     eighthLabel = nullptr;
     sixteenthLabel = nullptr;
     thirtySecondLabel = nullptr;
-    thirtySecondLabel2 = nullptr;
     sixtyFourthLabel = nullptr;
     oneHundreAndTwentyEighthLabel = nullptr;
     wholeNormalEditor = nullptr;
@@ -448,6 +473,9 @@ MainComponent::~MainComponent()
     sixteenthNormalEditor = nullptr;
     sixteenthDottedEditor = nullptr;
     sixteenthTripletEditor = nullptr;
+    thirtySecondNormalEditor = nullptr;
+    thirtySecondDottedEditor = nullptr;
+    thirtySecondTripletEditor = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -488,7 +516,6 @@ void MainComponent::resized()
     eighthLabel->setBounds (0, 230, 150, 30);
     sixteenthLabel->setBounds (0, 270, 150, 30);
     thirtySecondLabel->setBounds (0, 310, 150, 30);
-    thirtySecondLabel2->setBounds (0, 310, 150, 30);
     sixtyFourthLabel->setBounds (0, 350, 150, 30);
     oneHundreAndTwentyEighthLabel->setBounds (0, 390, 150, 30);
     wholeNormalEditor->setBounds (150, 110, 150, 30);
@@ -506,6 +533,9 @@ void MainComponent::resized()
     sixteenthNormalEditor->setBounds (150, 270, 150, 30);
     sixteenthDottedEditor->setBounds (300, 270, 150, 30);
     sixteenthTripletEditor->setBounds (450, 270, 150, 30);
+    thirtySecondNormalEditor->setBounds (150, 310, 150, 30);
+    thirtySecondDottedEditor->setBounds (300, 310, 150, 30);
+    thirtySecondTripletEditor->setBounds (450, 310, 150, 30);
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
 }
@@ -563,10 +593,14 @@ void MainComponent::sliderValueChanged (Slider* sliderThatWasMoved)
         eighthNormalEditor->setText((String) delayTimeObject.getEighthNormal());
         eighthDottedEditor->setText((String) delayTimeObject.getEighthDotted());
         eighthTripletEditor->setText((String) delayTimeObject.getEighthTriplet());
-        
+
         sixteenthNormalEditor->setText((String) delayTimeObject.getSixteenthNormal());
         sixteenthDottedEditor->setText((String) delayTimeObject.getSixteenthDotted());
         sixteenthTripletEditor->setText((String) delayTimeObject.getSixteenthTriplet());
+        
+        thirtySecondNormalEditor->setText((String) delayTimeObject.getThirtySecondNormal());
+        thirtySecondDottedEditor->setText((String) delayTimeObject.getThirtySecondDotted());
+        thirtySecondTripletEditor->setText((String) delayTimeObject.getThirtySecondTriplet());
 
         //[/UserSliderCode_tempoSlider]
     }
@@ -678,12 +712,6 @@ BEGIN_JUCER_METADATA
          editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
          fontname="Bodoni 72 Oldstyle" fontsize="30" bold="0" italic="0"
          justification="36"/>
-  <LABEL name="thirtySecondLabel" id="fe8cbfe5e1ab3a56" memberName="thirtySecondLabel2"
-         virtualName="" explicitFocusOrder="0" pos="0 310 150 30" textCol="ffadaaaa"
-         edTextCol="ff000000" edBkgCol="0" labelText="Thirty-Second:"
-         editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
-         fontname="Bodoni 72 Oldstyle" fontsize="30" bold="0" italic="0"
-         justification="33"/>
   <LABEL name="sixtyFourthLabel" id="e0fec546bed640df" memberName="sixtyFourthLabel"
          virtualName="" explicitFocusOrder="0" pos="0 350 150 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="Sixty-Fourth:" editableSingleClick="0"
@@ -752,6 +780,18 @@ BEGIN_JUCER_METADATA
               readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="sixteenthTripletEditor" id="e9c049b323b23b5a" memberName="sixteenthTripletEditor"
               virtualName="" explicitFocusOrder="0" pos="450 270 150 30" textcol="ffffffff"
+              bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
+              readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
+  <TEXTEDITOR name="thirtySecondNormalEditor" id="c0fa7d9ff7465796" memberName="thirtySecondNormalEditor"
+              virtualName="" explicitFocusOrder="0" pos="150 310 150 30" textcol="ffffffff"
+              bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
+              readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
+  <TEXTEDITOR name="thirtySecondDottedEditor" id="a8080426d83310b9" memberName="thirtySecondDottedEditor"
+              virtualName="" explicitFocusOrder="0" pos="300 310 150 30" textcol="ffffffff"
+              bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
+              readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
+  <TEXTEDITOR name="thirtySecondTripletEditor" id="50a7d2c7366628ee" memberName="thirtySecondTripletEditor"
+              virtualName="" explicitFocusOrder="0" pos="450 310 150 30" textcol="ffffffff"
               bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
               readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
 </JUCER_COMPONENT>

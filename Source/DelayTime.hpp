@@ -52,6 +52,10 @@ public:
     float getSixteenthNormal();
     float getSixteenthDotted();
     float getSixteenthTriplet();
+    
+    float getThirtySecondNormal();
+    float getThirtySecondDotted();
+    float getThirtySecondTriplet();
 };
 
 #endif /* DelayTime_hpp */
