@@ -34,7 +34,16 @@ public:
     void calculateDelayTimes();
     
     float getWholeNormal();
-    float getWholeDottedNormal();
+    float getWholeDotted();
+    float getWholeTriplet();
+    
+    float getHalfNormal();
+    float getHalfDotted();
+    float getHalfTriplet();
+    
+    float getQuarterNormal();
+    float getQuarterDotted();
+    float getQuarterTriplet();
 };
 
 #endif /* DelayTime_hpp */

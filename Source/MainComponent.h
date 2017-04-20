@@ -86,6 +86,12 @@ private:
     ScopedPointer<TextEditor> wholeNormalEditor;
     ScopedPointer<TextEditor> wholeDottedEditor;
     ScopedPointer<TextEditor> wholeTripletEditor;
+    ScopedPointer<TextEditor> halfNormalEditor;
+    ScopedPointer<TextEditor> halfDottedEditor;
+    ScopedPointer<TextEditor> halfTripletEditor;
+    ScopedPointer<TextEditor> quarterNormalEditor;
+    ScopedPointer<TextEditor> quarterDottedEditor;
+    ScopedPointer<TextEditor> quarterTripletEditor;
 
 
     //==============================================================================

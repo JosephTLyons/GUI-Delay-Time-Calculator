@@ -55,10 +55,42 @@ float DelayTime::getWholeNormal()
     return whole;
 }
 
-float DelayTime::getWholeDottedNormal()
+float DelayTime::getWholeDotted()
 {
     return whole * dotted;
 }
 
+float DelayTime::getWholeTriplet()
+{
+    return whole * triplet;
+}
 
+float DelayTime::getHalfNormal()
+{
+    return half;
+}
 
+float DelayTime::getHalfDotted()
+{
+    return half * dotted;
+}
+
+float DelayTime::getHalfTriplet()
+{
+    return half * triplet;
+}
+
+float DelayTime::getQuarterNormal()
+{
+    return quarter;
+}
+
+float DelayTime::getQuarterDotted()
+{
+    return quarter * dotted;
+}
+
+float DelayTime::getQuarterTriplet()
+{
+    return quarter * triplet;
+}

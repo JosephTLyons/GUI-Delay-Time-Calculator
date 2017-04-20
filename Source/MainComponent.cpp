@@ -96,7 +96,7 @@ MainComponent::MainComponent ()
     addAndMakeVisible (normalLabel = new Label ("normalLabel",
                                                 TRANS("Normal\n")));
     normalLabel->setFont (Font ("Bodoni 72 Oldstyle", 30.00f, Font::plain));
-    normalLabel->setJustificationType (Justification::centred);
+    normalLabel->setJustificationType (Justification::centredLeft);
     normalLabel->setEditable (false, false, false);
     normalLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
     normalLabel->setColour (TextEditor::textColourId, Colours::black);
@@ -105,7 +105,7 @@ MainComponent::MainComponent ()
     addAndMakeVisible (dottedLabel = new Label ("dottedLabel",
                                                 TRANS("Dotted")));
     dottedLabel->setFont (Font ("Bodoni 72 Oldstyle", 30.00f, Font::plain));
-    dottedLabel->setJustificationType (Justification::centred);
+    dottedLabel->setJustificationType (Justification::centredLeft);
     dottedLabel->setEditable (false, false, false);
     dottedLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
     dottedLabel->setColour (TextEditor::textColourId, Colours::black);
@@ -114,7 +114,7 @@ MainComponent::MainComponent ()
     addAndMakeVisible (tripletLabel = new Label ("tripletLabel",
                                                  TRANS("Triplet")));
     tripletLabel->setFont (Font ("Bodoni 72 Oldstyle", 30.00f, Font::plain));
-    tripletLabel->setJustificationType (Justification::centred);
+    tripletLabel->setJustificationType (Justification::centredLeft);
     tripletLabel->setEditable (false, false, false);
     tripletLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
     tripletLabel->setColour (TextEditor::textColourId, Colours::black);
@@ -204,29 +204,101 @@ MainComponent::MainComponent ()
     addAndMakeVisible (wholeNormalEditor = new TextEditor ("wholeNormalEditor"));
     wholeNormalEditor->setMultiLine (false);
     wholeNormalEditor->setReturnKeyStartsNewLine (false);
-    wholeNormalEditor->setReadOnly (false);
+    wholeNormalEditor->setReadOnly (true);
     wholeNormalEditor->setScrollbarsShown (true);
-    wholeNormalEditor->setCaretVisible (true);
+    wholeNormalEditor->setCaretVisible (false);
     wholeNormalEditor->setPopupMenuEnabled (true);
+    wholeNormalEditor->setColour (TextEditor::textColourId, Colours::white);
+    wholeNormalEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
     wholeNormalEditor->setText (String());
 
     addAndMakeVisible (wholeDottedEditor = new TextEditor ("wholeDottedEditor"));
     wholeDottedEditor->setMultiLine (false);
     wholeDottedEditor->setReturnKeyStartsNewLine (false);
-    wholeDottedEditor->setReadOnly (false);
+    wholeDottedEditor->setReadOnly (true);
     wholeDottedEditor->setScrollbarsShown (true);
-    wholeDottedEditor->setCaretVisible (true);
+    wholeDottedEditor->setCaretVisible (false);
     wholeDottedEditor->setPopupMenuEnabled (true);
+    wholeDottedEditor->setColour (TextEditor::textColourId, Colours::white);
+    wholeDottedEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
     wholeDottedEditor->setText (String());
 
     addAndMakeVisible (wholeTripletEditor = new TextEditor ("wholeTripletEditor"));
     wholeTripletEditor->setMultiLine (false);
     wholeTripletEditor->setReturnKeyStartsNewLine (false);
-    wholeTripletEditor->setReadOnly (false);
+    wholeTripletEditor->setReadOnly (true);
     wholeTripletEditor->setScrollbarsShown (true);
-    wholeTripletEditor->setCaretVisible (true);
+    wholeTripletEditor->setCaretVisible (false);
     wholeTripletEditor->setPopupMenuEnabled (true);
+    wholeTripletEditor->setColour (TextEditor::textColourId, Colours::white);
+    wholeTripletEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
     wholeTripletEditor->setText (String());
+
+    addAndMakeVisible (halfNormalEditor = new TextEditor ("halfNormalEditor"));
+    halfNormalEditor->setMultiLine (false);
+    halfNormalEditor->setReturnKeyStartsNewLine (false);
+    halfNormalEditor->setReadOnly (true);
+    halfNormalEditor->setScrollbarsShown (true);
+    halfNormalEditor->setCaretVisible (false);
+    halfNormalEditor->setPopupMenuEnabled (true);
+    halfNormalEditor->setColour (TextEditor::textColourId, Colours::white);
+    halfNormalEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
+    halfNormalEditor->setText (String());
+
+    addAndMakeVisible (halfDottedEditor = new TextEditor ("halfDottedEditor"));
+    halfDottedEditor->setMultiLine (false);
+    halfDottedEditor->setReturnKeyStartsNewLine (false);
+    halfDottedEditor->setReadOnly (true);
+    halfDottedEditor->setScrollbarsShown (true);
+    halfDottedEditor->setCaretVisible (false);
+    halfDottedEditor->setPopupMenuEnabled (true);
+    halfDottedEditor->setColour (TextEditor::textColourId, Colours::white);
+    halfDottedEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
+    halfDottedEditor->setText (String());
+
+    addAndMakeVisible (halfTripletEditor = new TextEditor ("halfTripletEditor"));
+    halfTripletEditor->setMultiLine (false);
+    halfTripletEditor->setReturnKeyStartsNewLine (false);
+    halfTripletEditor->setReadOnly (true);
+    halfTripletEditor->setScrollbarsShown (true);
+    halfTripletEditor->setCaretVisible (false);
+    halfTripletEditor->setPopupMenuEnabled (true);
+    halfTripletEditor->setColour (TextEditor::textColourId, Colours::white);
+    halfTripletEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
+    halfTripletEditor->setText (String());
+
+    addAndMakeVisible (quarterNormalEditor = new TextEditor ("quarterNormalEditor"));
+    quarterNormalEditor->setMultiLine (false);
+    quarterNormalEditor->setReturnKeyStartsNewLine (false);
+    quarterNormalEditor->setReadOnly (true);
+    quarterNormalEditor->setScrollbarsShown (true);
+    quarterNormalEditor->setCaretVisible (false);
+    quarterNormalEditor->setPopupMenuEnabled (true);
+    quarterNormalEditor->setColour (TextEditor::textColourId, Colours::white);
+    quarterNormalEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
+    quarterNormalEditor->setText (String());
+
+    addAndMakeVisible (quarterDottedEditor = new TextEditor ("quarterDottedEditor"));
+    quarterDottedEditor->setMultiLine (false);
+    quarterDottedEditor->setReturnKeyStartsNewLine (false);
+    quarterDottedEditor->setReadOnly (true);
+    quarterDottedEditor->setScrollbarsShown (true);
+    quarterDottedEditor->setCaretVisible (false);
+    quarterDottedEditor->setPopupMenuEnabled (true);
+    quarterDottedEditor->setColour (TextEditor::textColourId, Colours::white);
+    quarterDottedEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
+    quarterDottedEditor->setText (String());
+
+    addAndMakeVisible (quarterTripletEditor = new TextEditor ("quarterTripletEditor"));
+    quarterTripletEditor->setMultiLine (false);
+    quarterTripletEditor->setReturnKeyStartsNewLine (false);
+    quarterTripletEditor->setReadOnly (true);
+    quarterTripletEditor->setScrollbarsShown (true);
+    quarterTripletEditor->setCaretVisible (false);
+    quarterTripletEditor->setPopupMenuEnabled (true);
+    quarterTripletEditor->setColour (TextEditor::textColourId, Colours::white);
+    quarterTripletEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
+    quarterTripletEditor->setText (String());
 
 
     //[UserPreSize]
@@ -273,6 +345,12 @@ MainComponent::~MainComponent()
     wholeNormalEditor = nullptr;
     wholeDottedEditor = nullptr;
     wholeTripletEditor = nullptr;
+    halfNormalEditor = nullptr;
+    halfDottedEditor = nullptr;
+    halfTripletEditor = nullptr;
+    quarterNormalEditor = nullptr;
+    quarterDottedEditor = nullptr;
+    quarterTripletEditor = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -296,12 +374,12 @@ void MainComponent::resized()
     //[UserPreResize] Add your own custom resize code here..
     //[/UserPreResize]
 
-    doubleTempoButton->setBounds (550, 50, 50, 30);
-    halfTempoButton->setBounds (500, 50, 50, 30);
+    doubleTempoButton->setBounds (50, 80, 50, 30);
+    halfTempoButton->setBounds (0, 80, 50, 30);
     emailHyperlink->setBounds (0, 430, 80, 25);
     theLyonsDenDelayTimeCalculator->setBounds (0, 0, 600, 50);
     alterTheCodeHyperlink->setBounds (200, 430, 200, 25);
-    tempoSlider->setBounds (0, 50, 500, 30);
+    tempoSlider->setBounds (0, 50, 600, 30);
     theLyonsDenDelayTimeCalculator2->setBounds (0, 0, 600, 50);
     donateHyperlink->setBounds (536, 430, 64, 25);
     normalLabel->setBounds (150, 80, 150, 30);
@@ -318,7 +396,13 @@ void MainComponent::resized()
     oneHundreAndTwentyEighthLabel->setBounds (0, 390, 150, 30);
     wholeNormalEditor->setBounds (150, 110, 150, 30);
     wholeDottedEditor->setBounds (300, 110, 150, 30);
-    wholeTripletEditor->setBounds (450, 110, 150, 30);
+    wholeTripletEditor->setBounds (450, 110, 150, 34);
+    halfNormalEditor->setBounds (150, 150, 150, 30);
+    halfDottedEditor->setBounds (300, 150, 150, 30);
+    halfTripletEditor->setBounds (450, 150, 150, 30);
+    quarterNormalEditor->setBounds (150, 190, 150, 30);
+    quarterDottedEditor->setBounds (300, 190, 150, 30);
+    quarterTripletEditor->setBounds (450, 190, 150, 30);
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
 }
@@ -359,10 +443,19 @@ void MainComponent::sliderValueChanged (Slider* sliderThatWasMoved)
         //[UserSliderCode_tempoSlider] -- add your slider handling code here..
 
         delayTimeObject.setTempo(tempoSlider->getValue());
-        
+
         // Set values for all text editors
         wholeNormalEditor->setText((String) delayTimeObject.getWholeNormal());
-        wholeDottedEditor->setText((String) delayTimeObject.getWholeDottedNormal());
+        wholeDottedEditor->setText((String) delayTimeObject.getWholeDotted());
+        wholeTripletEditor->setText((String) delayTimeObject.getWholeTriplet());
+
+        halfNormalEditor->setText((String) delayTimeObject.getHalfNormal());
+        halfDottedEditor->setText((String) delayTimeObject.getHalfDotted());
+        halfTripletEditor->setText((String) delayTimeObject.getHalfTriplet());
+
+        quarterNormalEditor->setText((String) delayTimeObject.getQuarterNormal());
+        quarterDottedEditor->setText((String) delayTimeObject.getQuarterDotted());
+        quarterTripletEditor->setText((String) delayTimeObject.getHalfTriplet());
 
         //[/UserSliderCode_tempoSlider]
     }
@@ -392,10 +485,10 @@ BEGIN_JUCER_METADATA
                  fixedSize="1" initialWidth="600" initialHeight="455">
   <BACKGROUND backgroundColour="ff353535"/>
   <TEXTBUTTON name="doubleTempoButton" id="74a1161b6a8bd75d" memberName="doubleTempoButton"
-              virtualName="" explicitFocusOrder="0" pos="550 50 50 30" bgColOff="ffadaaaa"
+              virtualName="" explicitFocusOrder="0" pos="50 80 50 30" bgColOff="ffadaaaa"
               buttonText="2x" connectedEdges="3" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="halfTempoButton" id="edac6a2aecdd8ef5" memberName="halfTempoButton"
-              virtualName="" explicitFocusOrder="0" pos="500 50 50 30" bgColOff="ffadaaaa"
+              virtualName="" explicitFocusOrder="0" pos="0 80 50 30" bgColOff="ffadaaaa"
               buttonText="1/2x" connectedEdges="3" needsCallback="1" radioGroupId="0"/>
   <HYPERLINKBUTTON name="emailHyperlink" id="61f33ae81920857e" memberName="emailHyperlink"
                    virtualName="" explicitFocusOrder="0" pos="0 430 80 25" tooltip="josephtlyons@gmail.com"
@@ -412,7 +505,7 @@ BEGIN_JUCER_METADATA
                    textCol="ffadaaaa" buttonText="Download the Source Code" connectedEdges="0"
                    needsCallback="0" radioGroupId="0" url="https://github.com/JosephTLyons/GUI-Delay-Time-Calculator"/>
   <SLIDER name="tempoSlider" id="1b36c66db8e52ea5" memberName="tempoSlider"
-          virtualName="" explicitFocusOrder="0" pos="0 50 500 30" thumbcol="ffefefef"
+          virtualName="" explicitFocusOrder="0" pos="0 50 600 30" thumbcol="ffefefef"
           trackcol="ffefefef" textboxtext="ffadaaaa" textboxbkgd="ff353535"
           textboxhighlight="ffadaaaa" textboxoutline="ff353535" min="1"
           max="1000" int="0.10000000000000000555" style="LinearHorizontal"
@@ -432,17 +525,17 @@ BEGIN_JUCER_METADATA
          virtualName="" explicitFocusOrder="0" pos="150 80 150 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="Normal&#10;" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Bodoni 72 Oldstyle"
-         fontsize="30" bold="0" italic="0" justification="36"/>
+         fontsize="30" bold="0" italic="0" justification="33"/>
   <LABEL name="dottedLabel" id="f84ddade330c771e" memberName="dottedLabel"
          virtualName="" explicitFocusOrder="0" pos="300 80 150 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="Dotted" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Bodoni 72 Oldstyle"
-         fontsize="30" bold="0" italic="0" justification="36"/>
+         fontsize="30" bold="0" italic="0" justification="33"/>
   <LABEL name="tripletLabel" id="24f4755bf6b035f2" memberName="tripletLabel"
          virtualName="" explicitFocusOrder="0" pos="450 80 150 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="Triplet" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Bodoni 72 Oldstyle"
-         fontsize="30" bold="0" italic="0" justification="36"/>
+         fontsize="30" bold="0" italic="0" justification="33"/>
   <LABEL name="wholeLabel" id="84a944615f7ab97c" memberName="wholeLabel"
          virtualName="" explicitFocusOrder="0" pos="0 110 150 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="Whole:" editableSingleClick="0"
@@ -491,17 +584,41 @@ BEGIN_JUCER_METADATA
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Bodoni 72 Oldstyle"
          fontsize="30" bold="0" italic="0" justification="33"/>
   <TEXTEDITOR name="wholeNormalEditor" id="3e709db971b7b13e" memberName="wholeNormalEditor"
-              virtualName="" explicitFocusOrder="0" pos="150 110 150 30" initialText=""
-              multiline="0" retKeyStartsLine="0" readonly="0" scrollbars="1"
-              caret="1" popupmenu="1"/>
+              virtualName="" explicitFocusOrder="0" pos="150 110 150 30" textcol="ffffffff"
+              bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
+              readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="wholeDottedEditor" id="1912d62d2f447597" memberName="wholeDottedEditor"
-              virtualName="" explicitFocusOrder="0" pos="300 110 150 30" initialText=""
-              multiline="0" retKeyStartsLine="0" readonly="0" scrollbars="1"
-              caret="1" popupmenu="1"/>
+              virtualName="" explicitFocusOrder="0" pos="300 110 150 30" textcol="ffffffff"
+              bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
+              readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="wholeTripletEditor" id="e112b0a336d6e11d" memberName="wholeTripletEditor"
-              virtualName="" explicitFocusOrder="0" pos="450 110 150 30" initialText=""
-              multiline="0" retKeyStartsLine="0" readonly="0" scrollbars="1"
-              caret="1" popupmenu="1"/>
+              virtualName="" explicitFocusOrder="0" pos="450 110 150 34" textcol="ffffffff"
+              bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
+              readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
+  <TEXTEDITOR name="halfNormalEditor" id="82341999a15b4905" memberName="halfNormalEditor"
+              virtualName="" explicitFocusOrder="0" pos="150 150 150 30" textcol="ffffffff"
+              bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
+              readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
+  <TEXTEDITOR name="halfDottedEditor" id="a85686e91c138fa9" memberName="halfDottedEditor"
+              virtualName="" explicitFocusOrder="0" pos="300 150 150 30" textcol="ffffffff"
+              bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
+              readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
+  <TEXTEDITOR name="halfTripletEditor" id="c55eca7e3b7372f3" memberName="halfTripletEditor"
+              virtualName="" explicitFocusOrder="0" pos="450 150 150 30" textcol="ffffffff"
+              bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
+              readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
+  <TEXTEDITOR name="quarterNormalEditor" id="e57e3dabd7a8102" memberName="quarterNormalEditor"
+              virtualName="" explicitFocusOrder="0" pos="150 190 150 30" textcol="ffffffff"
+              bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
+              readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
+  <TEXTEDITOR name="quarterDottedEditor" id="2fe82d45e4d3e7fc" memberName="quarterDottedEditor"
+              virtualName="" explicitFocusOrder="0" pos="300 190 150 30" textcol="ffffffff"
+              bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
+              readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
+  <TEXTEDITOR name="quarterTripletEditor" id="d2aae6e014d232dc" memberName="quarterTripletEditor"
+              virtualName="" explicitFocusOrder="0" pos="450 190 150 30" textcol="ffffffff"
+              bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
+              readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA
