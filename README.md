@@ -23,3 +23,4 @@ Features still to add:
 * App Icon
 * Tap Tempo Feature from BPM app (coming in 1.2 - soon)
 * Change to whole BPM values and use modifier buttons to access 1/10th notes (or any other method to access these values
+* Unify delay time value labels in some way, either all text, all fractional values, or actual images of the note values
