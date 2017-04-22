@@ -71,7 +71,7 @@ MainComponent::MainComponent ()
     tempoSlider->setTextBoxStyle (Slider::TextBoxLeft, false, 50, 20);
     tempoSlider->setColour (Slider::thumbColourId, Colour (0xffefefef));
     tempoSlider->setColour (Slider::trackColourId, Colour (0xffefefef));
-    tempoSlider->setColour (Slider::textBoxTextColourId, Colour (0xffadaaaa));
+    tempoSlider->setColour (Slider::textBoxTextColourId, Colours::white);
     tempoSlider->setColour (Slider::textBoxBackgroundColourId, Colour (0xff353535));
     tempoSlider->setColour (Slider::textBoxHighlightColourId, Colour (0xffadaaaa));
     tempoSlider->setColour (Slider::textBoxOutlineColourId, Colour (0xff353535));
@@ -745,7 +745,7 @@ BEGIN_JUCER_METADATA
                    needsCallback="0" radioGroupId="0" url="https://github.com/JosephTLyons/GUI-Delay-Time-Calculator"/>
   <SLIDER name="tempoSlider" id="1b36c66db8e52ea5" memberName="tempoSlider"
           virtualName="" explicitFocusOrder="0" pos="0 50 600 30" thumbcol="ffefefef"
-          trackcol="ffefefef" textboxtext="ffadaaaa" textboxbkgd="ff353535"
+          trackcol="ffefefef" textboxtext="ffffffff" textboxbkgd="ff353535"
           textboxhighlight="ffadaaaa" textboxoutline="ff353535" min="1"
           max="1000" int="0.10000000000000000555" style="LinearHorizontal"
           textBoxPos="TextBoxLeft" textBoxEditable="1" textBoxWidth="50"
