@@ -500,7 +500,7 @@ MainComponent::MainComponent ()
     sixtyFourthNormalEditor->setFont(textEditorFontSize);
     sixtyFourthDottedEditor->setFont(textEditorFontSize);
     sixtyFourthTripletEditor->setFont(textEditorFontSize);
-    
+
     oneTwentyEighthNormalEditor->setFont(textEditorFontSize);
     oneTwentyEighthDottedEditor->setFont(textEditorFontSize);
     oneTwentyEighthTripletEditor->setFont(textEditorFontSize);
@@ -691,7 +691,7 @@ void MainComponent::sliderValueChanged (Slider* sliderThatWasMoved)
         sixtyFourthNormalEditor->setText((String) delayTimeObject.getSixtyFouthNormal());
         sixtyFourthDottedEditor->setText((String) delayTimeObject.getSixtyFouthDotted());
         sixtyFourthTripletEditor->setText((String) delayTimeObject.getSixtyFouthTriplet());
-        
+
         oneTwentyEighthNormalEditor->setText((String) delayTimeObject.getOneHundredAndTwentyEighthNormal());
         oneTwentyEighthDottedEditor->setText((String) delayTimeObject.getOneHundredAndTwentyEighthDotted());
         oneTwentyEighthTripletEditor->setText((String) delayTimeObject.getOneHundredAndTwentyEighthTriplet());

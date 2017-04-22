@@ -5,6 +5,9 @@ A simple application that calculates delay and reverb pre-delay times based on t
 
 Changelog:
 
+April 22, 2017 - V 1.1.1:
+1. Changed deployment settings - now allows users all the way back on OS 10.6
+
 April 20, 2017 - V 1.1:
 1. Displays all values at once
 2. Changed skewing of slider so that most frequent tempos are in the first half of the slider (1 - 250ish).  This gives the user a bit more accuracy when using these values.

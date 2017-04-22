@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <JUCERPROJECT id="mFsRbO" name="Delay Time Calculator" projectType="guiapp"
-              version="1.1" bundleIdentifier="com.TheLyonsDen.DelayTimeCalculator"
+              version="1.1.1" bundleIdentifier="com.TheLyonsDen.DelayTimeCalculator"
               includeBinaryInAppConfig="1" jucerVersion="4.3.1" companyName="The Lyons' Den"
               companyEmail="josephtlyons@gmail.com">
   <MAINGROUP id="wVdkZw" name="Delay Time Calculator">
@@ -18,8 +18,10 @@
   <EXPORTFORMATS>
     <XCODE_MAC targetFolder="Builds/MacOSX">
       <CONFIGURATIONS>
-        <CONFIGURATION name="Debug" isDebug="1" optimisation="1" targetName="Delay Time Calculator"/>
-        <CONFIGURATION name="Release" isDebug="0" optimisation="3" targetName="Delay Time Calculator"/>
+        <CONFIGURATION name="Debug" isDebug="1" optimisation="1" targetName="Delay Time Calculator"
+                       osxCompatibility="10.6 SDK"/>
+        <CONFIGURATION name="Release" isDebug="0" optimisation="3" targetName="Delay Time Calculator"
+                       osxCompatibility="10.6 SDK"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
         <MODULEPATH id="juce_core" path="../../../Libraries/JUCE/modules"/>
@@ -40,4 +42,7 @@
     <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0"/>
   </MODULES>
   <JUCEOPTIONS/>
+  <LIVE_SETTINGS>
+    <OSX/>
+  </LIVE_SETTINGS>
 </JUCERPROJECT>
