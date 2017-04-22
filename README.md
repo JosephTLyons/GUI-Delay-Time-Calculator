@@ -8,7 +8,7 @@ Changelog:
 April XX, 2017 - V 1.2:
 1. Added tap tempo feature.  Tap T in time to set tempo, click R to reset internal values so you can use T to calculate a new tempo.  The R button turns white after the first click of the tap button, to let the user know that if they want to calculate a different speed, to click the reset button.
 3. Added a cheap app icon, will probably make a better one later, this is more or less a placeholder
-3. Changed tempo values on slider to white so that all values that change have the same color (white).  This makes all the values that need attention easy to spot.
+3. Changed color of tempo values on slider to white so that all values that change have the same color (white).  This makes all the values that need attention easy to spot.
 4. Unified left hand value column by using all fractions instead of words.
 
 April 22, 2017 - V 1.1.1:
