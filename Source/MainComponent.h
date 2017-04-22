@@ -23,6 +23,7 @@
 //[Headers]     -- You can add your own extra header files here --
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "DelayTime.hpp"
+#include "TapTempo.hpp"
 //[/Headers]
 
 
@@ -60,6 +61,7 @@ private:
 
     DelayTime delayTimeObject;
     int textEditorFontSize;
+    TapTempo tapTempo;
 
     //[/UserVariables]
 
@@ -107,6 +109,8 @@ private:
     ScopedPointer<TextEditor> oneTwentyEighthNormalEditor;
     ScopedPointer<TextEditor> oneTwentyEighthDottedEditor;
     ScopedPointer<TextEditor> oneTwentyEighthTripletEditor;
+    ScopedPointer<TextButton> tapButton;
+    ScopedPointer<TextButton> resetButton;
 
 
     //==============================================================================

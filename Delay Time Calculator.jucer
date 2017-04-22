@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <JUCERPROJECT id="mFsRbO" name="Delay Time Calculator" projectType="guiapp"
-              version="1.1.1" bundleIdentifier="com.TheLyonsDen.DelayTimeCalculator"
+              version="1.2" bundleIdentifier="com.TheLyonsDen.DelayTimeCalculator"
               includeBinaryInAppConfig="1" jucerVersion="4.3.1" companyName="The Lyons' Den"
               companyEmail="josephtlyons@gmail.com">
   <MAINGROUP id="wVdkZw" name="Delay Time Calculator">
@@ -13,6 +13,8 @@
             file="Source/MainComponent.cpp"/>
       <FILE id="eUkl27" name="DelayTime.hpp" compile="0" resource="0" file="Source/DelayTime.hpp"/>
       <FILE id="O77g2U" name="DelayTime.cpp" compile="1" resource="0" file="Source/DelayTime.cpp"/>
+      <FILE id="WpUudQ" name="TapTempo.hpp" compile="0" resource="0" file="Source/TapTempo.hpp"/>
+      <FILE id="YOxrbs" name="TapTempo.cpp" compile="1" resource="0" file="Source/TapTempo.cpp"/>
     </GROUP>
   </MAINGROUP>
   <EXPORTFORMATS>

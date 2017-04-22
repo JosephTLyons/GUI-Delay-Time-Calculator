@@ -456,6 +456,18 @@ MainComponent::MainComponent ()
     oneTwentyEighthTripletEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
     oneTwentyEighthTripletEditor->setText (String());
 
+    addAndMakeVisible (tapButton = new TextButton ("tapButton"));
+    tapButton->setButtonText (TRANS("T"));
+    tapButton->setConnectedEdges (Button::ConnectedOnLeft | Button::ConnectedOnRight);
+    tapButton->addListener (this);
+    tapButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
+
+    addAndMakeVisible (resetButton = new TextButton ("resetButton"));
+    resetButton->setButtonText (TRANS("R"));
+    resetButton->setConnectedEdges (Button::ConnectedOnLeft | Button::ConnectedOnRight);
+    resetButton->addListener (this);
+    resetButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
+
 
     //[UserPreSize]
     //[/UserPreSize]
@@ -556,6 +568,8 @@ MainComponent::~MainComponent()
     oneTwentyEighthNormalEditor = nullptr;
     oneTwentyEighthDottedEditor = nullptr;
     oneTwentyEighthTripletEditor = nullptr;
+    tapButton = nullptr;
+    resetButton = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -622,6 +636,8 @@ void MainComponent::resized()
     oneTwentyEighthNormalEditor->setBounds (150, 390, 150, 30);
     oneTwentyEighthDottedEditor->setBounds (300, 390, 150, 30);
     oneTwentyEighthTripletEditor->setBounds (450, 390, 150, 30);
+    tapButton->setBounds (100, 80, 25, 30);
+    resetButton->setBounds (125, 80, 25, 30);
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
 }
@@ -646,6 +662,22 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
         tempoSlider->setValue(tempoSlider->getValue() / 2);
 
         //[/UserButtonCode_halfTempoButton]
+    }
+    else if (buttonThatWasClicked == tapButton)
+    {
+        //[UserButtonCode_tapButton] -- add your button handler code here..
+        
+        tempoSlider->setValue(tapTempo.calculateTempo());
+        
+        //[/UserButtonCode_tapButton]
+    }
+    else if (buttonThatWasClicked == resetButton)
+    {
+        //[UserButtonCode_resetButton] -- add your button handler code here..
+        
+        tapTempo.resetMainCalculationHolders();
+        
+        //[/UserButtonCode_resetButton]
     }
 
     //[UserbuttonClicked_Post]
@@ -912,6 +944,12 @@ BEGIN_JUCER_METADATA
               virtualName="" explicitFocusOrder="0" pos="450 390 150 30" textcol="ffffffff"
               bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
               readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
+  <TEXTBUTTON name="tapButton" id="3cd8a4f5f3b122f8" memberName="tapButton"
+              virtualName="" explicitFocusOrder="0" pos="100 80 25 30" bgColOff="ffadaaaa"
+              buttonText="T" connectedEdges="3" needsCallback="1" radioGroupId="0"/>
+  <TEXTBUTTON name="resetButton" id="137cfed0258a7265" memberName="resetButton"
+              virtualName="" explicitFocusOrder="0" pos="125 80 25 30" bgColOff="ffadaaaa"
+              buttonText="R" connectedEdges="3" needsCallback="1" radioGroupId="0"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA
