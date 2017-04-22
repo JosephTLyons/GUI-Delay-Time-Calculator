@@ -6,7 +6,7 @@ A simple application that calculates delay and reverb pre-delay times based on t
 Changelog:
 
 April XX, 2017 - V 1.2:
-1. Added tap tempo feature.  Tap T in time to set tempo, click R to reset internal values so you can use T to calculate a new tempo
+1. Added tap tempo feature.  Tap T in time to set tempo, click R to reset internal values so you can use T to calculate a new tempo.  The R button turns white after the first click of the tap button, to let the user know that if they want to calculate a different speed, to click the reset button.
 
 2. Changed tempo values on slider to white so that all values that change have the same color (white).  This makes all the values that need attention easy to spot.
 

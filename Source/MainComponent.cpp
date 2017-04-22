@@ -669,6 +669,9 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
         
         tempoSlider->setValue(tapTempo.calculateTempo());
         
+        // Change button color so we know a reset is needed
+        resetButton->setColour(TextButton::buttonColourId , Colours::white);
+        
         //[/UserButtonCode_tapButton]
     }
     else if (buttonThatWasClicked == resetButton)
@@ -676,6 +679,10 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
         //[UserButtonCode_resetButton] -- add your button handler code here..
         
         tapTempo.resetMainCalculationHolders();
+        
+        // Reset the color of resetButton by simply setting it to the color of tapButton
+        resetButton->setColour(TextButton::buttonColourId,
+                               tapButton->findColour(TextButton::buttonColourId));
         
         //[/UserButtonCode_resetButton]
     }
