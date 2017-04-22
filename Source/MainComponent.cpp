@@ -50,15 +50,6 @@ MainComponent::MainComponent ()
     emailHyperlink->setButtonText (TRANS("Email Me"));
     emailHyperlink->setColour (HyperlinkButton::textColourId, Colour (0xffadaaaa));
 
-    addAndMakeVisible (theLyonsDenDelayTimeCalculator = new Label ("theLyonsDenDelayTimeCalculator",
-                                                                   TRANS("The Lyons\' Den Delay Time Calculator")));
-    theLyonsDenDelayTimeCalculator->setFont (Font ("Bodoni 72 Oldstyle", 47.40f, Font::plain));
-    theLyonsDenDelayTimeCalculator->setJustificationType (Justification::centred);
-    theLyonsDenDelayTimeCalculator->setEditable (false, false, false);
-    theLyonsDenDelayTimeCalculator->setColour (Label::textColourId, Colour (0xffadaaaa));
-    theLyonsDenDelayTimeCalculator->setColour (TextEditor::textColourId, Colours::black);
-    theLyonsDenDelayTimeCalculator->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
-
     addAndMakeVisible (alterTheCodeHyperlink = new HyperlinkButton (TRANS("Download the Source Code"),
                                                                     URL ("https://github.com/JosephTLyons/GUI-Delay-Time-Calculator")));
     alterTheCodeHyperlink->setTooltip (TRANS("https://github.com/JosephTLyons/GUI-Delay-Time-Calculator"));
@@ -80,7 +71,7 @@ MainComponent::MainComponent ()
 
     addAndMakeVisible (theLyonsDenDelayTimeCalculator2 = new Label ("theLyonsDenDelayTimeCalculator",
                                                                     TRANS("The Lyons\' Den Delay Time Calculator")));
-    theLyonsDenDelayTimeCalculator2->setFont (Font ("Bodoni 72 Oldstyle", 47.40f, Font::plain));
+    theLyonsDenDelayTimeCalculator2->setFont (Font ("Calisto MT", 47.40f, Font::plain));
     theLyonsDenDelayTimeCalculator2->setJustificationType (Justification::centred);
     theLyonsDenDelayTimeCalculator2->setEditable (false, false, false);
     theLyonsDenDelayTimeCalculator2->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -95,7 +86,7 @@ MainComponent::MainComponent ()
 
     addAndMakeVisible (normalLabel = new Label ("normalLabel",
                                                 TRANS("Normal\n")));
-    normalLabel->setFont (Font ("Bodoni 72 Oldstyle", 30.00f, Font::plain));
+    normalLabel->setFont (Font ("Calisto MT", 30.00f, Font::plain));
     normalLabel->setJustificationType (Justification::centredLeft);
     normalLabel->setEditable (false, false, false);
     normalLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -104,7 +95,7 @@ MainComponent::MainComponent ()
 
     addAndMakeVisible (dottedLabel = new Label ("dottedLabel",
                                                 TRANS("Dotted")));
-    dottedLabel->setFont (Font ("Bodoni 72 Oldstyle", 30.00f, Font::plain));
+    dottedLabel->setFont (Font ("Calisto MT", 30.00f, Font::plain));
     dottedLabel->setJustificationType (Justification::centredLeft);
     dottedLabel->setEditable (false, false, false);
     dottedLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -113,7 +104,7 @@ MainComponent::MainComponent ()
 
     addAndMakeVisible (tripletLabel = new Label ("tripletLabel",
                                                  TRANS("Triplet")));
-    tripletLabel->setFont (Font ("Bodoni 72 Oldstyle", 30.00f, Font::plain));
+    tripletLabel->setFont (Font ("Calisto MT", 30.00f, Font::plain));
     tripletLabel->setJustificationType (Justification::centredLeft);
     tripletLabel->setEditable (false, false, false);
     tripletLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -121,8 +112,8 @@ MainComponent::MainComponent ()
     tripletLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
     addAndMakeVisible (wholeLabel = new Label ("wholeLabel",
-                                               TRANS("Whole:")));
-    wholeLabel->setFont (Font ("Bodoni 72 Oldstyle", 30.00f, Font::plain));
+                                               TRANS("1:")));
+    wholeLabel->setFont (Font ("Calisto MT", 30.00f, Font::plain));
     wholeLabel->setJustificationType (Justification::centredLeft);
     wholeLabel->setEditable (false, false, false);
     wholeLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -130,8 +121,8 @@ MainComponent::MainComponent ()
     wholeLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
     addAndMakeVisible (halfLabel = new Label ("halfLabel",
-                                              TRANS("Half:")));
-    halfLabel->setFont (Font ("Bodoni 72 Oldstyle", 30.00f, Font::plain));
+                                              TRANS("1/2:")));
+    halfLabel->setFont (Font ("Calisto MT", 30.00f, Font::plain));
     halfLabel->setJustificationType (Justification::centredLeft);
     halfLabel->setEditable (false, false, false);
     halfLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -139,8 +130,8 @@ MainComponent::MainComponent ()
     halfLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
     addAndMakeVisible (quarterLabel = new Label ("quarterLabel",
-                                                 TRANS("Quarter:")));
-    quarterLabel->setFont (Font ("Bodoni 72 Oldstyle", 30.00f, Font::plain));
+                                                 TRANS("1/4:")));
+    quarterLabel->setFont (Font ("Calisto MT", 30.00f, Font::plain));
     quarterLabel->setJustificationType (Justification::centredLeft);
     quarterLabel->setEditable (false, false, false);
     quarterLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -148,8 +139,8 @@ MainComponent::MainComponent ()
     quarterLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
     addAndMakeVisible (eighthLabel = new Label ("eighthLabel",
-                                                TRANS("Eighth:")));
-    eighthLabel->setFont (Font ("Bodoni 72 Oldstyle", 30.00f, Font::plain));
+                                                TRANS("1/8:")));
+    eighthLabel->setFont (Font ("Calisto MT", 30.00f, Font::plain));
     eighthLabel->setJustificationType (Justification::centredLeft);
     eighthLabel->setEditable (false, false, false);
     eighthLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -157,8 +148,8 @@ MainComponent::MainComponent ()
     eighthLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
     addAndMakeVisible (sixteenthLabel = new Label ("sixteenthLabel",
-                                                   TRANS("Sixteenth:")));
-    sixteenthLabel->setFont (Font ("Bodoni 72 Oldstyle", 30.00f, Font::plain));
+                                                   TRANS("1/16:")));
+    sixteenthLabel->setFont (Font ("Calisto MT", 30.00f, Font::plain));
     sixteenthLabel->setJustificationType (Justification::centredLeft);
     sixteenthLabel->setEditable (false, false, false);
     sixteenthLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -166,17 +157,17 @@ MainComponent::MainComponent ()
     sixteenthLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
     addAndMakeVisible (thirtySecondLabel = new Label ("thirtySecondLabel",
-                                                      TRANS("Thirty-Second:")));
-    thirtySecondLabel->setFont (Font ("Bodoni 72 Oldstyle", 30.00f, Font::plain));
-    thirtySecondLabel->setJustificationType (Justification::centred);
+                                                      TRANS("1/32:")));
+    thirtySecondLabel->setFont (Font ("Calisto MT", 30.00f, Font::plain));
+    thirtySecondLabel->setJustificationType (Justification::centredLeft);
     thirtySecondLabel->setEditable (false, false, false);
     thirtySecondLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
     thirtySecondLabel->setColour (TextEditor::textColourId, Colours::black);
     thirtySecondLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
     addAndMakeVisible (sixtyFourthLabel = new Label ("sixtyFourthLabel",
-                                                     TRANS("Sixty-Fourth:")));
-    sixtyFourthLabel->setFont (Font ("Bodoni 72 Oldstyle", 30.00f, Font::plain));
+                                                     TRANS("1/64:")));
+    sixtyFourthLabel->setFont (Font ("Calisto MT", 30.00f, Font::plain));
     sixtyFourthLabel->setJustificationType (Justification::centredLeft);
     sixtyFourthLabel->setEditable (false, false, false);
     sixtyFourthLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -184,8 +175,8 @@ MainComponent::MainComponent ()
     sixtyFourthLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
     addAndMakeVisible (oneHundreAndTwentyEighthLabel = new Label ("oneHundreAndTwentyEighthLabel",
-                                                                  TRANS("1/128th:")));
-    oneHundreAndTwentyEighthLabel->setFont (Font ("Bodoni 72 Oldstyle", 30.00f, Font::plain));
+                                                                  TRANS("1/128:")));
+    oneHundreAndTwentyEighthLabel->setFont (Font ("Calisto MT", 30.00f, Font::plain));
     oneHundreAndTwentyEighthLabel->setJustificationType (Justification::centredLeft);
     oneHundreAndTwentyEighthLabel->setEditable (false, false, false);
     oneHundreAndTwentyEighthLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -528,7 +519,6 @@ MainComponent::~MainComponent()
     doubleTempoButton = nullptr;
     halfTempoButton = nullptr;
     emailHyperlink = nullptr;
-    theLyonsDenDelayTimeCalculator = nullptr;
     alterTheCodeHyperlink = nullptr;
     tempoSlider = nullptr;
     theLyonsDenDelayTimeCalculator2 = nullptr;
@@ -596,7 +586,6 @@ void MainComponent::resized()
     doubleTempoButton->setBounds (50, 80, 50, 30);
     halfTempoButton->setBounds (0, 80, 50, 30);
     emailHyperlink->setBounds (0, 430, 80, 25);
-    theLyonsDenDelayTimeCalculator->setBounds (0, 0, 600, 50);
     alterTheCodeHyperlink->setBounds (200, 430, 200, 25);
     tempoSlider->setBounds (0, 50, 600, 30);
     theLyonsDenDelayTimeCalculator2->setBounds (0, 0, 600, 50);
@@ -666,24 +655,24 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     else if (buttonThatWasClicked == tapButton)
     {
         //[UserButtonCode_tapButton] -- add your button handler code here..
-        
+
         tempoSlider->setValue(tapTempo.calculateTempo());
-        
+
         // Change button color so we know a reset is needed
         resetButton->setColour(TextButton::buttonColourId , Colours::white);
-        
+
         //[/UserButtonCode_tapButton]
     }
     else if (buttonThatWasClicked == resetButton)
     {
         //[UserButtonCode_resetButton] -- add your button handler code here..
-        
+
         tapTempo.resetMainCalculationHolders();
-        
+
         // Reset the color of resetButton by simply setting it to the color of tapButton
         resetButton->setColour(TextButton::buttonColourId,
                                tapButton->findColour(TextButton::buttonColourId));
-        
+
         //[/UserButtonCode_resetButton]
     }
 
@@ -772,12 +761,6 @@ BEGIN_JUCER_METADATA
                    virtualName="" explicitFocusOrder="0" pos="0 430 80 25" tooltip="josephtlyons@gmail.com"
                    textCol="ffadaaaa" buttonText="Email Me" connectedEdges="0" needsCallback="0"
                    radioGroupId="0" url="josephtlyons@gmail.com"/>
-  <LABEL name="theLyonsDenDelayTimeCalculator" id="30efee6a53c20dfb" memberName="theLyonsDenDelayTimeCalculator"
-         virtualName="" explicitFocusOrder="0" pos="0 0 600 50" textCol="ffadaaaa"
-         edTextCol="ff000000" edBkgCol="0" labelText="The Lyons' Den Delay Time Calculator"
-         editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
-         fontname="Bodoni 72 Oldstyle" fontsize="47.399999999999998579"
-         bold="0" italic="0" justification="36"/>
   <HYPERLINKBUTTON name="alterTheCodeHyperlink" id="1c00e9554abf8ce9" memberName="alterTheCodeHyperlink"
                    virtualName="" explicitFocusOrder="0" pos="200 430 200 25" tooltip="https://github.com/JosephTLyons/GUI-Delay-Time-Calculator"
                    textCol="ffadaaaa" buttonText="Download the Source Code" connectedEdges="0"
@@ -793,8 +776,8 @@ BEGIN_JUCER_METADATA
          virtualName="" explicitFocusOrder="0" pos="0 0 600 50" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="The Lyons' Den Delay Time Calculator"
          editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
-         fontname="Bodoni 72 Oldstyle" fontsize="47.399999999999998579"
-         bold="0" italic="0" justification="36"/>
+         fontname="Calisto MT" fontsize="47.399999999999998579" bold="0"
+         italic="0" justification="36"/>
   <HYPERLINKBUTTON name="donateHyperlink" id="4a395ec4ad75c68d" memberName="donateHyperlink"
                    virtualName="" explicitFocusOrder="0" pos="536 430 64 25" tooltip="https://www.paypal.me/JosephTimothyLyons/1"
                    textCol="ffadaaaa" buttonText="Donate" connectedEdges="0" needsCallback="0"
@@ -802,58 +785,57 @@ BEGIN_JUCER_METADATA
   <LABEL name="normalLabel" id="a751a1c9841b9424" memberName="normalLabel"
          virtualName="" explicitFocusOrder="0" pos="150 80 150 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="Normal&#10;" editableSingleClick="0"
-         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Bodoni 72 Oldstyle"
+         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
          fontsize="30" bold="0" italic="0" justification="33"/>
   <LABEL name="dottedLabel" id="f84ddade330c771e" memberName="dottedLabel"
          virtualName="" explicitFocusOrder="0" pos="300 80 150 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="Dotted" editableSingleClick="0"
-         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Bodoni 72 Oldstyle"
+         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
          fontsize="30" bold="0" italic="0" justification="33"/>
   <LABEL name="tripletLabel" id="24f4755bf6b035f2" memberName="tripletLabel"
          virtualName="" explicitFocusOrder="0" pos="450 80 150 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="Triplet" editableSingleClick="0"
-         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Bodoni 72 Oldstyle"
+         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
          fontsize="30" bold="0" italic="0" justification="33"/>
   <LABEL name="wholeLabel" id="84a944615f7ab97c" memberName="wholeLabel"
          virtualName="" explicitFocusOrder="0" pos="0 110 150 30" textCol="ffadaaaa"
-         edTextCol="ff000000" edBkgCol="0" labelText="Whole:" editableSingleClick="0"
-         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Bodoni 72 Oldstyle"
+         edTextCol="ff000000" edBkgCol="0" labelText="1:" editableSingleClick="0"
+         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
          fontsize="30" bold="0" italic="0" justification="33"/>
   <LABEL name="halfLabel" id="670aac61ca569af7" memberName="halfLabel"
          virtualName="" explicitFocusOrder="0" pos="0 150 150 30" textCol="ffadaaaa"
-         edTextCol="ff000000" edBkgCol="0" labelText="Half:" editableSingleClick="0"
-         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Bodoni 72 Oldstyle"
+         edTextCol="ff000000" edBkgCol="0" labelText="1/2:" editableSingleClick="0"
+         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
          fontsize="30" bold="0" italic="0" justification="33"/>
   <LABEL name="quarterLabel" id="c5514ec2a3c07661" memberName="quarterLabel"
          virtualName="" explicitFocusOrder="0" pos="0 190 150 30" textCol="ffadaaaa"
-         edTextCol="ff000000" edBkgCol="0" labelText="Quarter:" editableSingleClick="0"
-         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Bodoni 72 Oldstyle"
+         edTextCol="ff000000" edBkgCol="0" labelText="1/4:" editableSingleClick="0"
+         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
          fontsize="30" bold="0" italic="0" justification="33"/>
   <LABEL name="eighthLabel" id="49b134e52607b4bd" memberName="eighthLabel"
          virtualName="" explicitFocusOrder="0" pos="0 230 150 30" textCol="ffadaaaa"
-         edTextCol="ff000000" edBkgCol="0" labelText="Eighth:" editableSingleClick="0"
-         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Bodoni 72 Oldstyle"
+         edTextCol="ff000000" edBkgCol="0" labelText="1/8:" editableSingleClick="0"
+         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
          fontsize="30" bold="0" italic="0" justification="33"/>
   <LABEL name="sixteenthLabel" id="15b5cdc975d8b4c1" memberName="sixteenthLabel"
          virtualName="" explicitFocusOrder="0" pos="0 270 150 30" textCol="ffadaaaa"
-         edTextCol="ff000000" edBkgCol="0" labelText="Sixteenth:" editableSingleClick="0"
-         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Bodoni 72 Oldstyle"
+         edTextCol="ff000000" edBkgCol="0" labelText="1/16:" editableSingleClick="0"
+         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
          fontsize="30" bold="0" italic="0" justification="33"/>
   <LABEL name="thirtySecondLabel" id="286f381f35aec721" memberName="thirtySecondLabel"
          virtualName="" explicitFocusOrder="0" pos="0 310 150 30" textCol="ffadaaaa"
-         edTextCol="ff000000" edBkgCol="0" labelText="Thirty-Second:"
-         editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
-         fontname="Bodoni 72 Oldstyle" fontsize="30" bold="0" italic="0"
-         justification="36"/>
+         edTextCol="ff000000" edBkgCol="0" labelText="1/32:" editableSingleClick="0"
+         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
+         fontsize="30" bold="0" italic="0" justification="33"/>
   <LABEL name="sixtyFourthLabel" id="e0fec546bed640df" memberName="sixtyFourthLabel"
          virtualName="" explicitFocusOrder="0" pos="0 350 150 30" textCol="ffadaaaa"
-         edTextCol="ff000000" edBkgCol="0" labelText="Sixty-Fourth:" editableSingleClick="0"
-         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Bodoni 72 Oldstyle"
+         edTextCol="ff000000" edBkgCol="0" labelText="1/64:" editableSingleClick="0"
+         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
          fontsize="30" bold="0" italic="0" justification="33"/>
   <LABEL name="oneHundreAndTwentyEighthLabel" id="fe1fa9046023fc2a" memberName="oneHundreAndTwentyEighthLabel"
          virtualName="" explicitFocusOrder="0" pos="0 390 150 30" textCol="ffadaaaa"
-         edTextCol="ff000000" edBkgCol="0" labelText="1/128th:" editableSingleClick="0"
-         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Bodoni 72 Oldstyle"
+         edTextCol="ff000000" edBkgCol="0" labelText="1/128:" editableSingleClick="0"
+         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
          fontsize="30" bold="0" italic="0" justification="33"/>
   <TEXTEDITOR name="wholeNormalEditor" id="3e709db971b7b13e" memberName="wholeNormalEditor"
               virtualName="" explicitFocusOrder="0" pos="150 110 150 30" textcol="ffffffff"
