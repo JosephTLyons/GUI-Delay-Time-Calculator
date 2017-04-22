@@ -16,9 +16,9 @@ private:
     float tempo;
     unsigned long int tapCount;
     
-    int64 startingMillisecondHolder;
-    int64 endingMillisecondHolder;
-    int64 timeElapsed;
+    int64 startingTimeInMilliseconds;
+    int64 endingTimeInMilliseconds;
+    int64 timeElapsedInMilliseconds;
     
     double seconds;
     double minutes;

@@ -20,31 +20,33 @@ float TapTempo::calculateTempo()
 {
     Time juceTimeObject(Time::getCurrentTime());
     
-    // start timer - only do this once
+    // Set start time, this should happen only once (on first tap)
+    // and maintain this value the entire time so that the total average can be calculated
     if(tapCount == 0)
     {
         // Set minutes to one, otherwise, first tap will result in a division with
         // 0 in the denominator, which will output "nan" on the first tap
         minutes = 1;
         
-        startingMillisecondHolder = juceTimeObject.toMilliseconds();
+        startingTimeInMilliseconds = juceTimeObject.toMilliseconds();
     }
     
     tapCount++;
     
-    // set end time
-    endingMillisecondHolder = juceTimeObject.toMilliseconds();
+    // Set end time
+    endingTimeInMilliseconds = juceTimeObject.toMilliseconds();
     
     calculateTimeElapsed();
     
-    // get new current time to calculate new duration, do this everytime
+    // Only calculate minutes after the first hit because minutes are automatically set to one
+    // the very first hit to avoid division by 0.
     if(tapCount > 1)
     {
         getTimeElapsedInMinutes(juceTimeObject);
     }
     
-    // calculate BPM - subtract 1 from bpm count because intervals are always 1
-    // less than the BPM count
+    // Calculate tempo by subtracting 1 from tap count count because intervals are always 1
+    // less than the tempo count
     tempo = (tapCount - 1) / minutes;
     
     return tempo;
@@ -52,13 +54,13 @@ float TapTempo::calculateTempo()
 
 void TapTempo::calculateTimeElapsed()
 {
-    timeElapsed = endingMillisecondHolder - startingMillisecondHolder;
+    timeElapsedInMilliseconds = endingTimeInMilliseconds - startingTimeInMilliseconds;
 }
 
 void TapTempo::getTimeElapsedInMinutes(const Time &juceTimeObject)
 {
     // convert elapsed time to seconds
-    seconds = timeElapsed / (double) millisecondsInASecond;
+    seconds = timeElapsedInMilliseconds / (double) millisecondsInASecond;
     
     // convert elapsed time to minutes
     minutes = seconds / secondsInAMinute;
@@ -66,13 +68,13 @@ void TapTempo::getTimeElapsedInMinutes(const Time &juceTimeObject)
 
 void TapTempo::resetMainCalculationHolders()
 {
-    tempo                     = 0;
-    tapCount                  = 0;
+    tempo                      = 0;
+    tapCount                   = 0;
     
-    startingMillisecondHolder = 0;
-    endingMillisecondHolder   = 0;
-    timeElapsed               = 0;
+    startingTimeInMilliseconds = 0;
+    endingTimeInMilliseconds   = 0;
+    timeElapsedInMilliseconds                = 0;
     
-    seconds                   = 0;
-    minutes                   = 0;
+    seconds                    = 0;
+    minutes                    = 0;
 }
