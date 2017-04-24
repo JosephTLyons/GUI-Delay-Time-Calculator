@@ -16,7 +16,7 @@ TapTempo::TapTempo()
     secondsInAMinute          = 60;
 }
 
-float TapTempo::calculateTempo()
+double TapTempo::calculateTempo()
 {
     Time juceTimeObject(Time::getCurrentTime());
     
@@ -73,7 +73,7 @@ void TapTempo::resetMainCalculationHolders()
     
     startingTimeInMilliseconds = 0;
     endingTimeInMilliseconds   = 0;
-    timeElapsedInMilliseconds                = 0;
+    timeElapsedInMilliseconds  = 0;
     
     seconds                    = 0;
     minutes                    = 0;

@@ -12,58 +12,58 @@
 class DelayTime
 {
 private:
-    float tempo;
+    double tempo;
     
-    float whole;
-    float half;
-    float quarter;
-    float eighth;
-    float sixteenth;
-    float thirtySecond;
-    float sixtyFourth;
-    float oneHundredAndTwentyEighth;
+    double whole;
+    double half;
+    double quarter;
+    double eighth;
+    double sixteenth;
+    double thirtySecond;
+    double sixtyFourth;
+    double oneHundredAndTwentyEighth;
     
-    float dotted;
-    float triplet;
+    double dotted;
+    double triplet;
     
     
 public:
     DelayTime();
     
-    void setTempo(const float &input);
+    void setTempo(const double &input);
     void calculateDelayTimes();
     
-    float getWholeNormal();
-    float getWholeDotted();
-    float getWholeTriplet();
+    double getWholeNormal();
+    double getWholeDotted();
+    double getWholeTriplet();
     
-    float getHalfNormal();
-    float getHalfDotted();
-    float getHalfTriplet();
+    double getHalfNormal();
+    double getHalfDotted();
+    double getHalfTriplet();
     
-    float getQuarterNormal();
-    float getQuarterDotted();
-    float getQuarterTriplet();
+    double getQuarterNormal();
+    double getQuarterDotted();
+    double getQuarterTriplet();
     
-    float getEighthNormal();
-    float getEighthDotted();
-    float getEighthTriplet();
+    double getEighthNormal();
+    double getEighthDotted();
+    double getEighthTriplet();
     
-    float getSixteenthNormal();
-    float getSixteenthDotted();
-    float getSixteenthTriplet();
+    double getSixteenthNormal();
+    double getSixteenthDotted();
+    double getSixteenthTriplet();
     
-    float getThirtySecondNormal();
-    float getThirtySecondDotted();
-    float getThirtySecondTriplet();
+    double getThirtySecondNormal();
+    double getThirtySecondDotted();
+    double getThirtySecondTriplet();
     
-    float getSixtyFouthNormal();
-    float getSixtyFouthDotted();
-    float getSixtyFouthTriplet();
+    double getSixtyFouthNormal();
+    double getSixtyFouthDotted();
+    double getSixtyFouthTriplet();
     
-    float getOneHundredAndTwentyEighthNormal();
-    float getOneHundredAndTwentyEighthDotted();
-    float getOneHundredAndTwentyEighthTriplet();
+    double getOneHundredAndTwentyEighthNormal();
+    double getOneHundredAndTwentyEighthDotted();
+    double getOneHundredAndTwentyEighthTriplet();
 };
 
 #endif /* DelayTime_hpp */

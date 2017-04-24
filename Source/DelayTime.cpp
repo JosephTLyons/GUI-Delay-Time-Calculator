@@ -25,7 +25,7 @@ DelayTime::DelayTime()
     triplet                   = 2 / 3.0f;
 }
 
-void DelayTime::setTempo(const float &input)
+void DelayTime::setTempo(const double &input)
 {
     tempo = input;
     calculateDelayTimes();
@@ -50,122 +50,122 @@ void DelayTime::calculateDelayTimes()
     oneHundredAndTwentyEighth = quarter / 32;
 }
 
-float DelayTime::getWholeNormal()
+double DelayTime::getWholeNormal()
 {
     return whole;
 }
 
-float DelayTime::getWholeDotted()
+double DelayTime::getWholeDotted()
 {
     return whole * dotted;
 }
 
-float DelayTime::getWholeTriplet()
+double DelayTime::getWholeTriplet()
 {
     return whole * triplet;
 }
 
-float DelayTime::getHalfNormal()
+double DelayTime::getHalfNormal()
 {
     return half;
 }
 
-float DelayTime::getHalfDotted()
+double DelayTime::getHalfDotted()
 {
     return half * dotted;
 }
 
-float DelayTime::getHalfTriplet()
+double DelayTime::getHalfTriplet()
 {
     return half * triplet;
 }
 
-float DelayTime::getQuarterNormal()
+double DelayTime::getQuarterNormal()
 {
     return quarter;
 }
 
-float DelayTime::getQuarterDotted()
+double DelayTime::getQuarterDotted()
 {
     return quarter * dotted;
 }
 
-float DelayTime::getQuarterTriplet()
+double DelayTime::getQuarterTriplet()
 {
     return quarter * triplet;
 }
 
-float DelayTime::getEighthNormal()
+double DelayTime::getEighthNormal()
 {
     return eighth;
 }
 
-float DelayTime::getEighthDotted()
+double DelayTime::getEighthDotted()
 {
     return eighth * dotted;
 }
 
-float DelayTime::getEighthTriplet()
+double DelayTime::getEighthTriplet()
 {
     return eighth * triplet;
 }
 
-float DelayTime::getSixteenthNormal()
+double DelayTime::getSixteenthNormal()
 {
     return sixteenth;
 }
 
-float DelayTime::getSixteenthDotted()
+double DelayTime::getSixteenthDotted()
 {
     return sixteenth * dotted;
 }
 
-float DelayTime::getSixteenthTriplet()
+double DelayTime::getSixteenthTriplet()
 {
     return sixteenth * triplet;
 }
 
-float DelayTime::getThirtySecondNormal()
+double DelayTime::getThirtySecondNormal()
 {
     return thirtySecond;
 }
 
-float DelayTime::getThirtySecondDotted()
+double DelayTime::getThirtySecondDotted()
 {
     return thirtySecond * dotted;
 }
 
-float DelayTime::getThirtySecondTriplet()
+double DelayTime::getThirtySecondTriplet()
 {
     return thirtySecond * triplet;
 }
 
-float DelayTime::getSixtyFouthNormal()
+double DelayTime::getSixtyFouthNormal()
 {
     return sixtyFourth;
 }
 
-float DelayTime::getSixtyFouthDotted()
+double DelayTime::getSixtyFouthDotted()
 {
     return sixtyFourth * dotted;
 }
 
-float DelayTime::getSixtyFouthTriplet()
+double DelayTime::getSixtyFouthTriplet()
 {
     return sixtyFourth * triplet;
 }
 
-float DelayTime::getOneHundredAndTwentyEighthNormal()
+double DelayTime::getOneHundredAndTwentyEighthNormal()
 {
     return oneHundredAndTwentyEighth;
 }
 
-float DelayTime::getOneHundredAndTwentyEighthDotted()
+double DelayTime::getOneHundredAndTwentyEighthDotted()
 {
     return oneHundredAndTwentyEighth * dotted;
 }
 
-float DelayTime::getOneHundredAndTwentyEighthTriplet()
+double DelayTime::getOneHundredAndTwentyEighthTriplet()
 {
     return oneHundredAndTwentyEighth * triplet;
 }

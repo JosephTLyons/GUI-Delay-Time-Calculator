@@ -13,7 +13,7 @@
 class TapTempo
 {
 private:
-    float tempo;
+    double tempo;
     unsigned long int tapCount;
     
     int64 startingTimeInMilliseconds;
@@ -33,7 +33,7 @@ private:
 public:
     TapTempo();
     
-    float calculateTempo();
+    double calculateTempo();
     void resetMainCalculationHolders();
 };
 
