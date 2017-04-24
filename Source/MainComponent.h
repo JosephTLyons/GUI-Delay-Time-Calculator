@@ -71,7 +71,7 @@ private:
     ScopedPointer<HyperlinkButton> emailHyperlink;
     ScopedPointer<HyperlinkButton> alterTheCodeHyperlink;
     ScopedPointer<Slider> tempoSlider;
-    ScopedPointer<Label> theLyonsDenDelayTimeCalculator2;
+    ScopedPointer<Label> theLyonsDenDelayTimeCalculator;
     ScopedPointer<HyperlinkButton> donateHyperlink;
     ScopedPointer<Label> normalLabel;
     ScopedPointer<Label> dottedLabel;

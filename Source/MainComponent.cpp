@@ -69,14 +69,14 @@ MainComponent::MainComponent ()
     tempoSlider->addListener (this);
     tempoSlider->setSkewFactor (0.5);
 
-    addAndMakeVisible (theLyonsDenDelayTimeCalculator2 = new Label ("theLyonsDenDelayTimeCalculator",
-                                                                    TRANS("The Lyons\' Den Delay Time Calculator")));
-    theLyonsDenDelayTimeCalculator2->setFont (Font ("Calisto MT", 47.40f, Font::plain));
-    theLyonsDenDelayTimeCalculator2->setJustificationType (Justification::centred);
-    theLyonsDenDelayTimeCalculator2->setEditable (false, false, false);
-    theLyonsDenDelayTimeCalculator2->setColour (Label::textColourId, Colour (0xffadaaaa));
-    theLyonsDenDelayTimeCalculator2->setColour (TextEditor::textColourId, Colours::black);
-    theLyonsDenDelayTimeCalculator2->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    addAndMakeVisible (theLyonsDenDelayTimeCalculator = new Label ("theLyonsDenDelayTimeCalculator",
+                                                                   TRANS("The Lyons\' Den Delay Time Calculator")));
+    theLyonsDenDelayTimeCalculator->setFont (Font ("Calisto MT", 47.40f, Font::plain));
+    theLyonsDenDelayTimeCalculator->setJustificationType (Justification::centred);
+    theLyonsDenDelayTimeCalculator->setEditable (false, false, false);
+    theLyonsDenDelayTimeCalculator->setColour (Label::textColourId, Colour (0xffadaaaa));
+    theLyonsDenDelayTimeCalculator->setColour (TextEditor::textColourId, Colours::black);
+    theLyonsDenDelayTimeCalculator->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
     addAndMakeVisible (donateHyperlink = new HyperlinkButton (TRANS("Donate"),
                                                               URL ("https://www.paypal.me/JosephTimothyLyons/1")));
@@ -521,7 +521,7 @@ MainComponent::~MainComponent()
     emailHyperlink = nullptr;
     alterTheCodeHyperlink = nullptr;
     tempoSlider = nullptr;
-    theLyonsDenDelayTimeCalculator2 = nullptr;
+    theLyonsDenDelayTimeCalculator = nullptr;
     donateHyperlink = nullptr;
     normalLabel = nullptr;
     dottedLabel = nullptr;
@@ -588,7 +588,7 @@ void MainComponent::resized()
     emailHyperlink->setBounds (0, 430, 80, 25);
     alterTheCodeHyperlink->setBounds (200, 430, 200, 25);
     tempoSlider->setBounds (0, 50, 600, 30);
-    theLyonsDenDelayTimeCalculator2->setBounds (0, 0, 600, 50);
+    theLyonsDenDelayTimeCalculator->setBounds (0, 0, 600, 50);
     donateHyperlink->setBounds (536, 430, 64, 25);
     normalLabel->setBounds (150, 80, 150, 30);
     dottedLabel->setBounds (300, 80, 150, 30);
@@ -772,7 +772,7 @@ BEGIN_JUCER_METADATA
           max="1000" int="0.10000000000000000555" style="LinearHorizontal"
           textBoxPos="TextBoxLeft" textBoxEditable="1" textBoxWidth="50"
           textBoxHeight="20" skewFactor="0.5" needsCallback="1"/>
-  <LABEL name="theLyonsDenDelayTimeCalculator" id="951f8323b93b29f2" memberName="theLyonsDenDelayTimeCalculator2"
+  <LABEL name="theLyonsDenDelayTimeCalculator" id="951f8323b93b29f2" memberName="theLyonsDenDelayTimeCalculator"
          virtualName="" explicitFocusOrder="0" pos="0 0 600 50" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="The Lyons' Den Delay Time Calculator"
          editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
