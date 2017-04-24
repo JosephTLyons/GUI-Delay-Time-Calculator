@@ -16,6 +16,19 @@ TapTempo::TapTempo()
     secondsInAMinute          = 60;
 }
 
+void TapTempo::resetMainCalculationHolders()
+{
+    tempo                      = 0;
+    tapCount                   = 0;
+    
+    startingTimeInMilliseconds = 0;
+    endingTimeInMilliseconds   = 0;
+    timeElapsedInMilliseconds  = 0;
+    
+    seconds                    = 0;
+    minutes                    = 0;
+}
+
 double TapTempo::calculateTempo()
 {
     Time juceTimeObject(Time::getCurrentTime());
@@ -64,17 +77,4 @@ void TapTempo::getTimeElapsedInMinutes(const Time &juceTimeObject)
     
     // convert elapsed time to minutes
     minutes = seconds / secondsInAMinute;
-}
-
-void TapTempo::resetMainCalculationHolders()
-{
-    tempo                      = 0;
-    tapCount                   = 0;
-    
-    startingTimeInMilliseconds = 0;
-    endingTimeInMilliseconds   = 0;
-    timeElapsedInMilliseconds  = 0;
-    
-    seconds                    = 0;
-    minutes                    = 0;
 }

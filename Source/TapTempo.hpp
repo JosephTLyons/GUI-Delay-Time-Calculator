@@ -33,8 +33,8 @@ private:
 public:
     TapTempo();
     
-    double calculateTempo();
     void resetMainCalculationHolders();
+    double calculateTempo();
 };
 
 #endif /* TapTempo_hpp */
