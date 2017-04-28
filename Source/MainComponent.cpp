@@ -7,7 +7,7 @@
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Created with Projucer version: 4.3.1
+  Created with Projucer version: 5.0.0
 
   ------------------------------------------------------------------------------
 
@@ -37,24 +37,20 @@ MainComponent::MainComponent ()
     doubleTempoButton->setConnectedEdges (Button::ConnectedOnLeft | Button::ConnectedOnRight);
     doubleTempoButton->addListener (this);
     doubleTempoButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
+    doubleTempoButton->setColour (TextButton::textColourOffId, Colour (0xff353535));
 
     addAndMakeVisible (halfTempoButton = new TextButton ("halfTempoButton"));
     halfTempoButton->setButtonText (TRANS("1/2x"));
     halfTempoButton->setConnectedEdges (Button::ConnectedOnLeft | Button::ConnectedOnRight);
     halfTempoButton->addListener (this);
     halfTempoButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
+    halfTempoButton->setColour (TextButton::textColourOffId, Colour (0xff353535));
 
     addAndMakeVisible (emailHyperlink = new HyperlinkButton (TRANS("Email Me"),
                                                              URL ("josephtlyons@gmail.com")));
     emailHyperlink->setTooltip (TRANS("josephtlyons@gmail.com"));
     emailHyperlink->setButtonText (TRANS("Email Me"));
     emailHyperlink->setColour (HyperlinkButton::textColourId, Colour (0xffadaaaa));
-
-    addAndMakeVisible (alterTheCodeHyperlink = new HyperlinkButton (TRANS("Download the Source Code"),
-                                                                    URL ("https://github.com/JosephTLyons/GUI-Delay-Time-Calculator")));
-    alterTheCodeHyperlink->setTooltip (TRANS("https://github.com/JosephTLyons/GUI-Delay-Time-Calculator"));
-    alterTheCodeHyperlink->setButtonText (TRANS("Download the Source Code"));
-    alterTheCodeHyperlink->setColour (HyperlinkButton::textColourId, Colour (0xffadaaaa));
 
     addAndMakeVisible (tempoSlider = new Slider ("tempoSlider"));
     tempoSlider->setRange (1, 1000, 0.1);
@@ -71,7 +67,7 @@ MainComponent::MainComponent ()
 
     addAndMakeVisible (theLyonsDenDelayTimeCalculator = new Label ("theLyonsDenDelayTimeCalculator",
                                                                    TRANS("The Lyons\' Den Delay Time Calculator")));
-    theLyonsDenDelayTimeCalculator->setFont (Font ("Calisto MT", 47.40f, Font::plain));
+    theLyonsDenDelayTimeCalculator->setFont (Font ("Calisto MT", 47.40f, Font::plain).withTypefaceStyle ("Regular"));
     theLyonsDenDelayTimeCalculator->setJustificationType (Justification::centred);
     theLyonsDenDelayTimeCalculator->setEditable (false, false, false);
     theLyonsDenDelayTimeCalculator->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -86,7 +82,7 @@ MainComponent::MainComponent ()
 
     addAndMakeVisible (normalLabel = new Label ("normalLabel",
                                                 TRANS("Normal\n")));
-    normalLabel->setFont (Font ("Calisto MT", 30.00f, Font::plain));
+    normalLabel->setFont (Font ("Calisto MT", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
     normalLabel->setJustificationType (Justification::centredLeft);
     normalLabel->setEditable (false, false, false);
     normalLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -95,7 +91,7 @@ MainComponent::MainComponent ()
 
     addAndMakeVisible (dottedLabel = new Label ("dottedLabel",
                                                 TRANS("Dotted")));
-    dottedLabel->setFont (Font ("Calisto MT", 30.00f, Font::plain));
+    dottedLabel->setFont (Font ("Calisto MT", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
     dottedLabel->setJustificationType (Justification::centredLeft);
     dottedLabel->setEditable (false, false, false);
     dottedLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -104,7 +100,7 @@ MainComponent::MainComponent ()
 
     addAndMakeVisible (tripletLabel = new Label ("tripletLabel",
                                                  TRANS("Triplet")));
-    tripletLabel->setFont (Font ("Calisto MT", 30.00f, Font::plain));
+    tripletLabel->setFont (Font ("Calisto MT", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
     tripletLabel->setJustificationType (Justification::centredLeft);
     tripletLabel->setEditable (false, false, false);
     tripletLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -113,7 +109,7 @@ MainComponent::MainComponent ()
 
     addAndMakeVisible (wholeLabel = new Label ("wholeLabel",
                                                TRANS("1:")));
-    wholeLabel->setFont (Font ("Calisto MT", 30.00f, Font::plain));
+    wholeLabel->setFont (Font ("Calisto MT", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
     wholeLabel->setJustificationType (Justification::centredLeft);
     wholeLabel->setEditable (false, false, false);
     wholeLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -122,7 +118,7 @@ MainComponent::MainComponent ()
 
     addAndMakeVisible (halfLabel = new Label ("halfLabel",
                                               TRANS("1/2:")));
-    halfLabel->setFont (Font ("Calisto MT", 30.00f, Font::plain));
+    halfLabel->setFont (Font ("Calisto MT", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
     halfLabel->setJustificationType (Justification::centredLeft);
     halfLabel->setEditable (false, false, false);
     halfLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -131,7 +127,7 @@ MainComponent::MainComponent ()
 
     addAndMakeVisible (quarterLabel = new Label ("quarterLabel",
                                                  TRANS("1/4:")));
-    quarterLabel->setFont (Font ("Calisto MT", 30.00f, Font::plain));
+    quarterLabel->setFont (Font ("Calisto MT", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
     quarterLabel->setJustificationType (Justification::centredLeft);
     quarterLabel->setEditable (false, false, false);
     quarterLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -140,7 +136,7 @@ MainComponent::MainComponent ()
 
     addAndMakeVisible (eighthLabel = new Label ("eighthLabel",
                                                 TRANS("1/8:")));
-    eighthLabel->setFont (Font ("Calisto MT", 30.00f, Font::plain));
+    eighthLabel->setFont (Font ("Calisto MT", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
     eighthLabel->setJustificationType (Justification::centredLeft);
     eighthLabel->setEditable (false, false, false);
     eighthLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -149,7 +145,7 @@ MainComponent::MainComponent ()
 
     addAndMakeVisible (sixteenthLabel = new Label ("sixteenthLabel",
                                                    TRANS("1/16:")));
-    sixteenthLabel->setFont (Font ("Calisto MT", 30.00f, Font::plain));
+    sixteenthLabel->setFont (Font ("Calisto MT", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
     sixteenthLabel->setJustificationType (Justification::centredLeft);
     sixteenthLabel->setEditable (false, false, false);
     sixteenthLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -158,7 +154,7 @@ MainComponent::MainComponent ()
 
     addAndMakeVisible (thirtySecondLabel = new Label ("thirtySecondLabel",
                                                       TRANS("1/32:")));
-    thirtySecondLabel->setFont (Font ("Calisto MT", 30.00f, Font::plain));
+    thirtySecondLabel->setFont (Font ("Calisto MT", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
     thirtySecondLabel->setJustificationType (Justification::centredLeft);
     thirtySecondLabel->setEditable (false, false, false);
     thirtySecondLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -167,7 +163,7 @@ MainComponent::MainComponent ()
 
     addAndMakeVisible (sixtyFourthLabel = new Label ("sixtyFourthLabel",
                                                      TRANS("1/64:")));
-    sixtyFourthLabel->setFont (Font ("Calisto MT", 30.00f, Font::plain));
+    sixtyFourthLabel->setFont (Font ("Calisto MT", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
     sixtyFourthLabel->setJustificationType (Justification::centredLeft);
     sixtyFourthLabel->setEditable (false, false, false);
     sixtyFourthLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -176,7 +172,7 @@ MainComponent::MainComponent ()
 
     addAndMakeVisible (oneHundreAndTwentyEighthLabel = new Label ("oneHundreAndTwentyEighthLabel",
                                                                   TRANS("1/128:")));
-    oneHundreAndTwentyEighthLabel->setFont (Font ("Calisto MT", 30.00f, Font::plain));
+    oneHundreAndTwentyEighthLabel->setFont (Font ("Calisto MT", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
     oneHundreAndTwentyEighthLabel->setJustificationType (Justification::centredLeft);
     oneHundreAndTwentyEighthLabel->setEditable (false, false, false);
     oneHundreAndTwentyEighthLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -192,6 +188,7 @@ MainComponent::MainComponent ()
     wholeNormalEditor->setPopupMenuEnabled (true);
     wholeNormalEditor->setColour (TextEditor::textColourId, Colours::white);
     wholeNormalEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
+    wholeNormalEditor->setColour (TextEditor::outlineColourId, Colour (0xff353535));
     wholeNormalEditor->setText (String());
 
     addAndMakeVisible (wholeDottedEditor = new TextEditor ("wholeDottedEditor"));
@@ -203,6 +200,7 @@ MainComponent::MainComponent ()
     wholeDottedEditor->setPopupMenuEnabled (true);
     wholeDottedEditor->setColour (TextEditor::textColourId, Colours::white);
     wholeDottedEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
+    wholeDottedEditor->setColour (TextEditor::outlineColourId, Colour (0xff353535));
     wholeDottedEditor->setText (String());
 
     addAndMakeVisible (wholeTripletEditor = new TextEditor ("wholeTripletEditor"));
@@ -214,6 +212,7 @@ MainComponent::MainComponent ()
     wholeTripletEditor->setPopupMenuEnabled (true);
     wholeTripletEditor->setColour (TextEditor::textColourId, Colours::white);
     wholeTripletEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
+    wholeTripletEditor->setColour (TextEditor::outlineColourId, Colour (0xff353535));
     wholeTripletEditor->setText (String());
 
     addAndMakeVisible (halfNormalEditor = new TextEditor ("halfNormalEditor"));
@@ -225,6 +224,7 @@ MainComponent::MainComponent ()
     halfNormalEditor->setPopupMenuEnabled (true);
     halfNormalEditor->setColour (TextEditor::textColourId, Colours::white);
     halfNormalEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
+    halfNormalEditor->setColour (TextEditor::outlineColourId, Colour (0xff353535));
     halfNormalEditor->setText (String());
 
     addAndMakeVisible (halfDottedEditor = new TextEditor ("halfDottedEditor"));
@@ -236,6 +236,7 @@ MainComponent::MainComponent ()
     halfDottedEditor->setPopupMenuEnabled (true);
     halfDottedEditor->setColour (TextEditor::textColourId, Colours::white);
     halfDottedEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
+    halfDottedEditor->setColour (TextEditor::outlineColourId, Colour (0xff353535));
     halfDottedEditor->setText (String());
 
     addAndMakeVisible (halfTripletEditor = new TextEditor ("halfTripletEditor"));
@@ -247,6 +248,7 @@ MainComponent::MainComponent ()
     halfTripletEditor->setPopupMenuEnabled (true);
     halfTripletEditor->setColour (TextEditor::textColourId, Colours::white);
     halfTripletEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
+    halfTripletEditor->setColour (TextEditor::outlineColourId, Colour (0xff353535));
     halfTripletEditor->setText (String());
 
     addAndMakeVisible (quarterNormalEditor = new TextEditor ("quarterNormalEditor"));
@@ -258,6 +260,7 @@ MainComponent::MainComponent ()
     quarterNormalEditor->setPopupMenuEnabled (true);
     quarterNormalEditor->setColour (TextEditor::textColourId, Colours::white);
     quarterNormalEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
+    quarterNormalEditor->setColour (TextEditor::outlineColourId, Colour (0xff353535));
     quarterNormalEditor->setText (String());
 
     addAndMakeVisible (quarterDottedEditor = new TextEditor ("quarterDottedEditor"));
@@ -269,6 +272,7 @@ MainComponent::MainComponent ()
     quarterDottedEditor->setPopupMenuEnabled (true);
     quarterDottedEditor->setColour (TextEditor::textColourId, Colours::white);
     quarterDottedEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
+    quarterDottedEditor->setColour (TextEditor::outlineColourId, Colour (0xff353535));
     quarterDottedEditor->setText (String());
 
     addAndMakeVisible (quarterTripletEditor = new TextEditor ("quarterTripletEditor"));
@@ -280,6 +284,7 @@ MainComponent::MainComponent ()
     quarterTripletEditor->setPopupMenuEnabled (true);
     quarterTripletEditor->setColour (TextEditor::textColourId, Colours::white);
     quarterTripletEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
+    quarterTripletEditor->setColour (TextEditor::outlineColourId, Colour (0xff353535));
     quarterTripletEditor->setText (String());
 
     addAndMakeVisible (eighthNormalEditor = new TextEditor ("eighthNormalEditor"));
@@ -291,6 +296,7 @@ MainComponent::MainComponent ()
     eighthNormalEditor->setPopupMenuEnabled (true);
     eighthNormalEditor->setColour (TextEditor::textColourId, Colours::white);
     eighthNormalEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
+    eighthNormalEditor->setColour (TextEditor::outlineColourId, Colour (0xff353535));
     eighthNormalEditor->setText (String());
 
     addAndMakeVisible (eighthDottedEditor = new TextEditor ("eighthDottedEditor"));
@@ -302,6 +308,7 @@ MainComponent::MainComponent ()
     eighthDottedEditor->setPopupMenuEnabled (true);
     eighthDottedEditor->setColour (TextEditor::textColourId, Colours::white);
     eighthDottedEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
+    eighthDottedEditor->setColour (TextEditor::outlineColourId, Colour (0xff353535));
     eighthDottedEditor->setText (String());
 
     addAndMakeVisible (eighthTripletEditor = new TextEditor ("eighthTripletEditor"));
@@ -313,6 +320,7 @@ MainComponent::MainComponent ()
     eighthTripletEditor->setPopupMenuEnabled (true);
     eighthTripletEditor->setColour (TextEditor::textColourId, Colours::white);
     eighthTripletEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
+    eighthTripletEditor->setColour (TextEditor::outlineColourId, Colour (0xff353535));
     eighthTripletEditor->setText (String());
 
     addAndMakeVisible (sixteenthNormalEditor = new TextEditor ("sixteenthNormalEditor"));
@@ -324,6 +332,7 @@ MainComponent::MainComponent ()
     sixteenthNormalEditor->setPopupMenuEnabled (true);
     sixteenthNormalEditor->setColour (TextEditor::textColourId, Colours::white);
     sixteenthNormalEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
+    sixteenthNormalEditor->setColour (TextEditor::outlineColourId, Colour (0xff353535));
     sixteenthNormalEditor->setText (String());
 
     addAndMakeVisible (sixteenthDottedEditor = new TextEditor ("sixteenthDottedEditor"));
@@ -335,6 +344,7 @@ MainComponent::MainComponent ()
     sixteenthDottedEditor->setPopupMenuEnabled (true);
     sixteenthDottedEditor->setColour (TextEditor::textColourId, Colours::white);
     sixteenthDottedEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
+    sixteenthDottedEditor->setColour (TextEditor::outlineColourId, Colour (0xff353535));
     sixteenthDottedEditor->setText (String());
 
     addAndMakeVisible (sixteenthTripletEditor = new TextEditor ("sixteenthTripletEditor"));
@@ -346,6 +356,7 @@ MainComponent::MainComponent ()
     sixteenthTripletEditor->setPopupMenuEnabled (true);
     sixteenthTripletEditor->setColour (TextEditor::textColourId, Colours::white);
     sixteenthTripletEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
+    sixteenthTripletEditor->setColour (TextEditor::outlineColourId, Colour (0xff353535));
     sixteenthTripletEditor->setText (String());
 
     addAndMakeVisible (thirtySecondNormalEditor = new TextEditor ("thirtySecondNormalEditor"));
@@ -357,6 +368,7 @@ MainComponent::MainComponent ()
     thirtySecondNormalEditor->setPopupMenuEnabled (true);
     thirtySecondNormalEditor->setColour (TextEditor::textColourId, Colours::white);
     thirtySecondNormalEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
+    thirtySecondNormalEditor->setColour (TextEditor::outlineColourId, Colour (0xff353535));
     thirtySecondNormalEditor->setText (String());
 
     addAndMakeVisible (thirtySecondDottedEditor = new TextEditor ("thirtySecondDottedEditor"));
@@ -368,6 +380,7 @@ MainComponent::MainComponent ()
     thirtySecondDottedEditor->setPopupMenuEnabled (true);
     thirtySecondDottedEditor->setColour (TextEditor::textColourId, Colours::white);
     thirtySecondDottedEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
+    thirtySecondDottedEditor->setColour (TextEditor::outlineColourId, Colour (0xff353535));
     thirtySecondDottedEditor->setText (String());
 
     addAndMakeVisible (thirtySecondTripletEditor = new TextEditor ("thirtySecondTripletEditor"));
@@ -379,6 +392,7 @@ MainComponent::MainComponent ()
     thirtySecondTripletEditor->setPopupMenuEnabled (true);
     thirtySecondTripletEditor->setColour (TextEditor::textColourId, Colours::white);
     thirtySecondTripletEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
+    thirtySecondTripletEditor->setColour (TextEditor::outlineColourId, Colour (0xff353535));
     thirtySecondTripletEditor->setText (String());
 
     addAndMakeVisible (sixtyFourthNormalEditor = new TextEditor ("sixtyFourthNormalEditor"));
@@ -390,6 +404,7 @@ MainComponent::MainComponent ()
     sixtyFourthNormalEditor->setPopupMenuEnabled (true);
     sixtyFourthNormalEditor->setColour (TextEditor::textColourId, Colours::white);
     sixtyFourthNormalEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
+    sixtyFourthNormalEditor->setColour (TextEditor::outlineColourId, Colour (0xff353535));
     sixtyFourthNormalEditor->setText (String());
 
     addAndMakeVisible (sixtyFourthDottedEditor = new TextEditor ("sixtyFourthDottedEditor"));
@@ -401,6 +416,7 @@ MainComponent::MainComponent ()
     sixtyFourthDottedEditor->setPopupMenuEnabled (true);
     sixtyFourthDottedEditor->setColour (TextEditor::textColourId, Colours::white);
     sixtyFourthDottedEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
+    sixtyFourthDottedEditor->setColour (TextEditor::outlineColourId, Colour (0xff353535));
     sixtyFourthDottedEditor->setText (String());
 
     addAndMakeVisible (sixtyFourthTripletEditor = new TextEditor ("sixtyFourthTripletEditor"));
@@ -412,6 +428,7 @@ MainComponent::MainComponent ()
     sixtyFourthTripletEditor->setPopupMenuEnabled (true);
     sixtyFourthTripletEditor->setColour (TextEditor::textColourId, Colours::white);
     sixtyFourthTripletEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
+    sixtyFourthTripletEditor->setColour (TextEditor::outlineColourId, Colour (0xff353535));
     sixtyFourthTripletEditor->setText (String());
 
     addAndMakeVisible (oneTwentyEighthNormalEditor = new TextEditor ("oneTwentyEighthNormalEditor"));
@@ -423,6 +440,7 @@ MainComponent::MainComponent ()
     oneTwentyEighthNormalEditor->setPopupMenuEnabled (true);
     oneTwentyEighthNormalEditor->setColour (TextEditor::textColourId, Colours::white);
     oneTwentyEighthNormalEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
+    oneTwentyEighthNormalEditor->setColour (TextEditor::outlineColourId, Colour (0xff353535));
     oneTwentyEighthNormalEditor->setText (String());
 
     addAndMakeVisible (oneTwentyEighthDottedEditor = new TextEditor ("oneTwentyEighthDottedEditor"));
@@ -434,6 +452,7 @@ MainComponent::MainComponent ()
     oneTwentyEighthDottedEditor->setPopupMenuEnabled (true);
     oneTwentyEighthDottedEditor->setColour (TextEditor::textColourId, Colours::white);
     oneTwentyEighthDottedEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
+    oneTwentyEighthDottedEditor->setColour (TextEditor::outlineColourId, Colour (0xff353535));
     oneTwentyEighthDottedEditor->setText (String());
 
     addAndMakeVisible (oneTwentyEighthTripletEditor = new TextEditor ("oneTwentyEighthTripletEditor"));
@@ -445,6 +464,7 @@ MainComponent::MainComponent ()
     oneTwentyEighthTripletEditor->setPopupMenuEnabled (true);
     oneTwentyEighthTripletEditor->setColour (TextEditor::textColourId, Colours::white);
     oneTwentyEighthTripletEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
+    oneTwentyEighthTripletEditor->setColour (TextEditor::outlineColourId, Colour (0xff353535));
     oneTwentyEighthTripletEditor->setText (String());
 
     addAndMakeVisible (tapButton = new TextButton ("tapButton"));
@@ -452,12 +472,23 @@ MainComponent::MainComponent ()
     tapButton->setConnectedEdges (Button::ConnectedOnLeft | Button::ConnectedOnRight);
     tapButton->addListener (this);
     tapButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
+    tapButton->setColour (TextButton::textColourOffId, Colour (0xff353535));
 
     addAndMakeVisible (resetButton = new TextButton ("resetButton"));
     resetButton->setButtonText (TRANS("R"));
     resetButton->setConnectedEdges (Button::ConnectedOnLeft | Button::ConnectedOnRight);
     resetButton->addListener (this);
     resetButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
+    resetButton->setColour (TextButton::textColourOffId, Colour (0xff353535));
+
+    addAndMakeVisible (versionNumber = new Label ("versionNumber",
+                                                  TRANS("Version 1.3")));
+    versionNumber->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
+    versionNumber->setJustificationType (Justification::centredLeft);
+    versionNumber->setEditable (false, false, false);
+    versionNumber->setColour (Label::textColourId, Colour (0xffadaaaa));
+    versionNumber->setColour (TextEditor::textColourId, Colours::black);
+    versionNumber->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
 
     //[UserPreSize]
@@ -519,7 +550,6 @@ MainComponent::~MainComponent()
     doubleTempoButton = nullptr;
     halfTempoButton = nullptr;
     emailHyperlink = nullptr;
-    alterTheCodeHyperlink = nullptr;
     tempoSlider = nullptr;
     theLyonsDenDelayTimeCalculator = nullptr;
     donateHyperlink = nullptr;
@@ -560,6 +590,7 @@ MainComponent::~MainComponent()
     oneTwentyEighthTripletEditor = nullptr;
     tapButton = nullptr;
     resetButton = nullptr;
+    versionNumber = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -586,7 +617,6 @@ void MainComponent::resized()
     doubleTempoButton->setBounds (50, 80, 50, 30);
     halfTempoButton->setBounds (0, 80, 50, 30);
     emailHyperlink->setBounds (0, 430, 80, 25);
-    alterTheCodeHyperlink->setBounds (200, 430, 200, 25);
     tempoSlider->setBounds (0, 50, 600, 30);
     theLyonsDenDelayTimeCalculator->setBounds (0, 0, 600, 50);
     donateHyperlink->setBounds (536, 430, 64, 25);
@@ -603,7 +633,7 @@ void MainComponent::resized()
     oneHundreAndTwentyEighthLabel->setBounds (0, 390, 150, 30);
     wholeNormalEditor->setBounds (150, 110, 150, 30);
     wholeDottedEditor->setBounds (300, 110, 150, 30);
-    wholeTripletEditor->setBounds (450, 110, 150, 34);
+    wholeTripletEditor->setBounds (450, 110, 150, 30);
     halfNormalEditor->setBounds (150, 150, 150, 30);
     halfDottedEditor->setBounds (300, 150, 150, 30);
     halfTripletEditor->setBounds (450, 150, 150, 30);
@@ -627,6 +657,7 @@ void MainComponent::resized()
     oneTwentyEighthTripletEditor->setBounds (450, 390, 150, 30);
     tapButton->setBounds (100, 80, 25, 30);
     resetButton->setBounds (125, 80, 25, 30);
+    versionNumber->setBounds (236, 430, 128, 24);
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
 }
@@ -660,6 +691,7 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
 
         // Change button color so we know a reset is needed
         resetButton->setColour(TextButton::buttonColourId , Colours::white);
+        //resetButton->setColour(TextButton::button, <#juce::Colour newColour#>)
 
         //[/UserButtonCode_tapButton]
     }
@@ -753,18 +785,16 @@ BEGIN_JUCER_METADATA
   <BACKGROUND backgroundColour="ff353535"/>
   <TEXTBUTTON name="doubleTempoButton" id="74a1161b6a8bd75d" memberName="doubleTempoButton"
               virtualName="" explicitFocusOrder="0" pos="50 80 50 30" bgColOff="ffadaaaa"
-              buttonText="2x" connectedEdges="3" needsCallback="1" radioGroupId="0"/>
+              textCol="ff353535" buttonText="2x" connectedEdges="3" needsCallback="1"
+              radioGroupId="0"/>
   <TEXTBUTTON name="halfTempoButton" id="edac6a2aecdd8ef5" memberName="halfTempoButton"
               virtualName="" explicitFocusOrder="0" pos="0 80 50 30" bgColOff="ffadaaaa"
-              buttonText="1/2x" connectedEdges="3" needsCallback="1" radioGroupId="0"/>
+              textCol="ff353535" buttonText="1/2x" connectedEdges="3" needsCallback="1"
+              radioGroupId="0"/>
   <HYPERLINKBUTTON name="emailHyperlink" id="61f33ae81920857e" memberName="emailHyperlink"
                    virtualName="" explicitFocusOrder="0" pos="0 430 80 25" tooltip="josephtlyons@gmail.com"
                    textCol="ffadaaaa" buttonText="Email Me" connectedEdges="0" needsCallback="0"
                    radioGroupId="0" url="josephtlyons@gmail.com"/>
-  <HYPERLINKBUTTON name="alterTheCodeHyperlink" id="1c00e9554abf8ce9" memberName="alterTheCodeHyperlink"
-                   virtualName="" explicitFocusOrder="0" pos="200 430 200 25" tooltip="https://github.com/JosephTLyons/GUI-Delay-Time-Calculator"
-                   textCol="ffadaaaa" buttonText="Download the Source Code" connectedEdges="0"
-                   needsCallback="0" radioGroupId="0" url="https://github.com/JosephTLyons/GUI-Delay-Time-Calculator"/>
   <SLIDER name="tempoSlider" id="1b36c66db8e52ea5" memberName="tempoSlider"
           virtualName="" explicitFocusOrder="0" pos="0 50 600 30" thumbcol="ffefefef"
           trackcol="ffefefef" textboxtext="ffffffff" textboxbkgd="ff353535"
@@ -776,8 +806,8 @@ BEGIN_JUCER_METADATA
          virtualName="" explicitFocusOrder="0" pos="0 0 600 50" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="The Lyons' Den Delay Time Calculator"
          editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
-         fontname="Calisto MT" fontsize="47.399999999999998579" bold="0"
-         italic="0" justification="36"/>
+         fontname="Calisto MT" fontsize="47.399999999999998579" kerning="0"
+         bold="0" italic="0" justification="36"/>
   <HYPERLINKBUTTON name="donateHyperlink" id="4a395ec4ad75c68d" memberName="donateHyperlink"
                    virtualName="" explicitFocusOrder="0" pos="536 430 64 25" tooltip="https://www.paypal.me/JosephTimothyLyons/1"
                    textCol="ffadaaaa" buttonText="Donate" connectedEdges="0" needsCallback="0"
@@ -786,159 +816,166 @@ BEGIN_JUCER_METADATA
          virtualName="" explicitFocusOrder="0" pos="150 80 150 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="Normal&#10;" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
-         fontsize="30" bold="0" italic="0" justification="33"/>
+         fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="dottedLabel" id="f84ddade330c771e" memberName="dottedLabel"
          virtualName="" explicitFocusOrder="0" pos="300 80 150 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="Dotted" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
-         fontsize="30" bold="0" italic="0" justification="33"/>
+         fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="tripletLabel" id="24f4755bf6b035f2" memberName="tripletLabel"
          virtualName="" explicitFocusOrder="0" pos="450 80 150 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="Triplet" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
-         fontsize="30" bold="0" italic="0" justification="33"/>
+         fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="wholeLabel" id="84a944615f7ab97c" memberName="wholeLabel"
          virtualName="" explicitFocusOrder="0" pos="0 110 150 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="1:" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
-         fontsize="30" bold="0" italic="0" justification="33"/>
+         fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="halfLabel" id="670aac61ca569af7" memberName="halfLabel"
          virtualName="" explicitFocusOrder="0" pos="0 150 150 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="1/2:" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
-         fontsize="30" bold="0" italic="0" justification="33"/>
+         fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="quarterLabel" id="c5514ec2a3c07661" memberName="quarterLabel"
          virtualName="" explicitFocusOrder="0" pos="0 190 150 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="1/4:" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
-         fontsize="30" bold="0" italic="0" justification="33"/>
+         fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="eighthLabel" id="49b134e52607b4bd" memberName="eighthLabel"
          virtualName="" explicitFocusOrder="0" pos="0 230 150 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="1/8:" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
-         fontsize="30" bold="0" italic="0" justification="33"/>
+         fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="sixteenthLabel" id="15b5cdc975d8b4c1" memberName="sixteenthLabel"
          virtualName="" explicitFocusOrder="0" pos="0 270 150 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="1/16:" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
-         fontsize="30" bold="0" italic="0" justification="33"/>
+         fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="thirtySecondLabel" id="286f381f35aec721" memberName="thirtySecondLabel"
          virtualName="" explicitFocusOrder="0" pos="0 310 150 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="1/32:" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
-         fontsize="30" bold="0" italic="0" justification="33"/>
+         fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="sixtyFourthLabel" id="e0fec546bed640df" memberName="sixtyFourthLabel"
          virtualName="" explicitFocusOrder="0" pos="0 350 150 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="1/64:" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
-         fontsize="30" bold="0" italic="0" justification="33"/>
+         fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="oneHundreAndTwentyEighthLabel" id="fe1fa9046023fc2a" memberName="oneHundreAndTwentyEighthLabel"
          virtualName="" explicitFocusOrder="0" pos="0 390 150 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="1/128:" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
-         fontsize="30" bold="0" italic="0" justification="33"/>
+         fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <TEXTEDITOR name="wholeNormalEditor" id="3e709db971b7b13e" memberName="wholeNormalEditor"
               virtualName="" explicitFocusOrder="0" pos="150 110 150 30" textcol="ffffffff"
-              bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
-              readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
+              bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
+              retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="wholeDottedEditor" id="1912d62d2f447597" memberName="wholeDottedEditor"
               virtualName="" explicitFocusOrder="0" pos="300 110 150 30" textcol="ffffffff"
-              bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
-              readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
+              bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
+              retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="wholeTripletEditor" id="e112b0a336d6e11d" memberName="wholeTripletEditor"
-              virtualName="" explicitFocusOrder="0" pos="450 110 150 34" textcol="ffffffff"
-              bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
-              readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
+              virtualName="" explicitFocusOrder="0" pos="450 110 150 30" textcol="ffffffff"
+              bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
+              retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="halfNormalEditor" id="82341999a15b4905" memberName="halfNormalEditor"
               virtualName="" explicitFocusOrder="0" pos="150 150 150 30" textcol="ffffffff"
-              bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
-              readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
+              bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
+              retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="halfDottedEditor" id="a85686e91c138fa9" memberName="halfDottedEditor"
               virtualName="" explicitFocusOrder="0" pos="300 150 150 30" textcol="ffffffff"
-              bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
-              readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
+              bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
+              retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="halfTripletEditor" id="c55eca7e3b7372f3" memberName="halfTripletEditor"
               virtualName="" explicitFocusOrder="0" pos="450 150 150 30" textcol="ffffffff"
-              bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
-              readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
+              bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
+              retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="quarterNormalEditor" id="e57e3dabd7a8102" memberName="quarterNormalEditor"
               virtualName="" explicitFocusOrder="0" pos="150 190 150 30" textcol="ffffffff"
-              bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
-              readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
+              bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
+              retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="quarterDottedEditor" id="2fe82d45e4d3e7fc" memberName="quarterDottedEditor"
               virtualName="" explicitFocusOrder="0" pos="300 190 150 30" textcol="ffffffff"
-              bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
-              readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
+              bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
+              retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="quarterTripletEditor" id="d2aae6e014d232dc" memberName="quarterTripletEditor"
               virtualName="" explicitFocusOrder="0" pos="450 190 150 30" textcol="ffffffff"
-              bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
-              readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
+              bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
+              retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="eighthNormalEditor" id="9d2ae2448e7900db" memberName="eighthNormalEditor"
               virtualName="" explicitFocusOrder="0" pos="150 230 150 30" textcol="ffffffff"
-              bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
-              readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
+              bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
+              retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="eighthDottedEditor" id="a4a8910a489e585b" memberName="eighthDottedEditor"
               virtualName="" explicitFocusOrder="0" pos="300 230 150 30" textcol="ffffffff"
-              bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
-              readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
+              bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
+              retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="eighthTripletEditor" id="156bf5d61b16ddce" memberName="eighthTripletEditor"
               virtualName="" explicitFocusOrder="0" pos="450 230 150 30" textcol="ffffffff"
-              bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
-              readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
+              bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
+              retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="sixteenthNormalEditor" id="24572bb19d126658" memberName="sixteenthNormalEditor"
               virtualName="" explicitFocusOrder="0" pos="150 270 150 30" textcol="ffffffff"
-              bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
-              readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
+              bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
+              retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="sixteenthDottedEditor" id="c025d3524e04bf8b" memberName="sixteenthDottedEditor"
               virtualName="" explicitFocusOrder="0" pos="300 270 150 30" textcol="ffffffff"
-              bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
-              readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
+              bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
+              retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="sixteenthTripletEditor" id="e9c049b323b23b5a" memberName="sixteenthTripletEditor"
               virtualName="" explicitFocusOrder="0" pos="450 270 150 30" textcol="ffffffff"
-              bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
-              readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
+              bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
+              retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="thirtySecondNormalEditor" id="c0fa7d9ff7465796" memberName="thirtySecondNormalEditor"
               virtualName="" explicitFocusOrder="0" pos="150 310 150 30" textcol="ffffffff"
-              bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
-              readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
+              bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
+              retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="thirtySecondDottedEditor" id="a8080426d83310b9" memberName="thirtySecondDottedEditor"
               virtualName="" explicitFocusOrder="0" pos="300 310 150 30" textcol="ffffffff"
-              bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
-              readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
+              bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
+              retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="thirtySecondTripletEditor" id="50a7d2c7366628ee" memberName="thirtySecondTripletEditor"
               virtualName="" explicitFocusOrder="0" pos="450 310 150 30" textcol="ffffffff"
-              bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
-              readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
+              bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
+              retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="sixtyFourthNormalEditor" id="ba43e4d041dac5a5" memberName="sixtyFourthNormalEditor"
               virtualName="" explicitFocusOrder="0" pos="150 350 150 30" textcol="ffffffff"
-              bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
-              readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
+              bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
+              retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="sixtyFourthDottedEditor" id="551428071b2d2a98" memberName="sixtyFourthDottedEditor"
               virtualName="" explicitFocusOrder="0" pos="300 350 150 30" textcol="ffffffff"
-              bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
-              readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
+              bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
+              retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="sixtyFourthTripletEditor" id="39510d40072f9d4d" memberName="sixtyFourthTripletEditor"
               virtualName="" explicitFocusOrder="0" pos="450 350 150 30" textcol="ffffffff"
-              bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
-              readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
+              bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
+              retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="oneTwentyEighthNormalEditor" id="60cb84b268764f6" memberName="oneTwentyEighthNormalEditor"
               virtualName="" explicitFocusOrder="0" pos="150 390 150 30" textcol="ffffffff"
-              bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
-              readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
+              bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
+              retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="oneTwentyEighthDottedEditor" id="e78e5d3aa66c7f4" memberName="oneTwentyEighthDottedEditor"
               virtualName="" explicitFocusOrder="0" pos="300 390 150 30" textcol="ffffffff"
-              bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
-              readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
+              bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
+              retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="oneTwentyEighthTripletEditor" id="56dcaea61d27bce1" memberName="oneTwentyEighthTripletEditor"
               virtualName="" explicitFocusOrder="0" pos="450 390 150 30" textcol="ffffffff"
-              bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
-              readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
+              bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
+              retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTBUTTON name="tapButton" id="3cd8a4f5f3b122f8" memberName="tapButton"
               virtualName="" explicitFocusOrder="0" pos="100 80 25 30" bgColOff="ffadaaaa"
-              buttonText="T" connectedEdges="3" needsCallback="1" radioGroupId="0"/>
+              textCol="ff353535" buttonText="T" connectedEdges="3" needsCallback="1"
+              radioGroupId="0"/>
   <TEXTBUTTON name="resetButton" id="137cfed0258a7265" memberName="resetButton"
               virtualName="" explicitFocusOrder="0" pos="125 80 25 30" bgColOff="ffadaaaa"
-              buttonText="R" connectedEdges="3" needsCallback="1" radioGroupId="0"/>
+              textCol="ff353535" buttonText="R" connectedEdges="3" needsCallback="1"
+              radioGroupId="0"/>
+  <LABEL name="versionNumber" id="b387ac42be587b24" memberName="versionNumber"
+         virtualName="" explicitFocusOrder="0" pos="236 430 128 24" textCol="ffadaaaa"
+         edTextCol="ff000000" edBkgCol="0" labelText="Version 1.3" editableSingleClick="0"
+         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
+         fontsize="25" kerning="0" bold="0" italic="0" justification="33"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA

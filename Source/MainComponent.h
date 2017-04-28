@@ -7,7 +7,7 @@
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Created with Projucer version: 4.3.1
+  Created with Projucer version: 5.0.0
 
   ------------------------------------------------------------------------------
 
@@ -17,8 +17,7 @@
   ==============================================================================
 */
 
-#ifndef __JUCE_HEADER_9002020A4DD09B20__
-#define __JUCE_HEADER_9002020A4DD09B20__
+#pragma once
 
 //[Headers]     -- You can add your own extra header files here --
 #include "../JuceLibraryCode/JuceHeader.h"
@@ -69,7 +68,6 @@ private:
     ScopedPointer<TextButton> doubleTempoButton;
     ScopedPointer<TextButton> halfTempoButton;
     ScopedPointer<HyperlinkButton> emailHyperlink;
-    ScopedPointer<HyperlinkButton> alterTheCodeHyperlink;
     ScopedPointer<Slider> tempoSlider;
     ScopedPointer<Label> theLyonsDenDelayTimeCalculator;
     ScopedPointer<HyperlinkButton> donateHyperlink;
@@ -110,6 +108,7 @@ private:
     ScopedPointer<TextEditor> oneTwentyEighthTripletEditor;
     ScopedPointer<TextButton> tapButton;
     ScopedPointer<TextButton> resetButton;
+    ScopedPointer<Label> versionNumber;
 
 
     //==============================================================================
@@ -118,5 +117,3 @@ private:
 
 //[EndFile] You can add extra defines here...
 //[/EndFile]
-
-#endif   // __JUCE_HEADER_9002020A4DD09B20__
