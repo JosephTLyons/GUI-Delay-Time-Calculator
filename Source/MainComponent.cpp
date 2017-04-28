@@ -496,6 +496,7 @@ MainComponent::MainComponent ()
     versionNumberEditor->setPopupMenuEnabled (true);
     versionNumberEditor->setColour (TextEditor::textColourId, Colour (0xffadaaaa));
     versionNumberEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
+    versionNumberEditor->setColour (TextEditor::outlineColourId, Colour (0xff353535));
     versionNumberEditor->setText (String());
 
 
@@ -511,12 +512,14 @@ MainComponent::MainComponent ()
 
     // Right click for velocity sensitive sliding
     tempoSlider->setPopupMenuEnabled(true);
-    
+
     // Set version number editor to current version number
     versionNumberEditor->setText((String) ProjectInfo::versionString);
 
     // Set text editor font sizes;
     textEditorFontSize = 25;
+
+    versionNumberEditor->setFont(textEditorFontSize);
 
     wholeNormalEditor->setFont(textEditorFontSize);
     wholeDottedEditor->setFont(textEditorFontSize);
@@ -669,8 +672,8 @@ void MainComponent::resized()
     oneTwentyEighthTripletEditor->setBounds (450, 390, 150, 30);
     tapButton->setBounds (100, 80, 25, 30);
     resetButton->setBounds (125, 80, 25, 30);
-    versionNumberLabel->setBounds (255, 430, 90, 24);
-    versionNumberEditor->setBounds (349, 430, 48, 24);
+    versionNumberLabel->setBounds (218, 430, 90, 25);
+    versionNumberEditor->setBounds (308, 430, 74, 25);
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
 }
@@ -985,14 +988,14 @@ BEGIN_JUCER_METADATA
               textCol="ff353535" buttonText="R" connectedEdges="0" needsCallback="1"
               radioGroupId="0"/>
   <LABEL name="versionNumberLabel" id="b387ac42be587b24" memberName="versionNumberLabel"
-         virtualName="" explicitFocusOrder="0" pos="255 430 90 24" textCol="ffadaaaa"
+         virtualName="" explicitFocusOrder="0" pos="218 430 90 25" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="Version:" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
          fontsize="25" kerning="0" bold="0" italic="0" justification="33"/>
   <TEXTEDITOR name="versionNumberEditor" id="41ac6e79aa2cd908" memberName="versionNumberEditor"
-              virtualName="" explicitFocusOrder="0" pos="349 430 48 24" textcol="ffadaaaa"
-              bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
-              readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
+              virtualName="" explicitFocusOrder="0" pos="308 430 74 25" textcol="ffadaaaa"
+              bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
+              retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA
