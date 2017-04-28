@@ -108,7 +108,8 @@ private:
     ScopedPointer<TextEditor> oneTwentyEighthTripletEditor;
     ScopedPointer<TextButton> tapButton;
     ScopedPointer<TextButton> resetButton;
-    ScopedPointer<Label> versionNumber;
+    ScopedPointer<Label> versionNumberLabel;
+    ScopedPointer<TextEditor> versionNumberEditor;
 
 
     //==============================================================================

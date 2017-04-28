@@ -478,14 +478,25 @@ MainComponent::MainComponent ()
     resetButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
     resetButton->setColour (TextButton::textColourOffId, Colour (0xff353535));
 
-    addAndMakeVisible (versionNumber = new Label ("versionNumber",
-                                                  TRANS("Version 1.3")));
-    versionNumber->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    versionNumber->setJustificationType (Justification::centredLeft);
-    versionNumber->setEditable (false, false, false);
-    versionNumber->setColour (Label::textColourId, Colour (0xffadaaaa));
-    versionNumber->setColour (TextEditor::textColourId, Colours::black);
-    versionNumber->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    addAndMakeVisible (versionNumberLabel = new Label ("versionNumberLabel",
+                                                       TRANS("Version:")));
+    versionNumberLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
+    versionNumberLabel->setJustificationType (Justification::centredLeft);
+    versionNumberLabel->setEditable (false, false, false);
+    versionNumberLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
+    versionNumberLabel->setColour (TextEditor::textColourId, Colours::black);
+    versionNumberLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+
+    addAndMakeVisible (versionNumberEditor = new TextEditor ("versionNumberEditor"));
+    versionNumberEditor->setMultiLine (false);
+    versionNumberEditor->setReturnKeyStartsNewLine (false);
+    versionNumberEditor->setReadOnly (true);
+    versionNumberEditor->setScrollbarsShown (true);
+    versionNumberEditor->setCaretVisible (false);
+    versionNumberEditor->setPopupMenuEnabled (true);
+    versionNumberEditor->setColour (TextEditor::textColourId, Colour (0xffadaaaa));
+    versionNumberEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
+    versionNumberEditor->setText (String());
 
 
     //[UserPreSize]
@@ -500,6 +511,9 @@ MainComponent::MainComponent ()
 
     // Right click for velocity sensitive sliding
     tempoSlider->setPopupMenuEnabled(true);
+    
+    // Set version number editor to current version number
+    versionNumberEditor->setText((String) ProjectInfo::versionString);
 
     // Set text editor font sizes;
     textEditorFontSize = 25;
@@ -587,7 +601,8 @@ MainComponent::~MainComponent()
     oneTwentyEighthTripletEditor = nullptr;
     tapButton = nullptr;
     resetButton = nullptr;
-    versionNumber = nullptr;
+    versionNumberLabel = nullptr;
+    versionNumberEditor = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -654,7 +669,8 @@ void MainComponent::resized()
     oneTwentyEighthTripletEditor->setBounds (450, 390, 150, 30);
     tapButton->setBounds (100, 80, 25, 30);
     resetButton->setBounds (125, 80, 25, 30);
-    versionNumber->setBounds (236, 430, 128, 24);
+    versionNumberLabel->setBounds (255, 430, 90, 24);
+    versionNumberEditor->setBounds (349, 430, 48, 24);
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
 }
@@ -968,11 +984,15 @@ BEGIN_JUCER_METADATA
               virtualName="" explicitFocusOrder="0" pos="125 80 25 30" bgColOff="ffadaaaa"
               textCol="ff353535" buttonText="R" connectedEdges="0" needsCallback="1"
               radioGroupId="0"/>
-  <LABEL name="versionNumber" id="b387ac42be587b24" memberName="versionNumber"
-         virtualName="" explicitFocusOrder="0" pos="236 430 128 24" textCol="ffadaaaa"
-         edTextCol="ff000000" edBkgCol="0" labelText="Version 1.3" editableSingleClick="0"
+  <LABEL name="versionNumberLabel" id="b387ac42be587b24" memberName="versionNumberLabel"
+         virtualName="" explicitFocusOrder="0" pos="255 430 90 24" textCol="ffadaaaa"
+         edTextCol="ff000000" edBkgCol="0" labelText="Version:" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
          fontsize="25" kerning="0" bold="0" italic="0" justification="33"/>
+  <TEXTEDITOR name="versionNumberEditor" id="41ac6e79aa2cd908" memberName="versionNumberEditor"
+              virtualName="" explicitFocusOrder="0" pos="349 430 48 24" textcol="ffadaaaa"
+              bkgcol="ff353535" initialText="" multiline="0" retKeyStartsLine="0"
+              readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA
