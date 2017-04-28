@@ -56,8 +56,9 @@ MainComponent::MainComponent ()
     tempoSlider->setRange (1, 1000, 0.1);
     tempoSlider->setSliderStyle (Slider::LinearHorizontal);
     tempoSlider->setTextBoxStyle (Slider::TextBoxLeft, false, 50, 20);
-    tempoSlider->setColour (Slider::thumbColourId, Colour (0xffefefef));
-    tempoSlider->setColour (Slider::trackColourId, Colour (0xffefefef));
+    tempoSlider->setColour (Slider::backgroundColourId, Colours::black);
+    tempoSlider->setColour (Slider::thumbColourId, Colours::white);
+    tempoSlider->setColour (Slider::trackColourId, Colour (0xffadaaaa));
     tempoSlider->setColour (Slider::textBoxTextColourId, Colours::white);
     tempoSlider->setColour (Slider::textBoxBackgroundColourId, Colour (0xff353535));
     tempoSlider->setColour (Slider::textBoxHighlightColourId, Colour (0xffadaaaa));
@@ -796,10 +797,10 @@ BEGIN_JUCER_METADATA
                    textCol="ffadaaaa" buttonText="Email Me" connectedEdges="0" needsCallback="0"
                    radioGroupId="0" url="josephtlyons@gmail.com"/>
   <SLIDER name="tempoSlider" id="1b36c66db8e52ea5" memberName="tempoSlider"
-          virtualName="" explicitFocusOrder="0" pos="0 50 600 30" thumbcol="ffefefef"
-          trackcol="ffefefef" textboxtext="ffffffff" textboxbkgd="ff353535"
-          textboxhighlight="ffadaaaa" textboxoutline="ff353535" min="1"
-          max="1000" int="0.10000000000000000555" style="LinearHorizontal"
+          virtualName="" explicitFocusOrder="0" pos="0 50 600 30" bkgcol="ff000000"
+          thumbcol="ffffffff" trackcol="ffadaaaa" textboxtext="ffffffff"
+          textboxbkgd="ff353535" textboxhighlight="ffadaaaa" textboxoutline="ff353535"
+          min="1" max="1000" int="0.10000000000000000555" style="LinearHorizontal"
           textBoxPos="TextBoxLeft" textBoxEditable="1" textBoxWidth="50"
           textBoxHeight="20" skewFactor="0.5" needsCallback="1"/>
   <LABEL name="theLyonsDenDelayTimeCalculator" id="951f8323b93b29f2" memberName="theLyonsDenDelayTimeCalculator"

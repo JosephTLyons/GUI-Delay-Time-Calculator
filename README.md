@@ -11,6 +11,10 @@ Features:
 
 Changelog:
 
+April XX, 2017 - V 1.3:
+1.  Upgraded to JUCE 5.  Source code is now closed and a "Made with JUCE" splash screen pops up due to my licencing choice.
+2.  Small aesthetic changes due to the new LookAndFeelV4 class of JUCE 5.
+
 April 22, 2017 - V 1.2:
 1. Added tap tempo feature.  Tap T in time to set tempo, click R to reset internal values so you can use T to calculate a new tempo.  The R button turns white after the first click of the tap button, to let the user know that if they want to calculate a different speed, to click the reset button.
 3. Added a cheap app icon, will probably make a better one later, this is more or less a placeholder
@@ -33,3 +37,4 @@ April 15, 2017 - V 1.0 intial release:
 Features still to add:
 
 * Change to whole BPM values and use modifier buttons to access 1/10th notes (or any other method to access these values
+* Add T and R button to keys that can be used to tap and reset BPM
