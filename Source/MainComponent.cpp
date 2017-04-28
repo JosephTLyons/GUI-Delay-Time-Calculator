@@ -34,14 +34,12 @@ MainComponent::MainComponent ()
 
     addAndMakeVisible (doubleTempoButton = new TextButton ("doubleTempoButton"));
     doubleTempoButton->setButtonText (TRANS("2x"));
-    doubleTempoButton->setConnectedEdges (Button::ConnectedOnLeft | Button::ConnectedOnRight);
     doubleTempoButton->addListener (this);
     doubleTempoButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
     doubleTempoButton->setColour (TextButton::textColourOffId, Colour (0xff353535));
 
     addAndMakeVisible (halfTempoButton = new TextButton ("halfTempoButton"));
     halfTempoButton->setButtonText (TRANS("1/2x"));
-    halfTempoButton->setConnectedEdges (Button::ConnectedOnLeft | Button::ConnectedOnRight);
     halfTempoButton->addListener (this);
     halfTempoButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
     halfTempoButton->setColour (TextButton::textColourOffId, Colour (0xff353535));
@@ -470,14 +468,12 @@ MainComponent::MainComponent ()
 
     addAndMakeVisible (tapButton = new TextButton ("tapButton"));
     tapButton->setButtonText (TRANS("T"));
-    tapButton->setConnectedEdges (Button::ConnectedOnLeft | Button::ConnectedOnRight);
     tapButton->addListener (this);
     tapButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
     tapButton->setColour (TextButton::textColourOffId, Colour (0xff353535));
 
     addAndMakeVisible (resetButton = new TextButton ("resetButton"));
     resetButton->setButtonText (TRANS("R"));
-    resetButton->setConnectedEdges (Button::ConnectedOnLeft | Button::ConnectedOnRight);
     resetButton->addListener (this);
     resetButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
     resetButton->setColour (TextButton::textColourOffId, Colour (0xff353535));
@@ -786,11 +782,11 @@ BEGIN_JUCER_METADATA
   <BACKGROUND backgroundColour="ff353535"/>
   <TEXTBUTTON name="doubleTempoButton" id="74a1161b6a8bd75d" memberName="doubleTempoButton"
               virtualName="" explicitFocusOrder="0" pos="50 80 50 30" bgColOff="ffadaaaa"
-              textCol="ff353535" buttonText="2x" connectedEdges="3" needsCallback="1"
+              textCol="ff353535" buttonText="2x" connectedEdges="0" needsCallback="1"
               radioGroupId="0"/>
   <TEXTBUTTON name="halfTempoButton" id="edac6a2aecdd8ef5" memberName="halfTempoButton"
               virtualName="" explicitFocusOrder="0" pos="0 80 50 30" bgColOff="ffadaaaa"
-              textCol="ff353535" buttonText="1/2x" connectedEdges="3" needsCallback="1"
+              textCol="ff353535" buttonText="1/2x" connectedEdges="0" needsCallback="1"
               radioGroupId="0"/>
   <HYPERLINKBUTTON name="emailHyperlink" id="61f33ae81920857e" memberName="emailHyperlink"
                    virtualName="" explicitFocusOrder="0" pos="0 430 80 25" tooltip="josephtlyons@gmail.com"
@@ -966,11 +962,11 @@ BEGIN_JUCER_METADATA
               retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTBUTTON name="tapButton" id="3cd8a4f5f3b122f8" memberName="tapButton"
               virtualName="" explicitFocusOrder="0" pos="100 80 25 30" bgColOff="ffadaaaa"
-              textCol="ff353535" buttonText="T" connectedEdges="3" needsCallback="1"
+              textCol="ff353535" buttonText="T" connectedEdges="0" needsCallback="1"
               radioGroupId="0"/>
   <TEXTBUTTON name="resetButton" id="137cfed0258a7265" memberName="resetButton"
               virtualName="" explicitFocusOrder="0" pos="125 80 25 30" bgColOff="ffadaaaa"
-              textCol="ff353535" buttonText="R" connectedEdges="3" needsCallback="1"
+              textCol="ff353535" buttonText="R" connectedEdges="0" needsCallback="1"
               radioGroupId="0"/>
   <LABEL name="versionNumber" id="b387ac42be587b24" memberName="versionNumber"
          virtualName="" explicitFocusOrder="0" pos="236 430 128 24" textCol="ffadaaaa"
