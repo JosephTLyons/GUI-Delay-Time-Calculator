@@ -12,11 +12,12 @@ Features:
 Changelog:
 
 April XX, 2017 - V 1.3:
-1.  Upgraded to JUCE 5.  Source code is now closed and a "Made with JUCE" splash screen pops up due to my licencing choice.
-2.  Small aesthetic changes due to the new LookAndFeelV4 class of JUCE 5.
-3.  Version numbers now automatically reported at bottom of app.
-4.  GUI buttons moved and their actions made more clear
-5.  Changed all output fields from text editors to text labels.  I did this because text editors can be highlighted and labels cannot be.  The highlighting looks cheesy and unprofessional, so I make them all labels to keep from having the option to highlight output fields.
+1.  You can now use the keys "T" and "R" to triger "Tap Tempo" and "Reset Tap Tempo" - which feels more natural than using the mouse to click on the button"
+2.  Upgraded to JUCE 5.  Source code is now closed and a "Made with JUCE" splash screen pops up due to my licencing choice.
+3.  Small aesthetic changes due to the new LookAndFeelV4 class of JUCE 5.
+4.  Version numbers now automatically reported at bottom of app.
+5.  GUI buttons moved and their actions made more clear
+6.  Changed all output fields from text editors to text labels.  I did this because text editors can be highlighted and labels cannot be.  The highlighting looks cheesy and unprofessional, so I make them all labels to keep from having the option to highlight output fields.
 
 April 22, 2017 - V 1.2:
 1. Added tap tempo feature.  Tap T in time to set tempo, click R to reset internal values so you can use T to calculate a new tempo.  The R button turns white after the first click of the tap button, to let the user know that if they want to calculate a different speed, to click the reset button.

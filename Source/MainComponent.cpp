@@ -416,6 +416,9 @@ MainComponent::MainComponent ()
     // Set version number editor to current version number
     versionNumberLabelOutput->setText((String) ProjectInfo::versionString, dontSendNotification);
 
+    // Add listeners for T (Tap Tempo) and R (Reset Tap Tempo) buttons
+    tapButton->addKeyListener(keyListener);
+    resetButton->addKeyListener(keyListener);
     //[/Constructor]
 }
 
@@ -645,6 +648,22 @@ void MainComponent::sliderValueChanged (Slider* sliderThatWasMoved)
 
 
 //[MiscUserCode] You can add your own definitions of your custom methods or any other code here...
+
+bool MainComponent::keyPressed(const juce::KeyPress &key)
+{
+    if(key == 'T')
+    {
+        tapButton->triggerClick();
+    }
+
+    if(key == 'R')
+    {
+        resetButton->triggerClick();
+    }
+
+    return true;
+}
+
 //[/MiscUserCode]
 
 

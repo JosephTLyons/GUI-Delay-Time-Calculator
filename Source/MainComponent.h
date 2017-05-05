@@ -46,6 +46,10 @@ public:
 
     //==============================================================================
     //[UserMethods]     -- You can add your own custom methods in this section.
+
+    bool keyPressed(const juce::KeyPress &key) override;
+
+
     //[/UserMethods]
 
     void paint (Graphics& g) override;
@@ -59,8 +63,10 @@ private:
     //[UserVariables]   -- You can add your own custom variables in this section.
 
     DelayTime delayTimeObject;
-    int textEditorFontSize;
     TapTempo tapTempo;
+    int textEditorFontSize;
+
+    ScopedPointer<KeyListener> keyListener;
 
     //[/UserVariables]
 
