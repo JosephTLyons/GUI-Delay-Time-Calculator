@@ -7,7 +7,7 @@
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Created with Projucer version: 5.0.0
+  Created with Projucer version: 5.0.1
 
   ------------------------------------------------------------------------------
 
@@ -467,13 +467,13 @@ MainComponent::MainComponent ()
     oneTwentyEighthTripletEditor->setText (String());
 
     addAndMakeVisible (tapButton = new TextButton ("tapButton"));
-    tapButton->setButtonText (TRANS("T"));
+    tapButton->setButtonText (TRANS("Tap Tempo"));
     tapButton->addListener (this);
     tapButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
     tapButton->setColour (TextButton::textColourOffId, Colour (0xff353535));
 
     addAndMakeVisible (resetButton = new TextButton ("resetButton"));
-    resetButton->setButtonText (TRANS("R"));
+    resetButton->setButtonText (TRANS("Reset Tap Tempo"));
     resetButton->addListener (this);
     resetButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
     resetButton->setColour (TextButton::textColourOffId, Colour (0xff353535));
@@ -503,7 +503,7 @@ MainComponent::MainComponent ()
     //[UserPreSize]
     //[/UserPreSize]
 
-    setSize (600, 455);
+    setSize (600, 485);
 
 
     //[Constructor] You can add your own custom stuff here..
@@ -629,51 +629,51 @@ void MainComponent::resized()
     //[UserPreResize] Add your own custom resize code here..
     //[/UserPreResize]
 
-    doubleTempoButton->setBounds (50, 80, 50, 30);
-    halfTempoButton->setBounds (0, 80, 50, 30);
-    emailHyperlink->setBounds (0, 430, 80, 25);
+    doubleTempoButton->setBounds (150, 80, 150, 30);
+    halfTempoButton->setBounds (0, 80, 150, 30);
+    emailHyperlink->setBounds (0, 460, 80, 25);
     tempoSlider->setBounds (0, 50, 600, 30);
     theLyonsDenDelayTimeCalculator->setBounds (0, 0, 600, 50);
-    donateHyperlink->setBounds (536, 430, 64, 25);
-    normalLabel->setBounds (150, 80, 150, 30);
-    dottedLabel->setBounds (300, 80, 150, 30);
-    tripletLabel->setBounds (450, 80, 150, 30);
-    wholeLabel->setBounds (0, 110, 150, 30);
-    halfLabel->setBounds (0, 150, 150, 30);
-    quarterLabel->setBounds (0, 190, 150, 30);
-    eighthLabel->setBounds (0, 230, 150, 30);
-    sixteenthLabel->setBounds (0, 270, 150, 30);
-    thirtySecondLabel->setBounds (0, 310, 150, 30);
-    sixtyFourthLabel->setBounds (0, 350, 150, 30);
-    oneHundreAndTwentyEighthLabel->setBounds (0, 390, 150, 30);
-    wholeNormalEditor->setBounds (150, 110, 150, 30);
-    wholeDottedEditor->setBounds (300, 110, 150, 30);
-    wholeTripletEditor->setBounds (450, 110, 150, 30);
-    halfNormalEditor->setBounds (150, 150, 150, 30);
-    halfDottedEditor->setBounds (300, 150, 150, 30);
-    halfTripletEditor->setBounds (450, 150, 150, 30);
-    quarterNormalEditor->setBounds (150, 190, 150, 30);
-    quarterDottedEditor->setBounds (300, 190, 150, 30);
-    quarterTripletEditor->setBounds (450, 190, 150, 30);
-    eighthNormalEditor->setBounds (150, 230, 150, 30);
-    eighthDottedEditor->setBounds (300, 230, 150, 30);
-    eighthTripletEditor->setBounds (450, 230, 150, 30);
-    sixteenthNormalEditor->setBounds (150, 270, 150, 30);
-    sixteenthDottedEditor->setBounds (300, 270, 150, 30);
-    sixteenthTripletEditor->setBounds (450, 270, 150, 30);
-    thirtySecondNormalEditor->setBounds (150, 310, 150, 30);
-    thirtySecondDottedEditor->setBounds (300, 310, 150, 30);
-    thirtySecondTripletEditor->setBounds (450, 310, 150, 30);
-    sixtyFourthNormalEditor->setBounds (150, 350, 150, 30);
-    sixtyFourthDottedEditor->setBounds (300, 350, 150, 30);
-    sixtyFourthTripletEditor->setBounds (450, 350, 150, 30);
-    oneTwentyEighthNormalEditor->setBounds (150, 390, 150, 30);
-    oneTwentyEighthDottedEditor->setBounds (300, 390, 150, 30);
-    oneTwentyEighthTripletEditor->setBounds (450, 390, 150, 30);
-    tapButton->setBounds (100, 80, 25, 30);
-    resetButton->setBounds (125, 80, 25, 30);
-    versionNumberLabel->setBounds (218, 430, 90, 25);
-    versionNumberEditor->setBounds (308, 430, 74, 25);
+    donateHyperlink->setBounds (536, 460, 64, 25);
+    normalLabel->setBounds (150, 110, 150, 30);
+    dottedLabel->setBounds (300, 110, 150, 30);
+    tripletLabel->setBounds (450, 110, 150, 30);
+    wholeLabel->setBounds (0, 140, 150, 30);
+    halfLabel->setBounds (0, 180, 150, 30);
+    quarterLabel->setBounds (0, 220, 150, 30);
+    eighthLabel->setBounds (0, 260, 150, 30);
+    sixteenthLabel->setBounds (0, 300, 150, 30);
+    thirtySecondLabel->setBounds (0, 340, 150, 30);
+    sixtyFourthLabel->setBounds (0, 380, 150, 30);
+    oneHundreAndTwentyEighthLabel->setBounds (0, 420, 150, 30);
+    wholeNormalEditor->setBounds (150, 140, 100, 30);
+    wholeDottedEditor->setBounds (300, 140, 100, 30);
+    wholeTripletEditor->setBounds (450, 140, 100, 30);
+    halfNormalEditor->setBounds (150, 180, 100, 30);
+    halfDottedEditor->setBounds (300, 180, 100, 30);
+    halfTripletEditor->setBounds (450, 180, 100, 30);
+    quarterNormalEditor->setBounds (150, 220, 100, 30);
+    quarterDottedEditor->setBounds (300, 220, 100, 30);
+    quarterTripletEditor->setBounds (450, 220, 100, 30);
+    eighthNormalEditor->setBounds (150, 260, 100, 30);
+    eighthDottedEditor->setBounds (300, 260, 100, 30);
+    eighthTripletEditor->setBounds (450, 260, 100, 30);
+    sixteenthNormalEditor->setBounds (150, 300, 100, 30);
+    sixteenthDottedEditor->setBounds (300, 300, 100, 30);
+    sixteenthTripletEditor->setBounds (450, 300, 100, 30);
+    thirtySecondNormalEditor->setBounds (150, 340, 100, 30);
+    thirtySecondDottedEditor->setBounds (300, 340, 100, 30);
+    thirtySecondTripletEditor->setBounds (450, 340, 100, 30);
+    sixtyFourthNormalEditor->setBounds (150, 380, 100, 30);
+    sixtyFourthDottedEditor->setBounds (300, 380, 100, 30);
+    sixtyFourthTripletEditor->setBounds (450, 380, 100, 30);
+    oneTwentyEighthNormalEditor->setBounds (150, 420, 100, 30);
+    oneTwentyEighthDottedEditor->setBounds (300, 420, 100, 30);
+    oneTwentyEighthTripletEditor->setBounds (450, 420, 150, 30);
+    tapButton->setBounds (300, 80, 150, 30);
+    resetButton->setBounds (450, 80, 150, 30);
+    versionNumberLabel->setBounds (218, 460, 90, 25);
+    versionNumberEditor->setBounds (308, 460, 74, 25);
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
 }
@@ -797,18 +797,18 @@ BEGIN_JUCER_METADATA
 <JUCER_COMPONENT documentType="Component" className="MainComponent" componentName=""
                  parentClasses="public Component" constructorParams="" variableInitialisers=""
                  snapPixels="8" snapActive="1" snapShown="1" overlayOpacity="0.330"
-                 fixedSize="1" initialWidth="600" initialHeight="455">
+                 fixedSize="1" initialWidth="600" initialHeight="485">
   <BACKGROUND backgroundColour="ff353535"/>
   <TEXTBUTTON name="doubleTempoButton" id="74a1161b6a8bd75d" memberName="doubleTempoButton"
-              virtualName="" explicitFocusOrder="0" pos="50 80 50 30" bgColOff="ffadaaaa"
+              virtualName="" explicitFocusOrder="0" pos="150 80 150 30" bgColOff="ffadaaaa"
               textCol="ff353535" buttonText="2x" connectedEdges="0" needsCallback="1"
               radioGroupId="0"/>
   <TEXTBUTTON name="halfTempoButton" id="edac6a2aecdd8ef5" memberName="halfTempoButton"
-              virtualName="" explicitFocusOrder="0" pos="0 80 50 30" bgColOff="ffadaaaa"
+              virtualName="" explicitFocusOrder="0" pos="0 80 150 30" bgColOff="ffadaaaa"
               textCol="ff353535" buttonText="1/2x" connectedEdges="0" needsCallback="1"
               radioGroupId="0"/>
   <HYPERLINKBUTTON name="emailHyperlink" id="61f33ae81920857e" memberName="emailHyperlink"
-                   virtualName="" explicitFocusOrder="0" pos="0 430 80 25" tooltip="josephtlyons@gmail.com"
+                   virtualName="" explicitFocusOrder="0" pos="0 460 80 25" tooltip="josephtlyons@gmail.com"
                    textCol="ffadaaaa" buttonText="Email Me" connectedEdges="0" needsCallback="0"
                    radioGroupId="0" url="josephtlyons@gmail.com"/>
   <SLIDER name="tempoSlider" id="1b36c66db8e52ea5" memberName="tempoSlider"
@@ -825,175 +825,175 @@ BEGIN_JUCER_METADATA
          fontname="Calisto MT" fontsize="47.399999999999998579" kerning="0"
          bold="0" italic="0" justification="36"/>
   <HYPERLINKBUTTON name="donateHyperlink" id="4a395ec4ad75c68d" memberName="donateHyperlink"
-                   virtualName="" explicitFocusOrder="0" pos="536 430 64 25" tooltip="https://www.paypal.me/JosephTimothyLyons/1"
+                   virtualName="" explicitFocusOrder="0" pos="536 460 64 25" tooltip="https://www.paypal.me/JosephTimothyLyons/1"
                    textCol="ffadaaaa" buttonText="Donate" connectedEdges="0" needsCallback="0"
                    radioGroupId="0" url="https://www.paypal.me/JosephTimothyLyons/1"/>
   <LABEL name="normalLabel" id="a751a1c9841b9424" memberName="normalLabel"
-         virtualName="" explicitFocusOrder="0" pos="150 80 150 30" textCol="ffadaaaa"
+         virtualName="" explicitFocusOrder="0" pos="150 110 150 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="Normal&#10;" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="dottedLabel" id="f84ddade330c771e" memberName="dottedLabel"
-         virtualName="" explicitFocusOrder="0" pos="300 80 150 30" textCol="ffadaaaa"
+         virtualName="" explicitFocusOrder="0" pos="300 110 150 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="Dotted" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="tripletLabel" id="24f4755bf6b035f2" memberName="tripletLabel"
-         virtualName="" explicitFocusOrder="0" pos="450 80 150 30" textCol="ffadaaaa"
+         virtualName="" explicitFocusOrder="0" pos="450 110 150 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="Triplet" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="wholeLabel" id="84a944615f7ab97c" memberName="wholeLabel"
-         virtualName="" explicitFocusOrder="0" pos="0 110 150 30" textCol="ffadaaaa"
+         virtualName="" explicitFocusOrder="0" pos="0 140 150 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="1:" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="halfLabel" id="670aac61ca569af7" memberName="halfLabel"
-         virtualName="" explicitFocusOrder="0" pos="0 150 150 30" textCol="ffadaaaa"
+         virtualName="" explicitFocusOrder="0" pos="0 180 150 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="1/2:" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="quarterLabel" id="c5514ec2a3c07661" memberName="quarterLabel"
-         virtualName="" explicitFocusOrder="0" pos="0 190 150 30" textCol="ffadaaaa"
+         virtualName="" explicitFocusOrder="0" pos="0 220 150 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="1/4:" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="eighthLabel" id="49b134e52607b4bd" memberName="eighthLabel"
-         virtualName="" explicitFocusOrder="0" pos="0 230 150 30" textCol="ffadaaaa"
+         virtualName="" explicitFocusOrder="0" pos="0 260 150 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="1/8:" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="sixteenthLabel" id="15b5cdc975d8b4c1" memberName="sixteenthLabel"
-         virtualName="" explicitFocusOrder="0" pos="0 270 150 30" textCol="ffadaaaa"
+         virtualName="" explicitFocusOrder="0" pos="0 300 150 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="1/16:" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="thirtySecondLabel" id="286f381f35aec721" memberName="thirtySecondLabel"
-         virtualName="" explicitFocusOrder="0" pos="0 310 150 30" textCol="ffadaaaa"
+         virtualName="" explicitFocusOrder="0" pos="0 340 150 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="1/32:" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="sixtyFourthLabel" id="e0fec546bed640df" memberName="sixtyFourthLabel"
-         virtualName="" explicitFocusOrder="0" pos="0 350 150 30" textCol="ffadaaaa"
+         virtualName="" explicitFocusOrder="0" pos="0 380 150 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="1/64:" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="oneHundreAndTwentyEighthLabel" id="fe1fa9046023fc2a" memberName="oneHundreAndTwentyEighthLabel"
-         virtualName="" explicitFocusOrder="0" pos="0 390 150 30" textCol="ffadaaaa"
+         virtualName="" explicitFocusOrder="0" pos="0 420 150 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="1/128:" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <TEXTEDITOR name="wholeNormalEditor" id="3e709db971b7b13e" memberName="wholeNormalEditor"
-              virtualName="" explicitFocusOrder="0" pos="150 110 150 30" textcol="ffffffff"
+              virtualName="" explicitFocusOrder="0" pos="150 140 100 30" textcol="ffffffff"
               bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
               retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="wholeDottedEditor" id="1912d62d2f447597" memberName="wholeDottedEditor"
-              virtualName="" explicitFocusOrder="0" pos="300 110 150 30" textcol="ffffffff"
+              virtualName="" explicitFocusOrder="0" pos="300 140 100 30" textcol="ffffffff"
               bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
               retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="wholeTripletEditor" id="e112b0a336d6e11d" memberName="wholeTripletEditor"
-              virtualName="" explicitFocusOrder="0" pos="450 110 150 30" textcol="ffffffff"
+              virtualName="" explicitFocusOrder="0" pos="450 140 100 30" textcol="ffffffff"
               bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
               retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="halfNormalEditor" id="82341999a15b4905" memberName="halfNormalEditor"
-              virtualName="" explicitFocusOrder="0" pos="150 150 150 30" textcol="ffffffff"
+              virtualName="" explicitFocusOrder="0" pos="150 180 100 30" textcol="ffffffff"
               bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
               retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="halfDottedEditor" id="a85686e91c138fa9" memberName="halfDottedEditor"
-              virtualName="" explicitFocusOrder="0" pos="300 150 150 30" textcol="ffffffff"
+              virtualName="" explicitFocusOrder="0" pos="300 180 100 30" textcol="ffffffff"
               bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
               retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="halfTripletEditor" id="c55eca7e3b7372f3" memberName="halfTripletEditor"
-              virtualName="" explicitFocusOrder="0" pos="450 150 150 30" textcol="ffffffff"
+              virtualName="" explicitFocusOrder="0" pos="450 180 100 30" textcol="ffffffff"
               bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
               retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="quarterNormalEditor" id="e57e3dabd7a8102" memberName="quarterNormalEditor"
-              virtualName="" explicitFocusOrder="0" pos="150 190 150 30" textcol="ffffffff"
+              virtualName="" explicitFocusOrder="0" pos="150 220 100 30" textcol="ffffffff"
               bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
               retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="quarterDottedEditor" id="2fe82d45e4d3e7fc" memberName="quarterDottedEditor"
-              virtualName="" explicitFocusOrder="0" pos="300 190 150 30" textcol="ffffffff"
+              virtualName="" explicitFocusOrder="0" pos="300 220 100 30" textcol="ffffffff"
               bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
               retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="quarterTripletEditor" id="d2aae6e014d232dc" memberName="quarterTripletEditor"
-              virtualName="" explicitFocusOrder="0" pos="450 190 150 30" textcol="ffffffff"
+              virtualName="" explicitFocusOrder="0" pos="450 220 100 30" textcol="ffffffff"
               bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
               retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="eighthNormalEditor" id="9d2ae2448e7900db" memberName="eighthNormalEditor"
-              virtualName="" explicitFocusOrder="0" pos="150 230 150 30" textcol="ffffffff"
+              virtualName="" explicitFocusOrder="0" pos="150 260 100 30" textcol="ffffffff"
               bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
               retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="eighthDottedEditor" id="a4a8910a489e585b" memberName="eighthDottedEditor"
-              virtualName="" explicitFocusOrder="0" pos="300 230 150 30" textcol="ffffffff"
+              virtualName="" explicitFocusOrder="0" pos="300 260 100 30" textcol="ffffffff"
               bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
               retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="eighthTripletEditor" id="156bf5d61b16ddce" memberName="eighthTripletEditor"
-              virtualName="" explicitFocusOrder="0" pos="450 230 150 30" textcol="ffffffff"
+              virtualName="" explicitFocusOrder="0" pos="450 260 100 30" textcol="ffffffff"
               bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
               retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="sixteenthNormalEditor" id="24572bb19d126658" memberName="sixteenthNormalEditor"
-              virtualName="" explicitFocusOrder="0" pos="150 270 150 30" textcol="ffffffff"
+              virtualName="" explicitFocusOrder="0" pos="150 300 100 30" textcol="ffffffff"
               bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
               retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="sixteenthDottedEditor" id="c025d3524e04bf8b" memberName="sixteenthDottedEditor"
-              virtualName="" explicitFocusOrder="0" pos="300 270 150 30" textcol="ffffffff"
+              virtualName="" explicitFocusOrder="0" pos="300 300 100 30" textcol="ffffffff"
               bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
               retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="sixteenthTripletEditor" id="e9c049b323b23b5a" memberName="sixteenthTripletEditor"
-              virtualName="" explicitFocusOrder="0" pos="450 270 150 30" textcol="ffffffff"
+              virtualName="" explicitFocusOrder="0" pos="450 300 100 30" textcol="ffffffff"
               bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
               retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="thirtySecondNormalEditor" id="c0fa7d9ff7465796" memberName="thirtySecondNormalEditor"
-              virtualName="" explicitFocusOrder="0" pos="150 310 150 30" textcol="ffffffff"
+              virtualName="" explicitFocusOrder="0" pos="150 340 100 30" textcol="ffffffff"
               bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
               retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="thirtySecondDottedEditor" id="a8080426d83310b9" memberName="thirtySecondDottedEditor"
-              virtualName="" explicitFocusOrder="0" pos="300 310 150 30" textcol="ffffffff"
+              virtualName="" explicitFocusOrder="0" pos="300 340 100 30" textcol="ffffffff"
               bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
               retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="thirtySecondTripletEditor" id="50a7d2c7366628ee" memberName="thirtySecondTripletEditor"
-              virtualName="" explicitFocusOrder="0" pos="450 310 150 30" textcol="ffffffff"
+              virtualName="" explicitFocusOrder="0" pos="450 340 100 30" textcol="ffffffff"
               bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
               retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="sixtyFourthNormalEditor" id="ba43e4d041dac5a5" memberName="sixtyFourthNormalEditor"
-              virtualName="" explicitFocusOrder="0" pos="150 350 150 30" textcol="ffffffff"
+              virtualName="" explicitFocusOrder="0" pos="150 380 100 30" textcol="ffffffff"
               bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
               retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="sixtyFourthDottedEditor" id="551428071b2d2a98" memberName="sixtyFourthDottedEditor"
-              virtualName="" explicitFocusOrder="0" pos="300 350 150 30" textcol="ffffffff"
+              virtualName="" explicitFocusOrder="0" pos="300 380 100 30" textcol="ffffffff"
               bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
               retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="sixtyFourthTripletEditor" id="39510d40072f9d4d" memberName="sixtyFourthTripletEditor"
-              virtualName="" explicitFocusOrder="0" pos="450 350 150 30" textcol="ffffffff"
+              virtualName="" explicitFocusOrder="0" pos="450 380 100 30" textcol="ffffffff"
               bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
               retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="oneTwentyEighthNormalEditor" id="60cb84b268764f6" memberName="oneTwentyEighthNormalEditor"
-              virtualName="" explicitFocusOrder="0" pos="150 390 150 30" textcol="ffffffff"
+              virtualName="" explicitFocusOrder="0" pos="150 420 100 30" textcol="ffffffff"
               bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
               retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="oneTwentyEighthDottedEditor" id="e78e5d3aa66c7f4" memberName="oneTwentyEighthDottedEditor"
-              virtualName="" explicitFocusOrder="0" pos="300 390 150 30" textcol="ffffffff"
+              virtualName="" explicitFocusOrder="0" pos="300 420 100 30" textcol="ffffffff"
               bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
               retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="oneTwentyEighthTripletEditor" id="56dcaea61d27bce1" memberName="oneTwentyEighthTripletEditor"
-              virtualName="" explicitFocusOrder="0" pos="450 390 150 30" textcol="ffffffff"
+              virtualName="" explicitFocusOrder="0" pos="450 420 150 30" textcol="ffffffff"
               bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
               retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTBUTTON name="tapButton" id="3cd8a4f5f3b122f8" memberName="tapButton"
-              virtualName="" explicitFocusOrder="0" pos="100 80 25 30" bgColOff="ffadaaaa"
-              textCol="ff353535" buttonText="T" connectedEdges="0" needsCallback="1"
-              radioGroupId="0"/>
+              virtualName="" explicitFocusOrder="0" pos="300 80 150 30" bgColOff="ffadaaaa"
+              textCol="ff353535" buttonText="Tap Tempo" connectedEdges="0"
+              needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="resetButton" id="137cfed0258a7265" memberName="resetButton"
-              virtualName="" explicitFocusOrder="0" pos="125 80 25 30" bgColOff="ffadaaaa"
-              textCol="ff353535" buttonText="R" connectedEdges="0" needsCallback="1"
-              radioGroupId="0"/>
+              virtualName="" explicitFocusOrder="0" pos="450 80 150 30" bgColOff="ffadaaaa"
+              textCol="ff353535" buttonText="Reset Tap Tempo" connectedEdges="0"
+              needsCallback="1" radioGroupId="0"/>
   <LABEL name="versionNumberLabel" id="b387ac42be587b24" memberName="versionNumberLabel"
-         virtualName="" explicitFocusOrder="0" pos="218 430 90 25" textCol="ffadaaaa"
+         virtualName="" explicitFocusOrder="0" pos="218 460 90 25" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="Version:" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
          fontsize="25" kerning="0" bold="0" italic="0" justification="33"/>
   <TEXTEDITOR name="versionNumberEditor" id="41ac6e79aa2cd908" memberName="versionNumberEditor"
-              virtualName="" explicitFocusOrder="0" pos="308 430 74 25" textcol="ffadaaaa"
+              virtualName="" explicitFocusOrder="0" pos="308 460 74 25" textcol="ffadaaaa"
               bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
               retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
 </JUCER_COMPONENT>
