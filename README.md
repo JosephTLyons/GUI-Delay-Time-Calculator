@@ -43,6 +43,7 @@ April 15, 2017 - V 1.0 intial release:
 Features still to add:
 
 * Remove slider and use a text box that can be changed by clicking and dragging
+* Make Facebook page for button
 * Change to whole BPM values and use modifier buttons to access 1/10th notes (or any other method to access these values
 * New GUI screenshot for GitHub
 * Better app icon

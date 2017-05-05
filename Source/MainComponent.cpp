@@ -625,6 +625,10 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     else if (buttonThatWasClicked == facebookButton)
     {
         //[UserButtonCode_facebookButton] -- add your button handler code here..
+        
+        URL facebookULR("https://www.facebook.com/TheLyonsDenSoftware/");
+        facebookULR.launchInDefaultBrowser();
+        
         //[/UserButtonCode_facebookButton]
     }
     else if (buttonThatWasClicked == theCodeButton)
