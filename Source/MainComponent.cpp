@@ -178,78 +178,6 @@ MainComponent::MainComponent ()
     oneHundreAndTwentyEighthLabel->setColour (TextEditor::textColourId, Colours::black);
     oneHundreAndTwentyEighthLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (sixteenthNormalEditor = new TextEditor ("sixteenthNormalEditor"));
-    sixteenthNormalEditor->setMultiLine (false);
-    sixteenthNormalEditor->setReturnKeyStartsNewLine (false);
-    sixteenthNormalEditor->setReadOnly (true);
-    sixteenthNormalEditor->setScrollbarsShown (true);
-    sixteenthNormalEditor->setCaretVisible (false);
-    sixteenthNormalEditor->setPopupMenuEnabled (true);
-    sixteenthNormalEditor->setColour (TextEditor::textColourId, Colours::white);
-    sixteenthNormalEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
-    sixteenthNormalEditor->setColour (TextEditor::outlineColourId, Colour (0xff353535));
-    sixteenthNormalEditor->setText (String());
-
-    addAndMakeVisible (sixteenthDottedEditor = new TextEditor ("sixteenthDottedEditor"));
-    sixteenthDottedEditor->setMultiLine (false);
-    sixteenthDottedEditor->setReturnKeyStartsNewLine (false);
-    sixteenthDottedEditor->setReadOnly (true);
-    sixteenthDottedEditor->setScrollbarsShown (true);
-    sixteenthDottedEditor->setCaretVisible (false);
-    sixteenthDottedEditor->setPopupMenuEnabled (true);
-    sixteenthDottedEditor->setColour (TextEditor::textColourId, Colours::white);
-    sixteenthDottedEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
-    sixteenthDottedEditor->setColour (TextEditor::outlineColourId, Colour (0xff353535));
-    sixteenthDottedEditor->setText (String());
-
-    addAndMakeVisible (sixteenthTripletEditor = new TextEditor ("sixteenthTripletEditor"));
-    sixteenthTripletEditor->setMultiLine (false);
-    sixteenthTripletEditor->setReturnKeyStartsNewLine (false);
-    sixteenthTripletEditor->setReadOnly (true);
-    sixteenthTripletEditor->setScrollbarsShown (true);
-    sixteenthTripletEditor->setCaretVisible (false);
-    sixteenthTripletEditor->setPopupMenuEnabled (true);
-    sixteenthTripletEditor->setColour (TextEditor::textColourId, Colours::white);
-    sixteenthTripletEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
-    sixteenthTripletEditor->setColour (TextEditor::outlineColourId, Colour (0xff353535));
-    sixteenthTripletEditor->setText (String());
-
-    addAndMakeVisible (thirtySecondNormalEditor = new TextEditor ("thirtySecondNormalEditor"));
-    thirtySecondNormalEditor->setMultiLine (false);
-    thirtySecondNormalEditor->setReturnKeyStartsNewLine (false);
-    thirtySecondNormalEditor->setReadOnly (true);
-    thirtySecondNormalEditor->setScrollbarsShown (true);
-    thirtySecondNormalEditor->setCaretVisible (false);
-    thirtySecondNormalEditor->setPopupMenuEnabled (true);
-    thirtySecondNormalEditor->setColour (TextEditor::textColourId, Colours::white);
-    thirtySecondNormalEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
-    thirtySecondNormalEditor->setColour (TextEditor::outlineColourId, Colour (0xff353535));
-    thirtySecondNormalEditor->setText (String());
-
-    addAndMakeVisible (thirtySecondDottedEditor = new TextEditor ("thirtySecondDottedEditor"));
-    thirtySecondDottedEditor->setMultiLine (false);
-    thirtySecondDottedEditor->setReturnKeyStartsNewLine (false);
-    thirtySecondDottedEditor->setReadOnly (true);
-    thirtySecondDottedEditor->setScrollbarsShown (true);
-    thirtySecondDottedEditor->setCaretVisible (false);
-    thirtySecondDottedEditor->setPopupMenuEnabled (true);
-    thirtySecondDottedEditor->setColour (TextEditor::textColourId, Colours::white);
-    thirtySecondDottedEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
-    thirtySecondDottedEditor->setColour (TextEditor::outlineColourId, Colour (0xff353535));
-    thirtySecondDottedEditor->setText (String());
-
-    addAndMakeVisible (thirtySecondTripletEditor = new TextEditor ("thirtySecondTripletEditor"));
-    thirtySecondTripletEditor->setMultiLine (false);
-    thirtySecondTripletEditor->setReturnKeyStartsNewLine (false);
-    thirtySecondTripletEditor->setReadOnly (true);
-    thirtySecondTripletEditor->setScrollbarsShown (true);
-    thirtySecondTripletEditor->setCaretVisible (false);
-    thirtySecondTripletEditor->setPopupMenuEnabled (true);
-    thirtySecondTripletEditor->setColour (TextEditor::textColourId, Colours::white);
-    thirtySecondTripletEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
-    thirtySecondTripletEditor->setColour (TextEditor::outlineColourId, Colour (0xff353535));
-    thirtySecondTripletEditor->setText (String());
-
     addAndMakeVisible (sixtyFourthNormalEditor = new TextEditor ("sixtyFourthNormalEditor"));
     sixtyFourthNormalEditor->setMultiLine (false);
     sixtyFourthNormalEditor->setReturnKeyStartsNewLine (false);
@@ -436,7 +364,7 @@ MainComponent::MainComponent ()
     eighthNormalLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
     addAndMakeVisible (eighthDottedLabel = new Label ("eighthDottedLabel",
-                                                      TRANS("stuff\n")));
+                                                      String()));
     eighthDottedLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     eighthDottedLabel->setJustificationType (Justification::centredLeft);
     eighthDottedLabel->setEditable (false, false, false);
@@ -444,12 +372,60 @@ MainComponent::MainComponent ()
     eighthDottedLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
     addAndMakeVisible (eighthTripletLabel = new Label ("eighthTripletLabel",
-                                                       TRANS("stuff\n")));
+                                                       String()));
     eighthTripletLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     eighthTripletLabel->setJustificationType (Justification::centredLeft);
     eighthTripletLabel->setEditable (false, false, false);
     eighthTripletLabel->setColour (TextEditor::textColourId, Colours::black);
     eighthTripletLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+
+    addAndMakeVisible (sixteenthNormalLabel = new Label ("sixteenthNormalLabel",
+                                                         String()));
+    sixteenthNormalLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
+    sixteenthNormalLabel->setJustificationType (Justification::centredLeft);
+    sixteenthNormalLabel->setEditable (false, false, false);
+    sixteenthNormalLabel->setColour (TextEditor::textColourId, Colours::black);
+    sixteenthNormalLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+
+    addAndMakeVisible (sixteenthDottedLabel = new Label ("sixteenthDottedLabel",
+                                                         String()));
+    sixteenthDottedLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
+    sixteenthDottedLabel->setJustificationType (Justification::centredLeft);
+    sixteenthDottedLabel->setEditable (false, false, false);
+    sixteenthDottedLabel->setColour (TextEditor::textColourId, Colours::black);
+    sixteenthDottedLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+
+    addAndMakeVisible (sixteenthTripletLabel = new Label ("sixteenthTripletLabel",
+                                                          String()));
+    sixteenthTripletLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
+    sixteenthTripletLabel->setJustificationType (Justification::centredLeft);
+    sixteenthTripletLabel->setEditable (false, false, false);
+    sixteenthTripletLabel->setColour (TextEditor::textColourId, Colours::black);
+    sixteenthTripletLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+
+    addAndMakeVisible (thirtySecondNormalLabel = new Label ("thirtySecondNormalLabel",
+                                                            String()));
+    thirtySecondNormalLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
+    thirtySecondNormalLabel->setJustificationType (Justification::centredLeft);
+    thirtySecondNormalLabel->setEditable (false, false, false);
+    thirtySecondNormalLabel->setColour (TextEditor::textColourId, Colours::black);
+    thirtySecondNormalLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+
+    addAndMakeVisible (thirtySecondDottedLabel = new Label ("thirtySecondDottedLabel",
+                                                            TRANS("stuff\n")));
+    thirtySecondDottedLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
+    thirtySecondDottedLabel->setJustificationType (Justification::centredLeft);
+    thirtySecondDottedLabel->setEditable (false, false, false);
+    thirtySecondDottedLabel->setColour (TextEditor::textColourId, Colours::black);
+    thirtySecondDottedLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+
+    addAndMakeVisible (thirtySecondTripletLabel = new Label ("thirtySecondTripletLabel",
+                                                             TRANS("stuff\n")));
+    thirtySecondTripletLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
+    thirtySecondTripletLabel->setJustificationType (Justification::centredLeft);
+    thirtySecondTripletLabel->setEditable (false, false, false);
+    thirtySecondTripletLabel->setColour (TextEditor::textColourId, Colours::black);
+    thirtySecondTripletLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
 
     //[UserPreSize]
@@ -493,12 +469,6 @@ MainComponent::~MainComponent()
     thirtySecondLabel = nullptr;
     sixtyFourthLabel = nullptr;
     oneHundreAndTwentyEighthLabel = nullptr;
-    sixteenthNormalEditor = nullptr;
-    sixteenthDottedEditor = nullptr;
-    sixteenthTripletEditor = nullptr;
-    thirtySecondNormalEditor = nullptr;
-    thirtySecondDottedEditor = nullptr;
-    thirtySecondTripletEditor = nullptr;
     sixtyFourthNormalEditor = nullptr;
     sixtyFourthDottedEditor = nullptr;
     sixtyFourthTripletEditor = nullptr;
@@ -521,6 +491,12 @@ MainComponent::~MainComponent()
     eighthNormalLabel = nullptr;
     eighthDottedLabel = nullptr;
     eighthTripletLabel = nullptr;
+    sixteenthNormalLabel = nullptr;
+    sixteenthDottedLabel = nullptr;
+    sixteenthTripletLabel = nullptr;
+    thirtySecondNormalLabel = nullptr;
+    thirtySecondDottedLabel = nullptr;
+    thirtySecondTripletLabel = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -561,12 +537,6 @@ void MainComponent::resized()
     thirtySecondLabel->setBounds (0, 340, 150, 30);
     sixtyFourthLabel->setBounds (0, 380, 150, 30);
     oneHundreAndTwentyEighthLabel->setBounds (0, 420, 150, 30);
-    sixteenthNormalEditor->setBounds (150, 300, 100, 30);
-    sixteenthDottedEditor->setBounds (300, 300, 100, 30);
-    sixteenthTripletEditor->setBounds (450, 300, 100, 30);
-    thirtySecondNormalEditor->setBounds (150, 340, 100, 30);
-    thirtySecondDottedEditor->setBounds (300, 340, 100, 30);
-    thirtySecondTripletEditor->setBounds (450, 340, 100, 30);
     sixtyFourthNormalEditor->setBounds (150, 380, 100, 30);
     sixtyFourthDottedEditor->setBounds (300, 380, 100, 30);
     sixtyFourthTripletEditor->setBounds (450, 380, 100, 30);
@@ -589,6 +559,12 @@ void MainComponent::resized()
     eighthNormalLabel->setBounds (150, 260, 100, 30);
     eighthDottedLabel->setBounds (300, 260, 100, 30);
     eighthTripletLabel->setBounds (450, 260, 100, 30);
+    sixteenthNormalLabel->setBounds (150, 300, 100, 30);
+    sixteenthDottedLabel->setBounds (300, 300, 100, 30);
+    sixteenthTripletLabel->setBounds (450, 300, 100, 30);
+    thirtySecondNormalLabel->setBounds (150, 340, 100, 30);
+    thirtySecondDottedLabel->setBounds (300, 340, 100, 30);
+    thirtySecondTripletLabel->setBounds (450, 340, 100, 30);
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
 }
@@ -671,21 +647,21 @@ void MainComponent::sliderValueChanged (Slider* sliderThatWasMoved)
         eighthDottedLabel->setText((String) delayTimeObject.getEighthDotted(), dontSendNotification);
         eighthTripletLabel->setText((String) delayTimeObject.getEighthTriplet(), dontSendNotification);
 
-        sixteenthNormalEditor->setText((String) delayTimeObject.getSixteenthNormal());
-        sixteenthDottedEditor->setText((String) delayTimeObject.getSixteenthDotted());
-        sixteenthTripletEditor->setText((String) delayTimeObject.getSixteenthTriplet());
+        sixteenthNormalLabel->setText((String) delayTimeObject.getSixteenthNormal(), dontSendNotification);
+        sixteenthDottedLabel->setText((String) delayTimeObject.getSixteenthDotted(), dontSendNotification);
+        sixteenthTripletLabel->setText((String) delayTimeObject.getSixteenthTriplet(), dontSendNotification);
 
-        thirtySecondNormalEditor->setText((String) delayTimeObject.getThirtySecondNormal());
-        thirtySecondDottedEditor->setText((String) delayTimeObject.getThirtySecondDotted());
-        thirtySecondTripletEditor->setText((String) delayTimeObject.getThirtySecondTriplet());
+        thirtySecondNormalLabel->setText((String) delayTimeObject.getThirtySecondNormal(), dontSendNotification);
+        thirtySecondDottedLabel->setText((String) delayTimeObject.getThirtySecondDotted(), dontSendNotification);
+        thirtySecondTripletLabel->setText((String) delayTimeObject.getThirtySecondTriplet(), dontSendNotification);
 
-        sixtyFourthNormalEditor->setText((String) delayTimeObject.getSixtyFouthNormal());
-        sixtyFourthDottedEditor->setText((String) delayTimeObject.getSixtyFouthDotted());
-        sixtyFourthTripletEditor->setText((String) delayTimeObject.getSixtyFouthTriplet());
+        sixtyFourthNormalEditor->setText((String) delayTimeObject.getSixtyFouthNormal(), dontSendNotification);
+        sixtyFourthDottedEditor->setText((String) delayTimeObject.getSixtyFouthDotted(), dontSendNotification);
+        sixtyFourthTripletEditor->setText((String) delayTimeObject.getSixtyFouthTriplet(), dontSendNotification);
 
-        oneTwentyEighthNormalEditor->setText((String) delayTimeObject.getOneHundredAndTwentyEighthNormal());
-        oneTwentyEighthDottedEditor->setText((String) delayTimeObject.getOneHundredAndTwentyEighthDotted());
-        oneTwentyEighthTripletEditor->setText((String) delayTimeObject.getOneHundredAndTwentyEighthTriplet());
+        oneTwentyEighthNormalEditor->setText((String) delayTimeObject.getOneHundredAndTwentyEighthNormal(), dontSendNotification);
+        oneTwentyEighthDottedEditor->setText((String) delayTimeObject.getOneHundredAndTwentyEighthDotted(), dontSendNotification);
+        oneTwentyEighthTripletEditor->setText((String) delayTimeObject.getOneHundredAndTwentyEighthTriplet(), dontSendNotification);
 
         //[/UserSliderCode_tempoSlider]
     }
@@ -798,30 +774,6 @@ BEGIN_JUCER_METADATA
          edTextCol="ff000000" edBkgCol="0" labelText="1/128:" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
-  <TEXTEDITOR name="sixteenthNormalEditor" id="24572bb19d126658" memberName="sixteenthNormalEditor"
-              virtualName="" explicitFocusOrder="0" pos="150 300 100 30" textcol="ffffffff"
-              bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
-              retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
-  <TEXTEDITOR name="sixteenthDottedEditor" id="c025d3524e04bf8b" memberName="sixteenthDottedEditor"
-              virtualName="" explicitFocusOrder="0" pos="300 300 100 30" textcol="ffffffff"
-              bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
-              retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
-  <TEXTEDITOR name="sixteenthTripletEditor" id="e9c049b323b23b5a" memberName="sixteenthTripletEditor"
-              virtualName="" explicitFocusOrder="0" pos="450 300 100 30" textcol="ffffffff"
-              bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
-              retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
-  <TEXTEDITOR name="thirtySecondNormalEditor" id="c0fa7d9ff7465796" memberName="thirtySecondNormalEditor"
-              virtualName="" explicitFocusOrder="0" pos="150 340 100 30" textcol="ffffffff"
-              bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
-              retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
-  <TEXTEDITOR name="thirtySecondDottedEditor" id="a8080426d83310b9" memberName="thirtySecondDottedEditor"
-              virtualName="" explicitFocusOrder="0" pos="300 340 100 30" textcol="ffffffff"
-              bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
-              retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
-  <TEXTEDITOR name="thirtySecondTripletEditor" id="50a7d2c7366628ee" memberName="thirtySecondTripletEditor"
-              virtualName="" explicitFocusOrder="0" pos="450 340 100 30" textcol="ffffffff"
-              bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
-              retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="sixtyFourthNormalEditor" id="ba43e4d041dac5a5" memberName="sixtyFourthNormalEditor"
               virtualName="" explicitFocusOrder="0" pos="150 380 100 30" textcol="ffffffff"
               bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
@@ -915,11 +867,41 @@ BEGIN_JUCER_METADATA
          kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="eighthDottedLabel" id="df0f0f30eec2686f" memberName="eighthDottedLabel"
          virtualName="" explicitFocusOrder="0" pos="300 260 100 30" edTextCol="ff000000"
-         edBkgCol="0" labelText="stuff&#10;" editableSingleClick="0" editableDoubleClick="0"
+         edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25"
          kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="eighthTripletLabel" id="7b34c480a75f818" memberName="eighthTripletLabel"
          virtualName="" explicitFocusOrder="0" pos="450 260 100 30" edTextCol="ff000000"
+         edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
+         focusDiscardsChanges="0" fontname="Default font" fontsize="25"
+         kerning="0" bold="0" italic="0" justification="33"/>
+  <LABEL name="sixteenthNormalLabel" id="4b90b919d39c55aa" memberName="sixteenthNormalLabel"
+         virtualName="" explicitFocusOrder="0" pos="150 300 100 30" edTextCol="ff000000"
+         edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
+         focusDiscardsChanges="0" fontname="Default font" fontsize="25"
+         kerning="0" bold="0" italic="0" justification="33"/>
+  <LABEL name="sixteenthDottedLabel" id="b8e062b942bd6161" memberName="sixteenthDottedLabel"
+         virtualName="" explicitFocusOrder="0" pos="300 300 100 30" edTextCol="ff000000"
+         edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
+         focusDiscardsChanges="0" fontname="Default font" fontsize="25"
+         kerning="0" bold="0" italic="0" justification="33"/>
+  <LABEL name="sixteenthTripletLabel" id="bc5910a30828043e" memberName="sixteenthTripletLabel"
+         virtualName="" explicitFocusOrder="0" pos="450 300 100 30" edTextCol="ff000000"
+         edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
+         focusDiscardsChanges="0" fontname="Default font" fontsize="25"
+         kerning="0" bold="0" italic="0" justification="33"/>
+  <LABEL name="thirtySecondNormalLabel" id="bafdfece957a48cd" memberName="thirtySecondNormalLabel"
+         virtualName="" explicitFocusOrder="0" pos="150 340 100 30" edTextCol="ff000000"
+         edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
+         focusDiscardsChanges="0" fontname="Default font" fontsize="25"
+         kerning="0" bold="0" italic="0" justification="33"/>
+  <LABEL name="thirtySecondDottedLabel" id="d6c4232d51ea521d" memberName="thirtySecondDottedLabel"
+         virtualName="" explicitFocusOrder="0" pos="300 340 100 30" edTextCol="ff000000"
+         edBkgCol="0" labelText="stuff&#10;" editableSingleClick="0" editableDoubleClick="0"
+         focusDiscardsChanges="0" fontname="Default font" fontsize="25"
+         kerning="0" bold="0" italic="0" justification="33"/>
+  <LABEL name="thirtySecondTripletLabel" id="c94aa63d85789829" memberName="thirtySecondTripletLabel"
+         virtualName="" explicitFocusOrder="0" pos="450 340 100 30" edTextCol="ff000000"
          edBkgCol="0" labelText="stuff&#10;" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25"
          kerning="0" bold="0" italic="0" justification="33"/>

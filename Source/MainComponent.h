@@ -82,12 +82,6 @@ private:
     ScopedPointer<Label> thirtySecondLabel;
     ScopedPointer<Label> sixtyFourthLabel;
     ScopedPointer<Label> oneHundreAndTwentyEighthLabel;
-    ScopedPointer<TextEditor> sixteenthNormalEditor;
-    ScopedPointer<TextEditor> sixteenthDottedEditor;
-    ScopedPointer<TextEditor> sixteenthTripletEditor;
-    ScopedPointer<TextEditor> thirtySecondNormalEditor;
-    ScopedPointer<TextEditor> thirtySecondDottedEditor;
-    ScopedPointer<TextEditor> thirtySecondTripletEditor;
     ScopedPointer<TextEditor> sixtyFourthNormalEditor;
     ScopedPointer<TextEditor> sixtyFourthDottedEditor;
     ScopedPointer<TextEditor> sixtyFourthTripletEditor;
@@ -110,6 +104,12 @@ private:
     ScopedPointer<Label> eighthNormalLabel;
     ScopedPointer<Label> eighthDottedLabel;
     ScopedPointer<Label> eighthTripletLabel;
+    ScopedPointer<Label> sixteenthNormalLabel;
+    ScopedPointer<Label> sixteenthDottedLabel;
+    ScopedPointer<Label> sixteenthTripletLabel;
+    ScopedPointer<Label> thirtySecondNormalLabel;
+    ScopedPointer<Label> thirtySecondDottedLabel;
+    ScopedPointer<Label> thirtySecondTripletLabel;
 
 
     //==============================================================================
