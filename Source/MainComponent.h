@@ -63,17 +63,15 @@ private:
 
     DelayTime delayTimeObject;
     TapTempo tapTempo;
-    int textEditorFontSize;
+    String versionNumberString;
 
     //[/UserVariables]
 
     //==============================================================================
     ScopedPointer<TextButton> doubleTempoButton;
     ScopedPointer<TextButton> halfTempoButton;
-    ScopedPointer<HyperlinkButton> emailHyperlink;
     ScopedPointer<Slider> tempoSlider;
-    ScopedPointer<Label> theLyonsDenDelayTimeCalculator;
-    ScopedPointer<HyperlinkButton> donateHyperlink;
+    ScopedPointer<Label> delayTimeCalculator;
     ScopedPointer<Label> normalLabel;
     ScopedPointer<Label> dottedLabel;
     ScopedPointer<Label> tripletLabel;
@@ -87,7 +85,6 @@ private:
     ScopedPointer<Label> oneHundreAndTwentyEighthLabel;
     ScopedPointer<TextButton> tapButton;
     ScopedPointer<TextButton> resetButton;
-    ScopedPointer<Label> versionNumberLabel;
     ScopedPointer<Label> wholeNormalLabel;
     ScopedPointer<Label> wholeDottedLabel;
     ScopedPointer<Label> wholeTripletLabel;
@@ -113,6 +110,9 @@ private:
     ScopedPointer<Label> oneTwentyEighthDottedLabel;
     ScopedPointer<Label> oneTwentyEighthTripletLabel;
     ScopedPointer<Label> versionNumberLabelOutput;
+    ScopedPointer<TextButton> emailMeButton;
+    ScopedPointer<TextButton> donateButton;
+    ScopedPointer<TextButton> facebookButton;
 
 
     //==============================================================================

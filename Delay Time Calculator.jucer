@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<JUCERPROJECT id="mFsRbO" name="Delay Time Calculator" projectType="guiapp"
+<JUCERPROJECT id="mFsRbO" name="The Lyons' Den Delay Time Calculator" projectType="guiapp"
               version="1.3" bundleIdentifier="com.TheLyonsDen.DelayTimeCalculator"
               includeBinaryInAppConfig="1" jucerVersion="5.0.1" companyName="The Lyons' Den"
               companyEmail="josephtlyons@gmail.com" displaySplashScreen="1"
               reportAppUsage="1" splashScreenColour="Dark">
-  <MAINGROUP id="wVdkZw" name="Delay Time Calculator">
+  <MAINGROUP id="wVdkZw" name="The Lyons' Den Delay Time Calculator">
     <GROUP id="{35A3474B-79D8-920E-E136-88F8E58081F5}" name="Source">
       <GROUP id="{0496FE9B-6CEE-7E75-C0FB-3F0DB683F2AD}" name="Pixelmator">
         <FILE id="dc3z5K" name="AppIcon.png" compile="0" resource="1" file="Pixelmator/AppIcon.png"/>
