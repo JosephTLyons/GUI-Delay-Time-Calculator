@@ -42,3 +42,4 @@ Features still to add:
 * Change to whole BPM values and use modifier buttons to access 1/10th notes (or any other method to access these values
 * Add T and R button to keys that can be used to tap and reset BPM
 * Make items along bottom of GUI all same font, font size, and spacing
+* New GUI screenshot for GitHub
