@@ -44,6 +44,5 @@ Features still to add:
 
 * Remove slider and use a text box that can be changed by clicking and dragging
 * Change to whole BPM values and use modifier buttons to access 1/10th notes (or any other method to access these values
-* New GUI screenshot for GitHub
 * Better app icon
 * Make installer
