@@ -82,13 +82,6 @@ private:
     ScopedPointer<Label> thirtySecondLabel;
     ScopedPointer<Label> sixtyFourthLabel;
     ScopedPointer<Label> oneHundreAndTwentyEighthLabel;
-    ScopedPointer<TextEditor> wholeNormalEditor;
-    ScopedPointer<TextEditor> wholeDottedEditor;
-    ScopedPointer<TextEditor> wholeTripletEditor;
-    ScopedPointer<TextEditor> halfNormalEditor;
-    ScopedPointer<TextEditor> halfDottedEditor;
-    ScopedPointer<TextEditor> halfTripletEditor;
-    ScopedPointer<TextEditor> quarterNormalEditor;
     ScopedPointer<TextEditor> quarterDottedEditor;
     ScopedPointer<TextEditor> quarterTripletEditor;
     ScopedPointer<TextEditor> eighthNormalEditor;
@@ -110,6 +103,13 @@ private:
     ScopedPointer<TextButton> resetButton;
     ScopedPointer<Label> versionNumberLabel;
     ScopedPointer<TextEditor> versionNumberEditor;
+    ScopedPointer<Label> wholeNormalLabel;
+    ScopedPointer<Label> wholeDottedLabel;
+    ScopedPointer<Label> wholeTripletLabel;
+    ScopedPointer<Label> halfNormalLabel;
+    ScopedPointer<Label> halfDottedLabel;
+    ScopedPointer<Label> halfTripletLabel;
+    ScopedPointer<Label> quarterNormalLabel;
 
 
     //==============================================================================
