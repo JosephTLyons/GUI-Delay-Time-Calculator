@@ -49,7 +49,6 @@ public:
 
     bool keyPressed(const juce::KeyPress &key) override;
 
-
     //[/UserMethods]
 
     void paint (Graphics& g) override;
@@ -65,8 +64,6 @@ private:
     DelayTime delayTimeObject;
     TapTempo tapTempo;
     int textEditorFontSize;
-
-    ScopedPointer<KeyListener> keyListener;
 
     //[/UserVariables]
 

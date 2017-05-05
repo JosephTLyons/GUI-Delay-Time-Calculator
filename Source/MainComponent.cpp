@@ -33,12 +33,15 @@ MainComponent::MainComponent ()
     //[/Constructor_pre]
 
     addAndMakeVisible (doubleTempoButton = new TextButton ("doubleTempoButton"));
+    doubleTempoButton->setTooltip (TRANS("Doubles the current tempo value."));
     doubleTempoButton->setButtonText (TRANS("2x"));
+    doubleTempoButton->setConnectedEdges (Button::ConnectedOnRight);
     doubleTempoButton->addListener (this);
     doubleTempoButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
     doubleTempoButton->setColour (TextButton::textColourOffId, Colour (0xff353535));
 
     addAndMakeVisible (halfTempoButton = new TextButton ("halfTempoButton"));
+    halfTempoButton->setTooltip (TRANS("Halves the current tempo value."));
     halfTempoButton->setButtonText (TRANS("1/2x"));
     halfTempoButton->addListener (this);
     halfTempoButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
@@ -179,12 +182,14 @@ MainComponent::MainComponent ()
     oneHundreAndTwentyEighthLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
     addAndMakeVisible (tapButton = new TextButton ("tapButton"));
+    tapButton->setTooltip (TRANS("Click this button in time with your song to automatically find the tempo of the song.  You can also use the key \'T\'."));
     tapButton->setButtonText (TRANS("Tap Tempo"));
     tapButton->addListener (this);
     tapButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
     tapButton->setColour (TextButton::textColourOffId, Colour (0xff353535));
 
     addAndMakeVisible (resetButton = new TextButton ("resetButton"));
+    resetButton->setTooltip (TRANS("Click this button to reset the Tap Tempo mechanism.  You can also use the key \'R\'."));
     resetButton->setButtonText (TRANS("Reset Tap Tempo"));
     resetButton->addListener (this);
     resetButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
@@ -416,9 +421,6 @@ MainComponent::MainComponent ()
     // Set version number editor to current version number
     versionNumberLabelOutput->setText((String) ProjectInfo::versionString, dontSendNotification);
 
-    // Add listeners for T (Tap Tempo) and R (Reset Tap Tempo) buttons
-    tapButton->addKeyListener(keyListener);
-    resetButton->addKeyListener(keyListener);
     //[/Constructor]
 }
 
@@ -682,13 +684,13 @@ BEGIN_JUCER_METADATA
                  fixedSize="1" initialWidth="600" initialHeight="485">
   <BACKGROUND backgroundColour="ff353535"/>
   <TEXTBUTTON name="doubleTempoButton" id="74a1161b6a8bd75d" memberName="doubleTempoButton"
-              virtualName="" explicitFocusOrder="0" pos="150 80 150 30" bgColOff="ffadaaaa"
-              textCol="ff353535" buttonText="2x" connectedEdges="0" needsCallback="1"
-              radioGroupId="0"/>
+              virtualName="" explicitFocusOrder="0" pos="150 80 150 30" tooltip="Doubles the current tempo value."
+              bgColOff="ffadaaaa" textCol="ff353535" buttonText="2x" connectedEdges="2"
+              needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="halfTempoButton" id="edac6a2aecdd8ef5" memberName="halfTempoButton"
-              virtualName="" explicitFocusOrder="0" pos="0 80 150 30" bgColOff="ffadaaaa"
-              textCol="ff353535" buttonText="1/2x" connectedEdges="0" needsCallback="1"
-              radioGroupId="0"/>
+              virtualName="" explicitFocusOrder="0" pos="0 80 150 30" tooltip="Halves the current tempo value."
+              bgColOff="ffadaaaa" textCol="ff353535" buttonText="1/2x" connectedEdges="0"
+              needsCallback="1" radioGroupId="0"/>
   <HYPERLINKBUTTON name="emailHyperlink" id="61f33ae81920857e" memberName="emailHyperlink"
                    virtualName="" explicitFocusOrder="0" pos="0 460 80 25" tooltip="josephtlyons@gmail.com"
                    textCol="ffadaaaa" buttonText="Email Me" connectedEdges="0" needsCallback="0"
@@ -766,13 +768,13 @@ BEGIN_JUCER_METADATA
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <TEXTBUTTON name="tapButton" id="3cd8a4f5f3b122f8" memberName="tapButton"
-              virtualName="" explicitFocusOrder="0" pos="300 80 150 30" bgColOff="ffadaaaa"
-              textCol="ff353535" buttonText="Tap Tempo" connectedEdges="0"
-              needsCallback="1" radioGroupId="0"/>
+              virtualName="" explicitFocusOrder="0" pos="300 80 150 30" tooltip="Click this button in time with your song to automatically find the tempo of the song.  You can also use the key 'T'."
+              bgColOff="ffadaaaa" textCol="ff353535" buttonText="Tap Tempo"
+              connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="resetButton" id="137cfed0258a7265" memberName="resetButton"
-              virtualName="" explicitFocusOrder="0" pos="450 80 150 30" bgColOff="ffadaaaa"
-              textCol="ff353535" buttonText="Reset Tap Tempo" connectedEdges="0"
-              needsCallback="1" radioGroupId="0"/>
+              virtualName="" explicitFocusOrder="0" pos="450 80 150 30" tooltip="Click this button to reset the Tap Tempo mechanism.  You can also use the key 'R'."
+              bgColOff="ffadaaaa" textCol="ff353535" buttonText="Reset Tap Tempo"
+              connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <LABEL name="versionNumberLabel" id="b387ac42be587b24" memberName="versionNumberLabel"
          virtualName="" explicitFocusOrder="0" pos="218 460 90 25" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="Version:" editableSingleClick="0"
