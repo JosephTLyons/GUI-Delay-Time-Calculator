@@ -392,7 +392,7 @@ MainComponent::MainComponent ()
     oneTwentyEighthTripletLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
     addAndMakeVisible (versionNumberLabelOutput = new Label ("versionNumberLabel",
-                                                             TRANS("stuff")));
+                                                             String()));
     versionNumberLabelOutput->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     versionNumberLabelOutput->setJustificationType (Justification::centredLeft);
     versionNumberLabelOutput->setEditable (false, false, false);
@@ -498,17 +498,17 @@ void MainComponent::resized()
     tempoSlider->setBounds (0, 50, 600, 30);
     theLyonsDenDelayTimeCalculator->setBounds (0, 0, 600, 50);
     donateHyperlink->setBounds (536, 460, 64, 25);
-    normalLabel->setBounds (150, 110, 150, 30);
-    dottedLabel->setBounds (300, 110, 150, 30);
-    tripletLabel->setBounds (450, 110, 150, 30);
-    wholeLabel->setBounds (0, 140, 150, 30);
-    halfLabel->setBounds (0, 180, 150, 30);
-    quarterLabel->setBounds (0, 220, 150, 30);
-    eighthLabel->setBounds (0, 260, 150, 30);
-    sixteenthLabel->setBounds (0, 300, 150, 30);
-    thirtySecondLabel->setBounds (0, 340, 150, 30);
-    sixtyFourthLabel->setBounds (0, 380, 150, 30);
-    oneHundreAndTwentyEighthLabel->setBounds (0, 420, 150, 30);
+    normalLabel->setBounds (150, 110, 100, 30);
+    dottedLabel->setBounds (300, 110, 100, 30);
+    tripletLabel->setBounds (450, 110, 100, 30);
+    wholeLabel->setBounds (0, 140, 100, 30);
+    halfLabel->setBounds (0, 180, 100, 30);
+    quarterLabel->setBounds (0, 220, 100, 30);
+    eighthLabel->setBounds (0, 260, 100, 30);
+    sixteenthLabel->setBounds (0, 300, 100, 30);
+    thirtySecondLabel->setBounds (0, 340, 100, 30);
+    sixtyFourthLabel->setBounds (0, 380, 100, 30);
+    oneHundreAndTwentyEighthLabel->setBounds (0, 420, 100, 30);
     tapButton->setBounds (300, 80, 150, 30);
     resetButton->setBounds (450, 80, 150, 30);
     versionNumberLabel->setBounds (218, 460, 90, 25);
@@ -692,57 +692,57 @@ BEGIN_JUCER_METADATA
                    textCol="ffadaaaa" buttonText="Donate" connectedEdges="0" needsCallback="0"
                    radioGroupId="0" url="https://www.paypal.me/JosephTimothyLyons/1"/>
   <LABEL name="normalLabel" id="a751a1c9841b9424" memberName="normalLabel"
-         virtualName="" explicitFocusOrder="0" pos="150 110 150 30" textCol="ffadaaaa"
+         virtualName="" explicitFocusOrder="0" pos="150 110 100 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="Normal&#10;" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="dottedLabel" id="f84ddade330c771e" memberName="dottedLabel"
-         virtualName="" explicitFocusOrder="0" pos="300 110 150 30" textCol="ffadaaaa"
+         virtualName="" explicitFocusOrder="0" pos="300 110 100 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="Dotted" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="tripletLabel" id="24f4755bf6b035f2" memberName="tripletLabel"
-         virtualName="" explicitFocusOrder="0" pos="450 110 150 30" textCol="ffadaaaa"
+         virtualName="" explicitFocusOrder="0" pos="450 110 100 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="Triplet" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="wholeLabel" id="84a944615f7ab97c" memberName="wholeLabel"
-         virtualName="" explicitFocusOrder="0" pos="0 140 150 30" textCol="ffadaaaa"
+         virtualName="" explicitFocusOrder="0" pos="0 140 100 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="1:" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="halfLabel" id="670aac61ca569af7" memberName="halfLabel"
-         virtualName="" explicitFocusOrder="0" pos="0 180 150 30" textCol="ffadaaaa"
+         virtualName="" explicitFocusOrder="0" pos="0 180 100 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="1/2:" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="quarterLabel" id="c5514ec2a3c07661" memberName="quarterLabel"
-         virtualName="" explicitFocusOrder="0" pos="0 220 150 30" textCol="ffadaaaa"
+         virtualName="" explicitFocusOrder="0" pos="0 220 100 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="1/4:" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="eighthLabel" id="49b134e52607b4bd" memberName="eighthLabel"
-         virtualName="" explicitFocusOrder="0" pos="0 260 150 30" textCol="ffadaaaa"
+         virtualName="" explicitFocusOrder="0" pos="0 260 100 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="1/8:" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="sixteenthLabel" id="15b5cdc975d8b4c1" memberName="sixteenthLabel"
-         virtualName="" explicitFocusOrder="0" pos="0 300 150 30" textCol="ffadaaaa"
+         virtualName="" explicitFocusOrder="0" pos="0 300 100 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="1/16:" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="thirtySecondLabel" id="286f381f35aec721" memberName="thirtySecondLabel"
-         virtualName="" explicitFocusOrder="0" pos="0 340 150 30" textCol="ffadaaaa"
+         virtualName="" explicitFocusOrder="0" pos="0 340 100 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="1/32:" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="sixtyFourthLabel" id="e0fec546bed640df" memberName="sixtyFourthLabel"
-         virtualName="" explicitFocusOrder="0" pos="0 380 150 30" textCol="ffadaaaa"
+         virtualName="" explicitFocusOrder="0" pos="0 380 100 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="1/64:" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="oneHundreAndTwentyEighthLabel" id="fe1fa9046023fc2a" memberName="oneHundreAndTwentyEighthLabel"
-         virtualName="" explicitFocusOrder="0" pos="0 420 150 30" textCol="ffadaaaa"
+         virtualName="" explicitFocusOrder="0" pos="0 420 100 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="1/128:" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
@@ -881,7 +881,7 @@ BEGIN_JUCER_METADATA
          kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="versionNumberLabel" id="30f8922fa9ce43fc" memberName="versionNumberLabelOutput"
          virtualName="" explicitFocusOrder="0" pos="308 460 100 30" edTextCol="ff000000"
-         edBkgCol="0" labelText="stuff" editableSingleClick="0" editableDoubleClick="0"
+         edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25"
          kerning="0" bold="0" italic="0" justification="33"/>
 </JUCER_COMPONENT>
