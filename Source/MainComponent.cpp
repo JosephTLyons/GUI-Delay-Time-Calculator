@@ -669,7 +669,7 @@ void MainComponent::resized()
     sixtyFourthTripletEditor->setBounds (450, 380, 100, 30);
     oneTwentyEighthNormalEditor->setBounds (150, 420, 100, 30);
     oneTwentyEighthDottedEditor->setBounds (300, 420, 100, 30);
-    oneTwentyEighthTripletEditor->setBounds (450, 420, 150, 30);
+    oneTwentyEighthTripletEditor->setBounds (450, 420, 100, 30);
     tapButton->setBounds (300, 80, 150, 30);
     resetButton->setBounds (450, 80, 150, 30);
     versionNumberLabel->setBounds (218, 460, 90, 25);
@@ -976,7 +976,7 @@ BEGIN_JUCER_METADATA
               bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
               retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTEDITOR name="oneTwentyEighthTripletEditor" id="56dcaea61d27bce1" memberName="oneTwentyEighthTripletEditor"
-              virtualName="" explicitFocusOrder="0" pos="450 420 150 30" textcol="ffffffff"
+              virtualName="" explicitFocusOrder="0" pos="450 420 100 30" textcol="ffffffff"
               bkgcol="ff353535" outlinecol="ff353535" initialText="" multiline="0"
               retKeyStartsLine="0" readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTBUTTON name="tapButton" id="3cd8a4f5f3b122f8" memberName="tapButton"
