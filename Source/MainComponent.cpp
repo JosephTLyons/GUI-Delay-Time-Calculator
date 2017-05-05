@@ -698,14 +698,77 @@ void MainComponent::sliderValueChanged (Slider* sliderThatWasMoved)
 
 bool MainComponent::keyPressed(const juce::KeyPress &key)
 {
+    // Tempo 1/2x
+    if(key == '1')
+    {
+        halfTempoButton->triggerClick();
+    }
+    
+    // Tempo 2x
+    if(key == '2')
+    {
+        doubleTempoButton->triggerClick();
+    }
+    
+    // Trigger Tap Tempo
     if(key == 'T')
     {
         tapButton->triggerClick();
     }
 
+    // Trigger Tap Tempo Reset
     if(key == 'R')
     {
         resetButton->triggerClick();
+    }
+    
+    // Round Tempo
+    if(key == KeyPress::spaceKey)
+    {
+        int truncatedValue    = tempoSlider->getValue();
+        double roundingFactor = tempoSlider->getValue() - truncatedValue;
+        
+        if(roundingFactor >= 0.5)
+        {
+            tempoSlider->setValue(truncatedValue + 1);
+        }
+        
+        else
+        {
+            tempoSlider->setValue(truncatedValue);
+        }
+    }
+    
+    // Tempo + 1
+    if(key == KeyPress::upKey)
+    {
+        double roundedUp = tempoSlider->getValue();
+        
+        tempoSlider->setValue(++roundedUp);
+    }
+    
+    // Tempo - 1
+    if(key == KeyPress::downKey)
+    {
+        double roundedDown = tempoSlider->getValue();
+        
+        tempoSlider->setValue(--roundedDown);
+    }
+    
+    // Tempo + 5
+    if(key == KeyPress::rightKey)
+    {
+        double roundedDown = tempoSlider->getValue() + 5;
+        
+        tempoSlider->setValue(roundedDown);
+    }
+    
+    // Tempo = 5
+    if(key == KeyPress::leftKey)
+    {
+        double roundedUp = tempoSlider->getValue() - 5;
+        
+        tempoSlider->setValue(roundedUp);
     }
 
     return true;
