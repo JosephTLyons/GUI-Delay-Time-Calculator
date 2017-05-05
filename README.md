@@ -15,6 +15,7 @@ April XX, 2017 - V 1.3:
 1.  Upgraded to JUCE 5.  Source code is now closed and a "Made with JUCE" splash screen pops up due to my licencing choice.
 2.  Small aesthetic changes due to the new LookAndFeelV4 class of JUCE 5.
 3.  Version numbers now automatically reported at bottom of app.
+4.  GUI buttons moved and their actions made more clear
 
 April 22, 2017 - V 1.2:
 1. Added tap tempo feature.  Tap T in time to set tempo, click R to reset internal values so you can use T to calculate a new tempo.  The R button turns white after the first click of the tap button, to let the user know that if they want to calculate a different speed, to click the reset button.
