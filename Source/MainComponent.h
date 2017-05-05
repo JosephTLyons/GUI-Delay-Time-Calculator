@@ -113,6 +113,7 @@ private:
     ScopedPointer<TextButton> emailMeButton;
     ScopedPointer<TextButton> donateButton;
     ScopedPointer<TextButton> facebookButton;
+    ScopedPointer<TextButton> theCodeButton;
 
 
     //==============================================================================

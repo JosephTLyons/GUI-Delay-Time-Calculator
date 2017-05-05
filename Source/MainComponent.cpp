@@ -176,7 +176,9 @@ MainComponent::MainComponent ()
     tapButton->setColour (TextButton::textColourOffId, Colour (0xff353535));
 
     addAndMakeVisible (resetButton = new TextButton ("resetButton"));
-    resetButton->setTooltip (TRANS("Click this button to reset the Tap Tempo mechanism.  You can also use the key \'R\'."));
+    resetButton->setTooltip (TRANS("Click this button to reset the Tap Tempo mechanism.  You can also use the key \'R\'.\n"
+    "\n"
+    "When this button is colored white, it means that the Tap Tempo button has been clicked and a reset is needed to calculate a new tempo."));
     resetButton->setButtonText (TRANS("Reset Tap Tempo"));
     resetButton->addListener (this);
     resetButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
@@ -376,29 +378,46 @@ MainComponent::MainComponent ()
 
     addAndMakeVisible (versionNumberLabelOutput = new Label ("versionNumberLabel",
                                                              String()));
-    versionNumberLabelOutput->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
+    versionNumberLabelOutput->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
     versionNumberLabelOutput->setJustificationType (Justification::centredTop);
     versionNumberLabelOutput->setEditable (false, false, false);
+    versionNumberLabelOutput->setColour (Label::textColourId, Colour (0xffadaaaa));
     versionNumberLabelOutput->setColour (TextEditor::textColourId, Colours::black);
     versionNumberLabelOutput->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
     addAndMakeVisible (emailMeButton = new TextButton ("emailMeButton"));
     emailMeButton->setButtonText (TRANS("Email Me"));
     emailMeButton->addListener (this);
+    emailMeButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
+    emailMeButton->setColour (TextButton::buttonOnColourId, Colour (0xffadaaaa));
+    emailMeButton->setColour (TextButton::textColourOffId, Colours::black);
 
     addAndMakeVisible (donateButton = new TextButton ("donateButton"));
     donateButton->setButtonText (TRANS("Donate"));
     donateButton->addListener (this);
+    donateButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
+    donateButton->setColour (TextButton::buttonOnColourId, Colour (0xffadaaaa));
+    donateButton->setColour (TextButton::textColourOffId, Colours::black);
 
     addAndMakeVisible (facebookButton = new TextButton ("facebookButton"));
     facebookButton->setButtonText (TRANS("Facebook"));
     facebookButton->addListener (this);
+    facebookButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
+    facebookButton->setColour (TextButton::buttonOnColourId, Colour (0xffadaaaa));
+    facebookButton->setColour (TextButton::textColourOffId, Colours::black);
+
+    addAndMakeVisible (theCodeButton = new TextButton ("theCodeButton"));
+    theCodeButton->setButtonText (TRANS("The Code"));
+    theCodeButton->addListener (this);
+    theCodeButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
+    theCodeButton->setColour (TextButton::buttonOnColourId, Colour (0xffadaaaa));
+    theCodeButton->setColour (TextButton::textColourOffId, Colours::black);
 
 
     //[UserPreSize]
     //[/UserPreSize]
 
-    setSize (500, 485);
+    setSize (500, 475);
 
 
     //[Constructor] You can add your own custom stuff here..
@@ -466,6 +485,7 @@ MainComponent::~MainComponent()
     emailMeButton = nullptr;
     donateButton = nullptr;
     facebookButton = nullptr;
+    theCodeButton = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -530,10 +550,11 @@ void MainComponent::resized()
     oneTwentyEighthNormalLabel->setBounds (125, 420, 100, 30);
     oneTwentyEighthDottedLabel->setBounds (250, 420, 100, 30);
     oneTwentyEighthTripletLabel->setBounds (375, 420, 100, 30);
-    versionNumberLabelOutput->setBounds (375, 455, 125, 30);
-    emailMeButton->setBounds (125, 455, 125, 30);
-    donateButton->setBounds (250, 455, 125, 30);
-    facebookButton->setBounds (0, 455, 125, 30);
+    versionNumberLabelOutput->setBounds (400, 455, 100, 20);
+    emailMeButton->setBounds (100, 455, 100, 20);
+    donateButton->setBounds (200, 455, 100, 20);
+    facebookButton->setBounds (0, 455, 100, 20);
+    theCodeButton->setBounds (300, 455, 100, 20);
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
 }
@@ -605,6 +626,15 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_facebookButton] -- add your button handler code here..
         //[/UserButtonCode_facebookButton]
+    }
+    else if (buttonThatWasClicked == theCodeButton)
+    {
+        //[UserButtonCode_theCodeButton] -- add your button handler code here..
+
+        URL gitHubRepoURL("https://github.com/JosephTLyons/GUI-Delay-Time-Calculator");
+        gitHubRepoURL.launchInDefaultBrowser();
+
+        //[/UserButtonCode_theCodeButton]
     }
 
     //[UserbuttonClicked_Post]
@@ -696,7 +726,7 @@ BEGIN_JUCER_METADATA
 <JUCER_COMPONENT documentType="Component" className="MainComponent" componentName=""
                  parentClasses="public Component" constructorParams="" variableInitialisers=""
                  snapPixels="8" snapActive="1" snapShown="1" overlayOpacity="0.330"
-                 fixedSize="1" initialWidth="500" initialHeight="485">
+                 fixedSize="1" initialWidth="500" initialHeight="475">
   <BACKGROUND backgroundColour="ff353535"/>
   <TEXTBUTTON name="doubleTempoButton" id="74a1161b6a8bd75d" memberName="doubleTempoButton"
               virtualName="" explicitFocusOrder="0" pos="125 80 125 30" tooltip="Doubles the current tempo value."
@@ -779,7 +809,7 @@ BEGIN_JUCER_METADATA
               bgColOff="ffadaaaa" textCol="ff353535" buttonText="Tap Tempo"
               connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="resetButton" id="137cfed0258a7265" memberName="resetButton"
-              virtualName="" explicitFocusOrder="0" pos="375 80 125 30" tooltip="Click this button to reset the Tap Tempo mechanism.  You can also use the key 'R'."
+              virtualName="" explicitFocusOrder="0" pos="375 80 125 30" tooltip="Click this button to reset the Tap Tempo mechanism.  You can also use the key 'R'.&#10;&#10;When this button is colored white, it means that the Tap Tempo button has been clicked and a reset is needed to calculate a new tempo."
               bgColOff="ffadaaaa" textCol="ff353535" buttonText="Reset Tap Tempo"
               connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <LABEL name="new label" id="3b0b371f9cfffd20" memberName="wholeNormalLabel"
@@ -903,19 +933,26 @@ BEGIN_JUCER_METADATA
          focusDiscardsChanges="0" fontname="Default font" fontsize="25"
          kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="versionNumberLabel" id="30f8922fa9ce43fc" memberName="versionNumberLabelOutput"
-         virtualName="" explicitFocusOrder="0" pos="375 455 125 30" edTextCol="ff000000"
-         edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="25"
-         kerning="0" bold="0" italic="0" justification="12"/>
+         virtualName="" explicitFocusOrder="0" pos="400 455 100 20" textCol="ffadaaaa"
+         edTextCol="ff000000" edBkgCol="0" labelText="" editableSingleClick="0"
+         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
+         fontsize="15" kerning="0" bold="0" italic="0" justification="12"/>
   <TEXTBUTTON name="emailMeButton" id="b8526a15ddc05fdb" memberName="emailMeButton"
-              virtualName="" explicitFocusOrder="0" pos="125 455 125 30" buttonText="Email Me"
-              connectedEdges="0" needsCallback="1" radioGroupId="0"/>
+              virtualName="" explicitFocusOrder="0" pos="100 455 100 20" bgColOff="ffadaaaa"
+              bgColOn="ffadaaaa" textCol="ff000000" buttonText="Email Me" connectedEdges="0"
+              needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="donateButton" id="e193a0f2ebba353b" memberName="donateButton"
-              virtualName="" explicitFocusOrder="0" pos="250 455 125 30" buttonText="Donate"
-              connectedEdges="0" needsCallback="1" radioGroupId="0"/>
+              virtualName="" explicitFocusOrder="0" pos="200 455 100 20" bgColOff="ffadaaaa"
+              bgColOn="ffadaaaa" textCol="ff000000" buttonText="Donate" connectedEdges="0"
+              needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="facebookButton" id="1952a3bc23aa2487" memberName="facebookButton"
-              virtualName="" explicitFocusOrder="0" pos="0 455 125 30" buttonText="Facebook"
-              connectedEdges="0" needsCallback="1" radioGroupId="0"/>
+              virtualName="" explicitFocusOrder="0" pos="0 455 100 20" bgColOff="ffadaaaa"
+              bgColOn="ffadaaaa" textCol="ff000000" buttonText="Facebook" connectedEdges="0"
+              needsCallback="1" radioGroupId="0"/>
+  <TEXTBUTTON name="theCodeButton" id="63c3f048d7a8aeb1" memberName="theCodeButton"
+              virtualName="" explicitFocusOrder="0" pos="300 455 100 20" bgColOff="ffadaaaa"
+              bgColOn="ffadaaaa" textCol="ff000000" buttonText="The Code" connectedEdges="0"
+              needsCallback="1" radioGroupId="0"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA
