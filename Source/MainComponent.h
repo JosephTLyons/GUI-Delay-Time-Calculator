@@ -64,6 +64,7 @@ private:
     DelayTime delayTimeObject;
     TapTempo tapTempo;
     String versionNumberString;
+    TooltipWindow toolTipWindow;
 
     //[/UserVariables]
 

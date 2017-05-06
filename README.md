@@ -18,7 +18,7 @@ April XX, 2017 - V 1.3:
 3. Version number now automatically reported at bottom of app.
 4. GUI buttons moved and their actions made more clear by their text
 5. Changed all output fields from text editors to text labels.  I did this because text editors can be highlighted and labels cannot be.  The highlighting looks cheesy and unprofessional, so I make them all labels to keep from having the option to highlight output fields.
-6. Added tooltips on the top 4 buttons (seems to be broken though?)
+6. Added tooltips on the top 4 buttons.
 7. Changed all links to buttons on the bottom and added a link to my software Facebook page
 
 April 22, 2017 - V 1.2:

@@ -33,14 +33,18 @@ MainComponent::MainComponent ()
     //[/Constructor_pre]
 
     addAndMakeVisible (doubleTempoButton = new TextButton ("doubleTempoButton"));
-    doubleTempoButton->setTooltip (TRANS("Doubles the current tempo value."));
+    doubleTempoButton->setTooltip (TRANS("Doubles the current tempo value.\n"
+    "\n"
+    "You can also use the \'2\' key."));
     doubleTempoButton->setButtonText (TRANS("2x"));
     doubleTempoButton->addListener (this);
     doubleTempoButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
     doubleTempoButton->setColour (TextButton::textColourOffId, Colour (0xff353535));
 
     addAndMakeVisible (halfTempoButton = new TextButton ("halfTempoButton"));
-    halfTempoButton->setTooltip (TRANS("Halves the current tempo value."));
+    halfTempoButton->setTooltip (TRANS("Halves the current tempo value.\n"
+    "\n"
+    "You can also use the \'1\' key."));
     halfTempoButton->setButtonText (TRANS("1/2x"));
     halfTempoButton->addListener (this);
     halfTempoButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
@@ -169,14 +173,18 @@ MainComponent::MainComponent ()
     oneHundreAndTwentyEighthLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
     addAndMakeVisible (tapButton = new TextButton ("tapButton"));
-    tapButton->setTooltip (TRANS("Click this button in time with your song to automatically find the tempo of the song.  You can also use the key \'T\'."));
+    tapButton->setTooltip (TRANS("Click this button in time with your song to automatically find the tempo of the song.\n"
+    "\n"
+    "You can also use the \'T\' key."));
     tapButton->setButtonText (TRANS("Tap Tempo"));
     tapButton->addListener (this);
     tapButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
     tapButton->setColour (TextButton::textColourOffId, Colour (0xff353535));
 
     addAndMakeVisible (resetButton = new TextButton ("resetButton"));
-    resetButton->setTooltip (TRANS("Click this button to reset the Tap Tempo mechanism.  You can also use the key \'R\'.\n"
+    resetButton->setTooltip (TRANS("Click this button to reset the Tap Tempo mechanism.\n"
+    "\n"
+    "You can also use the \'R\' key.\n"
     "\n"
     "When this button is colored white, it means that the Tap Tempo button has been clicked and a reset is needed to calculate a new tempo."));
     resetButton->setButtonText (TRANS("Reset Tap Tempo"));
@@ -432,6 +440,9 @@ MainComponent::MainComponent ()
     versionNumberString += ProjectInfo::versionString;
     versionNumberLabelOutput->setText(versionNumberString, dontSendNotification);
 
+    // Tooltip Window
+
+
     //[/Constructor]
 }
 
@@ -552,9 +563,9 @@ void MainComponent::resized()
     oneTwentyEighthTripletLabel->setBounds (375, 420, 100, 30);
     versionNumberLabelOutput->setBounds (400, 455, 100, 20);
     emailMeButton->setBounds (100, 455, 100, 20);
-    donateButton->setBounds (200, 455, 100, 20);
+    donateButton->setBounds (300, 455, 100, 20);
     facebookButton->setBounds (0, 455, 100, 20);
-    theCodeButton->setBounds (300, 455, 100, 20);
+    theCodeButton->setBounds (200, 455, 100, 20);
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
 }
@@ -625,10 +636,10 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     else if (buttonThatWasClicked == facebookButton)
     {
         //[UserButtonCode_facebookButton] -- add your button handler code here..
-        
+
         URL facebookULR("https://www.facebook.com/TheLyonsDenSoftware/");
         facebookULR.launchInDefaultBrowser();
-        
+
         //[/UserButtonCode_facebookButton]
     }
     else if (buttonThatWasClicked == theCodeButton)
@@ -707,13 +718,13 @@ bool MainComponent::keyPressed(const juce::KeyPress &key)
     {
         halfTempoButton->triggerClick();
     }
-    
+
     // Tempo 2x
     if(key == '2')
     {
         doubleTempoButton->triggerClick();
     }
-    
+
     // Trigger Tap Tempo
     if(key == 'T')
     {
@@ -725,53 +736,53 @@ bool MainComponent::keyPressed(const juce::KeyPress &key)
     {
         resetButton->triggerClick();
     }
-    
+
     // Round Tempo
     if(key == KeyPress::spaceKey)
     {
         int truncatedValue    = tempoSlider->getValue();
         double roundingFactor = tempoSlider->getValue() - truncatedValue;
-        
+
         if(roundingFactor >= 0.5)
         {
             tempoSlider->setValue(truncatedValue + 1);
         }
-        
+
         else
         {
             tempoSlider->setValue(truncatedValue);
         }
     }
-    
+
     // Tempo + 1
     if(key == KeyPress::upKey)
     {
         double roundedUp = tempoSlider->getValue();
-        
+
         tempoSlider->setValue(++roundedUp);
     }
-    
+
     // Tempo - 1
     if(key == KeyPress::downKey)
     {
         double roundedDown = tempoSlider->getValue();
-        
+
         tempoSlider->setValue(--roundedDown);
     }
-    
+
     // Tempo + 5
     if(key == KeyPress::rightKey)
     {
         double roundedDown = tempoSlider->getValue() + 5;
-        
+
         tempoSlider->setValue(roundedDown);
     }
-    
+
     // Tempo = 5
     if(key == KeyPress::leftKey)
     {
         double roundedUp = tempoSlider->getValue() - 5;
-        
+
         tempoSlider->setValue(roundedUp);
     }
 
@@ -796,11 +807,11 @@ BEGIN_JUCER_METADATA
                  fixedSize="1" initialWidth="500" initialHeight="475">
   <BACKGROUND backgroundColour="ff353535"/>
   <TEXTBUTTON name="doubleTempoButton" id="74a1161b6a8bd75d" memberName="doubleTempoButton"
-              virtualName="" explicitFocusOrder="0" pos="125 80 125 30" tooltip="Doubles the current tempo value."
+              virtualName="" explicitFocusOrder="0" pos="125 80 125 30" tooltip="Doubles the current tempo value.&#10;&#10;You can also use the '2' key."
               bgColOff="ffadaaaa" textCol="ff353535" buttonText="2x" connectedEdges="0"
               needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="halfTempoButton" id="edac6a2aecdd8ef5" memberName="halfTempoButton"
-              virtualName="" explicitFocusOrder="0" pos="0 80 125 30" tooltip="Halves the current tempo value."
+              virtualName="" explicitFocusOrder="0" pos="0 80 125 30" tooltip="Halves the current tempo value.&#10;&#10;You can also use the '1' key."
               bgColOff="ffadaaaa" textCol="ff353535" buttonText="1/2x" connectedEdges="0"
               needsCallback="1" radioGroupId="0"/>
   <SLIDER name="tempoSlider" id="1b36c66db8e52ea5" memberName="tempoSlider"
@@ -872,11 +883,11 @@ BEGIN_JUCER_METADATA
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <TEXTBUTTON name="tapButton" id="3cd8a4f5f3b122f8" memberName="tapButton"
-              virtualName="" explicitFocusOrder="0" pos="250 80 125 30" tooltip="Click this button in time with your song to automatically find the tempo of the song.  You can also use the key 'T'."
+              virtualName="" explicitFocusOrder="0" pos="250 80 125 30" tooltip="Click this button in time with your song to automatically find the tempo of the song.&#10;&#10;You can also use the 'T' key."
               bgColOff="ffadaaaa" textCol="ff353535" buttonText="Tap Tempo"
               connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="resetButton" id="137cfed0258a7265" memberName="resetButton"
-              virtualName="" explicitFocusOrder="0" pos="375 80 125 30" tooltip="Click this button to reset the Tap Tempo mechanism.  You can also use the key 'R'.&#10;&#10;When this button is colored white, it means that the Tap Tempo button has been clicked and a reset is needed to calculate a new tempo."
+              virtualName="" explicitFocusOrder="0" pos="375 80 125 30" tooltip="Click this button to reset the Tap Tempo mechanism.&#10;&#10;You can also use the 'R' key.&#10;&#10;When this button is colored white, it means that the Tap Tempo button has been clicked and a reset is needed to calculate a new tempo."
               bgColOff="ffadaaaa" textCol="ff353535" buttonText="Reset Tap Tempo"
               connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <LABEL name="new label" id="3b0b371f9cfffd20" memberName="wholeNormalLabel"
@@ -1009,7 +1020,7 @@ BEGIN_JUCER_METADATA
               bgColOn="ffadaaaa" textCol="ff000000" buttonText="Email Me" connectedEdges="0"
               needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="donateButton" id="e193a0f2ebba353b" memberName="donateButton"
-              virtualName="" explicitFocusOrder="0" pos="200 455 100 20" bgColOff="ffadaaaa"
+              virtualName="" explicitFocusOrder="0" pos="300 455 100 20" bgColOff="ffadaaaa"
               bgColOn="ffadaaaa" textCol="ff000000" buttonText="Donate" connectedEdges="0"
               needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="facebookButton" id="1952a3bc23aa2487" memberName="facebookButton"
@@ -1017,7 +1028,7 @@ BEGIN_JUCER_METADATA
               bgColOn="ffadaaaa" textCol="ff000000" buttonText="Facebook" connectedEdges="0"
               needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="theCodeButton" id="63c3f048d7a8aeb1" memberName="theCodeButton"
-              virtualName="" explicitFocusOrder="0" pos="300 455 100 20" bgColOff="ffadaaaa"
+              virtualName="" explicitFocusOrder="0" pos="200 455 100 20" bgColOff="ffadaaaa"
               bgColOn="ffadaaaa" textCol="ff000000" buttonText="The Code" connectedEdges="0"
               needsCallback="1" radioGroupId="0"/>
 </JUCER_COMPONENT>
