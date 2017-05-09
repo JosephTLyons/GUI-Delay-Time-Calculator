@@ -641,7 +641,9 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
             basicWindow->setUsingNativeTitleBar(true);
             basicWindow->setContentOwned(new InformationComponent(), true);
             
-            basicWindow->centreWithSize(basicWindow->getWidth(), basicWindow->getHeight());
+            basicWindow->setSize(basicWindow->getWidth(), basicWindow->getHeight());
+            basicWindow->setCentrePosition(0 + (basicWindow->getWidth()) / 2,
+                                           0 + (basicWindow->getHeight()) / 2);
             basicWindow->setVisible(true);
         }
 

@@ -8,6 +8,7 @@
 
 #include "../JuceLibraryCode/JuceHeader.h"
 
+// I got this code entirely from the JUCE Windows DEMO
 class BasicWindow : public DocumentWindow
 {
 private:
