@@ -18,6 +18,7 @@
 */
 
 //[Headers] You can add your own extra header files here...
+#include "InformationComponent.h"
 //[/Headers]
 
 #include "MainComponent.h"
@@ -632,13 +633,17 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_informationButton] -- add your button handler code here..
 
-        basicWindow = new BasicWindow("Information", Colours::grey, DocumentWindow::allButtons);
-        
-        basicWindow->setUsingNativeTitleBar(true);
-        basicWindow->setContentOwned(new InformationComponent(), true);
-        
-        basicWindow->centreWithSize(basicWindow->getWidth(), basicWindow->getHeight());
-        basicWindow->setVisible(true);
+        // Don't allow multiple copies of this window to be made
+        if(basicWindow == NULL)
+        {
+            basicWindow = new BasicWindow("Information", Colours::grey, DocumentWindow::allButtons);
+            
+            basicWindow->setUsingNativeTitleBar(true);
+            basicWindow->setContentOwned(new InformationComponent(), true);
+            
+            basicWindow->centreWithSize(basicWindow->getWidth(), basicWindow->getHeight());
+            basicWindow->setVisible(true);
+        }
 
         //[/UserButtonCode_informationButton]
     }

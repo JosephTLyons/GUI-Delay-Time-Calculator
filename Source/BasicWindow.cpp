@@ -7,7 +7,6 @@
 //
 
 #include "../JuceLibraryCode/JuceHeader.h"
-#include "InformationComponent.h"
 
 class BasicWindow : public DocumentWindow
 {

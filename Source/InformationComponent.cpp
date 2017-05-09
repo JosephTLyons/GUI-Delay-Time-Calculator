@@ -60,7 +60,7 @@ InformationComponent::InformationComponent ()
     addAndMakeVisible (versionNumberLabelOutput = new Label ("versionNumberLabel",
                                                              String()));
     versionNumberLabelOutput->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
-    versionNumberLabelOutput->setJustificationType (Justification::centredTop);
+    versionNumberLabelOutput->setJustificationType (Justification::centredLeft);
     versionNumberLabelOutput->setEditable (false, false, false);
     versionNumberLabelOutput->setColour (Label::textColourId, Colour (0xffadaaaa));
     versionNumberLabelOutput->setColour (TextEditor::textColourId, Colours::black);
@@ -70,16 +70,16 @@ InformationComponent::InformationComponent ()
     //[UserPreSize]
     //[/UserPreSize]
 
-    setSize (240, 270);
+    setSize (240, 260);
 
 
     //[Constructor] You can add your own custom stuff here..
-    
+
     // Set version number editor to current version number
     versionNumberString = "Version: ";
     versionNumberString += ProjectInfo::versionString;
     versionNumberLabelOutput->setText(versionNumberString, dontSendNotification);
-    
+
     //[/Constructor]
 }
 
@@ -116,7 +116,7 @@ void InformationComponent::resized()
 
     informationLabel->setBounds (0, 0, 240, 50);
     keysInformation->setBounds (0, 50, 240, 190);
-    versionNumberLabelOutput->setBounds (0, 250, 100, 20);
+    versionNumberLabelOutput->setBounds (0, 240, 100, 20);
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
 }
@@ -145,7 +145,7 @@ BEGIN_JUCER_METADATA
 <JUCER_COMPONENT documentType="Component" className="InformationComponent" componentName=""
                  parentClasses="public Component" constructorParams="" variableInitialisers=""
                  snapPixels="8" snapActive="1" snapShown="1" overlayOpacity="0.330"
-                 fixedSize="1" initialWidth="240" initialHeight="270">
+                 fixedSize="1" initialWidth="240" initialHeight="260">
   <BACKGROUND backgroundColour="ff353535"/>
   <LABEL name="informationLabel" id="951f8323b93b29f2" memberName="informationLabel"
          virtualName="" explicitFocusOrder="0" pos="0 0 240 50" textCol="ffadaaaa"
@@ -160,10 +160,10 @@ BEGIN_JUCER_METADATA
          fontname="Calisto MT" fontsize="20" kerning="0" bold="0" italic="0"
          justification="9"/>
   <LABEL name="versionNumberLabel" id="30f8922fa9ce43fc" memberName="versionNumberLabelOutput"
-         virtualName="" explicitFocusOrder="0" pos="0 250 100 20" textCol="ffadaaaa"
+         virtualName="" explicitFocusOrder="0" pos="0 240 100 20" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
-         fontsize="15" kerning="0" bold="0" italic="0" justification="12"/>
+         fontsize="15" kerning="0" bold="0" italic="0" justification="33"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA

@@ -42,7 +42,7 @@ public:
 
     //==============================================================================
     //[UserMethods]     -- You can add your own custom methods in this section.
-    
+
     String versionNumberString;
 
     //[/UserMethods]
