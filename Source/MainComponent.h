@@ -23,6 +23,7 @@
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "DelayTime.hpp"
 #include "TapTempo.hpp"
+#include "BasicWindow.cpp"
 //[/Headers]
 
 
@@ -63,8 +64,9 @@ private:
 
     DelayTime delayTimeObject;
     TapTempo tapTempo;
-    String versionNumberString;
     TooltipWindow toolTipWindow;
+
+    SafePointer<BasicWindow> basicWindow;
 
     //[/UserVariables]
 
@@ -110,11 +112,11 @@ private:
     ScopedPointer<Label> oneTwentyEighthNormalLabel;
     ScopedPointer<Label> oneTwentyEighthDottedLabel;
     ScopedPointer<Label> oneTwentyEighthTripletLabel;
-    ScopedPointer<Label> versionNumberLabelOutput;
     ScopedPointer<TextButton> emailMeButton;
     ScopedPointer<TextButton> donateButton;
     ScopedPointer<TextButton> facebookButton;
     ScopedPointer<TextButton> theCodeButton;
+    ScopedPointer<TextButton> informationButton;
 
 
     //==============================================================================

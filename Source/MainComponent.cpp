@@ -384,15 +384,6 @@ MainComponent::MainComponent ()
     oneTwentyEighthTripletLabel->setColour (TextEditor::textColourId, Colours::black);
     oneTwentyEighthTripletLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (versionNumberLabelOutput = new Label ("versionNumberLabel",
-                                                             String()));
-    versionNumberLabelOutput->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
-    versionNumberLabelOutput->setJustificationType (Justification::centredTop);
-    versionNumberLabelOutput->setEditable (false, false, false);
-    versionNumberLabelOutput->setColour (Label::textColourId, Colour (0xffadaaaa));
-    versionNumberLabelOutput->setColour (TextEditor::textColourId, Colours::black);
-    versionNumberLabelOutput->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
-
     addAndMakeVisible (emailMeButton = new TextButton ("emailMeButton"));
     emailMeButton->setButtonText (TRANS("Email Me"));
     emailMeButton->addListener (this);
@@ -421,6 +412,13 @@ MainComponent::MainComponent ()
     theCodeButton->setColour (TextButton::buttonOnColourId, Colour (0xffadaaaa));
     theCodeButton->setColour (TextButton::textColourOffId, Colours::black);
 
+    addAndMakeVisible (informationButton = new TextButton ("informationButton"));
+    informationButton->setButtonText (TRANS("Information"));
+    informationButton->addListener (this);
+    informationButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
+    informationButton->setColour (TextButton::buttonOnColourId, Colour (0xffadaaaa));
+    informationButton->setColour (TextButton::textColourOffId, Colours::black);
+
 
     //[UserPreSize]
     //[/UserPreSize]
@@ -434,13 +432,6 @@ MainComponent::MainComponent ()
 
     // Right click for velocity sensitive sliding
     tempoSlider->setPopupMenuEnabled(true);
-
-    // Set version number editor to current version number
-    versionNumberString = "v";
-    versionNumberString += ProjectInfo::versionString;
-    versionNumberLabelOutput->setText(versionNumberString, dontSendNotification);
-
-    // Tooltip Window
 
 
     //[/Constructor]
@@ -492,11 +483,11 @@ MainComponent::~MainComponent()
     oneTwentyEighthNormalLabel = nullptr;
     oneTwentyEighthDottedLabel = nullptr;
     oneTwentyEighthTripletLabel = nullptr;
-    versionNumberLabelOutput = nullptr;
     emailMeButton = nullptr;
     donateButton = nullptr;
     facebookButton = nullptr;
     theCodeButton = nullptr;
+    informationButton = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -561,11 +552,11 @@ void MainComponent::resized()
     oneTwentyEighthNormalLabel->setBounds (125, 420, 100, 30);
     oneTwentyEighthDottedLabel->setBounds (250, 420, 100, 30);
     oneTwentyEighthTripletLabel->setBounds (375, 420, 100, 30);
-    versionNumberLabelOutput->setBounds (400, 455, 100, 20);
-    emailMeButton->setBounds (100, 455, 100, 20);
-    donateButton->setBounds (300, 455, 100, 20);
-    facebookButton->setBounds (0, 455, 100, 20);
-    theCodeButton->setBounds (200, 455, 100, 20);
+    emailMeButton->setBounds (200, 455, 100, 20);
+    donateButton->setBounds (400, 455, 100, 20);
+    facebookButton->setBounds (100, 455, 100, 20);
+    theCodeButton->setBounds (300, 455, 100, 20);
+    informationButton->setBounds (0, 455, 100, 20);
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
 }
@@ -650,6 +641,14 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
         gitHubRepoURL.launchInDefaultBrowser();
 
         //[/UserButtonCode_theCodeButton]
+    }
+    else if (buttonThatWasClicked == informationButton)
+    {
+        //[UserButtonCode_informationButton] -- add your button handler code here..
+
+        basicWindow = new BasicWindow("Information", Colours::grey, DocumentWindow::allButtons);
+
+        //[/UserButtonCode_informationButton]
     }
 
     //[UserbuttonClicked_Post]
@@ -1010,27 +1009,26 @@ BEGIN_JUCER_METADATA
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25"
          kerning="0" bold="0" italic="0" justification="33"/>
-  <LABEL name="versionNumberLabel" id="30f8922fa9ce43fc" memberName="versionNumberLabelOutput"
-         virtualName="" explicitFocusOrder="0" pos="400 455 100 20" textCol="ffadaaaa"
-         edTextCol="ff000000" edBkgCol="0" labelText="" editableSingleClick="0"
-         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
-         fontsize="15" kerning="0" bold="0" italic="0" justification="12"/>
   <TEXTBUTTON name="emailMeButton" id="b8526a15ddc05fdb" memberName="emailMeButton"
-              virtualName="" explicitFocusOrder="0" pos="100 455 100 20" bgColOff="ffadaaaa"
+              virtualName="" explicitFocusOrder="0" pos="200 455 100 20" bgColOff="ffadaaaa"
               bgColOn="ffadaaaa" textCol="ff000000" buttonText="Email Me" connectedEdges="0"
               needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="donateButton" id="e193a0f2ebba353b" memberName="donateButton"
-              virtualName="" explicitFocusOrder="0" pos="300 455 100 20" bgColOff="ffadaaaa"
+              virtualName="" explicitFocusOrder="0" pos="400 455 100 20" bgColOff="ffadaaaa"
               bgColOn="ffadaaaa" textCol="ff000000" buttonText="Donate" connectedEdges="0"
               needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="facebookButton" id="1952a3bc23aa2487" memberName="facebookButton"
-              virtualName="" explicitFocusOrder="0" pos="0 455 100 20" bgColOff="ffadaaaa"
+              virtualName="" explicitFocusOrder="0" pos="100 455 100 20" bgColOff="ffadaaaa"
               bgColOn="ffadaaaa" textCol="ff000000" buttonText="Facebook" connectedEdges="0"
               needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="theCodeButton" id="63c3f048d7a8aeb1" memberName="theCodeButton"
-              virtualName="" explicitFocusOrder="0" pos="200 455 100 20" bgColOff="ffadaaaa"
+              virtualName="" explicitFocusOrder="0" pos="300 455 100 20" bgColOff="ffadaaaa"
               bgColOn="ffadaaaa" textCol="ff000000" buttonText="The Code" connectedEdges="0"
               needsCallback="1" radioGroupId="0"/>
+  <TEXTBUTTON name="informationButton" id="ab632d30dfc057bb" memberName="informationButton"
+              virtualName="" explicitFocusOrder="0" pos="0 455 100 20" bgColOff="ffadaaaa"
+              bgColOn="ffadaaaa" textCol="ff000000" buttonText="Information"
+              connectedEdges="0" needsCallback="1" radioGroupId="0"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA

@@ -1,0 +1,32 @@
+//
+//  BasicWindow.cpp
+//  The Lyons' Den Delay Time Calculator
+//
+//  Created by Joseph Lyons on 5/9/17.
+//
+//
+
+#include "../JuceLibraryCode/JuceHeader.h"
+#include "InformationComponent.h"
+
+class BasicWindow : public DocumentWindow
+{
+private:
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (BasicWindow)
+    
+public:
+    BasicWindow (const String& name, Colour backgroundColour, int buttonsNeeded)
+    : DocumentWindow (name, backgroundColour, buttonsNeeded)
+    {
+        setUsingNativeTitleBar(true);
+        setContentOwned(new InformationComponent(), true);
+        
+        centreWithSize(getWidth(), getHeight());
+        setVisible(true);
+    }
+    
+    void closeButtonPressed() override
+    {
+        delete this;
+    }
+};
