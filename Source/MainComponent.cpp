@@ -648,6 +648,11 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
             basicWindow->setTopLeftPosition(0, 0);
             basicWindow->setVisible(true);
         }
+        
+        else
+        {
+            delete basicWindow;
+        }
 
         //[/UserButtonCode_informationButton]
     }
