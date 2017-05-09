@@ -7,13 +7,12 @@
               reportAppUsage="1" splashScreenColour="Dark">
   <MAINGROUP id="wVdkZw" name="The Lyons' Den Delay Time Calculator">
     <GROUP id="{35A3474B-79D8-920E-E136-88F8E58081F5}" name="Source">
+      <GROUP id="{5249329C-49CC-44BF-F4E5-1D704800FEA9}" name="Font"/>
       <GROUP id="{0496FE9B-6CEE-7E75-C0FB-3F0DB683F2AD}" name="Pixelmator">
         <FILE id="dc3z5K" name="AppIcon.png" compile="0" resource="1" file="Pixelmator/AppIcon.png"/>
         <FILE id="U0IXoG" name="AppIcon.pxm" compile="0" resource="1" file="Pixelmator/AppIcon.pxm"/>
       </GROUP>
       <FILE id="Ltw8fF" name="README.md" compile="0" resource="1" file="README.md"/>
-      <FILE id="lUqZ9N" name="Donation Information.txt" compile="0" resource="1"
-            file="Donation Information.txt"/>
       <FILE id="WYZacz" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
       <FILE id="SyC7oU" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
       <FILE id="BhkZlp" name="MainComponent.cpp" compile="1" resource="0"
