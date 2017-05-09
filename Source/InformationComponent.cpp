@@ -76,7 +76,7 @@ InformationComponent::InformationComponent ()
     //[Constructor] You can add your own custom stuff here..
 
     // Set version number editor to current version number
-    versionNumberString = "Version: ";
+    versionNumberString = "Delay Time Calculator Version: ";
     versionNumberString += ProjectInfo::versionString;
     versionNumberLabelOutput->setText(versionNumberString, dontSendNotification);
 
@@ -116,7 +116,7 @@ void InformationComponent::resized()
 
     informationLabel->setBounds (0, 0, 240, 50);
     keysInformation->setBounds (0, 50, 240, 190);
-    versionNumberLabelOutput->setBounds (0, 240, 100, 20);
+    versionNumberLabelOutput->setBounds (0, 240, 240, 20);
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
 }
@@ -160,7 +160,7 @@ BEGIN_JUCER_METADATA
          fontname="Calisto MT" fontsize="20" kerning="0" bold="0" italic="0"
          justification="9"/>
   <LABEL name="versionNumberLabel" id="30f8922fa9ce43fc" memberName="versionNumberLabelOutput"
-         virtualName="" explicitFocusOrder="0" pos="0 240 100 20" textCol="ffadaaaa"
+         virtualName="" explicitFocusOrder="0" pos="0 240 240 20" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
          fontsize="15" kerning="0" bold="0" italic="0" justification="33"/>
