@@ -33,18 +33,12 @@ MainComponent::MainComponent ()
     //[/Constructor_pre]
 
     addAndMakeVisible (doubleTempoButton = new TextButton ("doubleTempoButton"));
-    doubleTempoButton->setTooltip (TRANS("Doubles the current tempo value.\n"
-    "\n"
-    "You can also use the \'2\' key."));
     doubleTempoButton->setButtonText (TRANS("2x"));
     doubleTempoButton->addListener (this);
     doubleTempoButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
     doubleTempoButton->setColour (TextButton::textColourOffId, Colour (0xff353535));
 
     addAndMakeVisible (halfTempoButton = new TextButton ("halfTempoButton"));
-    halfTempoButton->setTooltip (TRANS("Halves the current tempo value.\n"
-    "\n"
-    "You can also use the \'1\' key."));
     halfTempoButton->setButtonText (TRANS("1/2x"));
     halfTempoButton->addListener (this);
     halfTempoButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
@@ -173,20 +167,12 @@ MainComponent::MainComponent ()
     oneHundreAndTwentyEighthLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
     addAndMakeVisible (tapButton = new TextButton ("tapButton"));
-    tapButton->setTooltip (TRANS("Click this button in time with your song to automatically find the tempo of the song.\n"
-    "\n"
-    "You can also use the \'T\' key."));
     tapButton->setButtonText (TRANS("Tap Tempo"));
     tapButton->addListener (this);
     tapButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
     tapButton->setColour (TextButton::textColourOffId, Colour (0xff353535));
 
     addAndMakeVisible (resetButton = new TextButton ("resetButton"));
-    resetButton->setTooltip (TRANS("Click this button to reset the Tap Tempo mechanism.\n"
-    "\n"
-    "You can also use the \'R\' key.\n"
-    "\n"
-    "When this button is colored white, it means that the Tap Tempo button has been clicked and a reset is needed to calculate a new tempo."));
     resetButton->setButtonText (TRANS("Reset Tap Tempo"));
     resetButton->addListener (this);
     resetButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
@@ -647,6 +633,12 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
         //[UserButtonCode_informationButton] -- add your button handler code here..
 
         basicWindow = new BasicWindow("Information", Colours::grey, DocumentWindow::allButtons);
+        
+        basicWindow->setUsingNativeTitleBar(true);
+        basicWindow->setContentOwned(new InformationComponent(), true);
+        
+        basicWindow->centreWithSize(basicWindow->getWidth(), basicWindow->getHeight());
+        basicWindow->setVisible(true);
 
         //[/UserButtonCode_informationButton]
     }
@@ -806,13 +798,13 @@ BEGIN_JUCER_METADATA
                  fixedSize="1" initialWidth="500" initialHeight="475">
   <BACKGROUND backgroundColour="ff353535"/>
   <TEXTBUTTON name="doubleTempoButton" id="74a1161b6a8bd75d" memberName="doubleTempoButton"
-              virtualName="" explicitFocusOrder="0" pos="125 80 125 30" tooltip="Doubles the current tempo value.&#10;&#10;You can also use the '2' key."
-              bgColOff="ffadaaaa" textCol="ff353535" buttonText="2x" connectedEdges="0"
-              needsCallback="1" radioGroupId="0"/>
+              virtualName="" explicitFocusOrder="0" pos="125 80 125 30" bgColOff="ffadaaaa"
+              textCol="ff353535" buttonText="2x" connectedEdges="0" needsCallback="1"
+              radioGroupId="0"/>
   <TEXTBUTTON name="halfTempoButton" id="edac6a2aecdd8ef5" memberName="halfTempoButton"
-              virtualName="" explicitFocusOrder="0" pos="0 80 125 30" tooltip="Halves the current tempo value.&#10;&#10;You can also use the '1' key."
-              bgColOff="ffadaaaa" textCol="ff353535" buttonText="1/2x" connectedEdges="0"
-              needsCallback="1" radioGroupId="0"/>
+              virtualName="" explicitFocusOrder="0" pos="0 80 125 30" bgColOff="ffadaaaa"
+              textCol="ff353535" buttonText="1/2x" connectedEdges="0" needsCallback="1"
+              radioGroupId="0"/>
   <SLIDER name="tempoSlider" id="1b36c66db8e52ea5" memberName="tempoSlider"
           virtualName="" explicitFocusOrder="0" pos="0 50 500 30" bkgcol="ff000000"
           thumbcol="ffffffff" trackcol="ffadaaaa" textboxtext="ffffffff"
@@ -882,13 +874,13 @@ BEGIN_JUCER_METADATA
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <TEXTBUTTON name="tapButton" id="3cd8a4f5f3b122f8" memberName="tapButton"
-              virtualName="" explicitFocusOrder="0" pos="250 80 125 30" tooltip="Click this button in time with your song to automatically find the tempo of the song.&#10;&#10;You can also use the 'T' key."
-              bgColOff="ffadaaaa" textCol="ff353535" buttonText="Tap Tempo"
-              connectedEdges="0" needsCallback="1" radioGroupId="0"/>
+              virtualName="" explicitFocusOrder="0" pos="250 80 125 30" bgColOff="ffadaaaa"
+              textCol="ff353535" buttonText="Tap Tempo" connectedEdges="0"
+              needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="resetButton" id="137cfed0258a7265" memberName="resetButton"
-              virtualName="" explicitFocusOrder="0" pos="375 80 125 30" tooltip="Click this button to reset the Tap Tempo mechanism.&#10;&#10;You can also use the 'R' key.&#10;&#10;When this button is colored white, it means that the Tap Tempo button has been clicked and a reset is needed to calculate a new tempo."
-              bgColOff="ffadaaaa" textCol="ff353535" buttonText="Reset Tap Tempo"
-              connectedEdges="0" needsCallback="1" radioGroupId="0"/>
+              virtualName="" explicitFocusOrder="0" pos="375 80 125 30" bgColOff="ffadaaaa"
+              textCol="ff353535" buttonText="Reset Tap Tempo" connectedEdges="0"
+              needsCallback="1" radioGroupId="0"/>
   <LABEL name="new label" id="3b0b371f9cfffd20" memberName="wholeNormalLabel"
          virtualName="" explicitFocusOrder="0" pos="125 140 100 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"

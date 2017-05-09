@@ -18,11 +18,6 @@ public:
     BasicWindow (const String& name, Colour backgroundColour, int buttonsNeeded)
     : DocumentWindow (name, backgroundColour, buttonsNeeded)
     {
-        setUsingNativeTitleBar(true);
-        setContentOwned(new InformationComponent(), true);
-        
-        centreWithSize(getWidth(), getHeight());
-        setVisible(true);
     }
     
     void closeButtonPressed() override

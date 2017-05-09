@@ -64,7 +64,6 @@ private:
 
     DelayTime delayTimeObject;
     TapTempo tapTempo;
-    TooltipWindow toolTipWindow;
 
     SafePointer<BasicWindow> basicWindow;
 
