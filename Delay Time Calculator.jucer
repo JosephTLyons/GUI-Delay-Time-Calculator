@@ -12,6 +12,8 @@
         <FILE id="U0IXoG" name="AppIcon.pxm" compile="0" resource="1" file="Pixelmator/AppIcon.pxm"/>
       </GROUP>
       <FILE id="Ltw8fF" name="README.md" compile="0" resource="1" file="README.md"/>
+      <FILE id="lUqZ9N" name="Donation Information.txt" compile="0" resource="1"
+            file="Donation Information.txt"/>
       <FILE id="WYZacz" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
       <FILE id="SyC7oU" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
       <FILE id="BhkZlp" name="MainComponent.cpp" compile="1" resource="0"
