@@ -478,6 +478,9 @@ MainComponent::~MainComponent()
 
 
     //[Destructor]. You can add your own custom destruction code here..
+    
+    delete basicWindow;
+    
     //[/Destructor]
 }
 
