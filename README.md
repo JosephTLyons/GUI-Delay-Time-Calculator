@@ -9,16 +9,17 @@ Features:
 * 1/2x and 2x buttons to quickly double or half the current tempo.  This may be useful if you need to get faster or slower times than the ones available on the screen.
 * Tap to set tempo with Tap Tempo and Reset Tap Tempo buttons.  Some setups will only measure the time between two hits, some will average a few hits together, however, my algorithm averages every single hit.  I find this to be more accurate as you can click 10-15 times to really hone in on a specific tempo.  Flucuations won't matter as much the more taps you put in.  The only downfall to this is is that once you start tapping, the algoritm never stops measuring time.  So you must manually reset the system with the R button each time you want to set a new tempo or if you stop tapping for any period of time and come back to it.  For convenience, the R button turns white to let you know you need to reset the interal system if you want to calculate a new tempo or if you have stopped tapping for any amount time and need to come back to it. Note: The first time you click, the tempo slider will move to 1.  This is not a bug, this is the nature of calculating the tempo based on taps.  Two hits are needed to get the first calculation.  So I set the slider to 1 during the first hit then, move it to the correct tempo after.
 * Keys: 1 = 1/2x, 2 = 2x, T = Tap Tempo, R = Reset Tap Tempo, Spacebar = Round Value, Up Arrow = +1, Down Arrow = -1, Right Arrow = +5, Left Arrow = -5;
+* An information panel to display the keys that trigger actions and version number
 
 Changelog:
 
 April XX, 2017 - V 1.3:
 1. Keys: 1 = 1/2x, 2 = 2x, T = Tap Tempo, R = Reset Tap Tempo, Spacebar = Round Value, Up Arrow = +1, Down Arrow = -1, Right Arrow = +5, Left Arrow = -5;
-2. Small aesthetic changes due to the new LookAndFeelV4 class of JUCE 5.
-3. GUI buttons moved and their actions made more clear by their text
-4. Changed all output fields from text editors to text labels.  I did this because text editors can be highlighted and labels cannot be.  The highlighting looks cheesy and unprofessional, so I make them all labels to keep from having the option to highlight output fields.
-5. Changed all links to buttons on the bottom and added a link to my software Facebook page
-6. Added a button to invoke a new window to display all the key information, such as which keys trigger which actions and the app version number.
+2. Added a button to invoke a new window to display all the key information, such as which keys trigger which actions and the app version number.
+3. Changed all links to buttons on the bottom and added a link to my software Facebook page
+4. GUI buttons moved and their actions made more clear by their text
+5. Changed all output fields from text editors to text labels.  I did this because values inside text editors can be highlighted and labels cannot be.  The highlighting looks cheesy and unprofessional, so I make them all labels to keep from having the option to highlight numbers in the output fields.
+6. Small aesthetic changes due to the new LookAndFeelV4 class of JUCE 5.
 
 April 22, 2017 - V 1.2:
 1. Added tap tempo feature.  Tap T in time to set tempo, click R to reset internal values so you can use T to calculate a new tempo.  The R button turns white after the first click of the tap button, to let the user know that if they want to calculate a different speed, to click the reset button.
