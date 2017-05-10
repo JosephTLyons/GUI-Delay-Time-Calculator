@@ -671,40 +671,40 @@ void MainComponent::sliderValueChanged (Slider* sliderThatWasMoved)
     {
         //[UserSliderCode_tempoSlider] -- add your slider handling code here..
 
-        delayTimeObject.setTempo(tempoSlider->getValue());
+        millisecondValuesObject.calculate(tempoSlider->getValue());
 
         // Set values for all text labels
-        wholeNormalLabel->setText((String) delayTimeObject.getHalfDotted(), dontSendNotification);
-        wholeDottedLabel->setText((String) delayTimeObject.getWholeDotted(), dontSendNotification);
-        wholeTripletLabel->setText((String) delayTimeObject.getWholeTriplet(), dontSendNotification);
+        wholeNormalLabel->setText((String) millisecondValuesObject.getHalfDotted(), dontSendNotification);
+        wholeDottedLabel->setText((String) millisecondValuesObject.getWholeDotted(), dontSendNotification);
+        wholeTripletLabel->setText((String) millisecondValuesObject.getWholeTriplet(), dontSendNotification);
 
-        halfNormalLabel->setText((String) delayTimeObject.getHalfNormal(), dontSendNotification);
-        halfDottedLabel->setText((String) delayTimeObject.getHalfDotted(), dontSendNotification);
-        halfTripletLabel->setText((String) delayTimeObject.getHalfTriplet(), dontSendNotification);
+        halfNormalLabel->setText((String) millisecondValuesObject.getHalfNormal(), dontSendNotification);
+        halfDottedLabel->setText((String) millisecondValuesObject.getHalfDotted(), dontSendNotification);
+        halfTripletLabel->setText((String) millisecondValuesObject.getHalfTriplet(), dontSendNotification);
 
-        quarterNormalLabel->setText((String) delayTimeObject.getQuarterNormal(), dontSendNotification);
-        quarterDottedLabel->setText((String) delayTimeObject.getQuarterDotted(), dontSendNotification);
-        quarterTripletLabel->setText((String) delayTimeObject.getQuarterTriplet(), dontSendNotification);
+        quarterNormalLabel->setText((String) millisecondValuesObject.getQuarterNormal(), dontSendNotification);
+        quarterDottedLabel->setText((String) millisecondValuesObject.getQuarterDotted(), dontSendNotification);
+        quarterTripletLabel->setText((String) millisecondValuesObject.getQuarterTriplet(), dontSendNotification);
 
-        eighthNormalLabel->setText((String) delayTimeObject.getEighthNormal(), dontSendNotification);
-        eighthDottedLabel->setText((String) delayTimeObject.getEighthDotted(), dontSendNotification);
-        eighthTripletLabel->setText((String) delayTimeObject.getEighthTriplet(), dontSendNotification);
+        eighthNormalLabel->setText((String) millisecondValuesObject.getEighthNormal(), dontSendNotification);
+        eighthDottedLabel->setText((String) millisecondValuesObject.getEighthDotted(), dontSendNotification);
+        eighthTripletLabel->setText((String) millisecondValuesObject.getEighthTriplet(), dontSendNotification);
 
-        sixteenthNormalLabel->setText((String) delayTimeObject.getSixteenthNormal(), dontSendNotification);
-        sixteenthDottedLabel->setText((String) delayTimeObject.getSixteenthDotted(), dontSendNotification);
-        sixteenthTripletLabel->setText((String) delayTimeObject.getSixteenthTriplet(), dontSendNotification);
+        sixteenthNormalLabel->setText((String) millisecondValuesObject.getSixteenthNormal(), dontSendNotification);
+        sixteenthDottedLabel->setText((String) millisecondValuesObject.getSixteenthDotted(), dontSendNotification);
+        sixteenthTripletLabel->setText((String) millisecondValuesObject.getSixteenthTriplet(), dontSendNotification);
 
-        thirtySecondNormalLabel->setText((String) delayTimeObject.getThirtySecondNormal(), dontSendNotification);
-        thirtySecondDottedLabel->setText((String) delayTimeObject.getThirtySecondDotted(), dontSendNotification);
-        thirtySecondTripletLabel->setText((String) delayTimeObject.getThirtySecondTriplet(), dontSendNotification);
+        thirtySecondNormalLabel->setText((String) millisecondValuesObject.getThirtySecondNormal(), dontSendNotification);
+        thirtySecondDottedLabel->setText((String) millisecondValuesObject.getThirtySecondDotted(), dontSendNotification);
+        thirtySecondTripletLabel->setText((String) millisecondValuesObject.getThirtySecondTriplet(), dontSendNotification);
 
-        sixtyFourthNormalLabel->setText((String) delayTimeObject.getSixtyFouthNormal(), dontSendNotification);
-        sixtyFourthDottedLabel->setText((String) delayTimeObject.getSixtyFouthDotted(), dontSendNotification);
-        sixtyFourthTripletLabel->setText((String) delayTimeObject.getSixtyFouthTriplet(), dontSendNotification);
+        sixtyFourthNormalLabel->setText((String) millisecondValuesObject.getSixtyFouthNormal(), dontSendNotification);
+        sixtyFourthDottedLabel->setText((String) millisecondValuesObject.getSixtyFouthDotted(), dontSendNotification);
+        sixtyFourthTripletLabel->setText((String) millisecondValuesObject.getSixtyFouthTriplet(), dontSendNotification);
 
-        oneTwentyEighthNormalLabel->setText((String) delayTimeObject.getOneHundredAndTwentyEighthNormal(), dontSendNotification);
-        oneTwentyEighthDottedLabel->setText((String) delayTimeObject.getOneHundredAndTwentyEighthDotted(), dontSendNotification);
-        oneTwentyEighthTripletLabel->setText((String) delayTimeObject.getOneHundredAndTwentyEighthTriplet(), dontSendNotification);
+        oneTwentyEighthNormalLabel->setText((String) millisecondValuesObject.getOneHundredAndTwentyEighthNormal(), dontSendNotification);
+        oneTwentyEighthDottedLabel->setText((String) millisecondValuesObject.getOneHundredAndTwentyEighthDotted(), dontSendNotification);
+        oneTwentyEighthTripletLabel->setText((String) millisecondValuesObject.getOneHundredAndTwentyEighthTriplet(), dontSendNotification);
 
         //[/UserSliderCode_tempoSlider]
     }

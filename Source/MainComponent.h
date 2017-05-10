@@ -21,7 +21,7 @@
 
 //[Headers]     -- You can add your own extra header files here --
 #include "../JuceLibraryCode/JuceHeader.h"
-#include "DelayTime.hpp"
+#include "MillisecondValues.hpp"
 #include "TapTempo.hpp"
 #include "BasicWindow.cpp"
 #include "Fonts.hpp"
@@ -63,11 +63,11 @@ public:
 private:
     //[UserVariables]   -- You can add your own custom variables in this section.
 
-    DelayTime delayTimeObject;
+    MillisecondValues millisecondValuesObject;
     TapTempo tapTempoObject;
 
     SafePointer<BasicWindow> basicWindow;
-    Fonts embeddedFont;
+//    Fonts embeddedFont;
 
     //[/UserVariables]
 

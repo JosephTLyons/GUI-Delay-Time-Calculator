@@ -1,37 +1,58 @@
 //
-//  DelayTime.hpp
+//  MillisecondValues.hpp
 //  Delay Time Calculator
 //
 //  Created by Joseph Lyons on 4/14/17.
 //
 //
 
-#ifndef DelayTime_hpp
-#define DelayTime_hpp
+#ifndef MillisecondValues_hpp
+#define MillisecondValues_hpp
 
-class DelayTime
+class MillisecondValues
 {
 private:
     double tempo;
     
-    double whole;
-    double half;
-    double quarter;
-    double eighth;
-    double sixteenth;
-    double thirtySecond;
-    double sixtyFourth;
-    double oneHundredAndTwentyEighth;
+    double wholeNormal;
+    double wholeDotted;
+    double wholeTriplet;
+    
+    double halfNormal;
+    double halfDotted;
+    double halfTriplet;
+    
+    double quarterNormal;
+    double quarterDotted;
+    double quarterTriplet;
+    
+    double eighthNormal;
+    double eighthDotted;
+    double eighthTriplet;
+    
+    double sixteenthNormal;
+    double sixteenthDotted;
+    double sixteenthTriplet;
+    
+    double thirtySecondNormal;
+    double thirtySecondDotted;
+    double thirtySecondTriplet;
+    
+    double sixtyFourthNormal;
+    double sixtyFourthDotted;
+    double sixtyFourthTriplet;
+    
+    double oneHundredAndTwentyEighthNormal;
+    double oneHundredAndTwentyEighthDotted;
+    double oneHundredAndTwentyEighthTriplet;
     
     double dotted;
     double triplet;
     
-    
 public:
-    DelayTime();
+    MillisecondValues();
     
-    void setTempo(const double &input);
-    void calculateDelayTimes();
+    void calculate(const double &input);
     
     double getWholeNormal();
     double getWholeDotted();
@@ -66,4 +87,4 @@ public:
     double getOneHundredAndTwentyEighthTriplet();
 };
 
-#endif /* DelayTime_hpp */
+#endif /* MillisecondValues_hpp */
