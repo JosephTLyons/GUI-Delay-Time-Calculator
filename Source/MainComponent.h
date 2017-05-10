@@ -24,6 +24,7 @@
 #include "DelayTime.hpp"
 #include "TapTempo.hpp"
 #include "BasicWindow.cpp"
+#include "Fonts.hpp"
 //[/Headers]
 
 
@@ -63,9 +64,10 @@ private:
     //[UserVariables]   -- You can add your own custom variables in this section.
 
     DelayTime delayTimeObject;
-    TapTempo tapTempo;
+    TapTempo tapTempoObject;
 
     SafePointer<BasicWindow> basicWindow;
+    Fonts embeddedFont;
 
     //[/UserVariables]
 
@@ -73,7 +75,7 @@ private:
     ScopedPointer<TextButton> doubleTempoButton;
     ScopedPointer<TextButton> halfTempoButton;
     ScopedPointer<Slider> tempoSlider;
-    ScopedPointer<Label> delayTimeCalculator;
+    ScopedPointer<Label> delayTimeCalculatorLabel;
     ScopedPointer<Label> normalLabel;
     ScopedPointer<Label> dottedLabel;
     ScopedPointer<Label> tripletLabel;

@@ -31,6 +31,7 @@
 MainComponent::MainComponent ()
 {
     //[Constructor_pre] You can add your own custom stuff here..
+    
     //[/Constructor_pre]
 
     addAndMakeVisible (doubleTempoButton = new TextButton ("doubleTempoButton"));
@@ -59,14 +60,14 @@ MainComponent::MainComponent ()
     tempoSlider->addListener (this);
     tempoSlider->setSkewFactor (0.5);
 
-    addAndMakeVisible (delayTimeCalculator = new Label ("delayTimeCalculator",
-                                                        TRANS("Delay Time Calculator")));
-    delayTimeCalculator->setFont (Font ("Calisto MT", 47.40f, Font::plain).withTypefaceStyle ("Regular").withExtraKerningFactor (0.095f));
-    delayTimeCalculator->setJustificationType (Justification::centred);
-    delayTimeCalculator->setEditable (false, false, false);
-    delayTimeCalculator->setColour (Label::textColourId, Colour (0xffadaaaa));
-    delayTimeCalculator->setColour (TextEditor::textColourId, Colours::black);
-    delayTimeCalculator->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    addAndMakeVisible (delayTimeCalculatorLabel = new Label ("delayTimeCalculatorLabel",
+                                                             TRANS("Delay Time Calculator")));
+    delayTimeCalculatorLabel->setFont (Font ("Calisto MT", 47.40f, Font::plain).withTypefaceStyle ("Regular").withExtraKerningFactor (0.095f));
+    delayTimeCalculatorLabel->setJustificationType (Justification::centred);
+    delayTimeCalculatorLabel->setEditable (false, false, false);
+    delayTimeCalculatorLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
+    delayTimeCalculatorLabel->setColour (TextEditor::textColourId, Colours::black);
+    delayTimeCalculatorLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
     addAndMakeVisible (normalLabel = new Label ("normalLabel",
                                                 TRANS("Normal\n")));
@@ -420,7 +421,6 @@ MainComponent::MainComponent ()
     // Right click for velocity sensitive sliding
     tempoSlider->setPopupMenuEnabled(true);
 
-
     //[/Constructor]
 }
 
@@ -432,7 +432,7 @@ MainComponent::~MainComponent()
     doubleTempoButton = nullptr;
     halfTempoButton = nullptr;
     tempoSlider = nullptr;
-    delayTimeCalculator = nullptr;
+    delayTimeCalculatorLabel = nullptr;
     normalLabel = nullptr;
     dottedLabel = nullptr;
     tripletLabel = nullptr;
@@ -478,9 +478,10 @@ MainComponent::~MainComponent()
 
 
     //[Destructor]. You can add your own custom destruction code here..
-    
+
+    // Delete basicWindow in case both windows are open when exiting the application all together
     delete basicWindow;
-    
+
     //[/Destructor]
 }
 
@@ -504,7 +505,7 @@ void MainComponent::resized()
     doubleTempoButton->setBounds (125, 80, 125, 30);
     halfTempoButton->setBounds (0, 80, 125, 30);
     tempoSlider->setBounds (0, 50, 500, 30);
-    delayTimeCalculator->setBounds (0, 0, 500, 50);
+    delayTimeCalculatorLabel->setBounds (0, 0, 500, 50);
     normalLabel->setBounds (125, 110, 100, 30);
     dottedLabel->setBounds (250, 110, 100, 30);
     tripletLabel->setBounds (375, 110, 100, 30);
@@ -576,7 +577,7 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_tapButton] -- add your button handler code here..
 
-        tempoSlider->setValue(tapTempo.calculateTempo());
+        tempoSlider->setValue(tapTempoObject.calculateTempo());
 
         // Change button color so we know a reset is needed
         resetButton->setColour(TextButton::buttonColourId , Colours::white);
@@ -588,7 +589,7 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_resetButton] -- add your button handler code here..
 
-        tapTempo.resetMainCalculationHolders();
+        tapTempoObject.resetMainCalculationHolders();
 
         // Reset the color of resetButton by simply setting it to the color of tapButton
         resetButton->setColour(TextButton::buttonColourId,
@@ -640,15 +641,15 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
         if(basicWindow == NULL)
         {
             basicWindow = new BasicWindow("Information", Colours::grey, DocumentWindow::allButtons);
-            
+
             basicWindow->setUsingNativeTitleBar(true);
             basicWindow->setContentOwned(new InformationComponent(), true);
-            
+
             basicWindow->setSize(basicWindow->getWidth(), basicWindow->getHeight());
             basicWindow->setTopLeftPosition(0, 0);
             basicWindow->setVisible(true);
         }
-        
+
         else
         {
             delete basicWindow;
@@ -826,7 +827,7 @@ BEGIN_JUCER_METADATA
           min="1" max="1000" int="0.10000000000000000555" style="LinearHorizontal"
           textBoxPos="TextBoxLeft" textBoxEditable="1" textBoxWidth="50"
           textBoxHeight="20" skewFactor="0.5" needsCallback="1"/>
-  <LABEL name="delayTimeCalculator" id="951f8323b93b29f2" memberName="delayTimeCalculator"
+  <LABEL name="delayTimeCalculatorLabel" id="951f8323b93b29f2" memberName="delayTimeCalculatorLabel"
          virtualName="" explicitFocusOrder="0" pos="0 0 500 50" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="Delay Time Calculator"
          editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
