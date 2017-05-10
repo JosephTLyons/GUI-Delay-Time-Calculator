@@ -50,6 +50,9 @@ public:
     //[UserMethods]     -- You can add your own custom methods in this section.
 
     bool keyPressed(const juce::KeyPress &key) override;
+    void populateFieldsWithMillisecondValues();
+    void populateFieldsWithFrequencyValues();
+    
 
     //[/UserMethods]
 
@@ -67,7 +70,6 @@ private:
     TapTempo tapTempoObject;
 
     SafePointer<BasicWindow> basicWindow;
-//    Fonts embeddedFont;
 
     //[/UserVariables]
 

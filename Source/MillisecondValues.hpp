@@ -16,7 +16,7 @@ class MillisecondValues : public MillisecondFrequencyValueBase
 private:
     
 public:
-    void calculate(const double &input);
+    void calculateMillisecondValues(const double &input);
 };
 
 #endif /* MillisecondValues_hpp */

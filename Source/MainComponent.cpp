@@ -671,40 +671,11 @@ void MainComponent::sliderValueChanged (Slider* sliderThatWasMoved)
     {
         //[UserSliderCode_tempoSlider] -- add your slider handling code here..
 
-        millisecondValuesObject.calculate(tempoSlider->getValue());
-
-        // Set values for all text labels
-        wholeNormalLabel->setText((String) millisecondValuesObject.getWholeNormal(), dontSendNotification);
-        wholeDottedLabel->setText((String) millisecondValuesObject.getWholeDotted(), dontSendNotification);
-        wholeTripletLabel->setText((String) millisecondValuesObject.getWholeTriplet(), dontSendNotification);
-
-        halfNormalLabel->setText((String) millisecondValuesObject.getHalfNormal(), dontSendNotification);
-        halfDottedLabel->setText((String) millisecondValuesObject.getHalfDotted(), dontSendNotification);
-        halfTripletLabel->setText((String) millisecondValuesObject.getHalfTriplet(), dontSendNotification);
-
-        quarterNormalLabel->setText((String) millisecondValuesObject.getQuarterNormal(), dontSendNotification);
-        quarterDottedLabel->setText((String) millisecondValuesObject.getQuarterDotted(), dontSendNotification);
-        quarterTripletLabel->setText((String) millisecondValuesObject.getQuarterTriplet(), dontSendNotification);
-
-        eighthNormalLabel->setText((String) millisecondValuesObject.getEighthNormal(), dontSendNotification);
-        eighthDottedLabel->setText((String) millisecondValuesObject.getEighthDotted(), dontSendNotification);
-        eighthTripletLabel->setText((String) millisecondValuesObject.getEighthTriplet(), dontSendNotification);
-
-        sixteenthNormalLabel->setText((String) millisecondValuesObject.getSixteenthNormal(), dontSendNotification);
-        sixteenthDottedLabel->setText((String) millisecondValuesObject.getSixteenthDotted(), dontSendNotification);
-        sixteenthTripletLabel->setText((String) millisecondValuesObject.getSixteenthTriplet(), dontSendNotification);
-
-        thirtySecondNormalLabel->setText((String) millisecondValuesObject.getThirtySecondNormal(), dontSendNotification);
-        thirtySecondDottedLabel->setText((String) millisecondValuesObject.getThirtySecondDotted(), dontSendNotification);
-        thirtySecondTripletLabel->setText((String) millisecondValuesObject.getThirtySecondTriplet(), dontSendNotification);
-
-        sixtyFourthNormalLabel->setText((String) millisecondValuesObject.getSixtyFouthNormal(), dontSendNotification);
-        sixtyFourthDottedLabel->setText((String) millisecondValuesObject.getSixtyFouthDotted(), dontSendNotification);
-        sixtyFourthTripletLabel->setText((String) millisecondValuesObject.getSixtyFouthTriplet(), dontSendNotification);
-
-        oneTwentyEighthNormalLabel->setText((String) millisecondValuesObject.getOneHundredAndTwentyEighthNormal(), dontSendNotification);
-        oneTwentyEighthDottedLabel->setText((String) millisecondValuesObject.getOneHundredAndTwentyEighthDotted(), dontSendNotification);
-        oneTwentyEighthTripletLabel->setText((String) millisecondValuesObject.getOneHundredAndTwentyEighthTriplet(), dontSendNotification);
+        // If toggle is selected
+        millisecondValuesObject.calculateMillisecondValues(tempoSlider->getValue());
+        populateFieldsWithMillisecondValues();
+        
+        // If other toggle is selected
 
         //[/UserSliderCode_tempoSlider]
     }
@@ -793,6 +764,47 @@ bool MainComponent::keyPressed(const juce::KeyPress &key)
     }
 
     return true;
+}
+
+void MainComponent::populateFieldsWithMillisecondValues()
+{
+    // Set values for all text labels
+    wholeNormalLabel->setText((String) millisecondValuesObject.getWholeNormal(), dontSendNotification);
+    wholeDottedLabel->setText((String) millisecondValuesObject.getWholeDotted(), dontSendNotification);
+    wholeTripletLabel->setText((String) millisecondValuesObject.getWholeTriplet(), dontSendNotification);
+    
+    halfNormalLabel->setText((String) millisecondValuesObject.getHalfNormal(), dontSendNotification);
+    halfDottedLabel->setText((String) millisecondValuesObject.getHalfDotted(), dontSendNotification);
+    halfTripletLabel->setText((String) millisecondValuesObject.getHalfTriplet(), dontSendNotification);
+    
+    quarterNormalLabel->setText((String) millisecondValuesObject.getQuarterNormal(), dontSendNotification);
+    quarterDottedLabel->setText((String) millisecondValuesObject.getQuarterDotted(), dontSendNotification);
+    quarterTripletLabel->setText((String) millisecondValuesObject.getQuarterTriplet(), dontSendNotification);
+    
+    eighthNormalLabel->setText((String) millisecondValuesObject.getEighthNormal(), dontSendNotification);
+    eighthDottedLabel->setText((String) millisecondValuesObject.getEighthDotted(), dontSendNotification);
+    eighthTripletLabel->setText((String) millisecondValuesObject.getEighthTriplet(), dontSendNotification);
+    
+    sixteenthNormalLabel->setText((String) millisecondValuesObject.getSixteenthNormal(), dontSendNotification);
+    sixteenthDottedLabel->setText((String) millisecondValuesObject.getSixteenthDotted(), dontSendNotification);
+    sixteenthTripletLabel->setText((String) millisecondValuesObject.getSixteenthTriplet(), dontSendNotification);
+    
+    thirtySecondNormalLabel->setText((String) millisecondValuesObject.getThirtySecondNormal(), dontSendNotification);
+    thirtySecondDottedLabel->setText((String) millisecondValuesObject.getThirtySecondDotted(), dontSendNotification);
+    thirtySecondTripletLabel->setText((String) millisecondValuesObject.getThirtySecondTriplet(), dontSendNotification);
+    
+    sixtyFourthNormalLabel->setText((String) millisecondValuesObject.getSixtyFouthNormal(), dontSendNotification);
+    sixtyFourthDottedLabel->setText((String) millisecondValuesObject.getSixtyFouthDotted(), dontSendNotification);
+    sixtyFourthTripletLabel->setText((String) millisecondValuesObject.getSixtyFouthTriplet(), dontSendNotification);
+    
+    oneTwentyEighthNormalLabel->setText((String) millisecondValuesObject.getOneHundredAndTwentyEighthNormal(), dontSendNotification);
+    oneTwentyEighthDottedLabel->setText((String) millisecondValuesObject.getOneHundredAndTwentyEighthDotted(), dontSendNotification);
+    oneTwentyEighthTripletLabel->setText((String) millisecondValuesObject.getOneHundredAndTwentyEighthTriplet(), dontSendNotification);
+}
+
+void MainComponent::populateFieldsWithFrequencyValues()
+{
+    
 }
 
 //[/MiscUserCode]
