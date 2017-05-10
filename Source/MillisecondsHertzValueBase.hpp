@@ -48,9 +48,6 @@ protected:
     double oneHundredAndTwentyEighthDotted;
     double oneHundredAndTwentyEighthTriplet;
     
-    double dotted;
-    double triplet;
-    
 public:
     MillisecondsHertzValueBase();
     

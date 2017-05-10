@@ -16,34 +16,34 @@ void HertzValues::calculateHertzValues(const double &input)
     quarterNormal                    = tempo / 60;
     
     wholeNormal                      = quarterNormal / 4;
-    wholeDotted                      = wholeNormal * dotted;
-    wholeTriplet                     = wholeNormal * triplet;
+    wholeDotted                      = wholeNormal * (2 / 3.0f);
+    wholeTriplet                     = wholeNormal * 1.5;
     
     halfNormal                       = quarterNormal / 2;
-    halfDotted                       = halfNormal * dotted;
-    halfTriplet                      = halfNormal * triplet;
+    halfDotted                       = halfNormal * (2 / 3.0f);
+    halfTriplet                      = halfNormal * 1.5;
     
     // quarterNormal
-    quarterDotted                    = quarterNormal * dotted;
-    quarterTriplet                   = quarterNormal * triplet;
+    quarterDotted                    = quarterNormal * (2 / 3.0f);
+    quarterTriplet                   = quarterNormal * 1.5;
     
     eighthNormal                     = quarterNormal * 2;
-    eighthDotted                     = eighthNormal * dotted;
-    eighthTriplet                    = eighthNormal * triplet;
+    eighthDotted                     = eighthNormal * (2 / 3.0f);
+    eighthTriplet                    = eighthNormal * 1.5;
     
     sixteenthNormal                  = quarterNormal * 4;
-    sixteenthDotted                  = sixteenthNormal * dotted;
-    sixteenthTriplet                 = sixteenthNormal * triplet;
+    sixteenthDotted                  = sixteenthNormal * (2 / 3.0f);
+    sixteenthTriplet                 = sixteenthNormal * 1.5;
     
     thirtySecondNormal               = quarterNormal * 8;
-    thirtySecondDotted               = thirtySecondNormal * dotted;
-    thirtySecondTriplet              = thirtySecondNormal * triplet;
+    thirtySecondDotted               = thirtySecondNormal * (2 / 3.0f);
+    thirtySecondTriplet              = thirtySecondNormal * 1.5;
     
     sixtyFourthNormal                = quarterNormal * 16;
-    sixtyFourthDotted                = sixtyFourthNormal * dotted;
-    sixtyFourthTriplet               = sixtyFourthNormal * triplet;
+    sixtyFourthDotted                = sixtyFourthNormal * (2 / 3.0f);
+    sixtyFourthTriplet               = sixtyFourthNormal * 1.5;
     
     oneHundredAndTwentyEighthNormal  = quarterNormal * 32;
-    oneHundredAndTwentyEighthDotted  = oneHundredAndTwentyEighthNormal * dotted;
-    oneHundredAndTwentyEighthTriplet = oneHundredAndTwentyEighthNormal * triplet;
+    oneHundredAndTwentyEighthDotted  = oneHundredAndTwentyEighthNormal * (2 / 3.0f);
+    oneHundredAndTwentyEighthTriplet = oneHundredAndTwentyEighthNormal * 1.5;
 }

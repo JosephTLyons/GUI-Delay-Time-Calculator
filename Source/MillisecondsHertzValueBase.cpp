@@ -11,8 +11,6 @@
 MillisecondsHertzValueBase::MillisecondsHertzValueBase()
 {
     tempo   = 0;
-    dotted  = 1.5;
-    triplet = 2 / 3.0f;
     
     wholeNormal                      = 0;
     wholeDotted                      = 0;
