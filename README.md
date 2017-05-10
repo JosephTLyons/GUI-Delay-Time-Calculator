@@ -14,6 +14,7 @@ A simple application that calculates delay and reverb pre-delay times based on t
 
 ## Bug to Fix:
 
+* Whole note normal value not correct!!!
 * Embed Font to fix font errors!!!
 
 ## Features still to add:
