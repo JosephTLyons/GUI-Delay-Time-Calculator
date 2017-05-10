@@ -24,18 +24,16 @@
             file="Source/InformationComponent.h"/>
       <FILE id="HoAAya" name="InformationComponent.cpp" compile="1" resource="0"
             file="Source/InformationComponent.cpp"/>
-      <FILE id="U8cQTV" name="MillisecondFrequencyValueBase.hpp" compile="0"
-            resource="0" file="Source/MillisecondFrequencyValueBase.hpp"/>
-      <FILE id="DSAmZO" name="MillisecondFrequencyValueBase.cpp" compile="1"
-            resource="0" file="Source/MillisecondFrequencyValueBase.cpp"/>
+      <FILE id="GucwG3" name="MillisecondsHertzValueBase.hpp" compile="0"
+            resource="0" file="Source/MillisecondsHertzValueBase.hpp"/>
+      <FILE id="EriyaQ" name="MillisecondsHertzValueBase.cpp" compile="1"
+            resource="0" file="Source/MillisecondsHertzValueBase.cpp"/>
       <FILE id="paRsXt" name="MillisecondValues.hpp" compile="0" resource="0"
             file="Source/MillisecondValues.hpp"/>
       <FILE id="NBb48x" name="MillisecondValues.cpp" compile="1" resource="0"
             file="Source/MillisecondValues.cpp"/>
-      <FILE id="cs7C4X" name="FrequencyValues.hpp" compile="0" resource="0"
-            file="Source/FrequencyValues.hpp"/>
-      <FILE id="Dbjmy3" name="FrequencyValues.cpp" compile="1" resource="0"
-            file="Source/FrequencyValues.cpp"/>
+      <FILE id="wbLbXn" name="HertzValues.hpp" compile="0" resource="0" file="Source/HertzValues.hpp"/>
+      <FILE id="nHwMjs" name="HertzValues.cpp" compile="1" resource="0" file="Source/HertzValues.cpp"/>
       <FILE id="WpUudQ" name="TapTempo.hpp" compile="0" resource="0" file="Source/TapTempo.hpp"/>
       <FILE id="YOxrbs" name="TapTempo.cpp" compile="1" resource="0" file="Source/TapTempo.cpp"/>
       <FILE id="uAB51F" name="Fonts.hpp" compile="0" resource="0" file="Source/Fonts.hpp"/>
