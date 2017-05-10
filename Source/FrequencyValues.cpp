@@ -8,7 +8,7 @@
 
 #include "FrequencyValues.hpp"
 
-void FrequencyValues::calculate(const double &input)
+void FrequencyValues::calculateFrequencyValues(const double &input)
 {
     tempo = input;
     

@@ -31,7 +31,7 @@
 MainComponent::MainComponent ()
 {
     //[Constructor_pre] You can add your own custom stuff here..
-    
+
     //[/Constructor_pre]
 
     addAndMakeVisible (doubleTempoButton = new TextButton ("doubleTempoButton"));
@@ -407,6 +407,14 @@ MainComponent::MainComponent ()
     informationButton->setColour (TextButton::buttonOnColourId, Colour (0xffadaaaa));
     informationButton->setColour (TextButton::textColourOffId, Colours::black);
 
+    addAndMakeVisible (freqToggle = new ToggleButton ("freqToggle"));
+    freqToggle->setButtonText (TRANS("Freq"));
+    freqToggle->addListener (this);
+
+    addAndMakeVisible (msToggle = new ToggleButton ("msToggle"));
+    msToggle->setButtonText (TRANS("MS"));
+    msToggle->addListener (this);
+
 
     //[UserPreSize]
     //[/UserPreSize]
@@ -475,6 +483,8 @@ MainComponent::~MainComponent()
     facebookButton = nullptr;
     theCodeButton = nullptr;
     informationButton = nullptr;
+    freqToggle = nullptr;
+    msToggle = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -548,6 +558,8 @@ void MainComponent::resized()
     facebookButton->setBounds (100, 455, 100, 20);
     theCodeButton->setBounds (300, 455, 100, 20);
     informationButton->setBounds (0, 455, 100, 20);
+    freqToggle->setBounds (63, 115, 62, 20);
+    msToggle->setBounds (0, 115, 62, 20);
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
 }
@@ -657,6 +669,16 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
 
         //[/UserButtonCode_informationButton]
     }
+    else if (buttonThatWasClicked == freqToggle)
+    {
+        //[UserButtonCode_freqToggle] -- add your button handler code here..
+        //[/UserButtonCode_freqToggle]
+    }
+    else if (buttonThatWasClicked == msToggle)
+    {
+        //[UserButtonCode_msToggle] -- add your button handler code here..
+        //[/UserButtonCode_msToggle]
+    }
 
     //[UserbuttonClicked_Post]
     //[/UserbuttonClicked_Post]
@@ -674,7 +696,7 @@ void MainComponent::sliderValueChanged (Slider* sliderThatWasMoved)
         // If toggle is selected
         millisecondValuesObject.calculateMillisecondValues(tempoSlider->getValue());
         populateFieldsWithMillisecondValues();
-        
+
         // If other toggle is selected
 
         //[/UserSliderCode_tempoSlider]
@@ -772,31 +794,31 @@ void MainComponent::populateFieldsWithMillisecondValues()
     wholeNormalLabel->setText((String) millisecondValuesObject.getWholeNormal(), dontSendNotification);
     wholeDottedLabel->setText((String) millisecondValuesObject.getWholeDotted(), dontSendNotification);
     wholeTripletLabel->setText((String) millisecondValuesObject.getWholeTriplet(), dontSendNotification);
-    
+
     halfNormalLabel->setText((String) millisecondValuesObject.getHalfNormal(), dontSendNotification);
     halfDottedLabel->setText((String) millisecondValuesObject.getHalfDotted(), dontSendNotification);
     halfTripletLabel->setText((String) millisecondValuesObject.getHalfTriplet(), dontSendNotification);
-    
+
     quarterNormalLabel->setText((String) millisecondValuesObject.getQuarterNormal(), dontSendNotification);
     quarterDottedLabel->setText((String) millisecondValuesObject.getQuarterDotted(), dontSendNotification);
     quarterTripletLabel->setText((String) millisecondValuesObject.getQuarterTriplet(), dontSendNotification);
-    
+
     eighthNormalLabel->setText((String) millisecondValuesObject.getEighthNormal(), dontSendNotification);
     eighthDottedLabel->setText((String) millisecondValuesObject.getEighthDotted(), dontSendNotification);
     eighthTripletLabel->setText((String) millisecondValuesObject.getEighthTriplet(), dontSendNotification);
-    
+
     sixteenthNormalLabel->setText((String) millisecondValuesObject.getSixteenthNormal(), dontSendNotification);
     sixteenthDottedLabel->setText((String) millisecondValuesObject.getSixteenthDotted(), dontSendNotification);
     sixteenthTripletLabel->setText((String) millisecondValuesObject.getSixteenthTriplet(), dontSendNotification);
-    
+
     thirtySecondNormalLabel->setText((String) millisecondValuesObject.getThirtySecondNormal(), dontSendNotification);
     thirtySecondDottedLabel->setText((String) millisecondValuesObject.getThirtySecondDotted(), dontSendNotification);
     thirtySecondTripletLabel->setText((String) millisecondValuesObject.getThirtySecondTriplet(), dontSendNotification);
-    
+
     sixtyFourthNormalLabel->setText((String) millisecondValuesObject.getSixtyFouthNormal(), dontSendNotification);
     sixtyFourthDottedLabel->setText((String) millisecondValuesObject.getSixtyFouthDotted(), dontSendNotification);
     sixtyFourthTripletLabel->setText((String) millisecondValuesObject.getSixtyFouthTriplet(), dontSendNotification);
-    
+
     oneTwentyEighthNormalLabel->setText((String) millisecondValuesObject.getOneHundredAndTwentyEighthNormal(), dontSendNotification);
     oneTwentyEighthDottedLabel->setText((String) millisecondValuesObject.getOneHundredAndTwentyEighthDotted(), dontSendNotification);
     oneTwentyEighthTripletLabel->setText((String) millisecondValuesObject.getOneHundredAndTwentyEighthTriplet(), dontSendNotification);
@@ -804,7 +826,7 @@ void MainComponent::populateFieldsWithMillisecondValues()
 
 void MainComponent::populateFieldsWithFrequencyValues()
 {
-    
+
 }
 
 //[/MiscUserCode]
@@ -1048,6 +1070,12 @@ BEGIN_JUCER_METADATA
               virtualName="" explicitFocusOrder="0" pos="0 455 100 20" bgColOff="ffadaaaa"
               bgColOn="ffadaaaa" textCol="ff000000" buttonText="Information"
               connectedEdges="0" needsCallback="1" radioGroupId="0"/>
+  <TOGGLEBUTTON name="freqToggle" id="3e5aa37d8e5a6de5" memberName="freqToggle"
+                virtualName="" explicitFocusOrder="0" pos="63 115 62 20" buttonText="Freq"
+                connectedEdges="0" needsCallback="1" radioGroupId="0" state="0"/>
+  <TOGGLEBUTTON name="msToggle" id="8f5b18b58f39a727" memberName="msToggle" virtualName=""
+                explicitFocusOrder="0" pos="0 115 62 20" buttonText="MS" connectedEdges="0"
+                needsCallback="1" radioGroupId="0" state="0"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA

@@ -16,7 +16,7 @@ class FrequencyValues : public MillisecondFrequencyValueBase
 private:
     
 public:
-    void calculate(const double &input);
+    void calculateFrequencyValues(const double &input);
 };
 
 #endif /* FrequencyValues_hpp */

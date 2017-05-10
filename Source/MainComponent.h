@@ -52,7 +52,7 @@ public:
     bool keyPressed(const juce::KeyPress &key) override;
     void populateFieldsWithMillisecondValues();
     void populateFieldsWithFrequencyValues();
-    
+
 
     //[/UserMethods]
 
@@ -120,6 +120,8 @@ private:
     ScopedPointer<TextButton> facebookButton;
     ScopedPointer<TextButton> theCodeButton;
     ScopedPointer<TextButton> informationButton;
+    ScopedPointer<ToggleButton> freqToggle;
+    ScopedPointer<ToggleButton> msToggle;
 
 
     //==============================================================================
