@@ -32,6 +32,10 @@
             file="Source/MillisecondValues.hpp"/>
       <FILE id="NBb48x" name="MillisecondValues.cpp" compile="1" resource="0"
             file="Source/MillisecondValues.cpp"/>
+      <FILE id="cs7C4X" name="FrequencyValues.hpp" compile="0" resource="0"
+            file="Source/FrequencyValues.hpp"/>
+      <FILE id="Dbjmy3" name="FrequencyValues.cpp" compile="1" resource="0"
+            file="Source/FrequencyValues.cpp"/>
       <FILE id="WpUudQ" name="TapTempo.hpp" compile="0" resource="0" file="Source/TapTempo.hpp"/>
       <FILE id="YOxrbs" name="TapTempo.cpp" compile="1" resource="0" file="Source/TapTempo.cpp"/>
       <FILE id="uAB51F" name="Fonts.hpp" compile="0" resource="0" file="Source/Fonts.hpp"/>
