@@ -3,7 +3,8 @@ A simple application that calculates delay and reverb pre-delay times based on t
 
 ![alt tag](https://github.com/JosephTLyons/GUI-Delay-Time-Calculator/blob/master/Delay%20Time%20Calculator%20GUI.png)
 
-Features:
+## Features:
+
 * Delay times calculated for: 1, 1/2, 1/4, 1/8, 1/16, 1/32, 1/64, and 1/128.
 * A slider for user input of tempo, from 1 - 1000 bpm in increments of 0.1.  Also, the user can input their tempo by clicking the text box to the left of the slider.  Holding down command will give finer control over the slider.
 * 1/2x and 2x buttons to quickly double or half the current tempo.  This may be useful if you need to get faster or slower times than the ones available on the screen.
@@ -11,10 +12,11 @@ Features:
 * Keys: 1 = 1/2x, 2 = 2x, T = Tap Tempo, R = Reset Tap Tempo, 'M' enables ms, 'H' enables Hz, 'Spacebar = Round Value, Up Arrow = +1, Down Arrow = -1, Right Arrow = +5, Left Arrow = -5;
 * An information panel to display the keys that trigger actions and version number
 
-Bug to Fix:
+## Bug to Fix:
+
 * Embed Font to fix font errors!!!
 
-Features still to add:
+## Features still to add:
 
 * Scaleable UI
 * Analyze MusicMath features
@@ -23,7 +25,7 @@ Features still to add:
 * Better app icon
 * Make installer
 
-Changelog:
+## Changelog:
 
 May XX, 2017 - V 1.4:
 1. FIXED WHOLE NORMAL VALUES - This value was incorrect as I was accidentally grabbing the value from half dotted!
