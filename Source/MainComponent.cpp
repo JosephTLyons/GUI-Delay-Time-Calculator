@@ -424,6 +424,9 @@ MainComponent::MainComponent ()
 
     //[Constructor] You can add your own custom stuff here..
 
+    // Set millisecond mode to default
+    msToggle->setToggleState(true, dontSendNotification);
+    
     tempoSlider->setValue(120);
 
     // Right click for velocity sensitive sliding
@@ -672,11 +675,19 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     else if (buttonThatWasClicked == freqToggle)
     {
         //[UserButtonCode_freqToggle] -- add your button handler code here..
+        
+        // Turn off other mode automatically so that only one mode can be on at a time
+        msToggle->setToggleState(false, dontSendNotification);
+        
         //[/UserButtonCode_freqToggle]
     }
     else if (buttonThatWasClicked == msToggle)
     {
         //[UserButtonCode_msToggle] -- add your button handler code here..
+        
+        // Turn off other mode automatically so that only one mode can be on at a time
+        freqToggle->setToggleState(false, dontSendNotification);
+        
         //[/UserButtonCode_msToggle]
     }
 
