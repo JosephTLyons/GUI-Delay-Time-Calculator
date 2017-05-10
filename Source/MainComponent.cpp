@@ -674,7 +674,7 @@ void MainComponent::sliderValueChanged (Slider* sliderThatWasMoved)
         millisecondValuesObject.calculate(tempoSlider->getValue());
 
         // Set values for all text labels
-        wholeNormalLabel->setText((String) millisecondValuesObject.getHalfDotted(), dontSendNotification);
+        wholeNormalLabel->setText((String) millisecondValuesObject.getWholeNormal(), dontSendNotification);
         wholeDottedLabel->setText((String) millisecondValuesObject.getWholeDotted(), dontSendNotification);
         wholeTripletLabel->setText((String) millisecondValuesObject.getWholeTriplet(), dontSendNotification);
 

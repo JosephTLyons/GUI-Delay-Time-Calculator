@@ -13,6 +13,9 @@ Features:
 
 Changelog:
 
+May XX, 2017 - V 1.3.1:
+1. FIXED WHOLE NORMAL VALUES - This value was incorrect as I was accidentally grabbing the value from half dotted!
+
 May 09, 2017 - V 1.3:
 1. Keys: 1 = 1/2x, 2 = 2x, T = Tap Tempo, R = Reset Tap Tempo, Spacebar = Round Value, Up Arrow = +1, Down Arrow = -1, Right Arrow = +5, Left Arrow = -5;
 2. Added a button to invoke a new window to display all the key information, such as which keys trigger which actions and the app version number.

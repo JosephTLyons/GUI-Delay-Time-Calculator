@@ -68,8 +68,8 @@ void MillisecondValues::calculate(const double &input)
     quarterTriplet                   = quarterNormal * triplet;
     
     eighthNormal                     = quarterNormal / 2;
-    eighthDotted                     = quarterNormal * dotted;
-    eighthTriplet                    = quarterNormal * triplet;
+    eighthDotted                     = eighthNormal * dotted;
+    eighthTriplet                    = eighthNormal * triplet;
     
     sixteenthNormal                  = quarterNormal / 4;
     sixteenthDotted                  = sixteenthNormal * dotted;
