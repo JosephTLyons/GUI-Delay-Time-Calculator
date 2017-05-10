@@ -13,7 +13,7 @@ Features:
 
 Changelog:
 
-May XX, 2017 - V 1.3.1:
+May XX, 2017 - V 1.4:
 1. FIXED WHOLE NORMAL VALUES - This value was incorrect as I was accidentally grabbing the value from half dotted!
 
 May 09, 2017 - V 1.3:
