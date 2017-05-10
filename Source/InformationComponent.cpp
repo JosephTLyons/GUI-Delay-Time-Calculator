@@ -71,12 +71,12 @@ InformationComponent::InformationComponent ()
     //[Constructor] You can add your own custom stuff here..
 
     // Add information to text string
+    informationTextEditorString += "-'1' to trigger 1/2x\n";
+    informationTextEditorString += "-'2' to trigger 2x\n";
     informationTextEditorString += "-'T' to trigger Tap Tempo\n";
-    informationTextEditorString += "-'R' to trigger Reset Tap Tempo\n";
+    informationTextEditorString += "-'R' to trigger Reset Tap Tempo\n\n";
     informationTextEditorString += "-'M' to enable ms\n";
     informationTextEditorString += "-'H' to enable Hz\n\n";
-    informationTextEditorString += "-'1' to trigger 1/2x\n";
-    informationTextEditorString += "-'2' to trigger 2x\n\n";
     informationTextEditorString += "-Spacebar to round tempo\n";
     informationTextEditorString += "-Right Arrow = +5\n";
     informationTextEditorString += "-Left Arrow = -5\n";
