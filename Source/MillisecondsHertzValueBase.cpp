@@ -6,9 +6,9 @@
 //
 //
 
-#include "MillisecondFrequencyValueBase.hpp"
+#include "MillisecondsHertzValueBase.hpp"
 
-MillisecondFrequencyValueBase::MillisecondFrequencyValueBase()
+MillisecondsHertzValueBase::MillisecondsHertzValueBase()
 {
     tempo   = 0;
     dotted  = 1.5;
@@ -47,122 +47,122 @@ MillisecondFrequencyValueBase::MillisecondFrequencyValueBase()
     oneHundredAndTwentyEighthTriplet = 0;
 }
 
-double MillisecondFrequencyValueBase::getWholeNormal()
+double MillisecondsHertzValueBase::getWholeNormal()
 {
     return wholeNormal;
 }
 
-double MillisecondFrequencyValueBase::getWholeDotted()
+double MillisecondsHertzValueBase::getWholeDotted()
 {
     return wholeDotted;
 }
 
-double MillisecondFrequencyValueBase::getWholeTriplet()
+double MillisecondsHertzValueBase::getWholeTriplet()
 {
     return wholeTriplet;
 }
 
-double MillisecondFrequencyValueBase::getHalfNormal()
+double MillisecondsHertzValueBase::getHalfNormal()
 {
     return halfNormal;
 }
 
-double MillisecondFrequencyValueBase::getHalfDotted()
+double MillisecondsHertzValueBase::getHalfDotted()
 {
     return halfDotted;
 }
 
-double MillisecondFrequencyValueBase::getHalfTriplet()
+double MillisecondsHertzValueBase::getHalfTriplet()
 {
     return halfTriplet;
 }
 
-double MillisecondFrequencyValueBase::getQuarterNormal()
+double MillisecondsHertzValueBase::getQuarterNormal()
 {
     return quarterNormal;
 }
 
-double MillisecondFrequencyValueBase::getQuarterDotted()
+double MillisecondsHertzValueBase::getQuarterDotted()
 {
     return quarterDotted;
 }
 
-double MillisecondFrequencyValueBase::getQuarterTriplet()
+double MillisecondsHertzValueBase::getQuarterTriplet()
 {
     return quarterTriplet;
 }
 
-double MillisecondFrequencyValueBase::getEighthNormal()
+double MillisecondsHertzValueBase::getEighthNormal()
 {
     return eighthNormal;
 }
 
-double MillisecondFrequencyValueBase::getEighthDotted()
+double MillisecondsHertzValueBase::getEighthDotted()
 {
     return eighthDotted;
 }
 
-double MillisecondFrequencyValueBase::getEighthTriplet()
+double MillisecondsHertzValueBase::getEighthTriplet()
 {
     return eighthTriplet;
 }
 
-double MillisecondFrequencyValueBase::getSixteenthNormal()
+double MillisecondsHertzValueBase::getSixteenthNormal()
 {
     return sixteenthNormal;
 }
 
-double MillisecondFrequencyValueBase::getSixteenthDotted()
+double MillisecondsHertzValueBase::getSixteenthDotted()
 {
     return sixteenthDotted;
 }
 
-double MillisecondFrequencyValueBase::getSixteenthTriplet()
+double MillisecondsHertzValueBase::getSixteenthTriplet()
 {
     return sixteenthTriplet;
 }
 
-double MillisecondFrequencyValueBase::getThirtySecondNormal()
+double MillisecondsHertzValueBase::getThirtySecondNormal()
 {
     return thirtySecondNormal;
 }
 
-double MillisecondFrequencyValueBase::getThirtySecondDotted()
+double MillisecondsHertzValueBase::getThirtySecondDotted()
 {
     return thirtySecondDotted;
 }
 
-double MillisecondFrequencyValueBase::getThirtySecondTriplet()
+double MillisecondsHertzValueBase::getThirtySecondTriplet()
 {
     return thirtySecondTriplet;
 }
 
-double MillisecondFrequencyValueBase::getSixtyFouthNormal()
+double MillisecondsHertzValueBase::getSixtyFouthNormal()
 {
     return sixtyFourthNormal;
 }
 
-double MillisecondFrequencyValueBase::getSixtyFouthDotted()
+double MillisecondsHertzValueBase::getSixtyFouthDotted()
 {
     return sixtyFourthDotted;
 }
 
-double MillisecondFrequencyValueBase::getSixtyFouthTriplet()
+double MillisecondsHertzValueBase::getSixtyFouthTriplet()
 {
     return sixtyFourthTriplet;
 }
 
-double MillisecondFrequencyValueBase::getOneHundredAndTwentyEighthNormal()
+double MillisecondsHertzValueBase::getOneHundredAndTwentyEighthNormal()
 {
     return oneHundredAndTwentyEighthNormal;
 }
 
-double MillisecondFrequencyValueBase::getOneHundredAndTwentyEighthDotted()
+double MillisecondsHertzValueBase::getOneHundredAndTwentyEighthDotted()
 {
     return oneHundredAndTwentyEighthDotted;
 }
 
-double MillisecondFrequencyValueBase::getOneHundredAndTwentyEighthTriplet()
+double MillisecondsHertzValueBase::getOneHundredAndTwentyEighthTriplet()
 {
     return oneHundredAndTwentyEighthTriplet;
 }

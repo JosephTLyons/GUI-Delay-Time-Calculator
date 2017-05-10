@@ -9,9 +9,9 @@
 #ifndef MillisecondValues_hpp
 #define MillisecondValues_hpp
 
-#include "MillisecondFrequencyValueBase.hpp"
+#include "MillisecondsHertzValueBase.hpp"
 
-class MillisecondValues : public MillisecondFrequencyValueBase
+class MillisecondValues : public MillisecondsHertzValueBase
 {
 private:
     

@@ -1,15 +1,15 @@
 //
-//  MillisecondFrequencyValueBase.hpp
+//  MillisecondsHertzValueBase.hpp
 //  The Lyons' Den Delay Time Calculator
 //
 //  Created by Joseph Lyons on 5/9/17.
 //
 //
 
-#ifndef MillisecondFrequencyValueBase_hpp
-#define MillisecondFrequencyValueBase_hpp
+#ifndef MillisecondsHertzValueBase_hpp
+#define MillisecondsHertzValueBase_hpp
 
-class MillisecondFrequencyValueBase
+class MillisecondsHertzValueBase
 {
 private:
     
@@ -52,7 +52,7 @@ protected:
     double triplet;
     
 public:
-    MillisecondFrequencyValueBase();
+    MillisecondsHertzValueBase();
     
     double getWholeNormal();
     double getWholeDotted();
@@ -87,4 +87,4 @@ public:
     double getOneHundredAndTwentyEighthTriplet();
 };
 
-#endif /* MillisecondFrequencyValueBase_hpp */
+#endif /* MillisecondsHertzValueBase */

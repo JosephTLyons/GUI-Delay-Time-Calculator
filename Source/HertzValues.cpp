@@ -6,9 +6,9 @@
 //
 //
 
-#include "FrequencyValues.hpp"
+#include "HertzValues.hpp"
 
-void FrequencyValues::calculateFrequencyValues(const double &input)
+void HertzValues::calculateHertzValues(const double &input)
 {
     tempo = input;
     

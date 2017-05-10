@@ -22,7 +22,7 @@
 //[Headers]     -- You can add your own extra header files here --
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "MillisecondValues.hpp"
-#include "FrequencyValues.hpp"
+#include "HertzValues.hpp"
 #include "TapTempo.hpp"
 #include "BasicWindow.cpp"
 #include "Fonts.hpp"
@@ -52,7 +52,7 @@ public:
 
     bool keyPressed(const juce::KeyPress &key) override;
     void populateFieldsWithMillisecondValues();
-    void populateFieldsWithFrequencyValues();
+    void populateFieldsWithHertzValues();
 
 
     //[/UserMethods]
@@ -68,7 +68,7 @@ private:
     //[UserVariables]   -- You can add your own custom variables in this section.
 
     MillisecondValues millisecondValuesObject;
-    FrequencyValues frequencyValuesObject;
+    HertzValues hertzValuesObject;
     
     TapTempo tapTempoObject;
 
