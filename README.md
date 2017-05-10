@@ -15,7 +15,7 @@ Changelog:
 
 May XX, 2017 - V 1.4:
 1. FIXED WHOLE NORMAL VALUES - This value was incorrect as I was accidentally grabbing the value from half dotted!
-2. Added option to display values in frequency (Hertz)
+2. Added option to display values in Hertz - to set LFOs on your synths
 
 May 09, 2017 - V 1.3:
 1. Keys: 1 = 1/2x, 2 = 2x, T = Tap Tempo, R = Reset Tap Tempo, Spacebar = Round Value, Up Arrow = +1, Down Arrow = -1, Right Arrow = +5, Left Arrow = -5;

@@ -407,12 +407,12 @@ MainComponent::MainComponent ()
     informationButton->setColour (TextButton::buttonOnColourId, Colour (0xffadaaaa));
     informationButton->setColour (TextButton::textColourOffId, Colours::black);
 
-    addAndMakeVisible (hzToggle = new ToggleButton ("freqToggle"));
+    addAndMakeVisible (hzToggle = new ToggleButton ("hzToggle"));
     hzToggle->setButtonText (TRANS("Hz"));
     hzToggle->addListener (this);
 
     addAndMakeVisible (msToggle = new ToggleButton ("msToggle"));
-    msToggle->setButtonText (TRANS("MS"));
+    msToggle->setButtonText (TRANS("ms"));
     msToggle->addListener (this);
 
 
@@ -1138,11 +1138,11 @@ BEGIN_JUCER_METADATA
               virtualName="" explicitFocusOrder="0" pos="0 455 100 20" bgColOff="ffadaaaa"
               bgColOn="ffadaaaa" textCol="ff000000" buttonText="Information"
               connectedEdges="0" needsCallback="1" radioGroupId="0"/>
-  <TOGGLEBUTTON name="freqToggle" id="3e5aa37d8e5a6de5" memberName="hzToggle"
-                virtualName="" explicitFocusOrder="0" pos="63 115 62 20" buttonText="Hz"
-                connectedEdges="0" needsCallback="1" radioGroupId="0" state="0"/>
+  <TOGGLEBUTTON name="hzToggle" id="3e5aa37d8e5a6de5" memberName="hzToggle" virtualName=""
+                explicitFocusOrder="0" pos="63 115 62 20" buttonText="Hz" connectedEdges="0"
+                needsCallback="1" radioGroupId="0" state="0"/>
   <TOGGLEBUTTON name="msToggle" id="8f5b18b58f39a727" memberName="msToggle" virtualName=""
-                explicitFocusOrder="0" pos="0 115 62 20" buttonText="MS" connectedEdges="0"
+                explicitFocusOrder="0" pos="0 115 62 20" buttonText="ms" connectedEdges="0"
                 needsCallback="1" radioGroupId="0" state="0"/>
 </JUCER_COMPONENT>
 
