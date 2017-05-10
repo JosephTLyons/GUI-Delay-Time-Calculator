@@ -676,6 +676,9 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_freqToggle] -- add your button handler code here..
         
+        // Make sure all values in object are up to date
+        frequencyValuesObject.calculateFrequencyValues(tempoSlider->getValue());
+        
         // This makes sure that one toggle is always on
         freqToggle->setToggleState(true, dontSendNotification);
         
@@ -688,6 +691,9 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     else if (buttonThatWasClicked == msToggle)
     {
         //[UserButtonCode_msToggle] -- add your button handler code here..
+        
+        // Make sure all values in object are up to date
+        millisecondValuesObject.calculateMillisecondValues(tempoSlider->getValue());
         
         // This makes sure that one toggle is always on
         msToggle->setToggleState(true, dontSendNotification);
@@ -718,7 +724,7 @@ void MainComponent::sliderValueChanged (Slider* sliderThatWasMoved)
             populateFieldsWithMillisecondValues();
         }
         
-        else
+        if(freqToggle->getToggleState())
         {
             frequencyValuesObject.calculateFrequencyValues(tempoSlider->getValue());
             populateFieldsWithFrequencyValues();

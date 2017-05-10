@@ -15,7 +15,7 @@ void FrequencyValues::calculateFrequencyValues(const double &input)
     // quarterNormal value must be calculated first, since other values depend on it
     quarterNormal                    = 0;
     
-    wholeNormal                      = 0;
+    wholeNormal                      = 1;
     wholeDotted                      = 0;
     wholeTriplet                     = 0;
     
