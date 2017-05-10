@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <JUCERPROJECT id="mFsRbO" name="The Lyons' Den Delay Time Calculator" projectType="guiapp"
-              version="1.3" bundleIdentifier="com.TheLyonsDen.DelayTimeCalculator"
+              version="1.4" bundleIdentifier="com.TheLyonsDen.DelayTimeCalculator"
               includeBinaryInAppConfig="1" jucerVersion="5.0.1" companyName="The Lyons' Den"
               companyEmail="josephtlyons@gmail.com" displaySplashScreen="1"
               reportAppUsage="1" splashScreenColour="Dark">

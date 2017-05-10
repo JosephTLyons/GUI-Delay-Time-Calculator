@@ -676,7 +676,10 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_freqToggle] -- add your button handler code here..
         
-        // Turn off other mode automatically so that only one mode can be on at a time
+        // This makes sure that one toggle is always on
+        freqToggle->setToggleState(true, dontSendNotification);
+        
+        // Turn off ms mode automatically so that only one mode can be on at a time
         msToggle->setToggleState(false, dontSendNotification);
         populateFieldsWithFrequencyValues();
         
@@ -686,7 +689,10 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_msToggle] -- add your button handler code here..
         
-        // Turn off other mode automatically so that only one mode can be on at a time
+        // This makes sure that one toggle is always on
+        msToggle->setToggleState(true, dontSendNotification);
+        
+        // Turn off freq mode automatically so that only one mode can be on at a time
         freqToggle->setToggleState(false, dontSendNotification);
         populateFieldsWithMillisecondValues();
         
