@@ -22,6 +22,7 @@
 //[Headers]     -- You can add your own extra header files here --
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "MillisecondValues.hpp"
+#include "FrequencyValues.hpp"
 #include "TapTempo.hpp"
 #include "BasicWindow.cpp"
 #include "Fonts.hpp"
@@ -67,6 +68,8 @@ private:
     //[UserVariables]   -- You can add your own custom variables in this section.
 
     MillisecondValues millisecondValuesObject;
+    FrequencyValues frequencyValuesObject;
+    
     TapTempo tapTempoObject;
 
     SafePointer<BasicWindow> basicWindow;

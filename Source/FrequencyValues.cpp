@@ -13,37 +13,37 @@ void FrequencyValues::calculateFrequencyValues(const double &input)
     tempo = input;
     
     // quarterNormal value must be calculated first, since other values depend on it
-    quarterNormal                    = 60000 / tempo;
+    quarterNormal                    = 0;
     
-    wholeNormal                      = quarterNormal * 4;
-    wholeDotted                      = wholeNormal * dotted;
-    wholeTriplet                     = wholeNormal * triplet;
+    wholeNormal                      = 0;
+    wholeDotted                      = 0;
+    wholeTriplet                     = 0;
     
-    halfNormal                       = quarterNormal * 2;
-    halfDotted                       = halfNormal * dotted;
-    halfTriplet                      = halfNormal * triplet;
+    halfNormal                       = 0;
+    halfDotted                       = 0;
+    halfTriplet                      = 0;
     
     // quarterNormal
-    quarterDotted                    = quarterNormal * dotted;
-    quarterTriplet                   = quarterNormal * triplet;
+    quarterDotted                    = 0;
+    quarterTriplet                   = 0;
     
-    eighthNormal                     = quarterNormal / 2;
-    eighthDotted                     = eighthNormal * dotted;
-    eighthTriplet                    = eighthNormal * triplet;
+    eighthNormal                     = 0;
+    eighthDotted                     = 0;
+    eighthTriplet                    = 0;
     
-    sixteenthNormal                  = quarterNormal / 4;
-    sixteenthDotted                  = sixteenthNormal * dotted;
-    sixteenthTriplet                 = sixteenthNormal * triplet;
+    sixteenthNormal                  = 0;
+    sixteenthDotted                  = 0;
+    sixteenthTriplet                 = 0;
     
-    thirtySecondNormal               = quarterNormal / 8;
-    thirtySecondDotted               = thirtySecondNormal * dotted;
-    thirtySecondTriplet              = thirtySecondNormal * triplet;
+    thirtySecondNormal               = 0;
+    thirtySecondDotted               = 0;
+    thirtySecondTriplet              = 0;
     
-    sixtyFourthNormal                = quarterNormal / 16;
-    sixtyFourthDotted                = sixtyFourthNormal * dotted;
-    sixtyFourthTriplet               = sixtyFourthNormal * triplet;
+    sixtyFourthNormal                = 0;
+    sixtyFourthDotted                = 0;
+    sixtyFourthTriplet               = 0;
     
-    oneHundredAndTwentyEighthNormal  = quarterNormal / 32;
-    oneHundredAndTwentyEighthDotted  = oneHundredAndTwentyEighthNormal * dotted;
-    oneHundredAndTwentyEighthTriplet = oneHundredAndTwentyEighthNormal * triplet;
+    oneHundredAndTwentyEighthNormal  = 0;
+    oneHundredAndTwentyEighthDotted  = 0;
+    oneHundredAndTwentyEighthTriplet = 0;
 }

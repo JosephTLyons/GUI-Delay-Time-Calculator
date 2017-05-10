@@ -678,6 +678,7 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
         
         // Turn off other mode automatically so that only one mode can be on at a time
         msToggle->setToggleState(false, dontSendNotification);
+        populateFieldsWithFrequencyValues();
         
         //[/UserButtonCode_freqToggle]
     }
@@ -687,6 +688,7 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
         
         // Turn off other mode automatically so that only one mode can be on at a time
         freqToggle->setToggleState(false, dontSendNotification);
+        populateFieldsWithMillisecondValues();
         
         //[/UserButtonCode_msToggle]
     }
@@ -704,9 +706,17 @@ void MainComponent::sliderValueChanged (Slider* sliderThatWasMoved)
     {
         //[UserSliderCode_tempoSlider] -- add your slider handling code here..
 
-        // If toggle is selected
-        millisecondValuesObject.calculateMillisecondValues(tempoSlider->getValue());
-        populateFieldsWithMillisecondValues();
+        if(msToggle->getToggleState())
+        {
+            millisecondValuesObject.calculateMillisecondValues(tempoSlider->getValue());
+            populateFieldsWithMillisecondValues();
+        }
+        
+        else
+        {
+            frequencyValuesObject.calculateFrequencyValues(tempoSlider->getValue());
+            populateFieldsWithFrequencyValues();
+        }
 
         // If other toggle is selected
 
@@ -837,7 +847,38 @@ void MainComponent::populateFieldsWithMillisecondValues()
 
 void MainComponent::populateFieldsWithFrequencyValues()
 {
-
+    // Set values for all text labels
+    wholeNormalLabel->setText((String) frequencyValuesObject.getWholeNormal(), dontSendNotification);
+    wholeDottedLabel->setText((String) frequencyValuesObject.getWholeDotted(), dontSendNotification);
+    wholeTripletLabel->setText((String) frequencyValuesObject.getWholeTriplet(), dontSendNotification);
+    
+    halfNormalLabel->setText((String) frequencyValuesObject.getHalfNormal(), dontSendNotification);
+    halfDottedLabel->setText((String) frequencyValuesObject.getHalfDotted(), dontSendNotification);
+    halfTripletLabel->setText((String) frequencyValuesObject.getHalfTriplet(), dontSendNotification);
+    
+    quarterNormalLabel->setText((String) frequencyValuesObject.getQuarterNormal(), dontSendNotification);
+    quarterDottedLabel->setText((String) frequencyValuesObject.getQuarterDotted(), dontSendNotification);
+    quarterTripletLabel->setText((String) frequencyValuesObject.getQuarterTriplet(), dontSendNotification);
+    
+    eighthNormalLabel->setText((String) frequencyValuesObject.getEighthNormal(), dontSendNotification);
+    eighthDottedLabel->setText((String) frequencyValuesObject.getEighthDotted(), dontSendNotification);
+    eighthTripletLabel->setText((String) frequencyValuesObject.getEighthTriplet(), dontSendNotification);
+    
+    sixteenthNormalLabel->setText((String) frequencyValuesObject.getSixteenthNormal(), dontSendNotification);
+    sixteenthDottedLabel->setText((String) frequencyValuesObject.getSixteenthDotted(), dontSendNotification);
+    sixteenthTripletLabel->setText((String) frequencyValuesObject.getSixteenthTriplet(), dontSendNotification);
+    
+    thirtySecondNormalLabel->setText((String) frequencyValuesObject.getThirtySecondNormal(), dontSendNotification);
+    thirtySecondDottedLabel->setText((String) frequencyValuesObject.getThirtySecondDotted(), dontSendNotification);
+    thirtySecondTripletLabel->setText((String) frequencyValuesObject.getThirtySecondTriplet(), dontSendNotification);
+    
+    sixtyFourthNormalLabel->setText((String) frequencyValuesObject.getSixtyFouthNormal(), dontSendNotification);
+    sixtyFourthDottedLabel->setText((String) frequencyValuesObject.getSixtyFouthDotted(), dontSendNotification);
+    sixtyFourthTripletLabel->setText((String) frequencyValuesObject.getSixtyFouthTriplet(), dontSendNotification);
+    
+    oneTwentyEighthNormalLabel->setText((String) frequencyValuesObject.getOneHundredAndTwentyEighthNormal(), dontSendNotification);
+    oneTwentyEighthDottedLabel->setText((String) frequencyValuesObject.getOneHundredAndTwentyEighthDotted(), dontSendNotification);
+    oneTwentyEighthTripletLabel->setText((String) frequencyValuesObject.getOneHundredAndTwentyEighthTriplet(), dontSendNotification);
 }
 
 //[/MiscUserCode]
