@@ -69,7 +69,7 @@ private:
 
     MillisecondValues millisecondValuesObject;
     HertzValues hertzValuesObject;
-    
+
     TapTempo tapTempoObject;
 
     SafePointer<BasicWindow> basicWindow;
@@ -123,7 +123,7 @@ private:
     ScopedPointer<TextButton> facebookButton;
     ScopedPointer<TextButton> theCodeButton;
     ScopedPointer<TextButton> informationButton;
-    ScopedPointer<ToggleButton> freqToggle;
+    ScopedPointer<ToggleButton> hzToggle;
     ScopedPointer<ToggleButton> msToggle;
 
 

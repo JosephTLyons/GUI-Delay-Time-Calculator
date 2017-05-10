@@ -407,9 +407,9 @@ MainComponent::MainComponent ()
     informationButton->setColour (TextButton::buttonOnColourId, Colour (0xffadaaaa));
     informationButton->setColour (TextButton::textColourOffId, Colours::black);
 
-    addAndMakeVisible (freqToggle = new ToggleButton ("freqToggle"));
-    freqToggle->setButtonText (TRANS("Freq"));
-    freqToggle->addListener (this);
+    addAndMakeVisible (hzToggle = new ToggleButton ("freqToggle"));
+    hzToggle->setButtonText (TRANS("Hz"));
+    hzToggle->addListener (this);
 
     addAndMakeVisible (msToggle = new ToggleButton ("msToggle"));
     msToggle->setButtonText (TRANS("MS"));
@@ -426,7 +426,7 @@ MainComponent::MainComponent ()
 
     // Set millisecond mode to default
     msToggle->setToggleState(true, dontSendNotification);
-    
+
     tempoSlider->setValue(120);
 
     // Right click for velocity sensitive sliding
@@ -486,7 +486,7 @@ MainComponent::~MainComponent()
     facebookButton = nullptr;
     theCodeButton = nullptr;
     informationButton = nullptr;
-    freqToggle = nullptr;
+    hzToggle = nullptr;
     msToggle = nullptr;
 
 
@@ -561,7 +561,7 @@ void MainComponent::resized()
     facebookButton->setBounds (100, 455, 100, 20);
     theCodeButton->setBounds (300, 455, 100, 20);
     informationButton->setBounds (0, 455, 100, 20);
-    freqToggle->setBounds (63, 115, 62, 20);
+    hzToggle->setBounds (63, 115, 62, 20);
     msToggle->setBounds (0, 115, 62, 20);
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
@@ -672,36 +672,36 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
 
         //[/UserButtonCode_informationButton]
     }
-    else if (buttonThatWasClicked == freqToggle)
+    else if (buttonThatWasClicked == hzToggle)
     {
-        //[UserButtonCode_freqToggle] -- add your button handler code here..
+        //[UserButtonCode_hzToggle] -- add your button handler code here..
         
         // Make sure all values in object are up to date
         hertzValuesObject.calculateHertzValues(tempoSlider->getValue());
         
         // This makes sure that one toggle is always on
-        freqToggle->setToggleState(true, dontSendNotification);
+        hzToggle->setToggleState(true, dontSendNotification);
         
         // Turn off ms mode automatically so that only one mode can be on at a time
         msToggle->setToggleState(false, dontSendNotification);
         populateFieldsWithHertzValues();
         
-        //[/UserButtonCode_freqToggle]
+        //[/UserButtonCode_hzToggle]
     }
     else if (buttonThatWasClicked == msToggle)
     {
         //[UserButtonCode_msToggle] -- add your button handler code here..
-        
+
         // Make sure all values in object are up to date
         millisecondValuesObject.calculateMillisecondValues(tempoSlider->getValue());
-        
+
         // This makes sure that one toggle is always on
         msToggle->setToggleState(true, dontSendNotification);
-        
+
         // Turn off freq mode automatically so that only one mode can be on at a time
-        freqToggle->setToggleState(false, dontSendNotification);
+        hzToggle->setToggleState(false, dontSendNotification);
         populateFieldsWithMillisecondValues();
-        
+
         //[/UserButtonCode_msToggle]
     }
 
@@ -723,8 +723,8 @@ void MainComponent::sliderValueChanged (Slider* sliderThatWasMoved)
             millisecondValuesObject.calculateMillisecondValues(tempoSlider->getValue());
             populateFieldsWithMillisecondValues();
         }
-        
-        if(freqToggle->getToggleState())
+
+        if(hzToggle->getToggleState())
         {
             hertzValuesObject.calculateHertzValues(tempoSlider->getValue());
             populateFieldsWithHertzValues();
@@ -864,31 +864,31 @@ void MainComponent::populateFieldsWithHertzValues()
     wholeNormalLabel->setText((String) hertzValuesObject.getWholeNormal(), dontSendNotification);
     wholeDottedLabel->setText((String) hertzValuesObject.getWholeDotted(), dontSendNotification);
     wholeTripletLabel->setText((String) hertzValuesObject.getWholeTriplet(), dontSendNotification);
-    
+
     halfNormalLabel->setText((String) hertzValuesObject.getHalfNormal(), dontSendNotification);
     halfDottedLabel->setText((String) hertzValuesObject.getHalfDotted(), dontSendNotification);
     halfTripletLabel->setText((String) hertzValuesObject.getHalfTriplet(), dontSendNotification);
-    
+
     quarterNormalLabel->setText((String) hertzValuesObject.getQuarterNormal(), dontSendNotification);
     quarterDottedLabel->setText((String) hertzValuesObject.getQuarterDotted(), dontSendNotification);
     quarterTripletLabel->setText((String) hertzValuesObject.getQuarterTriplet(), dontSendNotification);
-    
+
     eighthNormalLabel->setText((String) hertzValuesObject.getEighthNormal(), dontSendNotification);
     eighthDottedLabel->setText((String) hertzValuesObject.getEighthDotted(), dontSendNotification);
     eighthTripletLabel->setText((String) hertzValuesObject.getEighthTriplet(), dontSendNotification);
-    
+
     sixteenthNormalLabel->setText((String) hertzValuesObject.getSixteenthNormal(), dontSendNotification);
     sixteenthDottedLabel->setText((String) hertzValuesObject.getSixteenthDotted(), dontSendNotification);
     sixteenthTripletLabel->setText((String) hertzValuesObject.getSixteenthTriplet(), dontSendNotification);
-    
+
     thirtySecondNormalLabel->setText((String) hertzValuesObject.getThirtySecondNormal(), dontSendNotification);
     thirtySecondDottedLabel->setText((String) hertzValuesObject.getThirtySecondDotted(), dontSendNotification);
     thirtySecondTripletLabel->setText((String) hertzValuesObject.getThirtySecondTriplet(), dontSendNotification);
-    
+
     sixtyFourthNormalLabel->setText((String) hertzValuesObject.getSixtyFouthNormal(), dontSendNotification);
     sixtyFourthDottedLabel->setText((String) hertzValuesObject.getSixtyFouthDotted(), dontSendNotification);
     sixtyFourthTripletLabel->setText((String) hertzValuesObject.getSixtyFouthTriplet(), dontSendNotification);
-    
+
     oneTwentyEighthNormalLabel->setText((String) hertzValuesObject.getOneHundredAndTwentyEighthNormal(),
                                                  dontSendNotification);
     oneTwentyEighthDottedLabel->setText((String) hertzValuesObject.getOneHundredAndTwentyEighthDotted(),
@@ -1138,8 +1138,8 @@ BEGIN_JUCER_METADATA
               virtualName="" explicitFocusOrder="0" pos="0 455 100 20" bgColOff="ffadaaaa"
               bgColOn="ffadaaaa" textCol="ff000000" buttonText="Information"
               connectedEdges="0" needsCallback="1" radioGroupId="0"/>
-  <TOGGLEBUTTON name="freqToggle" id="3e5aa37d8e5a6de5" memberName="freqToggle"
-                virtualName="" explicitFocusOrder="0" pos="63 115 62 20" buttonText="Freq"
+  <TOGGLEBUTTON name="freqToggle" id="3e5aa37d8e5a6de5" memberName="hzToggle"
+                virtualName="" explicitFocusOrder="0" pos="63 115 62 20" buttonText="Hz"
                 connectedEdges="0" needsCallback="1" radioGroupId="0" state="0"/>
   <TOGGLEBUTTON name="msToggle" id="8f5b18b58f39a727" memberName="msToggle" virtualName=""
                 explicitFocusOrder="0" pos="0 115 62 20" buttonText="MS" connectedEdges="0"
