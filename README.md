@@ -15,6 +15,7 @@ Changelog:
 
 May XX, 2017 - V 1.4:
 1. FIXED WHOLE NORMAL VALUES - This value was incorrect as I was accidentally grabbing the value from half dotted!
+2. Added option to display values in frequency (Hertz)
 
 May 09, 2017 - V 1.3:
 1. Keys: 1 = 1/2x, 2 = 2x, T = Tap Tempo, R = Reset Tap Tempo, Spacebar = Round Value, Up Arrow = +1, Down Arrow = -1, Right Arrow = +5, Left Arrow = -5;
@@ -43,14 +44,14 @@ April 20, 2017 - V 1.1:
 
 April 15, 2017 - V 1.0 intial release:
 
+Bug to Fix:
+* Embed Font to fix font errors!!!
+
 Features still to add:
 
 * Scaleable UI
-* Option for frequency for LFO setting? (Analyze MusicMath features)
+* Analyze MusicMath features
 * Remove slider and use a text box that can be changed by clicking and dragging?
 * Change to whole BPM values and use modifier buttons to access 1/10th notes (or any other method to access these values?
 * Better app icon
 * Make installer
-
-Bug to Fix:
-* Embed Font to fix font errors
