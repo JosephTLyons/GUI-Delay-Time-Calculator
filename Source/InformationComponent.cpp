@@ -41,22 +41,6 @@ InformationComponent::InformationComponent ()
     informationLabel->setColour (TextEditor::textColourId, Colours::black);
     informationLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (keysInformation = new Label ("keysInformation",
-                                                    TRANS("-\'T\' to trigger Tap Tempo\n"
-                                                    "-\'R\' to trigger Reset Tap Tempo\n"
-                                                    "-\'1\' to trigger 1/2x\n"
-                                                    "-\'2\' to trigger 2x\n"
-                                                    "-Spacebar to round tempo\n"
-                                                    "-Right Arrow = +5\n"
-                                                    "-Left Arrow = -5\n"
-                                                    "-Up Arrow = +1\n"
-                                                    "-Down Arrow = -1")));
-    keysInformation->setFont (Font ("Calisto MT", 20.00f, Font::plain).withTypefaceStyle ("Regular"));
-    keysInformation->setJustificationType (Justification::topLeft);
-    keysInformation->setEditable (false, false, false);
-    keysInformation->setColour (TextEditor::textColourId, Colours::black);
-    keysInformation->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
-
     addAndMakeVisible (versionNumberLabelOutput = new Label ("versionNumberLabel",
                                                              String()));
     versionNumberLabelOutput->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
@@ -66,14 +50,44 @@ InformationComponent::InformationComponent ()
     versionNumberLabelOutput->setColour (TextEditor::textColourId, Colours::black);
     versionNumberLabelOutput->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
+    addAndMakeVisible (informationTextEditor = new TextEditor ("textEditorString"));
+    informationTextEditor->setMultiLine (true);
+    informationTextEditor->setReturnKeyStartsNewLine (true);
+    informationTextEditor->setReadOnly (true);
+    informationTextEditor->setScrollbarsShown (true);
+    informationTextEditor->setCaretVisible (false);
+    informationTextEditor->setPopupMenuEnabled (true);
+    informationTextEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
+    informationTextEditor->setColour (TextEditor::outlineColourId, Colour (0xff353535));
+    informationTextEditor->setText (String());
+
 
     //[UserPreSize]
     //[/UserPreSize]
 
-    setSize (240, 260);
+    setSize (240, 290);
 
 
     //[Constructor] You can add your own custom stuff here..
+
+    // Add information to text string
+    informationTextEditorString += "-'T' to trigger Tap Tempo\n";
+    informationTextEditorString += "-'R' to trigger Reset Tap Tempo\n";
+    informationTextEditorString += "-'M' to enable ms\n";
+    informationTextEditorString += "-'H' to enable Hz\n\n";
+    informationTextEditorString += "-'1' to trigger 1/2x\n";
+    informationTextEditorString += "-'2' to trigger 2x\n\n";
+    informationTextEditorString += "-Spacebar to round tempo\n";
+    informationTextEditorString += "-Right Arrow = +5\n";
+    informationTextEditorString += "-Left Arrow = -5\n";
+    informationTextEditorString += "-Up Arrow = +1\n";
+    informationTextEditorString += "-Down Arrow = -1";
+
+    // Set font size
+    informationTextEditor->setFont(16.5);
+
+    // Add string to textEditor
+    informationTextEditor->setText(informationTextEditorString);
 
     // Set version number editor to current version number
     versionNumberString = "Delay Time Calculator Version: ";
@@ -89,8 +103,8 @@ InformationComponent::~InformationComponent()
     //[/Destructor_pre]
 
     informationLabel = nullptr;
-    keysInformation = nullptr;
     versionNumberLabelOutput = nullptr;
+    informationTextEditor = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -115,8 +129,8 @@ void InformationComponent::resized()
     //[/UserPreResize]
 
     informationLabel->setBounds (0, 0, 240, 50);
-    keysInformation->setBounds (0, 50, 240, 190);
-    versionNumberLabelOutput->setBounds (0, 240, 240, 20);
+    versionNumberLabelOutput->setBounds (0, 270, 240, 20);
+    informationTextEditor->setBounds (0, 50, 240, 220);
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
 }
@@ -145,7 +159,7 @@ BEGIN_JUCER_METADATA
 <JUCER_COMPONENT documentType="Component" className="InformationComponent" componentName=""
                  parentClasses="public Component" constructorParams="" variableInitialisers=""
                  snapPixels="8" snapActive="1" snapShown="1" overlayOpacity="0.330"
-                 fixedSize="1" initialWidth="240" initialHeight="260">
+                 fixedSize="1" initialWidth="240" initialHeight="290">
   <BACKGROUND backgroundColour="ff353535"/>
   <LABEL name="informationLabel" id="951f8323b93b29f2" memberName="informationLabel"
          virtualName="" explicitFocusOrder="0" pos="0 0 240 50" textCol="ffadaaaa"
@@ -153,17 +167,15 @@ BEGIN_JUCER_METADATA
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
          fontsize="47.399999999999998579" kerning="0.042999999999999996558"
          bold="0" italic="0" justification="36"/>
-  <LABEL name="keysInformation" id="75979404a7ede49b" memberName="keysInformation"
-         virtualName="" explicitFocusOrder="0" pos="0 50 240 190" edTextCol="ff000000"
-         edBkgCol="0" labelText="-'T' to trigger Tap Tempo&#10;-'R' to trigger Reset Tap Tempo&#10;-'1' to trigger 1/2x&#10;-'2' to trigger 2x&#10;-Spacebar to round tempo&#10;-Right Arrow = +5&#10;-Left Arrow = -5&#10;-Up Arrow = +1&#10;-Down Arrow = -1"
-         editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
-         fontname="Calisto MT" fontsize="20" kerning="0" bold="0" italic="0"
-         justification="9"/>
   <LABEL name="versionNumberLabel" id="30f8922fa9ce43fc" memberName="versionNumberLabelOutput"
-         virtualName="" explicitFocusOrder="0" pos="0 240 240 20" textCol="ffadaaaa"
+         virtualName="" explicitFocusOrder="0" pos="0 270 240 20" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
          fontsize="15" kerning="0" bold="0" italic="0" justification="33"/>
+  <TEXTEDITOR name="textEditorString" id="724fec5cca6df686" memberName="informationTextEditor"
+              virtualName="" explicitFocusOrder="0" pos="0 50 240 220" bkgcol="ff353535"
+              outlinecol="ff353535" initialText="" multiline="1" retKeyStartsLine="1"
+              readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA

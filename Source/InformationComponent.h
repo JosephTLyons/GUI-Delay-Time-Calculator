@@ -43,6 +43,7 @@ public:
     //==============================================================================
     //[UserMethods]     -- You can add your own custom methods in this section.
 
+    String informationTextEditorString;
     String versionNumberString;
 
     //[/UserMethods]
@@ -58,8 +59,8 @@ private:
 
     //==============================================================================
     ScopedPointer<Label> informationLabel;
-    ScopedPointer<Label> keysInformation;
     ScopedPointer<Label> versionNumberLabelOutput;
+    ScopedPointer<TextEditor> informationTextEditor;
 
 
     //==============================================================================

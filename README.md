@@ -8,14 +8,28 @@ Features:
 * A slider for user input of tempo, from 1 - 1000 bpm in increments of 0.1.  Also, the user can input their tempo by clicking the text box to the left of the slider.  Holding down command will give finer control over the slider.
 * 1/2x and 2x buttons to quickly double or half the current tempo.  This may be useful if you need to get faster or slower times than the ones available on the screen.
 * Tap to set tempo with Tap Tempo and Reset Tap Tempo buttons.  Some setups will only measure the time between two hits, some will average a few hits together, however, my algorithm averages every single hit.  I find this to be more accurate as you can click 10-15 times to really hone in on a specific tempo.  Flucuations won't matter as much the more taps you put in.  The only downfall to this is is that once you start tapping, the algoritm never stops measuring time.  So you must manually reset the system with the R button each time you want to set a new tempo or if you stop tapping for any period of time and come back to it.  For convenience, the R button turns white to let you know you need to reset the interal system if you want to calculate a new tempo or if you have stopped tapping for any amount time and need to come back to it. Note: The first time you click, the tempo slider will move to 1.  This is not a bug, this is the nature of calculating the tempo based on taps.  Two hits are needed to get the first calculation.  So I set the slider to 1 during the first hit then, move it to the correct tempo after.
-* Keys: 1 = 1/2x, 2 = 2x, T = Tap Tempo, R = Reset Tap Tempo, Spacebar = Round Value, Up Arrow = +1, Down Arrow = -1, Right Arrow = +5, Left Arrow = -5;
+* Keys: 1 = 1/2x, 2 = 2x, T = Tap Tempo, R = Reset Tap Tempo, 'M' enables ms, 'H' enables Hz, 'Spacebar = Round Value, Up Arrow = +1, Down Arrow = -1, Right Arrow = +5, Left Arrow = -5;
 * An information panel to display the keys that trigger actions and version number
+
+Bug to Fix:
+* Embed Font to fix font errors!!!
+
+Features still to add:
+
+* Scaleable UI
+* Analyze MusicMath features
+* Remove slider and use a text box that can be changed by clicking and dragging?
+* Change to whole BPM values and use modifier buttons to access 1/10th notes (or any other method to access these values?
+* Better app icon
+* Make installer
 
 Changelog:
 
 May XX, 2017 - V 1.4:
 1. FIXED WHOLE NORMAL VALUES - This value was incorrect as I was accidentally grabbing the value from half dotted!
 2. Added option to display values in Hertz - to set LFOs on your synths
+3. Added key support for changing from ms to Hz (using keys 'M' and 'H' respectively)
+4. Made information section a text editor instead of a label so I can add more information to this and take advantage of scrolling, vesus having to make the GUI taller each line I add.
 
 May 09, 2017 - V 1.3:
 1. Keys: 1 = 1/2x, 2 = 2x, T = Tap Tempo, R = Reset Tap Tempo, Spacebar = Round Value, Up Arrow = +1, Down Arrow = -1, Right Arrow = +5, Left Arrow = -5;
@@ -43,15 +57,3 @@ April 20, 2017 - V 1.1:
 6. App is now code signed (I'm officially an Apple Developer)
 
 April 15, 2017 - V 1.0 intial release:
-
-Bug to Fix:
-* Embed Font to fix font errors!!!
-
-Features still to add:
-
-* Scaleable UI
-* Analyze MusicMath features
-* Remove slider and use a text box that can be changed by clicking and dragging?
-* Change to whole BPM values and use modifier buttons to access 1/10th notes (or any other method to access these values?
-* Better app icon
-* Make installer

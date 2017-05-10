@@ -766,6 +766,18 @@ bool MainComponent::keyPressed(const juce::KeyPress &key)
     {
         resetButton->triggerClick();
     }
+    
+    // Enable ms option
+    if(key == 'M')
+    {
+        msToggle->triggerClick();
+    }
+    
+    // Enable hz option
+    if(key == 'H')
+    {
+        hzToggle->triggerClick();
+    }
 
     // Round Tempo
     if(key == KeyPress::spaceKey)
