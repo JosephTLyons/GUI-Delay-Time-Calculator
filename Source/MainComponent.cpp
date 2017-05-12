@@ -62,7 +62,7 @@ MainComponent::MainComponent ()
 
     addAndMakeVisible (delayTimeCalculatorLabel = new Label ("delayTimeCalculatorLabel",
                                                              TRANS("Delay Time Calculator")));
-    delayTimeCalculatorLabel->setFont (Font ("Calisto MT", 47.40f, Font::plain).withTypefaceStyle ("Regular").withExtraKerningFactor (0.095f));
+    delayTimeCalculatorLabel->setFont (Font ("Arial", 47.40f, Font::plain).withTypefaceStyle ("Regular").withExtraKerningFactor (0.095f));
     delayTimeCalculatorLabel->setJustificationType (Justification::centred);
     delayTimeCalculatorLabel->setEditable (false, false, false);
     delayTimeCalculatorLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -71,7 +71,7 @@ MainComponent::MainComponent ()
 
     addAndMakeVisible (normalLabel = new Label ("normalLabel",
                                                 TRANS("Normal\n")));
-    normalLabel->setFont (Font ("Calisto MT", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
+    normalLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
     normalLabel->setJustificationType (Justification::centredLeft);
     normalLabel->setEditable (false, false, false);
     normalLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -80,7 +80,7 @@ MainComponent::MainComponent ()
 
     addAndMakeVisible (dottedLabel = new Label ("dottedLabel",
                                                 TRANS("Dotted")));
-    dottedLabel->setFont (Font ("Calisto MT", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
+    dottedLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
     dottedLabel->setJustificationType (Justification::centredLeft);
     dottedLabel->setEditable (false, false, false);
     dottedLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -89,7 +89,7 @@ MainComponent::MainComponent ()
 
     addAndMakeVisible (tripletLabel = new Label ("tripletLabel",
                                                  TRANS("Triplet")));
-    tripletLabel->setFont (Font ("Calisto MT", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
+    tripletLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
     tripletLabel->setJustificationType (Justification::centredLeft);
     tripletLabel->setEditable (false, false, false);
     tripletLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -98,7 +98,7 @@ MainComponent::MainComponent ()
 
     addAndMakeVisible (wholeLabel = new Label ("wholeLabel",
                                                TRANS("1:")));
-    wholeLabel->setFont (Font ("Calisto MT", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
+    wholeLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
     wholeLabel->setJustificationType (Justification::centredLeft);
     wholeLabel->setEditable (false, false, false);
     wholeLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -107,7 +107,7 @@ MainComponent::MainComponent ()
 
     addAndMakeVisible (halfLabel = new Label ("halfLabel",
                                               TRANS("1/2:")));
-    halfLabel->setFont (Font ("Calisto MT", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
+    halfLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
     halfLabel->setJustificationType (Justification::centredLeft);
     halfLabel->setEditable (false, false, false);
     halfLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -116,7 +116,7 @@ MainComponent::MainComponent ()
 
     addAndMakeVisible (quarterLabel = new Label ("quarterLabel",
                                                  TRANS("1/4:")));
-    quarterLabel->setFont (Font ("Calisto MT", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
+    quarterLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
     quarterLabel->setJustificationType (Justification::centredLeft);
     quarterLabel->setEditable (false, false, false);
     quarterLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -125,7 +125,7 @@ MainComponent::MainComponent ()
 
     addAndMakeVisible (eighthLabel = new Label ("eighthLabel",
                                                 TRANS("1/8:")));
-    eighthLabel->setFont (Font ("Calisto MT", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
+    eighthLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
     eighthLabel->setJustificationType (Justification::centredLeft);
     eighthLabel->setEditable (false, false, false);
     eighthLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -134,7 +134,7 @@ MainComponent::MainComponent ()
 
     addAndMakeVisible (sixteenthLabel = new Label ("sixteenthLabel",
                                                    TRANS("1/16:")));
-    sixteenthLabel->setFont (Font ("Calisto MT", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
+    sixteenthLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
     sixteenthLabel->setJustificationType (Justification::centredLeft);
     sixteenthLabel->setEditable (false, false, false);
     sixteenthLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -143,7 +143,7 @@ MainComponent::MainComponent ()
 
     addAndMakeVisible (thirtySecondLabel = new Label ("thirtySecondLabel",
                                                       TRANS("1/32:")));
-    thirtySecondLabel->setFont (Font ("Calisto MT", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
+    thirtySecondLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
     thirtySecondLabel->setJustificationType (Justification::centredLeft);
     thirtySecondLabel->setEditable (false, false, false);
     thirtySecondLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -152,7 +152,7 @@ MainComponent::MainComponent ()
 
     addAndMakeVisible (sixtyFourthLabel = new Label ("sixtyFourthLabel",
                                                      TRANS("1/64:")));
-    sixtyFourthLabel->setFont (Font ("Calisto MT", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
+    sixtyFourthLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
     sixtyFourthLabel->setJustificationType (Justification::centredLeft);
     sixtyFourthLabel->setEditable (false, false, false);
     sixtyFourthLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -161,7 +161,7 @@ MainComponent::MainComponent ()
 
     addAndMakeVisible (oneHundreAndTwentyEighthLabel = new Label ("oneHundreAndTwentyEighthLabel",
                                                                   TRANS("1/128:")));
-    oneHundreAndTwentyEighthLabel->setFont (Font ("Calisto MT", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
+    oneHundreAndTwentyEighthLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
     oneHundreAndTwentyEighthLabel->setJustificationType (Justification::centredLeft);
     oneHundreAndTwentyEighthLabel->setEditable (false, false, false);
     oneHundreAndTwentyEighthLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -432,6 +432,8 @@ MainComponent::MainComponent ()
     // Right click for velocity sensitive sliding
     tempoSlider->setPopupMenuEnabled(true);
 
+
+    //g.setFont(Fonts::instance()->proportional_light().withPointHeight(13.40f));
     //[/Constructor]
 }
 
@@ -766,13 +768,13 @@ bool MainComponent::keyPressed(const juce::KeyPress &key)
     {
         resetButton->triggerClick();
     }
-    
+
     // Enable ms option
     if(key == 'M')
     {
         msToggle->triggerClick();
     }
-    
+
     // Enable hz option
     if(key == 'H')
     {
@@ -945,62 +947,62 @@ BEGIN_JUCER_METADATA
          virtualName="" explicitFocusOrder="0" pos="0 0 500 50" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="Delay Time Calculator"
          editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
-         fontname="Calisto MT" fontsize="47.399999999999998579" kerning="0.09500000000000000111"
+         fontname="Arial" fontsize="47.399999999999998579" kerning="0.09500000000000000111"
          bold="0" italic="0" justification="36"/>
   <LABEL name="normalLabel" id="a751a1c9841b9424" memberName="normalLabel"
          virtualName="" explicitFocusOrder="0" pos="125 110 100 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="Normal&#10;" editableSingleClick="0"
-         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
+         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Arial"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="dottedLabel" id="f84ddade330c771e" memberName="dottedLabel"
          virtualName="" explicitFocusOrder="0" pos="250 110 100 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="Dotted" editableSingleClick="0"
-         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
+         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Arial"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="tripletLabel" id="24f4755bf6b035f2" memberName="tripletLabel"
          virtualName="" explicitFocusOrder="0" pos="375 110 100 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="Triplet" editableSingleClick="0"
-         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
+         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Arial"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="wholeLabel" id="84a944615f7ab97c" memberName="wholeLabel"
          virtualName="" explicitFocusOrder="0" pos="0 140 100 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="1:" editableSingleClick="0"
-         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
+         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Arial"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="halfLabel" id="670aac61ca569af7" memberName="halfLabel"
          virtualName="" explicitFocusOrder="0" pos="0 180 100 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="1/2:" editableSingleClick="0"
-         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
+         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Arial"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="quarterLabel" id="c5514ec2a3c07661" memberName="quarterLabel"
          virtualName="" explicitFocusOrder="0" pos="0 220 100 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="1/4:" editableSingleClick="0"
-         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
+         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Arial"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="eighthLabel" id="49b134e52607b4bd" memberName="eighthLabel"
          virtualName="" explicitFocusOrder="0" pos="0 260 100 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="1/8:" editableSingleClick="0"
-         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
+         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Arial"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="sixteenthLabel" id="15b5cdc975d8b4c1" memberName="sixteenthLabel"
          virtualName="" explicitFocusOrder="0" pos="0 300 100 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="1/16:" editableSingleClick="0"
-         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
+         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Arial"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="thirtySecondLabel" id="286f381f35aec721" memberName="thirtySecondLabel"
          virtualName="" explicitFocusOrder="0" pos="0 340 100 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="1/32:" editableSingleClick="0"
-         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
+         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Arial"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="sixtyFourthLabel" id="e0fec546bed640df" memberName="sixtyFourthLabel"
          virtualName="" explicitFocusOrder="0" pos="0 380 100 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="1/64:" editableSingleClick="0"
-         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
+         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Arial"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="oneHundreAndTwentyEighthLabel" id="fe1fa9046023fc2a" memberName="oneHundreAndTwentyEighthLabel"
          virtualName="" explicitFocusOrder="0" pos="0 420 100 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="1/128:" editableSingleClick="0"
-         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
+         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Arial"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <TEXTBUTTON name="tapButton" id="3cd8a4f5f3b122f8" memberName="tapButton"
               virtualName="" explicitFocusOrder="0" pos="250 80 125 30" bgColOff="ffadaaaa"

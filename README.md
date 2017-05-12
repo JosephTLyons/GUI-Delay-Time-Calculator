@@ -20,6 +20,7 @@ A simple application that calculates delay and reverb pre-delay times based on t
 ## Features still to add:
 
 * Scaleable UI
+* Embed custom font
 * Analyze MusicMath features
 * Remove slider and use a text box that can be changed by clicking and dragging?
 * Change to whole BPM values and use modifier buttons to access 1/10th notes (or any other method to access these values?
@@ -33,6 +34,7 @@ A simple application that calculates delay and reverb pre-delay times based on t
 2. Added option to display values in Hertz - to set LFOs on your synths
 3. Added key support for changing from ms to Hz (using keys 'M' and 'H' respectively)
 4. Made information section a text editor instead of a label so I can add more information to this and take advantage of scrolling, vesus having to make the GUI taller each line I add.
+5. Switched font to Arial for the time being since I can't seem to figure how to embed fonts in JUCE.  I wanted to get this update out to fix the current bugs, so I'm just using a 'safe' font that should be on everyone's system.'
 
 ### May 09, 2017 - V 1.3:
 1. Keys: 1 = 1/2x, 2 = 2x, T = Tap Tempo, R = Reset Tap Tempo, Spacebar = Round Value, Up Arrow = +1, Down Arrow = -1, Right Arrow = +5, Left Arrow = -5;

@@ -34,7 +34,7 @@ InformationComponent::InformationComponent ()
 
     addAndMakeVisible (informationLabel = new Label ("informationLabel",
                                                      TRANS("Information")));
-    informationLabel->setFont (Font ("Calisto MT", 47.40f, Font::plain).withTypefaceStyle ("Regular").withExtraKerningFactor (0.043f));
+    informationLabel->setFont (Font ("Arial", 47.40f, Font::plain).withTypefaceStyle ("Regular").withExtraKerningFactor (0.043f));
     informationLabel->setJustificationType (Justification::centred);
     informationLabel->setEditable (false, false, false);
     informationLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -164,7 +164,7 @@ BEGIN_JUCER_METADATA
   <LABEL name="informationLabel" id="951f8323b93b29f2" memberName="informationLabel"
          virtualName="" explicitFocusOrder="0" pos="0 0 240 50" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="Information" editableSingleClick="0"
-         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Calisto MT"
+         editableDoubleClick="0" focusDiscardsChanges="0" fontname="Arial"
          fontsize="47.399999999999998579" kerning="0.042999999999999996558"
          bold="0" italic="0" justification="36"/>
   <LABEL name="versionNumberLabel" id="30f8922fa9ce43fc" memberName="versionNumberLabelOutput"

@@ -25,7 +25,7 @@
 #include "HertzValues.hpp"
 #include "TapTempo.hpp"
 #include "BasicWindow.cpp"
-#include "Fonts.hpp"
+#include "EmbeddedFonts.hpp"
 //[/Headers]
 
 
