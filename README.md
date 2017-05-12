@@ -14,13 +14,13 @@ A simple application that calculates delay and reverb pre-delay times based on t
 
 ## Bug to Fix:
 
-* Whole note normal value not correct!!!
-* Embed Font to fix font errors!!!
+* None reported
 
 ## Features still to add:
 
+* Windows version
 * Scaleable UI
-* Embed custom font (remove temporary Arial font setting - which was a cheat) 
+* Embed custom font (was using CalistMT() (remove temporary Arial font setting - which was a cheat) 
 * Analyze MusicMath features
 * Remove slider and use a text box that can be changed by clicking and dragging?
 * Change to whole BPM values and use modifier buttons to access 1/10th notes (or any other method to access these values?
@@ -29,7 +29,7 @@ A simple application that calculates delay and reverb pre-delay times based on t
 
 ## Changelog:
 
-### May XX, 2017 - V 1.4:
+### May 12, 2017 - V 1.4:
 1. FIXED WHOLE NORMAL VALUES - This value was incorrect as I was accidentally grabbing the value from half dotted!
 2. Added option to display values in Hertz - to set LFOs on your synths
 3. Added key support for changing from ms to Hz (using keys 'M' and 'H' respectively)
