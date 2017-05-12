@@ -13,11 +13,11 @@ A simple application that calculates delay and reverb pre-delay times based on t
 * Keys: 1 = 1/2x, 2 = 2x, T = Tap Tempo, R = Reset Tap Tempo, 'M' enables ms, 'H' enables Hz, 'Spacebar = Round Value, Up Arrow = +1, Down Arrow = -1, Right Arrow = +5, Left Arrow = -5;
 * An information panel to display the keys that trigger actions and version number
 
-## Bug to Fix:
+## Bugs to Fix:
 
 * None reported
 
-## Features still to add:
+## Features to add:
 
 * Windows version
 * Scaleable UI
