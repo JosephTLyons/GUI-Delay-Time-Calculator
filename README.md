@@ -20,7 +20,7 @@ A simple application that calculates delay and reverb pre-delay times based on t
 
 * Windows version
 * Scaleable UI
-* Embed custom font (was using CalistMT() (remove temporary Arial font setting - which was a cheat) 
+* Embed custom font (was using CalistoMT) (remove temporary Arial font setting - which was a cheat) 
 * Analyze MusicMath features
 * Remove slider and use a text box that can be changed by clicking and dragging?
 * Change to whole BPM values and use modifier buttons to access 1/10th notes (or any other method to access these values?
