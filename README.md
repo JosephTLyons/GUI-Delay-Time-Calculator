@@ -20,6 +20,7 @@ A simple application that calculates delay and reverb pre-delay times based on t
 
 ## Features to add:
 
+* A small dividing line (like Track Notes), between title and rest of app, for aesthetics
 * Windows version
 * Scaleable UI
 * Embed custom font (was using CalistoMT) (remove temporary Arial font setting - which was a cheat) 
