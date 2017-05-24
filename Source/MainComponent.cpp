@@ -521,9 +521,9 @@ void MainComponent::resized()
     halfTempoButton->setBounds (0, 80, 125, 30);
     tempoSlider->setBounds (0, 50, 500, 30);
     delayTimeCalculatorLabel->setBounds (0, 0, 500, 50);
-    normalLabel->setBounds (125, 110, 100, 30);
-    dottedLabel->setBounds (250, 110, 100, 30);
-    tripletLabel->setBounds (375, 110, 100, 30);
+    normalLabel->setBounds (125, 110, 125, 30);
+    dottedLabel->setBounds (250, 110, 125, 30);
+    tripletLabel->setBounds (375, 110, 125, 30);
     wholeLabel->setBounds (0, 140, 100, 30);
     halfLabel->setBounds (0, 180, 100, 30);
     quarterLabel->setBounds (0, 220, 100, 30);
@@ -950,17 +950,17 @@ BEGIN_JUCER_METADATA
          fontname="Arial" fontsize="47.399999999999998579" kerning="0.09500000000000000111"
          bold="0" italic="0" justification="36"/>
   <LABEL name="normalLabel" id="a751a1c9841b9424" memberName="normalLabel"
-         virtualName="" explicitFocusOrder="0" pos="125 110 100 30" textCol="ffadaaaa"
+         virtualName="" explicitFocusOrder="0" pos="125 110 125 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="Normal&#10;" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Arial"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="dottedLabel" id="f84ddade330c771e" memberName="dottedLabel"
-         virtualName="" explicitFocusOrder="0" pos="250 110 100 30" textCol="ffadaaaa"
+         virtualName="" explicitFocusOrder="0" pos="250 110 125 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="Dotted" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Arial"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="tripletLabel" id="24f4755bf6b035f2" memberName="tripletLabel"
-         virtualName="" explicitFocusOrder="0" pos="375 110 100 30" textCol="ffadaaaa"
+         virtualName="" explicitFocusOrder="0" pos="375 110 125 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="Triplet" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Arial"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
