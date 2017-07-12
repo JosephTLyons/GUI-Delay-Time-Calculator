@@ -32,18 +32,18 @@ A simple application that calculates delay and reverb pre-delay times based on t
 
 ## Changelog:
 
-### July XX, 2017 = V 1.5
+### July XX, 2017 = V 1.5.0
 1. PC Build
 2. Changed behavior of where new window is loaded.  It is now loaded in the middle of the screen to resolve some issues on PC side.
 
-### May 12, 2017 - V 1.4:
+### May 12, 2017 - V 1.4.0:
 1. FIXED WHOLE NORMAL VALUES - This value was incorrect as I was accidentally grabbing the value from half dotted!
 2. Added option to display values in Hertz - to set LFOs on your synths
 3. Added key support for changing from ms to Hz (using keys 'M' and 'H' respectively)
 4. Made information section a text editor instead of a label so I can add more information to this and take advantage of scrolling, vesus having to make that window taller each line I add.
 5. Switched label font to Arial for the time being since I can't seem to figure how to embed fonts in JUCE currently.  I wanted to get this update out to fix the current bugs, so I'm just using a 'safe' font that should be on everyone's system.  My assumption is that all Mac systems have Arial by default, so the font should show up correctly.
 
-### May 09, 2017 - V 1.3:
+### May 09, 2017 - V 1.3.0:
 1. Keys: 1 = 1/2x, 2 = 2x, T = Tap Tempo, R = Reset Tap Tempo, Spacebar = Round Value, Up Arrow = +1, Down Arrow = -1, Right Arrow = +5, Left Arrow = -5;
 2. Added a button to invoke a new window to display all the key information, such as which keys trigger which actions and the app version number.
 3. Changed all links to buttons on the bottom and added a link to my software Facebook page
@@ -51,7 +51,7 @@ A simple application that calculates delay and reverb pre-delay times based on t
 5. Changed all output fields from text editors to text labels.  I did this because values inside text editors can be highlighted and labels cannot be.  The highlighting looks cheesy and unprofessional, so I make them all labels to keep from having the option to highlight numbers in the output fields.
 6. Small aesthetic changes due to the new LookAndFeelV4 class of JUCE 5.
 
-### April 22, 2017 - V 1.2:
+### April 22, 2017 - V 1.2.0:
 1. Added tap tempo feature.  Tap T in time to set tempo, click R to reset internal values so you can use T to calculate a new tempo.  The R button turns white after the first click of the tap button, to let the user know that if they want to calculate a different speed, to click the reset button.
 3. Added a cheap app icon, will probably make a better one later, this is more or less a placeholder
 3. Changed color of tempo values on slider to white so that all values that change have the same color (white).  All input and output values are now highlighted and easy to spot.
@@ -60,7 +60,7 @@ A simple application that calculates delay and reverb pre-delay times based on t
 ### April 22, 2017 - V 1.1.1:
 1. Changed deployment settings - now allows users all the way back on OS 10.6
 
-### April 20, 2017 - V 1.1:
+### April 20, 2017 - V 1.1.0:
 1. Displays all values at once
 2. Changed skewing of slider so that most frequent tempos are in the first half of the slider (1 - 250ish).  This gives the user a bit more accuracy when using these values.
 3. Unified theme of GUI a bit by changing color of 1/2x and 2x buttons to match other colors,
@@ -68,4 +68,4 @@ A simple application that calculates delay and reverb pre-delay times based on t
 5. Repositioned all controls to be in close proximity and left room for tap to set delay button
 6. App is now code signed (I'm officially an Apple Developer)
 
-### April 15, 2017 - V 1.0 intial release:
+### April 15, 2017 - V 1.0.0 intial release:
