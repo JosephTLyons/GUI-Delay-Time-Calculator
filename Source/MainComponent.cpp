@@ -7,7 +7,7 @@
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Created with Projucer version: 5.0.1
+  Created with Projucer version: 5.0.2
 
   ------------------------------------------------------------------------------
 
@@ -431,14 +431,14 @@ MainComponent::MainComponent ()
 
     // Right click for velocity sensitive sliding
 //    tempoSlider->setPopupMenuEnabled(true);
-//    
+//
 //    EmbeddedFonts customFont;
-//    
+//
 //    delayTimeCalculatorLabel->setFont(customFont.getCalistoMT());
 
 
     //g.setFont(Fonts::instance()->proportional_light().withPointHeight(13.40f));
-    
+
     //[/Constructor]
 }
 
