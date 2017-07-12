@@ -59,6 +59,22 @@
         <MODULEPATH id="juce_gui_extra" path="../../../Libraries/JUCE/modules"/>
       </MODULEPATHS>
     </XCODE_MAC>
+    <VS2017 targetFolder="Builds/VisualStudio2017">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="x64"
+                       isDebug="1" optimisation="1" targetName="The Lyons' Den Delay Time Calculator"/>
+        <CONFIGURATION name="Release" winWarningLevel="4" generateManifest="1" winArchitecture="x64"
+                       isDebug="0" optimisation="3" targetName="The Lyons' Den Delay Time Calculator"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_gui_extra" path="..\..\juce-huckleberry-windows\JUCE\modules"/>
+        <MODULEPATH id="juce_gui_basics" path="..\..\juce-huckleberry-windows\JUCE\modules"/>
+        <MODULEPATH id="juce_graphics" path="..\..\juce-huckleberry-windows\JUCE\modules"/>
+        <MODULEPATH id="juce_events" path="..\..\juce-huckleberry-windows\JUCE\modules"/>
+        <MODULEPATH id="juce_data_structures" path="..\..\juce-huckleberry-windows\JUCE\modules"/>
+        <MODULEPATH id="juce_core" path="..\..\juce-huckleberry-windows\JUCE\modules"/>
+      </MODULEPATHS>
+    </VS2017>
   </EXPORTFORMATS>
   <MODULES>
     <MODULE id="juce_core" showAllCode="1" useLocalCopy="0"/>
