@@ -2,9 +2,9 @@
 
 <JUCERPROJECT id="mFsRbO" name="The Lyons' Den Delay Time Calculator" projectType="guiapp"
               version="1.4" bundleIdentifier="com.TheLyonsDen.DelayTimeCalculator"
-              includeBinaryInAppConfig="1" jucerVersion="5.0.1" companyName="The Lyons' Den"
-              companyEmail="josephtlyons@gmail.com" displaySplashScreen="1"
-              reportAppUsage="1" splashScreenColour="Dark">
+              includeBinaryInAppConfig="1" jucerVersion="5.0.2" companyName="The Lyons' Den"
+              companyEmail="josephtlyons@gmail.com" displaySplashScreen="0"
+              reportAppUsage="0" splashScreenColour="Dark">
   <MAINGROUP id="wVdkZw" name="The Lyons' Den Delay Time Calculator">
     <GROUP id="{35A3474B-79D8-920E-E136-88F8E58081F5}" name="Source">
       <GROUP id="{5249329C-49CC-44BF-F4E5-1D704800FEA9}" name="Font">

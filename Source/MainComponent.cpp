@@ -430,10 +430,15 @@ MainComponent::MainComponent ()
     tempoSlider->setValue(120);
 
     // Right click for velocity sensitive sliding
-    tempoSlider->setPopupMenuEnabled(true);
+//    tempoSlider->setPopupMenuEnabled(true);
+//    
+//    EmbeddedFonts customFont;
+//    
+//    delayTimeCalculatorLabel->setFont(customFont.getCalistoMT());
 
 
     //g.setFont(Fonts::instance()->proportional_light().withPointHeight(13.40f));
+    
     //[/Constructor]
 }
 
@@ -662,8 +667,7 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
             basicWindow->setUsingNativeTitleBar(true);
             basicWindow->setContentOwned(new InformationComponent(), true);
 
-            basicWindow->setSize(basicWindow->getWidth(), basicWindow->getHeight());
-            basicWindow->setTopLeftPosition(0, 0);
+            basicWindow->centreWithSize(basicWindow->getWidth(), basicWindow->getHeight());
             basicWindow->setVisible(true);
         }
 
