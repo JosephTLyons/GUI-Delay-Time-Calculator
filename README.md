@@ -32,6 +32,10 @@ A simple application that calculates delay and reverb pre-delay times based on t
 
 ## Changelog:
 
+### July XX, 2017 = V 1.5
+1. PC Build
+2. Changed behavior of where new window is loaded.  It is now loaded in the middle of the screen to resolve some issues on PC side.
+
 ### May 12, 2017 - V 1.4:
 1. FIXED WHOLE NORMAL VALUES - This value was incorrect as I was accidentally grabbing the value from half dotted!
 2. Added option to display values in Hertz - to set LFOs on your synths
