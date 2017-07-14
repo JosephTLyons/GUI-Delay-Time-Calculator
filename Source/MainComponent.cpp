@@ -788,7 +788,7 @@ bool MainComponent::keyPressed(const juce::KeyPress &key)
     // Round Tempo
     if(key == KeyPress::spaceKey)
     {
-        int truncatedValue    = tempoSlider->getValue();
+        int truncatedValue    = (int) tempoSlider->getValue();
         double roundingFactor = tempoSlider->getValue() - truncatedValue;
 
         if(roundingFactor >= 0.5)
