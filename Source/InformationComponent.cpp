@@ -138,12 +138,6 @@ void InformationComponent::resized()
 
 
 //[MiscUserCode] You can add your own definitions of your custom methods or any other code here...
-
-//void InformationComponent::closeButtonPressed()
-//{
-//    delete this;
-//}
-
 //[/MiscUserCode]
 
 
