@@ -662,7 +662,10 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
         // Don't allow multiple copies of this window to be made
         if(basicWindow == NULL)
         {
-            basicWindow = new BasicWindow("Information", Colours::grey, DocumentWindow::allButtons);
+            basicWindow = new BasicWindow("Information",
+										  Colours::grey, 
+										  DocumentWindow::closeButton | 
+										  DocumentWindow::minimiseButton);
 
             basicWindow->setUsingNativeTitleBar(true);
             basicWindow->setContentOwned(new InformationComponent(), true);

@@ -63,7 +63,8 @@ public:
     public:
         MainWindow (String name)  : DocumentWindow (name,
                                                     Colours::lightgrey,
-                                                    DocumentWindow::allButtons)
+                                                    DocumentWindow::closeButton |
+												    DocumentWindow::minimiseButton)
         {
             setUsingNativeTitleBar (true);
             setContentOwned (new MainComponent(), true);
