@@ -603,7 +603,6 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
 
         // Change button color so we know a reset is needed
         resetButton->setColour(TextButton::buttonColourId , Colours::white);
-        //resetButton->setColour(TextButton::button, <#juce::Colour newColour#>)
 
         //[/UserButtonCode_tapButton]
     }
