@@ -640,8 +640,8 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_facebookButton] -- add your button handler code here..
 
-        URL facebookULR("https://www.facebook.com/TheLyonsDenSoftware/");
-        facebookULR.launchInDefaultBrowser();
+        URL facebookURL("https://www.facebook.com/TheLyonsDenSoftware/");
+        facebookURL.launchInDefaultBrowser();
 
         //[/UserButtonCode_facebookButton]
     }
