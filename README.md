@@ -32,7 +32,7 @@ A simple application that calculates delay and reverb pre-delay times based on t
 
 ## Changelog:
 
-### July XX, 2017 - V 1.5.0
+### July 26, 2017 - V 1.5.0
 1. PC Build
 2. Changed behavior of where information window is loaded.  It is now loaded in the middle of the screen to resolve some issues on PC side.
 3. Windows can no longer be maxmized.  The GUI isn't resizable anyway, so the ability to go full screen has been removed.
