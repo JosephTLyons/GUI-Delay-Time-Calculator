@@ -78,3 +78,8 @@ void TapTempo::getTimeElapsedInMinutes(const Time &juceTimeObject)
     // convert elapsed time to minutes
     minutes = seconds / secondsInAMinute;
 }
+
+unsigned long int TapTempo::getTapCount()
+{
+    return tapCount;
+}

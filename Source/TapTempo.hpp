@@ -36,6 +36,7 @@ public:
     
     void resetMainCalculationHolders();
     double calculateTempo();
+    unsigned long int getTapCount();
 };
 
 #endif /* TapTempo_hpp */

@@ -603,6 +603,9 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
 
         // Change button color so we know a reset is needed
         resetButton->setColour(TextButton::buttonColourId , Colours::white);
+        
+        // Add tap count to Tap Tempo button
+        tapButton->setButtonText("Tap Tempo (" + (String) tapTempoObject.getTapCount() + ")");
 
         //[/UserButtonCode_tapButton]
     }
@@ -615,6 +618,9 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
         // Reset the color of resetButton by simply setting it to the color of tapButton
         resetButton->setColour(TextButton::buttonColourId,
                                tapButton->findColour(TextButton::buttonColourId));
+        
+        // Change Tap Tempo button text back to normal, excluding tap count
+        tapButton->setButtonText("Tap Tempo");
 
         //[/UserButtonCode_resetButton]
     }
@@ -748,6 +754,7 @@ void MainComponent::sliderValueChanged (Slider* sliderThatWasMoved)
 
 
 //[MiscUserCode] You can add your own definitions of your custom methods or any other code here...
+
 
 bool MainComponent::keyPressed(const juce::KeyPress &key)
 {
