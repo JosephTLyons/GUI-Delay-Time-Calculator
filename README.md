@@ -32,6 +32,9 @@ A simple application that calculates delay and reverb pre-delay times based on t
 
 ## Changelog:
 
+### August XX, 2017 - V 1.6.0
+1. Added tap count to the tap tempo button, for more visual feedback of tap tempo function
+
 ### July 26, 2017 - V 1.5.0
 1. PC Build
 2. Changed behavior of where information window is loaded.  It is now loaded in the middle of the screen to resolve some issues on PC side.
