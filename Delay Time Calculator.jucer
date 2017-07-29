@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <JUCERPROJECT id="mFsRbO" name="The Lyons' Den Delay Time Calculator" projectType="guiapp"
-              version="1.5.0" bundleIdentifier="com.TheLyonsDen.DelayTimeCalculator"
-              includeBinaryInAppConfig="1" jucerVersion="5.0.2" companyName="The Lyons' Den"
+              version="1.6.0" bundleIdentifier="com.TheLyonsDen.DelayTimeCalculator"
+              includeBinaryInAppConfig="1" jucerVersion="5.1.0" companyName="The Lyons' Den"
               companyEmail="josephtlyons@gmail.com" displaySplashScreen="0"
-              reportAppUsage="0" splashScreenColour="Dark">
+              reportAppUsage="0" splashScreenColour="Dark" cppLanguageStandard="11">
   <MAINGROUP id="wVdkZw" name="The Lyons' Den Delay Time Calculator">
     <GROUP id="{35A3474B-79D8-920E-E136-88F8E58081F5}" name="Source">
       <GROUP id="{5249329C-49CC-44BF-F4E5-1D704800FEA9}" name="Font">
