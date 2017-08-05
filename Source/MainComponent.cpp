@@ -835,7 +835,7 @@ bool MainComponent::keyPressed(const juce::KeyPress &key)
         tempoSlider->setValue(roundedDown);
     }
 
-    // Tempo = 5
+    // Tempo - 5
     if(key == KeyPress::leftKey)
     {
         double roundedUp = tempoSlider->getValue() - 5;
