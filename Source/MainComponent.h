@@ -53,6 +53,7 @@ public:
     bool keyPressed(const juce::KeyPress &key) override;
     void populateFieldsWithMillisecondValues();
     void populateFieldsWithHertzValues();
+    void setupLabelCustomFont();
 
 
     //[/UserMethods]
@@ -69,10 +70,10 @@ private:
 
     MillisecondValues millisecondValuesObject;
     HertzValues hertzValuesObject;
-
     TapTempo tapTempoObject;
-
     SafePointer<BasicWindow> basicWindow;
+    EmbeddedFonts customFont;
+
 
     //[/UserVariables]
 

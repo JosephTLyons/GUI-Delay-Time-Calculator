@@ -31,7 +31,6 @@
 MainComponent::MainComponent ()
 {
     //[Constructor_pre] You can add your own custom stuff here..
-
     //[/Constructor_pre]
 
     addAndMakeVisible (doubleTempoButton = new TextButton ("doubleTempoButton"));
@@ -430,14 +429,9 @@ MainComponent::MainComponent ()
     tempoSlider->setValue(120);
 
     // Right click for velocity sensitive sliding
-//    tempoSlider->setPopupMenuEnabled(true);
-//
-//    EmbeddedFonts customFont;
-//
-//    delayTimeCalculatorLabel->setFont(customFont.getCalistoMT());
+    tempoSlider->setPopupMenuEnabled(true);
 
-
-    //g.setFont(Fonts::instance()->proportional_light().withPointHeight(13.40f));
+    setupLabelCustomFont();
 
     //[/Constructor]
 }
@@ -603,7 +597,7 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
 
         // Change button color so we know a reset is needed
         resetButton->setColour(TextButton::buttonColourId , Colours::white);
-        
+
         // Add tap count to Tap Tempo button
         tapButton->setButtonText("Tap Tempo (" + (String) tapTempoObject.getTapCount() + ")");
 
@@ -618,7 +612,7 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
         // Reset the color of resetButton by simply setting it to the color of tapButton
         resetButton->setColour(TextButton::buttonColourId,
                                tapButton->findColour(TextButton::buttonColourId));
-        
+
         // Change Tap Tempo button text back to normal, excluding tap count
         tapButton->setButtonText("Tap Tempo");
 
@@ -755,6 +749,10 @@ void MainComponent::sliderValueChanged (Slider* sliderThatWasMoved)
 
 //[MiscUserCode] You can add your own definitions of your custom methods or any other code here...
 
+void MainComponent::setupLabelCustomFont()
+{
+    delayTimeCalculatorLabel->setFont(customFont.getCalistoMT());
+}
 
 bool MainComponent::keyPressed(const juce::KeyPress &key)
 {
