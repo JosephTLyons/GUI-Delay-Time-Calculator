@@ -2,7 +2,7 @@
 
 <JUCERPROJECT id="mFsRbO" name="The Lyons' Den Delay Time Calculator" projectType="guiapp"
               version="1.6.0" bundleIdentifier="com.TheLyonsDen.DelayTimeCalculator"
-              includeBinaryInAppConfig="1" jucerVersion="5.1.0" companyName="The Lyons' Den"
+              includeBinaryInAppConfig="1" jucerVersion="5.1.2" companyName="The Lyons' Den"
               companyEmail="josephtlyons@gmail.com" displaySplashScreen="0"
               reportAppUsage="0" splashScreenColour="Dark" cppLanguageStandard="11">
   <MAINGROUP id="wVdkZw" name="The Lyons' Den Delay Time Calculator">
