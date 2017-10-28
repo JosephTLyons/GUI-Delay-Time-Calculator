@@ -39,8 +39,8 @@
                                                                     //[/Comments]
 */
 class MainComponent  : public Component,
-                       public ButtonListener,
-                       public SliderListener
+                       public Button::Listener,
+                       public Slider::Listener
 {
 public:
     //==============================================================================
