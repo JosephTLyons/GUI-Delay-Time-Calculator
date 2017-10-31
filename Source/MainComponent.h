@@ -127,9 +127,9 @@ private:
     ScopedPointer<ToggleButton> hzToggle;
     ScopedPointer<ToggleButton> msToggle;
     ScopedPointer<Label> resolutionLabel;
-    ScopedPointer<TextButton> coarseResolutionButton;
-    ScopedPointer<TextButton> standardResolutionButton;
-    ScopedPointer<TextButton> fineResolutionButton;
+    ScopedPointer<ToggleButton> coarseResolutionToggle;
+    ScopedPointer<ToggleButton> standardResolutionToggle;
+    ScopedPointer<ToggleButton> fineResolutionToggle;
 
 
     //==============================================================================

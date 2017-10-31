@@ -425,23 +425,17 @@ MainComponent::MainComponent ()
     resolutionLabel->setColour (TextEditor::textColourId, Colours::black);
     resolutionLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (coarseResolutionButton = new TextButton ("coarseResolutionButton"));
-    coarseResolutionButton->setButtonText (TRANS("Coarse"));
-    coarseResolutionButton->addListener (this);
-    coarseResolutionButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
-    coarseResolutionButton->setColour (TextButton::textColourOffId, Colour (0xff353535));
+    addAndMakeVisible (coarseResolutionToggle = new ToggleButton ("coarseResolutionToggle"));
+    coarseResolutionToggle->setButtonText (TRANS("Coarse"));
+    coarseResolutionToggle->addListener (this);
 
-    addAndMakeVisible (standardResolutionButton = new TextButton ("standardResolutionButton"));
-    standardResolutionButton->setButtonText (TRANS("Standard"));
-    standardResolutionButton->addListener (this);
-    standardResolutionButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
-    standardResolutionButton->setColour (TextButton::textColourOffId, Colour (0xff353535));
+    addAndMakeVisible (standardResolutionToggle = new ToggleButton ("standardResolutionToggle"));
+    standardResolutionToggle->setButtonText (TRANS("Standard"));
+    standardResolutionToggle->addListener (this);
 
-    addAndMakeVisible (fineResolutionButton = new TextButton ("fineResolutionButton"));
-    fineResolutionButton->setButtonText (TRANS("Fine"));
-    fineResolutionButton->addListener (this);
-    fineResolutionButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
-    fineResolutionButton->setColour (TextButton::textColourOffId, Colour (0xff353535));
+    addAndMakeVisible (fineResolutionToggle = new ToggleButton ("fineResolutionToggle"));
+    fineResolutionToggle->setButtonText (TRANS("Fine"));
+    fineResolutionToggle->addListener (this);
 
 
     //[UserPreSize]
@@ -460,13 +454,11 @@ MainComponent::MainComponent ()
     // Right click for velocity sensitive sliding
     tempoSlider->setPopupMenuEnabled(true);
 
-    // Make resolution buttons toggle buttons
-    coarseResolutionButton->setClickingTogglesState(true);
-    standardResolutionButton->setClickingTogglesState(true);
-    fineResolutionButton->setClickingTogglesState(true);
+    // Set down state color of resolution toggle buttons
+    //coarseResolutionButton->setColour(But, <#juce::Colour newColour#>)
 
     // Set resolution to standard initially
-    standardResolutionButton->triggerClick();
+    standardResolutionToggle->triggerClick();
 
     //setupLabelCustomFont();
 
@@ -527,9 +519,9 @@ MainComponent::~MainComponent()
     hzToggle = nullptr;
     msToggle = nullptr;
     resolutionLabel = nullptr;
-    coarseResolutionButton = nullptr;
-    standardResolutionButton = nullptr;
-    fineResolutionButton = nullptr;
+    coarseResolutionToggle = nullptr;
+    standardResolutionToggle = nullptr;
+    fineResolutionToggle = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -606,9 +598,9 @@ void MainComponent::resized()
     hzToggle->setBounds (63, 135, 62, 20);
     msToggle->setBounds (0, 135, 62, 20);
     resolutionLabel->setBounds (0, 80, 125, 20);
-    coarseResolutionButton->setBounds (125, 80, 125, 20);
-    standardResolutionButton->setBounds (250, 80, 125, 20);
-    fineResolutionButton->setBounds (375, 80, 125, 20);
+    coarseResolutionToggle->setBounds (125, 80, 125, 20);
+    standardResolutionToggle->setBounds (250, 80, 125, 20);
+    fineResolutionToggle->setBounds (375, 80, 125, 20);
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
 }
@@ -757,41 +749,41 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
 
         //[/UserButtonCode_msToggle]
     }
-    else if (buttonThatWasClicked == coarseResolutionButton)
+    else if (buttonThatWasClicked == coarseResolutionToggle)
     {
-        //[UserButtonCode_coarseResolutionButton] -- add your button handler code here..
-
+        //[UserButtonCode_coarseResolutionToggle] -- add your button handler code here..
+        
         tempoSlider->setRange(1, 1000, 1);
-
-        coarseResolutionButton->setToggleState(true, dontSendNotification);
-        standardResolutionButton->setToggleState(false, dontSendNotification);
-        fineResolutionButton->setToggleState(false, dontSendNotification);
-
-        //[/UserButtonCode_coarseResolutionButton]
+        
+        coarseResolutionToggle->setToggleState(true, dontSendNotification);
+        standardResolutionToggle->setToggleState(false, dontSendNotification);
+        fineResolutionToggle->setToggleState(false, dontSendNotification);
+        
+        //[/UserButtonCode_coarseResolutionToggle]
     }
-    else if (buttonThatWasClicked == standardResolutionButton)
+    else if (buttonThatWasClicked == standardResolutionToggle)
     {
-        //[UserButtonCode_standardResolutionButton] -- add your button handler code here..
-
+        //[UserButtonCode_standardResolutionToggle] -- add your button handler code here..
+        
         tempoSlider->setRange(1, 1000, 0.1);
-
-        coarseResolutionButton->setToggleState(false, dontSendNotification);
-        standardResolutionButton->setToggleState(true, dontSendNotification);
-        fineResolutionButton->setToggleState(false, dontSendNotification);
-
-        //[/UserButtonCode_standardResolutionButton]
+        
+        coarseResolutionToggle->setToggleState(false, dontSendNotification);
+        standardResolutionToggle->setToggleState(true, dontSendNotification);
+        fineResolutionToggle->setToggleState(false, dontSendNotification);
+        
+        //[/UserButtonCode_standardResolutionToggle]
     }
-    else if (buttonThatWasClicked == fineResolutionButton)
+    else if (buttonThatWasClicked == fineResolutionToggle)
     {
-        //[UserButtonCode_fineResolutionButton] -- add your button handler code here..
-
+        //[UserButtonCode_fineResolutionToggle] -- add your button handler code here..
+        
         tempoSlider->setRange(1, 1000, 0.01);
-
-        coarseResolutionButton->setToggleState(false, dontSendNotification);
-        standardResolutionButton->setToggleState(false, dontSendNotification);
-        fineResolutionButton->setToggleState(true, dontSendNotification);
-
-        //[/UserButtonCode_fineResolutionButton]
+        
+        coarseResolutionToggle->setToggleState(false, dontSendNotification);
+        standardResolutionToggle->setToggleState(false, dontSendNotification);
+        fineResolutionToggle->setToggleState(true, dontSendNotification);
+        
+        //[/UserButtonCode_fineResolutionToggle]
     }
 
     //[UserbuttonClicked_Post]
@@ -872,20 +864,20 @@ bool MainComponent::keyPressed(const juce::KeyPress &key)
     {
         hzToggle->triggerClick();
     }
-    
+
     if(key == 'C')
     {
-        coarseResolutionButton->triggerClick();
+        coarseResolutionToggle->triggerClick();
     }
-    
+
     if(key == 'S')
     {
-        standardResolutionButton->triggerClick();
+        standardResolutionToggle->triggerClick();
     }
-    
+
     if(key == 'F')
     {
-        fineResolutionButton->triggerClick();
+        fineResolutionToggle->triggerClick();
     }
 
     // Round Tempo
@@ -1271,18 +1263,15 @@ BEGIN_JUCER_METADATA
          editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
          fontname="Arial" fontsize="15" kerning="0" bold="0" italic="0"
          justification="36"/>
-  <TEXTBUTTON name="coarseResolutionButton" id="e6814dd41dcd21fe" memberName="coarseResolutionButton"
-              virtualName="" explicitFocusOrder="0" pos="125 80 125 20" bgColOff="ffadaaaa"
-              textCol="ff353535" buttonText="Coarse" connectedEdges="0" needsCallback="1"
-              radioGroupId="0"/>
-  <TEXTBUTTON name="standardResolutionButton" id="660c5e60beb63f57" memberName="standardResolutionButton"
-              virtualName="" explicitFocusOrder="0" pos="250 80 125 20" bgColOff="ffadaaaa"
-              textCol="ff353535" buttonText="Standard" connectedEdges="0" needsCallback="1"
-              radioGroupId="0"/>
-  <TEXTBUTTON name="fineResolutionButton" id="c50ce259129d6394" memberName="fineResolutionButton"
-              virtualName="" explicitFocusOrder="0" pos="375 80 125 20" bgColOff="ffadaaaa"
-              textCol="ff353535" buttonText="Fine" connectedEdges="0" needsCallback="1"
-              radioGroupId="0"/>
+  <TOGGLEBUTTON name="coarseResolutionToggle" id="ba1bd947fd8c2a56" memberName="coarseResolutionToggle"
+                virtualName="" explicitFocusOrder="0" pos="125 80 125 20" buttonText="Coarse"
+                connectedEdges="0" needsCallback="1" radioGroupId="0" state="0"/>
+  <TOGGLEBUTTON name="standardResolutionToggle" id="97f508dd5ada8935" memberName="standardResolutionToggle"
+                virtualName="" explicitFocusOrder="0" pos="250 80 125 20" buttonText="Standard"
+                connectedEdges="0" needsCallback="1" radioGroupId="0" state="0"/>
+  <TOGGLEBUTTON name="fineResolutionToggle" id="95774ae90e8bc93e" memberName="fineResolutionToggle"
+                virtualName="" explicitFocusOrder="0" pos="375 80 125 20" buttonText="Fine"
+                connectedEdges="0" needsCallback="1" radioGroupId="0" state="0"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA
