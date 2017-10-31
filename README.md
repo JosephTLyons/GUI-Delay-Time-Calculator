@@ -24,7 +24,6 @@ A simple application that calculates delay and reverb pre-delay times based on t
 * Embed custom font (was using CalistoMT) (remove temporary Arial font setting - which was a cheat) 
 * Analyze MusicMath features
 * Remove slider and use a text box that can be changed by clicking and dragging?
-* Change to whole BPM values and use modifier buttons to access 1/10th notes (or any other method to access these values?
 * Better app icon
 * Make installer
 
