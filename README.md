@@ -20,7 +20,6 @@ A simple application that calculates delay and reverb pre-delay times based on t
 
 ## Features to add:
 
-* A small dividing line (like Track Notes), between title and rest of app, for aesthetics
 * Scaleable UI
 * Embed custom font (was using CalistoMT) (remove temporary Arial font setting - which was a cheat) 
 * Analyze MusicMath features
@@ -28,12 +27,13 @@ A simple application that calculates delay and reverb pre-delay times based on t
 * Change to whole BPM values and use modifier buttons to access 1/10th notes (or any other method to access these values?
 * Better app icon
 * Make installer
-* Resolution buttons to increase or decrease precision of tempo (whole, tenth, hundreth)
 
 ## Changelog:
 
-### August XX, 2017 - V 1.6.0
+### November XX, 2017 - V 1.6.0
 1. Added tap count to the tap tempo button, for more visual feedback of tap tempo function
+2. Added resolution buttons to allow for whole, tenths, and hundreths place precision for tempo
+3. Added separating line
 
 ### July 26, 2017 - V 1.5.0
 1. PC Build
