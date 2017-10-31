@@ -441,7 +441,7 @@ MainComponent::MainComponent ()
     //[UserPreSize]
     //[/UserPreSize]
 
-    setSize (500, 495);
+    setSize (500, 505);
 
 
     //[Constructor] You can add your own custom stuff here..
@@ -536,11 +536,21 @@ MainComponent::~MainComponent()
 void MainComponent::paint (Graphics& g)
 {
     //[UserPrePaint] Add your own custom painting code here..
+
     //[/UserPrePaint]
 
     g.fillAll (Colour (0xff353535));
 
     //[UserPaint] Add your own custom painting code here..
+
+    g.setColour(Colours::white);
+    g.setOpacity(0.25);
+
+    int y = 56;
+    int distanceFromEdge = 17;
+    int thickness = 1;
+    g.drawLine(distanceFromEdge, y, getWidth() - distanceFromEdge, y, thickness);
+
     //[/UserPaint]
 }
 
@@ -549,58 +559,58 @@ void MainComponent::resized()
     //[UserPreResize] Add your own custom resize code here..
     //[/UserPreResize]
 
-    doubleTempoButton->setBounds (125, 100, 125, 30);
-    halfTempoButton->setBounds (0, 100, 125, 30);
-    tempoSlider->setBounds (0, 50, 500, 30);
+    doubleTempoButton->setBounds (125, 110, 125, 30);
+    halfTempoButton->setBounds (0, 110, 125, 30);
+    tempoSlider->setBounds (0, 60, 500, 30);
     delayTimeCalculatorLabel->setBounds (0, 0, 500, 50);
-    normalLabel->setBounds (125, 130, 125, 30);
-    dottedLabel->setBounds (250, 130, 125, 30);
-    tripletLabel->setBounds (375, 130, 125, 30);
-    wholeLabel->setBounds (0, 160, 100, 30);
-    halfLabel->setBounds (0, 200, 100, 30);
-    quarterLabel->setBounds (0, 240, 100, 30);
-    eighthLabel->setBounds (0, 280, 100, 30);
-    sixteenthLabel->setBounds (0, 320, 100, 30);
-    thirtySecondLabel->setBounds (0, 360, 100, 30);
-    sixtyFourthLabel->setBounds (0, 400, 100, 30);
-    oneHundreAndTwentyEighthLabel->setBounds (0, 440, 100, 30);
-    tapButton->setBounds (250, 100, 125, 30);
-    resetButton->setBounds (375, 100, 125, 30);
-    wholeNormalLabel->setBounds (125, 160, 125, 30);
-    wholeDottedLabel->setBounds (250, 160, 125, 30);
-    wholeTripletLabel->setBounds (375, 160, 125, 30);
-    halfNormalLabel->setBounds (125, 200, 125, 30);
-    halfDottedLabel->setBounds (250, 200, 125, 28);
-    halfTripletLabel->setBounds (375, 200, 125, 30);
-    quarterNormalLabel->setBounds (125, 240, 125, 30);
-    quarterDottedLabel->setBounds (250, 240, 125, 30);
-    quarterTripletLabel->setBounds (375, 240, 125, 30);
-    eighthNormalLabel->setBounds (125, 280, 125, 30);
-    eighthDottedLabel->setBounds (250, 280, 125, 30);
-    eighthTripletLabel->setBounds (375, 280, 125, 30);
-    sixteenthNormalLabel->setBounds (125, 320, 125, 30);
-    sixteenthDottedLabel->setBounds (250, 320, 125, 30);
-    sixteenthTripletLabel->setBounds (375, 320, 125, 30);
-    thirtySecondNormalLabel->setBounds (125, 360, 125, 30);
-    thirtySecondDottedLabel->setBounds (250, 360, 125, 30);
-    thirtySecondTripletLabel->setBounds (375, 360, 125, 30);
-    sixtyFourthNormalLabel->setBounds (125, 400, 125, 30);
-    sixtyFourthDottedLabel->setBounds (250, 400, 125, 30);
-    sixtyFourthTripletLabel->setBounds (375, 400, 125, 30);
-    oneTwentyEighthNormalLabel->setBounds (125, 440, 125, 30);
-    oneTwentyEighthDottedLabel->setBounds (250, 440, 125, 30);
-    oneTwentyEighthTripletLabel->setBounds (375, 440, 125, 30);
-    emailMeButton->setBounds (200, 475, 100, 20);
-    donateButton->setBounds (400, 475, 100, 20);
-    facebookButton->setBounds (100, 475, 100, 20);
-    theCodeButton->setBounds (300, 475, 100, 20);
-    informationButton->setBounds (0, 475, 100, 20);
-    hzToggle->setBounds (63, 135, 62, 20);
-    msToggle->setBounds (0, 135, 62, 20);
-    resolutionLabel->setBounds (0, 80, 125, 20);
-    coarseResolutionToggle->setBounds (125, 80, 125, 20);
-    standardResolutionToggle->setBounds (250, 80, 125, 20);
-    fineResolutionToggle->setBounds (375, 80, 125, 20);
+    normalLabel->setBounds (125, 140, 125, 30);
+    dottedLabel->setBounds (250, 140, 125, 30);
+    tripletLabel->setBounds (375, 140, 125, 30);
+    wholeLabel->setBounds (0, 170, 100, 30);
+    halfLabel->setBounds (0, 210, 100, 30);
+    quarterLabel->setBounds (0, 250, 100, 30);
+    eighthLabel->setBounds (0, 290, 100, 30);
+    sixteenthLabel->setBounds (0, 330, 100, 30);
+    thirtySecondLabel->setBounds (0, 370, 100, 30);
+    sixtyFourthLabel->setBounds (0, 410, 100, 30);
+    oneHundreAndTwentyEighthLabel->setBounds (0, 450, 100, 30);
+    tapButton->setBounds (250, 110, 125, 30);
+    resetButton->setBounds (375, 110, 125, 30);
+    wholeNormalLabel->setBounds (125, 170, 125, 30);
+    wholeDottedLabel->setBounds (250, 170, 125, 30);
+    wholeTripletLabel->setBounds (375, 170, 125, 30);
+    halfNormalLabel->setBounds (125, 210, 125, 30);
+    halfDottedLabel->setBounds (250, 210, 125, 28);
+    halfTripletLabel->setBounds (375, 210, 125, 30);
+    quarterNormalLabel->setBounds (125, 250, 125, 30);
+    quarterDottedLabel->setBounds (250, 250, 125, 30);
+    quarterTripletLabel->setBounds (375, 250, 125, 30);
+    eighthNormalLabel->setBounds (125, 290, 125, 30);
+    eighthDottedLabel->setBounds (250, 290, 125, 30);
+    eighthTripletLabel->setBounds (375, 290, 125, 30);
+    sixteenthNormalLabel->setBounds (125, 330, 125, 30);
+    sixteenthDottedLabel->setBounds (250, 330, 125, 30);
+    sixteenthTripletLabel->setBounds (375, 330, 125, 30);
+    thirtySecondNormalLabel->setBounds (125, 370, 125, 30);
+    thirtySecondDottedLabel->setBounds (250, 370, 125, 30);
+    thirtySecondTripletLabel->setBounds (375, 370, 125, 30);
+    sixtyFourthNormalLabel->setBounds (125, 410, 125, 30);
+    sixtyFourthDottedLabel->setBounds (250, 410, 125, 30);
+    sixtyFourthTripletLabel->setBounds (375, 410, 125, 30);
+    oneTwentyEighthNormalLabel->setBounds (125, 450, 125, 30);
+    oneTwentyEighthDottedLabel->setBounds (250, 450, 125, 30);
+    oneTwentyEighthTripletLabel->setBounds (375, 450, 125, 30);
+    emailMeButton->setBounds (200, 485, 100, 20);
+    donateButton->setBounds (400, 485, 100, 20);
+    facebookButton->setBounds (100, 485, 100, 20);
+    theCodeButton->setBounds (300, 485, 100, 20);
+    informationButton->setBounds (0, 485, 100, 20);
+    hzToggle->setBounds (63, 145, 62, 20);
+    msToggle->setBounds (0, 145, 62, 20);
+    resolutionLabel->setBounds (0, 90, 125, 20);
+    coarseResolutionToggle->setBounds (125, 90, 125, 20);
+    standardResolutionToggle->setBounds (250, 90, 125, 20);
+    fineResolutionToggle->setBounds (375, 90, 125, 20);
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
 }
@@ -752,37 +762,37 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     else if (buttonThatWasClicked == coarseResolutionToggle)
     {
         //[UserButtonCode_coarseResolutionToggle] -- add your button handler code here..
-        
+
         tempoSlider->setRange(1, 1000, 1);
-        
+
         coarseResolutionToggle->setToggleState(true, dontSendNotification);
         standardResolutionToggle->setToggleState(false, dontSendNotification);
         fineResolutionToggle->setToggleState(false, dontSendNotification);
-        
+
         //[/UserButtonCode_coarseResolutionToggle]
     }
     else if (buttonThatWasClicked == standardResolutionToggle)
     {
         //[UserButtonCode_standardResolutionToggle] -- add your button handler code here..
-        
+
         tempoSlider->setRange(1, 1000, 0.1);
-        
+
         coarseResolutionToggle->setToggleState(false, dontSendNotification);
         standardResolutionToggle->setToggleState(true, dontSendNotification);
         fineResolutionToggle->setToggleState(false, dontSendNotification);
-        
+
         //[/UserButtonCode_standardResolutionToggle]
     }
     else if (buttonThatWasClicked == fineResolutionToggle)
     {
         //[UserButtonCode_fineResolutionToggle] -- add your button handler code here..
-        
+
         tempoSlider->setRange(1, 1000, 0.01);
-        
+
         coarseResolutionToggle->setToggleState(false, dontSendNotification);
         standardResolutionToggle->setToggleState(false, dontSendNotification);
         fineResolutionToggle->setToggleState(true, dontSendNotification);
-        
+
         //[/UserButtonCode_fineResolutionToggle]
     }
 
@@ -1025,18 +1035,18 @@ BEGIN_JUCER_METADATA
 <JUCER_COMPONENT documentType="Component" className="MainComponent" componentName=""
                  parentClasses="public Component" constructorParams="" variableInitialisers=""
                  snapPixels="8" snapActive="1" snapShown="1" overlayOpacity="0.330"
-                 fixedSize="1" initialWidth="500" initialHeight="495">
+                 fixedSize="1" initialWidth="500" initialHeight="505">
   <BACKGROUND backgroundColour="ff353535"/>
   <TEXTBUTTON name="doubleTempoButton" id="74a1161b6a8bd75d" memberName="doubleTempoButton"
-              virtualName="" explicitFocusOrder="0" pos="125 100 125 30" bgColOff="ffadaaaa"
+              virtualName="" explicitFocusOrder="0" pos="125 110 125 30" bgColOff="ffadaaaa"
               textCol="ff353535" buttonText="2x" connectedEdges="0" needsCallback="1"
               radioGroupId="0"/>
   <TEXTBUTTON name="halfTempoButton" id="edac6a2aecdd8ef5" memberName="halfTempoButton"
-              virtualName="" explicitFocusOrder="0" pos="0 100 125 30" bgColOff="ffadaaaa"
+              virtualName="" explicitFocusOrder="0" pos="0 110 125 30" bgColOff="ffadaaaa"
               textCol="ff353535" buttonText="1/2x" connectedEdges="0" needsCallback="1"
               radioGroupId="0"/>
   <SLIDER name="tempoSlider" id="1b36c66db8e52ea5" memberName="tempoSlider"
-          virtualName="" explicitFocusOrder="0" pos="0 50 500 30" bkgcol="ff000000"
+          virtualName="" explicitFocusOrder="0" pos="0 60 500 30" bkgcol="ff000000"
           thumbcol="ffffffff" trackcol="ffadaaaa" textboxtext="ffffffff"
           textboxbkgd="ff353535" textboxhighlight="ffadaaaa" textboxoutline="ff353535"
           min="1" max="1000" int="0.10000000000000000555" style="LinearHorizontal"
@@ -1049,228 +1059,228 @@ BEGIN_JUCER_METADATA
          fontname="Arial" fontsize="47.399999999999998579" kerning="0.09500000000000000111"
          bold="0" italic="0" justification="36"/>
   <LABEL name="normalLabel" id="a751a1c9841b9424" memberName="normalLabel"
-         virtualName="" explicitFocusOrder="0" pos="125 130 125 30" textCol="ffadaaaa"
+         virtualName="" explicitFocusOrder="0" pos="125 140 125 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="Normal&#10;" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Arial"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="dottedLabel" id="f84ddade330c771e" memberName="dottedLabel"
-         virtualName="" explicitFocusOrder="0" pos="250 130 125 30" textCol="ffadaaaa"
+         virtualName="" explicitFocusOrder="0" pos="250 140 125 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="Dotted" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Arial"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="tripletLabel" id="24f4755bf6b035f2" memberName="tripletLabel"
-         virtualName="" explicitFocusOrder="0" pos="375 130 125 30" textCol="ffadaaaa"
+         virtualName="" explicitFocusOrder="0" pos="375 140 125 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="Triplet" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Arial"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="wholeLabel" id="84a944615f7ab97c" memberName="wholeLabel"
-         virtualName="" explicitFocusOrder="0" pos="0 160 100 30" textCol="ffadaaaa"
+         virtualName="" explicitFocusOrder="0" pos="0 170 100 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="1:" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Arial"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="halfLabel" id="670aac61ca569af7" memberName="halfLabel"
-         virtualName="" explicitFocusOrder="0" pos="0 200 100 30" textCol="ffadaaaa"
+         virtualName="" explicitFocusOrder="0" pos="0 210 100 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="1/2:" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Arial"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="quarterLabel" id="c5514ec2a3c07661" memberName="quarterLabel"
-         virtualName="" explicitFocusOrder="0" pos="0 240 100 30" textCol="ffadaaaa"
+         virtualName="" explicitFocusOrder="0" pos="0 250 100 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="1/4:" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Arial"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="eighthLabel" id="49b134e52607b4bd" memberName="eighthLabel"
-         virtualName="" explicitFocusOrder="0" pos="0 280 100 30" textCol="ffadaaaa"
+         virtualName="" explicitFocusOrder="0" pos="0 290 100 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="1/8:" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Arial"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="sixteenthLabel" id="15b5cdc975d8b4c1" memberName="sixteenthLabel"
-         virtualName="" explicitFocusOrder="0" pos="0 320 100 30" textCol="ffadaaaa"
+         virtualName="" explicitFocusOrder="0" pos="0 330 100 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="1/16:" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Arial"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="thirtySecondLabel" id="286f381f35aec721" memberName="thirtySecondLabel"
-         virtualName="" explicitFocusOrder="0" pos="0 360 100 30" textCol="ffadaaaa"
+         virtualName="" explicitFocusOrder="0" pos="0 370 100 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="1/32:" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Arial"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="sixtyFourthLabel" id="e0fec546bed640df" memberName="sixtyFourthLabel"
-         virtualName="" explicitFocusOrder="0" pos="0 400 100 30" textCol="ffadaaaa"
+         virtualName="" explicitFocusOrder="0" pos="0 410 100 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="1/64:" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Arial"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="oneHundreAndTwentyEighthLabel" id="fe1fa9046023fc2a" memberName="oneHundreAndTwentyEighthLabel"
-         virtualName="" explicitFocusOrder="0" pos="0 440 100 30" textCol="ffadaaaa"
+         virtualName="" explicitFocusOrder="0" pos="0 450 100 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="1/128:" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Arial"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <TEXTBUTTON name="tapButton" id="3cd8a4f5f3b122f8" memberName="tapButton"
-              virtualName="" explicitFocusOrder="0" pos="250 100 125 30" bgColOff="ffadaaaa"
+              virtualName="" explicitFocusOrder="0" pos="250 110 125 30" bgColOff="ffadaaaa"
               textCol="ff353535" buttonText="Tap Tempo" connectedEdges="0"
               needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="resetButton" id="137cfed0258a7265" memberName="resetButton"
-              virtualName="" explicitFocusOrder="0" pos="375 100 125 30" bgColOff="ffadaaaa"
+              virtualName="" explicitFocusOrder="0" pos="375 110 125 30" bgColOff="ffadaaaa"
               textCol="ff353535" buttonText="Reset Tap Tempo" connectedEdges="0"
               needsCallback="1" radioGroupId="0"/>
   <LABEL name="new label" id="3b0b371f9cfffd20" memberName="wholeNormalLabel"
-         virtualName="" explicitFocusOrder="0" pos="125 160 125 30" edTextCol="ff000000"
+         virtualName="" explicitFocusOrder="0" pos="125 170 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25"
          kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="wholeDottedLabel" id="5aa96ffcf47310ae" memberName="wholeDottedLabel"
-         virtualName="" explicitFocusOrder="0" pos="250 160 125 30" edTextCol="ff000000"
+         virtualName="" explicitFocusOrder="0" pos="250 170 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25"
          kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="wholeTripletLabel" id="acb484e802c4fea9" memberName="wholeTripletLabel"
-         virtualName="" explicitFocusOrder="0" pos="375 160 125 30" edTextCol="ff000000"
+         virtualName="" explicitFocusOrder="0" pos="375 170 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="&#10;" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25"
          kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="halfNormalLabel" id="fb1b90b40fe022a1" memberName="halfNormalLabel"
-         virtualName="" explicitFocusOrder="0" pos="125 200 125 30" edTextCol="ff000000"
+         virtualName="" explicitFocusOrder="0" pos="125 210 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25"
          kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="halfDottedLabel" id="29a3d055318a2256" memberName="halfDottedLabel"
-         virtualName="" explicitFocusOrder="0" pos="250 200 125 28" edTextCol="ff000000"
+         virtualName="" explicitFocusOrder="0" pos="250 210 125 28" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25"
          kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="halfTripletLabel" id="474722dc22cd155b" memberName="halfTripletLabel"
-         virtualName="" explicitFocusOrder="0" pos="375 200 125 30" edTextCol="ff000000"
+         virtualName="" explicitFocusOrder="0" pos="375 210 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25"
          kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="quarterNormalLabel" id="a0b43f6d2cebf017" memberName="quarterNormalLabel"
-         virtualName="" explicitFocusOrder="0" pos="125 240 125 30" edTextCol="ff000000"
+         virtualName="" explicitFocusOrder="0" pos="125 250 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25"
          kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="quarterDottedLabel" id="6e5caff96007dec1" memberName="quarterDottedLabel"
-         virtualName="" explicitFocusOrder="0" pos="250 240 125 30" edTextCol="ff000000"
+         virtualName="" explicitFocusOrder="0" pos="250 250 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25"
          kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="quarterTripletLabel" id="fe2643302e963795" memberName="quarterTripletLabel"
-         virtualName="" explicitFocusOrder="0" pos="375 240 125 30" edTextCol="ff000000"
+         virtualName="" explicitFocusOrder="0" pos="375 250 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25"
          kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="eighthNormalLabel" id="aabf4b6c5866f43a" memberName="eighthNormalLabel"
-         virtualName="" explicitFocusOrder="0" pos="125 280 125 30" edTextCol="ff000000"
+         virtualName="" explicitFocusOrder="0" pos="125 290 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25"
          kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="eighthDottedLabel" id="df0f0f30eec2686f" memberName="eighthDottedLabel"
-         virtualName="" explicitFocusOrder="0" pos="250 280 125 30" edTextCol="ff000000"
+         virtualName="" explicitFocusOrder="0" pos="250 290 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25"
          kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="eighthTripletLabel" id="7b34c480a75f818" memberName="eighthTripletLabel"
-         virtualName="" explicitFocusOrder="0" pos="375 280 125 30" edTextCol="ff000000"
+         virtualName="" explicitFocusOrder="0" pos="375 290 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25"
          kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="sixteenthNormalLabel" id="4b90b919d39c55aa" memberName="sixteenthNormalLabel"
-         virtualName="" explicitFocusOrder="0" pos="125 320 125 30" edTextCol="ff000000"
+         virtualName="" explicitFocusOrder="0" pos="125 330 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25"
          kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="sixteenthDottedLabel" id="b8e062b942bd6161" memberName="sixteenthDottedLabel"
-         virtualName="" explicitFocusOrder="0" pos="250 320 125 30" edTextCol="ff000000"
+         virtualName="" explicitFocusOrder="0" pos="250 330 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25"
          kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="sixteenthTripletLabel" id="bc5910a30828043e" memberName="sixteenthTripletLabel"
-         virtualName="" explicitFocusOrder="0" pos="375 320 125 30" edTextCol="ff000000"
+         virtualName="" explicitFocusOrder="0" pos="375 330 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25"
          kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="thirtySecondNormalLabel" id="bafdfece957a48cd" memberName="thirtySecondNormalLabel"
-         virtualName="" explicitFocusOrder="0" pos="125 360 125 30" edTextCol="ff000000"
+         virtualName="" explicitFocusOrder="0" pos="125 370 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25"
          kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="thirtySecondDottedLabel" id="d6c4232d51ea521d" memberName="thirtySecondDottedLabel"
-         virtualName="" explicitFocusOrder="0" pos="250 360 125 30" edTextCol="ff000000"
+         virtualName="" explicitFocusOrder="0" pos="250 370 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25"
          kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="thirtySecondTripletLabel" id="c94aa63d85789829" memberName="thirtySecondTripletLabel"
-         virtualName="" explicitFocusOrder="0" pos="375 360 125 30" edTextCol="ff000000"
+         virtualName="" explicitFocusOrder="0" pos="375 370 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25"
          kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="sixtyFourthNormalLabel" id="aba83195d8170afc" memberName="sixtyFourthNormalLabel"
-         virtualName="" explicitFocusOrder="0" pos="125 400 125 30" edTextCol="ff000000"
+         virtualName="" explicitFocusOrder="0" pos="125 410 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25"
          kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="sixtyFourthDottedLabel" id="90fef0b42ac08a69" memberName="sixtyFourthDottedLabel"
-         virtualName="" explicitFocusOrder="0" pos="250 400 125 30" edTextCol="ff000000"
+         virtualName="" explicitFocusOrder="0" pos="250 410 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25"
          kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="sixtyFourthTripletLabel" id="432ffa6d219d869e" memberName="sixtyFourthTripletLabel"
-         virtualName="" explicitFocusOrder="0" pos="375 400 125 30" edTextCol="ff000000"
+         virtualName="" explicitFocusOrder="0" pos="375 410 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25"
          kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="oneTwentyEighthNormalLabel" id="a76923820541582b" memberName="oneTwentyEighthNormalLabel"
-         virtualName="" explicitFocusOrder="0" pos="125 440 125 30" edTextCol="ff000000"
+         virtualName="" explicitFocusOrder="0" pos="125 450 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25"
          kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="oneTwentyEighthDottedLabel" id="9379aa3476074fe5" memberName="oneTwentyEighthDottedLabel"
-         virtualName="" explicitFocusOrder="0" pos="250 440 125 30" edTextCol="ff000000"
+         virtualName="" explicitFocusOrder="0" pos="250 450 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25"
          kerning="0" bold="0" italic="0" justification="33"/>
   <LABEL name="oneTwentyEighthTripletLabel" id="c3b2f04614c1679d" memberName="oneTwentyEighthTripletLabel"
-         virtualName="" explicitFocusOrder="0" pos="375 440 125 30" edTextCol="ff000000"
+         virtualName="" explicitFocusOrder="0" pos="375 450 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25"
          kerning="0" bold="0" italic="0" justification="33"/>
   <TEXTBUTTON name="emailMeButton" id="b8526a15ddc05fdb" memberName="emailMeButton"
-              virtualName="" explicitFocusOrder="0" pos="200 475 100 20" bgColOff="ffadaaaa"
+              virtualName="" explicitFocusOrder="0" pos="200 485 100 20" bgColOff="ffadaaaa"
               bgColOn="ffadaaaa" textCol="ff000000" buttonText="Email Me" connectedEdges="0"
               needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="donateButton" id="e193a0f2ebba353b" memberName="donateButton"
-              virtualName="" explicitFocusOrder="0" pos="400 475 100 20" bgColOff="ffadaaaa"
+              virtualName="" explicitFocusOrder="0" pos="400 485 100 20" bgColOff="ffadaaaa"
               bgColOn="ffadaaaa" textCol="ff000000" buttonText="Donate" connectedEdges="0"
               needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="facebookButton" id="1952a3bc23aa2487" memberName="facebookButton"
-              virtualName="" explicitFocusOrder="0" pos="100 475 100 20" bgColOff="ffadaaaa"
+              virtualName="" explicitFocusOrder="0" pos="100 485 100 20" bgColOff="ffadaaaa"
               bgColOn="ffadaaaa" textCol="ff000000" buttonText="Facebook" connectedEdges="0"
               needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="theCodeButton" id="63c3f048d7a8aeb1" memberName="theCodeButton"
-              virtualName="" explicitFocusOrder="0" pos="300 475 100 20" bgColOff="ffadaaaa"
+              virtualName="" explicitFocusOrder="0" pos="300 485 100 20" bgColOff="ffadaaaa"
               bgColOn="ffadaaaa" textCol="ff000000" buttonText="The Code" connectedEdges="0"
               needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="informationButton" id="ab632d30dfc057bb" memberName="informationButton"
-              virtualName="" explicitFocusOrder="0" pos="0 475 100 20" bgColOff="ffadaaaa"
+              virtualName="" explicitFocusOrder="0" pos="0 485 100 20" bgColOff="ffadaaaa"
               bgColOn="ffadaaaa" textCol="ff000000" buttonText="Information"
               connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TOGGLEBUTTON name="hzToggle" id="3e5aa37d8e5a6de5" memberName="hzToggle" virtualName=""
-                explicitFocusOrder="0" pos="63 135 62 20" buttonText="Hz" connectedEdges="0"
+                explicitFocusOrder="0" pos="63 145 62 20" buttonText="Hz" connectedEdges="0"
                 needsCallback="1" radioGroupId="0" state="0"/>
   <TOGGLEBUTTON name="msToggle" id="8f5b18b58f39a727" memberName="msToggle" virtualName=""
-                explicitFocusOrder="0" pos="0 135 62 20" buttonText="ms" connectedEdges="0"
+                explicitFocusOrder="0" pos="0 145 62 20" buttonText="ms" connectedEdges="0"
                 needsCallback="1" radioGroupId="0" state="0"/>
   <LABEL name="resolutionLabel" id="ea19d2a44c15cdae" memberName="resolutionLabel"
-         virtualName="" explicitFocusOrder="0" pos="0 80 125 20" textCol="ffadaaaa"
+         virtualName="" explicitFocusOrder="0" pos="0 90 125 20" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="&#10;Resolution:"
          editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
          fontname="Arial" fontsize="15" kerning="0" bold="0" italic="0"
          justification="36"/>
   <TOGGLEBUTTON name="coarseResolutionToggle" id="ba1bd947fd8c2a56" memberName="coarseResolutionToggle"
-                virtualName="" explicitFocusOrder="0" pos="125 80 125 20" buttonText="Coarse"
+                virtualName="" explicitFocusOrder="0" pos="125 90 125 20" buttonText="Coarse"
                 connectedEdges="0" needsCallback="1" radioGroupId="0" state="0"/>
   <TOGGLEBUTTON name="standardResolutionToggle" id="97f508dd5ada8935" memberName="standardResolutionToggle"
-                virtualName="" explicitFocusOrder="0" pos="250 80 125 20" buttonText="Standard"
+                virtualName="" explicitFocusOrder="0" pos="250 90 125 20" buttonText="Standard"
                 connectedEdges="0" needsCallback="1" radioGroupId="0" state="0"/>
   <TOGGLEBUTTON name="fineResolutionToggle" id="95774ae90e8bc93e" memberName="fineResolutionToggle"
-                virtualName="" explicitFocusOrder="0" pos="375 80 125 20" buttonText="Fine"
+                virtualName="" explicitFocusOrder="0" pos="375 90 125 20" buttonText="Fine"
                 connectedEdges="0" needsCallback="1" radioGroupId="0" state="0"/>
 </JUCER_COMPONENT>
 
