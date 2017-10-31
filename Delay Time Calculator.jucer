@@ -2,9 +2,10 @@
 
 <JUCERPROJECT id="mFsRbO" name="The Lyons' Den Delay Time Calculator" projectType="guiapp"
               version="1.6.0" bundleIdentifier="com.TheLyonsDen.DelayTimeCalculator"
-              includeBinaryInAppConfig="1" jucerVersion="5.1.2" companyName="The Lyons' Den"
+              includeBinaryInAppConfig="1" jucerVersion="5.2.0" companyName="The Lyons' Den"
               companyEmail="josephtlyons@gmail.com" displaySplashScreen="0"
-              reportAppUsage="0" splashScreenColour="Dark" cppLanguageStandard="11">
+              reportAppUsage="0" splashScreenColour="Dark" cppLanguageStandard="11"
+              companyCopyright="The Lyons' Den">
   <MAINGROUP id="wVdkZw" name="The Lyons' Den Delay Time Calculator">
     <GROUP id="{35A3474B-79D8-920E-E136-88F8E58081F5}" name="Source">
       <GROUP id="{5249329C-49CC-44BF-F4E5-1D704800FEA9}" name="Font">
@@ -46,9 +47,9 @@
     <XCODE_MAC targetFolder="Builds/MacOSX" bigIcon="dc3z5K" smallIcon="dc3z5K">
       <CONFIGURATIONS>
         <CONFIGURATION name="Debug" isDebug="1" optimisation="1" targetName="Delay Time Calculator"
-                       osxCompatibility="10.6 SDK"/>
+                       osxCompatibility="10.6 SDK" enablePluginBinaryCopyStep="1"/>
         <CONFIGURATION name="Release" isDebug="0" optimisation="3" targetName="Delay Time Calculator"
-                       osxCompatibility="10.6 SDK"/>
+                       osxCompatibility="10.6 SDK" enablePluginBinaryCopyStep="1"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
         <MODULEPATH id="juce_core" path="../../../Libraries/JUCE/modules"/>
@@ -62,9 +63,12 @@
     <VS2017 targetFolder="Builds/VisualStudio2017" smallIcon="dc3z5K" bigIcon="dc3z5K">
       <CONFIGURATIONS>
         <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="x64"
-                       isDebug="1" optimisation="1" targetName="The Lyons' Den Delay Time Calculator"/>
+                       isDebug="1" optimisation="1" targetName="The Lyons' Den Delay Time Calculator"
+                       debugInformationFormat="ProgramDatabase" enablePluginBinaryCopyStep="0"/>
         <CONFIGURATION name="Release" winWarningLevel="4" generateManifest="1" winArchitecture="x64"
-                       isDebug="0" optimisation="3" targetName="The Lyons' Den Delay Time Calculator"/>
+                       isDebug="0" optimisation="3" targetName="The Lyons' Den Delay Time Calculator"
+                       debugInformationFormat="ProgramDatabase" enablePluginBinaryCopyStep="0"
+                       linkTimeOptimisation="1"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
         <MODULEPATH id="juce_gui_extra" path="..\..\juce-huckleberry-windows\JUCE\modules"/>
