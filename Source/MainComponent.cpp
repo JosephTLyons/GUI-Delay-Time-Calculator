@@ -910,33 +910,25 @@ bool MainComponent::keyPressed(const juce::KeyPress &key)
     // Tempo + 1
     if(key == KeyPress::upKey)
     {
-        double roundedUp = tempoSlider->getValue();
-
-        tempoSlider->setValue(++roundedUp);
+        tempoSlider->setValue(tempoSlider->getValue() + 1);
     }
 
     // Tempo - 1
     if(key == KeyPress::downKey)
     {
-        double roundedDown = tempoSlider->getValue();
-
-        tempoSlider->setValue(--roundedDown);
+        tempoSlider->setValue(tempoSlider->getValue() - 1);
     }
 
     // Tempo + 5
     if(key == KeyPress::rightKey)
     {
-        double roundedDown = tempoSlider->getValue() + 5;
-
-        tempoSlider->setValue(roundedDown);
+        tempoSlider->setValue(tempoSlider->getValue() + 5);
     }
 
     // Tempo - 5
     if(key == KeyPress::leftKey)
     {
-        double roundedUp = tempoSlider->getValue() - 5;
-
-        tempoSlider->setValue(roundedUp);
+        tempoSlider->setValue(tempoSlider->getValue() - 5);
     }
 
     return true;
