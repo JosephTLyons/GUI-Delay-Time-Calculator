@@ -12,8 +12,8 @@
 
 EmbeddedFonts::EmbeddedFonts()
 {
-    calistoMT = Font(Typeface::createSystemTypefaceFor(BinaryData::CalistoMT_ttf,
-                                                       BinaryData::CalistoMT_ttfSize));
+    //calistoMT = Font(Typeface::createSystemTypefaceFor(BinaryData::CalistoMT_ttf,
+    //                                                   BinaryData::CalistoMT_ttfSize));
 }
 
 Font& EmbeddedFonts::getCalistoMT()
