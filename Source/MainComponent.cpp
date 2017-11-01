@@ -543,12 +543,10 @@ void MainComponent::paint (Graphics& g)
 
     //[UserPaint] Add your own custom painting code here..
 
+    // Add dividing line below product name
     g.setColour(Colours::white);
     g.setOpacity(0.25);
-
-    int y = 56;
-    int distanceFromEdge = 17;
-    int thickness = 1;
+    int y = 56, distanceFromEdge = 17, thickness = 1;
     g.drawLine(distanceFromEdge, y, getWidth() - distanceFromEdge, y, thickness);
 
     //[/UserPaint]
