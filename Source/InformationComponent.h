@@ -62,7 +62,6 @@ private:
     ScopedPointer<Label> versionNumberLabelOutput;
     ScopedPointer<TextEditor> informationTextEditor;
 
-
     //==============================================================================
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (InformationComponent)
 };

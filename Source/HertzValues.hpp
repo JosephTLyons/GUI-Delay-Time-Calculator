@@ -13,7 +13,6 @@
 
 class HertzValues : public MillisecondsHertzValueBase
 {
-
 public:
     void calculateHertzValues(const double &input);
 };
