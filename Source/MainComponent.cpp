@@ -809,8 +809,6 @@ void MainComponent::sliderValueChanged (Slider* sliderThatWasMoved)
     //[/UsersliderValueChanged_Post]
 }
 
-
-
 //[MiscUserCode] You can add your own definitions of your custom methods or any other code here...
 
 void MainComponent::setupLabelCustomFont()
