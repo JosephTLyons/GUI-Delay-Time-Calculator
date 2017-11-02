@@ -77,7 +77,6 @@ private:
     SafePointer<BasicWindow> basicWindow;
     EmbeddedFonts customFont;
 
-
     //[/UserVariables]
 
     //==============================================================================
