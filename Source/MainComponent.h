@@ -52,8 +52,8 @@ public:
 
     bool keyPressed(const juce::KeyPress &key) override;
     void roundTempo();
-    void resolutionSetting(const bool &coarseSelected, const bool &standardSelected,
-                           const bool &fineSelected, const double &increment);
+    void resolutionSetting(const bool &isCoarseSelected, const bool &isStandardSelected,
+                           const bool &isFineSelected, const double &increment);
     void populateFieldsWithMillisecondValues();
     void populateFieldsWithHertzValues();
     void setupLabelCustomFont();

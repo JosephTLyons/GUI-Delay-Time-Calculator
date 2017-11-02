@@ -918,14 +918,14 @@ void MainComponent::roundTempo()
     }
 }
 
-void MainComponent::resolutionSetting(const bool &coarseSelected, const bool &standardSelected,
-                                      const bool &fineSelected, const double &increment)
+void MainComponent::resolutionSetting(const bool &isCoarseSelected, const bool &isStandardSelected,
+                                      const bool &isFineSelected, const double &increment)
 {
     tempoSlider->setRange(1, 1000, increment);
     
-    coarseResolutionToggle->setToggleState(coarseSelected, dontSendNotification);
-    standardResolutionToggle->setToggleState(standardSelected, dontSendNotification);
-    fineResolutionToggle->setToggleState(fineSelected, dontSendNotification);
+    coarseResolutionToggle->setToggleState(isCoarseSelected, dontSendNotification);
+    standardResolutionToggle->setToggleState(isStandardSelected, dontSendNotification);
+    fineResolutionToggle->setToggleState(isFineSelected, dontSendNotification);
 }
 
 void MainComponent::populateFieldsWithMillisecondValues()
