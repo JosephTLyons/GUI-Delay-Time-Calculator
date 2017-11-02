@@ -761,11 +761,7 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_coarseResolutionToggle] -- add your button handler code here..
 
-        tempoSlider->setRange(1, 1000, 1);
-
-        coarseResolutionToggle->setToggleState(true, dontSendNotification);
-        standardResolutionToggle->setToggleState(false, dontSendNotification);
-        fineResolutionToggle->setToggleState(false, dontSendNotification);
+        resolutionSetting(true, false, false, 1);
 
         //[/UserButtonCode_coarseResolutionToggle]
     }
@@ -773,11 +769,7 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_standardResolutionToggle] -- add your button handler code here..
 
-        tempoSlider->setRange(1, 1000, 0.1);
-
-        coarseResolutionToggle->setToggleState(false, dontSendNotification);
-        standardResolutionToggle->setToggleState(true, dontSendNotification);
-        fineResolutionToggle->setToggleState(false, dontSendNotification);
+        resolutionSetting(false, true, false, 0.1);
 
         //[/UserButtonCode_standardResolutionToggle]
     }
@@ -785,11 +777,7 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_fineResolutionToggle] -- add your button handler code here..
 
-        tempoSlider->setRange(1, 1000, 0.01);
-
-        coarseResolutionToggle->setToggleState(false, dontSendNotification);
-        standardResolutionToggle->setToggleState(false, dontSendNotification);
-        fineResolutionToggle->setToggleState(true, dontSendNotification);
+        resolutionSetting(false, false, true, 0.01);
 
         //[/UserButtonCode_fineResolutionToggle]
     }
@@ -930,6 +918,16 @@ bool MainComponent::keyPressed(const juce::KeyPress &key)
     }
 
     return true;
+}
+
+void MainComponent::resolutionSetting(const bool &coarseSelected, const bool &standardSelected,
+                                      const bool &fineSelected, const double &increment)
+{
+    tempoSlider->setRange(1, 1000, increment);
+    
+    coarseResolutionToggle->setToggleState(coarseSelected, dontSendNotification);
+    standardResolutionToggle->setToggleState(standardSelected, dontSendNotification);
+    fineResolutionToggle->setToggleState(fineSelected, dontSendNotification);
 }
 
 void MainComponent::populateFieldsWithMillisecondValues()
