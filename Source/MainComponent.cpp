@@ -816,7 +816,7 @@ void MainComponent::setupLabelCustomFont()
     delayTimeCalculatorLabel->setFont(customFont.getCalistoMT());
 }
 
-bool MainComponent::keyPressed(const juce::KeyPress &key)
+bool MainComponent::keyPressed (const juce::KeyPress &key)
 {
     // Tempo 1/2x
     if(key == '1')
@@ -918,8 +918,8 @@ void MainComponent::roundTempo()
     }
 }
 
-void MainComponent::resolutionSetting(const bool &isCoarseSelected, const bool &isStandardSelected,
-                                      const bool &isFineSelected, const double &increment)
+void MainComponent::resolutionSetting (const bool &isCoarseSelected, const bool &isStandardSelected,
+                                       const bool &isFineSelected, const double &increment)
 {
     tempoSlider->setRange(1, 1000, increment);
     
