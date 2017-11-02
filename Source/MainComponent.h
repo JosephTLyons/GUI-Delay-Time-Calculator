@@ -52,7 +52,7 @@ public:
 
     bool keyPressed (const juce::KeyPress &key) override;
     void setupLabelCustomFont();
-    void launchURL (const String &hyperLink);
+    void launchURL (const char *hyperLink);
     void roundTempo();
     void resolutionSetting (const bool &isCoarseSelected, const bool &isStandardSelected,
                             const bool &isFineSelected, const double &increment);

@@ -899,7 +899,7 @@ void MainComponent::setupLabelCustomFont()
     delayTimeCalculatorLabel->setFont (customFont.getCalistoMT());
 }
 
-void MainComponent::launchURL (const String &hyperLink)
+void MainComponent::launchURL (const char *hyperLink)
 {
     URL uRL (hyperLink);
     uRL.launchInDefaultBrowser();
