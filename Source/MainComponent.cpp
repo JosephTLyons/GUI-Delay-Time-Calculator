@@ -672,8 +672,7 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_donateButton] -- add your button handler code here..
 
-        URL payPalURL ("https://www.paypal.me/JosephTimothyLyons/1");
-        payPalURL.launchInDefaultBrowser();
+        launchURL ("https://www.paypal.me/JosephTimothyLyons/1");
 
         //[/UserButtonCode_donateButton]
     }
@@ -681,17 +680,15 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_facebookButton] -- add your button handler code here..
 
-        URL facebookURL ("https://www.facebook.com/TheLyonsDenSoftware/");
-        facebookURL.launchInDefaultBrowser();
+        launchURL ("https://www.facebook.com/TheLyonsDenSoftware/");
 
         //[/UserButtonCode_facebookButton]
     }
     else if (buttonThatWasClicked == theCodeButton)
     {
         //[UserButtonCode_theCodeButton] -- add your button handler code here..
-
-        URL gitHubRepoURL ("https://github.com/JosephTLyons/GUI-Delay-Time-Calculator");
-        gitHubRepoURL.launchInDefaultBrowser();
+        
+        launchURL ("https://github.com/JosephTLyons/GUI-Delay-Time-Calculator");
 
         //[/UserButtonCode_theCodeButton]
     }
@@ -900,6 +897,12 @@ bool MainComponent::keyPressed (const juce::KeyPress &key)
 void MainComponent::setupLabelCustomFont()
 {
     delayTimeCalculatorLabel->setFont (customFont.getCalistoMT());
+}
+
+void MainComponent::launchURL (const String &hyperLink)
+{
+    URL uRL (hyperLink);
+    uRL.launchInDefaultBrowser();
 }
 
 void MainComponent::roundTempo()
