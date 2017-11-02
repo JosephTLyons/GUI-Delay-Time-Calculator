@@ -811,11 +811,6 @@ void MainComponent::sliderValueChanged (Slider* sliderThatWasMoved)
 
 //[MiscUserCode] You can add your own definitions of your custom methods or any other code here...
 
-void MainComponent::setupLabelCustomFont()
-{
-    delayTimeCalculatorLabel->setFont (customFont.getCalistoMT());
-}
-
 bool MainComponent::keyPressed (const juce::KeyPress &key)
 {
     // Tempo 1/2x
@@ -823,83 +818,88 @@ bool MainComponent::keyPressed (const juce::KeyPress &key)
     {
         halfTempoButton->triggerClick();
     }
-
+    
     // Tempo 2x
     if (key == '2')
     {
         doubleTempoButton->triggerClick();
     }
-
+    
     // Trigger Tap Tempo
     if (key == 'T')
     {
         tapButton->triggerClick();
     }
-
+    
     // Trigger Tap Tempo Reset
     if (key == 'R')
     {
         resetButton->triggerClick();
     }
-
+    
     // Enable ms option
     if (key == 'M')
     {
         msToggle->triggerClick();
     }
-
+    
     // Enable hz option
     if (key == 'H')
     {
         hzToggle->triggerClick();
     }
-
+    
     if (key == 'C')
     {
         coarseResolutionToggle->triggerClick();
     }
-
+    
     if (key == 'S')
     {
         standardResolutionToggle->triggerClick();
     }
-
+    
     if (key == 'F')
     {
         fineResolutionToggle->triggerClick();
     }
-
+    
     // Round Tempo
     if (key == KeyPress::spaceKey)
     {
         roundTempo();
     }
-
+    
     // Tempo + 1
     if (key == KeyPress::upKey)
     {
         tempoSlider->setValue (tempoSlider->getValue() + 1);
     }
-
+    
     // Tempo - 1
     if (key == KeyPress::downKey)
     {
         tempoSlider->setValue (tempoSlider->getValue() - 1);
     }
-
+    
     // Tempo + 5
     if (key == KeyPress::rightKey)
     {
         tempoSlider->setValue (tempoSlider->getValue() + 5);
     }
-
+    
     // Tempo - 5
     if (key == KeyPress::leftKey)
     {
         tempoSlider->setValue (tempoSlider->getValue() - 5);
     }
-
+    
     return true;
+}
+
+void MainComponent::setupLabelCustomFont()
+{
+    delayTimeCalculatorLabel->setFont (customFont.getCalistoMT());
 }
 
 void MainComponent::roundTempo()

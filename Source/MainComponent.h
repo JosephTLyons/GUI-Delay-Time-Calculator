@@ -51,12 +51,12 @@ public:
     //[UserMethods]     -- You can add your own custom methods in this section.
 
     bool keyPressed (const juce::KeyPress &key) override;
+    void setupLabelCustomFont();
     void roundTempo();
     void resolutionSetting (const bool &isCoarseSelected, const bool &isStandardSelected,
                             const bool &isFineSelected, const double &increment);
     void populateFieldsWithMillisecondValues();
     void populateFieldsWithHertzValues();
-    void setupLabelCustomFont();
 
     //[/UserMethods]
 
