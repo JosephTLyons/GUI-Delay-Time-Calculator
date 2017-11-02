@@ -872,18 +872,7 @@ bool MainComponent::keyPressed(const juce::KeyPress &key)
     // Round Tempo
     if(key == KeyPress::spaceKey)
     {
-        int truncatedValue    = (int) tempoSlider->getValue();
-        double roundingFactor = tempoSlider->getValue() - truncatedValue;
-
-        if(roundingFactor >= 0.5)
-        {
-            tempoSlider->setValue(truncatedValue + 1);
-        }
-
-        else
-        {
-            tempoSlider->setValue(truncatedValue);
-        }
+        roundTempo();
     }
 
     // Tempo + 1
@@ -911,6 +900,22 @@ bool MainComponent::keyPressed(const juce::KeyPress &key)
     }
 
     return true;
+}
+
+void MainComponent::roundTempo()
+{
+    int truncatedValue    = (int) tempoSlider->getValue();
+    double roundingFactor = tempoSlider->getValue() - truncatedValue;
+    
+    if(roundingFactor >= 0.5)
+    {
+        tempoSlider->setValue(truncatedValue + 1);
+    }
+    
+    else
+    {
+        tempoSlider->setValue(truncatedValue);
+    }
 }
 
 void MainComponent::resolutionSetting(const bool &coarseSelected, const bool &standardSelected,
