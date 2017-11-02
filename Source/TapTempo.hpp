@@ -29,7 +29,7 @@ private:
     
     // Private Member Functions
     void calculateTimeElapsed();
-    void getTimeElapsedInMinutes(const Time &juceTimeObject);
+    void getTimeElapsedInMinutes (const Time &juceTimeObject);
     
 public:
     TapTempo();

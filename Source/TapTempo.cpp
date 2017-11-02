@@ -31,11 +31,11 @@ void TapTempo::resetMainCalculationHolders()
 
 double TapTempo::calculateTempo()
 {
-    Time juceTimeObject(Time::getCurrentTime());
+    Time juceTimeObject (Time::getCurrentTime());
     
     // Set start time, this should happen only once (on first tap)
     // and maintain this value the entire time so that the total average can be calculated
-    if(tapCount == 0)
+    if (tapCount == 0)
     {
         // Set minutes to one, otherwise, first tap will result in a division with
         // 0 in the denominator, which will output "nan" on the first tap
@@ -53,9 +53,9 @@ double TapTempo::calculateTempo()
     
     // Only calculate minutes after the first hit because minutes are automatically set to one
     // the very first hit to avoid division by 0.
-    if(tapCount > 1)
+    if (tapCount > 1)
     {
-        getTimeElapsedInMinutes(juceTimeObject);
+        getTimeElapsedInMinutes (juceTimeObject);
     }
     
     // Calculate tempo by subtracting 1 from tap count count because intervals are always 1
@@ -70,7 +70,7 @@ void TapTempo::calculateTimeElapsed()
     timeElapsedInMilliseconds = endingTimeInMilliseconds - startingTimeInMilliseconds;
 }
 
-void TapTempo::getTimeElapsedInMinutes(const Time &juceTimeObject)
+void TapTempo::getTimeElapsedInMinutes (const Time &juceTimeObject)
 {
     // convert elapsed time to seconds
     seconds = timeElapsedInMilliseconds / (double) millisecondsInASecond;
