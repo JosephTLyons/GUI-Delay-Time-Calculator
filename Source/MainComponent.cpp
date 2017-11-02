@@ -536,7 +536,6 @@ MainComponent::~MainComponent()
 void MainComponent::paint (Graphics& g)
 {
     //[UserPrePaint] Add your own custom painting code here..
-
     //[/UserPrePaint]
 
     g.fillAll (Colour (0xff353535));
@@ -706,9 +705,8 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
         // Don't allow multiple copies of this window to be made
         if(basicWindow == NULL)
         {
-            basicWindow = new BasicWindow("Information",
-										  Colours::grey,
-										  DocumentWindow::closeButton |
+            basicWindow = new BasicWindow("Information", Colours::grey,
+                                          DocumentWindow::closeButton |
 										  DocumentWindow::minimiseButton);
 
             basicWindow->setUsingNativeTitleBar(true);
