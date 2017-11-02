@@ -454,9 +454,6 @@ MainComponent::MainComponent ()
     // Right click for velocity sensitive sliding
     tempoSlider->setPopupMenuEnabled(true);
 
-    // Set down state color of resolution toggle buttons
-    //coarseResolutionButton->setColour(But, <#juce::Colour newColour#>)
-
     // Set resolution to standard initially
     standardResolutionToggle->triggerClick();
 
