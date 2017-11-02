@@ -14,7 +14,7 @@
 class MillisecondValues : public MillisecondsHertzValueBase
 {
 public:
-    void calculateMillisecondValues(const double &input);
+    void calculateMillisecondValues (const double &input);
 };
 
 #endif /* MillisecondValues_hpp */
