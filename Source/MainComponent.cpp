@@ -447,12 +447,12 @@ MainComponent::MainComponent ()
     //[Constructor] You can add your own custom stuff here..
 
     // Set millisecond mode to default
-    msToggle->setToggleState(true, dontSendNotification);
+    msToggle->setToggleState (true, dontSendNotification);
 
-    tempoSlider->setValue(120);
+    tempoSlider->setValue (120);
 
     // Right click for velocity sensitive sliding
-    tempoSlider->setPopupMenuEnabled(true);
+    tempoSlider->setPopupMenuEnabled (true);
 
     // Set resolution to standard initially
     standardResolutionToggle->triggerClick();
@@ -540,10 +540,10 @@ void MainComponent::paint (Graphics& g)
     //[UserPaint] Add your own custom painting code here..
 
     // Add dividing line below product name
-    g.setColour(Colours::white);
-    g.setOpacity(0.25);
+    g.setColour (Colours::white);
+    g.setOpacity (0.25);
     int y = 56, distanceFromEdge = 17, thickness = 1;
-    g.drawLine(distanceFromEdge, y, getWidth() - distanceFromEdge, y, thickness);
+    g.drawLine (distanceFromEdge, y, getWidth() - distanceFromEdge, y, thickness);
 
     //[/UserPaint]
 }
@@ -618,7 +618,7 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_doubleTempoButton] -- add your button handler code here..
 
-        tempoSlider->setValue(tempoSlider->getValue() * 2);
+        tempoSlider->setValue (tempoSlider->getValue() * 2);
 
         //[/UserButtonCode_doubleTempoButton]
     }
@@ -626,7 +626,7 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_halfTempoButton] -- add your button handler code here..
 
-        tempoSlider->setValue(tempoSlider->getValue() / 2);
+        tempoSlider->setValue (tempoSlider->getValue() / 2);
 
         //[/UserButtonCode_halfTempoButton]
     }
@@ -634,13 +634,13 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_tapButton] -- add your button handler code here..
 
-        tempoSlider->setValue(tapTempoObject.calculateTempo());
+        tempoSlider->setValue (tapTempoObject.calculateTempo());
 
         // Change button color so we know a reset is needed
-        resetButton->setColour(TextButton::buttonColourId , Colours::white);
+        resetButton->setColour (TextButton::buttonColourId , Colours::white);
 
         // Add tap count to Tap Tempo button
-        tapButton->setButtonText("Tap Tempo (" + (String) tapTempoObject.getTapCount() + ")");
+        tapButton->setButtonText ("Tap Tempo (" + (String) tapTempoObject.getTapCount() + ")");
 
         //[/UserButtonCode_tapButton]
     }
@@ -651,11 +651,11 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
         tapTempoObject.resetMainCalculationHolders();
 
         // Reset the color of resetButton by simply setting it to the color of tapButton
-        resetButton->setColour(TextButton::buttonColourId,
-                               tapButton->findColour(TextButton::buttonColourId));
+        resetButton->setColour (TextButton::buttonColourId,
+                                tapButton->findColour(TextButton::buttonColourId));
 
         // Change Tap Tempo button text back to normal, excluding tap count
-        tapButton->setButtonText("Tap Tempo");
+        tapButton->setButtonText ("Tap Tempo");
 
         //[/UserButtonCode_resetButton]
     }
@@ -663,7 +663,7 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_emailMeButton] -- add your button handler code here..
 
-        URL emailURL("JosephTLyons@gmail.com");
+        URL emailURL ("JosephTLyons@gmail.com");
         emailURL.launchInDefaultBrowser();
 
         //[/UserButtonCode_emailMeButton]
@@ -672,7 +672,7 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_donateButton] -- add your button handler code here..
 
-        URL payPalURL("https://www.paypal.me/JosephTimothyLyons/1");
+        URL payPalURL ("https://www.paypal.me/JosephTimothyLyons/1");
         payPalURL.launchInDefaultBrowser();
 
         //[/UserButtonCode_donateButton]
@@ -681,7 +681,7 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_facebookButton] -- add your button handler code here..
 
-        URL facebookURL("https://www.facebook.com/TheLyonsDenSoftware/");
+        URL facebookURL ("https://www.facebook.com/TheLyonsDenSoftware/");
         facebookURL.launchInDefaultBrowser();
 
         //[/UserButtonCode_facebookButton]
@@ -690,7 +690,7 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_theCodeButton] -- add your button handler code here..
 
-        URL gitHubRepoURL("https://github.com/JosephTLyons/GUI-Delay-Time-Calculator");
+        URL gitHubRepoURL ("https://github.com/JosephTLyons/GUI-Delay-Time-Calculator");
         gitHubRepoURL.launchInDefaultBrowser();
 
         //[/UserButtonCode_theCodeButton]
@@ -700,17 +700,17 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
         //[UserButtonCode_informationButton] -- add your button handler code here..
 
         // Don't allow multiple copies of this window to be made
-        if(basicWindow == NULL)
+        if (basicWindow == NULL)
         {
-            basicWindow = new BasicWindow("Information", Colours::grey,
-                                          DocumentWindow::closeButton |
-										  DocumentWindow::minimiseButton);
+            basicWindow = new BasicWindow ("Information", Colours::grey,
+                                           DocumentWindow::closeButton |
+										   DocumentWindow::minimiseButton);
 
-            basicWindow->setUsingNativeTitleBar(true);
-            basicWindow->setContentOwned(new InformationComponent(), true);
+            basicWindow->setUsingNativeTitleBar (true);
+            basicWindow->setContentOwned (new InformationComponent(), true);
 
-            basicWindow->centreWithSize(basicWindow->getWidth(), basicWindow->getHeight());
-            basicWindow->setVisible(true);
+            basicWindow->centreWithSize (basicWindow->getWidth(), basicWindow->getHeight());
+            basicWindow->setVisible (true);
         }
 
         else
@@ -725,13 +725,13 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
         //[UserButtonCode_hzToggle] -- add your button handler code here..
 
         // Make sure all values in object are up to date
-        hertzValuesObject.calculateHertzValues(tempoSlider->getValue());
+        hertzValuesObject.calculateHertzValues (tempoSlider->getValue());
 
         // This makes sure that one toggle is always on
-        hzToggle->setToggleState(true, dontSendNotification);
+        hzToggle->setToggleState (true, dontSendNotification);
 
         // Turn off ms mode automatically so that only one mode can be on at a time
-        msToggle->setToggleState(false, dontSendNotification);
+        msToggle->setToggleState (false, dontSendNotification);
         populateFieldsWithHertzValues();
 
         //[/UserButtonCode_hzToggle]
@@ -741,13 +741,13 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
         //[UserButtonCode_msToggle] -- add your button handler code here..
 
         // Make sure all values in object are up to date
-        millisecondValuesObject.calculateMillisecondValues(tempoSlider->getValue());
+        millisecondValuesObject.calculateMillisecondValues (tempoSlider->getValue());
 
         // This makes sure that one toggle is always on
-        msToggle->setToggleState(true, dontSendNotification);
+        msToggle->setToggleState (true, dontSendNotification);
 
         // Turn off freq mode automatically so that only one mode can be on at a time
-        hzToggle->setToggleState(false, dontSendNotification);
+        hzToggle->setToggleState (false, dontSendNotification);
         populateFieldsWithMillisecondValues();
 
         //[/UserButtonCode_msToggle]
@@ -756,7 +756,7 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_coarseResolutionToggle] -- add your button handler code here..
 
-        resolutionSetting(true, false, false, 1);
+        resolutionSetting (true, false, false, 1);
 
         //[/UserButtonCode_coarseResolutionToggle]
     }
@@ -764,7 +764,7 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_standardResolutionToggle] -- add your button handler code here..
 
-        resolutionSetting(false, true, false, 0.1);
+        resolutionSetting (false, true, false, 0.1);
 
         //[/UserButtonCode_standardResolutionToggle]
     }
@@ -772,7 +772,7 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_fineResolutionToggle] -- add your button handler code here..
 
-        resolutionSetting(false, false, true, 0.01);
+        resolutionSetting (false, false, true, 0.01);
 
         //[/UserButtonCode_fineResolutionToggle]
     }
@@ -790,15 +790,15 @@ void MainComponent::sliderValueChanged (Slider* sliderThatWasMoved)
     {
         //[UserSliderCode_tempoSlider] -- add your slider handling code here..
 
-        if(msToggle->getToggleState())
+        if (msToggle->getToggleState())
         {
-            millisecondValuesObject.calculateMillisecondValues(tempoSlider->getValue());
+            millisecondValuesObject.calculateMillisecondValues (tempoSlider->getValue());
             populateFieldsWithMillisecondValues();
         }
 
-        if(hzToggle->getToggleState())
+        if (hzToggle->getToggleState())
         {
-            hertzValuesObject.calculateHertzValues(tempoSlider->getValue());
+            hertzValuesObject.calculateHertzValues (tempoSlider->getValue());
             populateFieldsWithHertzValues();
         }
 
@@ -813,90 +813,90 @@ void MainComponent::sliderValueChanged (Slider* sliderThatWasMoved)
 
 void MainComponent::setupLabelCustomFont()
 {
-    delayTimeCalculatorLabel->setFont(customFont.getCalistoMT());
+    delayTimeCalculatorLabel->setFont (customFont.getCalistoMT());
 }
 
 bool MainComponent::keyPressed (const juce::KeyPress &key)
 {
     // Tempo 1/2x
-    if(key == '1')
+    if (key == '1')
     {
         halfTempoButton->triggerClick();
     }
 
     // Tempo 2x
-    if(key == '2')
+    if (key == '2')
     {
         doubleTempoButton->triggerClick();
     }
 
     // Trigger Tap Tempo
-    if(key == 'T')
+    if (key == 'T')
     {
         tapButton->triggerClick();
     }
 
     // Trigger Tap Tempo Reset
-    if(key == 'R')
+    if (key == 'R')
     {
         resetButton->triggerClick();
     }
 
     // Enable ms option
-    if(key == 'M')
+    if (key == 'M')
     {
         msToggle->triggerClick();
     }
 
     // Enable hz option
-    if(key == 'H')
+    if (key == 'H')
     {
         hzToggle->triggerClick();
     }
 
-    if(key == 'C')
+    if (key == 'C')
     {
         coarseResolutionToggle->triggerClick();
     }
 
-    if(key == 'S')
+    if (key == 'S')
     {
         standardResolutionToggle->triggerClick();
     }
 
-    if(key == 'F')
+    if (key == 'F')
     {
         fineResolutionToggle->triggerClick();
     }
 
     // Round Tempo
-    if(key == KeyPress::spaceKey)
+    if (key == KeyPress::spaceKey)
     {
         roundTempo();
     }
 
     // Tempo + 1
-    if(key == KeyPress::upKey)
+    if (key == KeyPress::upKey)
     {
-        tempoSlider->setValue(tempoSlider->getValue() + 1);
+        tempoSlider->setValue (tempoSlider->getValue() + 1);
     }
 
     // Tempo - 1
-    if(key == KeyPress::downKey)
+    if (key == KeyPress::downKey)
     {
-        tempoSlider->setValue(tempoSlider->getValue() - 1);
+        tempoSlider->setValue (tempoSlider->getValue() - 1);
     }
 
     // Tempo + 5
-    if(key == KeyPress::rightKey)
+    if (key == KeyPress::rightKey)
     {
-        tempoSlider->setValue(tempoSlider->getValue() + 5);
+        tempoSlider->setValue (tempoSlider->getValue() + 5);
     }
 
     // Tempo - 5
-    if(key == KeyPress::leftKey)
+    if (key == KeyPress::leftKey)
     {
-        tempoSlider->setValue(tempoSlider->getValue() - 5);
+        tempoSlider->setValue (tempoSlider->getValue() - 5);
     }
 
     return true;
@@ -907,103 +907,103 @@ void MainComponent::roundTempo()
     int truncatedValue    = (int) tempoSlider->getValue();
     double roundingFactor = tempoSlider->getValue() - truncatedValue;
     
-    if(roundingFactor >= 0.5)
+    if (roundingFactor >= 0.5)
     {
-        tempoSlider->setValue(truncatedValue + 1);
+        tempoSlider->setValue (truncatedValue + 1);
     }
     
     else
     {
-        tempoSlider->setValue(truncatedValue);
+        tempoSlider->setValue (truncatedValue);
     }
 }
 
 void MainComponent::resolutionSetting (const bool &isCoarseSelected, const bool &isStandardSelected,
                                        const bool &isFineSelected, const double &increment)
 {
-    tempoSlider->setRange(1, 1000, increment);
+    tempoSlider->setRange (1, 1000, increment);
     
-    coarseResolutionToggle->setToggleState(isCoarseSelected, dontSendNotification);
-    standardResolutionToggle->setToggleState(isStandardSelected, dontSendNotification);
-    fineResolutionToggle->setToggleState(isFineSelected, dontSendNotification);
+    coarseResolutionToggle->setToggleState (isCoarseSelected, dontSendNotification);
+    standardResolutionToggle->setToggleState (isStandardSelected, dontSendNotification);
+    fineResolutionToggle->setToggleState (isFineSelected, dontSendNotification);
 }
 
 void MainComponent::populateFieldsWithMillisecondValues()
 {
     // Set values for all text labels
-    wholeNormalLabel->setText((String) millisecondValuesObject.getWholeNormal(), dontSendNotification);
-    wholeDottedLabel->setText((String) millisecondValuesObject.getWholeDotted(), dontSendNotification);
-    wholeTripletLabel->setText((String) millisecondValuesObject.getWholeTriplet(), dontSendNotification);
+    wholeNormalLabel->setText ((String) millisecondValuesObject.getWholeNormal(), dontSendNotification);
+    wholeDottedLabel->setText ((String) millisecondValuesObject.getWholeDotted(), dontSendNotification);
+    wholeTripletLabel->setText ((String) millisecondValuesObject.getWholeTriplet(), dontSendNotification);
 
-    halfNormalLabel->setText((String) millisecondValuesObject.getHalfNormal(), dontSendNotification);
-    halfDottedLabel->setText((String) millisecondValuesObject.getHalfDotted(), dontSendNotification);
-    halfTripletLabel->setText((String) millisecondValuesObject.getHalfTriplet(), dontSendNotification);
+    halfNormalLabel->setText ((String) millisecondValuesObject.getHalfNormal(), dontSendNotification);
+    halfDottedLabel->setText ((String) millisecondValuesObject.getHalfDotted(), dontSendNotification);
+    halfTripletLabel->setText ((String) millisecondValuesObject.getHalfTriplet(), dontSendNotification);
 
-    quarterNormalLabel->setText((String) millisecondValuesObject.getQuarterNormal(), dontSendNotification);
-    quarterDottedLabel->setText((String) millisecondValuesObject.getQuarterDotted(), dontSendNotification);
-    quarterTripletLabel->setText((String) millisecondValuesObject.getQuarterTriplet(), dontSendNotification);
+    quarterNormalLabel->setText ((String) millisecondValuesObject.getQuarterNormal(), dontSendNotification);
+    quarterDottedLabel->setText ((String) millisecondValuesObject.getQuarterDotted(), dontSendNotification);
+    quarterTripletLabel->setText ((String) millisecondValuesObject.getQuarterTriplet(), dontSendNotification);
 
-    eighthNormalLabel->setText((String) millisecondValuesObject.getEighthNormal(), dontSendNotification);
-    eighthDottedLabel->setText((String) millisecondValuesObject.getEighthDotted(), dontSendNotification);
-    eighthTripletLabel->setText((String) millisecondValuesObject.getEighthTriplet(), dontSendNotification);
+    eighthNormalLabel->setText ((String) millisecondValuesObject.getEighthNormal(), dontSendNotification);
+    eighthDottedLabel->setText ((String) millisecondValuesObject.getEighthDotted(), dontSendNotification);
+    eighthTripletLabel->setText ((String) millisecondValuesObject.getEighthTriplet(), dontSendNotification);
 
-    sixteenthNormalLabel->setText((String) millisecondValuesObject.getSixteenthNormal(), dontSendNotification);
-    sixteenthDottedLabel->setText((String) millisecondValuesObject.getSixteenthDotted(), dontSendNotification);
-    sixteenthTripletLabel->setText((String) millisecondValuesObject.getSixteenthTriplet(), dontSendNotification);
+    sixteenthNormalLabel->setText ((String) millisecondValuesObject.getSixteenthNormal(), dontSendNotification);
+    sixteenthDottedLabel->setText ((String) millisecondValuesObject.getSixteenthDotted(), dontSendNotification);
+    sixteenthTripletLabel->setText ((String) millisecondValuesObject.getSixteenthTriplet(), dontSendNotification);
 
-    thirtySecondNormalLabel->setText((String) millisecondValuesObject.getThirtySecondNormal(), dontSendNotification);
-    thirtySecondDottedLabel->setText((String) millisecondValuesObject.getThirtySecondDotted(), dontSendNotification);
-    thirtySecondTripletLabel->setText((String) millisecondValuesObject.getThirtySecondTriplet(), dontSendNotification);
+    thirtySecondNormalLabel->setText ((String) millisecondValuesObject.getThirtySecondNormal(), dontSendNotification);
+    thirtySecondDottedLabel->setText ((String) millisecondValuesObject.getThirtySecondDotted(), dontSendNotification);
+    thirtySecondTripletLabel->setText ((String) millisecondValuesObject.getThirtySecondTriplet(), dontSendNotification);
 
-    sixtyFourthNormalLabel->setText((String) millisecondValuesObject.getSixtyFouthNormal(), dontSendNotification);
-    sixtyFourthDottedLabel->setText((String) millisecondValuesObject.getSixtyFouthDotted(), dontSendNotification);
-    sixtyFourthTripletLabel->setText((String) millisecondValuesObject.getSixtyFouthTriplet(), dontSendNotification);
+    sixtyFourthNormalLabel->setText ((String) millisecondValuesObject.getSixtyFouthNormal(), dontSendNotification);
+    sixtyFourthDottedLabel->setText ((String) millisecondValuesObject.getSixtyFouthDotted(), dontSendNotification);
+    sixtyFourthTripletLabel->setText ((String) millisecondValuesObject.getSixtyFouthTriplet(), dontSendNotification);
 
-    oneTwentyEighthNormalLabel->setText((String) millisecondValuesObject.getOneHundredAndTwentyEighthNormal(),
-                                                 dontSendNotification);
-    oneTwentyEighthDottedLabel->setText((String) millisecondValuesObject.getOneHundredAndTwentyEighthDotted(),
-                                                 dontSendNotification);
-    oneTwentyEighthTripletLabel->setText((String) millisecondValuesObject.getOneHundredAndTwentyEighthTriplet(),
+    oneTwentyEighthNormalLabel->setText ((String) millisecondValuesObject.getOneHundredAndTwentyEighthNormal(),
                                                   dontSendNotification);
+    oneTwentyEighthDottedLabel->setText ((String) millisecondValuesObject.getOneHundredAndTwentyEighthDotted(),
+                                                  dontSendNotification);
+    oneTwentyEighthTripletLabel->setText ((String) millisecondValuesObject.getOneHundredAndTwentyEighthTriplet(),
+                                                   dontSendNotification);
 }
 
 void MainComponent::populateFieldsWithHertzValues()
 {
     // Set values for all text labels
-    wholeNormalLabel->setText((String) hertzValuesObject.getWholeNormal(), dontSendNotification);
-    wholeDottedLabel->setText((String) hertzValuesObject.getWholeDotted(), dontSendNotification);
-    wholeTripletLabel->setText((String) hertzValuesObject.getWholeTriplet(), dontSendNotification);
+    wholeNormalLabel->setText ((String) hertzValuesObject.getWholeNormal(), dontSendNotification);
+    wholeDottedLabel->setText ((String) hertzValuesObject.getWholeDotted(), dontSendNotification);
+    wholeTripletLabel->setText ((String) hertzValuesObject.getWholeTriplet(), dontSendNotification);
 
-    halfNormalLabel->setText((String) hertzValuesObject.getHalfNormal(), dontSendNotification);
-    halfDottedLabel->setText((String) hertzValuesObject.getHalfDotted(), dontSendNotification);
-    halfTripletLabel->setText((String) hertzValuesObject.getHalfTriplet(), dontSendNotification);
+    halfNormalLabel->setText ((String) hertzValuesObject.getHalfNormal(), dontSendNotification);
+    halfDottedLabel->setText ((String) hertzValuesObject.getHalfDotted(), dontSendNotification);
+    halfTripletLabel->setText ((String) hertzValuesObject.getHalfTriplet(), dontSendNotification);
 
-    quarterNormalLabel->setText((String) hertzValuesObject.getQuarterNormal(), dontSendNotification);
-    quarterDottedLabel->setText((String) hertzValuesObject.getQuarterDotted(), dontSendNotification);
-    quarterTripletLabel->setText((String) hertzValuesObject.getQuarterTriplet(), dontSendNotification);
+    quarterNormalLabel->setText ((String) hertzValuesObject.getQuarterNormal(), dontSendNotification);
+    quarterDottedLabel->setText ((String) hertzValuesObject.getQuarterDotted(), dontSendNotification);
+    quarterTripletLabel->setText ((String) hertzValuesObject.getQuarterTriplet(), dontSendNotification);
 
-    eighthNormalLabel->setText((String) hertzValuesObject.getEighthNormal(), dontSendNotification);
-    eighthDottedLabel->setText((String) hertzValuesObject.getEighthDotted(), dontSendNotification);
-    eighthTripletLabel->setText((String) hertzValuesObject.getEighthTriplet(), dontSendNotification);
+    eighthNormalLabel->setText ((String) hertzValuesObject.getEighthNormal(), dontSendNotification);
+    eighthDottedLabel->setText ((String) hertzValuesObject.getEighthDotted(), dontSendNotification);
+    eighthTripletLabel->setText ((String) hertzValuesObject.getEighthTriplet(), dontSendNotification);
 
-    sixteenthNormalLabel->setText((String) hertzValuesObject.getSixteenthNormal(), dontSendNotification);
-    sixteenthDottedLabel->setText((String) hertzValuesObject.getSixteenthDotted(), dontSendNotification);
-    sixteenthTripletLabel->setText((String) hertzValuesObject.getSixteenthTriplet(), dontSendNotification);
+    sixteenthNormalLabel->setText ((String) hertzValuesObject.getSixteenthNormal(), dontSendNotification);
+    sixteenthDottedLabel->setText ((String) hertzValuesObject.getSixteenthDotted(), dontSendNotification);
+    sixteenthTripletLabel->setText ((String) hertzValuesObject.getSixteenthTriplet(), dontSendNotification);
 
-    thirtySecondNormalLabel->setText((String) hertzValuesObject.getThirtySecondNormal(), dontSendNotification);
-    thirtySecondDottedLabel->setText((String) hertzValuesObject.getThirtySecondDotted(), dontSendNotification);
-    thirtySecondTripletLabel->setText((String) hertzValuesObject.getThirtySecondTriplet(), dontSendNotification);
+    thirtySecondNormalLabel->setText ((String) hertzValuesObject.getThirtySecondNormal(), dontSendNotification);
+    thirtySecondDottedLabel->setText ((String) hertzValuesObject.getThirtySecondDotted(), dontSendNotification);
+    thirtySecondTripletLabel->setText ((String) hertzValuesObject.getThirtySecondTriplet(), dontSendNotification);
 
-    sixtyFourthNormalLabel->setText((String) hertzValuesObject.getSixtyFouthNormal(), dontSendNotification);
-    sixtyFourthDottedLabel->setText((String) hertzValuesObject.getSixtyFouthDotted(), dontSendNotification);
-    sixtyFourthTripletLabel->setText((String) hertzValuesObject.getSixtyFouthTriplet(), dontSendNotification);
+    sixtyFourthNormalLabel->setText ((String) hertzValuesObject.getSixtyFouthNormal(), dontSendNotification);
+    sixtyFourthDottedLabel->setText ((String) hertzValuesObject.getSixtyFouthDotted(), dontSendNotification);
+    sixtyFourthTripletLabel->setText ((String) hertzValuesObject.getSixtyFouthTriplet(), dontSendNotification);
 
-    oneTwentyEighthNormalLabel->setText((String) hertzValuesObject.getOneHundredAndTwentyEighthNormal(),
-                                                 dontSendNotification);
-    oneTwentyEighthDottedLabel->setText((String) hertzValuesObject.getOneHundredAndTwentyEighthDotted(),
-                                                 dontSendNotification);
-    oneTwentyEighthTripletLabel->setText((String) hertzValuesObject.getOneHundredAndTwentyEighthTriplet(),
+    oneTwentyEighthNormalLabel->setText ((String) hertzValuesObject.getOneHundredAndTwentyEighthNormal(),
                                                   dontSendNotification);
+    oneTwentyEighthDottedLabel->setText ((String) hertzValuesObject.getOneHundredAndTwentyEighthDotted(),
+                                                  dontSendNotification);
+    oneTwentyEighthTripletLabel->setText ((String) hertzValuesObject.getOneHundredAndTwentyEighthTriplet(),
+                                                   dontSendNotification);
 }
 
 //[/MiscUserCode]
