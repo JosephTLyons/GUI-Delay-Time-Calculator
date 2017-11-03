@@ -663,8 +663,7 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_emailMeButton] -- add your button handler code here..
 
-        URL emailURL ("JosephTLyons@gmail.com");
-        emailURL.launchInDefaultBrowser();
+        launchURL ("JosephTLyons@gmail.com");
 
         //[/UserButtonCode_emailMeButton]
     }
