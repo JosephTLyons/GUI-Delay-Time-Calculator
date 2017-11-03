@@ -816,76 +816,76 @@ bool MainComponent::keyPressed (const juce::KeyPress &key)
     }
     
     // Tempo 2x
-    if (key == '2')
+    else if (key == '2')
     {
         doubleTempoButton->triggerClick();
     }
     
     // Trigger Tap Tempo
-    if (key == 'T')
+    else if (key == 'T')
     {
         tapButton->triggerClick();
     }
     
     // Trigger Tap Tempo Reset
-    if (key == 'R')
+    else if (key == 'R')
     {
         resetButton->triggerClick();
     }
     
     // Enable ms option
-    if (key == 'M')
+    else if (key == 'M')
     {
         msToggle->triggerClick();
     }
     
     // Enable hz option
-    if (key == 'H')
+    else if (key == 'H')
     {
         hzToggle->triggerClick();
     }
     
-    if (key == 'C')
+    else if (key == 'C')
     {
         coarseResolutionToggle->triggerClick();
     }
     
-    if (key == 'S')
+    else if (key == 'S')
     {
         standardResolutionToggle->triggerClick();
     }
     
-    if (key == 'F')
+    else if (key == 'F')
     {
         fineResolutionToggle->triggerClick();
     }
     
     // Round Tempo
-    if (key == KeyPress::spaceKey)
+    else if (key == KeyPress::spaceKey)
     {
         roundTempo();
     }
     
     // Tempo + 1
-    if (key == KeyPress::upKey)
+    else if (key == KeyPress::upKey)
     {
         tempoSlider->setValue (tempoSlider->getValue() + 1);
     }
     
     // Tempo - 1
-    if (key == KeyPress::downKey)
+    else if (key == KeyPress::downKey)
     {
         tempoSlider->setValue (tempoSlider->getValue() - 1);
     }
     
     // Tempo + 5
-    if (key == KeyPress::rightKey)
+    else if (key == KeyPress::rightKey)
     {
         tempoSlider->setValue (tempoSlider->getValue() + 5);
     }
     
     // Tempo - 5
-    if (key == KeyPress::leftKey)
+    else if (key == KeyPress::leftKey)
     {
         tempoSlider->setValue (tempoSlider->getValue() - 5);
     }
