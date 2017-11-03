@@ -809,7 +809,22 @@ void MainComponent::sliderValueChanged (Slider* sliderThatWasMoved)
 
 bool MainComponent::keyPressed (const juce::KeyPress &key)
 {
-    if (key == '1')
+    if (key == 'C')
+    {
+        coarseResolutionToggle->triggerClick();
+    }
+    
+    else if (key == 'S')
+    {
+        standardResolutionToggle->triggerClick();
+    }
+    
+    else if (key == 'F')
+    {
+        fineResolutionToggle->triggerClick();
+    }
+    
+    else if (key == '1')
     {
         halfTempoButton->triggerClick();
     }
@@ -839,34 +854,9 @@ bool MainComponent::keyPressed (const juce::KeyPress &key)
         hzToggle->triggerClick();
     }
     
-    else if (key == 'C')
-    {
-        coarseResolutionToggle->triggerClick();
-    }
-    
-    else if (key == 'S')
-    {
-        standardResolutionToggle->triggerClick();
-    }
-    
-    else if (key == 'F')
-    {
-        fineResolutionToggle->triggerClick();
-    }
-    
     else if (key == KeyPress::spaceKey)
     {
         roundTempo();
-    }
-    
-    else if (key == KeyPress::upKey)
-    {
-        tempoSlider->setValue (tempoSlider->getValue() + 1);
-    }
-    
-    else if (key == KeyPress::downKey)
-    {
-        tempoSlider->setValue (tempoSlider->getValue() - 1);
     }
     
     else if (key == KeyPress::rightKey)
@@ -877,6 +867,16 @@ bool MainComponent::keyPressed (const juce::KeyPress &key)
     else if (key == KeyPress::leftKey)
     {
         tempoSlider->setValue (tempoSlider->getValue() - 5);
+    }
+    
+    else if (key == KeyPress::upKey)
+    {
+        tempoSlider->setValue (tempoSlider->getValue() + 1);
+    }
+    
+    else if (key == KeyPress::downKey)
+    {
+        tempoSlider->setValue (tempoSlider->getValue() - 1);
     }
     
     return true;
