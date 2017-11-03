@@ -809,37 +809,31 @@ void MainComponent::sliderValueChanged (Slider* sliderThatWasMoved)
 
 bool MainComponent::keyPressed (const juce::KeyPress &key)
 {
-    // Tempo 1/2x
     if (key == '1')
     {
         halfTempoButton->triggerClick();
     }
     
-    // Tempo 2x
     else if (key == '2')
     {
         doubleTempoButton->triggerClick();
     }
     
-    // Trigger Tap Tempo
     else if (key == 'T')
     {
         tapButton->triggerClick();
     }
     
-    // Trigger Tap Tempo Reset
     else if (key == 'R')
     {
         resetButton->triggerClick();
     }
     
-    // Enable ms option
     else if (key == 'M')
     {
         msToggle->triggerClick();
     }
     
-    // Enable hz option
     else if (key == 'H')
     {
         hzToggle->triggerClick();
@@ -860,31 +854,26 @@ bool MainComponent::keyPressed (const juce::KeyPress &key)
         fineResolutionToggle->triggerClick();
     }
     
-    // Round Tempo
     else if (key == KeyPress::spaceKey)
     {
         roundTempo();
     }
     
-    // Tempo + 1
     else if (key == KeyPress::upKey)
     {
         tempoSlider->setValue (tempoSlider->getValue() + 1);
     }
     
-    // Tempo - 1
     else if (key == KeyPress::downKey)
     {
         tempoSlider->setValue (tempoSlider->getValue() - 1);
     }
     
-    // Tempo + 5
     else if (key == KeyPress::rightKey)
     {
         tempoSlider->setValue (tempoSlider->getValue() + 5);
     }
     
-    // Tempo - 5
     else if (key == KeyPress::leftKey)
     {
         tempoSlider->setValue (tempoSlider->getValue() - 5);
