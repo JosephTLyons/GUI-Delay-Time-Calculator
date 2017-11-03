@@ -49,13 +49,13 @@ double TapTempo::calculateTempo()
     // Set end time
     endingTimeInMilliseconds = juceTimeObject.toMilliseconds();
     
-    calculateTimeElapsed();
+    calculateTimeElapsedInMilliseconds();
     
     // Only calculate minutes after the first hit because minutes are automatically set to one
     // the very first hit to avoid division by 0.
     if (tapCount > 1)
     {
-        getTimeElapsedInMinutes();
+        convertTimeElapsedToMinutes();
     }
     
     // Calculate tempo by subtracting 1 from tap count count because intervals are always 1
@@ -65,12 +65,12 @@ double TapTempo::calculateTempo()
     return tempo;
 }
 
-void TapTempo::calculateTimeElapsed()
+void TapTempo::calculateTimeElapsedInMilliseconds()
 {
     timeElapsedInMilliseconds = endingTimeInMilliseconds - startingTimeInMilliseconds;
 }
 
-void TapTempo::getTimeElapsedInMinutes()
+void TapTempo::convertTimeElapsedToMinutes()
 {
     // convert elapsed time to seconds
     seconds = timeElapsedInMilliseconds / (double) millisecondsInASecond;

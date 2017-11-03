@@ -30,8 +30,8 @@ private:
     Time juceTimeObject;
     
     // Private Member Functions
-    void calculateTimeElapsed();
-    void getTimeElapsedInMinutes();
+    void calculateTimeElapsedInMilliseconds();
+    void convertTimeElapsedToMinutes();
     
 public:
     TapTempo();
