@@ -27,6 +27,8 @@ private:
     int millisecondsInASecond;
     int secondsInAMinute;
     
+    Time juceTimeObject;
+    
     // Private Member Functions
     void calculateTimeElapsed();
     void getTimeElapsedInMinutes (const Time &juceTimeObject);

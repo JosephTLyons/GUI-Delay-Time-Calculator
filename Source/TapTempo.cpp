@@ -31,7 +31,7 @@ void TapTempo::resetMainCalculationHolders()
 
 double TapTempo::calculateTempo()
 {
-    Time juceTimeObject (Time::getCurrentTime());
+    juceTimeObject = Time::getCurrentTime();
     
     // Set start time, this should happen only once (on first tap)
     // and maintain this value the entire time so that the total average can be calculated
