@@ -55,7 +55,7 @@ double TapTempo::calculateTempo()
     // the very first hit to avoid division by 0.
     if (tapCount > 1)
     {
-        getTimeElapsedInMinutes (juceTimeObject);
+        getTimeElapsedInMinutes();
     }
     
     // Calculate tempo by subtracting 1 from tap count count because intervals are always 1
@@ -70,7 +70,7 @@ void TapTempo::calculateTimeElapsed()
     timeElapsedInMilliseconds = endingTimeInMilliseconds - startingTimeInMilliseconds;
 }
 
-void TapTempo::getTimeElapsedInMinutes (const Time &juceTimeObject)
+void TapTempo::getTimeElapsedInMinutes()
 {
     // convert elapsed time to seconds
     seconds = timeElapsedInMilliseconds / (double) millisecondsInASecond;
