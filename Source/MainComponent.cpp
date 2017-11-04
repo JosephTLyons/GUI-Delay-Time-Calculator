@@ -1248,8 +1248,8 @@ BEGIN_JUCER_METADATA
          virtualName="" explicitFocusOrder="0" pos="0 60 125 20" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="&#10;Resolution:"
          editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
-         fontname="Arial" fontsize="15" kerning="0" bold="0" italic="0"
-         justification="36"/>
+         fontname="Arial" fontsize="18.100000000000001421" kerning="0"
+         bold="0" italic="0" justification="36"/>
   <TOGGLEBUTTON name="coarseResolutionToggle" id="ba1bd947fd8c2a56" memberName="coarseResolutionToggle"
                 virtualName="" explicitFocusOrder="0" pos="125 60 125 20" buttonText="Coarse"
                 connectedEdges="0" needsCallback="1" radioGroupId="0" state="0"/>
