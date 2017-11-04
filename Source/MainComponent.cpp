@@ -418,7 +418,7 @@ MainComponent::MainComponent ()
     addAndMakeVisible (resolutionLabel = new Label ("resolutionLabel",
                                                     TRANS("\n"
                                                     "Resolution:")));
-    resolutionLabel->setFont (Font ("Arial", 15.00f, Font::plain).withTypefaceStyle ("Regular"));
+    resolutionLabel->setFont (Font ("Arial", 18.10f, Font::plain).withTypefaceStyle ("Regular"));
     resolutionLabel->setJustificationType (Justification::centred);
     resolutionLabel->setEditable (false, false, false);
     resolutionLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
