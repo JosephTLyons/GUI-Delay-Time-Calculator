@@ -50,7 +50,7 @@ InformationComponent::InformationComponent ()
     versionNumberLabelOutput->setColour (TextEditor::textColourId, Colours::black);
     versionNumberLabelOutput->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (informationTextEditor = new TextEditor ("textEditorString"));
+    addAndMakeVisible (informationTextEditor = new TextEditor ("informationTextEditor"));
     informationTextEditor->setMultiLine (true);
     informationTextEditor->setReturnKeyStartsNewLine (true);
     informationTextEditor->setReadOnly (true);
@@ -170,7 +170,7 @@ BEGIN_JUCER_METADATA
          edTextCol="ff000000" edBkgCol="0" labelText="" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
          fontsize="15" kerning="0" bold="0" italic="0" justification="33"/>
-  <TEXTEDITOR name="textEditorString" id="724fec5cca6df686" memberName="informationTextEditor"
+  <TEXTEDITOR name="informationTextEditor" id="724fec5cca6df686" memberName="informationTextEditor"
               virtualName="" explicitFocusOrder="0" pos="0 50 240 220" bkgcol="ff353535"
               outlinecol="ff353535" initialText="" multiline="1" retKeyStartsLine="1"
               readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
