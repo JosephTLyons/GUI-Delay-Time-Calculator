@@ -69,6 +69,11 @@ InformationComponent::InformationComponent ()
 
 
     //[Constructor] You can add your own custom stuff here..
+    
+    // Set highlight to transparent so that highlighting of text isn't viewable
+    informationTextEditor->setColour(TextEditor::highlightColourId, Colours::transparentWhite);
+    informationTextEditor->setPopupMenuEnabled(false);
+    informationTextEditor->setFont(16.5);
 
     // Add information to text string
     informationTextEditorString += "-'C' for coarse resolution\n";
@@ -88,9 +93,6 @@ InformationComponent::InformationComponent ()
     informationTextEditorString += "-Left Arrow = -5\n";
     informationTextEditorString += "-Up Arrow = +1\n";
     informationTextEditorString += "-Down Arrow = -1";
-
-    // Set font size
-    informationTextEditor->setFont(16.5);
 
     // Add string to textEditor
     informationTextEditor->setText(informationTextEditorString);
