@@ -555,7 +555,7 @@ void MainComponent::resized()
 
     doubleTempoButton->setBounds (125, 110, 125, 30);
     halfTempoButton->setBounds (0, 110, 125, 30);
-    tempoSlider->setBounds (0, 60, 500, 30);
+    tempoSlider->setBounds (0, 80, 500, 30);
     delayTimeCalculatorLabel->setBounds (0, 0, 500, 50);
     normalLabel->setBounds (125, 140, 125, 30);
     dottedLabel->setBounds (250, 140, 125, 30);
@@ -601,10 +601,10 @@ void MainComponent::resized()
     informationButton->setBounds (0, 485, 100, 20);
     hzToggle->setBounds (63, 145, 62, 20);
     msToggle->setBounds (0, 145, 62, 20);
-    resolutionLabel->setBounds (0, 90, 125, 20);
-    coarseResolutionToggle->setBounds (125, 90, 125, 20);
-    standardResolutionToggle->setBounds (250, 90, 125, 20);
-    fineResolutionToggle->setBounds (375, 90, 125, 20);
+    resolutionLabel->setBounds (0, 60, 125, 20);
+    coarseResolutionToggle->setBounds (125, 60, 125, 20);
+    standardResolutionToggle->setBounds (250, 60, 125, 20);
+    fineResolutionToggle->setBounds (375, 60, 125, 20);
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
 }
@@ -1023,7 +1023,7 @@ BEGIN_JUCER_METADATA
               textCol="ff353535" buttonText="1/2x" connectedEdges="0" needsCallback="1"
               radioGroupId="0"/>
   <SLIDER name="tempoSlider" id="1b36c66db8e52ea5" memberName="tempoSlider"
-          virtualName="" explicitFocusOrder="0" pos="0 60 500 30" bkgcol="ff000000"
+          virtualName="" explicitFocusOrder="0" pos="0 80 500 30" bkgcol="ff000000"
           thumbcol="ffffffff" trackcol="ffadaaaa" textboxtext="ffffffff"
           textboxbkgd="ff353535" textboxhighlight="ffadaaaa" textboxoutline="ff353535"
           min="1" max="1000" int="0.10000000000000000555" style="LinearHorizontal"
@@ -1245,19 +1245,19 @@ BEGIN_JUCER_METADATA
                 explicitFocusOrder="0" pos="0 145 62 20" buttonText="ms" connectedEdges="0"
                 needsCallback="1" radioGroupId="0" state="0"/>
   <LABEL name="resolutionLabel" id="ea19d2a44c15cdae" memberName="resolutionLabel"
-         virtualName="" explicitFocusOrder="0" pos="0 90 125 20" textCol="ffadaaaa"
+         virtualName="" explicitFocusOrder="0" pos="0 60 125 20" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="&#10;Resolution:"
          editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
          fontname="Arial" fontsize="15" kerning="0" bold="0" italic="0"
          justification="36"/>
   <TOGGLEBUTTON name="coarseResolutionToggle" id="ba1bd947fd8c2a56" memberName="coarseResolutionToggle"
-                virtualName="" explicitFocusOrder="0" pos="125 90 125 20" buttonText="Coarse"
+                virtualName="" explicitFocusOrder="0" pos="125 60 125 20" buttonText="Coarse"
                 connectedEdges="0" needsCallback="1" radioGroupId="0" state="0"/>
   <TOGGLEBUTTON name="standardResolutionToggle" id="97f508dd5ada8935" memberName="standardResolutionToggle"
-                virtualName="" explicitFocusOrder="0" pos="250 90 125 20" buttonText="Standard"
+                virtualName="" explicitFocusOrder="0" pos="250 60 125 20" buttonText="Standard"
                 connectedEdges="0" needsCallback="1" radioGroupId="0" state="0"/>
   <TOGGLEBUTTON name="fineResolutionToggle" id="95774ae90e8bc93e" memberName="fineResolutionToggle"
-                virtualName="" explicitFocusOrder="0" pos="375 90 125 20" buttonText="Fine"
+                virtualName="" explicitFocusOrder="0" pos="375 60 125 20" buttonText="Fine"
                 connectedEdges="0" needsCallback="1" radioGroupId="0" state="0"/>
 </JUCER_COMPONENT>
 
