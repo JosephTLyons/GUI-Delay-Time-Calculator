@@ -74,15 +74,15 @@ InformationComponent::InformationComponent ()
     informationTextEditorString += "-'C' for coarse resolution\n";
     informationTextEditorString += "-'S' for standard resolution\n";
     informationTextEditorString += "-'F' for fine resolution\n\n";
-    
+
     informationTextEditorString += "-'1' to trigger 1/2x\n";
     informationTextEditorString += "-'2' to trigger 2x\n";
     informationTextEditorString += "-'T' to trigger Tap Tempo\n";
     informationTextEditorString += "-'R' to trigger Reset Tap Tempo\n\n";
-    
+
     informationTextEditorString += "-'M' to enable ms\n";
     informationTextEditorString += "-'H' to enable Hz\n\n";
-    
+
     informationTextEditorString += "-Spacebar to round tempo\n";
     informationTextEditorString += "-Right Arrow = +5\n";
     informationTextEditorString += "-Left Arrow = -5\n";
@@ -140,6 +140,8 @@ void InformationComponent::resized()
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
 }
+
+
 
 //[MiscUserCode] You can add your own definitions of your custom methods or any other code here...
 //[/MiscUserCode]
