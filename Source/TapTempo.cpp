@@ -54,9 +54,7 @@ double TapTempo::calculateTempo()
     // Only calculate minutes after the first hit because minutes are automatically set to one
     // the very first hit to avoid division by 0.
     if (tapCount > 1)
-    {
         convertTimeElapsedToMinutes();
-    }
     
     // Calculate tempo by subtracting 1 from tap count count because intervals are always 1
     // less than the tempo count

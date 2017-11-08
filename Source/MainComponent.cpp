@@ -710,9 +710,7 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
         }
 
         else
-        {
             delete basicWindow;
-        }
 
         //[/UserButtonCode_informationButton]
     }
@@ -810,74 +808,46 @@ void MainComponent::sliderValueChanged (Slider* sliderThatWasMoved)
 bool MainComponent::keyPressed (const juce::KeyPress &key)
 {
     if (key == 'C')
-    {
         coarseResolutionToggle->triggerClick();
-    }
     
     else if (key == 'S')
-    {
         standardResolutionToggle->triggerClick();
-    }
     
     else if (key == 'F')
-    {
         fineResolutionToggle->triggerClick();
-    }
     
     else if (key == '1')
-    {
         halfTempoButton->triggerClick();
-    }
     
     else if (key == '2')
-    {
         doubleTempoButton->triggerClick();
-    }
     
     else if (key == 'T')
-    {
         tapButton->triggerClick();
-    }
     
     else if (key == 'R')
-    {
         resetButton->triggerClick();
-    }
     
     else if (key == 'M')
-    {
         msToggle->triggerClick();
-    }
     
     else if (key == 'H')
-    {
         hzToggle->triggerClick();
-    }
     
     else if (key == KeyPress::spaceKey)
-    {
         roundTempo();
-    }
     
     else if (key == KeyPress::rightKey)
-    {
         tempoSlider->setValue (tempoSlider->getValue() + 5);
-    }
     
     else if (key == KeyPress::leftKey)
-    {
         tempoSlider->setValue (tempoSlider->getValue() - 5);
-    }
     
     else if (key == KeyPress::upKey)
-    {
         tempoSlider->setValue (tempoSlider->getValue() + 1);
-    }
     
     else if (key == KeyPress::downKey)
-    {
         tempoSlider->setValue (tempoSlider->getValue() - 1);
-    }
     
     return true;
 }
@@ -899,14 +869,10 @@ void MainComponent::roundTempo()
     double roundingFactor = tempoSlider->getValue() - truncatedValue;
     
     if (roundingFactor >= 0.5)
-    {
         tempoSlider->setValue (truncatedValue + 1);
-    }
     
     else
-    {
         tempoSlider->setValue (truncatedValue);
-    }
 }
 
 void MainComponent::resolutionSetting (const bool &isCoarseSelected, const bool &isStandardSelected,
