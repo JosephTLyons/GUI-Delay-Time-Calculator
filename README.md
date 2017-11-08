@@ -36,6 +36,7 @@ A simple application that calculates delay and reverb pre-delay times based on t
 3. Added separating line
 4. Small performance tweaks
 5. Small changes to information window
+6. General code clean up
 
 ### July 26, 2017 - V 1.5.0
 1. PC Build
