@@ -423,6 +423,14 @@ MainComponent::MainComponent ()
     fineResolutionToggle->setButtonText (TRANS("Fine"));
     fineResolutionToggle->addListener (this);
 
+    addAndMakeVisible (tempoLabel = new Label ("tempoLabel",
+                                               TRANS("BPM")));
+    tempoLabel->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
+    tempoLabel->setJustificationType (Justification::centredLeft);
+    tempoLabel->setEditable (false, false, false);
+    tempoLabel->setColour (TextEditor::textColourId, Colours::black);
+    tempoLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+
 
     //[UserPreSize]
     //[/UserPreSize]
@@ -500,6 +508,7 @@ MainComponent::~MainComponent()
     msToggle = nullptr;
     coarseResolutionToggle = nullptr;
     fineResolutionToggle = nullptr;
+    tempoLabel = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -583,7 +592,8 @@ void MainComponent::resized()
     hzToggle->setBounds (63, 150, 62, 20);
     msToggle->setBounds (0, 150, 62, 20);
     coarseResolutionToggle->setBounds (0, 60, 125, 20);
-    fineResolutionToggle->setBounds (125, 60, 125, 20);
+    fineResolutionToggle->setBounds (125, 60, 99, 20);
+    tempoLabel->setBounds (272, 58, 39, 24);
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
 }
@@ -1216,8 +1226,13 @@ BEGIN_JUCER_METADATA
                 virtualName="" explicitFocusOrder="0" pos="0 60 125 20" buttonText="Coarse"
                 connectedEdges="0" needsCallback="1" radioGroupId="0" state="0"/>
   <TOGGLEBUTTON name="fineResolutionToggle" id="95774ae90e8bc93e" memberName="fineResolutionToggle"
-                virtualName="" explicitFocusOrder="0" pos="125 60 125 20" buttonText="Fine"
+                virtualName="" explicitFocusOrder="0" pos="125 60 99 20" buttonText="Fine"
                 connectedEdges="0" needsCallback="1" radioGroupId="0" state="0"/>
+  <LABEL name="tempoLabel" id="6bb4ca2a493b0d2e" memberName="tempoLabel"
+         virtualName="" explicitFocusOrder="0" pos="272 58 39 24" edTextCol="ff000000"
+         edBkgCol="0" labelText="BPM" editableSingleClick="0" editableDoubleClick="0"
+         focusDiscardsChanges="0" fontname="Default font" fontsize="15"
+         kerning="0" bold="0" italic="0" justification="33"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA
