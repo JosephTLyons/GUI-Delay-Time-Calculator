@@ -54,7 +54,11 @@ public:
     void setupLabelCustomFont();
     void launchURL (const char *hyperLink);
     void roundTempo();
-    void resolutionSetting (const bool &isCoarseSelected, const bool &isStandardSelected,
+    bool userWantsStandardResolution();
+    void coarseResolutionEngaged();
+    void fineResolutionEngaged();
+    void standardResolutionEngaged();
+    void resolutionSetting (const bool &isCoarseSelected,
                             const bool &isFineSelected, const double &increment);
     void populateFieldsWithMillisecondValues();
     void populateFieldsWithHertzValues();
@@ -65,6 +69,8 @@ public:
     void resized() override;
     void buttonClicked (Button* buttonThatWasClicked) override;
     void sliderValueChanged (Slider* sliderThatWasMoved) override;
+
+
 
 private:
     //[UserVariables]   -- You can add your own custom variables in this section.
@@ -126,9 +132,7 @@ private:
     ScopedPointer<TextButton> informationButton;
     ScopedPointer<ToggleButton> hzToggle;
     ScopedPointer<ToggleButton> msToggle;
-    ScopedPointer<Label> resolutionLabel;
     ScopedPointer<ToggleButton> coarseResolutionToggle;
-    ScopedPointer<ToggleButton> standardResolutionToggle;
     ScopedPointer<ToggleButton> fineResolutionToggle;
 
 
