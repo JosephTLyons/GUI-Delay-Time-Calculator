@@ -419,7 +419,7 @@ MainComponent::MainComponent ()
                                                     TRANS("\n"
                                                     "Resolution:")));
     resolutionLabel->setFont (Font ("Arial", 18.10f, Font::plain).withTypefaceStyle ("Regular"));
-    resolutionLabel->setJustificationType (Justification::centred);
+    resolutionLabel->setJustificationType (Justification::centredLeft);
     resolutionLabel->setEditable (false, false, false);
     resolutionLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
     resolutionLabel->setColour (TextEditor::textColourId, Colours::black);
@@ -1215,7 +1215,7 @@ BEGIN_JUCER_METADATA
          edTextCol="ff000000" edBkgCol="0" labelText="&#10;Resolution:"
          editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
          fontname="Arial" fontsize="18.100000000000001421" kerning="0"
-         bold="0" italic="0" justification="36"/>
+         bold="0" italic="0" justification="33"/>
   <TOGGLEBUTTON name="coarseResolutionToggle" id="ba1bd947fd8c2a56" memberName="coarseResolutionToggle"
                 virtualName="" explicitFocusOrder="0" pos="125 60 125 20" buttonText="Coarse"
                 connectedEdges="0" needsCallback="1" radioGroupId="0" state="0"/>
