@@ -14,6 +14,10 @@
       <GROUP id="{0496FE9B-6CEE-7E75-C0FB-3F0DB683F2AD}" name="Pixelmator">
         <FILE id="dc3z5K" name="AppIcon.png" compile="0" resource="1" file="Pixelmator/AppIcon.png"/>
         <FILE id="U0IXoG" name="AppIcon.pxm" compile="0" resource="1" file="Pixelmator/AppIcon.pxm"/>
+        <FILE id="fsBalj" name="Delay Time Calculator AppIcon 2.png" compile="0"
+              resource="1" file="Pixelmator/Delay Time Calculator AppIcon 2.png"/>
+        <FILE id="GZkc0H" name="Delay Time Calculator AppIcon 2.pxm" compile="0"
+              resource="1" file="Pixelmator/Delay Time Calculator AppIcon 2.pxm"/>
       </GROUP>
       <FILE id="Ltw8fF" name="README.md" compile="0" resource="1" file="README.md"/>
       <FILE id="WYZacz" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
@@ -44,7 +48,7 @@
     </GROUP>
   </MAINGROUP>
   <EXPORTFORMATS>
-    <XCODE_MAC targetFolder="Builds/MacOSX" bigIcon="dc3z5K" smallIcon="dc3z5K">
+    <XCODE_MAC targetFolder="Builds/MacOSX" bigIcon="fsBalj" smallIcon="fsBalj">
       <CONFIGURATIONS>
         <CONFIGURATION name="Debug" isDebug="1" optimisation="1" targetName="Delay Time Calculator"
                        osxCompatibility="10.6 SDK" enablePluginBinaryCopyStep="1"/>
@@ -60,7 +64,8 @@
         <MODULEPATH id="juce_gui_extra" path="../../../Libraries/JUCE/modules"/>
       </MODULEPATHS>
     </XCODE_MAC>
-    <VS2017 targetFolder="Builds/VisualStudio2017" smallIcon="dc3z5K" bigIcon="dc3z5K">
+    <VS2017 targetFolder="Builds/VisualStudio2017" smallIcon="fsBalj" bigIcon="fsBalj"
+            windowsTargetPlatformVersion="10.0.16299.0">
       <CONFIGURATIONS>
         <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="x64"
                        isDebug="1" optimisation="1" targetName="The Lyons' Den Delay Time Calculator"
