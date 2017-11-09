@@ -932,8 +932,6 @@ void MainComponent::engageResolutionSetting (const bool &isCoarseSelected,
     fineResolutionToggle->setToggleState (isFineSelected, dontSendNotification);
 }
 
-#include <iomanip>
-
 void MainComponent::setBpmLabelValue()
 {
     bpmLabel->setText (tempoSlider->getTextFromValue(tempoSlider->getValue()), dontSendNotification);
