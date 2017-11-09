@@ -425,15 +425,15 @@ MainComponent::MainComponent ()
 
     addAndMakeVisible (tempoLabel = new Label ("tempoLabel",
                                                TRANS("BPM")));
-    tempoLabel->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
-    tempoLabel->setJustificationType (Justification::centredLeft);
+    tempoLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
+    tempoLabel->setJustificationType (Justification::centred);
     tempoLabel->setEditable (false, false, false);
     tempoLabel->setColour (TextEditor::textColourId, Colours::black);
     tempoLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
     addAndMakeVisible (bpmLabel = new Label ("bpmLabel",
                                              String()));
-    bpmLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
+    bpmLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
     bpmLabel->setJustificationType (Justification::centred);
     bpmLabel->setEditable (true, true, false);
     bpmLabel->setColour (TextEditor::textColourId, Colours::black);
@@ -457,7 +457,6 @@ MainComponent::MainComponent ()
     // Right click for velocity sensitive sliding
     tempoSlider->setPopupMenuEnabled (true);
 
-    bpmLabel->setFont(30);
     bpmLabel->addListener(this);
 
     //setupLabelCustomFont();
@@ -604,10 +603,10 @@ void MainComponent::resized()
     informationButton->setBounds (0, 490, 100, 20);
     hzToggle->setBounds (63, 150, 62, 20);
     msToggle->setBounds (0, 150, 62, 20);
-    coarseResolutionToggle->setBounds (0, 60, 125, 20);
-    fineResolutionToggle->setBounds (125, 60, 99, 20);
-    tempoLabel->setBounds (384, 56, 39, 24);
-    bpmLabel->setBounds (200, 56, 100, 32);
+    coarseResolutionToggle->setBounds (0, 65, 125, 20);
+    fineResolutionToggle->setBounds (125, 65, 75, 20);
+    tempoLabel->setBounds (295, 60, 64, 30);
+    bpmLabel->setBounds (200, 60, 100, 30);
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
 }
@@ -754,7 +753,7 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
         //[UserButtonCode_coarseResolutionToggle] -- add your button handler code here..
 
         if (coarseResolutionToggle->getToggleState())
-            coarseResolutionEngaged();
+            coarseResolutionChosen();
 
         //[/UserButtonCode_coarseResolutionToggle]
     }
@@ -763,7 +762,7 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
         //[UserButtonCode_fineResolutionToggle] -- add your button handler code here..
 
         if (fineResolutionToggle->getToggleState())
-            fineResolutionEngaged();
+            fineResolutionChosen();
 
         //[/UserButtonCode_fineResolutionToggle]
     }
@@ -771,7 +770,9 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     //[UserbuttonClicked_Post]
 
     if (userWantsStandardResolution())
-        standardResolutionEngaged();
+        standardResolutionChosen();
+
+    setBpmLabelValue();
 
     //[/UserbuttonClicked_Post]
 }
@@ -785,6 +786,8 @@ void MainComponent::sliderValueChanged (Slider* sliderThatWasMoved)
     {
         //[UserSliderCode_tempoSlider] -- add your slider handling code here..
 
+        setBpmLabelValue();
+
         if (msToggle->getToggleState())
         {
             millisecondValuesObject.calculateMillisecondValues (tempoSlider->getValue());
@@ -796,8 +799,6 @@ void MainComponent::sliderValueChanged (Slider* sliderThatWasMoved)
             hertzValuesObject.calculateHertzValues (tempoSlider->getValue());
             populateFieldsWithHertzValues();
         }
-
-        setBpmLabelValue();
 
         //[/UserSliderCode_tempoSlider]
     }
@@ -814,9 +815,9 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     if (labelThatHasChanged == bpmLabel)
     {
         //[UserLabelCode_bpmLabel] -- add your label text handling code here..
-        
-        tempoSlider->setValue(bpmLabel->getTextValue());
-        
+
+        tempoSlider->setValue (bpmLabel->getTextValue().toString().getDoubleValue());
+
         //[/UserLabelCode_bpmLabel]
     }
 
@@ -831,13 +832,13 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
 bool MainComponent::keyPressed (const juce::KeyPress &key)
 {
     if (key == 'C')
-        coarseResolutionEngaged();
+        coarseResolutionChosen();
 
     else if (key == 'S')
-        standardResolutionEngaged();
+        standardResolutionChosen();
 
     else if (key == 'F')
-        fineResolutionEngaged();
+        fineResolutionChosen();
 
     else if (key == '1')
         halfTempoButton->triggerClick();
@@ -907,26 +908,23 @@ bool MainComponent::userWantsStandardResolution()
     return false;
 }
 
-void MainComponent::coarseResolutionEngaged()
+void MainComponent::coarseResolutionChosen()
 {
-    resolutionSetting (true, false, 1);
-    setBpmLabelValue();
+    engageResolutionSetting (true, false, 1);
 }
 
-void MainComponent::standardResolutionEngaged()
+void MainComponent::standardResolutionChosen()
 {
-    resolutionSetting (false, false, 0.1);
-    setBpmLabelValue();
+    engageResolutionSetting (false, false, 0.1);
 }
 
-void MainComponent::fineResolutionEngaged()
+void MainComponent::fineResolutionChosen()
 {
-    resolutionSetting (false, true, 0.01);
-    setBpmLabelValue();
+    engageResolutionSetting (false, true, 0.01);
 }
 
-void MainComponent::resolutionSetting (const bool &isCoarseSelected,
-                                       const bool &isFineSelected, const double &increment)
+void MainComponent::engageResolutionSetting (const bool &isCoarseSelected,
+                                             const bool &isFineSelected, const double &increment)
 {
     tempoSlider->setRange (1, 1000, increment);
 
@@ -934,9 +932,11 @@ void MainComponent::resolutionSetting (const bool &isCoarseSelected,
     fineResolutionToggle->setToggleState (isFineSelected, dontSendNotification);
 }
 
+#include <iomanip>
+
 void MainComponent::setBpmLabelValue()
 {
-    bpmLabel->setText((String) tempoSlider->getValue(), dontSendNotification);
+    bpmLabel->setText (tempoSlider->getTextFromValue(tempoSlider->getValue()), dontSendNotification);
 }
 
 void MainComponent::populateFieldsWithMillisecondValues()
@@ -1265,21 +1265,21 @@ BEGIN_JUCER_METADATA
                 explicitFocusOrder="0" pos="0 150 62 20" buttonText="ms" connectedEdges="0"
                 needsCallback="1" radioGroupId="0" state="0"/>
   <TOGGLEBUTTON name="coarseResolutionToggle" id="ba1bd947fd8c2a56" memberName="coarseResolutionToggle"
-                virtualName="" explicitFocusOrder="0" pos="0 60 125 20" buttonText="Coarse"
+                virtualName="" explicitFocusOrder="0" pos="0 65 125 20" buttonText="Coarse"
                 connectedEdges="0" needsCallback="1" radioGroupId="0" state="0"/>
   <TOGGLEBUTTON name="fineResolutionToggle" id="95774ae90e8bc93e" memberName="fineResolutionToggle"
-                virtualName="" explicitFocusOrder="0" pos="125 60 99 20" buttonText="Fine"
+                virtualName="" explicitFocusOrder="0" pos="125 65 75 20" buttonText="Fine"
                 connectedEdges="0" needsCallback="1" radioGroupId="0" state="0"/>
   <LABEL name="tempoLabel" id="6bb4ca2a493b0d2e" memberName="tempoLabel"
-         virtualName="" explicitFocusOrder="0" pos="384 56 39 24" edTextCol="ff000000"
+         virtualName="" explicitFocusOrder="0" pos="295 60 64 30" edTextCol="ff000000"
          edBkgCol="0" labelText="BPM" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="15"
-         kerning="0" bold="0" italic="0" justification="33"/>
+         focusDiscardsChanges="0" fontname="Arial" fontsize="30" kerning="0"
+         bold="0" italic="0" justification="36"/>
   <LABEL name="bpmLabel" id="387c95ffe56ba517" memberName="bpmLabel" virtualName=""
-         explicitFocusOrder="0" pos="200 56 100 32" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="200 60 100 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="1" editableDoubleClick="1"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="25"
-         kerning="0" bold="0" italic="0" justification="36"/>
+         focusDiscardsChanges="0" fontname="Arial" fontsize="30" kerning="0"
+         bold="0" italic="0" justification="36"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA
