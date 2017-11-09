@@ -56,11 +56,11 @@ public:
     void launchURL (const char *hyperLink);
     void roundTempo();
     bool userWantsStandardResolution();
-    void coarseResolutionEngaged();
-    void fineResolutionEngaged();
-    void standardResolutionEngaged();
-    void resolutionSetting (const bool &isCoarseSelected,
-                            const bool &isFineSelected, const double &increment);
+    void coarseResolutionChosen();
+    void fineResolutionChosen();
+    void standardResolutionChosen();
+    void engageResolutionSetting (const bool &isCoarseSelected,
+                                  const bool &isFineSelected, const double &increment);
     void setBpmLabelValue();
     void populateFieldsWithMillisecondValues();
     void populateFieldsWithHertzValues();
