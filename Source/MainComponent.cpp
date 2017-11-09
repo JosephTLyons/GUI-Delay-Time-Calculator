@@ -49,7 +49,7 @@ MainComponent::MainComponent ()
     addAndMakeVisible (tempoSlider = new Slider ("tempoSlider"));
     tempoSlider->setRange (1, 1000, 0.1);
     tempoSlider->setSliderStyle (Slider::LinearHorizontal);
-    tempoSlider->setTextBoxStyle (Slider::TextBoxAbove, false, 50, 20);
+    tempoSlider->setTextBoxStyle (Slider::NoTextBox, false, 50, 20);
     tempoSlider->setColour (Slider::backgroundColourId, Colours::black);
     tempoSlider->setColour (Slider::thumbColourId, Colours::white);
     tempoSlider->setColour (Slider::trackColourId, Colour (0xffadaaaa));
@@ -431,6 +431,15 @@ MainComponent::MainComponent ()
     tempoLabel->setColour (TextEditor::textColourId, Colours::black);
     tempoLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
+    addAndMakeVisible (bpmLabel = new Label ("bpmLabel",
+                                             String()));
+    bpmLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
+    bpmLabel->setJustificationType (Justification::centred);
+    bpmLabel->setEditable (true, true, false);
+    bpmLabel->setColour (TextEditor::textColourId, Colours::black);
+    bpmLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    bpmLabel->addListener (this);
+
 
     //[UserPreSize]
     //[/UserPreSize]
@@ -447,6 +456,9 @@ MainComponent::MainComponent ()
 
     // Right click for velocity sensitive sliding
     tempoSlider->setPopupMenuEnabled (true);
+
+    bpmLabel->setFont(30);
+    bpmLabel->addListener(this);
 
     //setupLabelCustomFont();
 
@@ -509,6 +521,7 @@ MainComponent::~MainComponent()
     coarseResolutionToggle = nullptr;
     fineResolutionToggle = nullptr;
     tempoLabel = nullptr;
+    bpmLabel = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -545,7 +558,7 @@ void MainComponent::resized()
 
     doubleTempoButton->setBounds (125, 115, 125, 30);
     halfTempoButton->setBounds (0, 115, 125, 30);
-    tempoSlider->setBounds (0, 60, 500, 55);
+    tempoSlider->setBounds (0, 85, 500, 30);
     delayTimeCalculatorLabel->setBounds (0, 0, 500, 50);
     normalLabel->setBounds (125, 145, 125, 30);
     dottedLabel->setBounds (250, 145, 125, 30);
@@ -593,7 +606,8 @@ void MainComponent::resized()
     msToggle->setBounds (0, 150, 62, 20);
     coarseResolutionToggle->setBounds (0, 60, 125, 20);
     fineResolutionToggle->setBounds (125, 60, 99, 20);
-    tempoLabel->setBounds (272, 58, 39, 24);
+    tempoLabel->setBounds (384, 56, 39, 24);
+    bpmLabel->setBounds (200, 56, 100, 32);
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
 }
@@ -783,11 +797,31 @@ void MainComponent::sliderValueChanged (Slider* sliderThatWasMoved)
             populateFieldsWithHertzValues();
         }
 
+        setBpmLabelValue();
+
         //[/UserSliderCode_tempoSlider]
     }
 
     //[UsersliderValueChanged_Post]
     //[/UsersliderValueChanged_Post]
+}
+
+void MainComponent::labelTextChanged (Label* labelThatHasChanged)
+{
+    //[UserlabelTextChanged_Pre]
+    //[/UserlabelTextChanged_Pre]
+
+    if (labelThatHasChanged == bpmLabel)
+    {
+        //[UserLabelCode_bpmLabel] -- add your label text handling code here..
+        
+        tempoSlider->setValue(bpmLabel->getTextValue());
+        
+        //[/UserLabelCode_bpmLabel]
+    }
+
+    //[UserlabelTextChanged_Post]
+    //[/UserlabelTextChanged_Post]
 }
 
 
@@ -876,16 +910,19 @@ bool MainComponent::userWantsStandardResolution()
 void MainComponent::coarseResolutionEngaged()
 {
     resolutionSetting (true, false, 1);
+    setBpmLabelValue();
 }
 
 void MainComponent::standardResolutionEngaged()
 {
     resolutionSetting (false, false, 0.1);
+    setBpmLabelValue();
 }
 
 void MainComponent::fineResolutionEngaged()
 {
     resolutionSetting (false, true, 0.01);
+    setBpmLabelValue();
 }
 
 void MainComponent::resolutionSetting (const bool &isCoarseSelected,
@@ -895,6 +932,11 @@ void MainComponent::resolutionSetting (const bool &isCoarseSelected,
 
     coarseResolutionToggle->setToggleState (isCoarseSelected, dontSendNotification);
     fineResolutionToggle->setToggleState (isFineSelected, dontSendNotification);
+}
+
+void MainComponent::setBpmLabelValue()
+{
+    bpmLabel->setText((String) tempoSlider->getValue(), dontSendNotification);
 }
 
 void MainComponent::populateFieldsWithMillisecondValues()
@@ -1001,11 +1043,11 @@ BEGIN_JUCER_METADATA
               textCol="ff353535" buttonText="1/2x" connectedEdges="0" needsCallback="1"
               radioGroupId="0"/>
   <SLIDER name="tempoSlider" id="1b36c66db8e52ea5" memberName="tempoSlider"
-          virtualName="" explicitFocusOrder="0" pos="0 60 500 55" bkgcol="ff000000"
+          virtualName="" explicitFocusOrder="0" pos="0 85 500 30" bkgcol="ff000000"
           thumbcol="ffffffff" trackcol="ffadaaaa" textboxtext="ffffffff"
           textboxbkgd="ff353535" textboxhighlight="ffadaaaa" textboxoutline="ff353535"
           min="1" max="1000" int="0.10000000000000000555" style="LinearHorizontal"
-          textBoxPos="TextBoxAbove" textBoxEditable="1" textBoxWidth="50"
+          textBoxPos="NoTextBox" textBoxEditable="1" textBoxWidth="50"
           textBoxHeight="20" skewFactor="0.5" needsCallback="1"/>
   <LABEL name="delayTimeCalculatorLabel" id="951f8323b93b29f2" memberName="delayTimeCalculatorLabel"
          virtualName="" explicitFocusOrder="0" pos="0 0 500 50" textCol="ffadaaaa"
@@ -1229,10 +1271,15 @@ BEGIN_JUCER_METADATA
                 virtualName="" explicitFocusOrder="0" pos="125 60 99 20" buttonText="Fine"
                 connectedEdges="0" needsCallback="1" radioGroupId="0" state="0"/>
   <LABEL name="tempoLabel" id="6bb4ca2a493b0d2e" memberName="tempoLabel"
-         virtualName="" explicitFocusOrder="0" pos="272 58 39 24" edTextCol="ff000000"
+         virtualName="" explicitFocusOrder="0" pos="384 56 39 24" edTextCol="ff000000"
          edBkgCol="0" labelText="BPM" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="15"
          kerning="0" bold="0" italic="0" justification="33"/>
+  <LABEL name="bpmLabel" id="387c95ffe56ba517" memberName="bpmLabel" virtualName=""
+         explicitFocusOrder="0" pos="200 56 100 32" edTextCol="ff000000"
+         edBkgCol="0" labelText="" editableSingleClick="1" editableDoubleClick="1"
+         focusDiscardsChanges="0" fontname="Default font" fontsize="25"
+         kerning="0" bold="0" italic="0" justification="36"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA
