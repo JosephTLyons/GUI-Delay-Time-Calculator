@@ -30,11 +30,11 @@ A simple application that calculates delay and reverb pre-delay times based on t
 ## Changelog:
 
 ### November XX, 2017 - V 1.6.0
-1. Added tap count to the tap tempo button, for more visual feedback of tap tempo function
-2. Added resolution buttons to allow for whole, tenths, and hundreths place precision for tempo
-3. More accurate AppIcon
-4. Moved BPM value to top of slider
-5. Added separating line
+1. Reworked GUI to be more symmetrical and have a larger BPM value readout
+2. Added tap count to the tap tempo button, for more visual feedback of tap tempo function
+3. Added resolution buttons to switch from standard values (0.X) to coarse values (X) to fine values (0.0X)
+4. More accurate AppIcon
+5. Added separating line under application name
 6. Small performance tweaks
 7. Small changes to information window
 8. General code clean up
