@@ -772,8 +772,6 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     if (userWantsStandardResolution())
         standardResolutionChosen();
 
-    setBpmLabelValue();
-
     //[/UserbuttonClicked_Post]
 }
 
@@ -927,6 +925,7 @@ void MainComponent::engageResolutionSetting (const bool &isCoarseSelected,
                                              const bool &isFineSelected, const double &increment)
 {
     tempoSlider->setRange (1, 1000, increment);
+    setBpmLabelValue();
 
     coarseResolutionToggle->setToggleState (isCoarseSelected, dontSendNotification);
     fineResolutionToggle->setToggleState (isFineSelected, dontSendNotification);
