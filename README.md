@@ -31,13 +31,13 @@ A simple application that calculates delay and reverb pre-delay times based on t
 ## Changelog:
 
 ### November XX, 2017 - V 1.6.0
-1. Reworked GUI to be more symmetrical and have a larger BPM value readout
+1. Reworked GUI to be more symmetrical at top and to have a larger BPM value readout
 2. Added tap count to the tap tempo button, for more visual feedback of tap tempo function
 3. Added resolution buttons to switch from standard values (0.X) to coarse values (X) to fine values (0.0X)
 4. More accurate AppIcon
 5. Added separating line under application name
-6. Small performance tweaks
-7. Small changes to information window
+6. Small changes to information window
+7. Small performance tweaks
 8. General code clean up
 
 ### July 26, 2017 - V 1.5.0
