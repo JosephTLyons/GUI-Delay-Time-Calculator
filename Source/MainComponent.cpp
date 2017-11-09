@@ -449,10 +449,10 @@ MainComponent::MainComponent ()
 
     //[Constructor] You can add your own custom stuff here..
 
+    tempoSlider->setValue (120);
+    
     // Set millisecond mode to default
     msToggle->setToggleState (true, dontSendNotification);
-
-    tempoSlider->setValue (120);
 
     // Right click for velocity sensitive sliding
     tempoSlider->setPopupMenuEnabled (true);
