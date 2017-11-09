@@ -40,7 +40,8 @@
 */
 class MainComponent  : public Component,
                        public Button::Listener,
-                       public Slider::Listener
+                       public Slider::Listener,
+                       public Label::Listener
 {
 public:
     //==============================================================================
@@ -60,6 +61,7 @@ public:
     void standardResolutionEngaged();
     void resolutionSetting (const bool &isCoarseSelected,
                             const bool &isFineSelected, const double &increment);
+    void setBpmLabelValue();
     void populateFieldsWithMillisecondValues();
     void populateFieldsWithHertzValues();
 
@@ -69,6 +71,7 @@ public:
     void resized() override;
     void buttonClicked (Button* buttonThatWasClicked) override;
     void sliderValueChanged (Slider* sliderThatWasMoved) override;
+    void labelTextChanged (Label* labelThatHasChanged) override;
 
 
 
@@ -135,6 +138,7 @@ private:
     ScopedPointer<ToggleButton> coarseResolutionToggle;
     ScopedPointer<ToggleButton> fineResolutionToggle;
     ScopedPointer<Label> tempoLabel;
+    ScopedPointer<Label> bpmLabel;
 
 
     //==============================================================================
