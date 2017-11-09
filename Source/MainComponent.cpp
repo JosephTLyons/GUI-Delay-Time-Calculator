@@ -450,7 +450,7 @@ MainComponent::MainComponent ()
     //[Constructor] You can add your own custom stuff here..
 
     tempoSlider->setValue (120);
-    
+
     // Set millisecond mode to default
     msToggle->setToggleState (true, dontSendNotification);
 
@@ -605,8 +605,8 @@ void MainComponent::resized()
     msToggle->setBounds (0, 150, 62, 20);
     coarseResolutionToggle->setBounds (0, 65, 125, 20);
     fineResolutionToggle->setBounds (125, 65, 75, 20);
-    tempoLabel->setBounds (295, 60, 64, 30);
-    bpmLabel->setBounds (200, 60, 100, 30);
+    tempoLabel->setBounds (300, 60, 64, 30);
+    bpmLabel->setBounds (190, 60, 120, 30);
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
 }
@@ -1268,12 +1268,12 @@ BEGIN_JUCER_METADATA
                 virtualName="" explicitFocusOrder="0" pos="125 65 75 20" buttonText="Fine"
                 connectedEdges="0" needsCallback="1" radioGroupId="0" state="0"/>
   <LABEL name="tempoLabel" id="6bb4ca2a493b0d2e" memberName="tempoLabel"
-         virtualName="" explicitFocusOrder="0" pos="295 60 64 30" edTextCol="ff000000"
+         virtualName="" explicitFocusOrder="0" pos="300 60 64 30" edTextCol="ff000000"
          edBkgCol="0" labelText="BPM" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Arial" fontsize="30" kerning="0"
          bold="0" italic="0" justification="36"/>
   <LABEL name="bpmLabel" id="387c95ffe56ba517" memberName="bpmLabel" virtualName=""
-         explicitFocusOrder="0" pos="200 60 100 30" edTextCol="ff000000"
+         explicitFocusOrder="0" pos="190 60 120 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="1" editableDoubleClick="1"
          focusDiscardsChanges="0" fontname="Arial" fontsize="30" kerning="0"
          bold="0" italic="0" justification="36"/>
