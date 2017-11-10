@@ -603,7 +603,7 @@ void MainComponent::resized()
     informationButton->setBounds (0, 490, 100, 20);
     hzToggle->setBounds (63, 150, 62, 20);
     msToggle->setBounds (0, 150, 62, 20);
-    coarseResolutionToggle->setBounds (0, 65, 125, 20);
+    coarseResolutionToggle->setBounds (0, 65, 75, 20);
     fineResolutionToggle->setBounds (125, 65, 75, 20);
     tempoLabel->setBounds (300, 60, 64, 30);
     bpmLabel->setBounds (190, 60, 120, 30);
@@ -1262,7 +1262,7 @@ BEGIN_JUCER_METADATA
                 explicitFocusOrder="0" pos="0 150 62 20" buttonText="ms" connectedEdges="0"
                 needsCallback="1" radioGroupId="0" state="0"/>
   <TOGGLEBUTTON name="coarseResolutionToggle" id="ba1bd947fd8c2a56" memberName="coarseResolutionToggle"
-                virtualName="" explicitFocusOrder="0" pos="0 65 125 20" buttonText="Coarse"
+                virtualName="" explicitFocusOrder="0" pos="0 65 75 20" buttonText="Coarse"
                 connectedEdges="0" needsCallback="1" radioGroupId="0" state="0"/>
   <TOGGLEBUTTON name="fineResolutionToggle" id="95774ae90e8bc93e" memberName="fineResolutionToggle"
                 virtualName="" explicitFocusOrder="0" pos="125 65 75 20" buttonText="Fine"
