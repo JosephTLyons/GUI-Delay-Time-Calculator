@@ -19,7 +19,6 @@
 
 //[Headers] You can add your own extra header files here...
 #include "InformationComponent.h"
-#include <ctype.h>
 //[/Headers]
 
 #include "MainComponent.h"
