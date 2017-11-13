@@ -453,9 +453,11 @@ MainComponent::MainComponent ()
     // Set millisecond mode to default
     msToggle->setToggleState (true, dontSendNotification);
 
-    // Right click for velocity sensitive sliding
+    // Allow for right-clicking for velocity sensitive sliding
     tempoSlider->setPopupMenuEnabled (true);
 
+    tapButton->setTriggeredOnMouseDown(true);
+    
     bpmLabel->addListener(this);
 
     //setupLabelCustomFont();
