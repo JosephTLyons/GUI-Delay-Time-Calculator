@@ -36,10 +36,11 @@ A simple application that calculates delay and reverb pre-delay times based on t
 3. Added resolution buttons to switch from standard values (0.X) to coarse values (X) to fine values (0.0X)
 4. The tap tempo button now registers its click when the mouse is on down click, instead of on upclick, which makes it more accurate.
 5. More accurate AppIcon
-6. Added separating line under application name
-7. Small changes to information window
-8. Small performance tweaks
-9. General code clean up
+6. Changed color of scrollbar in information window to be more in line with the theme of the app
+7. Added separating line under application name
+8. Small changes to information window
+9. Small performance tweaks
+10. General code clean up
 
 ### July 26, 2017 - V 1.5.0
 1. PC Build

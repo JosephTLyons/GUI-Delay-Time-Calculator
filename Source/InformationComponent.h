@@ -55,6 +55,9 @@ public:
 
 private:
     //[UserVariables]   -- You can add your own custom variables in this section.
+    
+    LookAndFeel_V4 textEditorScrollColor;
+    
     //[/UserVariables]
 
     //==============================================================================

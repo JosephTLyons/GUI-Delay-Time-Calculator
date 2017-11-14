@@ -74,6 +74,11 @@ InformationComponent::InformationComponent ()
     informationTextEditor->setColour(TextEditor::highlightColourId, Colours::transparentWhite);
     informationTextEditor->setPopupMenuEnabled(false);
     informationTextEditor->setFont(16.5);
+    
+    // Set text editor scrollbar color to color of text in TextEditor
+    textEditorScrollColor.setColour(ScrollBar::thumbColourId,
+                                    informationTextEditor->findColour(informationTextEditor->textColourId));
+    informationTextEditor->setLookAndFeel(&textEditorScrollColor);
 
     // Add information to text string
     informationTextEditorString += "-'C' for coarse resolution\n";
