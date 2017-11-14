@@ -65,16 +65,16 @@ InformationComponent::InformationComponent ()
     //[UserPreSize]
     //[/UserPreSize]
 
-    setSize (240, 290);
+    setSize (240, 296);
 
 
     //[Constructor] You can add your own custom stuff here..
-    
+
     // Set highlight to transparent so that highlighting of text isn't viewable
     informationTextEditor->setColour(TextEditor::highlightColourId, Colours::transparentWhite);
     informationTextEditor->setPopupMenuEnabled(false);
     informationTextEditor->setFont(16.5);
-    
+
     // Set text editor scrollbar color to color of text in TextEditor
     textEditorScrollColor.setColour(ScrollBar::thumbColourId,
                                     informationTextEditor->findColour(informationTextEditor->textColourId));
@@ -133,6 +133,13 @@ void InformationComponent::paint (Graphics& g)
     g.fillAll (Colour (0xff353535));
 
     //[UserPaint] Add your own custom painting code here..
+
+    // Add dividing line below product name
+    g.setColour (Colours::white);
+    g.setOpacity (0.25);
+    int y = 55, distanceFromEdge = 17, thickness = 1;
+    g.drawLine (distanceFromEdge, y, getWidth() - distanceFromEdge, y, thickness);
+
     //[/UserPaint]
 }
 
@@ -142,8 +149,8 @@ void InformationComponent::resized()
     //[/UserPreResize]
 
     informationLabel->setBounds (0, 0, 240, 50);
-    versionNumberLabelOutput->setBounds (0, 270, 240, 20);
-    informationTextEditor->setBounds (0, 50, 240, 220);
+    versionNumberLabelOutput->setBounds (0, 276, 240, 20);
+    informationTextEditor->setBounds (0, 56, 240, 220);
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
 }
@@ -166,7 +173,7 @@ BEGIN_JUCER_METADATA
 <JUCER_COMPONENT documentType="Component" className="InformationComponent" componentName=""
                  parentClasses="public Component" constructorParams="" variableInitialisers=""
                  snapPixels="8" snapActive="1" snapShown="1" overlayOpacity="0.330"
-                 fixedSize="1" initialWidth="240" initialHeight="290">
+                 fixedSize="1" initialWidth="240" initialHeight="296">
   <BACKGROUND backgroundColour="ff353535"/>
   <LABEL name="informationLabel" id="951f8323b93b29f2" memberName="informationLabel"
          virtualName="" explicitFocusOrder="0" pos="0 0 240 50" textCol="ffadaaaa"
@@ -175,12 +182,12 @@ BEGIN_JUCER_METADATA
          fontsize="47.399999999999998579" kerning="0.042999999999999996558"
          bold="0" italic="0" justification="36"/>
   <LABEL name="versionNumberLabel" id="30f8922fa9ce43fc" memberName="versionNumberLabelOutput"
-         virtualName="" explicitFocusOrder="0" pos="0 270 240 20" textCol="ffadaaaa"
+         virtualName="" explicitFocusOrder="0" pos="0 276 240 20" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
          fontsize="15" kerning="0" bold="0" italic="0" justification="33"/>
   <TEXTEDITOR name="informationTextEditor" id="724fec5cca6df686" memberName="informationTextEditor"
-              virtualName="" explicitFocusOrder="0" pos="0 50 240 220" bkgcol="ff353535"
+              virtualName="" explicitFocusOrder="0" pos="0 56 240 220" bkgcol="ff353535"
               outlinecol="ff353535" initialText="" multiline="1" retKeyStartsLine="1"
               readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
 </JUCER_COMPONENT>
