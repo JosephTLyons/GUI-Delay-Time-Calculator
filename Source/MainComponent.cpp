@@ -720,14 +720,14 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     else if (buttonThatWasClicked == hzToggle)
     {
         //[UserButtonCode_hzToggle] -- add your button handler code here..
-
-        updateValuesAndFields();
         
         // This makes sure that Hz toggle is always on
         hzToggle->setToggleState (true, dontSendNotification);
 
         // Turn off ms toggle automatically so that only one mode can be on at a time
         msToggle->setToggleState (false, dontSendNotification);
+        
+        updateValuesAndFields();
 
         //[/UserButtonCode_hzToggle]
     }
@@ -735,13 +735,13 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_msToggle] -- add your button handler code here..
 
-        updateValuesAndFields();
-
         // This makes sure that ms toggle is always on
         msToggle->setToggleState (true, dontSendNotification);
 
         // Turn off Hz mode automatically so that only one mode can be on at a time
         hzToggle->setToggleState (false, dontSendNotification);
+        
+        updateValuesAndFields();
 
         //[/UserButtonCode_msToggle]
     }
@@ -912,11 +912,11 @@ void MainComponent::engageResolutionSetting (const bool &isCoarseSelected,
 {
     tempoSlider->setRange (1, 1000, increment);
     setBpmLabelValue();
-    
-    updateValuesAndFields();
 
     coarseResolutionToggle->setToggleState (isCoarseSelected, dontSendNotification);
     fineResolutionToggle->setToggleState (isFineSelected, dontSendNotification);
+    
+    updateValuesAndFields();
 }
 
 void MainComponent::setBpmLabelValue()
