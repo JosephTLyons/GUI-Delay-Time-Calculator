@@ -721,7 +721,7 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_hzToggle] -- add your button handler code here..
 
-        updateHertz();
+        updateValuesAndFields();
         
         // This makes sure that Hz toggle is always on
         hzToggle->setToggleState (true, dontSendNotification);
@@ -735,7 +735,7 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_msToggle] -- add your button handler code here..
 
-        updateMilliseconds();
+        updateValuesAndFields();
 
         // This makes sure that ms toggle is always on
         msToggle->setToggleState (true, dontSendNotification);
@@ -782,12 +782,7 @@ void MainComponent::sliderValueChanged (Slider* sliderThatWasMoved)
         //[UserSliderCode_tempoSlider] -- add your slider handling code here..
 
         setBpmLabelValue();
-
-        if (msToggle->getToggleState())
-            updateMilliseconds();
-
-        if (hzToggle->getToggleState())
-            updateHertz();
+        updateValuesAndFields();
 
         //[/UserSliderCode_tempoSlider]
     }
@@ -918,11 +913,7 @@ void MainComponent::engageResolutionSetting (const bool &isCoarseSelected,
     tempoSlider->setRange (1, 1000, increment);
     setBpmLabelValue();
     
-    if (msToggle->getToggleState())
-        updateMilliseconds();
-    
-    if (hzToggle->getToggleState())
-        updateHertz();
+    updateValuesAndFields();
 
     coarseResolutionToggle->setToggleState (isCoarseSelected, dontSendNotification);
     fineResolutionToggle->setToggleState (isFineSelected, dontSendNotification);
@@ -933,11 +924,21 @@ void MainComponent::setBpmLabelValue()
     bpmLabel->setText (tempoSlider->getTextFromValue(tempoSlider->getValue()), dontSendNotification);
 }
 
-void MainComponent::updateHertz()
+void MainComponent::updateValuesAndFields()
 {
     // Make sure all values in object are up to date and update fields
-    hertzValuesObject.calculateHertzValues (tempoSlider->getValue());
-    populateFieldsWithHertzValues();
+    
+    if (msToggle->getToggleState())
+    {
+        millisecondValuesObject.calculateMillisecondValues (tempoSlider->getValue());
+        populateFieldsWithMillisecondValues();
+    }
+    
+    if (hzToggle->getToggleState())
+    {
+        hertzValuesObject.calculateHertzValues (tempoSlider->getValue());
+        populateFieldsWithHertzValues();
+    }
 }
 
 void MainComponent::populateFieldsWithMillisecondValues()
@@ -977,13 +978,6 @@ void MainComponent::populateFieldsWithMillisecondValues()
                                                   dontSendNotification);
     oneTwentyEighthTripletLabel->setText ((String) millisecondValuesObject.getOneHundredAndTwentyEighthTriplet(),
                                                    dontSendNotification);
-}
-
-void MainComponent::updateMilliseconds()
-{
-    // Make sure all values in object are up to date and update fields
-    millisecondValuesObject.calculateMillisecondValues (tempoSlider->getValue());
-    populateFieldsWithMillisecondValues();
 }
 
 void MainComponent::populateFieldsWithHertzValues()

@@ -62,9 +62,8 @@ public:
     void engageResolutionSetting (const bool &isCoarseSelected,
                                   const bool &isFineSelected, const double &increment);
     void setBpmLabelValue();
-    void updateHertz();
+    void updateValuesAndFields();
     void populateFieldsWithMillisecondValues();
-    void updateMilliseconds();
     void populateFieldsWithHertzValues();
 
     //[/UserMethods]
