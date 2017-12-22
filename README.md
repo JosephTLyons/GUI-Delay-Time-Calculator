@@ -30,6 +30,9 @@ A simple application that calculates delay and reverb pre-delay times based on t
 
 ## Changelog:
 
+### XXX  XX, 2018 - V 1.6.1
+1. Fixed a bug where the ms or hz values were not being updated when switching between resolution modes
+
 ### December 21, 2017 - V 1.6.0
 1. Reworked GUI to be more symmetrical at top and to have a larger BPM value readout
 2. Added tap count to the tap tempo button, for more visual feedback of tap tempo function

@@ -917,6 +917,12 @@ void MainComponent::engageResolutionSetting (const bool &isCoarseSelected,
 {
     tempoSlider->setRange (1, 1000, increment);
     setBpmLabelValue();
+    
+    if (msToggle->getToggleState())
+        updateMilliseconds();
+    
+    if (hzToggle->getToggleState())
+        updateHertz();
 
     coarseResolutionToggle->setToggleState (isCoarseSelected, dontSendNotification);
     fineResolutionToggle->setToggleState (isFineSelected, dontSendNotification);
