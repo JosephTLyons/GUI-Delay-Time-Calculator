@@ -721,11 +721,8 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_hzToggle] -- add your button handler code here..
 
-        // Make sure all values in object are up to date and update fields
-        hertzValuesObject.calculateHertzValues (tempoSlider->getValue());
+        updateHertz();
         
-        populateFieldsWithHertzValues();
-
         // This makes sure that Hz toggle is always on
         hzToggle->setToggleState (true, dontSendNotification);
 
@@ -738,10 +735,7 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_msToggle] -- add your button handler code here..
 
-        // Make sure all values in object are up to date and update fields
-        millisecondValuesObject.calculateMillisecondValues (tempoSlider->getValue());
-        
-        populateFieldsWithMillisecondValues();
+        updateMilliseconds();
 
         // This makes sure that ms toggle is always on
         msToggle->setToggleState (true, dontSendNotification);
@@ -790,16 +784,10 @@ void MainComponent::sliderValueChanged (Slider* sliderThatWasMoved)
         setBpmLabelValue();
 
         if (msToggle->getToggleState())
-        {
-            millisecondValuesObject.calculateMillisecondValues (tempoSlider->getValue());
-            populateFieldsWithMillisecondValues();
-        }
+            updateMilliseconds();
 
         if (hzToggle->getToggleState())
-        {
-            hertzValuesObject.calculateHertzValues (tempoSlider->getValue());
-            populateFieldsWithHertzValues();
-        }
+            updateHertz();
 
         //[/UserSliderCode_tempoSlider]
     }
@@ -939,6 +927,13 @@ void MainComponent::setBpmLabelValue()
     bpmLabel->setText (tempoSlider->getTextFromValue(tempoSlider->getValue()), dontSendNotification);
 }
 
+void MainComponent::updateHertz()
+{
+    // Make sure all values in object are up to date and update fields
+    hertzValuesObject.calculateHertzValues (tempoSlider->getValue());
+    populateFieldsWithHertzValues();
+}
+
 void MainComponent::populateFieldsWithMillisecondValues()
 {
     // Set values for all text labels
@@ -976,6 +971,13 @@ void MainComponent::populateFieldsWithMillisecondValues()
                                                   dontSendNotification);
     oneTwentyEighthTripletLabel->setText ((String) millisecondValuesObject.getOneHundredAndTwentyEighthTriplet(),
                                                    dontSendNotification);
+}
+
+void MainComponent::updateMilliseconds()
+{
+    // Make sure all values in object are up to date and update fields
+    millisecondValuesObject.calculateMillisecondValues (tempoSlider->getValue());
+    populateFieldsWithMillisecondValues();
 }
 
 void MainComponent::populateFieldsWithHertzValues()
