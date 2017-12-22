@@ -415,7 +415,7 @@ MainComponent::MainComponent ()
     //[UserPreSize]
     //[/UserPreSize]
 
-    setSize (500, 510);
+    setSize (500, 520);
 
 
     //[Constructor] You can add your own custom stuff here..
@@ -565,7 +565,7 @@ void MainComponent::resized()
     oneTwentyEighthNormalLabel->setBounds (125, 455, 125, 30);
     oneTwentyEighthDottedLabel->setBounds (250, 455, 125, 30);
     oneTwentyEighthTripletLabel->setBounds (375, 455, 125, 30);
-    informationButton->setBounds (0, 490, 500, 20);
+    informationButton->setBounds (0, 490, 500, 30);
     hzToggle->setBounds (63, 150, 62, 20);
     msToggle->setBounds (0, 150, 62, 20);
     coarseResolutionToggle->setBounds (0, 65, 75, 20);
@@ -966,7 +966,7 @@ BEGIN_JUCER_METADATA
 <JUCER_COMPONENT documentType="Component" className="MainComponent" componentName=""
                  parentClasses="public Component" constructorParams="" variableInitialisers=""
                  snapPixels="8" snapActive="1" snapShown="1" overlayOpacity="0.330"
-                 fixedSize="1" initialWidth="500" initialHeight="510">
+                 fixedSize="1" initialWidth="500" initialHeight="520">
   <BACKGROUND backgroundColour="ff353535"/>
   <TEXTBUTTON name="doubleTempoButton" id="74a1161b6a8bd75d" memberName="doubleTempoButton"
               virtualName="" explicitFocusOrder="0" pos="125 115 125 30" bgColOff="ffadaaaa"
@@ -1173,7 +1173,7 @@ BEGIN_JUCER_METADATA
          focusDiscardsChanges="0" fontname="Default font" fontsize="25"
          kerning="0" bold="0" italic="0" justification="33"/>
   <TEXTBUTTON name="informationButton" id="ab632d30dfc057bb" memberName="informationButton"
-              virtualName="" explicitFocusOrder="0" pos="0 490 500 20" bgColOff="ffadaaaa"
+              virtualName="" explicitFocusOrder="0" pos="0 490 500 30" bgColOff="ffadaaaa"
               bgColOn="ffadaaaa" textCol="ff000000" buttonText="Information"
               connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TOGGLEBUTTON name="hzToggle" id="3e5aa37d8e5a6de5" memberName="hzToggle" virtualName=""
