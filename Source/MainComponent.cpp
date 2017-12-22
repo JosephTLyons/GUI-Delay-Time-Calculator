@@ -721,16 +721,16 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_hzToggle] -- add your button handler code here..
 
-        // Make sure all values in object are up to date
+        // Make sure all values in object are up to date and update fields
         hertzValuesObject.calculateHertzValues (tempoSlider->getValue());
+        
+        populateFieldsWithHertzValues();
 
         // This makes sure that Hz toggle is always on
         hzToggle->setToggleState (true, dontSendNotification);
 
         // Turn off ms toggle automatically so that only one mode can be on at a time
         msToggle->setToggleState (false, dontSendNotification);
-        
-        populateFieldsWithHertzValues();
 
         //[/UserButtonCode_hzToggle]
     }
@@ -738,16 +738,16 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_msToggle] -- add your button handler code here..
 
-        // Make sure all values in object are up to date
+        // Make sure all values in object are up to date and update fields
         millisecondValuesObject.calculateMillisecondValues (tempoSlider->getValue());
+        
+        populateFieldsWithMillisecondValues();
 
         // This makes sure that ms toggle is always on
         msToggle->setToggleState (true, dontSendNotification);
 
         // Turn off Hz mode automatically so that only one mode can be on at a time
         hzToggle->setToggleState (false, dontSendNotification);
-        
-        populateFieldsWithMillisecondValues();
 
         //[/UserButtonCode_msToggle]
     }
