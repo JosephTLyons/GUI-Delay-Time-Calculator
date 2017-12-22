@@ -129,10 +129,6 @@ private:
     ScopedPointer<Label> oneTwentyEighthNormalLabel;
     ScopedPointer<Label> oneTwentyEighthDottedLabel;
     ScopedPointer<Label> oneTwentyEighthTripletLabel;
-    ScopedPointer<TextButton> emailMeButton;
-    ScopedPointer<TextButton> donateButton;
-    ScopedPointer<TextButton> facebookButton;
-    ScopedPointer<TextButton> theCodeButton;
     ScopedPointer<TextButton> informationButton;
     ScopedPointer<ToggleButton> hzToggle;
     ScopedPointer<ToggleButton> msToggle;

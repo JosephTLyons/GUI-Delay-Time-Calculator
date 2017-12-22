@@ -371,34 +371,6 @@ MainComponent::MainComponent ()
     oneTwentyEighthTripletLabel->setColour (TextEditor::textColourId, Colours::black);
     oneTwentyEighthTripletLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (emailMeButton = new TextButton ("emailMeButton"));
-    emailMeButton->setButtonText (TRANS("Email Me"));
-    emailMeButton->addListener (this);
-    emailMeButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
-    emailMeButton->setColour (TextButton::buttonOnColourId, Colour (0xffadaaaa));
-    emailMeButton->setColour (TextButton::textColourOffId, Colours::black);
-
-    addAndMakeVisible (donateButton = new TextButton ("donateButton"));
-    donateButton->setButtonText (TRANS("Donate"));
-    donateButton->addListener (this);
-    donateButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
-    donateButton->setColour (TextButton::buttonOnColourId, Colour (0xffadaaaa));
-    donateButton->setColour (TextButton::textColourOffId, Colours::black);
-
-    addAndMakeVisible (facebookButton = new TextButton ("facebookButton"));
-    facebookButton->setButtonText (TRANS("Facebook"));
-    facebookButton->addListener (this);
-    facebookButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
-    facebookButton->setColour (TextButton::buttonOnColourId, Colour (0xffadaaaa));
-    facebookButton->setColour (TextButton::textColourOffId, Colours::black);
-
-    addAndMakeVisible (theCodeButton = new TextButton ("theCodeButton"));
-    theCodeButton->setButtonText (TRANS("The Code"));
-    theCodeButton->addListener (this);
-    theCodeButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
-    theCodeButton->setColour (TextButton::buttonOnColourId, Colour (0xffadaaaa));
-    theCodeButton->setColour (TextButton::textColourOffId, Colours::black);
-
     addAndMakeVisible (informationButton = new TextButton ("informationButton"));
     informationButton->setButtonText (TRANS("Information"));
     informationButton->addListener (this);
@@ -457,7 +429,7 @@ MainComponent::MainComponent ()
     tempoSlider->setPopupMenuEnabled (true);
 
     tapButton->setTriggeredOnMouseDown(true);
-    
+
     bpmLabel->addListener(this);
 
     //setupLabelCustomFont();
@@ -511,10 +483,6 @@ MainComponent::~MainComponent()
     oneTwentyEighthNormalLabel = nullptr;
     oneTwentyEighthDottedLabel = nullptr;
     oneTwentyEighthTripletLabel = nullptr;
-    emailMeButton = nullptr;
-    donateButton = nullptr;
-    facebookButton = nullptr;
-    theCodeButton = nullptr;
     informationButton = nullptr;
     hzToggle = nullptr;
     msToggle = nullptr;
@@ -597,11 +565,7 @@ void MainComponent::resized()
     oneTwentyEighthNormalLabel->setBounds (125, 455, 125, 30);
     oneTwentyEighthDottedLabel->setBounds (250, 455, 125, 30);
     oneTwentyEighthTripletLabel->setBounds (375, 455, 125, 30);
-    emailMeButton->setBounds (200, 490, 100, 20);
-    donateButton->setBounds (400, 490, 100, 20);
-    facebookButton->setBounds (100, 490, 100, 20);
-    theCodeButton->setBounds (300, 490, 100, 20);
-    informationButton->setBounds (0, 490, 100, 20);
+    informationButton->setBounds (0, 490, 500, 20);
     hzToggle->setBounds (63, 150, 62, 20);
     msToggle->setBounds (0, 150, 62, 20);
     coarseResolutionToggle->setBounds (0, 65, 75, 20);
@@ -662,38 +626,6 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
 
         //[/UserButtonCode_resetButton]
     }
-    else if (buttonThatWasClicked == emailMeButton)
-    {
-        //[UserButtonCode_emailMeButton] -- add your button handler code here..
-
-        launchURL ("JosephTLyons@gmail.com");
-
-        //[/UserButtonCode_emailMeButton]
-    }
-    else if (buttonThatWasClicked == donateButton)
-    {
-        //[UserButtonCode_donateButton] -- add your button handler code here..
-
-        launchURL ("https://www.paypal.me/JosephTimothyLyons/1");
-
-        //[/UserButtonCode_donateButton]
-    }
-    else if (buttonThatWasClicked == facebookButton)
-    {
-        //[UserButtonCode_facebookButton] -- add your button handler code here..
-
-        launchURL ("https://www.facebook.com/TheLyonsDenSoftware/");
-
-        //[/UserButtonCode_facebookButton]
-    }
-    else if (buttonThatWasClicked == theCodeButton)
-    {
-        //[UserButtonCode_theCodeButton] -- add your button handler code here..
-
-        launchURL ("https://github.com/JosephTLyons/GUI-Delay-Time-Calculator");
-
-        //[/UserButtonCode_theCodeButton]
-    }
     else if (buttonThatWasClicked == informationButton)
     {
         //[UserButtonCode_informationButton] -- add your button handler code here..
@@ -720,13 +652,13 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     else if (buttonThatWasClicked == hzToggle)
     {
         //[UserButtonCode_hzToggle] -- add your button handler code here..
-        
+
         // This makes sure that Hz toggle is always on
         hzToggle->setToggleState (true, dontSendNotification);
 
         // Turn off ms toggle automatically so that only one mode can be on at a time
         msToggle->setToggleState (false, dontSendNotification);
-        
+
         updateValuesAndFields();
 
         //[/UserButtonCode_hzToggle]
@@ -740,7 +672,7 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
 
         // Turn off Hz mode automatically so that only one mode can be on at a time
         hzToggle->setToggleState (false, dontSendNotification);
-        
+
         updateValuesAndFields();
 
         //[/UserButtonCode_msToggle]
@@ -915,7 +847,7 @@ void MainComponent::engageResolutionSetting (const bool &isCoarseSelected,
 
     coarseResolutionToggle->setToggleState (isCoarseSelected, dontSendNotification);
     fineResolutionToggle->setToggleState (isFineSelected, dontSendNotification);
-    
+
     updateValuesAndFields();
 }
 
@@ -927,13 +859,13 @@ void MainComponent::setBpmLabelValue()
 void MainComponent::updateValuesAndFields()
 {
     // Make sure all values in object are up to date and update fields
-    
+
     if (msToggle->getToggleState())
     {
         millisecondValuesObject.calculateMillisecondValues (tempoSlider->getValue());
         populateFieldsWithMillisecondValues();
     }
-    
+
     if (hzToggle->getToggleState())
     {
         hertzValuesObject.calculateHertzValues (tempoSlider->getValue());
@@ -1240,24 +1172,8 @@ BEGIN_JUCER_METADATA
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25"
          kerning="0" bold="0" italic="0" justification="33"/>
-  <TEXTBUTTON name="emailMeButton" id="b8526a15ddc05fdb" memberName="emailMeButton"
-              virtualName="" explicitFocusOrder="0" pos="200 490 100 20" bgColOff="ffadaaaa"
-              bgColOn="ffadaaaa" textCol="ff000000" buttonText="Email Me" connectedEdges="0"
-              needsCallback="1" radioGroupId="0"/>
-  <TEXTBUTTON name="donateButton" id="e193a0f2ebba353b" memberName="donateButton"
-              virtualName="" explicitFocusOrder="0" pos="400 490 100 20" bgColOff="ffadaaaa"
-              bgColOn="ffadaaaa" textCol="ff000000" buttonText="Donate" connectedEdges="0"
-              needsCallback="1" radioGroupId="0"/>
-  <TEXTBUTTON name="facebookButton" id="1952a3bc23aa2487" memberName="facebookButton"
-              virtualName="" explicitFocusOrder="0" pos="100 490 100 20" bgColOff="ffadaaaa"
-              bgColOn="ffadaaaa" textCol="ff000000" buttonText="Facebook" connectedEdges="0"
-              needsCallback="1" radioGroupId="0"/>
-  <TEXTBUTTON name="theCodeButton" id="63c3f048d7a8aeb1" memberName="theCodeButton"
-              virtualName="" explicitFocusOrder="0" pos="300 490 100 20" bgColOff="ffadaaaa"
-              bgColOn="ffadaaaa" textCol="ff000000" buttonText="The Code" connectedEdges="0"
-              needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="informationButton" id="ab632d30dfc057bb" memberName="informationButton"
-              virtualName="" explicitFocusOrder="0" pos="0 490 100 20" bgColOff="ffadaaaa"
+              virtualName="" explicitFocusOrder="0" pos="0 490 500 20" bgColOff="ffadaaaa"
               bgColOn="ffadaaaa" textCol="ff000000" buttonText="Information"
               connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TOGGLEBUTTON name="hzToggle" id="3e5aa37d8e5a6de5" memberName="hzToggle" virtualName=""

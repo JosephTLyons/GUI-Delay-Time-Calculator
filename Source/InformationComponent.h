@@ -33,7 +33,8 @@
     Describe your class and how it works here!
                                                                     //[/Comments]
 */
-class InformationComponent  : public Component
+class InformationComponent  : public Component,
+                              public Button::Listener
 {
 public:
     //==============================================================================
@@ -43,19 +44,21 @@ public:
     //==============================================================================
     //[UserMethods]     -- You can add your own custom methods in this section.
 
-    String informationTextEditorString;
-    String versionNumberString;
+    void launchURL (const char *hyperLink);
 
     //[/UserMethods]
 
     void paint (Graphics& g) override;
     void resized() override;
+    void buttonClicked (Button* buttonThatWasClicked) override;
 
 
 
 private:
     //[UserVariables]   -- You can add your own custom variables in this section.
 
+    String versionNumberString;
+    String informationTextEditorString;
     LookAndFeel_V4 textEditorScrollColor;
 
     //[/UserVariables]
@@ -64,6 +67,10 @@ private:
     ScopedPointer<Label> informationLabel;
     ScopedPointer<Label> versionNumberLabelOutput;
     ScopedPointer<TextEditor> informationTextEditor;
+    ScopedPointer<TextButton> facebookButton;
+    ScopedPointer<TextButton> emailMeButton;
+    ScopedPointer<TextButton> theCodeButton;
+    ScopedPointer<TextButton> donateButton;
 
 
     //==============================================================================
