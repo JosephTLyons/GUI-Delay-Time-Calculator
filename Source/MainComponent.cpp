@@ -428,9 +428,9 @@ MainComponent::MainComponent ()
     // Allow for right-clicking for velocity sensitive sliding
     tempoSlider->setPopupMenuEnabled (true);
 
-    tapButton->setTriggeredOnMouseDown(true);
+    tapButton->setTriggeredOnMouseDown (true);
 
-    bpmLabel->addListener(this);
+    bpmLabel->addListener (this);
 
     //setupLabelCustomFont();
 
