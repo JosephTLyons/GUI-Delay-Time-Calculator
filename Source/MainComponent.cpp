@@ -718,8 +718,7 @@ void MainComponent::mouseEnter (const MouseEvent& e)
     if (e.eventComponent->getName() == delayTimeCalculatorLabel->getName())
     {
         // Change text color to white
-        delayTimeCalculatorLabel->setColour(delayTimeCalculatorLabel->textColourId,
-                                            Colours::white);
+        delayTimeCalculatorLabel->setColour(Label::textColourId, Colours::white);
     }
     
     //[/UserCode_mouseEnter]
@@ -732,7 +731,7 @@ void MainComponent::mouseExit (const MouseEvent& e)
     if (e.eventComponent->getName() == delayTimeCalculatorLabel->getName())
     {
         // Change text color to original gray used
-        delayTimeCalculatorLabel->setColour(delayTimeCalculatorLabel->textColourId,
+        delayTimeCalculatorLabel->setColour(Label::textColourId,
                                             normalLabel->findColour(normalLabel->textColourId));
     }
     
