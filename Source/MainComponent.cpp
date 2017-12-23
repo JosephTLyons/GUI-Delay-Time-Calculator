@@ -734,7 +734,6 @@ void MainComponent::mouseExit (const MouseEvent& e)
         // Change text color to original gray used
         delayTimeCalculatorLabel->setColour(delayTimeCalculatorLabel->textColourId,
                                             normalLabel->findColour(normalLabel->textColourId));
-        
     }
     
     //[/UserCode_mouseExit]
