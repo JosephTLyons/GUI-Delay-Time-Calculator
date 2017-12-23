@@ -371,13 +371,6 @@ MainComponent::MainComponent ()
     oneTwentyEighthTripletLabel->setColour (TextEditor::textColourId, Colours::black);
     oneTwentyEighthTripletLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    addAndMakeVisible (informationButton = new TextButton ("informationButton"));
-    informationButton->setButtonText (TRANS("Information"));
-    informationButton->addListener (this);
-    informationButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
-    informationButton->setColour (TextButton::buttonOnColourId, Colour (0xffadaaaa));
-    informationButton->setColour (TextButton::textColourOffId, Colours::black);
-
     addAndMakeVisible (hzToggle = new ToggleButton ("hzToggle"));
     hzToggle->setButtonText (TRANS("Hz"));
     hzToggle->addListener (this);
@@ -415,7 +408,7 @@ MainComponent::MainComponent ()
     //[UserPreSize]
     //[/UserPreSize]
 
-    setSize (500, 520);
+    setSize (500, 490);
 
 
     //[Constructor] You can add your own custom stuff here..
@@ -431,6 +424,8 @@ MainComponent::MainComponent ()
     tapButton->setTriggeredOnMouseDown (true);
 
     bpmLabel->addListener (this);
+
+    delayTimeCalculatorLabel->addMouseListener (this, false);
 
     //setupLabelCustomFont();
 
@@ -483,7 +478,6 @@ MainComponent::~MainComponent()
     oneTwentyEighthNormalLabel = nullptr;
     oneTwentyEighthDottedLabel = nullptr;
     oneTwentyEighthTripletLabel = nullptr;
-    informationButton = nullptr;
     hzToggle = nullptr;
     msToggle = nullptr;
     coarseResolutionToggle = nullptr;
@@ -565,7 +559,6 @@ void MainComponent::resized()
     oneTwentyEighthNormalLabel->setBounds (125, 455, 125, 30);
     oneTwentyEighthDottedLabel->setBounds (250, 455, 125, 30);
     oneTwentyEighthTripletLabel->setBounds (375, 455, 125, 30);
-    informationButton->setBounds (0, 490, 500, 30);
     hzToggle->setBounds (63, 150, 62, 20);
     msToggle->setBounds (0, 150, 62, 20);
     coarseResolutionToggle->setBounds (0, 65, 75, 20);
@@ -625,29 +618,6 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
         tapButton->setButtonText ("Tap Tempo");
 
         //[/UserButtonCode_resetButton]
-    }
-    else if (buttonThatWasClicked == informationButton)
-    {
-        //[UserButtonCode_informationButton] -- add your button handler code here..
-
-        // Don't allow multiple copies of this window to be made
-        if (basicWindow == NULL)
-        {
-            basicWindow = new BasicWindow ("Information", Colours::grey,
-                                           DocumentWindow::closeButton |
-										   DocumentWindow::minimiseButton);
-
-            basicWindow->setUsingNativeTitleBar (true);
-            basicWindow->setContentOwned (new InformationComponent(), true);
-
-            basicWindow->centreWithSize (basicWindow->getWidth(), basicWindow->getHeight());
-            basicWindow->setVisible (true);
-        }
-
-        else
-            delete basicWindow;
-
-        //[/UserButtonCode_informationButton]
     }
     else if (buttonThatWasClicked == hzToggle)
     {
@@ -739,6 +709,16 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
 
     //[UserlabelTextChanged_Post]
     //[/UserlabelTextChanged_Post]
+}
+
+void MainComponent::mouseUp (const MouseEvent& e)
+{
+    //[UserCode_mouseUp] -- Add your code here...
+
+    if (e.eventComponent->getName() == "delayTimeCalculatorLabel")
+        buildInformationWindow();
+
+    //[/UserCode_mouseUp]
 }
 
 
@@ -951,6 +931,26 @@ void MainComponent::populateFieldsWithHertzValues()
                                                    dontSendNotification);
 }
 
+void MainComponent::buildInformationWindow()
+{
+    // Don't allow multiple copies of this window to be made
+    if (basicWindow == NULL)
+    {
+        basicWindow = new BasicWindow ("Information", Colours::grey,
+                                       DocumentWindow::closeButton |
+                                       DocumentWindow::minimiseButton);
+
+        basicWindow->setUsingNativeTitleBar (true);
+        basicWindow->setContentOwned (new InformationComponent(), true);
+
+        basicWindow->centreWithSize (basicWindow->getWidth(), basicWindow->getHeight());
+        basicWindow->setVisible (true);
+    }
+
+    else
+        delete basicWindow;
+}
+
 //[/MiscUserCode]
 
 
@@ -966,7 +966,10 @@ BEGIN_JUCER_METADATA
 <JUCER_COMPONENT documentType="Component" className="MainComponent" componentName=""
                  parentClasses="public Component" constructorParams="" variableInitialisers=""
                  snapPixels="8" snapActive="1" snapShown="1" overlayOpacity="0.330"
-                 fixedSize="1" initialWidth="500" initialHeight="520">
+                 fixedSize="1" initialWidth="500" initialHeight="490">
+  <METHODS>
+    <METHOD name="mouseUp (const MouseEvent&amp; e)"/>
+  </METHODS>
   <BACKGROUND backgroundColour="ff353535"/>
   <TEXTBUTTON name="doubleTempoButton" id="74a1161b6a8bd75d" memberName="doubleTempoButton"
               virtualName="" explicitFocusOrder="0" pos="125 115 125 30" bgColOff="ffadaaaa"
@@ -1172,10 +1175,6 @@ BEGIN_JUCER_METADATA
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25"
          kerning="0" bold="0" italic="0" justification="33"/>
-  <TEXTBUTTON name="informationButton" id="ab632d30dfc057bb" memberName="informationButton"
-              virtualName="" explicitFocusOrder="0" pos="0 490 500 30" bgColOff="ffadaaaa"
-              bgColOn="ffadaaaa" textCol="ff000000" buttonText="Information"
-              connectedEdges="0" needsCallback="1" radioGroupId="0"/>
   <TOGGLEBUTTON name="hzToggle" id="3e5aa37d8e5a6de5" memberName="hzToggle" virtualName=""
                 explicitFocusOrder="0" pos="63 150 62 20" buttonText="Hz" connectedEdges="0"
                 needsCallback="1" radioGroupId="0" state="0"/>

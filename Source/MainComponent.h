@@ -65,6 +65,7 @@ public:
     void updateValuesAndFields();
     void populateFieldsWithMillisecondValues();
     void populateFieldsWithHertzValues();
+    void buildInformationWindow();
 
     //[/UserMethods]
 
@@ -73,6 +74,7 @@ public:
     void buttonClicked (Button* buttonThatWasClicked) override;
     void sliderValueChanged (Slider* sliderThatWasMoved) override;
     void labelTextChanged (Label* labelThatHasChanged) override;
+    void mouseUp (const MouseEvent& e) override;
 
 
 
@@ -129,7 +131,6 @@ private:
     ScopedPointer<Label> oneTwentyEighthNormalLabel;
     ScopedPointer<Label> oneTwentyEighthDottedLabel;
     ScopedPointer<Label> oneTwentyEighthTripletLabel;
-    ScopedPointer<TextButton> informationButton;
     ScopedPointer<ToggleButton> hzToggle;
     ScopedPointer<ToggleButton> msToggle;
     ScopedPointer<ToggleButton> coarseResolutionToggle;
