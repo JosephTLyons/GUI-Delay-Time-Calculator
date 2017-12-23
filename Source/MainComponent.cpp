@@ -711,11 +711,40 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     //[/UserlabelTextChanged_Post]
 }
 
+void MainComponent::mouseEnter (const MouseEvent& e)
+{
+    //[UserCode_mouseEnter] -- Add your code here...
+    
+    if (e.eventComponent->getName() == delayTimeCalculatorLabel->getName())
+    {
+        // Change text color to white
+        delayTimeCalculatorLabel->setColour(delayTimeCalculatorLabel->textColourId,
+                                            Colours::white);
+    }
+    
+    //[/UserCode_mouseEnter]
+}
+
+void MainComponent::mouseExit (const MouseEvent& e)
+{
+    //[UserCode_mouseExit] -- Add your code here...
+    
+    if (e.eventComponent->getName() == delayTimeCalculatorLabel->getName())
+    {
+        // Change text color to original gray used
+        delayTimeCalculatorLabel->setColour(delayTimeCalculatorLabel->textColourId,
+                                            normalLabel->findColour(normalLabel->textColourId));
+        
+    }
+    
+    //[/UserCode_mouseExit]
+}
+
 void MainComponent::mouseUp (const MouseEvent& e)
 {
     //[UserCode_mouseUp] -- Add your code here...
 
-    if (e.eventComponent->getName() == "delayTimeCalculatorLabel")
+    if (e.eventComponent->getName() == delayTimeCalculatorLabel->getName())
         buildInformationWindow();
 
     //[/UserCode_mouseUp]
@@ -969,6 +998,8 @@ BEGIN_JUCER_METADATA
                  fixedSize="1" initialWidth="500" initialHeight="490">
   <METHODS>
     <METHOD name="mouseUp (const MouseEvent&amp; e)"/>
+    <METHOD name="mouseEnter (const MouseEvent&amp; e)"/>
+    <METHOD name="mouseExit (const MouseEvent&amp; e)"/>
   </METHODS>
   <BACKGROUND backgroundColour="ff353535"/>
   <TEXTBUTTON name="doubleTempoButton" id="74a1161b6a8bd75d" memberName="doubleTempoButton"
