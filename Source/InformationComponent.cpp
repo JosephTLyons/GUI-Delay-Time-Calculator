@@ -93,7 +93,7 @@ InformationComponent::InformationComponent ()
     //[UserPreSize]
     //[/UserPreSize]
 
-    setSize (240, 416);
+    setSize (240, 421);
 
 
     //[Constructor] You can add your own custom stuff here..
@@ -181,12 +181,12 @@ void InformationComponent::resized()
     //[/UserPreResize]
 
     informationLabel->setBounds (0, 0, 240, 50);
-    versionNumberLabelOutput->setBounds (0, 396, 240, 20);
-    informationTextEditor->setBounds (0, 56, 240, 220);
-    facebookButton->setBounds (0, 276, 240, 30);
-    emailMeButton->setBounds (0, 306, 240, 30);
-    theCodeButton->setBounds (0, 336, 240, 30);
-    donateButton->setBounds (0, 366, 240, 30);
+    versionNumberLabelOutput->setBounds (0, 401, 240, 20);
+    informationTextEditor->setBounds (0, 181, 240, 220);
+    facebookButton->setBounds (0, 61, 240, 30);
+    emailMeButton->setBounds (0, 91, 240, 30);
+    theCodeButton->setBounds (0, 121, 240, 30);
+    donateButton->setBounds (0, 151, 240, 30);
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
 }
@@ -258,7 +258,7 @@ BEGIN_JUCER_METADATA
 <JUCER_COMPONENT documentType="Component" className="InformationComponent" componentName=""
                  parentClasses="public Component" constructorParams="" variableInitialisers=""
                  snapPixels="8" snapActive="1" snapShown="1" overlayOpacity="0.330"
-                 fixedSize="1" initialWidth="240" initialHeight="416">
+                 fixedSize="1" initialWidth="240" initialHeight="421">
   <BACKGROUND backgroundColour="ff353535"/>
   <LABEL name="informationLabel" id="951f8323b93b29f2" memberName="informationLabel"
          virtualName="" explicitFocusOrder="0" pos="0 0 240 50" textCol="ffadaaaa"
@@ -267,28 +267,28 @@ BEGIN_JUCER_METADATA
          fontsize="47.399999999999998579" kerning="0.042999999999999996558"
          bold="0" italic="0" justification="36"/>
   <LABEL name="versionNumberLabel" id="30f8922fa9ce43fc" memberName="versionNumberLabelOutput"
-         virtualName="" explicitFocusOrder="0" pos="0 396 240 20" textCol="ffadaaaa"
+         virtualName="" explicitFocusOrder="0" pos="0 401 240 20" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
          fontsize="15" kerning="0" bold="0" italic="0" justification="33"/>
   <TEXTEDITOR name="informationTextEditor" id="724fec5cca6df686" memberName="informationTextEditor"
-              virtualName="" explicitFocusOrder="0" pos="0 56 240 220" bkgcol="ff353535"
+              virtualName="" explicitFocusOrder="0" pos="0 181 240 220" bkgcol="ff353535"
               outlinecol="ff353535" initialText="" multiline="1" retKeyStartsLine="1"
               readonly="1" scrollbars="1" caret="0" popupmenu="1"/>
   <TEXTBUTTON name="facebookButton" id="6ac572ffc02e0967" memberName="facebookButton"
-              virtualName="" explicitFocusOrder="0" pos="0 276 240 30" bgColOff="ffadaaaa"
+              virtualName="" explicitFocusOrder="0" pos="0 61 240 30" bgColOff="ffadaaaa"
               bgColOn="ffadaaaa" textCol="ff000000" buttonText="Facebook" connectedEdges="0"
               needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="emailMeButton" id="10fd8fe4350617b3" memberName="emailMeButton"
-              virtualName="" explicitFocusOrder="0" pos="0 306 240 30" bgColOff="ffadaaaa"
+              virtualName="" explicitFocusOrder="0" pos="0 91 240 30" bgColOff="ffadaaaa"
               bgColOn="ffadaaaa" textCol="ff000000" buttonText="Email Me" connectedEdges="0"
               needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="theCodeButton" id="3278fdaf35ce768" memberName="theCodeButton"
-              virtualName="" explicitFocusOrder="0" pos="0 336 240 30" bgColOff="ffadaaaa"
+              virtualName="" explicitFocusOrder="0" pos="0 121 240 30" bgColOff="ffadaaaa"
               bgColOn="ffadaaaa" textCol="ff000000" buttonText="The Code" connectedEdges="0"
               needsCallback="1" radioGroupId="0"/>
   <TEXTBUTTON name="donateButton" id="dcebaa8490729ac8" memberName="donateButton"
-              virtualName="" explicitFocusOrder="0" pos="0 366 240 30" bgColOff="ffadaaaa"
+              virtualName="" explicitFocusOrder="0" pos="0 151 240 30" bgColOff="ffadaaaa"
               bgColOn="ffadaaaa" textCol="ff000000" buttonText="Donate" connectedEdges="0"
               needsCallback="1" radioGroupId="0"/>
 </JUCER_COMPONENT>
