@@ -14,7 +14,7 @@ A simple application that calculates delay and reverb pre-delay times based on t
 * 1/2x and 2x buttons to quickly double or half the current tempo.  This may be useful if you need to get faster or slower times than the ones available on the screen.
 * Tap to set tempo with Tap Tempo and Reset Tap Tempo buttons.  Some setups will only measure the time between two hits, some will average a few hits together, however, my algorithm averages every single hit.  I find this to be more accurate as you can click 10-15 times to really hone in on a specific tempo.  Flucuations won't matter as much the more taps you put in.  The only downfall to this is is that once you start tapping, the algoritm never stops measuring time.  So you must manually reset the system with the R button each time you want to set a new tempo or if you stop tapping for any period of time and come back to it.  For convenience, the R button turns white to let you know you need to reset the interal system if you want to calculate a new tempo or if you have stopped tapping for any amount time and need to come back to it. Note: The first time you click, the tempo slider will move to 1.  This is not a bug, this is the nature of calculating the tempo based on taps.  Two hits are needed to get the first calculation.  So I set the slider to 1 during the first hit then, move it to the correct tempo after. Lastly, a tap count is recorded (1.6.0) and displayed directly in the Tap Tempo button text.
 * Keys: 1 = 1/2x, 2 = 2x, T = Tap Tempo, R = Reset Tap Tempo, 'M' enables ms, 'H' enables Hz, 'Spacebar = Round Value, Up Arrow = +1, Down Arrow = -1, Right Arrow = +5, Left Arrow = -5, C = Coarse Resolution, S = Standard Resolution, F = Fine Resolution
-* An information panel to display the keys that trigger actions and version number
+* An information panel that contains links to our email, our Facebook page, to the code repository, and the donations page.  It also displays the keys that trigger actions and the version number.  This information window is created when the user clicks on the main Delay Time Calculator window.
 
 ## Bugs to Fix:
 
@@ -32,7 +32,7 @@ A simple application that calculates delay and reverb pre-delay times based on t
 
 ### XXX  XX, 2018 - V 1.7.0
 1. Fixed a bug where the ms or hz values were not being updated when switching from finer resolution modes to coarser resolution modes
-2. Reduced GUI clutter: Moved Facebook, Email Me, The Code, and Dontate buttons to Information window (where they belong)
+2. Moved information related buttons to information window: Facebook, Email Me, The Code, and Donate buttons; this helped to reduce the GUI clutter
 3. Removed the information button entirely - Information window is now created by clicking on the main Delay Time Calculator label
 
 ### December 21, 2017 - V 1.6.0
