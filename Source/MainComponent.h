@@ -51,6 +51,7 @@ public:
     //==============================================================================
     //[UserMethods]     -- You can add your own custom methods in this section.
 
+    void resetTapTempo();
     bool keyPressed (const juce::KeyPress &key) override;
     void setupLabelCustomFont();
     void launchURL (const char *hyperLink);
@@ -108,7 +109,6 @@ private:
     ScopedPointer<Label> sixtyFourthLabel;
     ScopedPointer<Label> oneHundreAndTwentyEighthLabel;
     ScopedPointer<TextButton> tapButton;
-    ScopedPointer<TextButton> resetButton;
     ScopedPointer<Label> wholeNormalLabel;
     ScopedPointer<Label> wholeDottedLabel;
     ScopedPointer<Label> wholeTripletLabel;

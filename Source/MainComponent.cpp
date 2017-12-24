@@ -173,12 +173,6 @@ MainComponent::MainComponent ()
     tapButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
     tapButton->setColour (TextButton::textColourOffId, Colour (0xff353535));
 
-    addAndMakeVisible (resetButton = new TextButton ("resetButton"));
-    resetButton->setButtonText (TRANS("Reset Tap Tempo"));
-    resetButton->addListener (this);
-    resetButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
-    resetButton->setColour (TextButton::textColourOffId, Colour (0xff353535));
-
     addAndMakeVisible (wholeNormalLabel = new Label ("new label",
                                                      String()));
     wholeNormalLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
@@ -426,6 +420,7 @@ MainComponent::MainComponent ()
     bpmLabel->addListener (this);
 
     delayTimeCalculatorLabel->addMouseListener (this, false);
+    tapButton->addMouseListener (this, false);
 
     //setupLabelCustomFont();
 
@@ -453,7 +448,6 @@ MainComponent::~MainComponent()
     sixtyFourthLabel = nullptr;
     oneHundreAndTwentyEighthLabel = nullptr;
     tapButton = nullptr;
-    resetButton = nullptr;
     wholeNormalLabel = nullptr;
     wholeDottedLabel = nullptr;
     wholeTripletLabel = nullptr;
@@ -533,8 +527,7 @@ void MainComponent::resized()
     thirtySecondLabel->setBounds (0, 375, 100, 30);
     sixtyFourthLabel->setBounds (0, 415, 100, 30);
     oneHundreAndTwentyEighthLabel->setBounds (0, 455, 100, 30);
-    tapButton->setBounds (250, 115, 125, 30);
-    resetButton->setBounds (375, 115, 125, 30);
+    tapButton->setBounds (250, 115, 250, 30);
     wholeNormalLabel->setBounds (125, 175, 125, 30);
     wholeDottedLabel->setBounds (250, 175, 125, 30);
     wholeTripletLabel->setBounds (375, 175, 125, 30);
@@ -596,28 +589,10 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
 
         tempoSlider->setValue (tapTempoObject.calculateTempo());
 
-        // Change button color so we know a reset is needed
-        resetButton->setColour (TextButton::buttonColourId , Colours::white);
-
         // Add tap count to Tap Tempo button
         tapButton->setButtonText ("Tap Tempo (" + (String) tapTempoObject.getTapCount() + ")");
 
         //[/UserButtonCode_tapButton]
-    }
-    else if (buttonThatWasClicked == resetButton)
-    {
-        //[UserButtonCode_resetButton] -- add your button handler code here..
-
-        tapTempoObject.resetMainCalculationHolders();
-
-        // Reset the color of resetButton by simply setting it to the color of tapButton
-        resetButton->setColour (TextButton::buttonColourId,
-                                tapButton->findColour(TextButton::buttonColourId));
-
-        // Change Tap Tempo button text back to normal, excluding tap count
-        tapButton->setButtonText ("Tap Tempo");
-
-        //[/UserButtonCode_resetButton]
     }
     else if (buttonThatWasClicked == hzToggle)
     {
@@ -714,27 +689,30 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
 void MainComponent::mouseEnter (const MouseEvent& e)
 {
     //[UserCode_mouseEnter] -- Add your code here...
-    
+
     if (e.eventComponent->getName() == delayTimeCalculatorLabel->getName())
     {
         // Change text color to white
         delayTimeCalculatorLabel->setColour(Label::textColourId, Colours::white);
     }
-    
+
     //[/UserCode_mouseEnter]
 }
 
 void MainComponent::mouseExit (const MouseEvent& e)
 {
     //[UserCode_mouseExit] -- Add your code here...
-    
+
     if (e.eventComponent->getName() == delayTimeCalculatorLabel->getName())
     {
         // Change text color to original gray used
         delayTimeCalculatorLabel->setColour(Label::textColourId,
                                             normalLabel->findColour(normalLabel->textColourId));
     }
-    
+
+    if (e.eventComponent->getName() == tapButton->getName())
+        resetTapTempo();
+
     //[/UserCode_mouseExit]
 }
 
@@ -751,6 +729,14 @@ void MainComponent::mouseUp (const MouseEvent& e)
 
 
 //[MiscUserCode] You can add your own definitions of your custom methods or any other code here...
+
+void MainComponent::resetTapTempo()
+{
+    tapTempoObject.resetMainCalculationHolders();
+
+    // Change Tap Tempo button text back to normal, excluding tap count
+    tapButton->setButtonText ("Tap Tempo");
+}
 
 bool MainComponent::keyPressed (const juce::KeyPress &key)
 {
@@ -773,7 +759,7 @@ bool MainComponent::keyPressed (const juce::KeyPress &key)
         tapButton->triggerClick();
 
     else if (key == 'R')
-        resetButton->triggerClick();
+        resetTapTempo();
 
     else if (key == 'M')
         msToggle->triggerClick();
@@ -1077,12 +1063,8 @@ BEGIN_JUCER_METADATA
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Arial"
          fontsize="30" kerning="0" bold="0" italic="0" justification="33"/>
   <TEXTBUTTON name="tapButton" id="3cd8a4f5f3b122f8" memberName="tapButton"
-              virtualName="" explicitFocusOrder="0" pos="250 115 125 30" bgColOff="ffadaaaa"
+              virtualName="" explicitFocusOrder="0" pos="250 115 250 30" bgColOff="ffadaaaa"
               textCol="ff353535" buttonText="Tap Tempo" connectedEdges="0"
-              needsCallback="1" radioGroupId="0"/>
-  <TEXTBUTTON name="resetButton" id="137cfed0258a7265" memberName="resetButton"
-              virtualName="" explicitFocusOrder="0" pos="375 115 125 30" bgColOff="ffadaaaa"
-              textCol="ff353535" buttonText="Reset Tap Tempo" connectedEdges="0"
               needsCallback="1" radioGroupId="0"/>
   <LABEL name="new label" id="3b0b371f9cfffd20" memberName="wholeNormalLabel"
          virtualName="" explicitFocusOrder="0" pos="125 175 125 30" edTextCol="ff000000"
