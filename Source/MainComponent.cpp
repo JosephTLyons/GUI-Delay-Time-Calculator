@@ -730,14 +730,6 @@ void MainComponent::mouseUp (const MouseEvent& e)
 
 //[MiscUserCode] You can add your own definitions of your custom methods or any other code here...
 
-void MainComponent::resetTapTempo()
-{
-    tapTempoObject.resetMainCalculationHolders();
-
-    // Change Tap Tempo button text back to normal, excluding tap count
-    tapButton->setButtonText ("Tap Tempo");
-}
-
 bool MainComponent::keyPressed (const juce::KeyPress &key)
 {
     if (key == 'C')
@@ -942,6 +934,14 @@ void MainComponent::populateFieldsWithHertzValues()
                                                   dontSendNotification);
     oneTwentyEighthTripletLabel->setText ((String) hertzValuesObject.getOneHundredAndTwentyEighthTriplet(),
                                                    dontSendNotification);
+}
+
+void MainComponent::resetTapTempo()
+{
+    tapTempoObject.resetMainCalculationHolders();
+    
+    // Change Tap Tempo button text back to normal, excluding tap count
+    tapButton->setButtonText ("Tap Tempo");
 }
 
 void MainComponent::buildInformationWindow()

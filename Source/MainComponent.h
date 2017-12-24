@@ -51,7 +51,6 @@ public:
     //==============================================================================
     //[UserMethods]     -- You can add your own custom methods in this section.
 
-    void resetTapTempo();
     bool keyPressed (const juce::KeyPress &key) override;
     void setupLabelCustomFont();
     void launchURL (const char *hyperLink);
@@ -66,6 +65,7 @@ public:
     void updateValuesAndFields();
     void populateFieldsWithMillisecondValues();
     void populateFieldsWithHertzValues();
+    void resetTapTempo();
     void buildInformationWindow();
 
     //[/UserMethods]
