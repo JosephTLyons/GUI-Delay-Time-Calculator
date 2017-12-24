@@ -131,7 +131,8 @@ InformationComponent::InformationComponent ()
     informationTextEditor->setText(informationTextEditorString);
 
     // Set version number editor to current version number
-    versionNumberString = "The Lyons' Den Software\nDelay Time Calculator Version: ";
+    versionNumberString = "The Lyons' Den Software\n";
+    versionNumberString += "Delay Time Calculator Version: ";
     versionNumberString += ProjectInfo::versionString;
     versionNumberLabelOutput->setText(versionNumberString, dontSendNotification);
 
