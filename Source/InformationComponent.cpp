@@ -44,7 +44,7 @@ InformationComponent::InformationComponent ()
     addAndMakeVisible (versionNumberLabelOutput = new Label ("versionNumberLabel",
                                                              String()));
     versionNumberLabelOutput->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
-    versionNumberLabelOutput->setJustificationType (Justification::centredLeft);
+    versionNumberLabelOutput->setJustificationType (Justification::centred);
     versionNumberLabelOutput->setEditable (false, false, false);
     versionNumberLabelOutput->setColour (Label::textColourId, Colour (0xffadaaaa));
     versionNumberLabelOutput->setColour (TextEditor::textColourId, Colours::black);
@@ -93,7 +93,7 @@ InformationComponent::InformationComponent ()
     //[UserPreSize]
     //[/UserPreSize]
 
-    setSize (240, 361);
+    setSize (240, 381);
 
 
     //[Constructor] You can add your own custom stuff here..
@@ -131,7 +131,7 @@ InformationComponent::InformationComponent ()
     informationTextEditor->setText(informationTextEditorString);
 
     // Set version number editor to current version number
-    versionNumberString = "Delay Time Calculator Version: ";
+    versionNumberString = "The Lyons' Den Software\nDelay Time Calculator Version: ";
     versionNumberString += ProjectInfo::versionString;
     versionNumberLabelOutput->setText(versionNumberString, dontSendNotification);
 
@@ -181,7 +181,7 @@ void InformationComponent::resized()
     //[/UserPreResize]
 
     informationLabel->setBounds (0, 0, 240, 50);
-    versionNumberLabelOutput->setBounds (0, 341, 240, 20);
+    versionNumberLabelOutput->setBounds (0, 341, 240, 40);
     informationTextEditor->setBounds (0, 121, 240, 220);
     facebookButton->setBounds (0, 61, 120, 30);
     emailMeButton->setBounds (120, 61, 120, 30);
@@ -258,7 +258,7 @@ BEGIN_JUCER_METADATA
 <JUCER_COMPONENT documentType="Component" className="InformationComponent" componentName=""
                  parentClasses="public Component" constructorParams="" variableInitialisers=""
                  snapPixels="8" snapActive="1" snapShown="1" overlayOpacity="0.330"
-                 fixedSize="1" initialWidth="240" initialHeight="361">
+                 fixedSize="1" initialWidth="240" initialHeight="381">
   <BACKGROUND backgroundColour="ff353535"/>
   <LABEL name="informationLabel" id="951f8323b93b29f2" memberName="informationLabel"
          virtualName="" explicitFocusOrder="0" pos="0 0 240 50" textCol="ffadaaaa"
@@ -267,10 +267,10 @@ BEGIN_JUCER_METADATA
          fontsize="47.399999999999998579" kerning="0.042999999999999996558"
          bold="0" italic="0" justification="36"/>
   <LABEL name="versionNumberLabel" id="30f8922fa9ce43fc" memberName="versionNumberLabelOutput"
-         virtualName="" explicitFocusOrder="0" pos="0 341 240 20" textCol="ffadaaaa"
+         virtualName="" explicitFocusOrder="0" pos="0 341 240 40" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
-         fontsize="15" kerning="0" bold="0" italic="0" justification="33"/>
+         fontsize="15" kerning="0" bold="0" italic="0" justification="36"/>
   <TEXTEDITOR name="informationTextEditor" id="724fec5cca6df686" memberName="informationTextEditor"
               virtualName="" explicitFocusOrder="0" pos="0 121 240 220" bkgcol="ff353535"
               outlinecol="ff353535" initialText="" multiline="1" retKeyStartsLine="1"

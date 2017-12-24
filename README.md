@@ -34,6 +34,7 @@ A simple application that calculates delay and reverb pre-delay times based on t
 1. Fixed a bug where the ms or hz values were not being updated when switching from finer resolution modes to coarser resolution modes
 2. Moved information related buttons to information window: Facebook, Email Me, The Code, and Donate buttons; this helped to reduce the GUI clutter
 3. Removed the information button entirely - Information window is now created by clicking on the main Delay Time Calculator label
+4. Other minor additions to the information button
 
 ### December 21, 2017 - V 1.6.0
 1. Reworked GUI to be more symmetrical at top and to have a larger BPM value readout
