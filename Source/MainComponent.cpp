@@ -40,7 +40,7 @@ MainComponent::MainComponent ()
     doubleTempoButton->setColour (TextButton::textColourOffId, Colour (0xff353535));
 
     addAndMakeVisible (halfTempoButton = new TextButton ("halfTempoButton"));
-    halfTempoButton->setButtonText (TRANS("1/2x"));
+    halfTempoButton->setButtonText (TRANS("(1/2)x"));
     halfTempoButton->addListener (this);
     halfTempoButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
     halfTempoButton->setColour (TextButton::textColourOffId, Colour (0xff353535));
@@ -1008,7 +1008,7 @@ BEGIN_JUCER_METADATA
               radioGroupId="0"/>
   <TEXTBUTTON name="halfTempoButton" id="edac6a2aecdd8ef5" memberName="halfTempoButton"
               virtualName="" explicitFocusOrder="0" pos="0 115 125 30" bgColOff="ffadaaaa"
-              textCol="ff353535" buttonText="1/2x" connectedEdges="0" needsCallback="1"
+              textCol="ff353535" buttonText="(1/2)x" connectedEdges="0" needsCallback="1"
               radioGroupId="0"/>
   <SLIDER name="tempoSlider" id="1b36c66db8e52ea5" memberName="tempoSlider"
           virtualName="" explicitFocusOrder="0" pos="0 85 500 30" bkgcol="ff000000"
