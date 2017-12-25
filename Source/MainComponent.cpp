@@ -690,10 +690,12 @@ void MainComponent::mouseMove (const MouseEvent& e)
 {
     //[UserCode_mouseMove] -- Add your code here...
     
-    // This takes care of the case of using the 'T' button to set Tap Tempo
-    // Reset if not using the Tap Tempo button and the mouse is moved when tap count is greater than 0
-    if (e.eventComponent->getName() != tapButton->getName())
-        if (tapTempoObject.getTapCount() > 0)
+    // Dont reset unless needs reset (tap count is greater than 0)
+    // Don't reset if mouse moves and is hoving over Tap Tempo button
+    // because user is likely clicking the button and doesn't want it reset automatically
+    // Only reset if mouse moves and isn't on Tap Tempo button, this takes care of reseting when using the 'T' key
+    if (tapTempoObject.getTapCount() > 0)
+        if (e.eventComponent->getName() != tapButton->getName())
             resetTapTempo();
     
     //[/UserCode_mouseMove]
