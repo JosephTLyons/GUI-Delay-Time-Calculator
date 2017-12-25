@@ -75,6 +75,7 @@ public:
     void buttonClicked (Button* buttonThatWasClicked) override;
     void sliderValueChanged (Slider* sliderThatWasMoved) override;
     void labelTextChanged (Label* labelThatHasChanged) override;
+    void mouseMove (const MouseEvent& e) override;
     void mouseEnter (const MouseEvent& e) override;
     void mouseExit (const MouseEvent& e) override;
     void mouseUp (const MouseEvent& e) override;

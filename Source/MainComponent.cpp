@@ -686,6 +686,19 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     //[/UserlabelTextChanged_Post]
 }
 
+void MainComponent::mouseMove (const MouseEvent& e)
+{
+    //[UserCode_mouseMove] -- Add your code here...
+    
+    // This takes care of the case of using the 'T' button to set Tap Tempo
+    // Reset if not using the Tap Tempo button and the mouse is moved when tap count is greater than 0
+    if (e.eventComponent->getName() != tapButton->getName())
+        if (tapTempoObject.getTapCount() > 0)
+            resetTapTempo();
+    
+    //[/UserCode_mouseMove]
+}
+
 void MainComponent::mouseEnter (const MouseEvent& e)
 {
     //[UserCode_mouseEnter] -- Add your code here...
@@ -939,7 +952,7 @@ void MainComponent::populateFieldsWithHertzValues()
 void MainComponent::resetTapTempo()
 {
     tapTempoObject.resetMainCalculationHolders();
-    
+
     // Change Tap Tempo button text back to normal, excluding tap count
     tapButton->setButtonText ("Tap Tempo");
 }
@@ -984,6 +997,7 @@ BEGIN_JUCER_METADATA
     <METHOD name="mouseUp (const MouseEvent&amp; e)"/>
     <METHOD name="mouseEnter (const MouseEvent&amp; e)"/>
     <METHOD name="mouseExit (const MouseEvent&amp; e)"/>
+    <METHOD name="mouseMove (const MouseEvent&amp; e)"/>
   </METHODS>
   <BACKGROUND backgroundColour="ff353535"/>
   <TEXTBUTTON name="doubleTempoButton" id="74a1161b6a8bd75d" memberName="doubleTempoButton"
