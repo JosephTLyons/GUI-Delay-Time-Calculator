@@ -8,7 +8,7 @@ A simple application that calculates delay and reverb pre-delay times based on t
 
 * Delay times calculated for: 1, 1/2, 1/4, 1/8, 1/16, 1/32, 1/64, and 1/128.
 * Option to show values in terms of Hertz, which might be useful for setting synth LFOs.
-* A slider for user input of tempo, from 1 - 1000 bpm.  The user can also input their tempo by clicking the text box to the left of the slider.  Holding down command will give finer control over the slider.
+* A slider for user input of tempo, from 1 - 1000 bpm.  The user can also input their tempo by clicking the text box above slider.  Holding down command will give finer control over the slider.
 * Options of using bpm intervals of (X), (0.X), or (0.0X)
 * User can choose from whole, tenths, or hundredths resolution, for tempo increments.
 * 1/2x and 2x buttons to quickly double or half the current tempo.  This may be useful if you need to get faster or slower times than the ones available on the screen.
