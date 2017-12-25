@@ -116,7 +116,7 @@ InformationComponent::InformationComponent ()
     informationTextEditorString += "-'1' to trigger 1/2x\n";
     informationTextEditorString += "-'2' to trigger 2x\n";
     informationTextEditorString += "-'T' to trigger Tap Tempo\n";
-    informationTextEditorString += "-'R' to reest Tap Tempo\n\n";
+    informationTextEditorString += "-'R' to reset Tap Tempo\n\n";
 
     informationTextEditorString += "-'M' to enable ms\n";
     informationTextEditorString += "-'H' to enable Hz\n\n";
