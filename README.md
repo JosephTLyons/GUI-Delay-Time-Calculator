@@ -34,9 +34,10 @@ A simple application that calculates delay and reverb pre-delay times based on t
 1. Fixed a bug where the ms or hz values were not being updated when switching from finer resolution modes to coarser resolution modes
 2. Tap Tempo now automatically resets as soon as the mouse leaves the boundaries of the Tap Tempo button, if using the 'T' key, resetting occurs as soon is the mouse is moved
 3. Moved information-related buttons to information window: Facebook, Email Me, The Code, and Donate buttons; this helped to reduce the GUI clutter
-4. Removed the information button entirely - Information window is now created by clicking on the main Delay Time Calculator label
+4. Removed the information button entirely to reduce clutter - Information window is now created by clicking on the main Delay Time Calculator label
 5. Other minor additions to the information window
-6. Code clean up
+6. Changed "1/2x" to "(1/2)x", as it was incorrect before
+7. Code clean up
 
 ### December 21, 2017 - V 1.6.0
 1. Reworked GUI to be more symmetrical at top and to have a larger BPM value readout
