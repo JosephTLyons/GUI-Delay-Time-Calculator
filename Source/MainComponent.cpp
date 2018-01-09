@@ -862,13 +862,13 @@ void MainComponent::updateValuesAndFields()
 
     if (msToggle->getToggleState())
     {
-        millisecondValuesObject.calculateMillisecondValues (tempoSlider->getValue());
+        millisecondValuesObject.calculateValues (tempoSlider->getValue());
         populateFieldsWithMillisecondValues();
     }
 
     if (hzToggle->getToggleState())
     {
-        hertzValuesObject.calculateHertzValues (tempoSlider->getValue());
+        hertzValuesObject.calculateValues (tempoSlider->getValue());
         populateFieldsWithHertzValues();
     }
 }

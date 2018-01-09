@@ -51,6 +51,8 @@ protected:
 public:
     MillisecondsHertzValueBase();
     
+    virtual void calculateValues (const double &input) = 0;
+    
     double getWholeNormal();
     double getWholeDotted();
     double getWholeTriplet();
