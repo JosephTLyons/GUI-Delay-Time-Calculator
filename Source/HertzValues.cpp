@@ -8,6 +8,8 @@
 
 #include "HertzValues.hpp"
 
+HertzValues::~HertzValues() {}
+
 void HertzValues::calculateValues (const double &input)
 {
     tempo = input;

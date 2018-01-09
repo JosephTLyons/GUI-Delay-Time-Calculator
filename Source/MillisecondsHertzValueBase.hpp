@@ -50,6 +50,7 @@ protected:
     
 public:
     MillisecondsHertzValueBase();
+    virtual ~MillisecondsHertzValueBase() {};
     
     virtual void calculateValues (const double &input) = 0;
     

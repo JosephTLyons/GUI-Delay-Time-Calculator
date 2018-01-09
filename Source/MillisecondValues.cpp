@@ -8,6 +8,8 @@
 
 #include "MillisecondValues.hpp"
 
+MillisecondValues::~MillisecondValues() {}
+
 void MillisecondValues::calculateValues (const double &input)
 {
     tempo = input;
