@@ -14,7 +14,7 @@
 class HertzValues : public MillisecondsHertzValueBase
 {
 public:
-    ~HertzValues() override;
+    ~HertzValues();
     void calculateValues (const double &input) override;
 };
 
