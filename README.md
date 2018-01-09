@@ -36,6 +36,7 @@ A simple application that calculates delay and reverb pre-delay times based on t
 3. Moved information-related buttons to information window: Facebook, Email Me, The Code, and Donate buttons; this helped to reduce the GUI clutter
 4. Removed the information button entirely - Information window is now created by clicking on the main Delay Time Calculator label
 5. Other minor additions to the information window
+6. Code clean up
 
 ### December 21, 2017 - V 1.6.0
 1. Reworked GUI to be more symmetrical at top and to have a larger BPM value readout
