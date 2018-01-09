@@ -8,8 +8,6 @@
 
 #include "MillisecondsHertzValueBase.hpp"
 
-MillisecondsHertzValueBase::~MillisecondsHertzValueBase() {}
-
 MillisecondsHertzValueBase::MillisecondsHertzValueBase()
 {
     tempo   = 0;
@@ -46,6 +44,8 @@ MillisecondsHertzValueBase::MillisecondsHertzValueBase()
     oneHundredAndTwentyEighthDotted  = 0;
     oneHundredAndTwentyEighthTriplet = 0;
 }
+
+MillisecondsHertzValueBase::~MillisecondsHertzValueBase() {}
 
 double MillisecondsHertzValueBase::getWholeNormal()
 {
