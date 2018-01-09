@@ -8,6 +8,8 @@
 
 #include "MillisecondsHertzValueBase.hpp"
 
+MillisecondsHertzValueBase::~MillisecondsHertzValueBase() {}
+
 MillisecondsHertzValueBase::MillisecondsHertzValueBase()
 {
     tempo   = 0;
