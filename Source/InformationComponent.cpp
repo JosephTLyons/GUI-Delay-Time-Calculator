@@ -113,7 +113,7 @@ InformationComponent::InformationComponent ()
     informationTextEditorString += "-'S' for standard resolution\n";
     informationTextEditorString += "-'F' for fine resolution\n\n";
 
-    informationTextEditorString += "-'1' to trigger 1/2x\n";
+    informationTextEditorString += "-'1' to trigger (1/2)x\n";
     informationTextEditorString += "-'2' to trigger 2x\n";
     informationTextEditorString += "-'T' to trigger Tap Tempo\n";
     informationTextEditorString += "-'R' to reset Tap Tempo\n\n";
