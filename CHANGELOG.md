@@ -6,7 +6,7 @@
 3. Moved information-related buttons to information window: Facebook, Email Me, The Code, and Donate buttons; this helped to reduce the GUI clutter
 4. Removed the information button entirely to reduce clutter - Information window is now created by clicking on the main Delay Time Calculator label
 5. Other minor additions to the information window
-6. Changed "1/2x" to "(1/2)x", as it was incorrect before
+6. Changed "1/2x" to "(1/2)x", as it was incorrect before, in both the button itself and the information window
 7. Information window now always opens in the center of Delay Time Calculator window
 8. Code clean up
 
