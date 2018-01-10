@@ -20,6 +20,8 @@
               resource="1" file="Pixelmator/Delay Time Calculator AppIcon 2.pxm"/>
       </GROUP>
       <FILE id="Ltw8fF" name="README.md" compile="0" resource="1" file="README.md"/>
+      <FILE id="qHE6R4" name="CHANGELOG.md" compile="0" resource="1" file="CHANGELOG.md"/>
+      <FILE id="AIzG0Q" name="TODO.md" compile="0" resource="1" file="TODO.md"/>
       <FILE id="WYZacz" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
       <FILE id="SyC7oU" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
       <FILE id="BhkZlp" name="MainComponent.cpp" compile="1" resource="0"
