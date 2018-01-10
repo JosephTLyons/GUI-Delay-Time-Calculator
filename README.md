@@ -37,7 +37,8 @@ A simple application that calculates delay and reverb pre-delay times based on t
 4. Removed the information button entirely to reduce clutter - Information window is now created by clicking on the main Delay Time Calculator label
 5. Other minor additions to the information window
 6. Changed "1/2x" to "(1/2)x", as it was incorrect before
-7. Code clean up
+7. Information window now always opens in the center of Delay Time Calculator window
+8. Code clean up
 
 ### December 21, 2017 - V 1.6.0
 1. Reworked GUI to be more symmetrical at top and to have a larger BPM value readout
