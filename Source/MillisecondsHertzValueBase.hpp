@@ -14,8 +14,6 @@ class MillisecondsHertzValueBase
 private:
     
 protected:
-    double tempo;
-    
     double wholeNormal;
     double wholeDotted;
     double wholeTriplet;
@@ -52,7 +50,7 @@ public:
     MillisecondsHertzValueBase();
     virtual ~MillisecondsHertzValueBase();
     
-    virtual void calculateValues (const double &input) = 0;
+    virtual void calculateValues (const double &tempo) = 0;
     
     double getWholeNormal();
     double getWholeDotted();

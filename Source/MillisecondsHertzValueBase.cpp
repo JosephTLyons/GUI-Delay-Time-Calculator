@@ -10,8 +10,6 @@
 
 MillisecondsHertzValueBase::MillisecondsHertzValueBase()
 {
-    tempo   = 0;
-    
     wholeNormal                      = 0;
     wholeDotted                      = 0;
     wholeTriplet                     = 0;

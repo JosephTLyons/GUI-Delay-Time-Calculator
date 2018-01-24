@@ -10,10 +10,8 @@
 
 MillisecondValues::~MillisecondValues() {}
 
-void MillisecondValues::calculateValues (const double &input)
+void MillisecondValues::calculateValues (const double &tempo)
 {
-    tempo = input;
-    
     // quarterNormal value must be calculated first, since other values depend on it
     quarterNormal                    = 60000 / tempo;
     

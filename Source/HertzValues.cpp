@@ -10,10 +10,8 @@
 
 HertzValues::~HertzValues() {}
 
-void HertzValues::calculateValues (const double &input)
+void HertzValues::calculateValues (const double &tempo)
 {
-    tempo = input;
-    
     // quarterNormal value must be calculated first, since other values depend on it
     quarterNormal                    = tempo / 60;
     
