@@ -21,6 +21,7 @@
 
 //[Headers]     -- You can add your own extra header files here --
 #include "../JuceLibraryCode/JuceHeader.h"
+#include "MillisecondsHertzValueBase.hpp"
 #include "MillisecondValues.hpp"
 #include "HertzValues.hpp"
 #include "TapTempo.hpp"
@@ -63,8 +64,7 @@ public:
                                   const bool &isFineSelected, const double &increment);
     void setBpmLabelValue();
     void updateValuesAndFields();
-    void populateFieldsWithMillisecondValues();
-    void populateFieldsWithHertzValues();
+    void populateFieldsWithValues (const MillisecondsHertzValueBase &baseObject);
     void resetTapTempo();
     void buildInformationWindow();
 

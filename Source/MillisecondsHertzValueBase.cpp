@@ -45,122 +45,122 @@ MillisecondsHertzValueBase::MillisecondsHertzValueBase()
 
 MillisecondsHertzValueBase::~MillisecondsHertzValueBase() {}
 
-double MillisecondsHertzValueBase::getWholeNormal()
+double MillisecondsHertzValueBase::getWholeNormal() const
 {
     return wholeNormal;
 }
 
-double MillisecondsHertzValueBase::getWholeDotted()
+double MillisecondsHertzValueBase::getWholeDotted() const
 {
     return wholeDotted;
 }
 
-double MillisecondsHertzValueBase::getWholeTriplet()
+double MillisecondsHertzValueBase::getWholeTriplet() const
 {
     return wholeTriplet;
 }
 
-double MillisecondsHertzValueBase::getHalfNormal()
+double MillisecondsHertzValueBase::getHalfNormal() const
 {
     return halfNormal;
 }
 
-double MillisecondsHertzValueBase::getHalfDotted()
+double MillisecondsHertzValueBase::getHalfDotted() const
 {
     return halfDotted;
 }
 
-double MillisecondsHertzValueBase::getHalfTriplet()
+double MillisecondsHertzValueBase::getHalfTriplet() const
 {
     return halfTriplet;
 }
 
-double MillisecondsHertzValueBase::getQuarterNormal()
+double MillisecondsHertzValueBase::getQuarterNormal() const
 {
     return quarterNormal;
 }
 
-double MillisecondsHertzValueBase::getQuarterDotted()
+double MillisecondsHertzValueBase::getQuarterDotted() const
 {
     return quarterDotted;
 }
 
-double MillisecondsHertzValueBase::getQuarterTriplet()
+double MillisecondsHertzValueBase::getQuarterTriplet() const
 {
     return quarterTriplet;
 }
 
-double MillisecondsHertzValueBase::getEighthNormal()
+double MillisecondsHertzValueBase::getEighthNormal() const
 {
     return eighthNormal;
 }
 
-double MillisecondsHertzValueBase::getEighthDotted()
+double MillisecondsHertzValueBase::getEighthDotted() const
 {
     return eighthDotted;
 }
 
-double MillisecondsHertzValueBase::getEighthTriplet()
+double MillisecondsHertzValueBase::getEighthTriplet() const
 {
     return eighthTriplet;
 }
 
-double MillisecondsHertzValueBase::getSixteenthNormal()
+double MillisecondsHertzValueBase::getSixteenthNormal() const
 {
     return sixteenthNormal;
 }
 
-double MillisecondsHertzValueBase::getSixteenthDotted()
+double MillisecondsHertzValueBase::getSixteenthDotted() const
 {
     return sixteenthDotted;
 }
 
-double MillisecondsHertzValueBase::getSixteenthTriplet()
+double MillisecondsHertzValueBase::getSixteenthTriplet() const
 {
     return sixteenthTriplet;
 }
 
-double MillisecondsHertzValueBase::getThirtySecondNormal()
+double MillisecondsHertzValueBase::getThirtySecondNormal() const
 {
     return thirtySecondNormal;
 }
 
-double MillisecondsHertzValueBase::getThirtySecondDotted()
+double MillisecondsHertzValueBase::getThirtySecondDotted() const
 {
     return thirtySecondDotted;
 }
 
-double MillisecondsHertzValueBase::getThirtySecondTriplet()
+double MillisecondsHertzValueBase::getThirtySecondTriplet() const
 {
     return thirtySecondTriplet;
 }
 
-double MillisecondsHertzValueBase::getSixtyFouthNormal()
+double MillisecondsHertzValueBase::getSixtyFouthNormal() const
 {
     return sixtyFourthNormal;
 }
 
-double MillisecondsHertzValueBase::getSixtyFouthDotted()
+double MillisecondsHertzValueBase::getSixtyFouthDotted() const
 {
     return sixtyFourthDotted;
 }
 
-double MillisecondsHertzValueBase::getSixtyFouthTriplet()
+double MillisecondsHertzValueBase::getSixtyFouthTriplet() const
 {
     return sixtyFourthTriplet;
 }
 
-double MillisecondsHertzValueBase::getOneHundredAndTwentyEighthNormal()
+double MillisecondsHertzValueBase::getOneHundredAndTwentyEighthNormal() const
 {
     return oneHundredAndTwentyEighthNormal;
 }
 
-double MillisecondsHertzValueBase::getOneHundredAndTwentyEighthDotted()
+double MillisecondsHertzValueBase::getOneHundredAndTwentyEighthDotted() const
 {
     return oneHundredAndTwentyEighthDotted;
 }
 
-double MillisecondsHertzValueBase::getOneHundredAndTwentyEighthTriplet()
+double MillisecondsHertzValueBase::getOneHundredAndTwentyEighthTriplet() const
 {
     return oneHundredAndTwentyEighthTriplet;
 }

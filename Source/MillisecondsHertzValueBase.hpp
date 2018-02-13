@@ -52,37 +52,37 @@ public:
     
     virtual void calculateValues (const double &tempo) = 0;
     
-    double getWholeNormal();
-    double getWholeDotted();
-    double getWholeTriplet();
+    double getWholeNormal() const;
+    double getWholeDotted() const;
+    double getWholeTriplet() const;
     
-    double getHalfNormal();
-    double getHalfDotted();
-    double getHalfTriplet();
+    double getHalfNormal() const;
+    double getHalfDotted() const;
+    double getHalfTriplet() const;
     
-    double getQuarterNormal();
-    double getQuarterDotted();
-    double getQuarterTriplet();
+    double getQuarterNormal() const;
+    double getQuarterDotted() const;
+    double getQuarterTriplet() const;
     
-    double getEighthNormal();
-    double getEighthDotted();
-    double getEighthTriplet();
+    double getEighthNormal() const;
+    double getEighthDotted() const;
+    double getEighthTriplet() const;
     
-    double getSixteenthNormal();
-    double getSixteenthDotted();
-    double getSixteenthTriplet();
+    double getSixteenthNormal() const;
+    double getSixteenthDotted() const;
+    double getSixteenthTriplet() const;
     
-    double getThirtySecondNormal();
-    double getThirtySecondDotted();
-    double getThirtySecondTriplet();
+    double getThirtySecondNormal() const;
+    double getThirtySecondDotted() const;
+    double getThirtySecondTriplet() const;
     
-    double getSixtyFouthNormal();
-    double getSixtyFouthDotted();
-    double getSixtyFouthTriplet();
+    double getSixtyFouthNormal() const;
+    double getSixtyFouthDotted() const;
+    double getSixtyFouthTriplet() const;
     
-    double getOneHundredAndTwentyEighthNormal();
-    double getOneHundredAndTwentyEighthDotted();
-    double getOneHundredAndTwentyEighthTriplet();
+    double getOneHundredAndTwentyEighthNormal() const;
+    double getOneHundredAndTwentyEighthDotted() const;
+    double getOneHundredAndTwentyEighthTriplet() const;
 };
 
 #endif /* MillisecondsHertzValueBase */
