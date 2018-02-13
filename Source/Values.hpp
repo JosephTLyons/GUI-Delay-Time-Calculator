@@ -9,11 +9,9 @@
 #ifndef MillisecondsHertzValueBase_hpp
 #define MillisecondsHertzValueBase_hpp
 
-class MillisecondsHertzValueBase
+class Values
 {
 private:
-    
-protected:
     double wholeNormal;
     double wholeDotted;
     double wholeTriplet;
@@ -47,10 +45,10 @@ protected:
     double oneHundredAndTwentyEighthTriplet;
     
 public:
-    MillisecondsHertzValueBase();
-    virtual ~MillisecondsHertzValueBase();
+    Values();
     
-    virtual void calculateValues (const double &tempo) = 0;
+    void calculateMilliseconds (const double &tempo);
+    void calculateHertz (const double &tempo);
     
     double getWholeNormal() const;
     double getWholeDotted() const;

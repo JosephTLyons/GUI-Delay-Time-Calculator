@@ -34,7 +34,7 @@ InformationComponent::InformationComponent ()
 
     addAndMakeVisible (informationLabel = new Label ("informationLabel",
                                                      TRANS("Information")));
-    informationLabel->setFont (Font ("Arial", 47.40f, Font::plain).withTypefaceStyle ("Regular").withExtraKerningFactor (0.043f));
+    informationLabel->setFont (Font ("Arial", 47.40f, Font::plain).withExtraKerningFactor (0.043f));
     informationLabel->setJustificationType (Justification::centred);
     informationLabel->setEditable (false, false, false);
     informationLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
