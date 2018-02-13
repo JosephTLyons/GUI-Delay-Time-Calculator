@@ -64,7 +64,7 @@ public:
                                   const bool &isFineSelected, const double &increment);
     void setBpmLabelValue();
     void updateValuesAndFields();
-    void populateFieldsWithValues (const MillisecondsHertzValueBase &baseObject);
+    void populateFieldsWithValues();
     void resetTapTempo();
     void buildInformationWindow();
 
@@ -85,6 +85,7 @@ public:
 private:
     //[UserVariables]   -- You can add your own custom variables in this section.
 
+    MillisecondsHertzValueBase *baseObjectPtr;
     MillisecondValues millisecondValuesObject;
     HertzValues hertzValuesObject;
     TapTempo tapTempoObject;

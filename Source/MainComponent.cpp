@@ -863,53 +863,59 @@ void MainComponent::updateValuesAndFields()
     if (msToggle->getToggleState())
     {
         millisecondValuesObject.calculateValues (tempoSlider->getValue());
-        populateFieldsWithValues (millisecondValuesObject);
+        populateFieldsWithValues();
     }
 
     else
     {
         hertzValuesObject.calculateValues (tempoSlider->getValue());
-        populateFieldsWithValues (hertzValuesObject);
+        populateFieldsWithValues();
     }
     
 }
 
-void MainComponent::populateFieldsWithValues (const MillisecondsHertzValueBase &baseObject)
+void MainComponent::populateFieldsWithValues()
 {
+    if (msToggle->getToggleState())
+        baseObjectPtr = &millisecondValuesObject;
+    
+    else
+        baseObjectPtr = &hertzValuesObject;
+    
     // Set values for all text labels
-    wholeNormalLabel->setText ((String) baseObject.getWholeNormal(), dontSendNotification);
-    wholeDottedLabel->setText ((String) baseObject.getWholeDotted(), dontSendNotification);
-    wholeTripletLabel->setText ((String) baseObject.getWholeTriplet(), dontSendNotification);
+    wholeNormalLabel->setText ((String) baseObjectPtr->getWholeNormal(), dontSendNotification);
+    wholeDottedLabel->setText ((String) baseObjectPtr->getWholeDotted(), dontSendNotification);
+    wholeTripletLabel->setText ((String) baseObjectPtr->getWholeTriplet(), dontSendNotification);
 
-    halfNormalLabel->setText ((String) baseObject.getHalfNormal(), dontSendNotification);
-    halfDottedLabel->setText ((String) baseObject.getHalfDotted(), dontSendNotification);
-    halfTripletLabel->setText ((String) baseObject.getHalfTriplet(), dontSendNotification);
+    halfNormalLabel->setText ((String) baseObjectPtr->getHalfNormal(), dontSendNotification);
+    halfDottedLabel->setText ((String) baseObjectPtr->getHalfDotted(), dontSendNotification);
+    halfTripletLabel->setText ((String) baseObjectPtr->getHalfTriplet(), dontSendNotification);
 
-    quarterNormalLabel->setText ((String) baseObject.getQuarterNormal(), dontSendNotification);
-    quarterDottedLabel->setText ((String) baseObject.getQuarterDotted(), dontSendNotification);
-    quarterTripletLabel->setText ((String) baseObject.getQuarterTriplet(), dontSendNotification);
+    quarterNormalLabel->setText ((String) baseObjectPtr->getQuarterNormal(), dontSendNotification);
+    quarterDottedLabel->setText ((String) baseObjectPtr->getQuarterDotted(), dontSendNotification);
+    quarterTripletLabel->setText ((String) baseObjectPtr->getQuarterTriplet(), dontSendNotification);
 
-    eighthNormalLabel->setText ((String) baseObject.getEighthNormal(), dontSendNotification);
-    eighthDottedLabel->setText ((String) baseObject.getEighthDotted(), dontSendNotification);
-    eighthTripletLabel->setText ((String) baseObject.getEighthTriplet(), dontSendNotification);
+    eighthNormalLabel->setText ((String) baseObjectPtr->getEighthNormal(), dontSendNotification);
+    eighthDottedLabel->setText ((String) baseObjectPtr->getEighthDotted(), dontSendNotification);
+    eighthTripletLabel->setText ((String) baseObjectPtr->getEighthTriplet(), dontSendNotification);
 
-    sixteenthNormalLabel->setText ((String) baseObject.getSixteenthNormal(), dontSendNotification);
-    sixteenthDottedLabel->setText ((String) baseObject.getSixteenthDotted(), dontSendNotification);
-    sixteenthTripletLabel->setText ((String) baseObject.getSixteenthTriplet(), dontSendNotification);
+    sixteenthNormalLabel->setText ((String) baseObjectPtr->getSixteenthNormal(), dontSendNotification);
+    sixteenthDottedLabel->setText ((String) baseObjectPtr->getSixteenthDotted(), dontSendNotification);
+    sixteenthTripletLabel->setText ((String) baseObjectPtr->getSixteenthTriplet(), dontSendNotification);
 
-    thirtySecondNormalLabel->setText ((String) baseObject.getThirtySecondNormal(), dontSendNotification);
-    thirtySecondDottedLabel->setText ((String) baseObject.getThirtySecondDotted(), dontSendNotification);
-    thirtySecondTripletLabel->setText ((String) baseObject.getThirtySecondTriplet(), dontSendNotification);
+    thirtySecondNormalLabel->setText ((String) baseObjectPtr->getThirtySecondNormal(), dontSendNotification);
+    thirtySecondDottedLabel->setText ((String) baseObjectPtr->getThirtySecondDotted(), dontSendNotification);
+    thirtySecondTripletLabel->setText ((String) baseObjectPtr->getThirtySecondTriplet(), dontSendNotification);
 
-    sixtyFourthNormalLabel->setText ((String) baseObject.getSixtyFouthNormal(), dontSendNotification);
-    sixtyFourthDottedLabel->setText ((String) baseObject.getSixtyFouthDotted(), dontSendNotification);
-    sixtyFourthTripletLabel->setText ((String) baseObject.getSixtyFouthTriplet(), dontSendNotification);
+    sixtyFourthNormalLabel->setText ((String) baseObjectPtr->getSixtyFouthNormal(), dontSendNotification);
+    sixtyFourthDottedLabel->setText ((String) baseObjectPtr->getSixtyFouthDotted(), dontSendNotification);
+    sixtyFourthTripletLabel->setText ((String) baseObjectPtr->getSixtyFouthTriplet(), dontSendNotification);
 
-    oneTwentyEighthNormalLabel->setText ((String) baseObject.getOneHundredAndTwentyEighthNormal(),
+    oneTwentyEighthNormalLabel->setText ((String) baseObjectPtr->getOneHundredAndTwentyEighthNormal(),
                                                   dontSendNotification);
-    oneTwentyEighthDottedLabel->setText ((String) baseObject.getOneHundredAndTwentyEighthDotted(),
+    oneTwentyEighthDottedLabel->setText ((String) baseObjectPtr->getOneHundredAndTwentyEighthDotted(),
                                                   dontSendNotification);
-    oneTwentyEighthTripletLabel->setText ((String) baseObject.getOneHundredAndTwentyEighthTriplet(),
+    oneTwentyEighthTripletLabel->setText ((String) baseObjectPtr->getOneHundredAndTwentyEighthTriplet(),
                                                    dontSendNotification);
 }
 
