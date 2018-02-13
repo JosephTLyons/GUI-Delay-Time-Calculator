@@ -866,7 +866,7 @@ void MainComponent::updateValuesAndFields()
         populateFieldsWithValues (millisecondValuesObject);
     }
 
-    if (hzToggle->getToggleState())
+    else
     {
         hertzValuesObject.calculateValues (tempoSlider->getValue());
         populateFieldsWithValues (hertzValuesObject);
