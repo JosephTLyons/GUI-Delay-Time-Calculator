@@ -83,8 +83,8 @@ public:
 private:
     //[UserVariables]   -- You can add your own custom variables in this section.
 
-    Values valuesObject;
-    TapTempo tapTempoObject;
+    Values values;
+    TapTempo tapTempo;
     SafePointer<BasicWindow> basicWindow;
     EmbeddedFonts customFont;
 

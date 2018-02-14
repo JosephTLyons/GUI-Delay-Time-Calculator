@@ -587,10 +587,10 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_tapButton] -- add your button handler code here..
 
-        tempoSlider->setValue (tapTempoObject.calculateTempo());
+        tempoSlider->setValue (tapTempo.calculateTempo());
 
         // Add tap count to Tap Tempo button
-        tapButton->setButtonText ("Tap Tempo (" + (String) tapTempoObject.getTapCount() + ")");
+        tapButton->setButtonText ("Tap Tempo (" + (String) tapTempo.getTapCount() + ")");
 
         //[/UserButtonCode_tapButton]
     }
@@ -694,7 +694,7 @@ void MainComponent::mouseMove (const MouseEvent& e)
     // Don't reset if mouse moves and is hoving over Tap Tempo button
     // because user is likely clicking the button and doesn't want it reset automatically
     // Only reset if mouse moves and isn't on Tap Tempo button, this takes care of reseting when using the 'T' key
-    if (tapTempoObject.getTapCount() > 0)
+    if (tapTempo.getTapCount() > 0)
         if (e.eventComponent->getName() != tapButton->getName())
             resetTapTempo();
     
@@ -861,10 +861,10 @@ void MainComponent::updateValuesAndFields()
     // Make sure all values in object are up to date and update fields
 
     if (msToggle->getToggleState())
-        valuesObject.calculateMilliseconds (tempoSlider->getValue());
+        values.calculateMilliseconds (tempoSlider->getValue());
 
     else
-        valuesObject.calculateHertz (tempoSlider->getValue());
+        values.calculateHertz (tempoSlider->getValue());
     
     populateFieldsWithValues();
 }
@@ -872,45 +872,42 @@ void MainComponent::updateValuesAndFields()
 void MainComponent::populateFieldsWithValues()
 {
     // Set values for all text labels
-    wholeNormalLabel->setText ((String) valuesObject.getWholeNormal(), dontSendNotification);
-    wholeDottedLabel->setText ((String) valuesObject.getWholeDotted(), dontSendNotification);
-    wholeTripletLabel->setText ((String) valuesObject.getWholeTriplet(), dontSendNotification);
+    wholeNormalLabel->setText ((String) values.getWholeNormal(), dontSendNotification);
+    wholeDottedLabel->setText ((String) values.getWholeDotted(), dontSendNotification);
+    wholeTripletLabel->setText ((String) values.getWholeTriplet(), dontSendNotification);
 
-    halfNormalLabel->setText ((String) valuesObject.getHalfNormal(), dontSendNotification);
-    halfDottedLabel->setText ((String) valuesObject.getHalfDotted(), dontSendNotification);
-    halfTripletLabel->setText ((String) valuesObject.getHalfTriplet(), dontSendNotification);
+    halfNormalLabel->setText ((String) values.getHalfNormal(), dontSendNotification);
+    halfDottedLabel->setText ((String) values.getHalfDotted(), dontSendNotification);
+    halfTripletLabel->setText ((String) values.getHalfTriplet(), dontSendNotification);
 
-    quarterNormalLabel->setText ((String) valuesObject.getQuarterNormal(), dontSendNotification);
-    quarterDottedLabel->setText ((String) valuesObject.getQuarterDotted(), dontSendNotification);
-    quarterTripletLabel->setText ((String) valuesObject.getQuarterTriplet(), dontSendNotification);
+    quarterNormalLabel->setText ((String) values.getQuarterNormal(), dontSendNotification);
+    quarterDottedLabel->setText ((String) values.getQuarterDotted(), dontSendNotification);
+    quarterTripletLabel->setText ((String) values.getQuarterTriplet(), dontSendNotification);
 
-    eighthNormalLabel->setText ((String) valuesObject.getEighthNormal(), dontSendNotification);
-    eighthDottedLabel->setText ((String) valuesObject.getEighthDotted(), dontSendNotification);
-    eighthTripletLabel->setText ((String) valuesObject.getEighthTriplet(), dontSendNotification);
+    eighthNormalLabel->setText ((String) values.getEighthNormal(), dontSendNotification);
+    eighthDottedLabel->setText ((String) values.getEighthDotted(), dontSendNotification);
+    eighthTripletLabel->setText ((String) values.getEighthTriplet(), dontSendNotification);
 
-    sixteenthNormalLabel->setText ((String) valuesObject.getSixteenthNormal(), dontSendNotification);
-    sixteenthDottedLabel->setText ((String) valuesObject.getSixteenthDotted(), dontSendNotification);
-    sixteenthTripletLabel->setText ((String) valuesObject.getSixteenthTriplet(), dontSendNotification);
+    sixteenthNormalLabel->setText ((String) values.getSixteenthNormal(), dontSendNotification);
+    sixteenthDottedLabel->setText ((String) values.getSixteenthDotted(), dontSendNotification);
+    sixteenthTripletLabel->setText ((String) values.getSixteenthTriplet(), dontSendNotification);
 
-    thirtySecondNormalLabel->setText ((String) valuesObject.getThirtySecondNormal(), dontSendNotification);
-    thirtySecondDottedLabel->setText ((String) valuesObject.getThirtySecondDotted(), dontSendNotification);
-    thirtySecondTripletLabel->setText ((String) valuesObject.getThirtySecondTriplet(), dontSendNotification);
+    thirtySecondNormalLabel->setText ((String) values.getThirtySecondNormal(), dontSendNotification);
+    thirtySecondDottedLabel->setText ((String) values.getThirtySecondDotted(), dontSendNotification);
+    thirtySecondTripletLabel->setText ((String) values.getThirtySecondTriplet(), dontSendNotification);
 
-    sixtyFourthNormalLabel->setText ((String) valuesObject.getSixtyFouthNormal(), dontSendNotification);
-    sixtyFourthDottedLabel->setText ((String) valuesObject.getSixtyFouthDotted(), dontSendNotification);
-    sixtyFourthTripletLabel->setText ((String) valuesObject.getSixtyFouthTriplet(), dontSendNotification);
+    sixtyFourthNormalLabel->setText ((String) values.getSixtyFouthNormal(), dontSendNotification);
+    sixtyFourthDottedLabel->setText ((String) values.getSixtyFouthDotted(), dontSendNotification);
+    sixtyFourthTripletLabel->setText ((String) values.getSixtyFouthTriplet(), dontSendNotification);
 
-    oneTwentyEighthNormalLabel->setText ((String) valuesObject.getOneHundredAndTwentyEighthNormal(),
-                                                  dontSendNotification);
-    oneTwentyEighthDottedLabel->setText ((String) valuesObject.getOneHundredAndTwentyEighthDotted(),
-                                                  dontSendNotification);
-    oneTwentyEighthTripletLabel->setText ((String) valuesObject.getOneHundredAndTwentyEighthTriplet(),
-                                                   dontSendNotification);
+    oneTwentyEighthNormalLabel->setText ((String) values.getOneHundredAndTwentyEighthNormal(), dontSendNotification);
+    oneTwentyEighthDottedLabel->setText ((String) values.getOneHundredAndTwentyEighthDotted(), dontSendNotification);
+    oneTwentyEighthTripletLabel->setText ((String) values.getOneHundredAndTwentyEighthTriplet(), dontSendNotification);
 }
 
 void MainComponent::resetTapTempo()
 {
-    tapTempoObject.resetMainCalculationHolders();
+    tapTempo.resetMainCalculationHolders();
 
     // Change Tap Tempo button text back to normal, excluding tap count
     tapButton->setButtonText ("Tap Tempo");
