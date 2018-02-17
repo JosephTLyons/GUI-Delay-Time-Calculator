@@ -858,7 +858,7 @@ void MainComponent::setBpmLabelValue()
 
 void MainComponent::updateValuesAndFields()
 {
-    // Make sure all values in object are up to date and update fields
+    // Update all values in object and update fields
 
     if (msToggle->getToggleState())
         values.calculateMilliseconds (tempoSlider->getValue());
