@@ -556,7 +556,7 @@ void MainComponent::resized()
     msToggle->setBounds (0, 150, 62, 20);
     coarseResolutionToggle->setBounds (0, 65, 75, 20);
     fineResolutionToggle->setBounds (125, 65, 75, 20);
-    tempoLabel->setBounds (300, 60, 64, 30);
+    tempoLabel->setBounds (300, 60, 101, 30);
     bpmLabel->setBounds (190, 60, 120, 30);
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
