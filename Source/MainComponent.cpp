@@ -382,7 +382,7 @@ MainComponent::MainComponent ()
     fineResolutionToggle->addListener (this);
 
     addAndMakeVisible (tempoLabel = new Label ("tempoLabel",
-                                               TRANS("BPM")));
+                                               TRANS("Tempo\n")));
     tempoLabel->setFont (Font ("Arial", 30.00f, Font::plain));
     tempoLabel->setJustificationType (Justification::centred);
     tempoLabel->setEditable (false, false, false);
@@ -1172,8 +1172,8 @@ BEGIN_JUCER_METADATA
                 virtualName="" explicitFocusOrder="0" pos="125 65 75 20" buttonText="Fine"
                 connectedEdges="0" needsCallback="1" radioGroupId="0" state="0"/>
   <LABEL name="tempoLabel" id="6bb4ca2a493b0d2e" memberName="tempoLabel"
-         virtualName="" explicitFocusOrder="0" pos="300 60 64 30" edTextCol="ff000000"
-         edBkgCol="0" labelText="BPM" editableSingleClick="0" editableDoubleClick="0"
+         virtualName="" explicitFocusOrder="0" pos="300 60 101 30" edTextCol="ff000000"
+         edBkgCol="0" labelText="Tempo&#10;" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Arial" fontsize="30" kerning="0"
          bold="0" italic="0" justification="36"/>
   <LABEL name="bpmLabel" id="387c95ffe56ba517" memberName="bpmLabel" virtualName=""
