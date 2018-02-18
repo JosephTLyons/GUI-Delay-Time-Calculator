@@ -61,7 +61,7 @@ MainComponent::MainComponent ()
 
     addAndMakeVisible (delayTimeCalculatorLabel = new Label ("delayTimeCalculatorLabel",
                                                              TRANS("Delay Time Calculator")));
-    delayTimeCalculatorLabel->setFont (Font ("Arial", 47.40f, Font::plain).withTypefaceStyle ("Regular").withExtraKerningFactor (0.095f));
+    delayTimeCalculatorLabel->setFont (Font ("Arial", 47.40f, Font::plain).withExtraKerningFactor (0.095f));
     delayTimeCalculatorLabel->setJustificationType (Justification::centred);
     delayTimeCalculatorLabel->setEditable (false, false, false);
     delayTimeCalculatorLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -70,7 +70,7 @@ MainComponent::MainComponent ()
 
     addAndMakeVisible (normalLabel = new Label ("normalLabel",
                                                 TRANS("Normal\n")));
-    normalLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
+    normalLabel->setFont (Font ("Arial", 30.00f, Font::plain));
     normalLabel->setJustificationType (Justification::centredLeft);
     normalLabel->setEditable (false, false, false);
     normalLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -79,7 +79,7 @@ MainComponent::MainComponent ()
 
     addAndMakeVisible (dottedLabel = new Label ("dottedLabel",
                                                 TRANS("Dotted")));
-    dottedLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
+    dottedLabel->setFont (Font ("Arial", 30.00f, Font::plain));
     dottedLabel->setJustificationType (Justification::centredLeft);
     dottedLabel->setEditable (false, false, false);
     dottedLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -88,7 +88,7 @@ MainComponent::MainComponent ()
 
     addAndMakeVisible (tripletLabel = new Label ("tripletLabel",
                                                  TRANS("Triplet")));
-    tripletLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
+    tripletLabel->setFont (Font ("Arial", 30.00f, Font::plain));
     tripletLabel->setJustificationType (Justification::centredLeft);
     tripletLabel->setEditable (false, false, false);
     tripletLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -97,7 +97,7 @@ MainComponent::MainComponent ()
 
     addAndMakeVisible (wholeLabel = new Label ("wholeLabel",
                                                TRANS("1:")));
-    wholeLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
+    wholeLabel->setFont (Font ("Arial", 30.00f, Font::plain));
     wholeLabel->setJustificationType (Justification::centredLeft);
     wholeLabel->setEditable (false, false, false);
     wholeLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -106,7 +106,7 @@ MainComponent::MainComponent ()
 
     addAndMakeVisible (halfLabel = new Label ("halfLabel",
                                               TRANS("1/2:")));
-    halfLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
+    halfLabel->setFont (Font ("Arial", 30.00f, Font::plain));
     halfLabel->setJustificationType (Justification::centredLeft);
     halfLabel->setEditable (false, false, false);
     halfLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -115,7 +115,7 @@ MainComponent::MainComponent ()
 
     addAndMakeVisible (quarterLabel = new Label ("quarterLabel",
                                                  TRANS("1/4:")));
-    quarterLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
+    quarterLabel->setFont (Font ("Arial", 30.00f, Font::plain));
     quarterLabel->setJustificationType (Justification::centredLeft);
     quarterLabel->setEditable (false, false, false);
     quarterLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -124,7 +124,7 @@ MainComponent::MainComponent ()
 
     addAndMakeVisible (eighthLabel = new Label ("eighthLabel",
                                                 TRANS("1/8:")));
-    eighthLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
+    eighthLabel->setFont (Font ("Arial", 30.00f, Font::plain));
     eighthLabel->setJustificationType (Justification::centredLeft);
     eighthLabel->setEditable (false, false, false);
     eighthLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -133,7 +133,7 @@ MainComponent::MainComponent ()
 
     addAndMakeVisible (sixteenthLabel = new Label ("sixteenthLabel",
                                                    TRANS("1/16:")));
-    sixteenthLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
+    sixteenthLabel->setFont (Font ("Arial", 30.00f, Font::plain));
     sixteenthLabel->setJustificationType (Justification::centredLeft);
     sixteenthLabel->setEditable (false, false, false);
     sixteenthLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -142,7 +142,7 @@ MainComponent::MainComponent ()
 
     addAndMakeVisible (thirtySecondLabel = new Label ("thirtySecondLabel",
                                                       TRANS("1/32:")));
-    thirtySecondLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
+    thirtySecondLabel->setFont (Font ("Arial", 30.00f, Font::plain));
     thirtySecondLabel->setJustificationType (Justification::centredLeft);
     thirtySecondLabel->setEditable (false, false, false);
     thirtySecondLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -151,7 +151,7 @@ MainComponent::MainComponent ()
 
     addAndMakeVisible (sixtyFourthLabel = new Label ("sixtyFourthLabel",
                                                      TRANS("1/64:")));
-    sixtyFourthLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
+    sixtyFourthLabel->setFont (Font ("Arial", 30.00f, Font::plain));
     sixtyFourthLabel->setJustificationType (Justification::centredLeft);
     sixtyFourthLabel->setEditable (false, false, false);
     sixtyFourthLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -160,7 +160,7 @@ MainComponent::MainComponent ()
 
     addAndMakeVisible (oneHundreAndTwentyEighthLabel = new Label ("oneHundreAndTwentyEighthLabel",
                                                                   TRANS("1/128:")));
-    oneHundreAndTwentyEighthLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
+    oneHundreAndTwentyEighthLabel->setFont (Font ("Arial", 30.00f, Font::plain));
     oneHundreAndTwentyEighthLabel->setJustificationType (Justification::centredLeft);
     oneHundreAndTwentyEighthLabel->setEditable (false, false, false);
     oneHundreAndTwentyEighthLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -383,7 +383,7 @@ MainComponent::MainComponent ()
 
     addAndMakeVisible (tempoLabel = new Label ("tempoLabel",
                                                TRANS("BPM")));
-    tempoLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
+    tempoLabel->setFont (Font ("Arial", 30.00f, Font::plain));
     tempoLabel->setJustificationType (Justification::centred);
     tempoLabel->setEditable (false, false, false);
     tempoLabel->setColour (TextEditor::textColourId, Colours::black);
@@ -391,7 +391,7 @@ MainComponent::MainComponent ()
 
     addAndMakeVisible (bpmLabel = new Label ("bpmLabel",
                                              String()));
-    bpmLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
+    bpmLabel->setFont (Font ("Arial", 30.00f, Font::plain));
     bpmLabel->setJustificationType (Justification::centred);
     bpmLabel->setEditable (true, true, false);
     bpmLabel->setColour (TextEditor::textColourId, Colours::black);
