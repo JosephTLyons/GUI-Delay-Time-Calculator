@@ -1,6 +1,8 @@
 # TODO:
-* Change BPM label to Tempo?
+
+* Vertical spacing
 * Icons versus text on buttons?
+
 * Consider Rails and Jules suggestions for the delay time calc label / button
 * Make dedicated manual?
 * Scaleable UI?
