@@ -729,7 +729,7 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
         // sliderValueChanged method.  Sometimes, when typing in values, the slider doesn't
         // move, so bpmValuesLabel doesn't update.  This could occur in cases such as typing
         // in characters, which gets changed to the value of one, then typing in characters again,
-        // whic also results in one, now characters are left in bpmValuesLabel.
+        // which also results in the value of one, now characters are left in bpmValuesLabel.
         // This makes sure that this cannot happen, the output field is always set.
         setBpmLabelValue();
         
