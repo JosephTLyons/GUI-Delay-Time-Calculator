@@ -513,7 +513,6 @@ MainComponent::MainComponent ()
     bpmValuesLabel->addListener (this);
 
     delayTimeCalculatorLabel->addMouseListener (this, false);
-    tapButton->addMouseListener (this, false);
 
     //setupLabelCustomFont();
 
