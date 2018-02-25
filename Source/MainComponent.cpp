@@ -469,16 +469,6 @@ MainComponent::MainComponent ()
 
     fineResolutionToggle->setBounds (125, 65, 75, 20);
 
-    addAndMakeVisible (tempoLabel = new Label ("tempoLabel",
-                                               TRANS("Tempo\n")));
-    tempoLabel->setFont (Font ("Arial", 30.00f, Font::plain));
-    tempoLabel->setJustificationType (Justification::centred);
-    tempoLabel->setEditable (false, false, false);
-    tempoLabel->setColour (TextEditor::textColourId, Colours::black);
-    tempoLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
-
-    tempoLabel->setBounds (300, 60, 101, 30);
-
     addAndMakeVisible (bpmLabel = new Label ("bpmLabel",
                                              String()));
     bpmLabel->setFont (Font ("Arial", 30.00f, Font::plain));
@@ -489,6 +479,16 @@ MainComponent::MainComponent ()
     bpmLabel->addListener (this);
 
     bpmLabel->setBounds (190, 60, 120, 30);
+
+    addAndMakeVisible (BPMLabel = new Label ("bpmLabel",
+                                             TRANS("BPM")));
+    BPMLabel->setFont (Font ("Arial", 30.00f, Font::plain));
+    BPMLabel->setJustificationType (Justification::centred);
+    BPMLabel->setEditable (false, false, false);
+    BPMLabel->setColour (TextEditor::textColourId, Colours::black);
+    BPMLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+
+    BPMLabel->setBounds (300, 60, 76, 30);
 
 
     //[UserPreSize]
@@ -568,8 +568,8 @@ MainComponent::~MainComponent()
     msToggle = nullptr;
     coarseResolutionToggle = nullptr;
     fineResolutionToggle = nullptr;
-    tempoLabel = nullptr;
     bpmLabel = nullptr;
+    BPMLabel = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -1229,14 +1229,14 @@ BEGIN_JUCER_METADATA
   <TOGGLEBUTTON name="fineResolutionToggle" id="95774ae90e8bc93e" memberName="fineResolutionToggle"
                 virtualName="" explicitFocusOrder="0" pos="125 65 75 20" buttonText="Fine"
                 connectedEdges="0" needsCallback="1" radioGroupId="0" state="0"/>
-  <LABEL name="tempoLabel" id="6bb4ca2a493b0d2e" memberName="tempoLabel"
-         virtualName="" explicitFocusOrder="0" pos="300 60 101 30" edTextCol="ff000000"
-         edBkgCol="0" labelText="Tempo&#10;" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Arial" fontsize="30.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
   <LABEL name="bpmLabel" id="387c95ffe56ba517" memberName="bpmLabel" virtualName=""
          explicitFocusOrder="0" pos="190 60 120 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="1" editableDoubleClick="1"
+         focusDiscardsChanges="0" fontname="Arial" fontsize="30.00000000000000000000"
+         kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
+  <LABEL name="bpmLabel" id="6bb4ca2a493b0d2e" memberName="BPMLabel" virtualName=""
+         explicitFocusOrder="0" pos="300 60 76 30" edTextCol="ff000000"
+         edBkgCol="0" labelText="BPM" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Arial" fontsize="30.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
 </JUCER_COMPONENT>
