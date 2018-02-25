@@ -724,6 +724,14 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
         //[UserLabelCode_bpmLabel] -- add your label text handling code here..
 
         tempoSlider->setValue (bpmLabel->getTextValue().toString().getDoubleValue());
+        
+        // Whenever the slider moves, the new value is inserted into the BPM output field
+        // by the sliderValueChanged method.  Sometimes, when typing in values, the slider doesn't
+        // move, so the BPM output field doesn't update.  This could occur in cases such as typing
+        // in characters, which gets changed to the value of one, then typing in characters again,
+        // whic also results in one, now characters are left in the output field.
+        // This makes sure that this cannot happen, the output field is always set.
+        setBpmLabelValue();
 
         //[/UserLabelCode_bpmLabel]
     }

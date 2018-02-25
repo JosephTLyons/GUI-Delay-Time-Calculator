@@ -1,7 +1,6 @@
 # TODO:
 
 * Fix BPM Kerning and vertical alignment with BPM values label
-* Fix bug where typing in non-characters twice results in the displaying of those characters
 * Rename bpmLabel and BPMLabel to bpmOutputLabel and bpmLabel
 * Vertical spacing of entire GUI
 * Icons versus text on buttons?
