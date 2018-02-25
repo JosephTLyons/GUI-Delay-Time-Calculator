@@ -469,26 +469,26 @@ MainComponent::MainComponent ()
 
     fineResolutionToggle->setBounds (125, 65, 75, 20);
 
-    addAndMakeVisible (bpmOutputLabel = new Label ("bpmOutputLabel",
-                                                   String()));
-    bpmOutputLabel->setFont (Font ("Arial", 30.00f, Font::plain));
-    bpmOutputLabel->setJustificationType (Justification::centred);
-    bpmOutputLabel->setEditable (true, true, false);
-    bpmOutputLabel->setColour (TextEditor::textColourId, Colours::black);
-    bpmOutputLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
-    bpmOutputLabel->addListener (this);
-
-    bpmOutputLabel->setBounds (190, 60, 120, 30);
-
     addAndMakeVisible (bpmLabel = new Label ("bpmLabel",
-                                             TRANS("BPM")));
+                                             String()));
     bpmLabel->setFont (Font ("Arial", 30.00f, Font::plain));
     bpmLabel->setJustificationType (Justification::centred);
-    bpmLabel->setEditable (false, false, false);
+    bpmLabel->setEditable (true, true, false);
     bpmLabel->setColour (TextEditor::textColourId, Colours::black);
     bpmLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    bpmLabel->addListener (this);
 
-    bpmLabel->setBounds (300, 60, 76, 30);
+    bpmLabel->setBounds (190, 60, 120, 30);
+
+    addAndMakeVisible (BPMLabel = new Label ("bpmLabel",
+                                             TRANS("BPM")));
+    BPMLabel->setFont (Font ("Arial", 30.00f, Font::plain));
+    BPMLabel->setJustificationType (Justification::centred);
+    BPMLabel->setEditable (false, false, false);
+    BPMLabel->setColour (TextEditor::textColourId, Colours::black);
+    BPMLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+
+    BPMLabel->setBounds (300, 60, 76, 30);
 
 
     //[UserPreSize]
@@ -568,8 +568,8 @@ MainComponent::~MainComponent()
     msToggle = nullptr;
     coarseResolutionToggle = nullptr;
     fineResolutionToggle = nullptr;
-    bpmOutputLabel = nullptr;
     bpmLabel = nullptr;
+    BPMLabel = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -719,10 +719,13 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     //[UserlabelTextChanged_Pre]
     //[/UserlabelTextChanged_Pre]
 
-    if (labelThatHasChanged == bpmOutputLabel)
+    if (labelThatHasChanged == bpmLabel)
     {
-        //[UserLabelCode_bpmOutputLabel] -- add your label text handling code here..
-        //[/UserLabelCode_bpmOutputLabel]
+        //[UserLabelCode_bpmLabel] -- add your label text handling code here..
+
+        tempoSlider->setValue (bpmLabel->getTextValue().toString().getDoubleValue());
+
+        //[/UserLabelCode_bpmLabel]
     }
 
     //[UserlabelTextChanged_Post]
@@ -1226,12 +1229,12 @@ BEGIN_JUCER_METADATA
   <TOGGLEBUTTON name="fineResolutionToggle" id="95774ae90e8bc93e" memberName="fineResolutionToggle"
                 virtualName="" explicitFocusOrder="0" pos="125 65 75 20" buttonText="Fine"
                 connectedEdges="0" needsCallback="1" radioGroupId="0" state="0"/>
-  <LABEL name="bpmOutputLabel" id="387c95ffe56ba517" memberName="bpmOutputLabel"
-         virtualName="" explicitFocusOrder="0" pos="190 60 120 30" edTextCol="ff000000"
+  <LABEL name="bpmLabel" id="387c95ffe56ba517" memberName="bpmLabel" virtualName=""
+         explicitFocusOrder="0" pos="190 60 120 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="1" editableDoubleClick="1"
          focusDiscardsChanges="0" fontname="Arial" fontsize="30.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
-  <LABEL name="bpmLabel" id="6bb4ca2a493b0d2e" memberName="bpmLabel" virtualName=""
+  <LABEL name="bpmLabel" id="6bb4ca2a493b0d2e" memberName="BPMLabel" virtualName=""
          explicitFocusOrder="0" pos="300 60 76 30" edTextCol="ff000000"
          edBkgCol="0" labelText="BPM" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Arial" fontsize="30.00000000000000000000"

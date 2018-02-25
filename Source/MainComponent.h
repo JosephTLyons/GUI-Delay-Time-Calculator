@@ -135,8 +135,8 @@ private:
     ScopedPointer<ToggleButton> msToggle;
     ScopedPointer<ToggleButton> coarseResolutionToggle;
     ScopedPointer<ToggleButton> fineResolutionToggle;
-    ScopedPointer<Label> bpmOutputLabel;
     ScopedPointer<Label> bpmLabel;
+    ScopedPointer<Label> BPMLabel;
 
 
     //==============================================================================
