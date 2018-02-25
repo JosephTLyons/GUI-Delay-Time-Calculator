@@ -832,18 +832,23 @@ bool MainComponent::keyPressed (const juce::KeyPress &key)
         roundTempo();
 
     else if (key == KeyPress::rightKey)
-        tempoSlider->setValue (tempoSlider->getValue() + 5);
+        adjustTempo (5);
 
     else if (key == KeyPress::leftKey)
-        tempoSlider->setValue (tempoSlider->getValue() - 5);
+        adjustTempo (-5);
 
     else if (key == KeyPress::upKey)
-        tempoSlider->setValue (tempoSlider->getValue() + 1);
+        adjustTempo (1);
 
     else if (key == KeyPress::downKey)
-        tempoSlider->setValue (tempoSlider->getValue() - 1);
+        adjustTempo (-1);
 
     return true;
+}
+
+void MainComponent::adjustTempo (const int &adjustmentValue)
+{
+    tempoSlider->setValue (tempoSlider->getValue() + adjustmentValue);
 }
 
 void MainComponent::setupLabelCustomFont()

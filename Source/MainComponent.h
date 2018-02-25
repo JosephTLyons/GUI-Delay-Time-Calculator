@@ -51,6 +51,7 @@ public:
     //[UserMethods]     -- You can add your own custom methods in this section.
 
     bool keyPressed (const juce::KeyPress &key) override;
+    void adjustTempo (const int &adjustmentValue);
     void setupLabelCustomFont();
     void launchURL (const char *hyperLink);
     void roundTempo();
