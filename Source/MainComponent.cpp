@@ -762,7 +762,7 @@ void MainComponent::mouseEnter (const MouseEvent& e)
     if (e.eventComponent->getName() == delayTimeCalculatorLabel->getName())
     {
         // Change text color to white
-        delayTimeCalculatorLabel->setColour(Label::textColourId, Colours::white);
+        delayTimeCalculatorLabel->setColour (Label::textColourId, Colours::white);
     }
 
     //[/UserCode_mouseEnter]
@@ -775,8 +775,8 @@ void MainComponent::mouseExit (const MouseEvent& e)
     if (e.eventComponent->getName() == delayTimeCalculatorLabel->getName())
     {
         // Change text color to original gray used
-        delayTimeCalculatorLabel->setColour(Label::textColourId,
-                                            normalLabel->findColour(normalLabel->textColourId));
+        delayTimeCalculatorLabel->setColour (Label::textColourId,
+                                             normalLabel->findColour (normalLabel->textColourId));
     }
 
     if (e.eventComponent->getName() == tapButton->getName())
@@ -907,7 +907,7 @@ void MainComponent::engageResolutionSetting (const bool &isCoarseSelected,
 
 void MainComponent::setBpmLabelValue()
 {
-    bpmValuesLabel->setText (tempoSlider->getTextFromValue(tempoSlider->getValue()), dontSendNotification);
+    bpmValuesLabel->setText (tempoSlider->getTextFromValue (tempoSlider->getValue()), dontSendNotification);
 }
 
 void MainComponent::updateValuesAndFields()
