@@ -469,26 +469,26 @@ MainComponent::MainComponent ()
 
     fineResolutionToggle->setBounds (125, 65, 75, 20);
 
-    addAndMakeVisible (BPMLabel = new Label ("BPMLabel",
-                                             TRANS("BPM")));
-    BPMLabel->setFont (Font ("Arial", 30.00f, Font::plain));
-    BPMLabel->setJustificationType (Justification::centred);
-    BPMLabel->setEditable (false, false, false);
-    BPMLabel->setColour (TextEditor::textColourId, Colours::black);
-    BPMLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
-
-    BPMLabel->setBounds (300, 60, 101, 30);
-
     addAndMakeVisible (bpmLabel = new Label ("bpmLabel",
-                                             String()));
+                                             TRANS("BPM")));
     bpmLabel->setFont (Font ("Arial", 30.00f, Font::plain));
     bpmLabel->setJustificationType (Justification::centred);
-    bpmLabel->setEditable (true, true, false);
+    bpmLabel->setEditable (false, false, false);
     bpmLabel->setColour (TextEditor::textColourId, Colours::black);
     bpmLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
-    bpmLabel->addListener (this);
 
-    bpmLabel->setBounds (190, 60, 120, 30);
+    bpmLabel->setBounds (300, 60, 101, 30);
+
+    addAndMakeVisible (bpmValuesLabel = new Label ("bpmValuesLabel",
+                                                   String()));
+    bpmValuesLabel->setFont (Font ("Arial", 30.00f, Font::plain));
+    bpmValuesLabel->setJustificationType (Justification::centred);
+    bpmValuesLabel->setEditable (true, true, false);
+    bpmValuesLabel->setColour (TextEditor::textColourId, Colours::black);
+    bpmValuesLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    bpmValuesLabel->addListener (this);
+
+    bpmValuesLabel->setBounds (190, 60, 120, 30);
 
 
     //[UserPreSize]
@@ -509,7 +509,7 @@ MainComponent::MainComponent ()
 
     tapButton->setTriggeredOnMouseDown (true);
 
-    bpmLabel->addListener (this);
+    bpmValuesLabel->addListener (this);
 
     delayTimeCalculatorLabel->addMouseListener (this, false);
     tapButton->addMouseListener (this, false);
@@ -568,8 +568,8 @@ MainComponent::~MainComponent()
     msToggle = nullptr;
     coarseResolutionToggle = nullptr;
     fineResolutionToggle = nullptr;
-    BPMLabel = nullptr;
     bpmLabel = nullptr;
+    bpmValuesLabel = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -719,21 +719,21 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     //[UserlabelTextChanged_Pre]
     //[/UserlabelTextChanged_Pre]
 
-    if (labelThatHasChanged == bpmLabel)
+    if (labelThatHasChanged == bpmValuesLabel)
     {
-        //[UserLabelCode_bpmLabel] -- add your label text handling code here..
-
-        tempoSlider->setValue (bpmLabel->getTextValue().toString().getDoubleValue());
+        //[UserLabelCode_bpmValuesLabel] -- add your label text handling code here..
         
-        // Whenever the slider moves, the new value is inserted into the BPM output field
-        // by the sliderValueChanged method.  Sometimes, when typing in values, the slider doesn't
-        // move, so the BPM output field doesn't update.  This could occur in cases such as typing
+        tempoSlider->setValue (bpmValuesLabel->getTextValue().toString().getDoubleValue());
+        
+        // Whenever the slider moves, the new value is inserted into bpmValuesLabel by the
+        // sliderValueChanged method.  Sometimes, when typing in values, the slider doesn't
+        // move, so bpmValuesLabel doesn't update.  This could occur in cases such as typing
         // in characters, which gets changed to the value of one, then typing in characters again,
-        // whic also results in one, now characters are left in the output field.
+        // whic also results in one, now characters are left in bpmValuesLabel.
         // This makes sure that this cannot happen, the output field is always set.
         setBpmLabelValue();
-
-        //[/UserLabelCode_bpmLabel]
+        
+        //[/UserLabelCode_bpmValuesLabel]
     }
 
     //[UserlabelTextChanged_Post]
@@ -907,7 +907,7 @@ void MainComponent::engageResolutionSetting (const bool &isCoarseSelected,
 
 void MainComponent::setBpmLabelValue()
 {
-    bpmLabel->setText (tempoSlider->getTextFromValue(tempoSlider->getValue()), dontSendNotification);
+    bpmValuesLabel->setText (tempoSlider->getTextFromValue(tempoSlider->getValue()), dontSendNotification);
 }
 
 void MainComponent::updateValuesAndFields()
@@ -1237,13 +1237,13 @@ BEGIN_JUCER_METADATA
   <TOGGLEBUTTON name="fineResolutionToggle" id="95774ae90e8bc93e" memberName="fineResolutionToggle"
                 virtualName="" explicitFocusOrder="0" pos="125 65 75 20" buttonText="Fine"
                 connectedEdges="0" needsCallback="1" radioGroupId="0" state="0"/>
-  <LABEL name="BPMLabel" id="6bb4ca2a493b0d2e" memberName="BPMLabel" virtualName=""
+  <LABEL name="bpmLabel" id="6bb4ca2a493b0d2e" memberName="bpmLabel" virtualName=""
          explicitFocusOrder="0" pos="300 60 101 30" edTextCol="ff000000"
          edBkgCol="0" labelText="BPM" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Arial" fontsize="30.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
-  <LABEL name="bpmLabel" id="387c95ffe56ba517" memberName="bpmLabel" virtualName=""
-         explicitFocusOrder="0" pos="190 60 120 30" edTextCol="ff000000"
+  <LABEL name="bpmValuesLabel" id="387c95ffe56ba517" memberName="bpmValuesLabel"
+         virtualName="" explicitFocusOrder="0" pos="190 60 120 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="1" editableDoubleClick="1"
          focusDiscardsChanges="0" fontname="Arial" fontsize="30.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
