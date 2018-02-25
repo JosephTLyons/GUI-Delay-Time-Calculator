@@ -507,7 +507,7 @@ MainComponent::MainComponent ()
     // Allow for right-clicking for velocity sensitive sliding
     tempoSlider->setPopupMenuEnabled (true);
 
-    // Tap tempo is more accurate when clickers are registered on down-click versus up-click
+    // Tap tempo is more accurate when clicks are registered on down-click versus up-click
     tapButton->setTriggeredOnMouseDown (true);
 
     bpmValuesLabel->addListener (this);
