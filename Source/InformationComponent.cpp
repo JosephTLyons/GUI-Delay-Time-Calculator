@@ -7,12 +7,12 @@
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Created with Projucer version: 5.2.0
+  Created with Projucer version: 5.2.1
 
   ------------------------------------------------------------------------------
 
-  The Projucer is part of the JUCE library - "Jules' Utility Class Extensions"
-  Copyright (c) 2015 - ROLI Ltd.
+  The Projucer is part of the JUCE library.
+  Copyright (c) 2017 - ROLI Ltd.
 
   ==============================================================================
 */
@@ -41,6 +41,8 @@ InformationComponent::InformationComponent ()
     informationLabel->setColour (TextEditor::textColourId, Colours::black);
     informationLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
+    informationLabel->setBounds (0, 0, 240, 50);
+
     addAndMakeVisible (versionNumberLabelOutput = new Label ("versionNumberLabel",
                                                              String()));
     versionNumberLabelOutput->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
@@ -49,6 +51,8 @@ InformationComponent::InformationComponent ()
     versionNumberLabelOutput->setColour (Label::textColourId, Colour (0xffadaaaa));
     versionNumberLabelOutput->setColour (TextEditor::textColourId, Colours::black);
     versionNumberLabelOutput->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+
+    versionNumberLabelOutput->setBounds (0, 341, 240, 40);
 
     addAndMakeVisible (informationTextEditor = new TextEditor ("informationTextEditor"));
     informationTextEditor->setMultiLine (true);
@@ -61,12 +65,16 @@ InformationComponent::InformationComponent ()
     informationTextEditor->setColour (TextEditor::outlineColourId, Colour (0xff353535));
     informationTextEditor->setText (String());
 
+    informationTextEditor->setBounds (0, 121, 240, 220);
+
     addAndMakeVisible (facebookButton = new TextButton ("facebookButton"));
     facebookButton->setButtonText (TRANS("Facebook"));
     facebookButton->addListener (this);
     facebookButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
     facebookButton->setColour (TextButton::buttonOnColourId, Colour (0xffadaaaa));
     facebookButton->setColour (TextButton::textColourOffId, Colours::black);
+
+    facebookButton->setBounds (0, 61, 120, 30);
 
     addAndMakeVisible (emailMeButton = new TextButton ("emailMeButton"));
     emailMeButton->setButtonText (TRANS("Email Me"));
@@ -75,6 +83,8 @@ InformationComponent::InformationComponent ()
     emailMeButton->setColour (TextButton::buttonOnColourId, Colour (0xffadaaaa));
     emailMeButton->setColour (TextButton::textColourOffId, Colours::black);
 
+    emailMeButton->setBounds (120, 61, 120, 30);
+
     addAndMakeVisible (theCodeButton = new TextButton ("theCodeButton"));
     theCodeButton->setButtonText (TRANS("The Code"));
     theCodeButton->addListener (this);
@@ -82,12 +92,16 @@ InformationComponent::InformationComponent ()
     theCodeButton->setColour (TextButton::buttonOnColourId, Colour (0xffadaaaa));
     theCodeButton->setColour (TextButton::textColourOffId, Colours::black);
 
+    theCodeButton->setBounds (0, 91, 120, 30);
+
     addAndMakeVisible (donateButton = new TextButton ("donateButton"));
     donateButton->setButtonText (TRANS("Donate"));
     donateButton->addListener (this);
     donateButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
     donateButton->setColour (TextButton::buttonOnColourId, Colour (0xffadaaaa));
     donateButton->setColour (TextButton::textColourOffId, Colours::black);
+
+    donateButton->setBounds (120, 91, 120, 30);
 
 
     //[UserPreSize]
@@ -181,13 +195,6 @@ void InformationComponent::resized()
     //[UserPreResize] Add your own custom resize code here..
     //[/UserPreResize]
 
-    informationLabel->setBounds (0, 0, 240, 50);
-    versionNumberLabelOutput->setBounds (0, 341, 240, 40);
-    informationTextEditor->setBounds (0, 121, 240, 220);
-    facebookButton->setBounds (0, 61, 120, 30);
-    emailMeButton->setBounds (120, 61, 120, 30);
-    theCodeButton->setBounds (0, 91, 120, 30);
-    donateButton->setBounds (120, 91, 120, 30);
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
 }
@@ -265,13 +272,14 @@ BEGIN_JUCER_METADATA
          virtualName="" explicitFocusOrder="0" pos="0 0 240 50" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="Information" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Arial"
-         fontsize="47.399999999999998579" kerning="0.042999999999999996558"
+         fontsize="47.39999999999999857891" kerning="0.04299999999999999656"
          bold="0" italic="0" justification="36"/>
   <LABEL name="versionNumberLabel" id="30f8922fa9ce43fc" memberName="versionNumberLabelOutput"
          virtualName="" explicitFocusOrder="0" pos="0 341 240 40" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
-         fontsize="15" kerning="0" bold="0" italic="0" justification="36"/>
+         fontsize="15.00000000000000000000" kerning="0.00000000000000000000"
+         bold="0" italic="0" justification="36"/>
   <TEXTEDITOR name="informationTextEditor" id="724fec5cca6df686" memberName="informationTextEditor"
               virtualName="" explicitFocusOrder="0" pos="0 121 240 220" bkgcol="ff353535"
               outlinecol="ff353535" initialText="" multiline="1" retKeyStartsLine="1"
