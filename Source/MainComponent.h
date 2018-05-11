@@ -7,7 +7,7 @@
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Created with Projucer version: 5.2.1
+  Created with Projucer version: 5.3.2
 
   ------------------------------------------------------------------------------
 
@@ -92,52 +92,52 @@ private:
     //[/UserVariables]
 
     //==============================================================================
-    ScopedPointer<TextButton> doubleTempoButton;
-    ScopedPointer<TextButton> halfTempoButton;
-    ScopedPointer<Slider> tempoSlider;
-    ScopedPointer<Label> delayTimeCalculatorLabel;
-    ScopedPointer<Label> normalLabel;
-    ScopedPointer<Label> dottedLabel;
-    ScopedPointer<Label> tripletLabel;
-    ScopedPointer<Label> wholeLabel;
-    ScopedPointer<Label> halfLabel;
-    ScopedPointer<Label> quarterLabel;
-    ScopedPointer<Label> eighthLabel;
-    ScopedPointer<Label> sixteenthLabel;
-    ScopedPointer<Label> thirtySecondLabel;
-    ScopedPointer<Label> sixtyFourthLabel;
-    ScopedPointer<Label> oneHundreAndTwentyEighthLabel;
-    ScopedPointer<TextButton> tapButton;
-    ScopedPointer<Label> wholeNormalLabel;
-    ScopedPointer<Label> wholeDottedLabel;
-    ScopedPointer<Label> wholeTripletLabel;
-    ScopedPointer<Label> halfNormalLabel;
-    ScopedPointer<Label> halfDottedLabel;
-    ScopedPointer<Label> halfTripletLabel;
-    ScopedPointer<Label> quarterNormalLabel;
-    ScopedPointer<Label> quarterDottedLabel;
-    ScopedPointer<Label> quarterTripletLabel;
-    ScopedPointer<Label> eighthNormalLabel;
-    ScopedPointer<Label> eighthDottedLabel;
-    ScopedPointer<Label> eighthTripletLabel;
-    ScopedPointer<Label> sixteenthNormalLabel;
-    ScopedPointer<Label> sixteenthDottedLabel;
-    ScopedPointer<Label> sixteenthTripletLabel;
-    ScopedPointer<Label> thirtySecondNormalLabel;
-    ScopedPointer<Label> thirtySecondDottedLabel;
-    ScopedPointer<Label> thirtySecondTripletLabel;
-    ScopedPointer<Label> sixtyFourthNormalLabel;
-    ScopedPointer<Label> sixtyFourthDottedLabel;
-    ScopedPointer<Label> sixtyFourthTripletLabel;
-    ScopedPointer<Label> oneTwentyEighthNormalLabel;
-    ScopedPointer<Label> oneTwentyEighthDottedLabel;
-    ScopedPointer<Label> oneTwentyEighthTripletLabel;
-    ScopedPointer<ToggleButton> hzToggle;
-    ScopedPointer<ToggleButton> msToggle;
-    ScopedPointer<ToggleButton> coarseResolutionToggle;
-    ScopedPointer<ToggleButton> fineResolutionToggle;
-    ScopedPointer<Label> bpmLabel;
-    ScopedPointer<Label> bpmValuesLabel;
+    std::unique_ptr<TextButton> doubleTempoButton;
+    std::unique_ptr<TextButton> halfTempoButton;
+    std::unique_ptr<Slider> tempoSlider;
+    std::unique_ptr<Label> delayTimeCalculatorLabel;
+    std::unique_ptr<Label> normalLabel;
+    std::unique_ptr<Label> dottedLabel;
+    std::unique_ptr<Label> tripletLabel;
+    std::unique_ptr<Label> wholeLabel;
+    std::unique_ptr<Label> halfLabel;
+    std::unique_ptr<Label> quarterLabel;
+    std::unique_ptr<Label> eighthLabel;
+    std::unique_ptr<Label> sixteenthLabel;
+    std::unique_ptr<Label> thirtySecondLabel;
+    std::unique_ptr<Label> sixtyFourthLabel;
+    std::unique_ptr<Label> oneHundreAndTwentyEighthLabel;
+    std::unique_ptr<TextButton> tapButton;
+    std::unique_ptr<Label> wholeNormalLabel;
+    std::unique_ptr<Label> wholeDottedLabel;
+    std::unique_ptr<Label> wholeTripletLabel;
+    std::unique_ptr<Label> halfNormalLabel;
+    std::unique_ptr<Label> halfDottedLabel;
+    std::unique_ptr<Label> halfTripletLabel;
+    std::unique_ptr<Label> quarterNormalLabel;
+    std::unique_ptr<Label> quarterDottedLabel;
+    std::unique_ptr<Label> quarterTripletLabel;
+    std::unique_ptr<Label> eighthNormalLabel;
+    std::unique_ptr<Label> eighthDottedLabel;
+    std::unique_ptr<Label> eighthTripletLabel;
+    std::unique_ptr<Label> sixteenthNormalLabel;
+    std::unique_ptr<Label> sixteenthDottedLabel;
+    std::unique_ptr<Label> sixteenthTripletLabel;
+    std::unique_ptr<Label> thirtySecondNormalLabel;
+    std::unique_ptr<Label> thirtySecondDottedLabel;
+    std::unique_ptr<Label> thirtySecondTripletLabel;
+    std::unique_ptr<Label> sixtyFourthNormalLabel;
+    std::unique_ptr<Label> sixtyFourthDottedLabel;
+    std::unique_ptr<Label> sixtyFourthTripletLabel;
+    std::unique_ptr<Label> oneTwentyEighthNormalLabel;
+    std::unique_ptr<Label> oneTwentyEighthDottedLabel;
+    std::unique_ptr<Label> oneTwentyEighthTripletLabel;
+    std::unique_ptr<ToggleButton> hzToggle;
+    std::unique_ptr<ToggleButton> msToggle;
+    std::unique_ptr<ToggleButton> coarseResolutionToggle;
+    std::unique_ptr<ToggleButton> fineResolutionToggle;
+    std::unique_ptr<Label> bpmLabel;
+    std::unique_ptr<Label> bpmValuesLabel;
 
 
     //==============================================================================

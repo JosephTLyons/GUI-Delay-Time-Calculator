@@ -7,7 +7,7 @@
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Created with Projucer version: 5.2.1
+  Created with Projucer version: 5.3.2
 
   ------------------------------------------------------------------------------
 
@@ -33,7 +33,8 @@ MainComponent::MainComponent ()
     //[Constructor_pre] You can add your own custom stuff here..
     //[/Constructor_pre]
 
-    addAndMakeVisible (doubleTempoButton = new TextButton ("doubleTempoButton"));
+    doubleTempoButton.reset (new TextButton ("doubleTempoButton"));
+    addAndMakeVisible (doubleTempoButton.get());
     doubleTempoButton->setButtonText (TRANS("2x"));
     doubleTempoButton->addListener (this);
     doubleTempoButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
@@ -41,7 +42,8 @@ MainComponent::MainComponent ()
 
     doubleTempoButton->setBounds (125, 115, 125, 30);
 
-    addAndMakeVisible (halfTempoButton = new TextButton ("halfTempoButton"));
+    halfTempoButton.reset (new TextButton ("halfTempoButton"));
+    addAndMakeVisible (halfTempoButton.get());
     halfTempoButton->setButtonText (TRANS("(1/2)x"));
     halfTempoButton->addListener (this);
     halfTempoButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
@@ -49,7 +51,8 @@ MainComponent::MainComponent ()
 
     halfTempoButton->setBounds (0, 115, 125, 30);
 
-    addAndMakeVisible (tempoSlider = new Slider ("tempoSlider"));
+    tempoSlider.reset (new Slider ("tempoSlider"));
+    addAndMakeVisible (tempoSlider.get());
     tempoSlider->setRange (1, 1000, 0.1);
     tempoSlider->setSliderStyle (Slider::LinearHorizontal);
     tempoSlider->setTextBoxStyle (Slider::NoTextBox, false, 50, 20);
@@ -65,8 +68,9 @@ MainComponent::MainComponent ()
 
     tempoSlider->setBounds (0, 85, 500, 30);
 
-    addAndMakeVisible (delayTimeCalculatorLabel = new Label ("delayTimeCalculatorLabel",
-                                                             TRANS("Delay Time Calculator")));
+    delayTimeCalculatorLabel.reset (new Label ("delayTimeCalculatorLabel",
+                                               TRANS("Delay Time Calculator")));
+    addAndMakeVisible (delayTimeCalculatorLabel.get());
     delayTimeCalculatorLabel->setFont (Font ("Arial", 47.40f, Font::plain).withExtraKerningFactor (0.095f));
     delayTimeCalculatorLabel->setJustificationType (Justification::centred);
     delayTimeCalculatorLabel->setEditable (false, false, false);
@@ -76,8 +80,9 @@ MainComponent::MainComponent ()
 
     delayTimeCalculatorLabel->setBounds (0, 0, 500, 50);
 
-    addAndMakeVisible (normalLabel = new Label ("normalLabel",
-                                                TRANS("Normal\n")));
+    normalLabel.reset (new Label ("normalLabel",
+                                  TRANS("Normal\n")));
+    addAndMakeVisible (normalLabel.get());
     normalLabel->setFont (Font ("Arial", 30.00f, Font::plain));
     normalLabel->setJustificationType (Justification::centredLeft);
     normalLabel->setEditable (false, false, false);
@@ -87,8 +92,9 @@ MainComponent::MainComponent ()
 
     normalLabel->setBounds (125, 145, 125, 30);
 
-    addAndMakeVisible (dottedLabel = new Label ("dottedLabel",
-                                                TRANS("Dotted")));
+    dottedLabel.reset (new Label ("dottedLabel",
+                                  TRANS("Dotted")));
+    addAndMakeVisible (dottedLabel.get());
     dottedLabel->setFont (Font ("Arial", 30.00f, Font::plain));
     dottedLabel->setJustificationType (Justification::centredLeft);
     dottedLabel->setEditable (false, false, false);
@@ -98,8 +104,9 @@ MainComponent::MainComponent ()
 
     dottedLabel->setBounds (250, 145, 125, 30);
 
-    addAndMakeVisible (tripletLabel = new Label ("tripletLabel",
-                                                 TRANS("Triplet")));
+    tripletLabel.reset (new Label ("tripletLabel",
+                                   TRANS("Triplet")));
+    addAndMakeVisible (tripletLabel.get());
     tripletLabel->setFont (Font ("Arial", 30.00f, Font::plain));
     tripletLabel->setJustificationType (Justification::centredLeft);
     tripletLabel->setEditable (false, false, false);
@@ -109,8 +116,9 @@ MainComponent::MainComponent ()
 
     tripletLabel->setBounds (375, 145, 125, 30);
 
-    addAndMakeVisible (wholeLabel = new Label ("wholeLabel",
-                                               TRANS("1:")));
+    wholeLabel.reset (new Label ("wholeLabel",
+                                 TRANS("1:")));
+    addAndMakeVisible (wholeLabel.get());
     wholeLabel->setFont (Font ("Arial", 30.00f, Font::plain));
     wholeLabel->setJustificationType (Justification::centredLeft);
     wholeLabel->setEditable (false, false, false);
@@ -120,8 +128,9 @@ MainComponent::MainComponent ()
 
     wholeLabel->setBounds (0, 175, 100, 30);
 
-    addAndMakeVisible (halfLabel = new Label ("halfLabel",
-                                              TRANS("1/2:")));
+    halfLabel.reset (new Label ("halfLabel",
+                                TRANS("1/2:")));
+    addAndMakeVisible (halfLabel.get());
     halfLabel->setFont (Font ("Arial", 30.00f, Font::plain));
     halfLabel->setJustificationType (Justification::centredLeft);
     halfLabel->setEditable (false, false, false);
@@ -131,8 +140,9 @@ MainComponent::MainComponent ()
 
     halfLabel->setBounds (0, 215, 100, 30);
 
-    addAndMakeVisible (quarterLabel = new Label ("quarterLabel",
-                                                 TRANS("1/4:")));
+    quarterLabel.reset (new Label ("quarterLabel",
+                                   TRANS("1/4:")));
+    addAndMakeVisible (quarterLabel.get());
     quarterLabel->setFont (Font ("Arial", 30.00f, Font::plain));
     quarterLabel->setJustificationType (Justification::centredLeft);
     quarterLabel->setEditable (false, false, false);
@@ -142,8 +152,9 @@ MainComponent::MainComponent ()
 
     quarterLabel->setBounds (0, 255, 100, 30);
 
-    addAndMakeVisible (eighthLabel = new Label ("eighthLabel",
-                                                TRANS("1/8:")));
+    eighthLabel.reset (new Label ("eighthLabel",
+                                  TRANS("1/8:")));
+    addAndMakeVisible (eighthLabel.get());
     eighthLabel->setFont (Font ("Arial", 30.00f, Font::plain));
     eighthLabel->setJustificationType (Justification::centredLeft);
     eighthLabel->setEditable (false, false, false);
@@ -153,8 +164,9 @@ MainComponent::MainComponent ()
 
     eighthLabel->setBounds (0, 295, 100, 30);
 
-    addAndMakeVisible (sixteenthLabel = new Label ("sixteenthLabel",
-                                                   TRANS("1/16:")));
+    sixteenthLabel.reset (new Label ("sixteenthLabel",
+                                     TRANS("1/16:")));
+    addAndMakeVisible (sixteenthLabel.get());
     sixteenthLabel->setFont (Font ("Arial", 30.00f, Font::plain));
     sixteenthLabel->setJustificationType (Justification::centredLeft);
     sixteenthLabel->setEditable (false, false, false);
@@ -164,8 +176,9 @@ MainComponent::MainComponent ()
 
     sixteenthLabel->setBounds (0, 335, 100, 30);
 
-    addAndMakeVisible (thirtySecondLabel = new Label ("thirtySecondLabel",
-                                                      TRANS("1/32:")));
+    thirtySecondLabel.reset (new Label ("thirtySecondLabel",
+                                        TRANS("1/32:")));
+    addAndMakeVisible (thirtySecondLabel.get());
     thirtySecondLabel->setFont (Font ("Arial", 30.00f, Font::plain));
     thirtySecondLabel->setJustificationType (Justification::centredLeft);
     thirtySecondLabel->setEditable (false, false, false);
@@ -175,8 +188,9 @@ MainComponent::MainComponent ()
 
     thirtySecondLabel->setBounds (0, 375, 100, 30);
 
-    addAndMakeVisible (sixtyFourthLabel = new Label ("sixtyFourthLabel",
-                                                     TRANS("1/64:")));
+    sixtyFourthLabel.reset (new Label ("sixtyFourthLabel",
+                                       TRANS("1/64:")));
+    addAndMakeVisible (sixtyFourthLabel.get());
     sixtyFourthLabel->setFont (Font ("Arial", 30.00f, Font::plain));
     sixtyFourthLabel->setJustificationType (Justification::centredLeft);
     sixtyFourthLabel->setEditable (false, false, false);
@@ -186,8 +200,9 @@ MainComponent::MainComponent ()
 
     sixtyFourthLabel->setBounds (0, 415, 100, 30);
 
-    addAndMakeVisible (oneHundreAndTwentyEighthLabel = new Label ("oneHundreAndTwentyEighthLabel",
-                                                                  TRANS("1/128:")));
+    oneHundreAndTwentyEighthLabel.reset (new Label ("oneHundreAndTwentyEighthLabel",
+                                                    TRANS("1/128:")));
+    addAndMakeVisible (oneHundreAndTwentyEighthLabel.get());
     oneHundreAndTwentyEighthLabel->setFont (Font ("Arial", 30.00f, Font::plain));
     oneHundreAndTwentyEighthLabel->setJustificationType (Justification::centredLeft);
     oneHundreAndTwentyEighthLabel->setEditable (false, false, false);
@@ -197,7 +212,8 @@ MainComponent::MainComponent ()
 
     oneHundreAndTwentyEighthLabel->setBounds (0, 455, 100, 30);
 
-    addAndMakeVisible (tapButton = new TextButton ("tapButton"));
+    tapButton.reset (new TextButton ("tapButton"));
+    addAndMakeVisible (tapButton.get());
     tapButton->setButtonText (TRANS("Tap Tempo"));
     tapButton->addListener (this);
     tapButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
@@ -205,8 +221,9 @@ MainComponent::MainComponent ()
 
     tapButton->setBounds (250, 115, 250, 30);
 
-    addAndMakeVisible (wholeNormalLabel = new Label ("new label",
-                                                     String()));
+    wholeNormalLabel.reset (new Label ("new label",
+                                       String()));
+    addAndMakeVisible (wholeNormalLabel.get());
     wholeNormalLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     wholeNormalLabel->setJustificationType (Justification::centredLeft);
     wholeNormalLabel->setEditable (false, false, false);
@@ -215,8 +232,9 @@ MainComponent::MainComponent ()
 
     wholeNormalLabel->setBounds (125, 175, 125, 30);
 
-    addAndMakeVisible (wholeDottedLabel = new Label ("wholeDottedLabel",
-                                                     String()));
+    wholeDottedLabel.reset (new Label ("wholeDottedLabel",
+                                       String()));
+    addAndMakeVisible (wholeDottedLabel.get());
     wholeDottedLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     wholeDottedLabel->setJustificationType (Justification::centredLeft);
     wholeDottedLabel->setEditable (false, false, false);
@@ -225,8 +243,9 @@ MainComponent::MainComponent ()
 
     wholeDottedLabel->setBounds (250, 175, 125, 30);
 
-    addAndMakeVisible (wholeTripletLabel = new Label ("wholeTripletLabel",
-                                                      TRANS("\n")));
+    wholeTripletLabel.reset (new Label ("wholeTripletLabel",
+                                        TRANS("\n")));
+    addAndMakeVisible (wholeTripletLabel.get());
     wholeTripletLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     wholeTripletLabel->setJustificationType (Justification::centredLeft);
     wholeTripletLabel->setEditable (false, false, false);
@@ -235,8 +254,9 @@ MainComponent::MainComponent ()
 
     wholeTripletLabel->setBounds (375, 175, 125, 30);
 
-    addAndMakeVisible (halfNormalLabel = new Label ("halfNormalLabel",
-                                                    String()));
+    halfNormalLabel.reset (new Label ("halfNormalLabel",
+                                      String()));
+    addAndMakeVisible (halfNormalLabel.get());
     halfNormalLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     halfNormalLabel->setJustificationType (Justification::centredLeft);
     halfNormalLabel->setEditable (false, false, false);
@@ -245,8 +265,9 @@ MainComponent::MainComponent ()
 
     halfNormalLabel->setBounds (125, 215, 125, 30);
 
-    addAndMakeVisible (halfDottedLabel = new Label ("halfDottedLabel",
-                                                    String()));
+    halfDottedLabel.reset (new Label ("halfDottedLabel",
+                                      String()));
+    addAndMakeVisible (halfDottedLabel.get());
     halfDottedLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     halfDottedLabel->setJustificationType (Justification::centredLeft);
     halfDottedLabel->setEditable (false, false, false);
@@ -255,8 +276,9 @@ MainComponent::MainComponent ()
 
     halfDottedLabel->setBounds (250, 215, 125, 28);
 
-    addAndMakeVisible (halfTripletLabel = new Label ("halfTripletLabel",
-                                                     String()));
+    halfTripletLabel.reset (new Label ("halfTripletLabel",
+                                       String()));
+    addAndMakeVisible (halfTripletLabel.get());
     halfTripletLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     halfTripletLabel->setJustificationType (Justification::centredLeft);
     halfTripletLabel->setEditable (false, false, false);
@@ -265,8 +287,9 @@ MainComponent::MainComponent ()
 
     halfTripletLabel->setBounds (375, 215, 125, 30);
 
-    addAndMakeVisible (quarterNormalLabel = new Label ("quarterNormalLabel",
-                                                       String()));
+    quarterNormalLabel.reset (new Label ("quarterNormalLabel",
+                                         String()));
+    addAndMakeVisible (quarterNormalLabel.get());
     quarterNormalLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     quarterNormalLabel->setJustificationType (Justification::centredLeft);
     quarterNormalLabel->setEditable (false, false, false);
@@ -275,8 +298,9 @@ MainComponent::MainComponent ()
 
     quarterNormalLabel->setBounds (125, 255, 125, 30);
 
-    addAndMakeVisible (quarterDottedLabel = new Label ("quarterDottedLabel",
-                                                       String()));
+    quarterDottedLabel.reset (new Label ("quarterDottedLabel",
+                                         String()));
+    addAndMakeVisible (quarterDottedLabel.get());
     quarterDottedLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     quarterDottedLabel->setJustificationType (Justification::centredLeft);
     quarterDottedLabel->setEditable (false, false, false);
@@ -285,8 +309,9 @@ MainComponent::MainComponent ()
 
     quarterDottedLabel->setBounds (250, 255, 125, 30);
 
-    addAndMakeVisible (quarterTripletLabel = new Label ("quarterTripletLabel",
-                                                        String()));
+    quarterTripletLabel.reset (new Label ("quarterTripletLabel",
+                                          String()));
+    addAndMakeVisible (quarterTripletLabel.get());
     quarterTripletLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     quarterTripletLabel->setJustificationType (Justification::centredLeft);
     quarterTripletLabel->setEditable (false, false, false);
@@ -295,8 +320,9 @@ MainComponent::MainComponent ()
 
     quarterTripletLabel->setBounds (375, 255, 125, 30);
 
-    addAndMakeVisible (eighthNormalLabel = new Label ("eighthNormalLabel",
-                                                      String()));
+    eighthNormalLabel.reset (new Label ("eighthNormalLabel",
+                                        String()));
+    addAndMakeVisible (eighthNormalLabel.get());
     eighthNormalLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     eighthNormalLabel->setJustificationType (Justification::centredLeft);
     eighthNormalLabel->setEditable (false, false, false);
@@ -305,8 +331,9 @@ MainComponent::MainComponent ()
 
     eighthNormalLabel->setBounds (125, 295, 125, 30);
 
-    addAndMakeVisible (eighthDottedLabel = new Label ("eighthDottedLabel",
-                                                      String()));
+    eighthDottedLabel.reset (new Label ("eighthDottedLabel",
+                                        String()));
+    addAndMakeVisible (eighthDottedLabel.get());
     eighthDottedLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     eighthDottedLabel->setJustificationType (Justification::centredLeft);
     eighthDottedLabel->setEditable (false, false, false);
@@ -315,8 +342,9 @@ MainComponent::MainComponent ()
 
     eighthDottedLabel->setBounds (250, 295, 125, 30);
 
-    addAndMakeVisible (eighthTripletLabel = new Label ("eighthTripletLabel",
-                                                       String()));
+    eighthTripletLabel.reset (new Label ("eighthTripletLabel",
+                                         String()));
+    addAndMakeVisible (eighthTripletLabel.get());
     eighthTripletLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     eighthTripletLabel->setJustificationType (Justification::centredLeft);
     eighthTripletLabel->setEditable (false, false, false);
@@ -325,8 +353,9 @@ MainComponent::MainComponent ()
 
     eighthTripletLabel->setBounds (375, 295, 125, 30);
 
-    addAndMakeVisible (sixteenthNormalLabel = new Label ("sixteenthNormalLabel",
-                                                         String()));
+    sixteenthNormalLabel.reset (new Label ("sixteenthNormalLabel",
+                                           String()));
+    addAndMakeVisible (sixteenthNormalLabel.get());
     sixteenthNormalLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     sixteenthNormalLabel->setJustificationType (Justification::centredLeft);
     sixteenthNormalLabel->setEditable (false, false, false);
@@ -335,8 +364,9 @@ MainComponent::MainComponent ()
 
     sixteenthNormalLabel->setBounds (125, 335, 125, 30);
 
-    addAndMakeVisible (sixteenthDottedLabel = new Label ("sixteenthDottedLabel",
-                                                         String()));
+    sixteenthDottedLabel.reset (new Label ("sixteenthDottedLabel",
+                                           String()));
+    addAndMakeVisible (sixteenthDottedLabel.get());
     sixteenthDottedLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     sixteenthDottedLabel->setJustificationType (Justification::centredLeft);
     sixteenthDottedLabel->setEditable (false, false, false);
@@ -345,8 +375,9 @@ MainComponent::MainComponent ()
 
     sixteenthDottedLabel->setBounds (250, 335, 125, 30);
 
-    addAndMakeVisible (sixteenthTripletLabel = new Label ("sixteenthTripletLabel",
-                                                          String()));
+    sixteenthTripletLabel.reset (new Label ("sixteenthTripletLabel",
+                                            String()));
+    addAndMakeVisible (sixteenthTripletLabel.get());
     sixteenthTripletLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     sixteenthTripletLabel->setJustificationType (Justification::centredLeft);
     sixteenthTripletLabel->setEditable (false, false, false);
@@ -355,8 +386,9 @@ MainComponent::MainComponent ()
 
     sixteenthTripletLabel->setBounds (375, 335, 125, 30);
 
-    addAndMakeVisible (thirtySecondNormalLabel = new Label ("thirtySecondNormalLabel",
-                                                            String()));
+    thirtySecondNormalLabel.reset (new Label ("thirtySecondNormalLabel",
+                                              String()));
+    addAndMakeVisible (thirtySecondNormalLabel.get());
     thirtySecondNormalLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     thirtySecondNormalLabel->setJustificationType (Justification::centredLeft);
     thirtySecondNormalLabel->setEditable (false, false, false);
@@ -365,8 +397,9 @@ MainComponent::MainComponent ()
 
     thirtySecondNormalLabel->setBounds (125, 375, 125, 30);
 
-    addAndMakeVisible (thirtySecondDottedLabel = new Label ("thirtySecondDottedLabel",
-                                                            String()));
+    thirtySecondDottedLabel.reset (new Label ("thirtySecondDottedLabel",
+                                              String()));
+    addAndMakeVisible (thirtySecondDottedLabel.get());
     thirtySecondDottedLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     thirtySecondDottedLabel->setJustificationType (Justification::centredLeft);
     thirtySecondDottedLabel->setEditable (false, false, false);
@@ -375,8 +408,9 @@ MainComponent::MainComponent ()
 
     thirtySecondDottedLabel->setBounds (250, 375, 125, 30);
 
-    addAndMakeVisible (thirtySecondTripletLabel = new Label ("thirtySecondTripletLabel",
-                                                             String()));
+    thirtySecondTripletLabel.reset (new Label ("thirtySecondTripletLabel",
+                                               String()));
+    addAndMakeVisible (thirtySecondTripletLabel.get());
     thirtySecondTripletLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     thirtySecondTripletLabel->setJustificationType (Justification::centredLeft);
     thirtySecondTripletLabel->setEditable (false, false, false);
@@ -385,8 +419,9 @@ MainComponent::MainComponent ()
 
     thirtySecondTripletLabel->setBounds (375, 375, 125, 30);
 
-    addAndMakeVisible (sixtyFourthNormalLabel = new Label ("sixtyFourthNormalLabel",
-                                                           String()));
+    sixtyFourthNormalLabel.reset (new Label ("sixtyFourthNormalLabel",
+                                             String()));
+    addAndMakeVisible (sixtyFourthNormalLabel.get());
     sixtyFourthNormalLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     sixtyFourthNormalLabel->setJustificationType (Justification::centredLeft);
     sixtyFourthNormalLabel->setEditable (false, false, false);
@@ -395,8 +430,9 @@ MainComponent::MainComponent ()
 
     sixtyFourthNormalLabel->setBounds (125, 415, 125, 30);
 
-    addAndMakeVisible (sixtyFourthDottedLabel = new Label ("sixtyFourthDottedLabel",
-                                                           String()));
+    sixtyFourthDottedLabel.reset (new Label ("sixtyFourthDottedLabel",
+                                             String()));
+    addAndMakeVisible (sixtyFourthDottedLabel.get());
     sixtyFourthDottedLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     sixtyFourthDottedLabel->setJustificationType (Justification::centredLeft);
     sixtyFourthDottedLabel->setEditable (false, false, false);
@@ -405,8 +441,9 @@ MainComponent::MainComponent ()
 
     sixtyFourthDottedLabel->setBounds (250, 415, 125, 30);
 
-    addAndMakeVisible (sixtyFourthTripletLabel = new Label ("sixtyFourthTripletLabel",
-                                                            String()));
+    sixtyFourthTripletLabel.reset (new Label ("sixtyFourthTripletLabel",
+                                              String()));
+    addAndMakeVisible (sixtyFourthTripletLabel.get());
     sixtyFourthTripletLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     sixtyFourthTripletLabel->setJustificationType (Justification::centredLeft);
     sixtyFourthTripletLabel->setEditable (false, false, false);
@@ -415,8 +452,9 @@ MainComponent::MainComponent ()
 
     sixtyFourthTripletLabel->setBounds (375, 415, 125, 30);
 
-    addAndMakeVisible (oneTwentyEighthNormalLabel = new Label ("oneTwentyEighthNormalLabel",
-                                                               String()));
+    oneTwentyEighthNormalLabel.reset (new Label ("oneTwentyEighthNormalLabel",
+                                                 String()));
+    addAndMakeVisible (oneTwentyEighthNormalLabel.get());
     oneTwentyEighthNormalLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     oneTwentyEighthNormalLabel->setJustificationType (Justification::centredLeft);
     oneTwentyEighthNormalLabel->setEditable (false, false, false);
@@ -425,8 +463,9 @@ MainComponent::MainComponent ()
 
     oneTwentyEighthNormalLabel->setBounds (125, 455, 125, 30);
 
-    addAndMakeVisible (oneTwentyEighthDottedLabel = new Label ("oneTwentyEighthDottedLabel",
-                                                               String()));
+    oneTwentyEighthDottedLabel.reset (new Label ("oneTwentyEighthDottedLabel",
+                                                 String()));
+    addAndMakeVisible (oneTwentyEighthDottedLabel.get());
     oneTwentyEighthDottedLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     oneTwentyEighthDottedLabel->setJustificationType (Justification::centredLeft);
     oneTwentyEighthDottedLabel->setEditable (false, false, false);
@@ -435,8 +474,9 @@ MainComponent::MainComponent ()
 
     oneTwentyEighthDottedLabel->setBounds (250, 455, 125, 30);
 
-    addAndMakeVisible (oneTwentyEighthTripletLabel = new Label ("oneTwentyEighthTripletLabel",
-                                                                String()));
+    oneTwentyEighthTripletLabel.reset (new Label ("oneTwentyEighthTripletLabel",
+                                                  String()));
+    addAndMakeVisible (oneTwentyEighthTripletLabel.get());
     oneTwentyEighthTripletLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     oneTwentyEighthTripletLabel->setJustificationType (Justification::centredLeft);
     oneTwentyEighthTripletLabel->setEditable (false, false, false);
@@ -445,32 +485,37 @@ MainComponent::MainComponent ()
 
     oneTwentyEighthTripletLabel->setBounds (375, 455, 125, 30);
 
-    addAndMakeVisible (hzToggle = new ToggleButton ("hzToggle"));
+    hzToggle.reset (new ToggleButton ("hzToggle"));
+    addAndMakeVisible (hzToggle.get());
     hzToggle->setButtonText (TRANS("Hz"));
     hzToggle->addListener (this);
 
     hzToggle->setBounds (63, 150, 62, 20);
 
-    addAndMakeVisible (msToggle = new ToggleButton ("msToggle"));
+    msToggle.reset (new ToggleButton ("msToggle"));
+    addAndMakeVisible (msToggle.get());
     msToggle->setButtonText (TRANS("ms"));
     msToggle->addListener (this);
 
     msToggle->setBounds (0, 150, 62, 20);
 
-    addAndMakeVisible (coarseResolutionToggle = new ToggleButton ("coarseResolutionToggle"));
+    coarseResolutionToggle.reset (new ToggleButton ("coarseResolutionToggle"));
+    addAndMakeVisible (coarseResolutionToggle.get());
     coarseResolutionToggle->setButtonText (TRANS("Coarse"));
     coarseResolutionToggle->addListener (this);
 
     coarseResolutionToggle->setBounds (0, 65, 75, 20);
 
-    addAndMakeVisible (fineResolutionToggle = new ToggleButton ("fineResolutionToggle"));
+    fineResolutionToggle.reset (new ToggleButton ("fineResolutionToggle"));
+    addAndMakeVisible (fineResolutionToggle.get());
     fineResolutionToggle->setButtonText (TRANS("Fine"));
     fineResolutionToggle->addListener (this);
 
     fineResolutionToggle->setBounds (125, 65, 75, 20);
 
-    addAndMakeVisible (bpmLabel = new Label ("bpmLabel",
-                                             TRANS("BPM")));
+    bpmLabel.reset (new Label ("bpmLabel",
+                               TRANS("BPM")));
+    addAndMakeVisible (bpmLabel.get());
     bpmLabel->setFont (Font ("Arial", 30.00f, Font::plain));
     bpmLabel->setJustificationType (Justification::centred);
     bpmLabel->setEditable (false, false, false);
@@ -479,8 +524,9 @@ MainComponent::MainComponent ()
 
     bpmLabel->setBounds (300, 60, 101, 30);
 
-    addAndMakeVisible (bpmValuesLabel = new Label ("bpmValuesLabel",
-                                                   String()));
+    bpmValuesLabel.reset (new Label ("bpmValuesLabel",
+                                     String()));
+    addAndMakeVisible (bpmValuesLabel.get());
     bpmValuesLabel->setFont (Font ("Arial", 30.00f, Font::plain));
     bpmValuesLabel->setJustificationType (Justification::centred);
     bpmValuesLabel->setEditable (true, true, false);
@@ -613,7 +659,7 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     //[UserbuttonClicked_Pre]
     //[/UserbuttonClicked_Pre]
 
-    if (buttonThatWasClicked == doubleTempoButton)
+    if (buttonThatWasClicked == doubleTempoButton.get())
     {
         //[UserButtonCode_doubleTempoButton] -- add your button handler code here..
 
@@ -621,7 +667,7 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
 
         //[/UserButtonCode_doubleTempoButton]
     }
-    else if (buttonThatWasClicked == halfTempoButton)
+    else if (buttonThatWasClicked == halfTempoButton.get())
     {
         //[UserButtonCode_halfTempoButton] -- add your button handler code here..
 
@@ -629,7 +675,7 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
 
         //[/UserButtonCode_halfTempoButton]
     }
-    else if (buttonThatWasClicked == tapButton)
+    else if (buttonThatWasClicked == tapButton.get())
     {
         //[UserButtonCode_tapButton] -- add your button handler code here..
 
@@ -640,7 +686,7 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
 
         //[/UserButtonCode_tapButton]
     }
-    else if (buttonThatWasClicked == hzToggle)
+    else if (buttonThatWasClicked == hzToggle.get())
     {
         //[UserButtonCode_hzToggle] -- add your button handler code here..
 
@@ -654,7 +700,7 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
 
         //[/UserButtonCode_hzToggle]
     }
-    else if (buttonThatWasClicked == msToggle)
+    else if (buttonThatWasClicked == msToggle.get())
     {
         //[UserButtonCode_msToggle] -- add your button handler code here..
 
@@ -668,7 +714,7 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
 
         //[/UserButtonCode_msToggle]
     }
-    else if (buttonThatWasClicked == coarseResolutionToggle)
+    else if (buttonThatWasClicked == coarseResolutionToggle.get())
     {
         //[UserButtonCode_coarseResolutionToggle] -- add your button handler code here..
 
@@ -677,7 +723,7 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
 
         //[/UserButtonCode_coarseResolutionToggle]
     }
-    else if (buttonThatWasClicked == fineResolutionToggle)
+    else if (buttonThatWasClicked == fineResolutionToggle.get())
     {
         //[UserButtonCode_fineResolutionToggle] -- add your button handler code here..
 
@@ -700,7 +746,7 @@ void MainComponent::sliderValueChanged (Slider* sliderThatWasMoved)
     //[UsersliderValueChanged_Pre]
     //[/UsersliderValueChanged_Pre]
 
-    if (sliderThatWasMoved == tempoSlider)
+    if (sliderThatWasMoved == tempoSlider.get())
     {
         //[UserSliderCode_tempoSlider] -- add your slider handling code here..
 
@@ -719,12 +765,12 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     //[UserlabelTextChanged_Pre]
     //[/UserlabelTextChanged_Pre]
 
-    if (labelThatHasChanged == bpmValuesLabel)
+    if (labelThatHasChanged == bpmValuesLabel.get())
     {
         //[UserLabelCode_bpmValuesLabel] -- add your label text handling code here..
-        
+
         tempoSlider->setValue (bpmValuesLabel->getTextValue().toString().getDoubleValue());
-        
+
         // Whenever the slider moves, the new value is inserted into bpmValuesLabel by the
         // sliderValueChanged method.  Sometimes, when typing in values, the slider doesn't
         // move, so bpmValuesLabel doesn't update.  This could occur in cases such as typing
@@ -732,7 +778,7 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
         // which also results in the value of one, now characters are left in bpmValuesLabel.
         // This makes sure that this cannot happen, the output field is always set.
         setBpmLabelValue();
-        
+
         //[/UserLabelCode_bpmValuesLabel]
     }
 
