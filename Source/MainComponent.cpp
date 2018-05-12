@@ -221,269 +221,269 @@ MainComponent::MainComponent ()
 
     tapButton->setBounds (250, 115, 250, 30);
 
-    wholeNormalLabel.reset (new Label ("new label",
-                                       String()));
-    addAndMakeVisible (wholeNormalLabel.get());
-    wholeNormalLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    wholeNormalLabel->setJustificationType (Justification::centredLeft);
-    wholeNormalLabel->setEditable (false, false, false);
-    wholeNormalLabel->setColour (TextEditor::textColourId, Colours::black);
-    wholeNormalLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    wholeNLabel.reset (new Label ("wholeNLabel",
+                                  String()));
+    addAndMakeVisible (wholeNLabel.get());
+    wholeNLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
+    wholeNLabel->setJustificationType (Justification::centredLeft);
+    wholeNLabel->setEditable (false, false, false);
+    wholeNLabel->setColour (TextEditor::textColourId, Colours::black);
+    wholeNLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    wholeNormalLabel->setBounds (125, 175, 125, 30);
+    wholeNLabel->setBounds (125, 175, 125, 30);
 
-    wholeDottedLabel.reset (new Label ("wholeDottedLabel",
-                                       String()));
-    addAndMakeVisible (wholeDottedLabel.get());
-    wholeDottedLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    wholeDottedLabel->setJustificationType (Justification::centredLeft);
-    wholeDottedLabel->setEditable (false, false, false);
-    wholeDottedLabel->setColour (TextEditor::textColourId, Colours::black);
-    wholeDottedLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    wholeDLabel.reset (new Label ("wholeDLabel",
+                                  String()));
+    addAndMakeVisible (wholeDLabel.get());
+    wholeDLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
+    wholeDLabel->setJustificationType (Justification::centredLeft);
+    wholeDLabel->setEditable (false, false, false);
+    wholeDLabel->setColour (TextEditor::textColourId, Colours::black);
+    wholeDLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    wholeDottedLabel->setBounds (250, 175, 125, 30);
+    wholeDLabel->setBounds (250, 175, 125, 30);
 
-    wholeTripletLabel.reset (new Label ("wholeTripletLabel",
-                                        TRANS("\n")));
-    addAndMakeVisible (wholeTripletLabel.get());
-    wholeTripletLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    wholeTripletLabel->setJustificationType (Justification::centredLeft);
-    wholeTripletLabel->setEditable (false, false, false);
-    wholeTripletLabel->setColour (TextEditor::textColourId, Colours::black);
-    wholeTripletLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    wholeTLabel.reset (new Label ("wholeTLabel",
+                                  TRANS("\n")));
+    addAndMakeVisible (wholeTLabel.get());
+    wholeTLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
+    wholeTLabel->setJustificationType (Justification::centredLeft);
+    wholeTLabel->setEditable (false, false, false);
+    wholeTLabel->setColour (TextEditor::textColourId, Colours::black);
+    wholeTLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    wholeTripletLabel->setBounds (375, 175, 125, 30);
+    wholeTLabel->setBounds (375, 175, 125, 30);
 
-    halfNormalLabel.reset (new Label ("halfNormalLabel",
-                                      String()));
-    addAndMakeVisible (halfNormalLabel.get());
-    halfNormalLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    halfNormalLabel->setJustificationType (Justification::centredLeft);
-    halfNormalLabel->setEditable (false, false, false);
-    halfNormalLabel->setColour (TextEditor::textColourId, Colours::black);
-    halfNormalLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    halfNLabel.reset (new Label ("halfNLabel",
+                                 String()));
+    addAndMakeVisible (halfNLabel.get());
+    halfNLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
+    halfNLabel->setJustificationType (Justification::centredLeft);
+    halfNLabel->setEditable (false, false, false);
+    halfNLabel->setColour (TextEditor::textColourId, Colours::black);
+    halfNLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    halfNormalLabel->setBounds (125, 215, 125, 30);
+    halfNLabel->setBounds (125, 215, 125, 30);
 
-    halfDottedLabel.reset (new Label ("halfDottedLabel",
-                                      String()));
-    addAndMakeVisible (halfDottedLabel.get());
-    halfDottedLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    halfDottedLabel->setJustificationType (Justification::centredLeft);
-    halfDottedLabel->setEditable (false, false, false);
-    halfDottedLabel->setColour (TextEditor::textColourId, Colours::black);
-    halfDottedLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    halfDLabel.reset (new Label ("halfDLabel",
+                                 String()));
+    addAndMakeVisible (halfDLabel.get());
+    halfDLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
+    halfDLabel->setJustificationType (Justification::centredLeft);
+    halfDLabel->setEditable (false, false, false);
+    halfDLabel->setColour (TextEditor::textColourId, Colours::black);
+    halfDLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    halfDottedLabel->setBounds (250, 215, 125, 28);
+    halfDLabel->setBounds (250, 215, 125, 28);
 
-    halfTripletLabel.reset (new Label ("halfTripletLabel",
-                                       String()));
-    addAndMakeVisible (halfTripletLabel.get());
-    halfTripletLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    halfTripletLabel->setJustificationType (Justification::centredLeft);
-    halfTripletLabel->setEditable (false, false, false);
-    halfTripletLabel->setColour (TextEditor::textColourId, Colours::black);
-    halfTripletLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    halfTLabel.reset (new Label ("halfTLabel",
+                                 String()));
+    addAndMakeVisible (halfTLabel.get());
+    halfTLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
+    halfTLabel->setJustificationType (Justification::centredLeft);
+    halfTLabel->setEditable (false, false, false);
+    halfTLabel->setColour (TextEditor::textColourId, Colours::black);
+    halfTLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    halfTripletLabel->setBounds (375, 215, 125, 30);
+    halfTLabel->setBounds (375, 215, 125, 30);
 
-    quarterNormalLabel.reset (new Label ("quarterNormalLabel",
-                                         String()));
-    addAndMakeVisible (quarterNormalLabel.get());
-    quarterNormalLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    quarterNormalLabel->setJustificationType (Justification::centredLeft);
-    quarterNormalLabel->setEditable (false, false, false);
-    quarterNormalLabel->setColour (TextEditor::textColourId, Colours::black);
-    quarterNormalLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    quarterNLabel.reset (new Label ("quarterNLabel",
+                                    String()));
+    addAndMakeVisible (quarterNLabel.get());
+    quarterNLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
+    quarterNLabel->setJustificationType (Justification::centredLeft);
+    quarterNLabel->setEditable (false, false, false);
+    quarterNLabel->setColour (TextEditor::textColourId, Colours::black);
+    quarterNLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    quarterNormalLabel->setBounds (125, 255, 125, 30);
+    quarterNLabel->setBounds (125, 255, 125, 30);
 
-    quarterDottedLabel.reset (new Label ("quarterDottedLabel",
-                                         String()));
-    addAndMakeVisible (quarterDottedLabel.get());
-    quarterDottedLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    quarterDottedLabel->setJustificationType (Justification::centredLeft);
-    quarterDottedLabel->setEditable (false, false, false);
-    quarterDottedLabel->setColour (TextEditor::textColourId, Colours::black);
-    quarterDottedLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    quarterDLabel.reset (new Label ("quarterDLabel",
+                                    String()));
+    addAndMakeVisible (quarterDLabel.get());
+    quarterDLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
+    quarterDLabel->setJustificationType (Justification::centredLeft);
+    quarterDLabel->setEditable (false, false, false);
+    quarterDLabel->setColour (TextEditor::textColourId, Colours::black);
+    quarterDLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    quarterDottedLabel->setBounds (250, 255, 125, 30);
+    quarterDLabel->setBounds (250, 255, 125, 30);
 
-    quarterTripletLabel.reset (new Label ("quarterTripletLabel",
-                                          String()));
-    addAndMakeVisible (quarterTripletLabel.get());
-    quarterTripletLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    quarterTripletLabel->setJustificationType (Justification::centredLeft);
-    quarterTripletLabel->setEditable (false, false, false);
-    quarterTripletLabel->setColour (TextEditor::textColourId, Colours::black);
-    quarterTripletLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    quarterTLabel.reset (new Label ("quarterTLabel",
+                                    String()));
+    addAndMakeVisible (quarterTLabel.get());
+    quarterTLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
+    quarterTLabel->setJustificationType (Justification::centredLeft);
+    quarterTLabel->setEditable (false, false, false);
+    quarterTLabel->setColour (TextEditor::textColourId, Colours::black);
+    quarterTLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    quarterTripletLabel->setBounds (375, 255, 125, 30);
+    quarterTLabel->setBounds (375, 255, 125, 30);
 
-    eighthNormalLabel.reset (new Label ("eighthNormalLabel",
-                                        String()));
-    addAndMakeVisible (eighthNormalLabel.get());
-    eighthNormalLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    eighthNormalLabel->setJustificationType (Justification::centredLeft);
-    eighthNormalLabel->setEditable (false, false, false);
-    eighthNormalLabel->setColour (TextEditor::textColourId, Colours::black);
-    eighthNormalLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    v8thNLabel.reset (new Label ("v8thNLabel",
+                                 String()));
+    addAndMakeVisible (v8thNLabel.get());
+    v8thNLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
+    v8thNLabel->setJustificationType (Justification::centredLeft);
+    v8thNLabel->setEditable (false, false, false);
+    v8thNLabel->setColour (TextEditor::textColourId, Colours::black);
+    v8thNLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    eighthNormalLabel->setBounds (125, 295, 125, 30);
+    v8thNLabel->setBounds (125, 295, 125, 30);
 
-    eighthDottedLabel.reset (new Label ("eighthDottedLabel",
-                                        String()));
-    addAndMakeVisible (eighthDottedLabel.get());
-    eighthDottedLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    eighthDottedLabel->setJustificationType (Justification::centredLeft);
-    eighthDottedLabel->setEditable (false, false, false);
-    eighthDottedLabel->setColour (TextEditor::textColourId, Colours::black);
-    eighthDottedLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    v8thDLabel.reset (new Label ("v8thDLabel",
+                                 String()));
+    addAndMakeVisible (v8thDLabel.get());
+    v8thDLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
+    v8thDLabel->setJustificationType (Justification::centredLeft);
+    v8thDLabel->setEditable (false, false, false);
+    v8thDLabel->setColour (TextEditor::textColourId, Colours::black);
+    v8thDLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    eighthDottedLabel->setBounds (250, 295, 125, 30);
+    v8thDLabel->setBounds (250, 295, 125, 30);
 
-    eighthTripletLabel.reset (new Label ("eighthTripletLabel",
-                                         String()));
-    addAndMakeVisible (eighthTripletLabel.get());
-    eighthTripletLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    eighthTripletLabel->setJustificationType (Justification::centredLeft);
-    eighthTripletLabel->setEditable (false, false, false);
-    eighthTripletLabel->setColour (TextEditor::textColourId, Colours::black);
-    eighthTripletLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    v8thTLabel.reset (new Label ("v8thTLabel",
+                                 String()));
+    addAndMakeVisible (v8thTLabel.get());
+    v8thTLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
+    v8thTLabel->setJustificationType (Justification::centredLeft);
+    v8thTLabel->setEditable (false, false, false);
+    v8thTLabel->setColour (TextEditor::textColourId, Colours::black);
+    v8thTLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    eighthTripletLabel->setBounds (375, 295, 125, 30);
+    v8thTLabel->setBounds (375, 295, 125, 30);
 
-    sixteenthNormalLabel.reset (new Label ("sixteenthNormalLabel",
-                                           String()));
-    addAndMakeVisible (sixteenthNormalLabel.get());
-    sixteenthNormalLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    sixteenthNormalLabel->setJustificationType (Justification::centredLeft);
-    sixteenthNormalLabel->setEditable (false, false, false);
-    sixteenthNormalLabel->setColour (TextEditor::textColourId, Colours::black);
-    sixteenthNormalLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    v16thNLabel.reset (new Label ("v16thNLabel",
+                                  String()));
+    addAndMakeVisible (v16thNLabel.get());
+    v16thNLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
+    v16thNLabel->setJustificationType (Justification::centredLeft);
+    v16thNLabel->setEditable (false, false, false);
+    v16thNLabel->setColour (TextEditor::textColourId, Colours::black);
+    v16thNLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    sixteenthNormalLabel->setBounds (125, 335, 125, 30);
+    v16thNLabel->setBounds (125, 335, 125, 30);
 
-    sixteenthDottedLabel.reset (new Label ("sixteenthDottedLabel",
-                                           String()));
-    addAndMakeVisible (sixteenthDottedLabel.get());
-    sixteenthDottedLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    sixteenthDottedLabel->setJustificationType (Justification::centredLeft);
-    sixteenthDottedLabel->setEditable (false, false, false);
-    sixteenthDottedLabel->setColour (TextEditor::textColourId, Colours::black);
-    sixteenthDottedLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    v16thDLabel.reset (new Label ("v16thDLabel",
+                                  String()));
+    addAndMakeVisible (v16thDLabel.get());
+    v16thDLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
+    v16thDLabel->setJustificationType (Justification::centredLeft);
+    v16thDLabel->setEditable (false, false, false);
+    v16thDLabel->setColour (TextEditor::textColourId, Colours::black);
+    v16thDLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    sixteenthDottedLabel->setBounds (250, 335, 125, 30);
+    v16thDLabel->setBounds (250, 335, 125, 30);
 
-    sixteenthTripletLabel.reset (new Label ("sixteenthTripletLabel",
-                                            String()));
-    addAndMakeVisible (sixteenthTripletLabel.get());
-    sixteenthTripletLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    sixteenthTripletLabel->setJustificationType (Justification::centredLeft);
-    sixteenthTripletLabel->setEditable (false, false, false);
-    sixteenthTripletLabel->setColour (TextEditor::textColourId, Colours::black);
-    sixteenthTripletLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    v16thTLabel.reset (new Label ("v16thTLabel",
+                                  String()));
+    addAndMakeVisible (v16thTLabel.get());
+    v16thTLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
+    v16thTLabel->setJustificationType (Justification::centredLeft);
+    v16thTLabel->setEditable (false, false, false);
+    v16thTLabel->setColour (TextEditor::textColourId, Colours::black);
+    v16thTLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    sixteenthTripletLabel->setBounds (375, 335, 125, 30);
+    v16thTLabel->setBounds (375, 335, 125, 30);
 
-    thirtySecondNormalLabel.reset (new Label ("thirtySecondNormalLabel",
-                                              String()));
-    addAndMakeVisible (thirtySecondNormalLabel.get());
-    thirtySecondNormalLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    thirtySecondNormalLabel->setJustificationType (Justification::centredLeft);
-    thirtySecondNormalLabel->setEditable (false, false, false);
-    thirtySecondNormalLabel->setColour (TextEditor::textColourId, Colours::black);
-    thirtySecondNormalLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    v32ndNLabel.reset (new Label ("v32ndNLabel",
+                                  String()));
+    addAndMakeVisible (v32ndNLabel.get());
+    v32ndNLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
+    v32ndNLabel->setJustificationType (Justification::centredLeft);
+    v32ndNLabel->setEditable (false, false, false);
+    v32ndNLabel->setColour (TextEditor::textColourId, Colours::black);
+    v32ndNLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    thirtySecondNormalLabel->setBounds (125, 375, 125, 30);
+    v32ndNLabel->setBounds (125, 375, 125, 30);
 
-    thirtySecondDottedLabel.reset (new Label ("thirtySecondDottedLabel",
-                                              String()));
-    addAndMakeVisible (thirtySecondDottedLabel.get());
-    thirtySecondDottedLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    thirtySecondDottedLabel->setJustificationType (Justification::centredLeft);
-    thirtySecondDottedLabel->setEditable (false, false, false);
-    thirtySecondDottedLabel->setColour (TextEditor::textColourId, Colours::black);
-    thirtySecondDottedLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    v32ndDLabel.reset (new Label ("v32ndDLabel",
+                                  String()));
+    addAndMakeVisible (v32ndDLabel.get());
+    v32ndDLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
+    v32ndDLabel->setJustificationType (Justification::centredLeft);
+    v32ndDLabel->setEditable (false, false, false);
+    v32ndDLabel->setColour (TextEditor::textColourId, Colours::black);
+    v32ndDLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    thirtySecondDottedLabel->setBounds (250, 375, 125, 30);
+    v32ndDLabel->setBounds (250, 375, 125, 30);
 
-    thirtySecondTripletLabel.reset (new Label ("thirtySecondTripletLabel",
-                                               String()));
-    addAndMakeVisible (thirtySecondTripletLabel.get());
-    thirtySecondTripletLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    thirtySecondTripletLabel->setJustificationType (Justification::centredLeft);
-    thirtySecondTripletLabel->setEditable (false, false, false);
-    thirtySecondTripletLabel->setColour (TextEditor::textColourId, Colours::black);
-    thirtySecondTripletLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    v32ndTLabel.reset (new Label ("v32ndTLabel",
+                                  String()));
+    addAndMakeVisible (v32ndTLabel.get());
+    v32ndTLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
+    v32ndTLabel->setJustificationType (Justification::centredLeft);
+    v32ndTLabel->setEditable (false, false, false);
+    v32ndTLabel->setColour (TextEditor::textColourId, Colours::black);
+    v32ndTLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    thirtySecondTripletLabel->setBounds (375, 375, 125, 30);
+    v32ndTLabel->setBounds (375, 375, 125, 30);
 
-    sixtyFourthNormalLabel.reset (new Label ("sixtyFourthNormalLabel",
-                                             String()));
-    addAndMakeVisible (sixtyFourthNormalLabel.get());
-    sixtyFourthNormalLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    sixtyFourthNormalLabel->setJustificationType (Justification::centredLeft);
-    sixtyFourthNormalLabel->setEditable (false, false, false);
-    sixtyFourthNormalLabel->setColour (TextEditor::textColourId, Colours::black);
-    sixtyFourthNormalLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    v64thNLabel.reset (new Label ("v64thNLabel",
+                                  String()));
+    addAndMakeVisible (v64thNLabel.get());
+    v64thNLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
+    v64thNLabel->setJustificationType (Justification::centredLeft);
+    v64thNLabel->setEditable (false, false, false);
+    v64thNLabel->setColour (TextEditor::textColourId, Colours::black);
+    v64thNLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    sixtyFourthNormalLabel->setBounds (125, 415, 125, 30);
+    v64thNLabel->setBounds (125, 415, 125, 30);
 
-    sixtyFourthDottedLabel.reset (new Label ("sixtyFourthDottedLabel",
-                                             String()));
-    addAndMakeVisible (sixtyFourthDottedLabel.get());
-    sixtyFourthDottedLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    sixtyFourthDottedLabel->setJustificationType (Justification::centredLeft);
-    sixtyFourthDottedLabel->setEditable (false, false, false);
-    sixtyFourthDottedLabel->setColour (TextEditor::textColourId, Colours::black);
-    sixtyFourthDottedLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    v64thDLabel.reset (new Label ("v64thDLabel",
+                                  String()));
+    addAndMakeVisible (v64thDLabel.get());
+    v64thDLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
+    v64thDLabel->setJustificationType (Justification::centredLeft);
+    v64thDLabel->setEditable (false, false, false);
+    v64thDLabel->setColour (TextEditor::textColourId, Colours::black);
+    v64thDLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    sixtyFourthDottedLabel->setBounds (250, 415, 125, 30);
+    v64thDLabel->setBounds (250, 415, 125, 30);
 
-    sixtyFourthTripletLabel.reset (new Label ("sixtyFourthTripletLabel",
-                                              String()));
-    addAndMakeVisible (sixtyFourthTripletLabel.get());
-    sixtyFourthTripletLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    sixtyFourthTripletLabel->setJustificationType (Justification::centredLeft);
-    sixtyFourthTripletLabel->setEditable (false, false, false);
-    sixtyFourthTripletLabel->setColour (TextEditor::textColourId, Colours::black);
-    sixtyFourthTripletLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    v64thTLabel.reset (new Label ("v64thTLabel",
+                                  String()));
+    addAndMakeVisible (v64thTLabel.get());
+    v64thTLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
+    v64thTLabel->setJustificationType (Justification::centredLeft);
+    v64thTLabel->setEditable (false, false, false);
+    v64thTLabel->setColour (TextEditor::textColourId, Colours::black);
+    v64thTLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    sixtyFourthTripletLabel->setBounds (375, 415, 125, 30);
+    v64thTLabel->setBounds (375, 415, 125, 30);
 
-    oneTwentyEighthNormalLabel.reset (new Label ("oneTwentyEighthNormalLabel",
-                                                 String()));
-    addAndMakeVisible (oneTwentyEighthNormalLabel.get());
-    oneTwentyEighthNormalLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    oneTwentyEighthNormalLabel->setJustificationType (Justification::centredLeft);
-    oneTwentyEighthNormalLabel->setEditable (false, false, false);
-    oneTwentyEighthNormalLabel->setColour (TextEditor::textColourId, Colours::black);
-    oneTwentyEighthNormalLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    v128thNLabel.reset (new Label ("v128thNLabel",
+                                   String()));
+    addAndMakeVisible (v128thNLabel.get());
+    v128thNLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
+    v128thNLabel->setJustificationType (Justification::centredLeft);
+    v128thNLabel->setEditable (false, false, false);
+    v128thNLabel->setColour (TextEditor::textColourId, Colours::black);
+    v128thNLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    oneTwentyEighthNormalLabel->setBounds (125, 455, 125, 30);
+    v128thNLabel->setBounds (125, 455, 125, 30);
 
-    oneTwentyEighthDottedLabel.reset (new Label ("oneTwentyEighthDottedLabel",
-                                                 String()));
-    addAndMakeVisible (oneTwentyEighthDottedLabel.get());
-    oneTwentyEighthDottedLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    oneTwentyEighthDottedLabel->setJustificationType (Justification::centredLeft);
-    oneTwentyEighthDottedLabel->setEditable (false, false, false);
-    oneTwentyEighthDottedLabel->setColour (TextEditor::textColourId, Colours::black);
-    oneTwentyEighthDottedLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    v128thDLabel.reset (new Label ("v128thDLabel",
+                                   String()));
+    addAndMakeVisible (v128thDLabel.get());
+    v128thDLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
+    v128thDLabel->setJustificationType (Justification::centredLeft);
+    v128thDLabel->setEditable (false, false, false);
+    v128thDLabel->setColour (TextEditor::textColourId, Colours::black);
+    v128thDLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    oneTwentyEighthDottedLabel->setBounds (250, 455, 125, 30);
+    v128thDLabel->setBounds (250, 455, 125, 30);
 
-    oneTwentyEighthTripletLabel.reset (new Label ("oneTwentyEighthTripletLabel",
-                                                  String()));
-    addAndMakeVisible (oneTwentyEighthTripletLabel.get());
-    oneTwentyEighthTripletLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    oneTwentyEighthTripletLabel->setJustificationType (Justification::centredLeft);
-    oneTwentyEighthTripletLabel->setEditable (false, false, false);
-    oneTwentyEighthTripletLabel->setColour (TextEditor::textColourId, Colours::black);
-    oneTwentyEighthTripletLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    v128thTLabel.reset (new Label ("v128thTLabel",
+                                   String()));
+    addAndMakeVisible (v128thTLabel.get());
+    v128thTLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
+    v128thTLabel->setJustificationType (Justification::centredLeft);
+    v128thTLabel->setEditable (false, false, false);
+    v128thTLabel->setColour (TextEditor::textColourId, Colours::black);
+    v128thTLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
 
-    oneTwentyEighthTripletLabel->setBounds (375, 455, 125, 30);
+    v128thTLabel->setBounds (375, 455, 125, 30);
 
     hzToggle.reset (new ToggleButton ("hzToggle"));
     addAndMakeVisible (hzToggle.get());
@@ -586,30 +586,30 @@ MainComponent::~MainComponent()
     sixtyFourthLabel = nullptr;
     oneHundreAndTwentyEighthLabel = nullptr;
     tapButton = nullptr;
-    wholeNormalLabel = nullptr;
-    wholeDottedLabel = nullptr;
-    wholeTripletLabel = nullptr;
-    halfNormalLabel = nullptr;
-    halfDottedLabel = nullptr;
-    halfTripletLabel = nullptr;
-    quarterNormalLabel = nullptr;
-    quarterDottedLabel = nullptr;
-    quarterTripletLabel = nullptr;
-    eighthNormalLabel = nullptr;
-    eighthDottedLabel = nullptr;
-    eighthTripletLabel = nullptr;
-    sixteenthNormalLabel = nullptr;
-    sixteenthDottedLabel = nullptr;
-    sixteenthTripletLabel = nullptr;
-    thirtySecondNormalLabel = nullptr;
-    thirtySecondDottedLabel = nullptr;
-    thirtySecondTripletLabel = nullptr;
-    sixtyFourthNormalLabel = nullptr;
-    sixtyFourthDottedLabel = nullptr;
-    sixtyFourthTripletLabel = nullptr;
-    oneTwentyEighthNormalLabel = nullptr;
-    oneTwentyEighthDottedLabel = nullptr;
-    oneTwentyEighthTripletLabel = nullptr;
+    wholeNLabel = nullptr;
+    wholeDLabel = nullptr;
+    wholeTLabel = nullptr;
+    halfNLabel = nullptr;
+    halfDLabel = nullptr;
+    halfTLabel = nullptr;
+    quarterNLabel = nullptr;
+    quarterDLabel = nullptr;
+    quarterTLabel = nullptr;
+    v8thNLabel = nullptr;
+    v8thDLabel = nullptr;
+    v8thTLabel = nullptr;
+    v16thNLabel = nullptr;
+    v16thDLabel = nullptr;
+    v16thTLabel = nullptr;
+    v32ndNLabel = nullptr;
+    v32ndDLabel = nullptr;
+    v32ndTLabel = nullptr;
+    v64thNLabel = nullptr;
+    v64thDLabel = nullptr;
+    v64thTLabel = nullptr;
+    v128thNLabel = nullptr;
+    v128thDLabel = nullptr;
+    v128thTLabel = nullptr;
     hzToggle = nullptr;
     msToggle = nullptr;
     coarseResolutionToggle = nullptr;
@@ -977,37 +977,37 @@ void MainComponent::updateValuesAndFields()
 void MainComponent::populateFieldsWithValues()
 {
     // Set values for all text labels
-    wholeNormalLabel->setText ((String) values.getWholeN(), dontSendNotification);
-    wholeDottedLabel->setText ((String) values.getWholeD(), dontSendNotification);
-    wholeTripletLabel->setText ((String) values.getWholeT(), dontSendNotification);
+    wholeNLabel->setText ((String) values.getWholeN(), dontSendNotification);
+    wholeDLabel->setText ((String) values.getWholeD(), dontSendNotification);
+    wholeTLabel->setText ((String) values.getWholeT(), dontSendNotification);
 
-    halfNormalLabel->setText ((String) values.getHalfN(), dontSendNotification);
-    halfDottedLabel->setText ((String) values.getHalfD(), dontSendNotification);
-    halfTripletLabel->setText ((String) values.getHalfT(), dontSendNotification);
+    halfNLabel->setText ((String) values.getHalfN(), dontSendNotification);
+    halfDLabel->setText ((String) values.getHalfD(), dontSendNotification);
+    halfTLabel->setText ((String) values.getHalfT(), dontSendNotification);
 
-    quarterNormalLabel->setText ((String) values.getQuarterN(), dontSendNotification);
-    quarterDottedLabel->setText ((String) values.getQuarterD(), dontSendNotification);
-    quarterTripletLabel->setText ((String) values.getQuarterT(), dontSendNotification);
+    quarterNLabel->setText ((String) values.getQuarterN(), dontSendNotification);
+    quarterDLabel->setText ((String) values.getQuarterD(), dontSendNotification);
+    quarterTLabel->setText ((String) values.getQuarterT(), dontSendNotification);
 
-    eighthNormalLabel->setText ((String) values.get8thN(), dontSendNotification);
-    eighthDottedLabel->setText ((String) values.get8thD(), dontSendNotification);
-    eighthTripletLabel->setText ((String) values.get8thT(), dontSendNotification);
+    v8thNLabel->setText ((String) values.get8thN(), dontSendNotification);
+    v8thDLabel->setText ((String) values.get8thD(), dontSendNotification);
+    v8thTLabel->setText ((String) values.get8thT(), dontSendNotification);
 
-    sixteenthNormalLabel->setText ((String) values.get16thN(), dontSendNotification);
-    sixteenthDottedLabel->setText ((String) values.get16thD(), dontSendNotification);
-    sixteenthTripletLabel->setText ((String) values.get16thT(), dontSendNotification);
+    v16thNLabel->setText ((String) values.get16thN(), dontSendNotification);
+    v16thDLabel->setText ((String) values.get16thD(), dontSendNotification);
+    v16thTLabel->setText ((String) values.get16thT(), dontSendNotification);
 
-    thirtySecondNormalLabel->setText ((String) values.get32ndN(), dontSendNotification);
-    thirtySecondDottedLabel->setText ((String) values.get32ndD(), dontSendNotification);
-    thirtySecondTripletLabel->setText ((String) values.get32ndT(), dontSendNotification);
+    v32ndNLabel->setText ((String) values.get32ndN(), dontSendNotification);
+    v32ndDLabel->setText ((String) values.get32ndD(), dontSendNotification);
+    v32ndTLabel->setText ((String) values.get32ndT(), dontSendNotification);
 
-    sixtyFourthNormalLabel->setText ((String) values.get64thN(), dontSendNotification);
-    sixtyFourthDottedLabel->setText ((String) values.get64thD(), dontSendNotification);
-    sixtyFourthTripletLabel->setText ((String) values.get64thT(), dontSendNotification);
+    v64thNLabel->setText ((String) values.get64thN(), dontSendNotification);
+    v64thDLabel->setText ((String) values.get64thD(), dontSendNotification);
+    v64thTLabel->setText ((String) values.get64thT(), dontSendNotification);
 
-    oneTwentyEighthNormalLabel->setText ((String) values.get128thN(), dontSendNotification);
-    oneTwentyEighthDottedLabel->setText ((String) values.get128thD(), dontSendNotification);
-    oneTwentyEighthTripletLabel->setText ((String) values.get128thT(), dontSendNotification);
+    v128thNLabel->setText ((String) values.get128thN(), dontSendNotification);
+    v128thDLabel->setText ((String) values.get128thD(), dontSendNotification);
+    v128thTLabel->setText ((String) values.get128thT(), dontSendNotification);
 }
 
 void MainComponent::resetTapTempo()
@@ -1156,122 +1156,122 @@ BEGIN_JUCER_METADATA
               virtualName="" explicitFocusOrder="0" pos="250 115 250 30" bgColOff="ffadaaaa"
               textCol="ff353535" buttonText="Tap Tempo" connectedEdges="0"
               needsCallback="1" radioGroupId="0"/>
-  <LABEL name="new label" id="3b0b371f9cfffd20" memberName="wholeNormalLabel"
+  <LABEL name="wholeNLabel" id="3b0b371f9cfffd20" memberName="wholeNLabel"
          virtualName="" explicitFocusOrder="0" pos="125 175 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
-  <LABEL name="wholeDottedLabel" id="5aa96ffcf47310ae" memberName="wholeDottedLabel"
+  <LABEL name="wholeDLabel" id="5aa96ffcf47310ae" memberName="wholeDLabel"
          virtualName="" explicitFocusOrder="0" pos="250 175 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
-  <LABEL name="wholeTripletLabel" id="acb484e802c4fea9" memberName="wholeTripletLabel"
+  <LABEL name="wholeTLabel" id="acb484e802c4fea9" memberName="wholeTLabel"
          virtualName="" explicitFocusOrder="0" pos="375 175 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="&#10;" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
-  <LABEL name="halfNormalLabel" id="fb1b90b40fe022a1" memberName="halfNormalLabel"
+  <LABEL name="halfNLabel" id="fb1b90b40fe022a1" memberName="halfNLabel"
          virtualName="" explicitFocusOrder="0" pos="125 215 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
-  <LABEL name="halfDottedLabel" id="29a3d055318a2256" memberName="halfDottedLabel"
+  <LABEL name="halfDLabel" id="29a3d055318a2256" memberName="halfDLabel"
          virtualName="" explicitFocusOrder="0" pos="250 215 125 28" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
-  <LABEL name="halfTripletLabel" id="474722dc22cd155b" memberName="halfTripletLabel"
+  <LABEL name="halfTLabel" id="474722dc22cd155b" memberName="halfTLabel"
          virtualName="" explicitFocusOrder="0" pos="375 215 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
-  <LABEL name="quarterNormalLabel" id="a0b43f6d2cebf017" memberName="quarterNormalLabel"
+  <LABEL name="quarterNLabel" id="a0b43f6d2cebf017" memberName="quarterNLabel"
          virtualName="" explicitFocusOrder="0" pos="125 255 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
-  <LABEL name="quarterDottedLabel" id="6e5caff96007dec1" memberName="quarterDottedLabel"
+  <LABEL name="quarterDLabel" id="6e5caff96007dec1" memberName="quarterDLabel"
          virtualName="" explicitFocusOrder="0" pos="250 255 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
-  <LABEL name="quarterTripletLabel" id="fe2643302e963795" memberName="quarterTripletLabel"
+  <LABEL name="quarterTLabel" id="fe2643302e963795" memberName="quarterTLabel"
          virtualName="" explicitFocusOrder="0" pos="375 255 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
-  <LABEL name="eighthNormalLabel" id="aabf4b6c5866f43a" memberName="eighthNormalLabel"
+  <LABEL name="v8thNLabel" id="aabf4b6c5866f43a" memberName="v8thNLabel"
          virtualName="" explicitFocusOrder="0" pos="125 295 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
-  <LABEL name="eighthDottedLabel" id="df0f0f30eec2686f" memberName="eighthDottedLabel"
+  <LABEL name="v8thDLabel" id="df0f0f30eec2686f" memberName="v8thDLabel"
          virtualName="" explicitFocusOrder="0" pos="250 295 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
-  <LABEL name="eighthTripletLabel" id="7b34c480a75f818" memberName="eighthTripletLabel"
+  <LABEL name="v8thTLabel" id="7b34c480a75f818" memberName="v8thTLabel"
          virtualName="" explicitFocusOrder="0" pos="375 295 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
-  <LABEL name="sixteenthNormalLabel" id="4b90b919d39c55aa" memberName="sixteenthNormalLabel"
+  <LABEL name="v16thNLabel" id="4b90b919d39c55aa" memberName="v16thNLabel"
          virtualName="" explicitFocusOrder="0" pos="125 335 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
-  <LABEL name="sixteenthDottedLabel" id="b8e062b942bd6161" memberName="sixteenthDottedLabel"
+  <LABEL name="v16thDLabel" id="b8e062b942bd6161" memberName="v16thDLabel"
          virtualName="" explicitFocusOrder="0" pos="250 335 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
-  <LABEL name="sixteenthTripletLabel" id="bc5910a30828043e" memberName="sixteenthTripletLabel"
+  <LABEL name="v16thTLabel" id="bc5910a30828043e" memberName="v16thTLabel"
          virtualName="" explicitFocusOrder="0" pos="375 335 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
-  <LABEL name="thirtySecondNormalLabel" id="bafdfece957a48cd" memberName="thirtySecondNormalLabel"
+  <LABEL name="v32ndNLabel" id="bafdfece957a48cd" memberName="v32ndNLabel"
          virtualName="" explicitFocusOrder="0" pos="125 375 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
-  <LABEL name="thirtySecondDottedLabel" id="d6c4232d51ea521d" memberName="thirtySecondDottedLabel"
+  <LABEL name="v32ndDLabel" id="d6c4232d51ea521d" memberName="v32ndDLabel"
          virtualName="" explicitFocusOrder="0" pos="250 375 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
-  <LABEL name="thirtySecondTripletLabel" id="c94aa63d85789829" memberName="thirtySecondTripletLabel"
+  <LABEL name="v32ndTLabel" id="c94aa63d85789829" memberName="v32ndTLabel"
          virtualName="" explicitFocusOrder="0" pos="375 375 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
-  <LABEL name="sixtyFourthNormalLabel" id="aba83195d8170afc" memberName="sixtyFourthNormalLabel"
+  <LABEL name="v64thNLabel" id="aba83195d8170afc" memberName="v64thNLabel"
          virtualName="" explicitFocusOrder="0" pos="125 415 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
-  <LABEL name="sixtyFourthDottedLabel" id="90fef0b42ac08a69" memberName="sixtyFourthDottedLabel"
+  <LABEL name="v64thDLabel" id="90fef0b42ac08a69" memberName="v64thDLabel"
          virtualName="" explicitFocusOrder="0" pos="250 415 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
-  <LABEL name="sixtyFourthTripletLabel" id="432ffa6d219d869e" memberName="sixtyFourthTripletLabel"
+  <LABEL name="v64thTLabel" id="432ffa6d219d869e" memberName="v64thTLabel"
          virtualName="" explicitFocusOrder="0" pos="375 415 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
-  <LABEL name="oneTwentyEighthNormalLabel" id="a76923820541582b" memberName="oneTwentyEighthNormalLabel"
+  <LABEL name="v128thNLabel" id="a76923820541582b" memberName="v128thNLabel"
          virtualName="" explicitFocusOrder="0" pos="125 455 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
-  <LABEL name="oneTwentyEighthDottedLabel" id="9379aa3476074fe5" memberName="oneTwentyEighthDottedLabel"
+  <LABEL name="v128thDLabel" id="9379aa3476074fe5" memberName="v128thDLabel"
          virtualName="" explicitFocusOrder="0" pos="250 455 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.00000000000000000000"
          kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
-  <LABEL name="oneTwentyEighthTripletLabel" id="c3b2f04614c1679d" memberName="oneTwentyEighthTripletLabel"
+  <LABEL name="v128thTLabel" id="c3b2f04614c1679d" memberName="v128thTLabel"
          virtualName="" explicitFocusOrder="0" pos="375 455 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.00000000000000000000"
