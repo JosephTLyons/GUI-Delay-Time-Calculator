@@ -12,37 +12,42 @@
 class Values
 {
 private:
-    double wholeNormal;
-    double wholeDotted;
-    double wholeTriplet;
+    // N = Normal
+    // D = Dotted
+    // T = Triplet
+    // v = Value (simply used because names can't start with a number)
     
-    double halfNormal;
-    double halfDotted;
-    double halfTriplet;
+    double wholeN;
+    double wholeD;
+    double wholeT;
     
-    double quarterNormal;
-    double quarterDotted;
-    double quarterTriplet;
+    double halfN;
+    double halfD;
+    double halfT;
     
-    double v8thNormal;
-    double v8thDotted;
-    double v8thTriplet;
+    double quarterN;
+    double quarterD;
+    double quarterT;
     
-    double v16thNormal;
-    double v16thDotted;
-    double v16thTriplet;
+    double v8thN;
+    double v8thD;
+    double v8thT;
     
-    double v32Normal;
-    double v32ndDotted;
-    double v32ndTriplet;
+    double v16thN;
+    double v16thD;
+    double v16thT;
     
-    double v64thNormal;
-    double v64thDotted;
-    double v64Triplet;
+    double v32N;
+    double v32ndD;
+    double v32ndT;
     
-    double v128thNormal;
-    double v128thDotted;
-    double v128thTriplet;
+    double v64thN;
+    double v64thD;
+    double v64thT;
+    
+    double v128thN;
+    double v128thD;
+    double v128thT;
     
 public:
     Values();
@@ -50,37 +55,37 @@ public:
     void calculateMilliseconds (const double &tempo);
     void calculateHertz (const double &tempo);
     
-    double getWholeNormal() const;
-    double getWholeDotted() const;
-    double getWholeTriplet() const;
+    double getWholeN() const;
+    double getWholeD() const;
+    double getWholeT() const;
     
-    double getHalfNormal() const;
-    double getHalfDotted() const;
-    double getHalfTriplet() const;
+    double getHalfN() const;
+    double getHalfD() const;
+    double getHalfT() const;
     
-    double getQuarterNormal() const;
-    double getQuarterDotted() const;
-    double getQuarterTriplet() const;
+    double getQuarterN() const;
+    double getQuarterD() const;
+    double getQuarterT() const;
     
-    double get8thNormal() const;
-    double get8thDotted() const;
-    double get8thTriplet() const;
+    double get8thN() const;
+    double get8thD() const;
+    double get8thT() const;
     
-    double get16thNormal() const;
-    double get16thDotted() const;
-    double get16thTriplet() const;
+    double get16thN() const;
+    double get16thD() const;
+    double get16thT() const;
     
-    double get32ndNormal() const;
-    double get32ndDotted() const;
-    double get32ndTriplet() const;
+    double get32ndN() const;
+    double get32ndD() const;
+    double get32ndT() const;
     
-    double get64thNormal() const;
-    double get64thDotted() const;
-    double get64thTriplet() const;
+    double get64thN() const;
+    double get64thD() const;
+    double get64thT() const;
     
-    double get128thNormal() const;
-    double get128thDotted() const;
-    double get128thTriplet() const;
+    double get128thN() const;
+    double get128thD() const;
+    double get128thT() const;
 };
 
 #endif /* MillisecondsHertzValueBase */

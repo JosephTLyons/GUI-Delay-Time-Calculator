@@ -10,231 +10,231 @@
 
 Values::Values()
 {
-    wholeNormal    = 0;
-    wholeDotted    = 0;
-    wholeTriplet   = 0;
+    wholeN   = 0;
+    wholeD   = 0;
+    wholeT   = 0;
     
-    halfNormal     = 0;
-    halfDotted     = 0;
-    halfTriplet    = 0;
+    halfN    = 0;
+    halfD    = 0;
+    halfT    = 0;
     
-    quarterNormal  = 0;
-    quarterDotted  = 0;
-    quarterTriplet = 0;
+    quarterN = 0;
+    quarterD = 0;
+    quarterT = 0;
     
-    v8thNormal     = 0;
-    v8thDotted     = 0;
-    v8thTriplet    = 0;
+    v8thN    = 0;
+    v8thD    = 0;
+    v8thT    = 0;
     
-    v16thNormal    = 0;
-    v16thDotted    = 0;
-    v16thTriplet   = 0;
+    v16thN   = 0;
+    v16thD   = 0;
+    v16thT   = 0;
     
-    v32Normal      = 0;
-    v32ndDotted    = 0;
-    v32ndTriplet   = 0;
+    v32N     = 0;
+    v32ndD   = 0;
+    v32ndT   = 0;
     
-    v64thNormal    = 0;
-    v64thDotted    = 0;
-    v64Triplet     = 0;
+    v64thN   = 0;
+    v64thD   = 0;
+    v64thT   = 0;
     
-    v128thNormal   = 0;
-    v128thDotted   = 0;
-    v128thTriplet  = 0;
+    v128thN  = 0;
+    v128thD  = 0;
+    v128thT  = 0;
 }
 
 void Values::calculateMilliseconds (const double &tempo)
 {
-    // quarterNormal value must be calculated first, since other values depend on it
-    quarterNormal  = 60000 / tempo;
+    // quarterN value must be calculated first, since other values depend on it
+    quarterN  = 60000 / tempo;
     
-    wholeNormal    = quarterNormal * 4;
-    wholeDotted    = wholeNormal * 1.5;
-    wholeTriplet   = wholeNormal * (2 / 3.0f);
+    wholeN   = quarterN * 4;
+    wholeD   = wholeN * 1.5;
+    wholeT   = wholeN * (2 / 3.0f);
     
-    halfNormal     = quarterNormal * 2;
-    halfDotted     = halfNormal * 1.5;
-    halfTriplet    = halfNormal * (2 / 3.0f);
+    halfN    = quarterN * 2;
+    halfD    = halfN * 1.5;
+    halfT    = halfN * (2 / 3.0f);
     
-    // quarterNormal
-    quarterDotted  = quarterNormal * 1.5;
-    quarterTriplet = quarterNormal * (2 / 3.0f);
+    // quarterN
+    quarterD = quarterN * 1.5;
+    quarterT = quarterN * (2 / 3.0f);
     
-    v8thNormal     = quarterNormal / 2;
-    v8thDotted     = v8thNormal * 1.5;
-    v8thTriplet    = v8thNormal * (2 / 3.0f);
+    v8thN    = quarterN / 2;
+    v8thD    = v8thN * 1.5;
+    v8thT    = v8thN * (2 / 3.0f);
     
-    v16thNormal    = quarterNormal / 4;
-    v16thDotted    = v16thNormal * 1.5;
-    v16thTriplet   = v16thNormal * (2 / 3.0f);
+    v16thN   = quarterN / 4;
+    v16thD   = v16thN * 1.5;
+    v16thT   = v16thN * (2 / 3.0f);
     
-    v32Normal      = quarterNormal / 8;
-    v32ndDotted    = v32Normal * 1.5;
-    v32ndTriplet   = v32Normal * (2 / 3.0f);
+    v32N     = quarterN / 8;
+    v32ndD   = v32N * 1.5;
+    v32ndT   = v32N * (2 / 3.0f);
     
-    v64thNormal    = quarterNormal / 16;
-    v64thDotted    = v64thNormal * 1.5;
-    v64Triplet     = v64thNormal * (2 / 3.0f);
+    v64thN   = quarterN / 16;
+    v64thD   = v64thN * 1.5;
+    v64thT   = v64thN * (2 / 3.0f);
     
-    v128thNormal   = quarterNormal / 32;
-    v128thDotted   = v128thNormal * 1.5;
-    v128thTriplet  = v128thNormal * (2 / 3.0f);
+    v128thN  = quarterN / 32;
+    v128thD  = v128thN * 1.5;
+    v128thT  = v128thN * (2 / 3.0f);
 }
 
 void Values::calculateHertz (const double &tempo)
 {
-    // quarterNormal value must be calculated first, since other values depend on it
-    quarterNormal                    = tempo / 60;
+    // quarterN value must be calculated first, since other values depend on it
+    quarterN = tempo / 60;
     
-    wholeNormal                      = quarterNormal / 4;
-    wholeDotted                      = wholeNormal * (2 / 3.0f);
-    wholeTriplet                     = wholeNormal * 1.5;
+    wholeN   = quarterN / 4;
+    wholeD   = wholeN * (2 / 3.0f);
+    wholeT   = wholeN * 1.5;
     
-    halfNormal                       = quarterNormal / 2;
-    halfDotted                       = halfNormal * (2 / 3.0f);
-    halfTriplet                      = halfNormal * 1.5;
+    halfN    = quarterN / 2;
+    halfD    = halfN * (2 / 3.0f);
+    halfT    = halfN * 1.5;
     
-    // quarterNormal
-    quarterDotted                    = quarterNormal * (2 / 3.0f);
-    quarterTriplet = quarterNormal * 1.5;
+    // quarterN
+    quarterD = quarterN * (2 / 3.0f);
+    quarterT = quarterN * 1.5;
     
-    v8thNormal                     = quarterNormal * 2;
-    v8thDotted                     = v8thNormal * (2 / 3.0f);
-    v8thTriplet                    = v8thNormal * 1.5;
+    v8thN    = quarterN * 2;
+    v8thD    = v8thN * (2 / 3.0f);
+    v8thT    = v8thN * 1.5;
     
-    v16thNormal                  = quarterNormal * 4;
-    v16thDotted                  = v16thNormal * (2 / 3.0f);
-    v16thTriplet                 = v16thNormal * 1.5;
+    v16thN   = quarterN * 4;
+    v16thD   = v16thN * (2 / 3.0f);
+    v16thT   = v16thN * 1.5;
     
-    v32Normal               = quarterNormal * 8;
-    v32ndDotted               = v32Normal * (2 / 3.0f);
-    v32ndTriplet              = v32Normal * 1.5;
+    v32N     = quarterN * 8;
+    v32ndD   = v32N * (2 / 3.0f);
+    v32ndT   = v32N * 1.5;
     
-    v64thNormal                = quarterNormal * 16;
-    v64thDotted                = v64thNormal * (2 / 3.0f);
-    v64Triplet               = v64thNormal * 1.5;
+    v64thN   = quarterN * 16;
+    v64thD   = v64thN * (2 / 3.0f);
+    v64thT   = v64thN * 1.5;
     
-    v128thNormal  = quarterNormal * 32;
-    v128thDotted  = v128thNormal * (2 / 3.0f);
-    v128thTriplet = v128thNormal * 1.5;
+    v128thN  = quarterN * 32;
+    v128thD  = v128thN * (2 / 3.0f);
+    v128thT  = v128thN * 1.5;
 }
 
-double Values::getWholeNormal() const
+double Values::getWholeN() const
 {
-    return wholeNormal;
+    return wholeN;
 }
 
-double Values::getWholeDotted() const
+double Values::getWholeD() const
 {
-    return wholeDotted;
+    return wholeD;
 }
 
-double Values::getWholeTriplet() const
+double Values::getWholeT() const
 {
-    return wholeTriplet;
+    return wholeT;
 }
 
-double Values::getHalfNormal() const
+double Values::getHalfN() const
 {
-    return halfNormal;
+    return halfN;
 }
 
-double Values::getHalfDotted() const
+double Values::getHalfD() const
 {
-    return halfDotted;
+    return halfD;
 }
 
-double Values::getHalfTriplet() const
+double Values::getHalfT() const
 {
-    return halfTriplet;
+    return halfT;
 }
 
-double Values::getQuarterNormal() const
+double Values::getQuarterN() const
 {
-    return quarterNormal;
+    return quarterN;
 }
 
-double Values::getQuarterDotted() const
+double Values::getQuarterD() const
 {
-    return quarterDotted;
+    return quarterD;
 }
 
-double Values::getQuarterTriplet() const
+double Values::getQuarterT() const
 {
-    return quarterTriplet;
+    return quarterT;
 }
 
-double Values::get8thNormal() const
+double Values::get8thN() const
 {
-    return v8thNormal;
+    return v8thN;
 }
 
-double Values::get8thDotted() const
+double Values::get8thD() const
 {
-    return v8thDotted;
+    return v8thD;
 }
 
-double Values::get8thTriplet() const
+double Values::get8thT() const
 {
-    return v8thTriplet;
+    return v8thT;
 }
 
-double Values::get16thNormal() const
+double Values::get16thN() const
 {
-    return v16thNormal;
+    return v16thN;
 }
 
-double Values::get16thDotted() const
+double Values::get16thD() const
 {
-    return v16thDotted;
+    return v16thD;
 }
 
-double Values::get16thTriplet() const
+double Values::get16thT() const
 {
-    return v16thTriplet;
+    return v16thT;
 }
 
-double Values::get32ndNormal() const
+double Values::get32ndN() const
 {
-    return v32Normal;
+    return v32N;
 }
 
-double Values::get32ndDotted() const
+double Values::get32ndD() const
 {
-    return v32ndDotted;
+    return v32ndD;
 }
 
-double Values::get32ndTriplet() const
+double Values::get32ndT() const
 {
-    return v32ndTriplet;
+    return v32ndT;
 }
 
-double Values::get64thNormal() const
+double Values::get64thN() const
 {
-    return v64thNormal;
+    return v64thN;
 }
 
-double Values::get64thDotted() const
+double Values::get64thD() const
 {
-    return v64thDotted;
+    return v64thD;
 }
 
-double Values::get64thTriplet() const
+double Values::get64thT() const
 {
-    return v64Triplet;
+    return v64thT;
 }
 
-double Values::get128thNormal() const
+double Values::get128thN() const
 {
-    return v128thNormal;
+    return v128thN;
 }
 
-double Values::get128thDotted() const
+double Values::get128thD() const
 {
-    return v128thDotted;
+    return v128thD;
 }
 
-double Values::get128thTriplet() const
+double Values::get128thT() const
 {
-    return v128thTriplet;
+    return v128thT;
 }
