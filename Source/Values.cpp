@@ -119,122 +119,34 @@ void Values::calculateHertz (const double &tempo)
     v128thT  = v128thN * 1.5;
 }
 
-double Values::getWholeN() const
-{
-    return wholeN;
-}
+double Values::getWholeN() const { return wholeN; }
+double Values::getWholeD() const { return wholeD; }
+double Values::getWholeT() const { return wholeT; }
 
-double Values::getWholeD() const
-{
-    return wholeD;
-}
+double Values::getHalfN() const { return halfN; }
+double Values::getHalfD() const { return halfD; }
+double Values::getHalfT() const { return halfT; }
 
-double Values::getWholeT() const
-{
-    return wholeT;
-}
+double Values::getQuarterN() const { return quarterN; }
+double Values::getQuarterD() const { return quarterD; }
+double Values::getQuarterT() const { return quarterT; }
 
-double Values::getHalfN() const
-{
-    return halfN;
-}
+double Values::get8thN() const { return v8thN; }
+double Values::get8thD() const { return v8thD; }
+double Values::get8thT() const { return v8thT; }
 
-double Values::getHalfD() const
-{
-    return halfD;
-}
+double Values::get16thN() const { return v16thN; }
+double Values::get16thD() const { return v16thD; }
+double Values::get16thT() const { return v16thT; }
 
-double Values::getHalfT() const
-{
-    return halfT;
-}
+double Values::get32ndN() const { return v32N; }
+double Values::get32ndD() const { return v32ndD; }
+double Values::get32ndT() const { return v32ndT; }
 
-double Values::getQuarterN() const
-{
-    return quarterN;
-}
+double Values::get64thN() const { return v64thN; }
+double Values::get64thD() const { return v64thD; }
+double Values::get64thT() const { return v64thT; }
 
-double Values::getQuarterD() const
-{
-    return quarterD;
-}
-
-double Values::getQuarterT() const
-{
-    return quarterT;
-}
-
-double Values::get8thN() const
-{
-    return v8thN;
-}
-
-double Values::get8thD() const
-{
-    return v8thD;
-}
-
-double Values::get8thT() const
-{
-    return v8thT;
-}
-
-double Values::get16thN() const
-{
-    return v16thN;
-}
-
-double Values::get16thD() const
-{
-    return v16thD;
-}
-
-double Values::get16thT() const
-{
-    return v16thT;
-}
-
-double Values::get32ndN() const
-{
-    return v32N;
-}
-
-double Values::get32ndD() const
-{
-    return v32ndD;
-}
-
-double Values::get32ndT() const
-{
-    return v32ndT;
-}
-
-double Values::get64thN() const
-{
-    return v64thN;
-}
-
-double Values::get64thD() const
-{
-    return v64thD;
-}
-
-double Values::get64thT() const
-{
-    return v64thT;
-}
-
-double Values::get128thN() const
-{
-    return v128thN;
-}
-
-double Values::get128thD() const
-{
-    return v128thD;
-}
-
-double Values::get128thT() const
-{
-    return v128thT;
-}
+double Values::get128thN() const { return v128thN; }
+double Values::get128thD() const { return v128thD; }
+double Values::get128thT() const { return v128thT; }
