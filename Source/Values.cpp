@@ -10,75 +10,75 @@
 
 Values::Values()
 {
-    wholeNormal                      = 0;
-    wholeDotted                      = 0;
-    wholeTriplet                     = 0;
+    wholeNormal    = 0;
+    wholeDotted    = 0;
+    wholeTriplet   = 0;
     
-    halfNormal                       = 0;
-    halfDotted                       = 0;
-    halfTriplet                      = 0;
+    halfNormal     = 0;
+    halfDotted     = 0;
+    halfTriplet    = 0;
     
-    quarterNormal                    = 0;
-    quarterDotted                    = 0;
-    quarterTriplet                   = 0;
+    quarterNormal  = 0;
+    quarterDotted  = 0;
+    quarterTriplet = 0;
     
-    eighthNormal                     = 0;
-    eighthDotted                     = 0;
-    eighthTriplet                    = 0;
+    v8thNormal     = 0;
+    v8thDotted     = 0;
+    v8thTriplet    = 0;
     
-    sixteenthNormal                  = 0;
-    sixteenthDotted                  = 0;
-    sixteenthTriplet                 = 0;
+    v16thNormal    = 0;
+    v16thDotted    = 0;
+    v16thTriplet   = 0;
     
-    thirtySecondNormal               = 0;
-    thirtySecondDotted               = 0;
-    thirtySecondTriplet              = 0;
+    v32Normal      = 0;
+    v32ndDotted    = 0;
+    v32ndTriplet   = 0;
     
-    sixtyFourthNormal                = 0;
-    sixtyFourthDotted                = 0;
-    sixtyFourthTriplet               = 0;
+    v64thNormal    = 0;
+    v64thDotted    = 0;
+    v64Triplet     = 0;
     
-    oneHundredAndTwentyEighthNormal  = 0;
-    oneHundredAndTwentyEighthDotted  = 0;
-    oneHundredAndTwentyEighthTriplet = 0;
+    v128thNormal   = 0;
+    v128thDotted   = 0;
+    v128thTriplet  = 0;
 }
 
 void Values::calculateMilliseconds (const double &tempo)
 {
     // quarterNormal value must be calculated first, since other values depend on it
-    quarterNormal                    = 60000 / tempo;
+    quarterNormal  = 60000 / tempo;
     
-    wholeNormal                      = quarterNormal * 4;
-    wholeDotted                      = wholeNormal * 1.5;
-    wholeTriplet                     = wholeNormal * (2 / 3.0f);
+    wholeNormal    = quarterNormal * 4;
+    wholeDotted    = wholeNormal * 1.5;
+    wholeTriplet   = wholeNormal * (2 / 3.0f);
     
-    halfNormal                       = quarterNormal * 2;
-    halfDotted                       = halfNormal * 1.5;
-    halfTriplet                      = halfNormal * (2 / 3.0f);
+    halfNormal     = quarterNormal * 2;
+    halfDotted     = halfNormal * 1.5;
+    halfTriplet    = halfNormal * (2 / 3.0f);
     
     // quarterNormal
-    quarterDotted                    = quarterNormal * 1.5;
-    quarterTriplet                   = quarterNormal * (2 / 3.0f);
+    quarterDotted  = quarterNormal * 1.5;
+    quarterTriplet = quarterNormal * (2 / 3.0f);
     
-    eighthNormal                     = quarterNormal / 2;
-    eighthDotted                     = eighthNormal * 1.5;
-    eighthTriplet                    = eighthNormal * (2 / 3.0f);
+    v8thNormal     = quarterNormal / 2;
+    v8thDotted     = v8thNormal * 1.5;
+    v8thTriplet    = v8thNormal * (2 / 3.0f);
     
-    sixteenthNormal                  = quarterNormal / 4;
-    sixteenthDotted                  = sixteenthNormal * 1.5;
-    sixteenthTriplet                 = sixteenthNormal * (2 / 3.0f);
+    v16thNormal    = quarterNormal / 4;
+    v16thDotted    = v16thNormal * 1.5;
+    v16thTriplet   = v16thNormal * (2 / 3.0f);
     
-    thirtySecondNormal               = quarterNormal / 8;
-    thirtySecondDotted               = thirtySecondNormal * 1.5;
-    thirtySecondTriplet              = thirtySecondNormal * (2 / 3.0f);
+    v32Normal      = quarterNormal / 8;
+    v32ndDotted    = v32Normal * 1.5;
+    v32ndTriplet   = v32Normal * (2 / 3.0f);
     
-    sixtyFourthNormal                = quarterNormal / 16;
-    sixtyFourthDotted                = sixtyFourthNormal * 1.5;
-    sixtyFourthTriplet               = sixtyFourthNormal * (2 / 3.0f);
+    v64thNormal    = quarterNormal / 16;
+    v64thDotted    = v64thNormal * 1.5;
+    v64Triplet     = v64thNormal * (2 / 3.0f);
     
-    oneHundredAndTwentyEighthNormal  = quarterNormal / 32;
-    oneHundredAndTwentyEighthDotted  = oneHundredAndTwentyEighthNormal * 1.5;
-    oneHundredAndTwentyEighthTriplet = oneHundredAndTwentyEighthNormal * (2 / 3.0f);
+    v128thNormal   = quarterNormal / 32;
+    v128thDotted   = v128thNormal * 1.5;
+    v128thTriplet  = v128thNormal * (2 / 3.0f);
 }
 
 void Values::calculateHertz (const double &tempo)
@@ -96,27 +96,27 @@ void Values::calculateHertz (const double &tempo)
     
     // quarterNormal
     quarterDotted                    = quarterNormal * (2 / 3.0f);
-    quarterTriplet                   = quarterNormal * 1.5;
+    quarterTriplet = quarterNormal * 1.5;
     
-    eighthNormal                     = quarterNormal * 2;
-    eighthDotted                     = eighthNormal * (2 / 3.0f);
-    eighthTriplet                    = eighthNormal * 1.5;
+    v8thNormal                     = quarterNormal * 2;
+    v8thDotted                     = v8thNormal * (2 / 3.0f);
+    v8thTriplet                    = v8thNormal * 1.5;
     
-    sixteenthNormal                  = quarterNormal * 4;
-    sixteenthDotted                  = sixteenthNormal * (2 / 3.0f);
-    sixteenthTriplet                 = sixteenthNormal * 1.5;
+    v16thNormal                  = quarterNormal * 4;
+    v16thDotted                  = v16thNormal * (2 / 3.0f);
+    v16thTriplet                 = v16thNormal * 1.5;
     
-    thirtySecondNormal               = quarterNormal * 8;
-    thirtySecondDotted               = thirtySecondNormal * (2 / 3.0f);
-    thirtySecondTriplet              = thirtySecondNormal * 1.5;
+    v32Normal               = quarterNormal * 8;
+    v32ndDotted               = v32Normal * (2 / 3.0f);
+    v32ndTriplet              = v32Normal * 1.5;
     
-    sixtyFourthNormal                = quarterNormal * 16;
-    sixtyFourthDotted                = sixtyFourthNormal * (2 / 3.0f);
-    sixtyFourthTriplet               = sixtyFourthNormal * 1.5;
+    v64thNormal                = quarterNormal * 16;
+    v64thDotted                = v64thNormal * (2 / 3.0f);
+    v64Triplet               = v64thNormal * 1.5;
     
-    oneHundredAndTwentyEighthNormal  = quarterNormal * 32;
-    oneHundredAndTwentyEighthDotted  = oneHundredAndTwentyEighthNormal * (2 / 3.0f);
-    oneHundredAndTwentyEighthTriplet = oneHundredAndTwentyEighthNormal * 1.5;
+    v128thNormal  = quarterNormal * 32;
+    v128thDotted  = v128thNormal * (2 / 3.0f);
+    v128thTriplet = v128thNormal * 1.5;
 }
 
 double Values::getWholeNormal() const
@@ -164,77 +164,77 @@ double Values::getQuarterTriplet() const
     return quarterTriplet;
 }
 
-double Values::getEighthNormal() const
+double Values::get8thNormal() const
 {
-    return eighthNormal;
+    return v8thNormal;
 }
 
-double Values::getEighthDotted() const
+double Values::get8thDotted() const
 {
-    return eighthDotted;
+    return v8thDotted;
 }
 
-double Values::getEighthTriplet() const
+double Values::get8thTriplet() const
 {
-    return eighthTriplet;
+    return v8thTriplet;
 }
 
-double Values::getSixteenthNormal() const
+double Values::get16thNormal() const
 {
-    return sixteenthNormal;
+    return v16thNormal;
 }
 
-double Values::getSixteenthDotted() const
+double Values::get16thDotted() const
 {
-    return sixteenthDotted;
+    return v16thDotted;
 }
 
-double Values::getSixteenthTriplet() const
+double Values::get16thTriplet() const
 {
-    return sixteenthTriplet;
+    return v16thTriplet;
 }
 
-double Values::getThirtySecondNormal() const
+double Values::get32ndNormal() const
 {
-    return thirtySecondNormal;
+    return v32Normal;
 }
 
-double Values::getThirtySecondDotted() const
+double Values::get32ndDotted() const
 {
-    return thirtySecondDotted;
+    return v32ndDotted;
 }
 
-double Values::getThirtySecondTriplet() const
+double Values::get32ndTriplet() const
 {
-    return thirtySecondTriplet;
+    return v32ndTriplet;
 }
 
-double Values::getSixtyFouthNormal() const
+double Values::get64thNormal() const
 {
-    return sixtyFourthNormal;
+    return v64thNormal;
 }
 
-double Values::getSixtyFouthDotted() const
+double Values::get64thDotted() const
 {
-    return sixtyFourthDotted;
+    return v64thDotted;
 }
 
-double Values::getSixtyFouthTriplet() const
+double Values::get64thTriplet() const
 {
-    return sixtyFourthTriplet;
+    return v64Triplet;
 }
 
-double Values::getOneHundredAndTwentyEighthNormal() const
+double Values::get128thNormal() const
 {
-    return oneHundredAndTwentyEighthNormal;
+    return v128thNormal;
 }
 
-double Values::getOneHundredAndTwentyEighthDotted() const
+double Values::get128thDotted() const
 {
-    return oneHundredAndTwentyEighthDotted;
+    return v128thDotted;
 }
 
-double Values::getOneHundredAndTwentyEighthTriplet() const
+double Values::get128thTriplet() const
 {
-    return oneHundredAndTwentyEighthTriplet;
+    return v128thTriplet;
 }

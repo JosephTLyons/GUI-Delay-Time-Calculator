@@ -24,25 +24,25 @@ private:
     double quarterDotted;
     double quarterTriplet;
     
-    double eighthNormal;
-    double eighthDotted;
-    double eighthTriplet;
+    double v8thNormal;
+    double v8thDotted;
+    double v8thTriplet;
     
-    double sixteenthNormal;
-    double sixteenthDotted;
-    double sixteenthTriplet;
+    double v16thNormal;
+    double v16thDotted;
+    double v16thTriplet;
     
-    double thirtySecondNormal;
-    double thirtySecondDotted;
-    double thirtySecondTriplet;
+    double v32Normal;
+    double v32ndDotted;
+    double v32ndTriplet;
     
-    double sixtyFourthNormal;
-    double sixtyFourthDotted;
-    double sixtyFourthTriplet;
+    double v64thNormal;
+    double v64thDotted;
+    double v64Triplet;
     
-    double oneHundredAndTwentyEighthNormal;
-    double oneHundredAndTwentyEighthDotted;
-    double oneHundredAndTwentyEighthTriplet;
+    double v128thNormal;
+    double v128thDotted;
+    double v128thTriplet;
     
 public:
     Values();
@@ -62,25 +62,25 @@ public:
     double getQuarterDotted() const;
     double getQuarterTriplet() const;
     
-    double getEighthNormal() const;
-    double getEighthDotted() const;
-    double getEighthTriplet() const;
+    double get8thNormal() const;
+    double get8thDotted() const;
+    double get8thTriplet() const;
     
-    double getSixteenthNormal() const;
-    double getSixteenthDotted() const;
-    double getSixteenthTriplet() const;
+    double get16thNormal() const;
+    double get16thDotted() const;
+    double get16thTriplet() const;
     
-    double getThirtySecondNormal() const;
-    double getThirtySecondDotted() const;
-    double getThirtySecondTriplet() const;
+    double get32ndNormal() const;
+    double get32ndDotted() const;
+    double get32ndTriplet() const;
     
-    double getSixtyFouthNormal() const;
-    double getSixtyFouthDotted() const;
-    double getSixtyFouthTriplet() const;
+    double get64thNormal() const;
+    double get64thDotted() const;
+    double get64thTriplet() const;
     
-    double getOneHundredAndTwentyEighthNormal() const;
-    double getOneHundredAndTwentyEighthDotted() const;
-    double getOneHundredAndTwentyEighthTriplet() const;
+    double get128thNormal() const;
+    double get128thDotted() const;
+    double get128thTriplet() const;
 };
 
 #endif /* MillisecondsHertzValueBase */

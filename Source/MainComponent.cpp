@@ -989,25 +989,25 @@ void MainComponent::populateFieldsWithValues()
     quarterDottedLabel->setText ((String) values.getQuarterDotted(), dontSendNotification);
     quarterTripletLabel->setText ((String) values.getQuarterTriplet(), dontSendNotification);
 
-    eighthNormalLabel->setText ((String) values.getEighthNormal(), dontSendNotification);
-    eighthDottedLabel->setText ((String) values.getEighthDotted(), dontSendNotification);
-    eighthTripletLabel->setText ((String) values.getEighthTriplet(), dontSendNotification);
+    eighthNormalLabel->setText ((String) values.get8thNormal(), dontSendNotification);
+    eighthDottedLabel->setText ((String) values.get8thDotted(), dontSendNotification);
+    eighthTripletLabel->setText ((String) values.get8thTriplet(), dontSendNotification);
 
-    sixteenthNormalLabel->setText ((String) values.getSixteenthNormal(), dontSendNotification);
-    sixteenthDottedLabel->setText ((String) values.getSixteenthDotted(), dontSendNotification);
-    sixteenthTripletLabel->setText ((String) values.getSixteenthTriplet(), dontSendNotification);
+    sixteenthNormalLabel->setText ((String) values.get16thNormal(), dontSendNotification);
+    sixteenthDottedLabel->setText ((String) values.get16thDotted(), dontSendNotification);
+    sixteenthTripletLabel->setText ((String) values.get16thTriplet(), dontSendNotification);
 
-    thirtySecondNormalLabel->setText ((String) values.getThirtySecondNormal(), dontSendNotification);
-    thirtySecondDottedLabel->setText ((String) values.getThirtySecondDotted(), dontSendNotification);
-    thirtySecondTripletLabel->setText ((String) values.getThirtySecondTriplet(), dontSendNotification);
+    thirtySecondNormalLabel->setText ((String) values.get32ndNormal(), dontSendNotification);
+    thirtySecondDottedLabel->setText ((String) values.get32ndDotted(), dontSendNotification);
+    thirtySecondTripletLabel->setText ((String) values.get32ndTriplet(), dontSendNotification);
 
-    sixtyFourthNormalLabel->setText ((String) values.getSixtyFouthNormal(), dontSendNotification);
-    sixtyFourthDottedLabel->setText ((String) values.getSixtyFouthDotted(), dontSendNotification);
-    sixtyFourthTripletLabel->setText ((String) values.getSixtyFouthTriplet(), dontSendNotification);
+    sixtyFourthNormalLabel->setText ((String) values.get64thNormal(), dontSendNotification);
+    sixtyFourthDottedLabel->setText ((String) values.get64thDotted(), dontSendNotification);
+    sixtyFourthTripletLabel->setText ((String) values.get64thTriplet(), dontSendNotification);
 
-    oneTwentyEighthNormalLabel->setText ((String) values.getOneHundredAndTwentyEighthNormal(), dontSendNotification);
-    oneTwentyEighthDottedLabel->setText ((String) values.getOneHundredAndTwentyEighthDotted(), dontSendNotification);
-    oneTwentyEighthTripletLabel->setText ((String) values.getOneHundredAndTwentyEighthTriplet(), dontSendNotification);
+    oneTwentyEighthNormalLabel->setText ((String) values.get128thNormal(), dontSendNotification);
+    oneTwentyEighthDottedLabel->setText ((String) values.get128thDotted(), dontSendNotification);
+    oneTwentyEighthTripletLabel->setText ((String) values.get128thTriplet(), dontSendNotification);
 }
 
 void MainComponent::resetTapTempo()
