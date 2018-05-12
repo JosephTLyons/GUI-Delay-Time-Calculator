@@ -30,7 +30,7 @@ Values::Values()
     v16thD   = 0;
     v16thT   = 0;
     
-    v32N     = 0;
+    v32ndN     = 0;
     v32ndD   = 0;
     v32ndT   = 0;
     
@@ -68,9 +68,9 @@ void Values::calculateMilliseconds (const double &tempo)
     v16thD   = v16thN * 1.5;
     v16thT   = v16thN * (2 / 3.0f);
     
-    v32N     = quarterN / 8;
-    v32ndD   = v32N * 1.5;
-    v32ndT   = v32N * (2 / 3.0f);
+    v32ndN     = quarterN / 8;
+    v32ndD   = v32ndN * 1.5;
+    v32ndT   = v32ndN * (2 / 3.0f);
     
     v64thN   = quarterN / 16;
     v64thD   = v64thN * 1.5;
@@ -106,9 +106,9 @@ void Values::calculateHertz (const double &tempo)
     v16thD   = v16thN * (2 / 3.0f);
     v16thT   = v16thN * 1.5;
     
-    v32N     = quarterN * 8;
-    v32ndD   = v32N * (2 / 3.0f);
-    v32ndT   = v32N * 1.5;
+    v32ndN     = quarterN * 8;
+    v32ndD   = v32ndN * (2 / 3.0f);
+    v32ndT   = v32ndN * 1.5;
     
     v64thN   = quarterN * 16;
     v64thD   = v64thN * (2 / 3.0f);
@@ -139,7 +139,7 @@ double Values::get16thN() const { return v16thN; }
 double Values::get16thD() const { return v16thD; }
 double Values::get16thT() const { return v16thT; }
 
-double Values::get32ndN() const { return v32N; }
+double Values::get32ndN() const { return v32ndN; }
 double Values::get32ndD() const { return v32ndD; }
 double Values::get32ndT() const { return v32ndT; }
 

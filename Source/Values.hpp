@@ -37,7 +37,7 @@ private:
     double v16thD;
     double v16thT;
     
-    double v32N;
+    double v32ndN;
     double v32ndD;
     double v32ndT;
     
