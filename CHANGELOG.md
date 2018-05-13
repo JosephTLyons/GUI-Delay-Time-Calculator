@@ -9,7 +9,7 @@
 5. Other minor additions to the information window
 6. Changed "1/2x" to "(1/2)x", as it was incorrect before, in both the button itself and the information window
 8. Information window now always opens in the center of Delay Time Calculator window
-9. Code clean up: now using one class to manage both milliseconds and hertz values, this allows me to delete a TON of code and slightly reduce the memory needed for the app.
+9. Code clean up: now using one class to manage both milliseconds and hertz values, this allows me to delete a TON of code and slightly reduce the memory needed for the app.  Renamed all the private data members in the (now) Values class as well.
 
 ## December 21, 2017 - V 1.6.0
 1. Reworked GUI to be more symmetrical at top and to have a larger BPM value readout
