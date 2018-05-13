@@ -89,6 +89,6 @@
   </MODULES>
   <JUCEOPTIONS/>
   <LIVE_SETTINGS>
-    <OSX/>
+    <OSX buildEnabled="1"/>
   </LIVE_SETTINGS>
 </JUCERPROJECT>
