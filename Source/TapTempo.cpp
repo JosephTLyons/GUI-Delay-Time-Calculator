@@ -12,8 +12,8 @@ TapTempo::TapTempo()
 {
     resetMainCalculationHolders();
     
-    millisecondsInASecond     = 1000;
-    secondsInAMinute          = 60;
+    millisecondsInASecond = 1000;
+    secondsInAMinute      = 60;
 }
 
 void TapTempo::resetMainCalculationHolders()
