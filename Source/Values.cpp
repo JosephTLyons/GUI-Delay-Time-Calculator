@@ -46,7 +46,7 @@ Values::Values()
 void Values::calculateMilliseconds (const double &tempo)
 {
     // quarterN value must be calculated first, since other values depend on it
-    quarterN  = 60000 / tempo;
+    quarterN = 60000 / tempo;
     
     wholeN   = quarterN * 4;
     wholeD   = wholeN * 1.5;
@@ -68,7 +68,7 @@ void Values::calculateMilliseconds (const double &tempo)
     v16thD   = v16thN * 1.5;
     v16thT   = v16thN * (2 / 3.0f);
     
-    v32ndN     = quarterN / 8;
+    v32ndN   = quarterN / 8;
     v32ndD   = v32ndN * 1.5;
     v32ndT   = v32ndN * (2 / 3.0f);
     
@@ -106,7 +106,7 @@ void Values::calculateHertz (const double &tempo)
     v16thD   = v16thN * (2 / 3.0f);
     v16thT   = v16thN * 1.5;
     
-    v32ndN     = quarterN * 8;
+    v32ndN   = quarterN * 8;
     v32ndD   = v32ndN * (2 / 3.0f);
     v32ndT   = v32ndN * 1.5;
     
