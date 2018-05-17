@@ -30,7 +30,7 @@ Values::Values()
     v16thD   = 0;
     v16thT   = 0;
     
-    v32ndN     = 0;
+    v32ndN   = 0;
     v32ndD   = 0;
     v32ndT   = 0;
     
