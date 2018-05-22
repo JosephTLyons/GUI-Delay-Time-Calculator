@@ -1,7 +1,7 @@
 # GUI-Delay-Time-Calculator
 A simple application that calculates delay and reverb pre-delay times based on the tempo the user inputs.  Alternaively, it can display the values in terms of Hertz, which may be helpful for syncing synthesizer LFOs in time.
 
-![alt tag](https://github.com/JosephTLyons/GUI-Delay-Time-Calculator/blob/master/Delay%20Time%20Calculator%20GUI.png)
+![alt tag](./Delay Time Calculator GUI.png)
 -Image is larger than the actual GUI
 
 ## Features:
