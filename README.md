@@ -6,7 +6,7 @@ A simple application that calculates delay and reverb pre-delay times based on t
 
 ## Features:
 
-* Delay times calculated for: 1, 1/2, 1/4, 1/8, 1/16, 1/32, 1/64, and 1/128 note values.  Each note value has associated values for Normal, Dotted, and Triplet values.
+* Delay times calculated for: 1, 1/2, 1/4, 1/8, 1/16, 1/32, 1/64, and 1/128 note values.  Each note value has associated values for Normal, Dotted, and Triplet.
 * Option to show values in terms of Hertz, which might be useful for setting synth LFOs.
 * A slider for user input of tempo, from 1 - 1000 bpm.  The user can also input their tempo by clicking the text box above slider.  Holding down command will give finer control over the slider.
 * User can choose from whole, tenths, or hundredths resolution, for tempo increments.
