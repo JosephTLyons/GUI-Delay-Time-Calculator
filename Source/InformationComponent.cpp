@@ -122,8 +122,10 @@ InformationComponent::InformationComponent ()
                                     informationTextEditor->findColour(informationTextEditor->textColourId));
     informationTextEditor->setLookAndFeel(&textEditorScrollColor);
 
+    informationTextEditorString = "Key Commands:\n";
+
     // Add information to text string
-    informationTextEditorString = "-'C' for coarse resolution\n";
+    informationTextEditorString += "-'C' for coarse resolution\n";
     informationTextEditorString += "-'S' for standard resolution\n";
     informationTextEditorString += "-'F' for fine resolution\n\n";
 
