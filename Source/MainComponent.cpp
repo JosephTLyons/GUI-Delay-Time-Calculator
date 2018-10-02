@@ -825,9 +825,6 @@ void MainComponent::mouseExit (const MouseEvent& e)
                                              normalLabel->findColour (normalLabel->textColourId));
     }
 
-    if (e.eventComponent->getName() == tapButton->getName())
-        resetTapTempo();
-
     //[/UserCode_mouseExit]
 }
 
