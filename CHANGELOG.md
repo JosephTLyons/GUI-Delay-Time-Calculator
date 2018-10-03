@@ -1,15 +1,16 @@
 # Changelog:
 
 ## XXX  XX, 2018 - V 1.7.0
-1. Fixed a bug where the ms or hz values were not being updated when switching from finer resolution modes to coarser resolution modes
-2. Fixed a bug where the BPM output field could show characters if the user entered them twice consecutively.  The BPM output field should always show numbers only.
-2. Tap Tempo now automatically resets as soon as the mouse leaves the boundaries of the Tap Tempo button, if using the 'T' key, resetting occurs as soon is the mouse is moved
-3. Moved information-related buttons to information window: Facebook, Email Me, The Code, and Donate buttons; this helped to reduce the GUI clutter
-4. Removed the information button entirely to reduce clutter - Information window is now created by clicking on the main Delay Time Calculator label
-5. Other minor additions to the information window
-6. Changed "1/2x" to "(1/2)x", as it was incorrect before, in both the button itself and the information window
-8. Information window now always opens in the center of Delay Time Calculator window
-9. Code clean up: now using one class to manage both milliseconds and hertz values, this allows me to delete a TON of code and slightly reduce the memory needed for the app.  Renamed all the private data members in the (now) Values class as well.
+1. For Mac users, app works in the new dark mode in macOS Mojave
+2. Fixed a bug where the ms or hz values were not being updated when switching from finer resolution modes to coarser resolution modes
+3. Fixed a bug where the BPM output field could show characters if the user entered them twice consecutively.  The BPM output field should always show numbers only.
+4. Tap Tempo now automatically resets as soon as the mouse leaves the boundaries of the Tap Tempo button, if using the 'T' key, resetting occurs as soon is the mouse is moved
+5. Moved information-related buttons to information window: Facebook, Email Me, The Code, and Donate buttons; this helped to reduce the GUI clutter
+6. Removed the information button entirely to reduce clutter - Information window is now created by clicking on the main Delay Time Calculator label
+7. Other minor additions to the information window
+8. Changed "1/2x" to "(1/2)x", as it was incorrect before, in both the button itself and the information window
+9. Information window now always opens in the center of Delay Time Calculator window
+10. Code clean up: now using one class to manage both milliseconds and hertz values, this allows me to delete a TON of code and slightly reduce the memory needed for the app.  Renamed all the private data members in the (now) Values class as well.
 
 ## December 21, 2017 - V 1.6.0
 1. Reworked GUI to be more symmetrical at top and to have a larger BPM value readout
