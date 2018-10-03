@@ -556,6 +556,9 @@ MainComponent::MainComponent ()
     // Tap tempo is more accurate when clicks are registered on down-click versus up-click
     tapButton->setTriggeredOnMouseDown (true);
 
+    // Add mouse listener for mouseExit() function (to reset the tap tempo functionality)
+    tapButton->addMouseListener (this, true);
+
     bpmValuesLabel->addListener (this);
 
     delayTimeCalculatorLabel->addMouseListener (this, false);
@@ -786,21 +789,6 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     //[/UserlabelTextChanged_Post]
 }
 
-void MainComponent::mouseMove (const MouseEvent& e)
-{
-    //[UserCode_mouseMove] -- Add your code here...
-
-    // Dont reset unless needs reset (tap count is greater than 0)
-    // Don't reset if mouse moves and is hoving over Tap Tempo button
-    // because user is likely clicking the button and doesn't want it reset automatically
-    // Only reset if mouse moves and isn't on Tap Tempo button, this takes care of reseting when using the 'T' key
-    if (tapTempo.getTapCount() > 0)
-        if (e.eventComponent->getName() != tapButton->getName())
-            resetTapTempo();
-
-    //[/UserCode_mouseMove]
-}
-
 void MainComponent::mouseEnter (const MouseEvent& e)
 {
     //[UserCode_mouseEnter] -- Add your code here...
@@ -824,6 +812,13 @@ void MainComponent::mouseExit (const MouseEvent& e)
         delayTimeCalculatorLabel->setColour (Label::textColourId,
                                              normalLabel->findColour (normalLabel->textColourId));
     }
+
+    // Dont reset unless needs reset (tap count is greater than 0)
+    // Only reset if mouse moves out of tapButton boundaries,
+    // this takes care of reseting when using the 'T' key
+    if (tapTempo.getTapCount() > 0)
+        if (e.eventComponent->getName() == tapButton->getName())
+            resetTapTempo();
 
     //[/UserCode_mouseExit]
 }
@@ -1058,7 +1053,6 @@ BEGIN_JUCER_METADATA
     <METHOD name="mouseUp (const MouseEvent&amp; e)"/>
     <METHOD name="mouseEnter (const MouseEvent&amp; e)"/>
     <METHOD name="mouseExit (const MouseEvent&amp; e)"/>
-    <METHOD name="mouseMove (const MouseEvent&amp; e)"/>
   </METHODS>
   <BACKGROUND backgroundColour="ff353535"/>
   <TEXTBUTTON name="doubleTempoButton" id="74a1161b6a8bd75d" memberName="doubleTempoButton"
