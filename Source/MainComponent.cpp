@@ -814,9 +814,7 @@ void MainComponent::mouseExit (const MouseEvent& e)
                                              normalLabel->findColour (normalLabel->textColourId));
     }
 
-    // Dont reset unless needs reset (tap count is greater than 0)
-    // Only reset if mouse moves out of tapButton boundaries,
-    // this takes care of reseting when using the 'T' key
+    // Only reset if mouse moves out of tapButton boundaries after clicking it
     if (tapTempo.getTapCount() > 0)
         if (e.eventComponent == tapButton.get())
             resetTapTempo();
