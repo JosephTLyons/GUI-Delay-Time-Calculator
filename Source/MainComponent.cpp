@@ -685,7 +685,8 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
         tempoSlider->setValue (tapTempo.calculateTempo());
 
         // Add tap count to Tap Tempo button
-        tapButton->setButtonText ("Tap Tempo (" + (String) tapTempo.getTapCount() + ")");
+        tapCountString = ((String) tapTempo.getTapCount()).paddedLeft ('0', 3);
+        tapButton->setButtonText ("Tap Tempo (" + tapCountString + ")");
 
         //[/UserButtonCode_tapButton]
     }
