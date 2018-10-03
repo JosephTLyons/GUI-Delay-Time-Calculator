@@ -790,6 +790,19 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     //[/UserlabelTextChanged_Post]
 }
 
+void MainComponent::mouseMove (const MouseEvent& e)
+{
+    //[UserCode_mouseMove] -- Add your code here...
+
+    // This case takes care of using the 'T' key to trigger tap tempo and the user isn't
+    // hovering on the tap tempo button.  As soon as the mouse moves, reset is called.
+    if (tapTempo.getTapCount() > 0)
+        if (e.eventComponent != tapButton.get())
+            resetTapTempo();
+
+    //[/UserCode_mouseMove]
+}
+
 void MainComponent::mouseEnter (const MouseEvent& e)
 {
     //[UserCode_mouseEnter] -- Add your code here...
@@ -1052,6 +1065,7 @@ BEGIN_JUCER_METADATA
     <METHOD name="mouseUp (const MouseEvent&amp; e)"/>
     <METHOD name="mouseEnter (const MouseEvent&amp; e)"/>
     <METHOD name="mouseExit (const MouseEvent&amp; e)"/>
+    <METHOD name="mouseMove (const MouseEvent&amp; e)"/>
   </METHODS>
   <BACKGROUND backgroundColour="ff353535"/>
   <TEXTBUTTON name="doubleTempoButton" id="74a1161b6a8bd75d" memberName="doubleTempoButton"
