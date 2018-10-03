@@ -806,7 +806,7 @@ void MainComponent::mouseExit (const MouseEvent& e)
 {
     //[UserCode_mouseExit] -- Add your code here...
 
-    if (e.eventComponent->getName() == delayTimeCalculatorLabel->getName())
+    if (e.eventComponent == delayTimeCalculatorLabel.get())
     {
         // Change text color to original gray used
         delayTimeCalculatorLabel->setColour (Label::textColourId,
@@ -817,7 +817,7 @@ void MainComponent::mouseExit (const MouseEvent& e)
     // Only reset if mouse moves out of tapButton boundaries,
     // this takes care of reseting when using the 'T' key
     if (tapTempo.getTapCount() > 0)
-        if (e.eventComponent->getName() == tapButton->getName())
+        if (e.eventComponent == tapButton.get())
             resetTapTempo();
 
     //[/UserCode_mouseExit]
@@ -827,7 +827,7 @@ void MainComponent::mouseUp (const MouseEvent& e)
 {
     //[UserCode_mouseUp] -- Add your code here...
 
-    if (e.eventComponent->getName() == delayTimeCalculatorLabel->getName())
+    if (e.eventComponent == delayTimeCalculatorLabel.get())
         buildInformationWindow();
 
     //[/UserCode_mouseUp]
