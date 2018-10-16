@@ -1025,7 +1025,7 @@ void MainComponent::resetTapTempo()
 void MainComponent::buildInformationWindow()
 {
     // Don't allow multiple copies of this window to be made
-    if (basicWindow == NULL)
+    if (basicWindow == nullptr)
     {
         basicWindow = new BasicWindow ("Information", Colours::grey,
                                        DocumentWindow::closeButton |
