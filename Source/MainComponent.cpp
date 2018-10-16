@@ -1034,8 +1034,8 @@ void MainComponent::buildInformationWindow()
         basicWindow->setUsingNativeTitleBar (true);
         basicWindow->setContentOwned (new InformationComponent(), true);
 
-        int centerOfThisComponentX = getScreenPosition().x + (getWidth() / 2);
-        int centerOfThisComponentY = getScreenPosition().y + (getHeight() / 2);
+        const int centerOfThisComponentX = getScreenPosition().x + (getWidth() / 2);
+        const int centerOfThisComponentY = getScreenPosition().y + (getHeight() / 2);
         basicWindow->setCentrePosition (centerOfThisComponentX, centerOfThisComponentY);
 
         basicWindow->setVisible (true);
