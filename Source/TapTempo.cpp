@@ -41,7 +41,7 @@ double TapTempo::calculateTempo()
 
 void TapTempo::convertTimeElapsedToMinutes()
 {
-    seconds = timeElapsedInMilliseconds / (double) 1000 / 60;
+    seconds = timeElapsedInMilliseconds / (double) 1000;
     minutes = seconds / 60;
 }
 
