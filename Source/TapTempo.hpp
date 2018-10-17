@@ -22,9 +22,6 @@ private:
     double seconds;
     double minutes;
     
-    int millisecondsInASecond;
-    int secondsInAMinute;
-    
     // Private Member Functions
     void convertTimeElapsedToMinutes();
     

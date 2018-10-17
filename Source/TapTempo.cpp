@@ -11,9 +11,6 @@
 TapTempo::TapTempo()
 {
     resetMainCalculationHolders();
-    
-    millisecondsInASecond = 1000;
-    secondsInAMinute      = 60;
 }
 
 void TapTempo::resetMainCalculationHolders()
@@ -44,11 +41,8 @@ double TapTempo::calculateTempo()
 
 void TapTempo::convertTimeElapsedToMinutes()
 {
-    // convert elapsed time to seconds
-    seconds = timeElapsedInMilliseconds / (double) millisecondsInASecond;
-    
-    // convert elapsed time to minutes
-    minutes = seconds / secondsInAMinute;
+    seconds = timeElapsedInMilliseconds / (double) 1000 / 60;
+    minutes = seconds / 60;
 }
 
 unsigned long int TapTempo::getTapCount() const
