@@ -10,10 +10,10 @@
 
 TapTempo::TapTempo()
 {
-    resetMainCalculationHolders();
+    reset();
 }
 
-void TapTempo::resetMainCalculationHolders()
+void TapTempo::reset()
 {
     intervalCount = -1;
     startingTimeInMilliseconds = 0;

@@ -20,7 +20,7 @@ private:
     
 public:
     TapTempo();
-    void resetMainCalculationHolders();
+    void reset();
     double calculateTempo();
     unsigned long int getTapCount() const;
 };

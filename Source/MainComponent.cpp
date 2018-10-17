@@ -1016,7 +1016,7 @@ void MainComponent::populateFieldsWithValues()
 
 void MainComponent::resetTapTempo()
 {
-    tapTempo.resetMainCalculationHolders();
+    tapTempo.reset();
 
     // Change Tap Tempo button text back to normal, excluding tap count
     tapButton->setButtonText ("Tap Tempo");
