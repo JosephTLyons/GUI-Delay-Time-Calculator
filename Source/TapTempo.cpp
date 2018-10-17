@@ -25,11 +25,11 @@ double TapTempo::calculateTempo()
 {
     if (++intervalCount == 0)
     {
-        startingTimeInMilliseconds = Time::getCurrentTime().toMilliseconds();
+        startingTimeInMilliseconds = Time::currentTimeMillis();
         return 0;
     }
 
-    timeElapsedInMilliseconds = Time::getCurrentTime().toMilliseconds() - startingTimeInMilliseconds;
+    timeElapsedInMilliseconds = Time::currentTimeMillis() - startingTimeInMilliseconds;
 
     convertTimeElapsedToMinutes();
 
