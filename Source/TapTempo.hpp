@@ -14,11 +14,9 @@
 class TapTempo
 {
 private:
-    double tempo;
-    unsigned long int tapCount;
+    long int intervalCount;
     
     int64 startingTimeInMilliseconds;
-    int64 endingTimeInMilliseconds;
     int64 timeElapsedInMilliseconds;
     
     double seconds;
@@ -27,10 +25,7 @@ private:
     int millisecondsInASecond;
     int secondsInAMinute;
     
-    Time juceTimeObject;
-    
     // Private Member Functions
-    void calculateTimeElapsedInMilliseconds();
     void convertTimeElapsedToMinutes();
     
 public:

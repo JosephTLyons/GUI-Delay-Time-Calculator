@@ -18,11 +18,9 @@ TapTempo::TapTempo()
 
 void TapTempo::resetMainCalculationHolders()
 {
-    tempo                      = 0;
-    tapCount                   = 0;
+    intervalCount              = -1;
     
     startingTimeInMilliseconds = 0;
-    endingTimeInMilliseconds   = 0;
     timeElapsedInMilliseconds  = 0;
     
     seconds                    = 0;
@@ -31,41 +29,17 @@ void TapTempo::resetMainCalculationHolders()
 
 double TapTempo::calculateTempo()
 {
-    juceTimeObject = Time::getCurrentTime();
-    
-    // Set start time, this should happen only once (on first tap)
-    // and maintain this value the entire time so that the total average can be calculated
-    if (tapCount == 0)
+    if (++intervalCount == 0)
     {
-        // Set minutes to one, otherwise, first tap will result in a division with
-        // 0 in the denominator, which will output "nan" on the first tap
-        minutes = 1;
-        
-        startingTimeInMilliseconds = juceTimeObject.toMilliseconds();
+        startingTimeInMilliseconds = Time::getCurrentTime().toMilliseconds();
+        return 0;
     }
-    
-    tapCount++;
-    
-    // Set end time
-    endingTimeInMilliseconds = juceTimeObject.toMilliseconds();
-    
-    calculateTimeElapsedInMilliseconds();
-    
-    // Only calculate minutes after the first hit because minutes are automatically set to one
-    // the very first hit to avoid division by 0.
-    if (tapCount > 1)
-        convertTimeElapsedToMinutes();
-    
-    // Calculate tempo by subtracting 1 from tap count count because intervals are always 1
-    // less than the tempo count
-    tempo = (tapCount - 1) / minutes;
-    
-    return tempo;
-}
 
-void TapTempo::calculateTimeElapsedInMilliseconds()
-{
-    timeElapsedInMilliseconds = endingTimeInMilliseconds - startingTimeInMilliseconds;
+    timeElapsedInMilliseconds = Time::getCurrentTime().toMilliseconds() - startingTimeInMilliseconds;
+
+    convertTimeElapsedToMinutes();
+
+    return intervalCount / minutes;
 }
 
 void TapTempo::convertTimeElapsedToMinutes()
@@ -79,5 +53,5 @@ void TapTempo::convertTimeElapsedToMinutes()
 
 unsigned long int TapTempo::getTapCount() const
 {
-    return tapCount;
+    return intervalCount + 1;
 }
