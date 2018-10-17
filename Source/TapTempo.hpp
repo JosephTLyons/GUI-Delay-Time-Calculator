@@ -19,11 +19,8 @@ private:
     int64 startingTimeInMilliseconds;
     int64 timeElapsedInMilliseconds;
     
-    double seconds;
-    double minutes;
-    
     // Private Member Functions
-    void convertTimeElapsedToMinutes();
+    double calculateTimeElapsedInMinutes();
     
 public:
     TapTempo();
