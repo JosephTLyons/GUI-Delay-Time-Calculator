@@ -31,14 +31,9 @@ double TapTempo::calculateTempo()
 
     timeElapsedInMilliseconds = Time::currentTimeMillis() - startingTimeInMilliseconds;
 
-    convertTimeElapsedToMinutes();
+    minutes = (timeElapsedInMilliseconds / (double) 1000) / 60;
 
     return intervalCount / minutes;
-}
-
-void TapTempo::convertTimeElapsedToMinutes()
-{
-    minutes = (timeElapsedInMilliseconds / (double) 1000) / 60;
 }
 
 unsigned long int TapTempo::getTapCount() const
