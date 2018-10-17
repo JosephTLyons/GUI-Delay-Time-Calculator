@@ -21,9 +21,6 @@ private:
 
     double minutes;
     
-    // Private Member Functions
-    void convertTimeElapsedToMinutes();
-    
 public:
     TapTempo();
     
