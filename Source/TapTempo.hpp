@@ -17,7 +17,6 @@ private:
     long int intervalCount;
     
     int64 startingTimeInMilliseconds;
-    int64 timeElapsedInMilliseconds;
 
     double minutes;
     
