@@ -15,8 +15,9 @@ TapTempo::TapTempo()
 
 void TapTempo::resetMainCalculationHolders()
 {
-    intervalCount              = -1;
+    intervalCount = -1;
     startingTimeInMilliseconds = 0;
+    minutes = 0;
 }
 
 double TapTempo::calculateTempo()
