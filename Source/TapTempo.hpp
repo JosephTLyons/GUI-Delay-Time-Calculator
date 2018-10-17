@@ -15,14 +15,11 @@ class TapTempo
 {
 private:
     long int intervalCount;
-    
     int64 startingTimeInMilliseconds;
-
     double minutes;
     
 public:
     TapTempo();
-    
     void resetMainCalculationHolders();
     double calculateTempo();
     unsigned long int getTapCount() const;
