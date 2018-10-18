@@ -8,7 +8,8 @@
               companyCopyright="The Lyons' Den">
   <MAINGROUP id="wVdkZw" name="The Lyons' Den Delay Time Calculator">
     <GROUP id="{5249329C-49CC-44BF-F4E5-1D704800FEA9}" name="Font">
-      <FILE id="be4TN6" name="CalistoMT.ttf" compile="0" resource="1" file="Font/CalistoMT.ttf"/>
+      <FILE id="OfZZLT" name="MonospaceTypewriter.ttf" compile="0" resource="1"
+            file="Font/MonospaceTypewriter.ttf"/>
     </GROUP>
     <GROUP id="{0496FE9B-6CEE-7E75-C0FB-3F0DB683F2AD}" name="Pixelmator">
       <FILE id="dc3z5K" name="AppIcon.png" compile="0" resource="1" file="Pixelmator/AppIcon.png"/>
@@ -35,10 +36,6 @@
       <FILE id="kXu3u7" name="Values.cpp" compile="1" resource="0" file="Source/Values.cpp"/>
       <FILE id="WpUudQ" name="TapTempo.hpp" compile="0" resource="0" file="Source/TapTempo.hpp"/>
       <FILE id="YOxrbs" name="TapTempo.cpp" compile="1" resource="0" file="Source/TapTempo.cpp"/>
-      <FILE id="Vtcnce" name="EmbeddedFonts.hpp" compile="0" resource="0"
-            file="Source/EmbeddedFonts.hpp"/>
-      <FILE id="XxZUNi" name="EmbeddedFonts.cpp" compile="1" resource="0"
-            file="Source/EmbeddedFonts.cpp"/>
     </GROUP>
   </MAINGROUP>
   <EXPORTFORMATS>

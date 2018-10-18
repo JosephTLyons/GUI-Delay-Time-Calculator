@@ -560,7 +560,7 @@ MainComponent::MainComponent ()
 
     delayTimeCalculatorLabel->addMouseListener (this, false);
 
-    //setupLabelCustomFont();
+    setupLabelCustomFont();
 
     //[/Constructor]
 }
@@ -888,7 +888,62 @@ void MainComponent::adjustTempo (const int &adjustmentValue)
 
 void MainComponent::setupLabelCustomFont()
 {
-    delayTimeCalculatorLabel->setFont (customFont.getCalistoMT());
+    typewriterFont = Font (Typeface::createSystemTypefaceFor (BinaryData::MonospaceTypewriter_ttf,
+                                                              BinaryData::MonospaceTypewriter_ttfSize));
+
+    typewriterFont.setHeight (50);
+    delayTimeCalculatorLabel->setFont (typewriterFont);
+
+//    coarseResolutionToggle->
+//    fineResolutionToggle->
+//    msToggle->
+//    hzToggle->
+
+    // 3 buttons
+
+    typewriterFont.setHeight (30);
+    bpmValuesLabel->setFont (typewriterFont);
+    bpmLabel->setFont (typewriterFont);
+
+    normalLabel->setFont (typewriterFont);
+    dottedLabel->setFont (typewriterFont);
+    tripletLabel->setFont (typewriterFont);
+
+    wholeLabel->setFont (typewriterFont);
+    halfLabel->setFont (typewriterFont);
+    quarterLabel->setFont (typewriterFont);
+    eighthLabel->setFont (typewriterFont);
+    sixteenthLabel->setFont (typewriterFont);
+    thirtySecondLabel->setFont (typewriterFont);
+    sixtyFourthLabel->setFont (typewriterFont);
+    oneHundreAndTwentyEighthLabel->setFont (typewriterFont);
+
+    wholeNLabel->setFont (typewriterFont);
+    wholeDLabel->setFont (typewriterFont);
+    wholeTLabel->setFont (typewriterFont);
+    halfNLabel->setFont (typewriterFont);
+    halfDLabel->setFont (typewriterFont);
+    halfTLabel->setFont (typewriterFont);
+    quarterNLabel->setFont (typewriterFont);
+    quarterDLabel->setFont (typewriterFont);
+    quarterTLabel->setFont (typewriterFont);
+    v8thNLabel->setFont (typewriterFont);
+    v8thDLabel->setFont (typewriterFont);
+    v8thTLabel->setFont (typewriterFont);
+    v16thNLabel->setFont (typewriterFont);
+    v16thDLabel->setFont (typewriterFont);
+    v16thTLabel->setFont (typewriterFont);
+    v32ndNLabel->setFont (typewriterFont);
+    v32ndDLabel->setFont (typewriterFont);
+    v32ndTLabel->setFont (typewriterFont);
+    v64thNLabel->setFont (typewriterFont);
+    v64thDLabel->setFont (typewriterFont);
+    v64thTLabel->setFont (typewriterFont);
+    v128thNLabel->setFont (typewriterFont);
+    v128thDLabel->setFont (typewriterFont);
+    v128thTLabel->setFont (typewriterFont);
+
+    // then do info window font
 }
 
 void MainComponent::launchURL (const char *hyperLink)

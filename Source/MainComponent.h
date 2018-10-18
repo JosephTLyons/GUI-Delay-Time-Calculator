@@ -24,7 +24,6 @@
 #include "Values.hpp"
 #include "TapTempo.hpp"
 #include "BasicWindow.cpp"
-#include "EmbeddedFonts.hpp"
 //[/Headers]
 
 
@@ -90,7 +89,8 @@ private:
     TapTempo tapTempo;
     String tapCountString;
     SafePointer<BasicWindow> basicWindow;
-    EmbeddedFonts customFont;
+
+    Font typewriterFont;
 
     //[/UserVariables]
 
