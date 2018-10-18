@@ -556,9 +556,6 @@ MainComponent::MainComponent ()
     // Tap tempo is more accurate when clicks are registered on down-click versus up-click
     tapButton->setTriggeredOnMouseDown (true);
 
-    // Add mouse listener for mouseExit() function (to reset the tap tempo functionality)
-    tapButton->addMouseListener (this, true);
-
     bpmValuesLabel->addListener (this);
 
     delayTimeCalculatorLabel->addMouseListener (this, false);
