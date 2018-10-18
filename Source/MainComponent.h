@@ -51,7 +51,6 @@ public:
     //==============================================================================
     //[UserMethods]     -- You can add your own custom methods in this section.
 
-    bool keyPressed (const juce::KeyPress &key) override;
     void adjustTempo (const int &adjustmentValue);
     void setupLabelCustomFont();
     void launchURL (const char *hyperLink);
@@ -80,6 +79,7 @@ public:
     void mouseEnter (const MouseEvent& e) override;
     void mouseExit (const MouseEvent& e) override;
     void mouseUp (const MouseEvent& e) override;
+    bool keyPressed (const KeyPress& key) override;
 
 
 

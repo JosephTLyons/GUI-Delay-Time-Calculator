@@ -830,12 +830,10 @@ void MainComponent::mouseUp (const MouseEvent& e)
     //[/UserCode_mouseUp]
 }
 
-
-
-//[MiscUserCode] You can add your own definitions of your custom methods or any other code here...
-
-bool MainComponent::keyPressed (const juce::KeyPress &key)
+bool MainComponent::keyPressed (const KeyPress& key)
 {
+    //[UserCode_keyPressed] -- Add your code here...
+
     if (key == 'C')
         coarseResolutionChosen();
 
@@ -879,6 +877,8 @@ bool MainComponent::keyPressed (const juce::KeyPress &key)
         adjustTempo (-1);
 
     return true;
+
+    //[/UserCode_keyPressed]
 }
 
 void MainComponent::adjustTempo (const int &adjustmentValue)
@@ -1056,6 +1056,7 @@ BEGIN_JUCER_METADATA
     <METHOD name="mouseUp (const MouseEvent&amp; e)"/>
     <METHOD name="mouseEnter (const MouseEvent&amp; e)"/>
     <METHOD name="mouseExit (const MouseEvent&amp; e)"/>
+    <METHOD name="keyPressed (const KeyPress&amp; key)"/>
   </METHODS>
   <BACKGROUND backgroundColour="ff353535"/>
   <TEXTBUTTON name="doubleTempoButton" id="74a1161b6a8bd75d" memberName="doubleTempoButton"
