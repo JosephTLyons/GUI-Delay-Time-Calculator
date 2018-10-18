@@ -1,5 +1,6 @@
 # TODO:
-
+* Right click to reset as well?
+* Embed a font
 * Fix BPM Kerning and vertical alignment with BPM values label
 * Vertical spacing of entire GUI
 * Icons versus text on buttons?
