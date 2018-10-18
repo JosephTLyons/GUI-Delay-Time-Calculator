@@ -682,11 +682,17 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_tapButton] -- add your button handler code here..
 
-        tempoSlider->setValue (tapTempo.calculateTempo());
+        int tempo = tapTempo.calculateTempo();
+
+        tempoSlider->setValue (tempo);
 
         // Add tap count to Tap Tempo button
         tapCountString = ((String) tapTempo.getTapCount()).paddedLeft ('0', 3);
         tapButton->setButtonText ("Tap Tempo (" + tapCountString + ")");
+
+        // Start timer to auto reset
+        if (tapTempo.getTapCount() > 1)
+            startTimer ((60 / (double) tempo) * 4 * 1000);
 
         //[/UserButtonCode_tapButton]
     }
@@ -756,10 +762,6 @@ void MainComponent::sliderValueChanged (Slider* sliderThatWasMoved)
 
         setBpmLabelValue();
         updateValuesAndFields();
-
-        // Start timer to auto reset
-        if (tapTempo.getTapCount() > 1)
-            startTimer (values.getWholeN());
 
         //[/UserSliderCode_tempoSlider]
     }
