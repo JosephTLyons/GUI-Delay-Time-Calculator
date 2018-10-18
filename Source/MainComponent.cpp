@@ -757,6 +757,10 @@ void MainComponent::sliderValueChanged (Slider* sliderThatWasMoved)
         setBpmLabelValue();
         updateValuesAndFields();
 
+        // Start timer to auto reset
+        if (tapTempo.getTapCount() > 1)
+            startTimer (values.getWholeN());
+
         //[/UserSliderCode_tempoSlider]
     }
 
@@ -790,19 +794,6 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     //[/UserlabelTextChanged_Post]
 }
 
-void MainComponent::mouseMove (const MouseEvent& e)
-{
-    //[UserCode_mouseMove] -- Add your code here...
-
-    // This case takes care of using the 'T' key to trigger tap tempo and the user isn't
-    // hovering on the tap tempo button.  As soon as the mouse moves, reset is called.
-    if (tapTempo.getTapCount() > 0)
-        if (e.eventComponent != tapButton.get())
-            resetTapTempo();
-
-    //[/UserCode_mouseMove]
-}
-
 void MainComponent::mouseEnter (const MouseEvent& e)
 {
     //[UserCode_mouseEnter] -- Add your code here...
@@ -826,11 +817,6 @@ void MainComponent::mouseExit (const MouseEvent& e)
         delayTimeCalculatorLabel->setColour (Label::textColourId,
                                              normalLabel->findColour (normalLabel->textColourId));
     }
-
-    // Only reset if mouse moves out of tapButton boundaries after clicking it
-    if (tapTempo.getTapCount() > 0)
-        if (e.eventComponent == tapButton.get())
-            resetTapTempo();
 
     //[/UserCode_mouseExit]
 }
@@ -1045,6 +1031,12 @@ void MainComponent::buildInformationWindow()
         delete basicWindow;
 }
 
+void MainComponent::timerCallback()
+{
+    stopTimer();
+    resetTapTempo();
+}
+
 //[/MiscUserCode]
 
 
@@ -1058,14 +1050,13 @@ void MainComponent::buildInformationWindow()
 BEGIN_JUCER_METADATA
 
 <JUCER_COMPONENT documentType="Component" className="MainComponent" componentName=""
-                 parentClasses="public Component" constructorParams="" variableInitialisers=""
-                 snapPixels="8" snapActive="1" snapShown="1" overlayOpacity="0.33"
-                 fixedSize="1" initialWidth="500" initialHeight="490">
+                 parentClasses="public Component, private Timer" constructorParams=""
+                 variableInitialisers="" snapPixels="8" snapActive="1" snapShown="1"
+                 overlayOpacity="0.33" fixedSize="1" initialWidth="500" initialHeight="490">
   <METHODS>
     <METHOD name="mouseUp (const MouseEvent&amp; e)"/>
     <METHOD name="mouseEnter (const MouseEvent&amp; e)"/>
     <METHOD name="mouseExit (const MouseEvent&amp; e)"/>
-    <METHOD name="mouseMove (const MouseEvent&amp; e)"/>
   </METHODS>
   <BACKGROUND backgroundColour="ff353535"/>
   <TEXTBUTTON name="doubleTempoButton" id="74a1161b6a8bd75d" memberName="doubleTempoButton"
