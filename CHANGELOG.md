@@ -4,7 +4,7 @@
 1. For Mac users, app works in the new dark mode in macOS Mojave
 2. Fixed a bug where the ms or hz values were not being updated when switching from finer resolution modes to coarser resolution modes
 3. Fixed a bug where the BPM output field could show characters if the user entered them twice consecutively.  The BPM output field should always show numbers only.
-4. Tap Tempo now automatically resets as soon as the mouse leaves the boundaries of the Tap Tempo button, if using the 'T' key, resetting occurs as soon is the mouse is moved
+4. Tap Tempo now automatically resets based on a timer that is set to a length of time proportional to the tap tempo timing.  The timer uses the whole note normal millisecond value after the last tap on the button or the key 'T'.  This means that the duration before automatic reset is 4 times the duration between taps.  The GUI no longer has a reset button because of this, but the 'R' button still works in case a user doesn't want to wait the full duration of the automatic reset.  Another thing to note is that automatic reset doesn't occur unless you have tapped the button twice, as there isn't an interval to measure after only 1 tap.  If you need to reset manually, again, use the 'R' button.
 5. Moved information-related buttons to information window: Facebook, Email Me, The Code, and Donate buttons; this helped to reduce the GUI clutter
 6. Removed the information button entirely to reduce clutter - Information window is now created by clicking on the main Delay Time Calculator label
 7. Other minor additions to the information window
