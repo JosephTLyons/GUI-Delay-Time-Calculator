@@ -68,7 +68,7 @@ public:
     void resetTapTempo();
     void buildInformationWindow();
 
-    void timerCallback();
+    void timerCallback() override;
 
     //[/UserMethods]
 
