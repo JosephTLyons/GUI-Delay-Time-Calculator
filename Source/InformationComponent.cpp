@@ -113,8 +113,8 @@ InformationComponent::InformationComponent ()
 
     // Set highlight to transparent so that highlighting of text isn't viewable
     informationTextEditor->setColour(TextEditor::highlightColourId, Colours::transparentWhite);
-    informationTextEditor->setPopupMenuEnabled(false);
-    informationTextEditor->setFont(16.5);
+    informationTextEditor->setPopupMenuEnabled (false);
+    informationTextEditor->setFont (16.5);
 
     // Set text editor scrollbar color to color of text in TextEditor
     textEditorScrollColor.setColour(ScrollBar::thumbColourId,
