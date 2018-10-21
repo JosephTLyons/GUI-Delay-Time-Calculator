@@ -246,9 +246,9 @@ void InformationComponent::buttonClicked (Button* buttonThatWasClicked)
 
 //[MiscUserCode] You can add your own definitions of your custom methods or any other code here...
 
-void InformationComponent::launchURL (const char *hyperLink)
+void InformationComponent::launchURL (const String &hyperlink)
 {
-    URL url (hyperLink);
+    URL url (hyperlink);
     url.launchInDefaultBrowser();
 }
 

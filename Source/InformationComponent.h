@@ -44,7 +44,7 @@ public:
     //==============================================================================
     //[UserMethods]     -- You can add your own custom methods in this section.
 
-    void launchURL (const char *hyperLink);
+    void launchURL (const String &hyperlink);
 
     //[/UserMethods]
 
