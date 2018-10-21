@@ -560,7 +560,7 @@ MainComponent::MainComponent ()
 
     delayTimeCalculatorLabel->addMouseListener (this, false);
 
-    setupLabelCustomFont();
+    //setupLabelCustomFont();
 
     //[/Constructor]
 }
