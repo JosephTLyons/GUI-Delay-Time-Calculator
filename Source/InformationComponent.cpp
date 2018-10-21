@@ -248,8 +248,8 @@ void InformationComponent::buttonClicked (Button* buttonThatWasClicked)
 
 void InformationComponent::launchURL (const char *hyperLink)
 {
-    URL uRL (hyperLink);
-    uRL.launchInDefaultBrowser();
+    URL url (hyperLink);
+    url.launchInDefaultBrowser();
 }
 
 //[/MiscUserCode]
