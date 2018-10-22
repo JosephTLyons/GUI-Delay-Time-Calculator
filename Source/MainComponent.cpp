@@ -1082,7 +1082,7 @@ void MainComponent::buildInformationWindow()
     }
 
     else
-        delete basicWindow;
+        basicWindow.deleteAndZero();
 }
 
 void MainComponent::timerCallback()
