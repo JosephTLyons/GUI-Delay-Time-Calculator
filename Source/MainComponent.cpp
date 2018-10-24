@@ -1068,8 +1068,8 @@ void MainComponent::buildInformationWindow()
     if (basicWindowSafePtr == nullptr)
     {
         basicWindowSafePtr = new BasicWindow ("Information", Colours::grey,
-                                       DocumentWindow::closeButton |
-                                       DocumentWindow::minimiseButton);
+                                              DocumentWindow::closeButton |
+                                              DocumentWindow::minimiseButton);
 
         basicWindowSafePtr->setUsingNativeTitleBar (true);
         basicWindowSafePtr->setContentOwned (new InformationComponent(), true);
