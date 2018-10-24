@@ -621,7 +621,7 @@ MainComponent::~MainComponent()
     //[Destructor]. You can add your own custom destruction code here..
 
     // Delete basicWindow in case both windows are open when exiting the application all together
-    delete basicWindow;
+    delete basicWindowSafePtr;
 
     //[/Destructor]
 }
@@ -1065,24 +1065,24 @@ void MainComponent::resetTapTempo()
 void MainComponent::buildInformationWindow()
 {
     // Don't allow multiple copies of this window to be made
-    if (basicWindow == nullptr)
+    if (basicWindowSafePtr == nullptr)
     {
-        basicWindow = new BasicWindow ("Information", Colours::grey,
+        basicWindowSafePtr = new BasicWindow ("Information", Colours::grey,
                                        DocumentWindow::closeButton |
                                        DocumentWindow::minimiseButton);
 
-        basicWindow->setUsingNativeTitleBar (true);
-        basicWindow->setContentOwned (new InformationComponent(), true);
+        basicWindowSafePtr->setUsingNativeTitleBar (true);
+        basicWindowSafePtr->setContentOwned (new InformationComponent(), true);
 
         const int centerOfThisComponentX = getScreenPosition().x + (getWidth() / 2);
         const int centerOfThisComponentY = getScreenPosition().y + (getHeight() / 2);
-        basicWindow->setCentrePosition (centerOfThisComponentX, centerOfThisComponentY);
+        basicWindowSafePtr->setCentrePosition (centerOfThisComponentX, centerOfThisComponentY);
 
-        basicWindow->setVisible (true);
+        basicWindowSafePtr->setVisible (true);
     }
 
     else
-        basicWindow.deleteAndZero();
+        basicWindowSafePtr.deleteAndZero();
 }
 
 void MainComponent::timerCallback()

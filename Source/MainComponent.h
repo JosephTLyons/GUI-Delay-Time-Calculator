@@ -88,7 +88,7 @@ private:
     Values values;
     TapTempo tapTempo;
     String tapCountString;
-    SafePointer<BasicWindow> basicWindow;
+    SafePointer<BasicWindow> basicWindowSafePtr;
 
     Font typewriterFont;
 
