@@ -620,8 +620,9 @@ MainComponent::~MainComponent()
 
     //[Destructor]. You can add your own custom destruction code here..
 
-    // Delete basicWindow in case both windows are open when exiting the application all together
-    delete basicWindowSafePtr;
+    // Delete the basicWindow that this SafePointer points to and NULL the pointer
+    // in case both windows are open when exiting the main application
+    basicWindowSafePtr.deleteAndZero();
 
     //[/Destructor]
 }
