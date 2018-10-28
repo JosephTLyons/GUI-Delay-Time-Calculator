@@ -1,6 +1,6 @@
 # Changelog:
 
-## XXX  XX, 2018 - V 1.7.0
+## October  28, 2018 - V 1.7.0
 1. For Mac users, app works in the new dark mode in macOS Mojave
 2. Fixed a bug where the ms or hz values were not being updated when switching from finer resolution modes to coarser resolution modes
 3. Fixed a bug where the BPM output field could show characters if the user entered them twice consecutively.  The BPM output field should always show numbers only.
