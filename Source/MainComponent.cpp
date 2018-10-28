@@ -882,6 +882,8 @@ bool MainComponent::keyPressed (const KeyPress& key)
     //[/UserCode_keyPressed]
 }
 
+//[MiscUserCode] You can add your own definitions of your custom methods or any other code here...
+
 void MainComponent::adjustTempo (const int &adjustmentValue)
 {
     tempoSlider->setValue (tempoSlider->getValue() + adjustmentValue);
