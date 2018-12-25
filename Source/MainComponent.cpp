@@ -680,7 +680,7 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_tapButton] -- add your button handler code here..
 
-        int tempo = tapTempo.calculateTempo();
+        double tempo = tapTempo.calculateTempo();
 
         tempoSlider->setValue (tempo);
 

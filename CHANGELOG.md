@@ -1,5 +1,8 @@
 # Changelog:
 
+## XXX - V 1.7.1
+1. Fixed a bug that was causing tap tempo to round the tempo to whole values when outside of the "coarse" resolution setting
+
 ## October  28, 2018 - V 1.7.0
 1. For Mac users, app works in the new dark mode in macOS Mojave
 2. Fixed a bug where the ms or hz values were not being updated when switching from finer resolution modes to coarser resolution modes
