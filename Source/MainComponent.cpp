@@ -690,7 +690,7 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
 
         // Start timer to auto reset
         if (tapTempo.getTapCount() > 1)
-            startTimer ((60 / (double) tempo) * 4 * 1000);
+            startTimer ((60 / tempo) * 4 * 1000);
 
         //[/UserButtonCode_tapButton]
     }
