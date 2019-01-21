@@ -62,7 +62,7 @@ public:
                                   const bool &isFineSelected, const double &increment);
     void setBpmLabelValue();
     void updateValuesAndFields();
-    void populateFieldsWithValues();
+    void populateLabelsWithValues();
     void resetTapTempo();
     void buildInformationWindow();
 

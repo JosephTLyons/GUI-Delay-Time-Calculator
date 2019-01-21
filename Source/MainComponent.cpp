@@ -1018,12 +1018,11 @@ void MainComponent::updateValuesAndFields()
     else
         values.calculateHertz (tempoSlider->getValue());
 
-    populateFieldsWithValues();
+    populateLabelsWithValues();
 }
 
-void MainComponent::populateFieldsWithValues()
+void MainComponent::populateLabelsWithValues()
 {
-    // Set values for all text labels
     wholeNLabel->setText ((String) values.getWholeN(), dontSendNotification);
     wholeDLabel->setText ((String) values.getWholeD(), dontSendNotification);
     wholeTLabel->setText ((String) values.getWholeT(), dontSendNotification);
