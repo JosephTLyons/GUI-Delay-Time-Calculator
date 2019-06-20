@@ -7,7 +7,7 @@
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Created with Projucer version: 5.3.2
+  Created with Projucer version: 5.4.3
 
   ------------------------------------------------------------------------------
 
@@ -71,7 +71,7 @@ MainComponent::MainComponent ()
     delayTimeCalculatorLabel.reset (new Label ("delayTimeCalculatorLabel",
                                                TRANS("Delay Time Calculator")));
     addAndMakeVisible (delayTimeCalculatorLabel.get());
-    delayTimeCalculatorLabel->setFont (Font ("Arial", 47.40f, Font::plain).withExtraKerningFactor (0.095f));
+    delayTimeCalculatorLabel->setFont (Font ("Arial", 47.40f, Font::plain).withTypefaceStyle ("Regular").withExtraKerningFactor (0.095f));
     delayTimeCalculatorLabel->setJustificationType (Justification::centred);
     delayTimeCalculatorLabel->setEditable (false, false, false);
     delayTimeCalculatorLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -83,7 +83,7 @@ MainComponent::MainComponent ()
     normalLabel.reset (new Label ("normalLabel",
                                   TRANS("Normal\n")));
     addAndMakeVisible (normalLabel.get());
-    normalLabel->setFont (Font ("Arial", 30.00f, Font::plain));
+    normalLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
     normalLabel->setJustificationType (Justification::centredLeft);
     normalLabel->setEditable (false, false, false);
     normalLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -95,7 +95,7 @@ MainComponent::MainComponent ()
     dottedLabel.reset (new Label ("dottedLabel",
                                   TRANS("Dotted")));
     addAndMakeVisible (dottedLabel.get());
-    dottedLabel->setFont (Font ("Arial", 30.00f, Font::plain));
+    dottedLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
     dottedLabel->setJustificationType (Justification::centredLeft);
     dottedLabel->setEditable (false, false, false);
     dottedLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -107,7 +107,7 @@ MainComponent::MainComponent ()
     tripletLabel.reset (new Label ("tripletLabel",
                                    TRANS("Triplet")));
     addAndMakeVisible (tripletLabel.get());
-    tripletLabel->setFont (Font ("Arial", 30.00f, Font::plain));
+    tripletLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
     tripletLabel->setJustificationType (Justification::centredLeft);
     tripletLabel->setEditable (false, false, false);
     tripletLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -119,7 +119,7 @@ MainComponent::MainComponent ()
     wholeLabel.reset (new Label ("wholeLabel",
                                  TRANS("1:")));
     addAndMakeVisible (wholeLabel.get());
-    wholeLabel->setFont (Font ("Arial", 30.00f, Font::plain));
+    wholeLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
     wholeLabel->setJustificationType (Justification::centredLeft);
     wholeLabel->setEditable (false, false, false);
     wholeLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -131,7 +131,7 @@ MainComponent::MainComponent ()
     halfLabel.reset (new Label ("halfLabel",
                                 TRANS("1/2:")));
     addAndMakeVisible (halfLabel.get());
-    halfLabel->setFont (Font ("Arial", 30.00f, Font::plain));
+    halfLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
     halfLabel->setJustificationType (Justification::centredLeft);
     halfLabel->setEditable (false, false, false);
     halfLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -143,7 +143,7 @@ MainComponent::MainComponent ()
     quarterLabel.reset (new Label ("quarterLabel",
                                    TRANS("1/4:")));
     addAndMakeVisible (quarterLabel.get());
-    quarterLabel->setFont (Font ("Arial", 30.00f, Font::plain));
+    quarterLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
     quarterLabel->setJustificationType (Justification::centredLeft);
     quarterLabel->setEditable (false, false, false);
     quarterLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -155,7 +155,7 @@ MainComponent::MainComponent ()
     eighthLabel.reset (new Label ("eighthLabel",
                                   TRANS("1/8:")));
     addAndMakeVisible (eighthLabel.get());
-    eighthLabel->setFont (Font ("Arial", 30.00f, Font::plain));
+    eighthLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
     eighthLabel->setJustificationType (Justification::centredLeft);
     eighthLabel->setEditable (false, false, false);
     eighthLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -167,7 +167,7 @@ MainComponent::MainComponent ()
     sixteenthLabel.reset (new Label ("sixteenthLabel",
                                      TRANS("1/16:")));
     addAndMakeVisible (sixteenthLabel.get());
-    sixteenthLabel->setFont (Font ("Arial", 30.00f, Font::plain));
+    sixteenthLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
     sixteenthLabel->setJustificationType (Justification::centredLeft);
     sixteenthLabel->setEditable (false, false, false);
     sixteenthLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -179,7 +179,7 @@ MainComponent::MainComponent ()
     thirtySecondLabel.reset (new Label ("thirtySecondLabel",
                                         TRANS("1/32:")));
     addAndMakeVisible (thirtySecondLabel.get());
-    thirtySecondLabel->setFont (Font ("Arial", 30.00f, Font::plain));
+    thirtySecondLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
     thirtySecondLabel->setJustificationType (Justification::centredLeft);
     thirtySecondLabel->setEditable (false, false, false);
     thirtySecondLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -191,7 +191,7 @@ MainComponent::MainComponent ()
     sixtyFourthLabel.reset (new Label ("sixtyFourthLabel",
                                        TRANS("1/64:")));
     addAndMakeVisible (sixtyFourthLabel.get());
-    sixtyFourthLabel->setFont (Font ("Arial", 30.00f, Font::plain));
+    sixtyFourthLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
     sixtyFourthLabel->setJustificationType (Justification::centredLeft);
     sixtyFourthLabel->setEditable (false, false, false);
     sixtyFourthLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -203,7 +203,7 @@ MainComponent::MainComponent ()
     oneHundreAndTwentyEighthLabel.reset (new Label ("oneHundreAndTwentyEighthLabel",
                                                     TRANS("1/128:")));
     addAndMakeVisible (oneHundreAndTwentyEighthLabel.get());
-    oneHundreAndTwentyEighthLabel->setFont (Font ("Arial", 30.00f, Font::plain));
+    oneHundreAndTwentyEighthLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
     oneHundreAndTwentyEighthLabel->setJustificationType (Justification::centredLeft);
     oneHundreAndTwentyEighthLabel->setEditable (false, false, false);
     oneHundreAndTwentyEighthLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -516,7 +516,7 @@ MainComponent::MainComponent ()
     bpmLabel.reset (new Label ("bpmLabel",
                                TRANS("BPM")));
     addAndMakeVisible (bpmLabel.get());
-    bpmLabel->setFont (Font ("Arial", 30.00f, Font::plain));
+    bpmLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
     bpmLabel->setJustificationType (Justification::centred);
     bpmLabel->setEditable (false, false, false);
     bpmLabel->setColour (TextEditor::textColourId, Colours::black);
@@ -527,7 +527,7 @@ MainComponent::MainComponent ()
     bpmValuesLabel.reset (new Label ("bpmValuesLabel",
                                      String()));
     addAndMakeVisible (bpmValuesLabel.get());
-    bpmValuesLabel->setFont (Font ("Arial", 30.00f, Font::plain));
+    bpmValuesLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
     bpmValuesLabel->setJustificationType (Justification::centred);
     bpmValuesLabel->setEditable (true, true, false);
     bpmValuesLabel->setColour (TextEditor::textColourId, Colours::black);
@@ -1128,82 +1128,70 @@ BEGIN_JUCER_METADATA
           virtualName="" explicitFocusOrder="0" pos="0 85 500 30" bkgcol="ff000000"
           thumbcol="ffffffff" trackcol="ffadaaaa" textboxtext="ffffffff"
           textboxbkgd="ff353535" textboxhighlight="ffadaaaa" textboxoutline="ff353535"
-          min="1.00000000000000000000" max="1000.00000000000000000000"
-          int="0.10000000000000000555" style="LinearHorizontal" textBoxPos="NoTextBox"
-          textBoxEditable="1" textBoxWidth="50" textBoxHeight="20" skewFactor="0.50000000000000000000"
+          min="1.0" max="1000.0" int="0.1" style="LinearHorizontal" textBoxPos="NoTextBox"
+          textBoxEditable="1" textBoxWidth="50" textBoxHeight="20" skewFactor="0.5"
           needsCallback="1"/>
   <LABEL name="delayTimeCalculatorLabel" id="951f8323b93b29f2" memberName="delayTimeCalculatorLabel"
          virtualName="" explicitFocusOrder="0" pos="0 0 500 50" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="Delay Time Calculator"
          editableSingleClick="0" editableDoubleClick="0" focusDiscardsChanges="0"
-         fontname="Arial" fontsize="47.39999999999999857891" kerning="0.09500000000000000111"
-         bold="0" italic="0" justification="36"/>
+         fontname="Arial" fontsize="47.4" kerning="0.095" bold="0" italic="0"
+         justification="36"/>
   <LABEL name="normalLabel" id="a751a1c9841b9424" memberName="normalLabel"
          virtualName="" explicitFocusOrder="0" pos="125 145 125 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="Normal&#10;" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Arial"
-         fontsize="30.00000000000000000000" kerning="0.00000000000000000000"
-         bold="0" italic="0" justification="33"/>
+         fontsize="30.0" kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="dottedLabel" id="f84ddade330c771e" memberName="dottedLabel"
          virtualName="" explicitFocusOrder="0" pos="250 145 125 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="Dotted" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Arial"
-         fontsize="30.00000000000000000000" kerning="0.00000000000000000000"
-         bold="0" italic="0" justification="33"/>
+         fontsize="30.0" kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="tripletLabel" id="24f4755bf6b035f2" memberName="tripletLabel"
          virtualName="" explicitFocusOrder="0" pos="375 145 125 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="Triplet" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Arial"
-         fontsize="30.00000000000000000000" kerning="0.00000000000000000000"
-         bold="0" italic="0" justification="33"/>
+         fontsize="30.0" kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="wholeLabel" id="84a944615f7ab97c" memberName="wholeLabel"
          virtualName="" explicitFocusOrder="0" pos="0 175 100 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="1:" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Arial"
-         fontsize="30.00000000000000000000" kerning="0.00000000000000000000"
-         bold="0" italic="0" justification="33"/>
+         fontsize="30.0" kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="halfLabel" id="670aac61ca569af7" memberName="halfLabel"
          virtualName="" explicitFocusOrder="0" pos="0 215 100 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="1/2:" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Arial"
-         fontsize="30.00000000000000000000" kerning="0.00000000000000000000"
-         bold="0" italic="0" justification="33"/>
+         fontsize="30.0" kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="quarterLabel" id="c5514ec2a3c07661" memberName="quarterLabel"
          virtualName="" explicitFocusOrder="0" pos="0 255 100 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="1/4:" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Arial"
-         fontsize="30.00000000000000000000" kerning="0.00000000000000000000"
-         bold="0" italic="0" justification="33"/>
+         fontsize="30.0" kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="eighthLabel" id="49b134e52607b4bd" memberName="eighthLabel"
          virtualName="" explicitFocusOrder="0" pos="0 295 100 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="1/8:" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Arial"
-         fontsize="30.00000000000000000000" kerning="0.00000000000000000000"
-         bold="0" italic="0" justification="33"/>
+         fontsize="30.0" kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="sixteenthLabel" id="15b5cdc975d8b4c1" memberName="sixteenthLabel"
          virtualName="" explicitFocusOrder="0" pos="0 335 100 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="1/16:" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Arial"
-         fontsize="30.00000000000000000000" kerning="0.00000000000000000000"
-         bold="0" italic="0" justification="33"/>
+         fontsize="30.0" kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="thirtySecondLabel" id="286f381f35aec721" memberName="thirtySecondLabel"
          virtualName="" explicitFocusOrder="0" pos="0 375 100 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="1/32:" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Arial"
-         fontsize="30.00000000000000000000" kerning="0.00000000000000000000"
-         bold="0" italic="0" justification="33"/>
+         fontsize="30.0" kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="sixtyFourthLabel" id="e0fec546bed640df" memberName="sixtyFourthLabel"
          virtualName="" explicitFocusOrder="0" pos="0 415 100 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="1/64:" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Arial"
-         fontsize="30.00000000000000000000" kerning="0.00000000000000000000"
-         bold="0" italic="0" justification="33"/>
+         fontsize="30.0" kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="oneHundreAndTwentyEighthLabel" id="fe1fa9046023fc2a" memberName="oneHundreAndTwentyEighthLabel"
          virtualName="" explicitFocusOrder="0" pos="0 455 100 30" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="1/128:" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Arial"
-         fontsize="30.00000000000000000000" kerning="0.00000000000000000000"
-         bold="0" italic="0" justification="33"/>
+         fontsize="30.0" kerning="0.0" bold="0" italic="0" justification="33"/>
   <TEXTBUTTON name="tapButton" id="3cd8a4f5f3b122f8" memberName="tapButton"
               virtualName="" explicitFocusOrder="0" pos="250 115 250 30" bgColOff="ffadaaaa"
               textCol="ff353535" buttonText="Tap Tempo" connectedEdges="0"
@@ -1211,123 +1199,123 @@ BEGIN_JUCER_METADATA
   <LABEL name="wholeNLabel" id="3b0b371f9cfffd20" memberName="wholeNLabel"
          virtualName="" explicitFocusOrder="0" pos="125 175 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="25.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
+         kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="wholeDLabel" id="5aa96ffcf47310ae" memberName="wholeDLabel"
          virtualName="" explicitFocusOrder="0" pos="250 175 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="25.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
+         kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="wholeTLabel" id="acb484e802c4fea9" memberName="wholeTLabel"
          virtualName="" explicitFocusOrder="0" pos="375 175 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="&#10;" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="25.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
+         kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="halfNLabel" id="fb1b90b40fe022a1" memberName="halfNLabel"
          virtualName="" explicitFocusOrder="0" pos="125 215 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="25.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
+         kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="halfDLabel" id="29a3d055318a2256" memberName="halfDLabel"
          virtualName="" explicitFocusOrder="0" pos="250 215 125 28" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="25.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
+         kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="halfTLabel" id="474722dc22cd155b" memberName="halfTLabel"
          virtualName="" explicitFocusOrder="0" pos="375 215 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="25.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
+         kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="quarterNLabel" id="a0b43f6d2cebf017" memberName="quarterNLabel"
          virtualName="" explicitFocusOrder="0" pos="125 255 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="25.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
+         kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="quarterDLabel" id="6e5caff96007dec1" memberName="quarterDLabel"
          virtualName="" explicitFocusOrder="0" pos="250 255 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="25.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
+         kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="quarterTLabel" id="fe2643302e963795" memberName="quarterTLabel"
          virtualName="" explicitFocusOrder="0" pos="375 255 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="25.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
+         kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="v8thNLabel" id="aabf4b6c5866f43a" memberName="v8thNLabel"
          virtualName="" explicitFocusOrder="0" pos="125 295 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="25.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
+         kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="v8thDLabel" id="df0f0f30eec2686f" memberName="v8thDLabel"
          virtualName="" explicitFocusOrder="0" pos="250 295 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="25.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
+         kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="v8thTLabel" id="7b34c480a75f818" memberName="v8thTLabel"
          virtualName="" explicitFocusOrder="0" pos="375 295 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="25.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
+         kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="v16thNLabel" id="4b90b919d39c55aa" memberName="v16thNLabel"
          virtualName="" explicitFocusOrder="0" pos="125 335 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="25.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
+         kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="v16thDLabel" id="b8e062b942bd6161" memberName="v16thDLabel"
          virtualName="" explicitFocusOrder="0" pos="250 335 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="25.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
+         kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="v16thTLabel" id="bc5910a30828043e" memberName="v16thTLabel"
          virtualName="" explicitFocusOrder="0" pos="375 335 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="25.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
+         kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="v32ndNLabel" id="bafdfece957a48cd" memberName="v32ndNLabel"
          virtualName="" explicitFocusOrder="0" pos="125 375 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="25.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
+         kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="v32ndDLabel" id="d6c4232d51ea521d" memberName="v32ndDLabel"
          virtualName="" explicitFocusOrder="0" pos="250 375 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="25.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
+         kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="v32ndTLabel" id="c94aa63d85789829" memberName="v32ndTLabel"
          virtualName="" explicitFocusOrder="0" pos="375 375 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="25.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
+         kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="v64thNLabel" id="aba83195d8170afc" memberName="v64thNLabel"
          virtualName="" explicitFocusOrder="0" pos="125 415 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="25.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
+         kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="v64thDLabel" id="90fef0b42ac08a69" memberName="v64thDLabel"
          virtualName="" explicitFocusOrder="0" pos="250 415 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="25.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
+         kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="v64thTLabel" id="432ffa6d219d869e" memberName="v64thTLabel"
          virtualName="" explicitFocusOrder="0" pos="375 415 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="25.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
+         kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="v128thNLabel" id="a76923820541582b" memberName="v128thNLabel"
          virtualName="" explicitFocusOrder="0" pos="125 455 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="25.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
+         kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="v128thDLabel" id="9379aa3476074fe5" memberName="v128thDLabel"
          virtualName="" explicitFocusOrder="0" pos="250 455 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="25.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
+         kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="v128thTLabel" id="c3b2f04614c1679d" memberName="v128thTLabel"
          virtualName="" explicitFocusOrder="0" pos="375 455 125 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Default font" fontsize="25.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="33"/>
+         focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
+         kerning="0.0" bold="0" italic="0" justification="33"/>
   <TOGGLEBUTTON name="hzToggle" id="3e5aa37d8e5a6de5" memberName="hzToggle" virtualName=""
                 explicitFocusOrder="0" pos="63 150 62 20" buttonText="Hz" connectedEdges="0"
                 needsCallback="1" radioGroupId="0" state="0"/>
@@ -1343,13 +1331,13 @@ BEGIN_JUCER_METADATA
   <LABEL name="bpmLabel" id="6bb4ca2a493b0d2e" memberName="bpmLabel" virtualName=""
          explicitFocusOrder="0" pos="300 60 101 30" edTextCol="ff000000"
          edBkgCol="0" labelText="BPM" editableSingleClick="0" editableDoubleClick="0"
-         focusDiscardsChanges="0" fontname="Arial" fontsize="30.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
+         focusDiscardsChanges="0" fontname="Arial" fontsize="30.0" kerning="0.0"
+         bold="0" italic="0" justification="36"/>
   <LABEL name="bpmValuesLabel" id="387c95ffe56ba517" memberName="bpmValuesLabel"
          virtualName="" explicitFocusOrder="0" pos="190 60 120 30" edTextCol="ff000000"
          edBkgCol="0" labelText="" editableSingleClick="1" editableDoubleClick="1"
-         focusDiscardsChanges="0" fontname="Arial" fontsize="30.00000000000000000000"
-         kerning="0.00000000000000000000" bold="0" italic="0" justification="36"/>
+         focusDiscardsChanges="0" fontname="Arial" fontsize="30.0" kerning="0.0"
+         bold="0" italic="0" justification="36"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA
@@ -1359,3 +1347,4 @@ END_JUCER_METADATA
 
 //[EndFile] You can add extra defines here...
 //[/EndFile]
+
