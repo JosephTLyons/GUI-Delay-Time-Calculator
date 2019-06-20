@@ -226,9 +226,10 @@ MainComponent::MainComponent ()
     addAndMakeVisible (wholeNLabel.get());
     wholeNLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     wholeNLabel->setJustificationType (Justification::centredLeft);
-    wholeNLabel->setEditable (false, false, false);
+    wholeNLabel->setEditable (true, true, false);
     wholeNLabel->setColour (TextEditor::textColourId, Colours::black);
     wholeNLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    wholeNLabel->addListener (this);
 
     wholeNLabel->setBounds (125, 175, 125, 30);
 
@@ -237,9 +238,10 @@ MainComponent::MainComponent ()
     addAndMakeVisible (wholeDLabel.get());
     wholeDLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     wholeDLabel->setJustificationType (Justification::centredLeft);
-    wholeDLabel->setEditable (false, false, false);
+    wholeDLabel->setEditable (true, true, false);
     wholeDLabel->setColour (TextEditor::textColourId, Colours::black);
     wholeDLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    wholeDLabel->addListener (this);
 
     wholeDLabel->setBounds (250, 175, 125, 30);
 
@@ -248,9 +250,10 @@ MainComponent::MainComponent ()
     addAndMakeVisible (wholeTLabel.get());
     wholeTLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     wholeTLabel->setJustificationType (Justification::centredLeft);
-    wholeTLabel->setEditable (false, false, false);
+    wholeTLabel->setEditable (true, true, false);
     wholeTLabel->setColour (TextEditor::textColourId, Colours::black);
     wholeTLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    wholeTLabel->addListener (this);
 
     wholeTLabel->setBounds (375, 175, 125, 30);
 
@@ -259,9 +262,10 @@ MainComponent::MainComponent ()
     addAndMakeVisible (halfNLabel.get());
     halfNLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     halfNLabel->setJustificationType (Justification::centredLeft);
-    halfNLabel->setEditable (false, false, false);
+    halfNLabel->setEditable (true, true, false);
     halfNLabel->setColour (TextEditor::textColourId, Colours::black);
     halfNLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    halfNLabel->addListener (this);
 
     halfNLabel->setBounds (125, 215, 125, 30);
 
@@ -270,9 +274,10 @@ MainComponent::MainComponent ()
     addAndMakeVisible (halfDLabel.get());
     halfDLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     halfDLabel->setJustificationType (Justification::centredLeft);
-    halfDLabel->setEditable (false, false, false);
+    halfDLabel->setEditable (true, true, false);
     halfDLabel->setColour (TextEditor::textColourId, Colours::black);
     halfDLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    halfDLabel->addListener (this);
 
     halfDLabel->setBounds (250, 215, 125, 28);
 
@@ -281,9 +286,10 @@ MainComponent::MainComponent ()
     addAndMakeVisible (halfTLabel.get());
     halfTLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     halfTLabel->setJustificationType (Justification::centredLeft);
-    halfTLabel->setEditable (false, false, false);
+    halfTLabel->setEditable (true, true, false);
     halfTLabel->setColour (TextEditor::textColourId, Colours::black);
     halfTLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    halfTLabel->addListener (this);
 
     halfTLabel->setBounds (375, 215, 125, 30);
 
@@ -292,9 +298,10 @@ MainComponent::MainComponent ()
     addAndMakeVisible (quarterNLabel.get());
     quarterNLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     quarterNLabel->setJustificationType (Justification::centredLeft);
-    quarterNLabel->setEditable (false, false, false);
+    quarterNLabel->setEditable (true, true, false);
     quarterNLabel->setColour (TextEditor::textColourId, Colours::black);
     quarterNLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    quarterNLabel->addListener (this);
 
     quarterNLabel->setBounds (125, 255, 125, 30);
 
@@ -303,9 +310,10 @@ MainComponent::MainComponent ()
     addAndMakeVisible (quarterDLabel.get());
     quarterDLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     quarterDLabel->setJustificationType (Justification::centredLeft);
-    quarterDLabel->setEditable (false, false, false);
+    quarterDLabel->setEditable (true, true, false);
     quarterDLabel->setColour (TextEditor::textColourId, Colours::black);
     quarterDLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    quarterDLabel->addListener (this);
 
     quarterDLabel->setBounds (250, 255, 125, 30);
 
@@ -314,9 +322,10 @@ MainComponent::MainComponent ()
     addAndMakeVisible (quarterTLabel.get());
     quarterTLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     quarterTLabel->setJustificationType (Justification::centredLeft);
-    quarterTLabel->setEditable (false, false, false);
+    quarterTLabel->setEditable (true, true, false);
     quarterTLabel->setColour (TextEditor::textColourId, Colours::black);
     quarterTLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    quarterTLabel->addListener (this);
 
     quarterTLabel->setBounds (375, 255, 125, 30);
 
@@ -325,9 +334,10 @@ MainComponent::MainComponent ()
     addAndMakeVisible (v8thNLabel.get());
     v8thNLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     v8thNLabel->setJustificationType (Justification::centredLeft);
-    v8thNLabel->setEditable (false, false, false);
+    v8thNLabel->setEditable (true, true, false);
     v8thNLabel->setColour (TextEditor::textColourId, Colours::black);
     v8thNLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    v8thNLabel->addListener (this);
 
     v8thNLabel->setBounds (125, 295, 125, 30);
 
@@ -336,9 +346,10 @@ MainComponent::MainComponent ()
     addAndMakeVisible (v8thDLabel.get());
     v8thDLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     v8thDLabel->setJustificationType (Justification::centredLeft);
-    v8thDLabel->setEditable (false, false, false);
+    v8thDLabel->setEditable (true, true, false);
     v8thDLabel->setColour (TextEditor::textColourId, Colours::black);
     v8thDLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    v8thDLabel->addListener (this);
 
     v8thDLabel->setBounds (250, 295, 125, 30);
 
@@ -347,9 +358,10 @@ MainComponent::MainComponent ()
     addAndMakeVisible (v8thTLabel.get());
     v8thTLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     v8thTLabel->setJustificationType (Justification::centredLeft);
-    v8thTLabel->setEditable (false, false, false);
+    v8thTLabel->setEditable (true, true, false);
     v8thTLabel->setColour (TextEditor::textColourId, Colours::black);
     v8thTLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    v8thTLabel->addListener (this);
 
     v8thTLabel->setBounds (375, 295, 125, 30);
 
@@ -358,9 +370,10 @@ MainComponent::MainComponent ()
     addAndMakeVisible (v16thNLabel.get());
     v16thNLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     v16thNLabel->setJustificationType (Justification::centredLeft);
-    v16thNLabel->setEditable (false, false, false);
+    v16thNLabel->setEditable (true, true, false);
     v16thNLabel->setColour (TextEditor::textColourId, Colours::black);
     v16thNLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    v16thNLabel->addListener (this);
 
     v16thNLabel->setBounds (125, 335, 125, 30);
 
@@ -369,9 +382,10 @@ MainComponent::MainComponent ()
     addAndMakeVisible (v16thDLabel.get());
     v16thDLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     v16thDLabel->setJustificationType (Justification::centredLeft);
-    v16thDLabel->setEditable (false, false, false);
+    v16thDLabel->setEditable (true, true, false);
     v16thDLabel->setColour (TextEditor::textColourId, Colours::black);
     v16thDLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    v16thDLabel->addListener (this);
 
     v16thDLabel->setBounds (250, 335, 125, 30);
 
@@ -380,9 +394,10 @@ MainComponent::MainComponent ()
     addAndMakeVisible (v16thTLabel.get());
     v16thTLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     v16thTLabel->setJustificationType (Justification::centredLeft);
-    v16thTLabel->setEditable (false, false, false);
+    v16thTLabel->setEditable (true, true, false);
     v16thTLabel->setColour (TextEditor::textColourId, Colours::black);
     v16thTLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    v16thTLabel->addListener (this);
 
     v16thTLabel->setBounds (375, 335, 125, 30);
 
@@ -391,9 +406,10 @@ MainComponent::MainComponent ()
     addAndMakeVisible (v32ndNLabel.get());
     v32ndNLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     v32ndNLabel->setJustificationType (Justification::centredLeft);
-    v32ndNLabel->setEditable (false, false, false);
+    v32ndNLabel->setEditable (true, true, false);
     v32ndNLabel->setColour (TextEditor::textColourId, Colours::black);
     v32ndNLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    v32ndNLabel->addListener (this);
 
     v32ndNLabel->setBounds (125, 375, 125, 30);
 
@@ -402,9 +418,10 @@ MainComponent::MainComponent ()
     addAndMakeVisible (v32ndDLabel.get());
     v32ndDLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     v32ndDLabel->setJustificationType (Justification::centredLeft);
-    v32ndDLabel->setEditable (false, false, false);
+    v32ndDLabel->setEditable (true, true, false);
     v32ndDLabel->setColour (TextEditor::textColourId, Colours::black);
     v32ndDLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    v32ndDLabel->addListener (this);
 
     v32ndDLabel->setBounds (250, 375, 125, 30);
 
@@ -413,9 +430,10 @@ MainComponent::MainComponent ()
     addAndMakeVisible (v32ndTLabel.get());
     v32ndTLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     v32ndTLabel->setJustificationType (Justification::centredLeft);
-    v32ndTLabel->setEditable (false, false, false);
+    v32ndTLabel->setEditable (true, true, false);
     v32ndTLabel->setColour (TextEditor::textColourId, Colours::black);
     v32ndTLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    v32ndTLabel->addListener (this);
 
     v32ndTLabel->setBounds (375, 375, 125, 30);
 
@@ -424,9 +442,10 @@ MainComponent::MainComponent ()
     addAndMakeVisible (v64thNLabel.get());
     v64thNLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     v64thNLabel->setJustificationType (Justification::centredLeft);
-    v64thNLabel->setEditable (false, false, false);
+    v64thNLabel->setEditable (true, true, false);
     v64thNLabel->setColour (TextEditor::textColourId, Colours::black);
     v64thNLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    v64thNLabel->addListener (this);
 
     v64thNLabel->setBounds (125, 415, 125, 30);
 
@@ -435,9 +454,10 @@ MainComponent::MainComponent ()
     addAndMakeVisible (v64thDLabel.get());
     v64thDLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     v64thDLabel->setJustificationType (Justification::centredLeft);
-    v64thDLabel->setEditable (false, false, false);
+    v64thDLabel->setEditable (true, true, false);
     v64thDLabel->setColour (TextEditor::textColourId, Colours::black);
     v64thDLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    v64thDLabel->addListener (this);
 
     v64thDLabel->setBounds (250, 415, 125, 30);
 
@@ -446,9 +466,10 @@ MainComponent::MainComponent ()
     addAndMakeVisible (v64thTLabel.get());
     v64thTLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     v64thTLabel->setJustificationType (Justification::centredLeft);
-    v64thTLabel->setEditable (false, false, false);
+    v64thTLabel->setEditable (true, true, false);
     v64thTLabel->setColour (TextEditor::textColourId, Colours::black);
     v64thTLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    v64thTLabel->addListener (this);
 
     v64thTLabel->setBounds (375, 415, 125, 30);
 
@@ -457,9 +478,10 @@ MainComponent::MainComponent ()
     addAndMakeVisible (v128thNLabel.get());
     v128thNLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     v128thNLabel->setJustificationType (Justification::centredLeft);
-    v128thNLabel->setEditable (false, false, false);
+    v128thNLabel->setEditable (true, true, false);
     v128thNLabel->setColour (TextEditor::textColourId, Colours::black);
     v128thNLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    v128thNLabel->addListener (this);
 
     v128thNLabel->setBounds (125, 455, 125, 30);
 
@@ -468,9 +490,10 @@ MainComponent::MainComponent ()
     addAndMakeVisible (v128thDLabel.get());
     v128thDLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     v128thDLabel->setJustificationType (Justification::centredLeft);
-    v128thDLabel->setEditable (false, false, false);
+    v128thDLabel->setEditable (true, true, false);
     v128thDLabel->setColour (TextEditor::textColourId, Colours::black);
     v128thDLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    v128thDLabel->addListener (this);
 
     v128thDLabel->setBounds (250, 455, 125, 30);
 
@@ -479,9 +502,10 @@ MainComponent::MainComponent ()
     addAndMakeVisible (v128thTLabel.get());
     v128thTLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
     v128thTLabel->setJustificationType (Justification::centredLeft);
-    v128thTLabel->setEditable (false, false, false);
+    v128thTLabel->setEditable (true, true, false);
     v128thTLabel->setColour (TextEditor::textColourId, Colours::black);
     v128thTLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    v128thTLabel->addListener (this);
 
     v128thTLabel->setBounds (375, 455, 125, 30);
 
@@ -557,6 +581,31 @@ MainComponent::MainComponent ()
     tapButton->setTriggeredOnMouseDown (true);
 
     bpmValuesLabel->addListener (this);
+
+    wholeNLabel->addListener (this);
+    wholeDLabel->addListener (this);
+    wholeTLabel->addListener (this);
+    halfNLabel->addListener (this);
+    halfNLabel->addListener (this);
+    halfNLabel->addListener (this);
+    quarterNLabel->addListener (this);
+    quarterNLabel->addListener (this);
+    quarterNLabel->addListener (this);
+    v8thNLabel->addListener (this);
+    v8thNLabel->addListener (this);
+    v8thNLabel->addListener (this);
+    v16thNLabel->addListener (this);
+    v16thNLabel->addListener (this);
+    v16thNLabel->addListener (this);
+    v32ndNLabel->addListener (this);
+    v32ndNLabel->addListener (this);
+    v32ndNLabel->addListener (this);
+    v64thNLabel->addListener (this);
+    v64thNLabel->addListener (this);
+    v64thNLabel->addListener (this);
+    v128thNLabel->addListener (this);
+    v128thNLabel->addListener (this);
+    v128thNLabel->addListener (this);
 
     delayTimeCalculatorLabel->addMouseListener (this, false);
 
@@ -773,7 +822,295 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     //[UserlabelTextChanged_Pre]
     //[/UserlabelTextChanged_Pre]
 
-    if (labelThatHasChanged == bpmValuesLabel.get())
+    if (labelThatHasChanged == wholeNLabel.get())
+    {
+        //[UserLabelCode_wholeNLabel] -- add your label text handling code here..
+
+        if (msToggle->getToggleState())
+            tempoSlider->setValue ((60000 / wholeNLabel->getTextValue().toString().getDoubleValue()) * 4);
+
+        else
+            tempoSlider->setValue ((60 * wholeNLabel->getTextValue().toString().getDoubleValue()) * 4);
+
+        //[/UserLabelCode_wholeNLabel]
+    }
+    else if (labelThatHasChanged == wholeDLabel.get())
+    {
+        //[UserLabelCode_wholeDLabel] -- add your label text handling code here..
+
+//        if (msToggle->getToggleState())
+//            tempoSlider->setValue ((60000 / wholeNLabel->getTextValue().toString().getDoubleValue()) * 2);
+//
+//        else
+//            tempoSlider->setValue ((60 * wholeNLabel->getTextValue().toString().getDoubleValue()) * 2);
+
+        //[/UserLabelCode_wholeDLabel]
+    }
+    else if (labelThatHasChanged == wholeTLabel.get())
+    {
+        //[UserLabelCode_wholeTLabel] -- add your label text handling code here..
+
+//        if (msToggle->getToggleState())
+//            calculateTempoFromMilliseconds();
+//
+//        else
+//            calculateTempoFromHertz();
+
+        //[/UserLabelCode_wholeTLabel]
+    }
+    else if (labelThatHasChanged == halfNLabel.get())
+    {
+        //[UserLabelCode_halfNLabel] -- add your label text handling code here..
+
+        if (msToggle->getToggleState())
+            tempoSlider->setValue ((60000 / halfNLabel->getTextValue().toString().getDoubleValue()) * 2);
+
+        else
+            tempoSlider->setValue ((60 * halfNLabel->getTextValue().toString().getDoubleValue()) * 2);
+
+        //[/UserLabelCode_halfNLabel]
+    }
+    else if (labelThatHasChanged == halfDLabel.get())
+    {
+        //[UserLabelCode_halfDLabel] -- add your label text handling code here..
+
+//        if (msToggle->getToggleState())
+//            calculateTempoFromMilliseconds();
+//
+//        else
+//            calculateTempoFromHertz();
+
+        //[/UserLabelCode_halfDLabel]
+    }
+    else if (labelThatHasChanged == halfTLabel.get())
+    {
+        //[UserLabelCode_halfTLabel] -- add your label text handling code here..
+
+//        if (msToggle->getToggleState())
+//            calculateTempoFromMilliseconds();
+//
+//        else
+//            calculateTempoFromHertz();
+
+        //[/UserLabelCode_halfTLabel]
+    }
+    else if (labelThatHasChanged == quarterNLabel.get())
+    {
+        //[UserLabelCode_quarterNLabel] -- add your label text handling code here..
+
+//        if (msToggle->getToggleState())
+//            calculateTempoFromMilliseconds();
+//
+//        else
+//            calculateTempoFromHertz();
+
+        //[/UserLabelCode_quarterNLabel]
+    }
+    else if (labelThatHasChanged == quarterDLabel.get())
+    {
+        //[UserLabelCode_quarterDLabel] -- add your label text handling code here..
+
+//        if (msToggle->getToggleState())
+//            calculateTempoFromMilliseconds();
+//
+//        else
+//            calculateTempoFromHertz();
+
+        //[/UserLabelCode_quarterDLabel]
+    }
+    else if (labelThatHasChanged == quarterTLabel.get())
+    {
+        //[UserLabelCode_quarterTLabel] -- add your label text handling code here..
+
+//        if (msToggle->getToggleState())
+//            calculateTempoFromMilliseconds();
+//
+//        else
+//            calculateTempoFromHertz();
+
+        //[/UserLabelCode_quarterTLabel]
+    }
+    else if (labelThatHasChanged == v8thNLabel.get())
+    {
+        //[UserLabelCode_v8thNLabel] -- add your label text handling code here..
+
+//        if (msToggle->getToggleState())
+//            calculateTempoFromMilliseconds();
+//
+//        else
+//            calculateTempoFromHertz();
+
+        //[/UserLabelCode_v8thNLabel]
+    }
+    else if (labelThatHasChanged == v8thDLabel.get())
+    {
+        //[UserLabelCode_v8thDLabel] -- add your label text handling code here..
+
+//        if (msToggle->getToggleState())
+//            calculateTempoFromMilliseconds();
+//
+//        else
+//            calculateTempoFromHertz();
+
+        //[/UserLabelCode_v8thDLabel]
+    }
+    else if (labelThatHasChanged == v8thTLabel.get())
+    {
+        //[UserLabelCode_v8thTLabel] -- add your label text handling code here..
+
+//        if (msToggle->getToggleState())
+//            calculateTempoFromMilliseconds();
+//
+//        else
+//            calculateTempoFromHertz();
+
+        //[/UserLabelCode_v8thTLabel]
+    }
+    else if (labelThatHasChanged == v16thNLabel.get())
+    {
+        //[UserLabelCode_v16thNLabel] -- add your label text handling code here..
+
+//        if (msToggle->getToggleState())
+//            calculateTempoFromMilliseconds();
+//
+//        else
+//            calculateTempoFromHertz();
+
+        //[/UserLabelCode_v16thNLabel]
+    }
+    else if (labelThatHasChanged == v16thDLabel.get())
+    {
+        //[UserLabelCode_v16thDLabel] -- add your label text handling code here..
+
+//        if (msToggle->getToggleState())
+//            calculateTempoFromMilliseconds();
+//
+//        else
+//            calculateTempoFromHertz();
+
+        //[/UserLabelCode_v16thDLabel]
+    }
+    else if (labelThatHasChanged == v16thTLabel.get())
+    {
+        //[UserLabelCode_v16thTLabel] -- add your label text handling code here..
+
+//        if (msToggle->getToggleState())
+//            calculateTempoFromMilliseconds();
+//
+//        else
+//            calculateTempoFromHertz();
+
+        //[/UserLabelCode_v16thTLabel]
+    }
+    else if (labelThatHasChanged == v32ndNLabel.get())
+    {
+        //[UserLabelCode_v32ndNLabel] -- add your label text handling code here..
+
+//        if (msToggle->getToggleState())
+//            calculateTempoFromMilliseconds();
+//
+//        else
+//            calculateTempoFromHertz();
+
+        //[/UserLabelCode_v32ndNLabel]
+    }
+    else if (labelThatHasChanged == v32ndDLabel.get())
+    {
+        //[UserLabelCode_v32ndDLabel] -- add your label text handling code here..
+
+//        if (msToggle->getToggleState())
+//            calculateTempoFromMilliseconds();
+//
+//        else
+//            calculateTempoFromHertz();
+
+        //[/UserLabelCode_v32ndDLabel]
+    }
+    else if (labelThatHasChanged == v32ndTLabel.get())
+    {
+        //[UserLabelCode_v32ndTLabel] -- add your label text handling code here..
+
+//        if (msToggle->getToggleState())
+//            calculateTempoFromMilliseconds();
+//
+//        else
+//            calculateTempoFromHertz();
+
+        //[/UserLabelCode_v32ndTLabel]
+    }
+    else if (labelThatHasChanged == v64thNLabel.get())
+    {
+        //[UserLabelCode_v64thNLabel] -- add your label text handling code here..
+
+//        if (msToggle->getToggleState())
+//            calculateTempoFromMilliseconds();
+//
+//        else
+//            calculateTempoFromHertz();
+
+        //[/UserLabelCode_v64thNLabel]
+    }
+    else if (labelThatHasChanged == v64thDLabel.get())
+    {
+        //[UserLabelCode_v64thDLabel] -- add your label text handling code here..
+
+//        if (msToggle->getToggleState())
+//            calculateTempoFromMilliseconds();
+//
+//        else
+//            calculateTempoFromHertz();
+
+        //[/UserLabelCode_v64thDLabel]
+    }
+    else if (labelThatHasChanged == v64thTLabel.get())
+    {
+        //[UserLabelCode_v64thTLabel] -- add your label text handling code here..
+
+//        if (msToggle->getToggleState())
+//            calculateTempoFromMilliseconds();
+//
+//        else
+//            calculateTempoFromHertz();
+
+        //[/UserLabelCode_v64thTLabel]
+    }
+    else if (labelThatHasChanged == v128thNLabel.get())
+    {
+        //[UserLabelCode_v128thNLabel] -- add your label text handling code here..
+
+//        if (msToggle->getToggleState())
+//            calculateTempoFromMilliseconds();
+//
+//        else
+//            calculateTempoFromHertz();
+
+        //[/UserLabelCode_v128thNLabel]
+    }
+    else if (labelThatHasChanged == v128thDLabel.get())
+    {
+        //[UserLabelCode_v128thDLabel] -- add your label text handling code here..
+
+//        if (msToggle->getToggleState())
+//            calculateTempoFromMilliseconds();
+//
+//        else
+//            calculateTempoFromHertz();
+
+        //[/UserLabelCode_v128thDLabel]
+    }
+    else if (labelThatHasChanged == v128thTLabel.get())
+    {
+        //[UserLabelCode_v128thTLabel] -- add your label text handling code here..
+
+//        if (msToggle->getToggleState())
+//            calculateTempoFromMilliseconds();
+//
+//        else
+//            calculateTempoFromHertz();
+
+        //[/UserLabelCode_v128thTLabel]
+    }
+    else if (labelThatHasChanged == bpmValuesLabel.get())
     {
         //[UserLabelCode_bpmValuesLabel] -- add your label text handling code here..
 
@@ -881,6 +1218,8 @@ bool MainComponent::keyPressed (const KeyPress& key)
 
     //[/UserCode_keyPressed]
 }
+
+
 
 //[MiscUserCode] You can add your own definitions of your custom methods or any other code here...
 
@@ -1198,122 +1537,122 @@ BEGIN_JUCER_METADATA
               needsCallback="1" radioGroupId="0"/>
   <LABEL name="wholeNLabel" id="3b0b371f9cfffd20" memberName="wholeNLabel"
          virtualName="" explicitFocusOrder="0" pos="125 175 125 30" edTextCol="ff000000"
-         edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
+         edBkgCol="0" labelText="" editableSingleClick="1" editableDoubleClick="1"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
          kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="wholeDLabel" id="5aa96ffcf47310ae" memberName="wholeDLabel"
          virtualName="" explicitFocusOrder="0" pos="250 175 125 30" edTextCol="ff000000"
-         edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
+         edBkgCol="0" labelText="" editableSingleClick="1" editableDoubleClick="1"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
          kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="wholeTLabel" id="acb484e802c4fea9" memberName="wholeTLabel"
          virtualName="" explicitFocusOrder="0" pos="375 175 125 30" edTextCol="ff000000"
-         edBkgCol="0" labelText="&#10;" editableSingleClick="0" editableDoubleClick="0"
+         edBkgCol="0" labelText="&#10;" editableSingleClick="1" editableDoubleClick="1"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
          kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="halfNLabel" id="fb1b90b40fe022a1" memberName="halfNLabel"
          virtualName="" explicitFocusOrder="0" pos="125 215 125 30" edTextCol="ff000000"
-         edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
+         edBkgCol="0" labelText="" editableSingleClick="1" editableDoubleClick="1"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
          kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="halfDLabel" id="29a3d055318a2256" memberName="halfDLabel"
          virtualName="" explicitFocusOrder="0" pos="250 215 125 28" edTextCol="ff000000"
-         edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
+         edBkgCol="0" labelText="" editableSingleClick="1" editableDoubleClick="1"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
          kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="halfTLabel" id="474722dc22cd155b" memberName="halfTLabel"
          virtualName="" explicitFocusOrder="0" pos="375 215 125 30" edTextCol="ff000000"
-         edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
+         edBkgCol="0" labelText="" editableSingleClick="1" editableDoubleClick="1"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
          kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="quarterNLabel" id="a0b43f6d2cebf017" memberName="quarterNLabel"
          virtualName="" explicitFocusOrder="0" pos="125 255 125 30" edTextCol="ff000000"
-         edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
+         edBkgCol="0" labelText="" editableSingleClick="1" editableDoubleClick="1"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
          kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="quarterDLabel" id="6e5caff96007dec1" memberName="quarterDLabel"
          virtualName="" explicitFocusOrder="0" pos="250 255 125 30" edTextCol="ff000000"
-         edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
+         edBkgCol="0" labelText="" editableSingleClick="1" editableDoubleClick="1"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
          kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="quarterTLabel" id="fe2643302e963795" memberName="quarterTLabel"
          virtualName="" explicitFocusOrder="0" pos="375 255 125 30" edTextCol="ff000000"
-         edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
+         edBkgCol="0" labelText="" editableSingleClick="1" editableDoubleClick="1"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
          kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="v8thNLabel" id="aabf4b6c5866f43a" memberName="v8thNLabel"
          virtualName="" explicitFocusOrder="0" pos="125 295 125 30" edTextCol="ff000000"
-         edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
+         edBkgCol="0" labelText="" editableSingleClick="1" editableDoubleClick="1"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
          kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="v8thDLabel" id="df0f0f30eec2686f" memberName="v8thDLabel"
          virtualName="" explicitFocusOrder="0" pos="250 295 125 30" edTextCol="ff000000"
-         edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
+         edBkgCol="0" labelText="" editableSingleClick="1" editableDoubleClick="1"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
          kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="v8thTLabel" id="7b34c480a75f818" memberName="v8thTLabel"
          virtualName="" explicitFocusOrder="0" pos="375 295 125 30" edTextCol="ff000000"
-         edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
+         edBkgCol="0" labelText="" editableSingleClick="1" editableDoubleClick="1"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
          kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="v16thNLabel" id="4b90b919d39c55aa" memberName="v16thNLabel"
          virtualName="" explicitFocusOrder="0" pos="125 335 125 30" edTextCol="ff000000"
-         edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
+         edBkgCol="0" labelText="" editableSingleClick="1" editableDoubleClick="1"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
          kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="v16thDLabel" id="b8e062b942bd6161" memberName="v16thDLabel"
          virtualName="" explicitFocusOrder="0" pos="250 335 125 30" edTextCol="ff000000"
-         edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
+         edBkgCol="0" labelText="" editableSingleClick="1" editableDoubleClick="1"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
          kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="v16thTLabel" id="bc5910a30828043e" memberName="v16thTLabel"
          virtualName="" explicitFocusOrder="0" pos="375 335 125 30" edTextCol="ff000000"
-         edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
+         edBkgCol="0" labelText="" editableSingleClick="1" editableDoubleClick="1"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
          kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="v32ndNLabel" id="bafdfece957a48cd" memberName="v32ndNLabel"
          virtualName="" explicitFocusOrder="0" pos="125 375 125 30" edTextCol="ff000000"
-         edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
+         edBkgCol="0" labelText="" editableSingleClick="1" editableDoubleClick="1"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
          kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="v32ndDLabel" id="d6c4232d51ea521d" memberName="v32ndDLabel"
          virtualName="" explicitFocusOrder="0" pos="250 375 125 30" edTextCol="ff000000"
-         edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
+         edBkgCol="0" labelText="" editableSingleClick="1" editableDoubleClick="1"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
          kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="v32ndTLabel" id="c94aa63d85789829" memberName="v32ndTLabel"
          virtualName="" explicitFocusOrder="0" pos="375 375 125 30" edTextCol="ff000000"
-         edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
+         edBkgCol="0" labelText="" editableSingleClick="1" editableDoubleClick="1"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
          kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="v64thNLabel" id="aba83195d8170afc" memberName="v64thNLabel"
          virtualName="" explicitFocusOrder="0" pos="125 415 125 30" edTextCol="ff000000"
-         edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
+         edBkgCol="0" labelText="" editableSingleClick="1" editableDoubleClick="1"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
          kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="v64thDLabel" id="90fef0b42ac08a69" memberName="v64thDLabel"
          virtualName="" explicitFocusOrder="0" pos="250 415 125 30" edTextCol="ff000000"
-         edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
+         edBkgCol="0" labelText="" editableSingleClick="1" editableDoubleClick="1"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
          kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="v64thTLabel" id="432ffa6d219d869e" memberName="v64thTLabel"
          virtualName="" explicitFocusOrder="0" pos="375 415 125 30" edTextCol="ff000000"
-         edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
+         edBkgCol="0" labelText="" editableSingleClick="1" editableDoubleClick="1"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
          kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="v128thNLabel" id="a76923820541582b" memberName="v128thNLabel"
          virtualName="" explicitFocusOrder="0" pos="125 455 125 30" edTextCol="ff000000"
-         edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
+         edBkgCol="0" labelText="" editableSingleClick="1" editableDoubleClick="1"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
          kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="v128thDLabel" id="9379aa3476074fe5" memberName="v128thDLabel"
          virtualName="" explicitFocusOrder="0" pos="250 455 125 30" edTextCol="ff000000"
-         edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
+         edBkgCol="0" labelText="" editableSingleClick="1" editableDoubleClick="1"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
          kerning="0.0" bold="0" italic="0" justification="33"/>
   <LABEL name="v128thTLabel" id="c3b2f04614c1679d" memberName="v128thTLabel"
          virtualName="" explicitFocusOrder="0" pos="375 455 125 30" edTextCol="ff000000"
-         edBkgCol="0" labelText="" editableSingleClick="0" editableDoubleClick="0"
+         edBkgCol="0" labelText="" editableSingleClick="1" editableDoubleClick="1"
          focusDiscardsChanges="0" fontname="Default font" fontsize="25.0"
          kerning="0.0" bold="0" italic="0" justification="33"/>
   <TOGGLEBUTTON name="hzToggle" id="3e5aa37d8e5a6de5" memberName="hzToggle" virtualName=""
