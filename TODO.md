@@ -11,6 +11,7 @@
 * Embed font instead of assume it is on user's computer
 * Remove slider and use a text box that can be changed by clicking and dragging?
 * Make installer
+* Allow for input into the fields to derive a BPM value
 
 # Bugs to Fix:
 * None reported
