@@ -113,11 +113,11 @@ double hertzToTempo (const double& hertz, const Note& note, const NoteModifier& 
             break;
 
         case NoteModifier::dotted:
-            tempo *= 1.5;
+            tempo /= (2 / 3.0f);
             break;
 
         case NoteModifier::triplet:
-            tempo *= (2 / 3.0f);
+            tempo /= 1.5;
             break;
     }
 
