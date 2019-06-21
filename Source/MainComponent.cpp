@@ -828,7 +828,7 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_wholeNLabel] -- add your label text handling code here..
 
-        setTempoFromLabelValue(wholeNLabel, Note::whole, NoteModifier::normal);
+        setTempoFromLabelValue (wholeNLabel, Note::whole, NoteModifier::normal);
 
         //[/UserLabelCode_wholeNLabel]
     }
@@ -836,7 +836,7 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_wholeDLabel] -- add your label text handling code here..
 
-        setTempoFromLabelValue(wholeDLabel, Note::whole, NoteModifier::dotted);
+        setTempoFromLabelValue (wholeDLabel, Note::whole, NoteModifier::dotted);
 
         //[/UserLabelCode_wholeDLabel]
     }
@@ -844,7 +844,7 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_wholeTLabel] -- add your label text handling code here..
 
-        setTempoFromLabelValue(wholeTLabel, Note::whole, NoteModifier::triplet);
+        setTempoFromLabelValue (wholeTLabel, Note::whole, NoteModifier::triplet);
 
         //[/UserLabelCode_wholeTLabel]
     }
@@ -852,7 +852,7 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_halfNLabel] -- add your label text handling code here..
 
-        setTempoFromLabelValue(halfNLabel, Note::half, NoteModifier::normal);
+        setTempoFromLabelValue (halfNLabel, Note::half, NoteModifier::normal);
 
         //[/UserLabelCode_halfNLabel]
     }
@@ -860,7 +860,7 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_halfDLabel] -- add your label text handling code here..
 
-        setTempoFromLabelValue(halfDLabel, Note::half, NoteModifier::dotted);
+        setTempoFromLabelValue (halfDLabel, Note::half, NoteModifier::dotted);
 
         //[/UserLabelCode_halfDLabel]
     }
@@ -868,7 +868,7 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_halfTLabel] -- add your label text handling code here..
 
-        setTempoFromLabelValue(halfTLabel, Note::half, NoteModifier::triplet);
+        setTempoFromLabelValue (halfTLabel, Note::half, NoteModifier::triplet);
 
         //[/UserLabelCode_halfTLabel]
     }
@@ -876,7 +876,7 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_quarterNLabel] -- add your label text handling code here..
 
-        setTempoFromLabelValue(quarterNLabel, Note::quarter, NoteModifier::normal);
+        setTempoFromLabelValue (quarterNLabel, Note::quarter, NoteModifier::normal);
 
         //[/UserLabelCode_quarterNLabel]
     }
@@ -884,7 +884,7 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_quarterDLabel] -- add your label text handling code here..
 
-        setTempoFromLabelValue(quarterDLabel, Note::quarter, NoteModifier::dotted);
+        setTempoFromLabelValue (quarterDLabel, Note::quarter, NoteModifier::dotted);
 
         //[/UserLabelCode_quarterDLabel]
     }
@@ -892,7 +892,7 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_quarterTLabel] -- add your label text handling code here..
 
-        setTempoFromLabelValue(quarterTLabel, Note::quarter, NoteModifier::triplet);
+        setTempoFromLabelValue (quarterTLabel, Note::quarter, NoteModifier::triplet);
 
         //[/UserLabelCode_quarterTLabel]
     }
@@ -900,7 +900,7 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_v8thNLabel] -- add your label text handling code here..
 
-        setTempoFromLabelValue(v8thNLabel, Note::v8th, NoteModifier::normal);
+        setTempoFromLabelValue (v8thNLabel, Note::v8th, NoteModifier::normal);
 
         //[/UserLabelCode_v8thNLabel]
     }
@@ -908,7 +908,7 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_v8thDLabel] -- add your label text handling code here..
 
-        setTempoFromLabelValue(v8thDLabel, Note::v8th, NoteModifier::dotted);
+        setTempoFromLabelValue (v8thDLabel, Note::v8th, NoteModifier::dotted);
 
         //[/UserLabelCode_v8thDLabel]
     }
@@ -916,7 +916,7 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_v8thTLabel] -- add your label text handling code here..
 
-        setTempoFromLabelValue(v8thTLabel, Note::v8th, NoteModifier::triplet);
+        setTempoFromLabelValue (v8thTLabel, Note::v8th, NoteModifier::triplet);
 
         //[/UserLabelCode_v8thTLabel]
     }
@@ -924,7 +924,7 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_v16thNLabel] -- add your label text handling code here..
 
-        setTempoFromLabelValue(v16thNLabel, Note::v16th, NoteModifier::normal);
+        setTempoFromLabelValue (v16thNLabel, Note::v16th, NoteModifier::normal);
 
         //[/UserLabelCode_v16thNLabel]
     }
@@ -932,7 +932,7 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_v16thDLabel] -- add your label text handling code here..
 
-        setTempoFromLabelValue(v16thDLabel, Note::v16th, NoteModifier::dotted);
+        setTempoFromLabelValue (v16thDLabel, Note::v16th, NoteModifier::dotted);
 
         //[/UserLabelCode_v16thDLabel]
     }
@@ -940,7 +940,7 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_v16thTLabel] -- add your label text handling code here..
 
-        setTempoFromLabelValue(v16thTLabel, Note::v16th, NoteModifier::triplet);
+        setTempoFromLabelValue (v16thTLabel, Note::v16th, NoteModifier::triplet);
 
         //[/UserLabelCode_v16thTLabel]
     }
@@ -948,7 +948,7 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_v32ndNLabel] -- add your label text handling code here..
 
-        setTempoFromLabelValue(v32ndNLabel, Note::v32nd, NoteModifier::normal);
+        setTempoFromLabelValue (v32ndNLabel, Note::v32nd, NoteModifier::normal);
 
         //[/UserLabelCode_v32ndNLabel]
     }
@@ -956,7 +956,7 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_v32ndDLabel] -- add your label text handling code here..
 
-        setTempoFromLabelValue(v32ndDLabel, Note::v32nd, NoteModifier::dotted);
+        setTempoFromLabelValue (v32ndDLabel, Note::v32nd, NoteModifier::dotted);
 
         //[/UserLabelCode_v32ndDLabel]
     }
@@ -964,7 +964,7 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_v32ndTLabel] -- add your label text handling code here..
 
-        setTempoFromLabelValue(v32ndTLabel, Note::v32nd, NoteModifier::triplet);
+        setTempoFromLabelValue (v32ndTLabel, Note::v32nd, NoteModifier::triplet);
 
         //[/UserLabelCode_v32ndTLabel]
     }
@@ -972,7 +972,7 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_v64thNLabel] -- add your label text handling code here..
 
-        setTempoFromLabelValue(v64thNLabel, Note::v64th, NoteModifier::normal);
+        setTempoFromLabelValue (v64thNLabel, Note::v64th, NoteModifier::normal);
 
         //[/UserLabelCode_v64thNLabel]
     }
@@ -980,7 +980,7 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_v64thDLabel] -- add your label text handling code here..
 
-        setTempoFromLabelValue(v64thDLabel, Note::v64th, NoteModifier::dotted);
+        setTempoFromLabelValue (v64thDLabel, Note::v64th, NoteModifier::dotted);
 
         //[/UserLabelCode_v64thDLabel]
     }
@@ -988,7 +988,7 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_v64thTLabel] -- add your label text handling code here..
 
-        setTempoFromLabelValue(v64thTLabel, Note::v64th, NoteModifier::triplet);
+        setTempoFromLabelValue (v64thTLabel, Note::v64th, NoteModifier::triplet);
 
         //[/UserLabelCode_v64thTLabel]
     }
@@ -996,7 +996,7 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_v128thNLabel] -- add your label text handling code here..
 
-        setTempoFromLabelValue(v128thNLabel, Note::v128th, NoteModifier::normal);
+        setTempoFromLabelValue (v128thNLabel, Note::v128th, NoteModifier::normal);
 
         //[/UserLabelCode_v128thNLabel]
     }
@@ -1004,7 +1004,7 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_v128thDLabel] -- add your label text handling code here..
 
-        setTempoFromLabelValue(v128thDLabel, Note::v128th, NoteModifier::dotted);
+        setTempoFromLabelValue (v128thDLabel, Note::v128th, NoteModifier::dotted);
 
         //[/UserLabelCode_v128thDLabel]
     }
@@ -1012,7 +1012,7 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_v128thTLabel] -- add your label text handling code here..
 
-        setTempoFromLabelValue(v128thTLabel, Note::v128th, NoteModifier::triplet);
+        setTempoFromLabelValue (v128thTLabel, Note::v128th, NoteModifier::triplet);
 
         //[/UserLabelCode_v128thTLabel]
     }
