@@ -916,7 +916,7 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_v8thTLabel] -- add your label text handling code here..
 
-        setTempoFromLabelValue(v8thDLabel, Note::v8th, NoteModifier::triplet);
+        setTempoFromLabelValue(v8thTLabel, Note::v8th, NoteModifier::triplet);
 
         //[/UserLabelCode_v8thTLabel]
     }
