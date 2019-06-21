@@ -8,7 +8,8 @@
 
 #include "ToTempo.hpp"
 
-double millisecondsToTempo (const double& milliseconds, const Note& note, const NoteModifier& noteModifier)
+double millisecondsToTempo (const double& milliseconds, const Note& note,
+                            const NoteModifier& noteModifier)
 {
     // Set value for the quarter note normal here
     double tempo = 60000 / milliseconds;

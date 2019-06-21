@@ -11,7 +11,8 @@
 
 #include "Enums.h"
 
-double millisecondsToTempo (const double& millseconds, const Note& note, const NoteModifier& noteModifier);
+double millisecondsToTempo (const double& millseconds, const Note& note,
+                            const NoteModifier& noteModifier);
 double hertzToTempo (const double& hertz, const Note& note, const NoteModifier& noteModifier);
 
 #endif /* ToTempo_hpp */
