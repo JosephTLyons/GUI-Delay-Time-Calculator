@@ -21,6 +21,7 @@
 
 //[Headers]     -- You can add your own extra header files here --
 #include "../JuceLibraryCode/JuceHeader.h"
+#include "Enums.h"
 #include "TapTempo.hpp"
 #include "BasicWindow.cpp"
 //[/Headers]
@@ -65,6 +66,9 @@ public:
     void buildInformationWindow();
 
     void timerCallback() override;
+
+    void setTempoFromLabelValue (const std::unique_ptr<Label>& label,  const Note& note,
+                                 const NoteModifier& noteModifier);
 
     //[/UserMethods]
 
