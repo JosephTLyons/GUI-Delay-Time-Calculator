@@ -1,5 +1,8 @@
 # Changelog:
 
+## XXX - V 1.8.0
+1. Ability to calculate tempo directly from entering values into the ms and Hz fields
+
 ## June 17, 2019 - V 1.7.1
 1. Fixed a bug that was causing tap tempo to round the tempo to whole values when using resolution settings other than "coarse."
 

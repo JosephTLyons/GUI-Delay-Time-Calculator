@@ -21,7 +21,6 @@
 
 //[Headers]     -- You can add your own extra header files here --
 #include "../JuceLibraryCode/JuceHeader.h"
-#include "Values.hpp"
 #include "TapTempo.hpp"
 #include "BasicWindow.cpp"
 //[/Headers]
@@ -61,7 +60,6 @@ public:
     void engageResolutionSetting (const bool &isCoarseSelected,
                                   const bool &isFineSelected, const double &increment);
     void setBpmLabelValue();
-    void updateValuesAndFields();
     void populateLabelsWithValues();
     void resetTapTempo();
     void buildInformationWindow();
@@ -85,7 +83,6 @@ public:
 private:
     //[UserVariables]   -- You can add your own custom variables in this section.
 
-    Values values;
     TapTempo tapTempo;
     String tapCountString;
     SafePointer<BasicWindow> basicWindowSafePtr;
@@ -149,3 +146,4 @@ private:
 
 //[EndFile] You can add extra defines here...
 //[/EndFile]
+

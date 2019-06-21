@@ -18,7 +18,10 @@
 */
 
 //[Headers] You can add your own extra header files here...
+#include "Enums.h"
 #include "InformationComponent.h"
+#include "ToValues.hpp"
+#include "ToTempo.hpp"
 //[/Headers]
 
 #include "MainComponent.h"
@@ -753,7 +756,7 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
         // Turn off ms toggle automatically so that only one mode can be on at a time
         msToggle->setToggleState (false, dontSendNotification);
 
-        updateValuesAndFields();
+        populateLabelsWithValues();
 
         //[/UserButtonCode_hzToggle]
     }
@@ -767,7 +770,7 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
         // Turn off Hz mode automatically so that only one mode can be on at a time
         hzToggle->setToggleState (false, dontSendNotification);
 
-        updateValuesAndFields();
+        populateLabelsWithValues();
 
         //[/UserButtonCode_msToggle]
     }
@@ -808,7 +811,7 @@ void MainComponent::sliderValueChanged (Slider* sliderThatWasMoved)
         //[UserSliderCode_tempoSlider] -- add your slider handling code here..
 
         setBpmLabelValue();
-        updateValuesAndFields();
+        populateLabelsWithValues();
 
         //[/UserSliderCode_tempoSlider]
     }
@@ -827,10 +830,12 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
         //[UserLabelCode_wholeNLabel] -- add your label text handling code here..
 
         if (msToggle->getToggleState())
-            tempoSlider->setValue ((60000 / wholeNLabel->getTextValue().toString().getDoubleValue()) * 4);
+            tempoSlider->setValue (millisecondsToTempo(wholeNLabel->getText().getDoubleValue(),
+                                                       Note::whole, NoteModifier::normal));
 
         else
-            tempoSlider->setValue ((60 * wholeNLabel->getTextValue().toString().getDoubleValue()) * 4);
+            tempoSlider->setValue (hertzToTempo (wholeNLabel->getText().getDoubleValue(),
+                                                 Note::whole, NoteModifier::normal));
 
         //[/UserLabelCode_wholeNLabel]
     }
@@ -838,11 +843,13 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_wholeDLabel] -- add your label text handling code here..
 
-//        if (msToggle->getToggleState())
-//            tempoSlider->setValue ((60000 / wholeNLabel->getTextValue().toString().getDoubleValue()) * 2);
-//
-//        else
-//            tempoSlider->setValue ((60 * wholeNLabel->getTextValue().toString().getDoubleValue()) * 2);
+        if (msToggle->getToggleState())
+            tempoSlider->setValue (millisecondsToTempo(wholeDLabel->getText().getDoubleValue(),
+                                                       Note::whole, NoteModifier::dotted));
+
+        else
+            tempoSlider->setValue (hertzToTempo (wholeDLabel->getText().getDoubleValue(),
+                                                 Note::whole, NoteModifier::dotted));
 
         //[/UserLabelCode_wholeDLabel]
     }
@@ -850,11 +857,13 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_wholeTLabel] -- add your label text handling code here..
 
-//        if (msToggle->getToggleState())
-//            calculateTempoFromMilliseconds();
-//
-//        else
-//            calculateTempoFromHertz();
+        if (msToggle->getToggleState())
+            tempoSlider->setValue (millisecondsToTempo(wholeTLabel->getText().getDoubleValue(),
+                                                       Note::whole, NoteModifier::triplet));
+
+        else
+            tempoSlider->setValue (hertzToTempo (wholeTLabel->getText().getDoubleValue(),
+                                                 Note::whole, NoteModifier::triplet));
 
         //[/UserLabelCode_wholeTLabel]
     }
@@ -863,10 +872,12 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
         //[UserLabelCode_halfNLabel] -- add your label text handling code here..
 
         if (msToggle->getToggleState())
-            tempoSlider->setValue ((60000 / halfNLabel->getTextValue().toString().getDoubleValue()) * 2);
+            tempoSlider->setValue (millisecondsToTempo(halfNLabel->getText().getDoubleValue(),
+                                                       Note::half, NoteModifier::normal));
 
         else
-            tempoSlider->setValue ((60 * halfNLabel->getTextValue().toString().getDoubleValue()) * 2);
+            tempoSlider->setValue (hertzToTempo (halfNLabel->getText().getDoubleValue(),
+                                                 Note::half, NoteModifier::normal));
 
         //[/UserLabelCode_halfNLabel]
     }
@@ -874,11 +885,13 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_halfDLabel] -- add your label text handling code here..
 
-//        if (msToggle->getToggleState())
-//            calculateTempoFromMilliseconds();
-//
-//        else
-//            calculateTempoFromHertz();
+        if (msToggle->getToggleState())
+            tempoSlider->setValue (millisecondsToTempo(halfDLabel->getText().getDoubleValue(),
+                                                       Note::half, NoteModifier::dotted));
+
+        else
+            tempoSlider->setValue (hertzToTempo (halfDLabel->getText().getDoubleValue(),
+                                                 Note::half, NoteModifier::dotted));
 
         //[/UserLabelCode_halfDLabel]
     }
@@ -886,11 +899,13 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_halfTLabel] -- add your label text handling code here..
 
-//        if (msToggle->getToggleState())
-//            calculateTempoFromMilliseconds();
-//
-//        else
-//            calculateTempoFromHertz();
+        if (msToggle->getToggleState())
+            tempoSlider->setValue (millisecondsToTempo(halfTLabel->getText().getDoubleValue(),
+                                                       Note::half, NoteModifier::triplet));
+
+        else
+            tempoSlider->setValue (hertzToTempo (halfTLabel->getText().getDoubleValue(),
+                                                 Note::half, NoteModifier::triplet));
 
         //[/UserLabelCode_halfTLabel]
     }
@@ -898,11 +913,13 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_quarterNLabel] -- add your label text handling code here..
 
-//        if (msToggle->getToggleState())
-//            calculateTempoFromMilliseconds();
-//
-//        else
-//            calculateTempoFromHertz();
+        if (msToggle->getToggleState())
+            tempoSlider->setValue (millisecondsToTempo(quarterNLabel->getText().getDoubleValue(),
+                                                       Note::quarter, NoteModifier::normal));
+
+        else
+            tempoSlider->setValue (hertzToTempo (quarterNLabel->getText().getDoubleValue(),
+                                                 Note::quarter, NoteModifier::normal));
 
         //[/UserLabelCode_quarterNLabel]
     }
@@ -910,11 +927,13 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_quarterDLabel] -- add your label text handling code here..
 
-//        if (msToggle->getToggleState())
-//            calculateTempoFromMilliseconds();
-//
-//        else
-//            calculateTempoFromHertz();
+        if (msToggle->getToggleState())
+            tempoSlider->setValue (millisecondsToTempo(quarterDLabel->getText().getDoubleValue(),
+                                                       Note::quarter, NoteModifier::dotted));
+
+        else
+            tempoSlider->setValue (hertzToTempo (quarterDLabel->getText().getDoubleValue(),
+                                                 Note::quarter, NoteModifier::dotted));
 
         //[/UserLabelCode_quarterDLabel]
     }
@@ -922,11 +941,13 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_quarterTLabel] -- add your label text handling code here..
 
-//        if (msToggle->getToggleState())
-//            calculateTempoFromMilliseconds();
-//
-//        else
-//            calculateTempoFromHertz();
+        if (msToggle->getToggleState())
+            tempoSlider->setValue (millisecondsToTempo(quarterTLabel->getText().getDoubleValue(),
+                                                       Note::quarter, NoteModifier::triplet));
+
+        else
+            tempoSlider->setValue (hertzToTempo (quarterTLabel->getText().getDoubleValue(),
+                                                 Note::quarter, NoteModifier::triplet));
 
         //[/UserLabelCode_quarterTLabel]
     }
@@ -934,11 +955,13 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_v8thNLabel] -- add your label text handling code here..
 
-//        if (msToggle->getToggleState())
-//            calculateTempoFromMilliseconds();
-//
-//        else
-//            calculateTempoFromHertz();
+        if (msToggle->getToggleState())
+            tempoSlider->setValue (millisecondsToTempo(v8thNLabel->getText().getDoubleValue(),
+                                                       Note::v8th, NoteModifier::normal));
+
+        else
+            tempoSlider->setValue (hertzToTempo (v8thNLabel->getText().getDoubleValue(),
+                                                 Note::v8th, NoteModifier::normal));
 
         //[/UserLabelCode_v8thNLabel]
     }
@@ -946,11 +969,13 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_v8thDLabel] -- add your label text handling code here..
 
-//        if (msToggle->getToggleState())
-//            calculateTempoFromMilliseconds();
-//
-//        else
-//            calculateTempoFromHertz();
+        if (msToggle->getToggleState())
+            tempoSlider->setValue (millisecondsToTempo(v8thDLabel->getText().getDoubleValue(),
+                                                       Note::v8th, NoteModifier::dotted));
+
+        else
+            tempoSlider->setValue (hertzToTempo (v8thDLabel->getText().getDoubleValue(),
+                                                 Note::v8th, NoteModifier::dotted));
 
         //[/UserLabelCode_v8thDLabel]
     }
@@ -958,11 +983,13 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_v8thTLabel] -- add your label text handling code here..
 
-//        if (msToggle->getToggleState())
-//            calculateTempoFromMilliseconds();
-//
-//        else
-//            calculateTempoFromHertz();
+        if (msToggle->getToggleState())
+            tempoSlider->setValue (millisecondsToTempo(v8thTLabel->getText().getDoubleValue(),
+                                                       Note::v8th, NoteModifier::triplet));
+
+        else
+            tempoSlider->setValue (hertzToTempo (v8thTLabel->getText().getDoubleValue(),
+                                                 Note::v8th, NoteModifier::triplet));
 
         //[/UserLabelCode_v8thTLabel]
     }
@@ -970,11 +997,13 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_v16thNLabel] -- add your label text handling code here..
 
-//        if (msToggle->getToggleState())
-//            calculateTempoFromMilliseconds();
-//
-//        else
-//            calculateTempoFromHertz();
+        if (msToggle->getToggleState())
+            tempoSlider->setValue (millisecondsToTempo(v16thNLabel->getText().getDoubleValue(),
+                                                       Note::v16th, NoteModifier::normal));
+
+        else
+            tempoSlider->setValue (hertzToTempo (v16thNLabel->getText().getDoubleValue(),
+                                                 Note::v16th, NoteModifier::normal));
 
         //[/UserLabelCode_v16thNLabel]
     }
@@ -982,11 +1011,13 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_v16thDLabel] -- add your label text handling code here..
 
-//        if (msToggle->getToggleState())
-//            calculateTempoFromMilliseconds();
-//
-//        else
-//            calculateTempoFromHertz();
+        if (msToggle->getToggleState())
+            tempoSlider->setValue (millisecondsToTempo(v16thDLabel->getText().getDoubleValue(),
+                                                       Note::v16th, NoteModifier::dotted));
+
+        else
+            tempoSlider->setValue (hertzToTempo (v16thDLabel->getText().getDoubleValue(),
+                                                 Note::v16th, NoteModifier::dotted));
 
         //[/UserLabelCode_v16thDLabel]
     }
@@ -994,11 +1025,13 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_v16thTLabel] -- add your label text handling code here..
 
-//        if (msToggle->getToggleState())
-//            calculateTempoFromMilliseconds();
-//
-//        else
-//            calculateTempoFromHertz();
+        if (msToggle->getToggleState())
+            tempoSlider->setValue (millisecondsToTempo(v16thTLabel->getText().getDoubleValue(),
+                                                       Note::v16th, NoteModifier::triplet));
+
+        else
+            tempoSlider->setValue (hertzToTempo (v16thTLabel->getText().getDoubleValue(),
+                                                 Note::v16th, NoteModifier::triplet));
 
         //[/UserLabelCode_v16thTLabel]
     }
@@ -1006,11 +1039,13 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_v32ndNLabel] -- add your label text handling code here..
 
-//        if (msToggle->getToggleState())
-//            calculateTempoFromMilliseconds();
-//
-//        else
-//            calculateTempoFromHertz();
+        if (msToggle->getToggleState())
+            tempoSlider->setValue (millisecondsToTempo(v32ndNLabel->getText().getDoubleValue(),
+                                                       Note::v32nd, NoteModifier::normal));
+
+        else
+            tempoSlider->setValue (hertzToTempo (v32ndNLabel->getText().getDoubleValue(),
+                                                 Note::v32nd, NoteModifier::normal));
 
         //[/UserLabelCode_v32ndNLabel]
     }
@@ -1018,11 +1053,13 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_v32ndDLabel] -- add your label text handling code here..
 
-//        if (msToggle->getToggleState())
-//            calculateTempoFromMilliseconds();
-//
-//        else
-//            calculateTempoFromHertz();
+        if (msToggle->getToggleState())
+            tempoSlider->setValue (millisecondsToTempo(v32ndDLabel->getText().getDoubleValue(),
+                                                       Note::v32nd, NoteModifier::dotted));
+
+        else
+            tempoSlider->setValue (hertzToTempo (v32ndDLabel->getText().getDoubleValue(),
+                                                 Note::v32nd, NoteModifier::dotted));
 
         //[/UserLabelCode_v32ndDLabel]
     }
@@ -1030,11 +1067,13 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_v32ndTLabel] -- add your label text handling code here..
 
-//        if (msToggle->getToggleState())
-//            calculateTempoFromMilliseconds();
-//
-//        else
-//            calculateTempoFromHertz();
+        if (msToggle->getToggleState())
+            tempoSlider->setValue (millisecondsToTempo(v32ndTLabel->getText().getDoubleValue(),
+                                                       Note::v32nd, NoteModifier::triplet));
+
+        else
+            tempoSlider->setValue (hertzToTempo (v32ndTLabel->getText().getDoubleValue(),
+                                                 Note::v32nd, NoteModifier::triplet));
 
         //[/UserLabelCode_v32ndTLabel]
     }
@@ -1042,11 +1081,13 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_v64thNLabel] -- add your label text handling code here..
 
-//        if (msToggle->getToggleState())
-//            calculateTempoFromMilliseconds();
-//
-//        else
-//            calculateTempoFromHertz();
+        if (msToggle->getToggleState())
+            tempoSlider->setValue (millisecondsToTempo(v64thNLabel->getText().getDoubleValue(),
+                                                       Note::v64th, NoteModifier::normal));
+
+        else
+            tempoSlider->setValue (hertzToTempo (v64thNLabel->getText().getDoubleValue(),
+                                                 Note::v64th, NoteModifier::normal));
 
         //[/UserLabelCode_v64thNLabel]
     }
@@ -1054,11 +1095,13 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_v64thDLabel] -- add your label text handling code here..
 
-//        if (msToggle->getToggleState())
-//            calculateTempoFromMilliseconds();
-//
-//        else
-//            calculateTempoFromHertz();
+        if (msToggle->getToggleState())
+            tempoSlider->setValue (millisecondsToTempo(v64thDLabel->getText().getDoubleValue(),
+                                                       Note::v64th, NoteModifier::dotted));
+
+        else
+            tempoSlider->setValue (hertzToTempo (v64thDLabel->getText().getDoubleValue(),
+                                                 Note::v64th, NoteModifier::dotted));
 
         //[/UserLabelCode_v64thDLabel]
     }
@@ -1066,11 +1109,13 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_v64thTLabel] -- add your label text handling code here..
 
-//        if (msToggle->getToggleState())
-//            calculateTempoFromMilliseconds();
-//
-//        else
-//            calculateTempoFromHertz();
+        if (msToggle->getToggleState())
+            tempoSlider->setValue (millisecondsToTempo(v64thTLabel->getText().getDoubleValue(),
+                                                       Note::v64th, NoteModifier::triplet));
+
+        else
+            tempoSlider->setValue (hertzToTempo (v64thTLabel->getText().getDoubleValue(),
+                                                 Note::v64th, NoteModifier::triplet));
 
         //[/UserLabelCode_v64thTLabel]
     }
@@ -1078,11 +1123,13 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_v128thNLabel] -- add your label text handling code here..
 
-//        if (msToggle->getToggleState())
-//            calculateTempoFromMilliseconds();
-//
-//        else
-//            calculateTempoFromHertz();
+        if (msToggle->getToggleState())
+            tempoSlider->setValue (millisecondsToTempo(v128thNLabel->getText().getDoubleValue(),
+                                                       Note::v128th, NoteModifier::normal));
+
+        else
+            tempoSlider->setValue (hertzToTempo (v128thNLabel->getText().getDoubleValue(),
+                                                 Note::v128th, NoteModifier::normal));
 
         //[/UserLabelCode_v128thNLabel]
     }
@@ -1090,11 +1137,13 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_v128thDLabel] -- add your label text handling code here..
 
-//        if (msToggle->getToggleState())
-//            calculateTempoFromMilliseconds();
-//
-//        else
-//            calculateTempoFromHertz();
+        if (msToggle->getToggleState())
+            tempoSlider->setValue (millisecondsToTempo(v128thDLabel->getText().getDoubleValue(),
+                                                       Note::v128th, NoteModifier::dotted));
+
+        else
+            tempoSlider->setValue (hertzToTempo (v128thDLabel->getText().getDoubleValue(),
+                                                 Note::v128th, NoteModifier::dotted));
 
         //[/UserLabelCode_v128thDLabel]
     }
@@ -1102,11 +1151,13 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_v128thTLabel] -- add your label text handling code here..
 
-//        if (msToggle->getToggleState())
-//            calculateTempoFromMilliseconds();
-//
-//        else
-//            calculateTempoFromHertz();
+        if (msToggle->getToggleState())
+            tempoSlider->setValue (millisecondsToTempo(v128thTLabel->getText().getDoubleValue(),
+                                                       Note::v128th, NoteModifier::triplet));
+
+        else
+            tempoSlider->setValue (hertzToTempo (v128thTLabel->getText().getDoubleValue(),
+                                                 Note::v128th, NoteModifier::triplet));
 
         //[/UserLabelCode_v128thTLabel]
     }
@@ -1114,7 +1165,7 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_bpmValuesLabel] -- add your label text handling code here..
 
-        tempoSlider->setValue (bpmValuesLabel->getTextValue().toString().getDoubleValue());
+        tempoSlider->setValue (bpmValuesLabel->getText().getDoubleValue());
 
         // Whenever the slider moves, the new value is inserted into bpmValuesLabel by the
         // sliderValueChanged method.  Sometimes, when typing in values, the slider doesn't
@@ -1339,60 +1390,215 @@ void MainComponent::engageResolutionSetting (const bool &isCoarseSelected,
     coarseResolutionToggle->setToggleState (isCoarseSelected, dontSendNotification);
     fineResolutionToggle->setToggleState (isFineSelected, dontSendNotification);
 
-    updateValuesAndFields();
+    populateLabelsWithValues();
 }
 
 void MainComponent::setBpmLabelValue()
 {
-    bpmValuesLabel->setText (tempoSlider->getTextFromValue (tempoSlider->getValue()), dontSendNotification);
-}
-
-void MainComponent::updateValuesAndFields()
-{
-    // Update all values in object and update fields
-
-    if (msToggle->getToggleState())
-        values.calculateMilliseconds (tempoSlider->getValue());
-
-    else
-        values.calculateHertz (tempoSlider->getValue());
-
-    populateLabelsWithValues();
+    bpmValuesLabel->setText (tempoSlider->getTextFromValue (tempoSlider->getValue()),
+                             dontSendNotification);
 }
 
 void MainComponent::populateLabelsWithValues()
 {
-    wholeNLabel->setText ((String) values.getWholeN(), dontSendNotification);
-    wholeDLabel->setText ((String) values.getWholeD(), dontSendNotification);
-    wholeTLabel->setText ((String) values.getWholeT(), dontSendNotification);
+    if (msToggle->getToggleState())
+    {
+        wholeNLabel->setText ((String) toMilliseconds (tempoSlider->getValue(), Note::whole,
+                                                      NoteModifier::normal),
+                              dontSendNotification);
 
-    halfNLabel->setText ((String) values.getHalfN(), dontSendNotification);
-    halfDLabel->setText ((String) values.getHalfD(), dontSendNotification);
-    halfTLabel->setText ((String) values.getHalfT(), dontSendNotification);
+        wholeDLabel->setText ((String) toMilliseconds (tempoSlider->getValue(), Note::whole,
+                                                       NoteModifier::dotted),
+                              dontSendNotification);
 
-    quarterNLabel->setText ((String) values.getQuarterN(), dontSendNotification);
-    quarterDLabel->setText ((String) values.getQuarterD(), dontSendNotification);
-    quarterTLabel->setText ((String) values.getQuarterT(), dontSendNotification);
+        wholeTLabel->setText ((String) toMilliseconds (tempoSlider->getValue(), Note::whole,
+                                                      NoteModifier::triplet),
+                              dontSendNotification);
 
-    v8thNLabel->setText ((String) values.get8thN(), dontSendNotification);
-    v8thDLabel->setText ((String) values.get8thD(), dontSendNotification);
-    v8thTLabel->setText ((String) values.get8thT(), dontSendNotification);
+        halfNLabel->setText ((String) toMilliseconds (tempoSlider->getValue(), Note::half,
+                                                      NoteModifier::normal),
+                             dontSendNotification);
 
-    v16thNLabel->setText ((String) values.get16thN(), dontSendNotification);
-    v16thDLabel->setText ((String) values.get16thD(), dontSendNotification);
-    v16thTLabel->setText ((String) values.get16thT(), dontSendNotification);
+        halfDLabel->setText ((String) toMilliseconds (tempoSlider->getValue(), Note::half,
+                                                      NoteModifier::dotted),
+                             dontSendNotification);
 
-    v32ndNLabel->setText ((String) values.get32ndN(), dontSendNotification);
-    v32ndDLabel->setText ((String) values.get32ndD(), dontSendNotification);
-    v32ndTLabel->setText ((String) values.get32ndT(), dontSendNotification);
+        halfTLabel->setText ((String) toMilliseconds (tempoSlider->getValue(), Note::half,
+                                                      NoteModifier::triplet),
+                             dontSendNotification);
 
-    v64thNLabel->setText ((String) values.get64thN(), dontSendNotification);
-    v64thDLabel->setText ((String) values.get64thD(), dontSendNotification);
-    v64thTLabel->setText ((String) values.get64thT(), dontSendNotification);
+        quarterNLabel->setText ((String) toMilliseconds (tempoSlider->getValue(), Note::quarter,
+                                                         NoteModifier::normal),
+                                dontSendNotification);
 
-    v128thNLabel->setText ((String) values.get128thN(), dontSendNotification);
-    v128thDLabel->setText ((String) values.get128thD(), dontSendNotification);
-    v128thTLabel->setText ((String) values.get128thT(), dontSendNotification);
+        quarterDLabel->setText ((String) toMilliseconds (tempoSlider->getValue(), Note::quarter,
+                                                         NoteModifier::dotted),
+                                dontSendNotification);
+
+        quarterTLabel->setText ((String) toMilliseconds (tempoSlider->getValue(), Note::quarter,
+                                                         NoteModifier::triplet),
+                                dontSendNotification);
+
+        v8thNLabel->setText ((String) toMilliseconds (tempoSlider->getValue(), Note::v8th,
+                                                      NoteModifier::normal),
+                             dontSendNotification);
+
+        v8thDLabel->setText ((String) toMilliseconds (tempoSlider->getValue(), Note::v8th,
+                                                      NoteModifier::dotted),
+                             dontSendNotification);
+
+        v8thTLabel->setText ((String) toMilliseconds (tempoSlider->getValue(), Note::v8th,
+                                                      NoteModifier::triplet),
+                             dontSendNotification);
+
+        v16thNLabel->setText ((String) toMilliseconds (tempoSlider->getValue(), Note::v16th,
+                                                       NoteModifier::normal),
+                              dontSendNotification);
+
+        v16thDLabel->setText ((String) toMilliseconds (tempoSlider->getValue(), Note::v16th,
+                                                       NoteModifier::dotted),
+                              dontSendNotification);
+
+        v16thTLabel->setText ((String) toMilliseconds (tempoSlider->getValue(), Note::v16th,
+                                                       NoteModifier::triplet),
+                              dontSendNotification);
+
+        v32ndNLabel->setText ((String) toMilliseconds (tempoSlider->getValue(), Note::v32nd,
+                                                       NoteModifier::normal),
+                              dontSendNotification);
+
+        v32ndDLabel->setText ((String) toMilliseconds (tempoSlider->getValue(), Note::v32nd,
+                                                       NoteModifier::dotted),
+                              dontSendNotification);
+
+        v32ndTLabel->setText ((String) toMilliseconds (tempoSlider->getValue(), Note::v32nd,
+                                                       NoteModifier::triplet),
+                              dontSendNotification);
+
+        v64thNLabel->setText ((String) toMilliseconds (tempoSlider->getValue(), Note::v64th,
+                                                       NoteModifier::normal),
+                              dontSendNotification);
+
+        v64thDLabel->setText ((String) toMilliseconds (tempoSlider->getValue(), Note::v64th,
+                                                       NoteModifier::dotted),
+                              dontSendNotification);
+
+        v64thTLabel->setText ((String) toMilliseconds (tempoSlider->getValue(), Note::v64th,
+                                                       NoteModifier::triplet),
+                              dontSendNotification);
+
+        v128thNLabel->setText ((String) toMilliseconds (tempoSlider->getValue(), Note::v128th,
+                                                        NoteModifier::normal),
+                               dontSendNotification);
+
+        v128thDLabel->setText ((String) toMilliseconds (tempoSlider->getValue(), Note::v128th,
+                                                        NoteModifier::dotted),
+                               dontSendNotification);
+
+        v128thTLabel->setText ((String) toMilliseconds (tempoSlider->getValue(), Note::v128th,
+                                                        NoteModifier::triplet),
+                               dontSendNotification);
+    }
+        
+
+    else
+    {
+        wholeNLabel->setText ((String) toHertz (tempoSlider->getValue(), Note::whole,
+                                               NoteModifier::normal),
+                              dontSendNotification);
+
+        wholeDLabel->setText ((String) toHertz (tempoSlider->getValue(), Note::whole,
+                                               NoteModifier::dotted),
+                              dontSendNotification);
+
+        wholeTLabel->setText ((String) toHertz (tempoSlider->getValue(), Note::whole,
+                                               NoteModifier::triplet),
+                              dontSendNotification);
+
+        halfNLabel->setText ((String) toHertz (tempoSlider->getValue(), Note::half,
+                                               NoteModifier::normal),
+                             dontSendNotification);
+
+        halfDLabel->setText ((String) toHertz (tempoSlider->getValue(), Note::half,
+                                                      NoteModifier::dotted),
+                             dontSendNotification);
+
+        halfTLabel->setText ((String) toHertz (tempoSlider->getValue(), Note::half,
+                                               NoteModifier::triplet),
+                             dontSendNotification);
+
+        quarterNLabel->setText ((String) toHertz (tempoSlider->getValue(), Note::quarter,
+                                                  NoteModifier::normal),
+                                dontSendNotification);
+
+        quarterDLabel->setText ((String) toHertz (tempoSlider->getValue(), Note::quarter,
+                                                  NoteModifier::dotted),
+                                dontSendNotification);
+
+        quarterTLabel->setText ((String) toHertz (tempoSlider->getValue(), Note::quarter,
+                                                  NoteModifier::triplet),
+                                dontSendNotification);
+
+        v8thNLabel->setText ((String) toHertz (tempoSlider->getValue(), Note::v8th,
+                                              NoteModifier::normal),
+                             dontSendNotification);
+
+        v8thDLabel->setText ((String) toHertz (tempoSlider->getValue(), Note::v8th,
+                                                NoteModifier::dotted),
+                             dontSendNotification);
+
+        v8thTLabel->setText ((String) toHertz (tempoSlider->getValue(), Note::v8th,
+                                                NoteModifier::triplet),
+                             dontSendNotification);
+
+        v16thNLabel->setText ((String) toHertz (tempoSlider->getValue(), Note::v16th,
+                                                NoteModifier::normal),
+                              dontSendNotification);
+
+        v16thDLabel->setText ((String) toHertz (tempoSlider->getValue(), Note::v16th,
+                                                NoteModifier::dotted),
+                              dontSendNotification);
+
+        v16thTLabel->setText ((String) toHertz (tempoSlider->getValue(), Note::v16th,
+                                                NoteModifier::triplet),
+                              dontSendNotification);
+
+        v32ndNLabel->setText ((String) toHertz (tempoSlider->getValue(), Note::v32nd,
+                                                NoteModifier::normal),
+                              dontSendNotification);
+
+        v32ndDLabel->setText ((String) toHertz (tempoSlider->getValue(), Note::v32nd,
+                                                NoteModifier::dotted),
+                              dontSendNotification);
+
+        v32ndTLabel->setText ((String) toHertz (tempoSlider->getValue(), Note::v32nd,
+                                                NoteModifier::triplet),
+                              dontSendNotification);
+
+        v64thNLabel->setText ((String) toHertz (tempoSlider->getValue(), Note::v64th,
+                                                NoteModifier::normal),
+                              dontSendNotification);
+
+        v64thDLabel->setText ((String) toHertz (tempoSlider->getValue(), Note::v64th,
+                                                NoteModifier::dotted),
+                              dontSendNotification);
+
+        v64thTLabel->setText ((String) toHertz (tempoSlider->getValue(), Note::v64th,
+                                                NoteModifier::triplet),
+                              dontSendNotification);
+
+        v128thNLabel->setText ((String) toHertz (tempoSlider->getValue(), Note::v128th,
+                                                 NoteModifier::normal),
+                               dontSendNotification);
+
+        v128thDLabel->setText ((String) toHertz (tempoSlider->getValue(), Note::v128th,
+                                                 NoteModifier::dotted),
+                               dontSendNotification);
+
+        v128thTLabel->setText ((String) toHertz (tempoSlider->getValue(), Note::v128th,
+                                                 NoteModifier::triplet),
+                               dontSendNotification);
+    }
 }
 
 void MainComponent::resetTapTempo()

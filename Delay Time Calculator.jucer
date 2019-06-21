@@ -32,8 +32,11 @@
             file="Source/InformationComponent.h"/>
       <FILE id="HoAAya" name="InformationComponent.cpp" compile="1" resource="0"
             file="Source/InformationComponent.cpp"/>
-      <FILE id="lb2Hzi" name="Values.hpp" compile="0" resource="0" file="Source/Values.hpp"/>
-      <FILE id="kXu3u7" name="Values.cpp" compile="1" resource="0" file="Source/Values.cpp"/>
+      <FILE id="TVBcSI" name="Enums.h" compile="0" resource="0" file="Source/Enums.h"/>
+      <FILE id="sb77PQ" name="ToTempo.hpp" compile="0" resource="0" file="Source/ToTempo.hpp"/>
+      <FILE id="TpmkPh" name="ToTempo.cpp" compile="1" resource="0" file="Source/ToTempo.cpp"/>
+      <FILE id="TP2572" name="ToValues.hpp" compile="0" resource="0" file="Source/ToValues.hpp"/>
+      <FILE id="JfxDyO" name="ToValues.cpp" compile="1" resource="0" file="Source/ToValues.cpp"/>
       <FILE id="WpUudQ" name="TapTempo.hpp" compile="0" resource="0" file="Source/TapTempo.hpp"/>
       <FILE id="YOxrbs" name="TapTempo.cpp" compile="1" resource="0" file="Source/TapTempo.cpp"/>
     </GROUP>
