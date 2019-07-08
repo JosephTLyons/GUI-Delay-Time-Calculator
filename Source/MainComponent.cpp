@@ -1354,7 +1354,6 @@ void MainComponent::populateLabelsWithValues()
                                                         NoteModifier::triplet),
                                dontSendNotification);
     }
-        
 
     else
     {
