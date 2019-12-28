@@ -69,6 +69,7 @@ public:
     void setTempoFromLabelValue (const std::unique_ptr<Label>& label,  const Note& note,
                                  const NoteModifier& noteModifier);
     bool setTempoSlider (const double &tempo);
+    void msHzToggle (const bool& toggleMsOne);
 
     //[/UserMethods]
 

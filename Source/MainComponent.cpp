@@ -750,13 +750,7 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_hzToggle] -- add your button handler code here..
 
-        // This makes sure that Hz toggle is always on
-        hzToggle->setToggleState (true, dontSendNotification);
-
-        // Turn off ms toggle automatically so that only one mode can be on at a time
-        msToggle->setToggleState (false, dontSendNotification);
-
-        populateLabelsWithValues();
+        msHzToggle (false);
 
         //[/UserButtonCode_hzToggle]
     }
@@ -764,13 +758,7 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_msToggle] -- add your button handler code here..
 
-        // This makes sure that ms toggle is always on
-        msToggle->setToggleState (true, dontSendNotification);
-
-        // Turn off Hz mode automatically so that only one mode can be on at a time
-        hzToggle->setToggleState (false, dontSendNotification);
-
-        populateLabelsWithValues();
+        msHzToggle (true);
 
         //[/UserButtonCode_msToggle]
     }
@@ -1371,6 +1359,14 @@ bool MainComponent::setTempoSlider (const double &tempo)
                              dontSendNotification);
 
     return canUseNewTempo;
+}
+
+void MainComponent::msHzToggle (const bool& toggleMsOne)
+{
+    msToggle->setToggleState (toggleMsOne, dontSendNotification);
+    hzToggle->setToggleState (! toggleMsOne, dontSendNotification);
+
+    populateLabelsWithValues();
 }
 
 //[/MiscUserCode]
