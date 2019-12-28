@@ -1,17 +1,18 @@
 # TODO:
-* Right click to reset as well?
+## UI
+* New UI
 * Embed a font
-* Fix BPM Kerning and vertical alignment with BPM values label
 * Vertical spacing of entire GUI
+* Fix BPM Kerning and vertical alignment with BPM values label
 * Icons versus text on buttons?
+* Scaleable UI?
+* Flexbox
 
 * Consider Rails and Jules suggestions for the delay time calc label / button
 * Make dedicated manual?
-* Scaleable UI?
-* Embed font instead of assume it is on user's computer
 * Remove slider and use a text box that can be changed by clicking and dragging?
 * Make installer
-* Allow for input into the fields to derive a BPM value
 
 # Bugs to Fix:
-* None reported
+* Don't allow non-numerical input into tempo slider, same mechanism that has been implemented into the output
+  labels
