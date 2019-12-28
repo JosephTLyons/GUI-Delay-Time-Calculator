@@ -572,7 +572,7 @@ MainComponent::MainComponent ()
 
     //[Constructor] You can add your own custom stuff here..
 
-    tempoSlider->setValue (120);
+    setTempoSlider (120);
 
     // Set millisecond mode to default
     msToggle->setToggleState (true, dontSendNotification);
@@ -716,7 +716,7 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_doubleTempoButton] -- add your button handler code here..
 
-        tempoSlider->setValue (tempoSlider->getValue() * 2);
+        setTempoSlider (tempoSlider->getValue() * 2);
 
         //[/UserButtonCode_doubleTempoButton]
     }
@@ -724,7 +724,7 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     {
         //[UserButtonCode_halfTempoButton] -- add your button handler code here..
 
-        tempoSlider->setValue (tempoSlider->getValue() / 2);
+        setTempoSlider (tempoSlider->getValue() / 2);
 
         //[/UserButtonCode_halfTempoButton]
     }
@@ -734,7 +734,7 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
 
         double tempo = tapTempo.calculateTempo();
 
-        tempoSlider->setValue (tempo);
+        setTempoSlider (tempo);
 
         // Add tap count to Tap Tempo button
         tapCountString = ((String) tapTempo.getTapCount()).paddedLeft ('0', 3);
@@ -810,7 +810,7 @@ void MainComponent::sliderValueChanged (Slider* sliderThatWasMoved)
     {
         //[UserSliderCode_tempoSlider] -- add your slider handling code here..
 
-        setBpmLabelValue();
+        setTempoSlider (tempoSlider->getValue());
         populateLabelsWithValues();
 
         //[/UserSliderCode_tempoSlider]
@@ -1021,15 +1021,7 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     {
         //[UserLabelCode_bpmValuesLabel] -- add your label text handling code here..
 
-        tempoSlider->setValue (bpmValuesLabel->getText().getDoubleValue());
-
-        // Whenever the slider moves, the new value is inserted into bpmValuesLabel by the
-        // sliderValueChanged method.  Sometimes, when typing in values, the slider doesn't
-        // move, so bpmValuesLabel doesn't update.  This could occur in cases such as typing
-        // in characters, which gets changed to the value of one, then typing in characters again,
-        // which also results in the value of one, now characters are left in bpmValuesLabel.
-        // This makes sure that this cannot happen, the output field is always set.
-        setBpmLabelValue();
+        setTempoSlider (bpmValuesLabel->getText().getDoubleValue());
 
         //[/UserLabelCode_bpmValuesLabel]
     }
@@ -1132,7 +1124,7 @@ bool MainComponent::keyPressed (const KeyPress& key)
 
 void MainComponent::adjustTempo (const int &adjustmentValue)
 {
-    tempoSlider->setValue (tempoSlider->getValue() + adjustmentValue);
+    setTempoSlider (tempoSlider->getValue() + adjustmentValue);
 }
 
 void MainComponent::setupLabelCustomFont()
@@ -1203,14 +1195,12 @@ void MainComponent::launchURL (const char *hyperLink)
 
 void MainComponent::roundTempo()
 {
-    int truncatedValue    = (int) tempoSlider->getValue();
-    double roundingFactor = tempoSlider->getValue() - truncatedValue;
+    int roundedValue = (int) tempoSlider->getValue();
 
-    if (roundingFactor >= 0.5)
-        tempoSlider->setValue (truncatedValue + 1);
+    if ((tempoSlider->getValue() - roundedValue) >= 0.5)
+        roundedValue += 1;
 
-    else
-        tempoSlider->setValue (truncatedValue);
+    setTempoSlider (roundedValue);
 }
 
 bool MainComponent::userWantsStandardResolution()
@@ -1241,18 +1231,13 @@ void MainComponent::engageResolutionSetting (const bool &isCoarseSelected,
                                              const bool &isFineSelected, const double &increment)
 {
     tempoSlider->setRange (1, 1000, increment);
-    setBpmLabelValue();
+    bpmValuesLabel->setText (tempoSlider->getTextFromValue (tempoSlider->getValue()),
+                             dontSendNotification);
 
     coarseResolutionToggle->setToggleState (isCoarseSelected, dontSendNotification);
     fineResolutionToggle->setToggleState (isFineSelected, dontSendNotification);
 
     populateLabelsWithValues();
-}
-
-void MainComponent::setBpmLabelValue()
-{
-    bpmValuesLabel->setText (tempoSlider->getTextFromValue (tempoSlider->getValue()),
-                             dontSendNotification);
 }
 
 void MainComponent::populateLabelsWithValues()
@@ -1362,7 +1347,6 @@ void MainComponent::setTempoFromLabelValue (const std::unique_ptr<Label>& label,
     // the branch "Add-numberic-label".
 
     const double labelValue = label->getText().getDoubleValue();
-    const double initialTempoSliderValue = tempoSlider->getValue();
     double tempo = 0;
 
     if (msToggle->getToggleState())
@@ -1370,13 +1354,23 @@ void MainComponent::setTempoFromLabelValue (const std::unique_ptr<Label>& label,
     else
         tempo = hertzToTempo (label->getText().getDoubleValue(), note, noteModifier);
 
-    if (! isinf (tempo))
+    // If text is placed into the field that isn't numerical, replace that text back with the
+    // original value by re-populating all labels with values
+    if (! setTempoSlider (tempo))
+        populateLabelsWithValues();
+}
+
+bool MainComponent::setTempoSlider (const double &tempo)
+{
+    bool canUseNewTempo = (tempoSlider->getMinimum() < tempo) && (! isinf (tempo));
+
+    if (canUseNewTempo)
         tempoSlider->setValue (tempo);
 
-    // If text is placed into the field that isn't numerical, replace that text back with the
-    // original value
-    if (tempoSlider->getValue() == initialTempoSliderValue)
-        populateLabelsWithValues();
+    bpmValuesLabel->setText (tempoSlider->getTextFromValue (tempoSlider->getValue()),
+                             dontSendNotification);
+
+    return canUseNewTempo;
 }
 
 //[/MiscUserCode]

@@ -60,7 +60,6 @@ public:
     void standardResolutionChosen();
     void engageResolutionSetting (const bool &isCoarseSelected,
                                   const bool &isFineSelected, const double &increment);
-    void setBpmLabelValue();
     void populateLabelsWithValues();
     void resetTapTempo();
     void buildInformationWindow();
@@ -69,6 +68,7 @@ public:
 
     void setTempoFromLabelValue (const std::unique_ptr<Label>& label,  const Note& note,
                                  const NoteModifier& noteModifier);
+    bool setTempoSlider (const double &tempo);
 
     //[/UserMethods]
 
