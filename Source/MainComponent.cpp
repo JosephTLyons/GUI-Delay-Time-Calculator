@@ -1022,7 +1022,7 @@ void MainComponent::mouseEnter (const MouseEvent& e)
 {
     //[UserCode_mouseEnter] -- Add your code here...
 
-    if (e.eventComponent->getName() == delayTimeCalculatorLabel->getName())
+    if (e.eventComponent == delayTimeCalculatorLabel.get())
     {
         // Change text color to white
         delayTimeCalculatorLabel->setColour (Label::textColourId, Colours::white);
