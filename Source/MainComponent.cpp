@@ -1495,13 +1495,23 @@ void MainComponent::timerCallback()
 void MainComponent::setTempoFromLabelValue (const std::unique_ptr<Label>& label, const Note& note,
                                             const NoteModifier& noteModifier)
 {
+    double labelValue = label->getText().getDoubleValue();
+    double initialTempoSliderValue = tempoSlider->getValue();
+
     if (msToggle->getToggleState())
-        tempoSlider->setValue (millisecondsToTempo(label->getText().getDoubleValue(),
-                                                   note, noteModifier));
+        tempoSlider->setValue (millisecondsToTempo (labelValue, note, noteModifier));
 
     else
         tempoSlider->setValue (hertzToTempo (label->getText().getDoubleValue(),
                                              note, noteModifier));
+
+    // Work around code to forbid strings of text from being entered into the fields
+    // This work is done in place of creating a new Label class that inherits from JUCE Label
+    // that restricts the input to only numbers.  This should be implemented in the future.  The
+    // Start of the work resides on the branch "Add-numberic-label".
+    if (tempoSlider->getValue() == initialTempoSliderValue)
+        populateLabelsWithValues();
+
 }
 
 //[/MiscUserCode]
