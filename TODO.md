@@ -1,5 +1,4 @@
 # TODO:
-* Swap deprecated ScopedPointers to unique_ptrs
 
 ## Bugs to Fix:
 * Don't allow non-numerical input into tempo slider, same mechanism that has been implemented into the output
