@@ -18,6 +18,7 @@
 */
 
 //[Headers] You can add your own extra header files here...
+#include <math.h>
 #include "InformationComponent.h"
 #include "ToValues.hpp"
 #include "ToTempo.hpp"
@@ -1355,20 +1356,25 @@ void MainComponent::timerCallback()
 void MainComponent::setTempoFromLabelValue (const std::unique_ptr<Label>& label, const Note& note,
                                             const NoteModifier& noteModifier)
 {
-    double labelValue = label->getText().getDoubleValue();
-    double initialTempoSliderValue = tempoSlider->getValue();
+    // Work around code to forbid strings of text from being entered into the fields.  This is done
+    // in place of creating a new Label class that inherits from JUCE Label that restricts the input
+    // to only numbers.  This should be implemented in the future.  The Start of the work resides on
+    // the branch "Add-numberic-label".
+
+    const double labelValue = label->getText().getDoubleValue();
+    const double initialTempoSliderValue = tempoSlider->getValue();
+    double tempo = 0;
 
     if (msToggle->getToggleState())
-        tempoSlider->setValue (millisecondsToTempo (labelValue, note, noteModifier));
-
+        tempo = millisecondsToTempo (labelValue, note, noteModifier);
     else
-        tempoSlider->setValue (hertzToTempo (label->getText().getDoubleValue(),
-                                             note, noteModifier));
+        tempo = hertzToTempo (label->getText().getDoubleValue(), note, noteModifier);
 
-    // Work around code to forbid strings of text from being entered into the fields
-    // This work is done in place of creating a new Label class that inherits from JUCE Label
-    // that restricts the input to only numbers.  This should be implemented in the future.  The
-    // Start of the work resides on the branch "Add-numberic-label".
+    if (! isinf (tempo))
+        tempoSlider->setValue (tempo);
+
+    // If text is placed into the field that isn't numerical, replace that text back with the
+    // original value
     if (tempoSlider->getValue() == initialTempoSliderValue)
         populateLabelsWithValues();
 
