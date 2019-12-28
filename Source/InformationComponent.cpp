@@ -7,7 +7,7 @@
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Created with Projucer version: 5.2.1
+  Created with Projucer version: 5.4.5
 
   ------------------------------------------------------------------------------
 
@@ -21,6 +21,7 @@
 //[/Headers]
 
 #include "InformationComponent.h"
+
 
 //[MiscUserDefs] You can add your own user definitions and misc code here...
 //[/MiscUserDefs]
@@ -273,14 +274,12 @@ BEGIN_JUCER_METADATA
          virtualName="" explicitFocusOrder="0" pos="0 0 240 50" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="Information" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Arial"
-         fontsize="47.39999999999999857891" kerning="0.04299999999999999656"
-         bold="0" italic="0" justification="36"/>
+         fontsize="47.4" kerning="0.043" bold="0" italic="0" justification="36"/>
   <LABEL name="versionNumberLabel" id="30f8922fa9ce43fc" memberName="versionNumberLabelOutput"
          virtualName="" explicitFocusOrder="0" pos="0 341 240 40" textCol="ffadaaaa"
          edTextCol="ff000000" edBkgCol="0" labelText="" editableSingleClick="0"
          editableDoubleClick="0" focusDiscardsChanges="0" fontname="Default font"
-         fontsize="15.00000000000000000000" kerning="0.00000000000000000000"
-         bold="0" italic="0" justification="36"/>
+         fontsize="15.0" kerning="0.0" bold="0" italic="0" justification="36"/>
   <TEXTEDITOR name="informationTextEditor" id="724fec5cca6df686" memberName="informationTextEditor"
               virtualName="" explicitFocusOrder="0" pos="0 121 240 220" bkgcol="ff353535"
               outlinecol="ff353535" initialText="" multiline="1" retKeyStartsLine="1"
@@ -310,3 +309,4 @@ END_JUCER_METADATA
 
 //[EndFile] You can add extra defines here...
 //[/EndFile]
+
