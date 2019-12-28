@@ -32,9 +32,10 @@ InformationComponent::InformationComponent ()
     //[Constructor_pre] You can add your own custom stuff here..
     //[/Constructor_pre]
 
-    addAndMakeVisible (informationLabel = new Label ("informationLabel",
-                                                     TRANS("Information")));
-    informationLabel->setFont (Font ("Arial", 47.40f, Font::plain).withExtraKerningFactor (0.043f));
+    informationLabel.reset (new Label ("informationLabel",
+                                       TRANS("Information")));
+    addAndMakeVisible (informationLabel.get());
+    informationLabel->setFont (Font ("Arial", 47.40f, Font::plain).withTypefaceStyle ("Regular").withExtraKerningFactor (0.043f));
     informationLabel->setJustificationType (Justification::centred);
     informationLabel->setEditable (false, false, false);
     informationLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
@@ -43,8 +44,9 @@ InformationComponent::InformationComponent ()
 
     informationLabel->setBounds (0, 0, 240, 50);
 
-    addAndMakeVisible (versionNumberLabelOutput = new Label ("versionNumberLabel",
-                                                             String()));
+    versionNumberLabelOutput.reset (new Label ("versionNumberLabel",
+                                               String()));
+    addAndMakeVisible (versionNumberLabelOutput.get());
     versionNumberLabelOutput->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
     versionNumberLabelOutput->setJustificationType (Justification::centred);
     versionNumberLabelOutput->setEditable (false, false, false);
@@ -54,7 +56,8 @@ InformationComponent::InformationComponent ()
 
     versionNumberLabelOutput->setBounds (0, 341, 240, 40);
 
-    addAndMakeVisible (informationTextEditor = new TextEditor ("informationTextEditor"));
+    informationTextEditor.reset (new TextEditor ("informationTextEditor"));
+    addAndMakeVisible (informationTextEditor.get());
     informationTextEditor->setMultiLine (true);
     informationTextEditor->setReturnKeyStartsNewLine (true);
     informationTextEditor->setReadOnly (true);
@@ -67,7 +70,8 @@ InformationComponent::InformationComponent ()
 
     informationTextEditor->setBounds (0, 121, 240, 220);
 
-    addAndMakeVisible (facebookButton = new TextButton ("facebookButton"));
+    facebookButton.reset (new TextButton ("facebookButton"));
+    addAndMakeVisible (facebookButton.get());
     facebookButton->setButtonText (TRANS("Facebook"));
     facebookButton->addListener (this);
     facebookButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
@@ -76,7 +80,8 @@ InformationComponent::InformationComponent ()
 
     facebookButton->setBounds (0, 61, 120, 30);
 
-    addAndMakeVisible (emailMeButton = new TextButton ("emailMeButton"));
+    emailMeButton.reset (new TextButton ("emailMeButton"));
+    addAndMakeVisible (emailMeButton.get());
     emailMeButton->setButtonText (TRANS("Email Me"));
     emailMeButton->addListener (this);
     emailMeButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
@@ -85,7 +90,8 @@ InformationComponent::InformationComponent ()
 
     emailMeButton->setBounds (120, 61, 120, 30);
 
-    addAndMakeVisible (theCodeButton = new TextButton ("theCodeButton"));
+    theCodeButton.reset (new TextButton ("theCodeButton"));
+    addAndMakeVisible (theCodeButton.get());
     theCodeButton->setButtonText (TRANS("The Code"));
     theCodeButton->addListener (this);
     theCodeButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
@@ -94,7 +100,8 @@ InformationComponent::InformationComponent ()
 
     theCodeButton->setBounds (0, 91, 120, 30);
 
-    addAndMakeVisible (donateButton = new TextButton ("donateButton"));
+    donateButton.reset (new TextButton ("donateButton"));
+    addAndMakeVisible (donateButton.get());
     donateButton->setButtonText (TRANS("Donate"));
     donateButton->addListener (this);
     donateButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
@@ -206,7 +213,7 @@ void InformationComponent::buttonClicked (Button* buttonThatWasClicked)
     //[UserbuttonClicked_Pre]
     //[/UserbuttonClicked_Pre]
 
-    if (buttonThatWasClicked == facebookButton)
+    if (buttonThatWasClicked == facebookButton.get())
     {
         //[UserButtonCode_facebookButton] -- add your button handler code here..
 
@@ -214,7 +221,7 @@ void InformationComponent::buttonClicked (Button* buttonThatWasClicked)
 
         //[/UserButtonCode_facebookButton]
     }
-    else if (buttonThatWasClicked == emailMeButton)
+    else if (buttonThatWasClicked == emailMeButton.get())
     {
         //[UserButtonCode_emailMeButton] -- add your button handler code here..
 
@@ -222,7 +229,7 @@ void InformationComponent::buttonClicked (Button* buttonThatWasClicked)
 
         //[/UserButtonCode_emailMeButton]
     }
-    else if (buttonThatWasClicked == theCodeButton)
+    else if (buttonThatWasClicked == theCodeButton.get())
     {
         //[UserButtonCode_theCodeButton] -- add your button handler code here..
 
@@ -230,7 +237,7 @@ void InformationComponent::buttonClicked (Button* buttonThatWasClicked)
 
         //[/UserButtonCode_theCodeButton]
     }
-    else if (buttonThatWasClicked == donateButton)
+    else if (buttonThatWasClicked == donateButton.get())
     {
         //[UserButtonCode_donateButton] -- add your button handler code here..
 

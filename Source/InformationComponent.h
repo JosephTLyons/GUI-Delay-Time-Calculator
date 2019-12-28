@@ -64,13 +64,13 @@ private:
     //[/UserVariables]
 
     //==============================================================================
-    ScopedPointer<Label> informationLabel;
-    ScopedPointer<Label> versionNumberLabelOutput;
-    ScopedPointer<TextEditor> informationTextEditor;
-    ScopedPointer<TextButton> facebookButton;
-    ScopedPointer<TextButton> emailMeButton;
-    ScopedPointer<TextButton> theCodeButton;
-    ScopedPointer<TextButton> donateButton;
+    std::unique_ptr<Label> informationLabel;
+    std::unique_ptr<Label> versionNumberLabelOutput;
+    std::unique_ptr<TextEditor> informationTextEditor;
+    std::unique_ptr<TextButton> facebookButton;
+    std::unique_ptr<TextButton> emailMeButton;
+    std::unique_ptr<TextButton> theCodeButton;
+    std::unique_ptr<TextButton> donateButton;
 
 
     //==============================================================================
@@ -79,3 +79,4 @@ private:
 
 //[EndFile] You can add extra defines here...
 //[/EndFile]
+
