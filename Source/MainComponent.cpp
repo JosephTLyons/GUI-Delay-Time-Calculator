@@ -1256,202 +1256,62 @@ void MainComponent::setBpmLabelValue()
 
 void MainComponent::populateLabelsWithValues()
 {
+    double t = tempoSlider->getValue();
+
     if (msToggle->getToggleState())
     {
-        wholeNLabel->setText ((String) toMilliseconds (tempoSlider->getValue(), Note::whole,
-                                                      NoteModifier::normal),
-                              dontSendNotification);
-
-        wholeDLabel->setText ((String) toMilliseconds (tempoSlider->getValue(), Note::whole,
-                                                       NoteModifier::dotted),
-                              dontSendNotification);
-
-        wholeTLabel->setText ((String) toMilliseconds (tempoSlider->getValue(), Note::whole,
-                                                      NoteModifier::triplet),
-                              dontSendNotification);
-
-        halfNLabel->setText ((String) toMilliseconds (tempoSlider->getValue(), Note::half,
-                                                      NoteModifier::normal),
-                             dontSendNotification);
-
-        halfDLabel->setText ((String) toMilliseconds (tempoSlider->getValue(), Note::half,
-                                                      NoteModifier::dotted),
-                             dontSendNotification);
-
-        halfTLabel->setText ((String) toMilliseconds (tempoSlider->getValue(), Note::half,
-                                                      NoteModifier::triplet),
-                             dontSendNotification);
-
-        quarterNLabel->setText ((String) toMilliseconds (tempoSlider->getValue(), Note::quarter,
-                                                         NoteModifier::normal),
-                                dontSendNotification);
-
-        quarterDLabel->setText ((String) toMilliseconds (tempoSlider->getValue(), Note::quarter,
-                                                         NoteModifier::dotted),
-                                dontSendNotification);
-
-        quarterTLabel->setText ((String) toMilliseconds (tempoSlider->getValue(), Note::quarter,
-                                                         NoteModifier::triplet),
-                                dontSendNotification);
-
-        v8thNLabel->setText ((String) toMilliseconds (tempoSlider->getValue(), Note::v8th,
-                                                      NoteModifier::normal),
-                             dontSendNotification);
-
-        v8thDLabel->setText ((String) toMilliseconds (tempoSlider->getValue(), Note::v8th,
-                                                      NoteModifier::dotted),
-                             dontSendNotification);
-
-        v8thTLabel->setText ((String) toMilliseconds (tempoSlider->getValue(), Note::v8th,
-                                                      NoteModifier::triplet),
-                             dontSendNotification);
-
-        v16thNLabel->setText ((String) toMilliseconds (tempoSlider->getValue(), Note::v16th,
-                                                       NoteModifier::normal),
-                              dontSendNotification);
-
-        v16thDLabel->setText ((String) toMilliseconds (tempoSlider->getValue(), Note::v16th,
-                                                       NoteModifier::dotted),
-                              dontSendNotification);
-
-        v16thTLabel->setText ((String) toMilliseconds (tempoSlider->getValue(), Note::v16th,
-                                                       NoteModifier::triplet),
-                              dontSendNotification);
-
-        v32ndNLabel->setText ((String) toMilliseconds (tempoSlider->getValue(), Note::v32nd,
-                                                       NoteModifier::normal),
-                              dontSendNotification);
-
-        v32ndDLabel->setText ((String) toMilliseconds (tempoSlider->getValue(), Note::v32nd,
-                                                       NoteModifier::dotted),
-                              dontSendNotification);
-
-        v32ndTLabel->setText ((String) toMilliseconds (tempoSlider->getValue(), Note::v32nd,
-                                                       NoteModifier::triplet),
-                              dontSendNotification);
-
-        v64thNLabel->setText ((String) toMilliseconds (tempoSlider->getValue(), Note::v64th,
-                                                       NoteModifier::normal),
-                              dontSendNotification);
-
-        v64thDLabel->setText ((String) toMilliseconds (tempoSlider->getValue(), Note::v64th,
-                                                       NoteModifier::dotted),
-                              dontSendNotification);
-
-        v64thTLabel->setText ((String) toMilliseconds (tempoSlider->getValue(), Note::v64th,
-                                                       NoteModifier::triplet),
-                              dontSendNotification);
-
-        v128thNLabel->setText ((String) toMilliseconds (tempoSlider->getValue(), Note::v128th,
-                                                        NoteModifier::normal),
-                               dontSendNotification);
-
-        v128thDLabel->setText ((String) toMilliseconds (tempoSlider->getValue(), Note::v128th,
-                                                        NoteModifier::dotted),
-                               dontSendNotification);
-
-        v128thTLabel->setText ((String) toMilliseconds (tempoSlider->getValue(), Note::v128th,
-                                                        NoteModifier::triplet),
-                               dontSendNotification);
+        wholeNLabel->setText ((String) toMilliseconds (t, Note::whole, NoteModifier::normal), dontSendNotification);
+        wholeDLabel->setText ((String) toMilliseconds (t, Note::whole, NoteModifier::dotted), dontSendNotification);
+        wholeTLabel->setText ((String) toMilliseconds (t, Note::whole, NoteModifier::triplet), dontSendNotification);
+        halfNLabel->setText ((String) toMilliseconds (t, Note::half, NoteModifier::normal), dontSendNotification);
+        halfDLabel->setText ((String) toMilliseconds (t, Note::half, NoteModifier::dotted), dontSendNotification);
+        halfTLabel->setText ((String) toMilliseconds (t, Note::half, NoteModifier::triplet), dontSendNotification);
+        quarterNLabel->setText ((String) toMilliseconds (t, Note::quarter, NoteModifier::normal),dontSendNotification);
+        quarterDLabel->setText ((String) toMilliseconds (t, Note::quarter, NoteModifier::dotted), dontSendNotification);
+        quarterTLabel->setText ((String) toMilliseconds (t, Note::quarter, NoteModifier::triplet), dontSendNotification);
+        v8thNLabel->setText ((String) toMilliseconds (t, Note::v8th, NoteModifier::normal), dontSendNotification);
+        v8thDLabel->setText ((String) toMilliseconds (t, Note::v8th, NoteModifier::dotted), dontSendNotification);
+        v8thTLabel->setText ((String) toMilliseconds (t, Note::v8th, NoteModifier::triplet), dontSendNotification);
+        v16thNLabel->setText ((String) toMilliseconds (t, Note::v16th, NoteModifier::normal), dontSendNotification);
+        v16thDLabel->setText ((String) toMilliseconds (t, Note::v16th, NoteModifier::dotted), dontSendNotification);
+        v16thTLabel->setText ((String) toMilliseconds (t, Note::v16th, NoteModifier::triplet), dontSendNotification);
+        v32ndNLabel->setText ((String) toMilliseconds (t, Note::v32nd, NoteModifier::normal), dontSendNotification);
+        v32ndDLabel->setText ((String) toMilliseconds (t, Note::v32nd, NoteModifier::dotted), dontSendNotification);
+        v32ndTLabel->setText ((String) toMilliseconds (t, Note::v32nd, NoteModifier::triplet), dontSendNotification);
+        v64thNLabel->setText ((String) toMilliseconds (t, Note::v64th, NoteModifier::normal), dontSendNotification);
+        v64thDLabel->setText ((String) toMilliseconds (t, Note::v64th, NoteModifier::dotted), dontSendNotification);
+        v64thTLabel->setText ((String) toMilliseconds (t, Note::v64th, NoteModifier::triplet), dontSendNotification);
+        v128thNLabel->setText ((String) toMilliseconds (t, Note::v128th, NoteModifier::normal), dontSendNotification);
+        v128thDLabel->setText ((String) toMilliseconds (t, Note::v128th, NoteModifier::dotted), dontSendNotification);
+        v128thTLabel->setText ((String) toMilliseconds (t, Note::v128th, NoteModifier::triplet), dontSendNotification);
     }
 
     else
     {
-        wholeNLabel->setText ((String) toHertz (tempoSlider->getValue(), Note::whole,
-                                               NoteModifier::normal),
-                              dontSendNotification);
-
-        wholeDLabel->setText ((String) toHertz (tempoSlider->getValue(), Note::whole,
-                                               NoteModifier::dotted),
-                              dontSendNotification);
-
-        wholeTLabel->setText ((String) toHertz (tempoSlider->getValue(), Note::whole,
-                                               NoteModifier::triplet),
-                              dontSendNotification);
-
-        halfNLabel->setText ((String) toHertz (tempoSlider->getValue(), Note::half,
-                                               NoteModifier::normal),
-                             dontSendNotification);
-
-        halfDLabel->setText ((String) toHertz (tempoSlider->getValue(), Note::half,
-                                                      NoteModifier::dotted),
-                             dontSendNotification);
-
-        halfTLabel->setText ((String) toHertz (tempoSlider->getValue(), Note::half,
-                                               NoteModifier::triplet),
-                             dontSendNotification);
-
-        quarterNLabel->setText ((String) toHertz (tempoSlider->getValue(), Note::quarter,
-                                                  NoteModifier::normal),
-                                dontSendNotification);
-
-        quarterDLabel->setText ((String) toHertz (tempoSlider->getValue(), Note::quarter,
-                                                  NoteModifier::dotted),
-                                dontSendNotification);
-
-        quarterTLabel->setText ((String) toHertz (tempoSlider->getValue(), Note::quarter,
-                                                  NoteModifier::triplet),
-                                dontSendNotification);
-
-        v8thNLabel->setText ((String) toHertz (tempoSlider->getValue(), Note::v8th,
-                                              NoteModifier::normal),
-                             dontSendNotification);
-
-        v8thDLabel->setText ((String) toHertz (tempoSlider->getValue(), Note::v8th,
-                                                NoteModifier::dotted),
-                             dontSendNotification);
-
-        v8thTLabel->setText ((String) toHertz (tempoSlider->getValue(), Note::v8th,
-                                                NoteModifier::triplet),
-                             dontSendNotification);
-
-        v16thNLabel->setText ((String) toHertz (tempoSlider->getValue(), Note::v16th,
-                                                NoteModifier::normal),
-                              dontSendNotification);
-
-        v16thDLabel->setText ((String) toHertz (tempoSlider->getValue(), Note::v16th,
-                                                NoteModifier::dotted),
-                              dontSendNotification);
-
-        v16thTLabel->setText ((String) toHertz (tempoSlider->getValue(), Note::v16th,
-                                                NoteModifier::triplet),
-                              dontSendNotification);
-
-        v32ndNLabel->setText ((String) toHertz (tempoSlider->getValue(), Note::v32nd,
-                                                NoteModifier::normal),
-                              dontSendNotification);
-
-        v32ndDLabel->setText ((String) toHertz (tempoSlider->getValue(), Note::v32nd,
-                                                NoteModifier::dotted),
-                              dontSendNotification);
-
-        v32ndTLabel->setText ((String) toHertz (tempoSlider->getValue(), Note::v32nd,
-                                                NoteModifier::triplet),
-                              dontSendNotification);
-
-        v64thNLabel->setText ((String) toHertz (tempoSlider->getValue(), Note::v64th,
-                                                NoteModifier::normal),
-                              dontSendNotification);
-
-        v64thDLabel->setText ((String) toHertz (tempoSlider->getValue(), Note::v64th,
-                                                NoteModifier::dotted),
-                              dontSendNotification);
-
-        v64thTLabel->setText ((String) toHertz (tempoSlider->getValue(), Note::v64th,
-                                                NoteModifier::triplet),
-                              dontSendNotification);
-
-        v128thNLabel->setText ((String) toHertz (tempoSlider->getValue(), Note::v128th,
-                                                 NoteModifier::normal),
-                               dontSendNotification);
-
-        v128thDLabel->setText ((String) toHertz (tempoSlider->getValue(), Note::v128th,
-                                                 NoteModifier::dotted),
-                               dontSendNotification);
-
-        v128thTLabel->setText ((String) toHertz (tempoSlider->getValue(), Note::v128th,
-                                                 NoteModifier::triplet),
-                               dontSendNotification);
+        wholeNLabel->setText ((String) toHertz (t, Note::whole, NoteModifier::normal), dontSendNotification);
+        wholeDLabel->setText ((String) toHertz (t, Note::whole, NoteModifier::dotted), dontSendNotification);
+        wholeTLabel->setText ((String) toHertz (t, Note::whole, NoteModifier::triplet), dontSendNotification);
+        halfNLabel->setText ((String) toHertz (t, Note::half, NoteModifier::normal), dontSendNotification);
+        halfDLabel->setText ((String) toHertz (t, Note::half, NoteModifier::dotted), dontSendNotification);
+        halfTLabel->setText ((String) toHertz (t, Note::half, NoteModifier::triplet), dontSendNotification);
+        quarterNLabel->setText ((String) toHertz (t, Note::quarter, NoteModifier::normal), dontSendNotification);
+        quarterDLabel->setText ((String) toHertz (t, Note::quarter, NoteModifier::dotted), dontSendNotification);
+        quarterTLabel->setText ((String) toHertz (t, Note::quarter, NoteModifier::triplet), dontSendNotification);
+        v8thNLabel->setText ((String) toHertz (t, Note::v8th, NoteModifier::normal), dontSendNotification);
+        v8thDLabel->setText ((String) toHertz (t, Note::v8th, NoteModifier::dotted), dontSendNotification);
+        v8thTLabel->setText ((String) toHertz (t, Note::v8th, NoteModifier::triplet), dontSendNotification);
+        v16thNLabel->setText ((String) toHertz (t, Note::v16th, NoteModifier::normal), dontSendNotification);
+        v16thDLabel->setText ((String) toHertz (t, Note::v16th, NoteModifier::dotted), dontSendNotification);
+        v16thTLabel->setText ((String) toHertz (t, Note::v16th, NoteModifier::triplet), dontSendNotification);
+        v32ndNLabel->setText ((String) toHertz (t, Note::v32nd, NoteModifier::normal), dontSendNotification);
+        v32ndDLabel->setText ((String) toHertz (t, Note::v32nd, NoteModifier::dotted), dontSendNotification);
+        v32ndTLabel->setText ((String) toHertz (t, Note::v32nd, NoteModifier::triplet), dontSendNotification);
+        v64thNLabel->setText ((String) toHertz (t, Note::v64th, NoteModifier::normal), dontSendNotification);
+        v64thDLabel->setText ((String) toHertz (t, Note::v64th, NoteModifier::dotted), dontSendNotification);
+        v64thTLabel->setText ((String) toHertz (t, Note::v64th, NoteModifier::triplet), dontSendNotification);
+        v128thNLabel->setText ((String) toHertz (t, Note::v128th, NoteModifier::normal), dontSendNotification);
+        v128thDLabel->setText ((String) toHertz (t, Note::v128th, NoteModifier::dotted), dontSendNotification);
+        v128thTLabel->setText ((String) toHertz (t, Note::v128th, NoteModifier::triplet), dontSendNotification);
     }
 }
 
