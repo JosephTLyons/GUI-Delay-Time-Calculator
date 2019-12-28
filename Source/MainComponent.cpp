@@ -1377,7 +1377,6 @@ void MainComponent::setTempoFromLabelValue (const std::unique_ptr<Label>& label,
     // original value
     if (tempoSlider->getValue() == initialTempoSliderValue)
         populateLabelsWithValues();
-
 }
 
 //[/MiscUserCode]
