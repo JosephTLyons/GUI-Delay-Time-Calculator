@@ -1087,7 +1087,7 @@ bool MainComponent::keyPressed (const KeyPress& key)
         hzToggle->triggerClick();
 
     else if (key == KeyPress::spaceKey)
-        roundTempo();
+        setTempoSlider (roundToIntAccurate (tempoSlider->getValue()));
 
     else if (key == KeyPress::rightKey)
         adjustTempo (5);
@@ -1179,16 +1179,6 @@ void MainComponent::launchURL (const char *hyperLink)
 {
     URL uRL (hyperLink);
     uRL.launchInDefaultBrowser();
-}
-
-void MainComponent::roundTempo()
-{
-    int roundedValue = (int) tempoSlider->getValue();
-
-    if ((tempoSlider->getValue() - roundedValue) >= 0.5)
-        roundedValue += 1;
-
-    setTempoSlider (roundedValue);
 }
 
 bool MainComponent::userWantsStandardResolution()

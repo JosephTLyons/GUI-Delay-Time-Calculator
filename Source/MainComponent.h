@@ -53,7 +53,6 @@ public:
     void adjustTempo (const int &adjustmentValue);
     void setupLabelCustomFont();
     void launchURL (const char *hyperLink);
-    void roundTempo();
     bool userWantsStandardResolution();
     void coarseResolutionChosen();
     void fineResolutionChosen();
