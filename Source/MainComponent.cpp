@@ -1061,43 +1061,30 @@ bool MainComponent::keyPressed (const KeyPress& key)
 
     if (key == 'C')
         coarseResolutionChosen();
-
     else if (key == 'S')
         standardResolutionChosen();
-
     else if (key == 'F')
         fineResolutionChosen();
-
     else if (key == '1')
         halfTempoButton->triggerClick();
-
     else if (key == '2')
         doubleTempoButton->triggerClick();
-
     else if (key == 'T')
         tapButton->triggerClick();
-
     else if (key == 'R')
         resetTapTempo();
-
     else if (key == 'M')
         msToggle->triggerClick();
-
     else if (key == 'H')
         hzToggle->triggerClick();
-
     else if (key == KeyPress::spaceKey)
         setTempoSlider (roundToIntAccurate (tempoSlider->getValue()));
-
     else if (key == KeyPress::rightKey)
         adjustTempo (5);
-
     else if (key == KeyPress::leftKey)
         adjustTempo (-5);
-
     else if (key == KeyPress::upKey)
         adjustTempo (1);
-
     else if (key == KeyPress::downKey)
         adjustTempo (-1);
 
@@ -1249,7 +1236,6 @@ void MainComponent::populateLabelsWithValues()
         v128thDLabel->setText ((String) toMilliseconds (t, Note::v128th, NoteModifier::dotted), dontSendNotification);
         v128thTLabel->setText ((String) toMilliseconds (t, Note::v128th, NoteModifier::triplet), dontSendNotification);
     }
-
     else
     {
         wholeNLabel->setText ((String) toHertz (t, Note::whole, NoteModifier::normal), dontSendNotification);
@@ -1305,7 +1291,6 @@ void MainComponent::buildInformationWindow()
 
         basicWindowSafePtr->setVisible (true);
     }
-
     else
         basicWindowSafePtr.deleteAndZero();
 }

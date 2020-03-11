@@ -76,31 +76,24 @@ double toHertz (const double& tempo, const Note& note, const NoteModifier& noteM
         case Note::whole:
             hertz /= 4;
             break;
-
         case Note::half:
             hertz /= 2;
             break;
-
         case Note::quarter:
             // Skip, this is the first calculation done at the top of the function
             break;
-
         case Note::v8th:
             hertz *= 2;
             break;
-
         case Note::v16th:
             hertz *= 4;
             break;
-
         case Note::v32nd:
             hertz *= 8;
             break;
-
         case Note::v64th:
             hertz *= 16;
             break;
-
         case Note::v128th:
             hertz *= 32;
             break;
@@ -111,11 +104,9 @@ double toHertz (const double& tempo, const Note& note, const NoteModifier& noteM
         case NoteModifier::normal:
             // Skip, this is the first calculation done at the top of the function
             break;
-
         case NoteModifier::dotted:
             hertz *= (2 / 3.0f);
             break;
-
         case NoteModifier::triplet:
             hertz *= 1.5;
             break;
