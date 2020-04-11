@@ -1,4 +1,4 @@
-# Changelog:
+# CHANGELOG:
 
 ## XXX - V 1.8.0
 1. Ability to calculate tempo directly from entering values into the ms and Hz fields
@@ -35,13 +35,13 @@
 ## July 26, 2017 - V 1.5.0
 1. PC Build
 2. Changed behavior of where information window is loaded.  It is now loaded in the middle of the screen to resolve some issues on PC side.
-3. Windows can no longer be maxmized.  The GUI isn't resizable anyway, so the ability to go full screen has been removed.
+3. Windows can no longer be maximized.  The GUI isn't resizable anyway, so the ability to go full screen has been removed.
 
 ## May 12, 2017 - V 1.4.0:
 1. FIXED WHOLE NORMAL VALUES - This value was incorrect as I was accidentally grabbing the value from half dotted!
 2. Added option to display values in Hertz - to set LFOs on your synths
 3. Added key support for changing from ms to Hz (using keys 'M' and 'H' respectively)
-4. Made information section a text editor instead of a label so I can add more information to this and take advantage of scrolling, vesus having to make that window taller each line I add.
+4. Made information section a text editor instead of a label so I can add more information to this and take advantage of scrolling, versus having to make that window taller each line I add.
 5. Switched label font to Arial for the time being since I can't seem to figure how to embed fonts in JUCE currently.  I wanted to get this update out to fix the current bugs, so I'm just using a 'safe' font that should be on everyone's system.  My assumption is that all Mac systems have Arial by default, so the font should show up correctly.
 
 ## May 09, 2017 - V 1.3.0:
@@ -65,8 +65,8 @@
 1. Displays all values at once
 2. Changed skewing of slider so that most frequent tempos are in the first half of the slider (1 - 250ish).  This gives the user a bit more accuracy when using these values.
 3. Unified theme of GUI a bit by changing color of 1/2x and 2x buttons to match other colors,
-4. Right Click to access velocity sensitve scrolling on slider
+4. Right Click to access velocity sensitive scrolling on slider
 5. Repositioned all controls to be in close proximity and left room for tap to set delay button
 6. App is now code signed (I'm officially an Apple Developer)
 
-## April 15, 2017 - V 1.0.0 intial release:
+## April 15, 2017 - V 1.0.0 initial release:
