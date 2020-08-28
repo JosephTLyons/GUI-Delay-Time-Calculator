@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<JUCERPROJECT id="mFsRbO" name="The Lyons' Den Delay Time Calculator" projectType="guiapp"
-              version="1.8.0" bundleIdentifier="com.TheLyonsDen.DelayTimeCalculator"
-              includeBinaryInAppConfig="1" jucerVersion="5.4.7" companyName="The Lyons' Den"
+<JUCERPROJECT id="mFsRbO" name="Lyons' Den Delay Time Calculator" projectType="guiapp"
+              version="1.8.0" bundleIdentifier="com.LyonsDenSoftware.DelayTimeCalculator"
+              includeBinaryInAppConfig="1" companyName="Lyons Den Software"
               companyEmail="josephtlyons@gmail.com" displaySplashScreen="0"
               reportAppUsage="0" splashScreenColour="Dark" cppLanguageStandard="11"
-              companyCopyright="The Lyons' Den">
-  <MAINGROUP id="wVdkZw" name="The Lyons' Den Delay Time Calculator">
+              companyCopyright="The Lyons' Den" jucerFormatVersion="1" projectLineFeed="&#10;">
+  <MAINGROUP id="wVdkZw" name="Lyons' Den Delay Time Calculator">
     <GROUP id="{5249329C-49CC-44BF-F4E5-1D704800FEA9}" name="Font">
       <FILE id="OfZZLT" name="MonospaceTypewriter.ttf" compile="0" resource="1"
             file="Font/MonospaceTypewriter.ttf"/>

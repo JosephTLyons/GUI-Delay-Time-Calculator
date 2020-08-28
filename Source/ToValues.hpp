@@ -1,9 +1,9 @@
 //
 //  ToValues.hpp
-//  The Lyons' Den Delay Time Calculator - App
+//  Lyons' Den Delay Time Calculator - App
 //
 //  Created by Joseph Lyons on 6/20/19.
-//  Copyright © 2019 The Lyons' Den. All rights reserved.
+//  Copyright © 2019 Lyons' Den. All rights reserved.
 //
 
 #ifndef ToValues_hpp

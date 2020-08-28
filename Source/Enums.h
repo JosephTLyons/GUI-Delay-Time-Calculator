@@ -1,9 +1,9 @@
 //
 //  Enums.h
-//  The Lyons' Den Delay Time Calculator
+//  Lyons' Den Delay Time Calculator
 //
 //  Created by Joseph Lyons on 6/20/19.
-//  Copyright © 2019 The Lyons' Den. All rights reserved.
+//  Copyright © 2019 Lyons' Den. All rights reserved.
 //
 
 #ifndef Enums_h
