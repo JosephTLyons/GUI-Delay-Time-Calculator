@@ -7,12 +7,12 @@
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Created with Projucer version: 5.4.7
+  Created with Projucer version: 6.0.1
 
   ------------------------------------------------------------------------------
 
   The Projucer is part of the JUCE library.
-  Copyright (c) 2017 - ROLI Ltd.
+  Copyright (c) 2020 - Raw Material Software Limited.
 
   ==============================================================================
 */
@@ -36,529 +36,529 @@ MainComponent::MainComponent ()
     //[Constructor_pre] You can add your own custom stuff here..
     //[/Constructor_pre]
 
-    doubleTempoButton.reset (new TextButton ("doubleTempoButton"));
+    doubleTempoButton.reset (new juce::TextButton ("doubleTempoButton"));
     addAndMakeVisible (doubleTempoButton.get());
     doubleTempoButton->setButtonText (TRANS("2x"));
     doubleTempoButton->addListener (this);
-    doubleTempoButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
-    doubleTempoButton->setColour (TextButton::textColourOffId, Colour (0xff353535));
+    doubleTempoButton->setColour (juce::TextButton::buttonColourId, juce::Colour (0xffadaaaa));
+    doubleTempoButton->setColour (juce::TextButton::textColourOffId, juce::Colour (0xff353535));
 
     doubleTempoButton->setBounds (125, 115, 125, 30);
 
-    halfTempoButton.reset (new TextButton ("halfTempoButton"));
+    halfTempoButton.reset (new juce::TextButton ("halfTempoButton"));
     addAndMakeVisible (halfTempoButton.get());
     halfTempoButton->setButtonText (TRANS("(1/2)x"));
     halfTempoButton->addListener (this);
-    halfTempoButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
-    halfTempoButton->setColour (TextButton::textColourOffId, Colour (0xff353535));
+    halfTempoButton->setColour (juce::TextButton::buttonColourId, juce::Colour (0xffadaaaa));
+    halfTempoButton->setColour (juce::TextButton::textColourOffId, juce::Colour (0xff353535));
 
     halfTempoButton->setBounds (0, 115, 125, 30);
 
-    tempoSlider.reset (new Slider ("tempoSlider"));
+    tempoSlider.reset (new juce::Slider ("tempoSlider"));
     addAndMakeVisible (tempoSlider.get());
     tempoSlider->setRange (1, 1000, 0.1);
-    tempoSlider->setSliderStyle (Slider::LinearHorizontal);
-    tempoSlider->setTextBoxStyle (Slider::NoTextBox, false, 50, 20);
-    tempoSlider->setColour (Slider::backgroundColourId, Colours::black);
-    tempoSlider->setColour (Slider::thumbColourId, Colours::white);
-    tempoSlider->setColour (Slider::trackColourId, Colour (0xffadaaaa));
-    tempoSlider->setColour (Slider::textBoxTextColourId, Colours::white);
-    tempoSlider->setColour (Slider::textBoxBackgroundColourId, Colour (0xff353535));
-    tempoSlider->setColour (Slider::textBoxHighlightColourId, Colour (0xffadaaaa));
-    tempoSlider->setColour (Slider::textBoxOutlineColourId, Colour (0xff353535));
+    tempoSlider->setSliderStyle (juce::Slider::LinearHorizontal);
+    tempoSlider->setTextBoxStyle (juce::Slider::NoTextBox, false, 50, 20);
+    tempoSlider->setColour (juce::Slider::backgroundColourId, juce::Colours::black);
+    tempoSlider->setColour (juce::Slider::thumbColourId, juce::Colours::white);
+    tempoSlider->setColour (juce::Slider::trackColourId, juce::Colour (0xffadaaaa));
+    tempoSlider->setColour (juce::Slider::textBoxTextColourId, juce::Colours::white);
+    tempoSlider->setColour (juce::Slider::textBoxBackgroundColourId, juce::Colour (0xff353535));
+    tempoSlider->setColour (juce::Slider::textBoxHighlightColourId, juce::Colour (0xffadaaaa));
+    tempoSlider->setColour (juce::Slider::textBoxOutlineColourId, juce::Colour (0xff353535));
     tempoSlider->addListener (this);
     tempoSlider->setSkewFactor (0.5);
 
     tempoSlider->setBounds (0, 85, 500, 30);
 
-    delayTimeCalculatorLabel.reset (new Label ("delayTimeCalculatorLabel",
-                                               TRANS("Delay Time Calculator")));
+    delayTimeCalculatorLabel.reset (new juce::Label ("delayTimeCalculatorLabel",
+                                                     TRANS("Delay Time Calculator")));
     addAndMakeVisible (delayTimeCalculatorLabel.get());
-    delayTimeCalculatorLabel->setFont (Font ("Arial", 47.40f, Font::plain).withTypefaceStyle ("Regular").withExtraKerningFactor (0.095f));
-    delayTimeCalculatorLabel->setJustificationType (Justification::centred);
+    delayTimeCalculatorLabel->setFont (juce::Font ("Arial", 47.40f, juce::Font::plain).withTypefaceStyle ("Regular").withExtraKerningFactor (0.095f));
+    delayTimeCalculatorLabel->setJustificationType (juce::Justification::centred);
     delayTimeCalculatorLabel->setEditable (false, false, false);
-    delayTimeCalculatorLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
-    delayTimeCalculatorLabel->setColour (TextEditor::textColourId, Colours::black);
-    delayTimeCalculatorLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    delayTimeCalculatorLabel->setColour (juce::Label::textColourId, juce::Colour (0xffadaaaa));
+    delayTimeCalculatorLabel->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    delayTimeCalculatorLabel->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     delayTimeCalculatorLabel->setBounds (0, 0, 500, 50);
 
-    normalLabel.reset (new Label ("normalLabel",
-                                  TRANS("Normal\n")));
+    normalLabel.reset (new juce::Label ("normalLabel",
+                                        TRANS("Normal\n")));
     addAndMakeVisible (normalLabel.get());
-    normalLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
-    normalLabel->setJustificationType (Justification::centredLeft);
+    normalLabel->setFont (juce::Font ("Arial", 30.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    normalLabel->setJustificationType (juce::Justification::centredLeft);
     normalLabel->setEditable (false, false, false);
-    normalLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
-    normalLabel->setColour (TextEditor::textColourId, Colours::black);
-    normalLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    normalLabel->setColour (juce::Label::textColourId, juce::Colour (0xffadaaaa));
+    normalLabel->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    normalLabel->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     normalLabel->setBounds (125, 145, 125, 30);
 
-    dottedLabel.reset (new Label ("dottedLabel",
-                                  TRANS("Dotted")));
+    dottedLabel.reset (new juce::Label ("dottedLabel",
+                                        TRANS("Dotted")));
     addAndMakeVisible (dottedLabel.get());
-    dottedLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
-    dottedLabel->setJustificationType (Justification::centredLeft);
+    dottedLabel->setFont (juce::Font ("Arial", 30.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    dottedLabel->setJustificationType (juce::Justification::centredLeft);
     dottedLabel->setEditable (false, false, false);
-    dottedLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
-    dottedLabel->setColour (TextEditor::textColourId, Colours::black);
-    dottedLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    dottedLabel->setColour (juce::Label::textColourId, juce::Colour (0xffadaaaa));
+    dottedLabel->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    dottedLabel->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     dottedLabel->setBounds (250, 145, 125, 30);
 
-    tripletLabel.reset (new Label ("tripletLabel",
-                                   TRANS("Triplet")));
+    tripletLabel.reset (new juce::Label ("tripletLabel",
+                                         TRANS("Triplet")));
     addAndMakeVisible (tripletLabel.get());
-    tripletLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
-    tripletLabel->setJustificationType (Justification::centredLeft);
+    tripletLabel->setFont (juce::Font ("Arial", 30.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    tripletLabel->setJustificationType (juce::Justification::centredLeft);
     tripletLabel->setEditable (false, false, false);
-    tripletLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
-    tripletLabel->setColour (TextEditor::textColourId, Colours::black);
-    tripletLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    tripletLabel->setColour (juce::Label::textColourId, juce::Colour (0xffadaaaa));
+    tripletLabel->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    tripletLabel->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     tripletLabel->setBounds (375, 145, 125, 30);
 
-    wholeLabel.reset (new Label ("wholeLabel",
-                                 TRANS("1:")));
+    wholeLabel.reset (new juce::Label ("wholeLabel",
+                                       TRANS("1:")));
     addAndMakeVisible (wholeLabel.get());
-    wholeLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
-    wholeLabel->setJustificationType (Justification::centredLeft);
+    wholeLabel->setFont (juce::Font ("Arial", 30.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    wholeLabel->setJustificationType (juce::Justification::centredLeft);
     wholeLabel->setEditable (false, false, false);
-    wholeLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
-    wholeLabel->setColour (TextEditor::textColourId, Colours::black);
-    wholeLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    wholeLabel->setColour (juce::Label::textColourId, juce::Colour (0xffadaaaa));
+    wholeLabel->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    wholeLabel->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     wholeLabel->setBounds (0, 175, 100, 30);
 
-    halfLabel.reset (new Label ("halfLabel",
-                                TRANS("1/2:")));
+    halfLabel.reset (new juce::Label ("halfLabel",
+                                      TRANS("1/2:")));
     addAndMakeVisible (halfLabel.get());
-    halfLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
-    halfLabel->setJustificationType (Justification::centredLeft);
+    halfLabel->setFont (juce::Font ("Arial", 30.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    halfLabel->setJustificationType (juce::Justification::centredLeft);
     halfLabel->setEditable (false, false, false);
-    halfLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
-    halfLabel->setColour (TextEditor::textColourId, Colours::black);
-    halfLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    halfLabel->setColour (juce::Label::textColourId, juce::Colour (0xffadaaaa));
+    halfLabel->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    halfLabel->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     halfLabel->setBounds (0, 215, 100, 30);
 
-    quarterLabel.reset (new Label ("quarterLabel",
-                                   TRANS("1/4:")));
+    quarterLabel.reset (new juce::Label ("quarterLabel",
+                                         TRANS("1/4:")));
     addAndMakeVisible (quarterLabel.get());
-    quarterLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
-    quarterLabel->setJustificationType (Justification::centredLeft);
+    quarterLabel->setFont (juce::Font ("Arial", 30.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    quarterLabel->setJustificationType (juce::Justification::centredLeft);
     quarterLabel->setEditable (false, false, false);
-    quarterLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
-    quarterLabel->setColour (TextEditor::textColourId, Colours::black);
-    quarterLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    quarterLabel->setColour (juce::Label::textColourId, juce::Colour (0xffadaaaa));
+    quarterLabel->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    quarterLabel->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     quarterLabel->setBounds (0, 255, 100, 30);
 
-    eighthLabel.reset (new Label ("eighthLabel",
-                                  TRANS("1/8:")));
+    eighthLabel.reset (new juce::Label ("eighthLabel",
+                                        TRANS("1/8:")));
     addAndMakeVisible (eighthLabel.get());
-    eighthLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
-    eighthLabel->setJustificationType (Justification::centredLeft);
+    eighthLabel->setFont (juce::Font ("Arial", 30.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    eighthLabel->setJustificationType (juce::Justification::centredLeft);
     eighthLabel->setEditable (false, false, false);
-    eighthLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
-    eighthLabel->setColour (TextEditor::textColourId, Colours::black);
-    eighthLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    eighthLabel->setColour (juce::Label::textColourId, juce::Colour (0xffadaaaa));
+    eighthLabel->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    eighthLabel->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     eighthLabel->setBounds (0, 295, 100, 30);
 
-    sixteenthLabel.reset (new Label ("sixteenthLabel",
-                                     TRANS("1/16:")));
+    sixteenthLabel.reset (new juce::Label ("sixteenthLabel",
+                                           TRANS("1/16:")));
     addAndMakeVisible (sixteenthLabel.get());
-    sixteenthLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
-    sixteenthLabel->setJustificationType (Justification::centredLeft);
+    sixteenthLabel->setFont (juce::Font ("Arial", 30.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    sixteenthLabel->setJustificationType (juce::Justification::centredLeft);
     sixteenthLabel->setEditable (false, false, false);
-    sixteenthLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
-    sixteenthLabel->setColour (TextEditor::textColourId, Colours::black);
-    sixteenthLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    sixteenthLabel->setColour (juce::Label::textColourId, juce::Colour (0xffadaaaa));
+    sixteenthLabel->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    sixteenthLabel->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     sixteenthLabel->setBounds (0, 335, 100, 30);
 
-    thirtySecondLabel.reset (new Label ("thirtySecondLabel",
-                                        TRANS("1/32:")));
+    thirtySecondLabel.reset (new juce::Label ("thirtySecondLabel",
+                                              TRANS("1/32:")));
     addAndMakeVisible (thirtySecondLabel.get());
-    thirtySecondLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
-    thirtySecondLabel->setJustificationType (Justification::centredLeft);
+    thirtySecondLabel->setFont (juce::Font ("Arial", 30.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    thirtySecondLabel->setJustificationType (juce::Justification::centredLeft);
     thirtySecondLabel->setEditable (false, false, false);
-    thirtySecondLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
-    thirtySecondLabel->setColour (TextEditor::textColourId, Colours::black);
-    thirtySecondLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    thirtySecondLabel->setColour (juce::Label::textColourId, juce::Colour (0xffadaaaa));
+    thirtySecondLabel->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    thirtySecondLabel->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     thirtySecondLabel->setBounds (0, 375, 100, 30);
 
-    sixtyFourthLabel.reset (new Label ("sixtyFourthLabel",
-                                       TRANS("1/64:")));
+    sixtyFourthLabel.reset (new juce::Label ("sixtyFourthLabel",
+                                             TRANS("1/64:")));
     addAndMakeVisible (sixtyFourthLabel.get());
-    sixtyFourthLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
-    sixtyFourthLabel->setJustificationType (Justification::centredLeft);
+    sixtyFourthLabel->setFont (juce::Font ("Arial", 30.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    sixtyFourthLabel->setJustificationType (juce::Justification::centredLeft);
     sixtyFourthLabel->setEditable (false, false, false);
-    sixtyFourthLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
-    sixtyFourthLabel->setColour (TextEditor::textColourId, Colours::black);
-    sixtyFourthLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    sixtyFourthLabel->setColour (juce::Label::textColourId, juce::Colour (0xffadaaaa));
+    sixtyFourthLabel->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    sixtyFourthLabel->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     sixtyFourthLabel->setBounds (0, 415, 100, 30);
 
-    oneHundreAndTwentyEighthLabel.reset (new Label ("oneHundreAndTwentyEighthLabel",
-                                                    TRANS("1/128:")));
+    oneHundreAndTwentyEighthLabel.reset (new juce::Label ("oneHundreAndTwentyEighthLabel",
+                                                          TRANS("1/128:")));
     addAndMakeVisible (oneHundreAndTwentyEighthLabel.get());
-    oneHundreAndTwentyEighthLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
-    oneHundreAndTwentyEighthLabel->setJustificationType (Justification::centredLeft);
+    oneHundreAndTwentyEighthLabel->setFont (juce::Font ("Arial", 30.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    oneHundreAndTwentyEighthLabel->setJustificationType (juce::Justification::centredLeft);
     oneHundreAndTwentyEighthLabel->setEditable (false, false, false);
-    oneHundreAndTwentyEighthLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
-    oneHundreAndTwentyEighthLabel->setColour (TextEditor::textColourId, Colours::black);
-    oneHundreAndTwentyEighthLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    oneHundreAndTwentyEighthLabel->setColour (juce::Label::textColourId, juce::Colour (0xffadaaaa));
+    oneHundreAndTwentyEighthLabel->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    oneHundreAndTwentyEighthLabel->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     oneHundreAndTwentyEighthLabel->setBounds (0, 455, 100, 30);
 
-    tapButton.reset (new TextButton ("tapButton"));
+    tapButton.reset (new juce::TextButton ("tapButton"));
     addAndMakeVisible (tapButton.get());
     tapButton->setButtonText (TRANS("Tap Tempo"));
     tapButton->addListener (this);
-    tapButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
-    tapButton->setColour (TextButton::textColourOffId, Colour (0xff353535));
+    tapButton->setColour (juce::TextButton::buttonColourId, juce::Colour (0xffadaaaa));
+    tapButton->setColour (juce::TextButton::textColourOffId, juce::Colour (0xff353535));
 
     tapButton->setBounds (250, 115, 250, 30);
 
-    wholeNLabel.reset (new Label ("wholeNLabel",
-                                  String()));
+    wholeNLabel.reset (new juce::Label ("wholeNLabel",
+                                        juce::String()));
     addAndMakeVisible (wholeNLabel.get());
-    wholeNLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    wholeNLabel->setJustificationType (Justification::centredLeft);
+    wholeNLabel->setFont (juce::Font (25.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    wholeNLabel->setJustificationType (juce::Justification::centredLeft);
     wholeNLabel->setEditable (true, true, false);
-    wholeNLabel->setColour (TextEditor::textColourId, Colours::black);
-    wholeNLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    wholeNLabel->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    wholeNLabel->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
     wholeNLabel->addListener (this);
 
     wholeNLabel->setBounds (125, 175, 125, 30);
 
-    wholeDLabel.reset (new Label ("wholeDLabel",
-                                  String()));
+    wholeDLabel.reset (new juce::Label ("wholeDLabel",
+                                        juce::String()));
     addAndMakeVisible (wholeDLabel.get());
-    wholeDLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    wholeDLabel->setJustificationType (Justification::centredLeft);
+    wholeDLabel->setFont (juce::Font (25.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    wholeDLabel->setJustificationType (juce::Justification::centredLeft);
     wholeDLabel->setEditable (true, true, false);
-    wholeDLabel->setColour (TextEditor::textColourId, Colours::black);
-    wholeDLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    wholeDLabel->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    wholeDLabel->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
     wholeDLabel->addListener (this);
 
     wholeDLabel->setBounds (250, 175, 125, 30);
 
-    wholeTLabel.reset (new Label ("wholeTLabel",
-                                  TRANS("\n")));
+    wholeTLabel.reset (new juce::Label ("wholeTLabel",
+                                        TRANS("\n")));
     addAndMakeVisible (wholeTLabel.get());
-    wholeTLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    wholeTLabel->setJustificationType (Justification::centredLeft);
+    wholeTLabel->setFont (juce::Font (25.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    wholeTLabel->setJustificationType (juce::Justification::centredLeft);
     wholeTLabel->setEditable (true, true, false);
-    wholeTLabel->setColour (TextEditor::textColourId, Colours::black);
-    wholeTLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    wholeTLabel->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    wholeTLabel->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
     wholeTLabel->addListener (this);
 
     wholeTLabel->setBounds (375, 175, 125, 30);
 
-    halfNLabel.reset (new Label ("halfNLabel",
-                                 String()));
+    halfNLabel.reset (new juce::Label ("halfNLabel",
+                                       juce::String()));
     addAndMakeVisible (halfNLabel.get());
-    halfNLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    halfNLabel->setJustificationType (Justification::centredLeft);
+    halfNLabel->setFont (juce::Font (25.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    halfNLabel->setJustificationType (juce::Justification::centredLeft);
     halfNLabel->setEditable (true, true, false);
-    halfNLabel->setColour (TextEditor::textColourId, Colours::black);
-    halfNLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    halfNLabel->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    halfNLabel->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
     halfNLabel->addListener (this);
 
     halfNLabel->setBounds (125, 215, 125, 30);
 
-    halfDLabel.reset (new Label ("halfDLabel",
-                                 String()));
+    halfDLabel.reset (new juce::Label ("halfDLabel",
+                                       juce::String()));
     addAndMakeVisible (halfDLabel.get());
-    halfDLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    halfDLabel->setJustificationType (Justification::centredLeft);
+    halfDLabel->setFont (juce::Font (25.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    halfDLabel->setJustificationType (juce::Justification::centredLeft);
     halfDLabel->setEditable (true, true, false);
-    halfDLabel->setColour (TextEditor::textColourId, Colours::black);
-    halfDLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    halfDLabel->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    halfDLabel->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
     halfDLabel->addListener (this);
 
     halfDLabel->setBounds (250, 215, 125, 28);
 
-    halfTLabel.reset (new Label ("halfTLabel",
-                                 String()));
+    halfTLabel.reset (new juce::Label ("halfTLabel",
+                                       juce::String()));
     addAndMakeVisible (halfTLabel.get());
-    halfTLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    halfTLabel->setJustificationType (Justification::centredLeft);
+    halfTLabel->setFont (juce::Font (25.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    halfTLabel->setJustificationType (juce::Justification::centredLeft);
     halfTLabel->setEditable (true, true, false);
-    halfTLabel->setColour (TextEditor::textColourId, Colours::black);
-    halfTLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    halfTLabel->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    halfTLabel->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
     halfTLabel->addListener (this);
 
     halfTLabel->setBounds (375, 215, 125, 30);
 
-    quarterNLabel.reset (new Label ("quarterNLabel",
-                                    String()));
+    quarterNLabel.reset (new juce::Label ("quarterNLabel",
+                                          juce::String()));
     addAndMakeVisible (quarterNLabel.get());
-    quarterNLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    quarterNLabel->setJustificationType (Justification::centredLeft);
+    quarterNLabel->setFont (juce::Font (25.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    quarterNLabel->setJustificationType (juce::Justification::centredLeft);
     quarterNLabel->setEditable (true, true, false);
-    quarterNLabel->setColour (TextEditor::textColourId, Colours::black);
-    quarterNLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    quarterNLabel->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    quarterNLabel->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
     quarterNLabel->addListener (this);
 
     quarterNLabel->setBounds (125, 255, 125, 30);
 
-    quarterDLabel.reset (new Label ("quarterDLabel",
-                                    String()));
+    quarterDLabel.reset (new juce::Label ("quarterDLabel",
+                                          juce::String()));
     addAndMakeVisible (quarterDLabel.get());
-    quarterDLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    quarterDLabel->setJustificationType (Justification::centredLeft);
+    quarterDLabel->setFont (juce::Font (25.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    quarterDLabel->setJustificationType (juce::Justification::centredLeft);
     quarterDLabel->setEditable (true, true, false);
-    quarterDLabel->setColour (TextEditor::textColourId, Colours::black);
-    quarterDLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    quarterDLabel->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    quarterDLabel->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
     quarterDLabel->addListener (this);
 
     quarterDLabel->setBounds (250, 255, 125, 30);
 
-    quarterTLabel.reset (new Label ("quarterTLabel",
-                                    String()));
+    quarterTLabel.reset (new juce::Label ("quarterTLabel",
+                                          juce::String()));
     addAndMakeVisible (quarterTLabel.get());
-    quarterTLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    quarterTLabel->setJustificationType (Justification::centredLeft);
+    quarterTLabel->setFont (juce::Font (25.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    quarterTLabel->setJustificationType (juce::Justification::centredLeft);
     quarterTLabel->setEditable (true, true, false);
-    quarterTLabel->setColour (TextEditor::textColourId, Colours::black);
-    quarterTLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    quarterTLabel->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    quarterTLabel->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
     quarterTLabel->addListener (this);
 
     quarterTLabel->setBounds (375, 255, 125, 30);
 
-    v8thNLabel.reset (new Label ("v8thNLabel",
-                                 String()));
+    v8thNLabel.reset (new juce::Label ("v8thNLabel",
+                                       juce::String()));
     addAndMakeVisible (v8thNLabel.get());
-    v8thNLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    v8thNLabel->setJustificationType (Justification::centredLeft);
+    v8thNLabel->setFont (juce::Font (25.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    v8thNLabel->setJustificationType (juce::Justification::centredLeft);
     v8thNLabel->setEditable (true, true, false);
-    v8thNLabel->setColour (TextEditor::textColourId, Colours::black);
-    v8thNLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    v8thNLabel->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    v8thNLabel->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
     v8thNLabel->addListener (this);
 
     v8thNLabel->setBounds (125, 295, 125, 30);
 
-    v8thDLabel.reset (new Label ("v8thDLabel",
-                                 String()));
+    v8thDLabel.reset (new juce::Label ("v8thDLabel",
+                                       juce::String()));
     addAndMakeVisible (v8thDLabel.get());
-    v8thDLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    v8thDLabel->setJustificationType (Justification::centredLeft);
+    v8thDLabel->setFont (juce::Font (25.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    v8thDLabel->setJustificationType (juce::Justification::centredLeft);
     v8thDLabel->setEditable (true, true, false);
-    v8thDLabel->setColour (TextEditor::textColourId, Colours::black);
-    v8thDLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    v8thDLabel->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    v8thDLabel->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
     v8thDLabel->addListener (this);
 
     v8thDLabel->setBounds (250, 295, 125, 30);
 
-    v8thTLabel.reset (new Label ("v8thTLabel",
-                                 String()));
+    v8thTLabel.reset (new juce::Label ("v8thTLabel",
+                                       juce::String()));
     addAndMakeVisible (v8thTLabel.get());
-    v8thTLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    v8thTLabel->setJustificationType (Justification::centredLeft);
+    v8thTLabel->setFont (juce::Font (25.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    v8thTLabel->setJustificationType (juce::Justification::centredLeft);
     v8thTLabel->setEditable (true, true, false);
-    v8thTLabel->setColour (TextEditor::textColourId, Colours::black);
-    v8thTLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    v8thTLabel->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    v8thTLabel->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
     v8thTLabel->addListener (this);
 
     v8thTLabel->setBounds (375, 295, 125, 30);
 
-    v16thNLabel.reset (new Label ("v16thNLabel",
-                                  String()));
+    v16thNLabel.reset (new juce::Label ("v16thNLabel",
+                                        juce::String()));
     addAndMakeVisible (v16thNLabel.get());
-    v16thNLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    v16thNLabel->setJustificationType (Justification::centredLeft);
+    v16thNLabel->setFont (juce::Font (25.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    v16thNLabel->setJustificationType (juce::Justification::centredLeft);
     v16thNLabel->setEditable (true, true, false);
-    v16thNLabel->setColour (TextEditor::textColourId, Colours::black);
-    v16thNLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    v16thNLabel->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    v16thNLabel->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
     v16thNLabel->addListener (this);
 
     v16thNLabel->setBounds (125, 335, 125, 30);
 
-    v16thDLabel.reset (new Label ("v16thDLabel",
-                                  String()));
+    v16thDLabel.reset (new juce::Label ("v16thDLabel",
+                                        juce::String()));
     addAndMakeVisible (v16thDLabel.get());
-    v16thDLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    v16thDLabel->setJustificationType (Justification::centredLeft);
+    v16thDLabel->setFont (juce::Font (25.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    v16thDLabel->setJustificationType (juce::Justification::centredLeft);
     v16thDLabel->setEditable (true, true, false);
-    v16thDLabel->setColour (TextEditor::textColourId, Colours::black);
-    v16thDLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    v16thDLabel->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    v16thDLabel->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
     v16thDLabel->addListener (this);
 
     v16thDLabel->setBounds (250, 335, 125, 30);
 
-    v16thTLabel.reset (new Label ("v16thTLabel",
-                                  String()));
+    v16thTLabel.reset (new juce::Label ("v16thTLabel",
+                                        juce::String()));
     addAndMakeVisible (v16thTLabel.get());
-    v16thTLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    v16thTLabel->setJustificationType (Justification::centredLeft);
+    v16thTLabel->setFont (juce::Font (25.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    v16thTLabel->setJustificationType (juce::Justification::centredLeft);
     v16thTLabel->setEditable (true, true, false);
-    v16thTLabel->setColour (TextEditor::textColourId, Colours::black);
-    v16thTLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    v16thTLabel->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    v16thTLabel->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
     v16thTLabel->addListener (this);
 
     v16thTLabel->setBounds (375, 335, 125, 30);
 
-    v32ndNLabel.reset (new Label ("v32ndNLabel",
-                                  String()));
+    v32ndNLabel.reset (new juce::Label ("v32ndNLabel",
+                                        juce::String()));
     addAndMakeVisible (v32ndNLabel.get());
-    v32ndNLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    v32ndNLabel->setJustificationType (Justification::centredLeft);
+    v32ndNLabel->setFont (juce::Font (25.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    v32ndNLabel->setJustificationType (juce::Justification::centredLeft);
     v32ndNLabel->setEditable (true, true, false);
-    v32ndNLabel->setColour (TextEditor::textColourId, Colours::black);
-    v32ndNLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    v32ndNLabel->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    v32ndNLabel->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
     v32ndNLabel->addListener (this);
 
     v32ndNLabel->setBounds (125, 375, 125, 30);
 
-    v32ndDLabel.reset (new Label ("v32ndDLabel",
-                                  String()));
+    v32ndDLabel.reset (new juce::Label ("v32ndDLabel",
+                                        juce::String()));
     addAndMakeVisible (v32ndDLabel.get());
-    v32ndDLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    v32ndDLabel->setJustificationType (Justification::centredLeft);
+    v32ndDLabel->setFont (juce::Font (25.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    v32ndDLabel->setJustificationType (juce::Justification::centredLeft);
     v32ndDLabel->setEditable (true, true, false);
-    v32ndDLabel->setColour (TextEditor::textColourId, Colours::black);
-    v32ndDLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    v32ndDLabel->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    v32ndDLabel->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
     v32ndDLabel->addListener (this);
 
     v32ndDLabel->setBounds (250, 375, 125, 30);
 
-    v32ndTLabel.reset (new Label ("v32ndTLabel",
-                                  String()));
+    v32ndTLabel.reset (new juce::Label ("v32ndTLabel",
+                                        juce::String()));
     addAndMakeVisible (v32ndTLabel.get());
-    v32ndTLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    v32ndTLabel->setJustificationType (Justification::centredLeft);
+    v32ndTLabel->setFont (juce::Font (25.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    v32ndTLabel->setJustificationType (juce::Justification::centredLeft);
     v32ndTLabel->setEditable (true, true, false);
-    v32ndTLabel->setColour (TextEditor::textColourId, Colours::black);
-    v32ndTLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    v32ndTLabel->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    v32ndTLabel->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
     v32ndTLabel->addListener (this);
 
     v32ndTLabel->setBounds (375, 375, 125, 30);
 
-    v64thNLabel.reset (new Label ("v64thNLabel",
-                                  String()));
+    v64thNLabel.reset (new juce::Label ("v64thNLabel",
+                                        juce::String()));
     addAndMakeVisible (v64thNLabel.get());
-    v64thNLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    v64thNLabel->setJustificationType (Justification::centredLeft);
+    v64thNLabel->setFont (juce::Font (25.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    v64thNLabel->setJustificationType (juce::Justification::centredLeft);
     v64thNLabel->setEditable (true, true, false);
-    v64thNLabel->setColour (TextEditor::textColourId, Colours::black);
-    v64thNLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    v64thNLabel->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    v64thNLabel->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
     v64thNLabel->addListener (this);
 
     v64thNLabel->setBounds (125, 415, 125, 30);
 
-    v64thDLabel.reset (new Label ("v64thDLabel",
-                                  String()));
+    v64thDLabel.reset (new juce::Label ("v64thDLabel",
+                                        juce::String()));
     addAndMakeVisible (v64thDLabel.get());
-    v64thDLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    v64thDLabel->setJustificationType (Justification::centredLeft);
+    v64thDLabel->setFont (juce::Font (25.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    v64thDLabel->setJustificationType (juce::Justification::centredLeft);
     v64thDLabel->setEditable (true, true, false);
-    v64thDLabel->setColour (TextEditor::textColourId, Colours::black);
-    v64thDLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    v64thDLabel->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    v64thDLabel->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
     v64thDLabel->addListener (this);
 
     v64thDLabel->setBounds (250, 415, 125, 30);
 
-    v64thTLabel.reset (new Label ("v64thTLabel",
-                                  String()));
+    v64thTLabel.reset (new juce::Label ("v64thTLabel",
+                                        juce::String()));
     addAndMakeVisible (v64thTLabel.get());
-    v64thTLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    v64thTLabel->setJustificationType (Justification::centredLeft);
+    v64thTLabel->setFont (juce::Font (25.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    v64thTLabel->setJustificationType (juce::Justification::centredLeft);
     v64thTLabel->setEditable (true, true, false);
-    v64thTLabel->setColour (TextEditor::textColourId, Colours::black);
-    v64thTLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    v64thTLabel->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    v64thTLabel->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
     v64thTLabel->addListener (this);
 
     v64thTLabel->setBounds (375, 415, 125, 30);
 
-    v128thNLabel.reset (new Label ("v128thNLabel",
-                                   String()));
+    v128thNLabel.reset (new juce::Label ("v128thNLabel",
+                                         juce::String()));
     addAndMakeVisible (v128thNLabel.get());
-    v128thNLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    v128thNLabel->setJustificationType (Justification::centredLeft);
+    v128thNLabel->setFont (juce::Font (25.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    v128thNLabel->setJustificationType (juce::Justification::centredLeft);
     v128thNLabel->setEditable (true, true, false);
-    v128thNLabel->setColour (TextEditor::textColourId, Colours::black);
-    v128thNLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    v128thNLabel->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    v128thNLabel->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
     v128thNLabel->addListener (this);
 
     v128thNLabel->setBounds (125, 455, 125, 30);
 
-    v128thDLabel.reset (new Label ("v128thDLabel",
-                                   String()));
+    v128thDLabel.reset (new juce::Label ("v128thDLabel",
+                                         juce::String()));
     addAndMakeVisible (v128thDLabel.get());
-    v128thDLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    v128thDLabel->setJustificationType (Justification::centredLeft);
+    v128thDLabel->setFont (juce::Font (25.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    v128thDLabel->setJustificationType (juce::Justification::centredLeft);
     v128thDLabel->setEditable (true, true, false);
-    v128thDLabel->setColour (TextEditor::textColourId, Colours::black);
-    v128thDLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    v128thDLabel->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    v128thDLabel->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
     v128thDLabel->addListener (this);
 
     v128thDLabel->setBounds (250, 455, 125, 30);
 
-    v128thTLabel.reset (new Label ("v128thTLabel",
-                                   String()));
+    v128thTLabel.reset (new juce::Label ("v128thTLabel",
+                                         juce::String()));
     addAndMakeVisible (v128thTLabel.get());
-    v128thTLabel->setFont (Font (25.00f, Font::plain).withTypefaceStyle ("Regular"));
-    v128thTLabel->setJustificationType (Justification::centredLeft);
+    v128thTLabel->setFont (juce::Font (25.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    v128thTLabel->setJustificationType (juce::Justification::centredLeft);
     v128thTLabel->setEditable (true, true, false);
-    v128thTLabel->setColour (TextEditor::textColourId, Colours::black);
-    v128thTLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    v128thTLabel->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    v128thTLabel->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
     v128thTLabel->addListener (this);
 
     v128thTLabel->setBounds (375, 455, 125, 30);
 
-    hzToggle.reset (new ToggleButton ("hzToggle"));
+    hzToggle.reset (new juce::ToggleButton ("hzToggle"));
     addAndMakeVisible (hzToggle.get());
     hzToggle->setButtonText (TRANS("Hz"));
     hzToggle->addListener (this);
 
     hzToggle->setBounds (63, 150, 62, 20);
 
-    msToggle.reset (new ToggleButton ("msToggle"));
+    msToggle.reset (new juce::ToggleButton ("msToggle"));
     addAndMakeVisible (msToggle.get());
     msToggle->setButtonText (TRANS("ms"));
     msToggle->addListener (this);
 
     msToggle->setBounds (0, 150, 62, 20);
 
-    coarseResolutionToggle.reset (new ToggleButton ("coarseResolutionToggle"));
+    coarseResolutionToggle.reset (new juce::ToggleButton ("coarseResolutionToggle"));
     addAndMakeVisible (coarseResolutionToggle.get());
     coarseResolutionToggle->setButtonText (TRANS("Coarse"));
     coarseResolutionToggle->addListener (this);
 
     coarseResolutionToggle->setBounds (0, 65, 75, 20);
 
-    fineResolutionToggle.reset (new ToggleButton ("fineResolutionToggle"));
+    fineResolutionToggle.reset (new juce::ToggleButton ("fineResolutionToggle"));
     addAndMakeVisible (fineResolutionToggle.get());
     fineResolutionToggle->setButtonText (TRANS("Fine"));
     fineResolutionToggle->addListener (this);
 
     fineResolutionToggle->setBounds (125, 65, 75, 20);
 
-    bpmLabel.reset (new Label ("bpmLabel",
-                               TRANS("BPM")));
+    bpmLabel.reset (new juce::Label ("bpmLabel",
+                                     TRANS("BPM")));
     addAndMakeVisible (bpmLabel.get());
-    bpmLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
-    bpmLabel->setJustificationType (Justification::centred);
+    bpmLabel->setFont (juce::Font ("Arial", 30.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    bpmLabel->setJustificationType (juce::Justification::centred);
     bpmLabel->setEditable (false, false, false);
-    bpmLabel->setColour (TextEditor::textColourId, Colours::black);
-    bpmLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    bpmLabel->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    bpmLabel->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     bpmLabel->setBounds (300, 60, 101, 30);
 
-    bpmValuesLabel.reset (new Label ("bpmValuesLabel",
-                                     String()));
+    bpmValuesLabel.reset (new juce::Label ("bpmValuesLabel",
+                                           juce::String()));
     addAndMakeVisible (bpmValuesLabel.get());
-    bpmValuesLabel->setFont (Font ("Arial", 30.00f, Font::plain).withTypefaceStyle ("Regular"));
-    bpmValuesLabel->setJustificationType (Justification::centred);
+    bpmValuesLabel->setFont (juce::Font ("Arial", 30.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    bpmValuesLabel->setJustificationType (juce::Justification::centred);
     bpmValuesLabel->setEditable (true, true, false);
-    bpmValuesLabel->setColour (TextEditor::textColourId, Colours::black);
-    bpmValuesLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    bpmValuesLabel->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    bpmValuesLabel->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
     bpmValuesLabel->addListener (this);
 
     bpmValuesLabel->setBounds (190, 60, 120, 30);
@@ -611,6 +611,7 @@ MainComponent::MainComponent ()
     v128thNLabel->addListener (this);
 
     delayTimeCalculatorLabel->addMouseListener (this, false);
+    bpmValuesLabel->addMouseListener (this, false);
 
     //setupLabelCustomFont();
 
@@ -680,12 +681,12 @@ MainComponent::~MainComponent()
 }
 
 //==============================================================================
-void MainComponent::paint (Graphics& g)
+void MainComponent::paint (juce::Graphics& g)
 {
     //[UserPrePaint] Add your own custom painting code here..
     //[/UserPrePaint]
 
-    g.fillAll (Colour (0xff353535));
+    g.fillAll (juce::Colour (0xff353535));
 
     //[UserPaint] Add your own custom painting code here..
 
@@ -707,7 +708,7 @@ void MainComponent::resized()
     //[/UserResized]
 }
 
-void MainComponent::buttonClicked (Button* buttonThatWasClicked)
+void MainComponent::buttonClicked (juce::Button* buttonThatWasClicked)
 {
     //[UserbuttonClicked_Pre]
     //[/UserbuttonClicked_Pre]
@@ -789,7 +790,7 @@ void MainComponent::buttonClicked (Button* buttonThatWasClicked)
     //[/UserbuttonClicked_Post]
 }
 
-void MainComponent::sliderValueChanged (Slider* sliderThatWasMoved)
+void MainComponent::sliderValueChanged (juce::Slider* sliderThatWasMoved)
 {
     //[UsersliderValueChanged_Pre]
     //[/UsersliderValueChanged_Pre]
@@ -808,7 +809,7 @@ void MainComponent::sliderValueChanged (Slider* sliderThatWasMoved)
     //[/UsersliderValueChanged_Post]
 }
 
-void MainComponent::labelTextChanged (Label* labelThatHasChanged)
+void MainComponent::labelTextChanged (juce::Label* labelThatHasChanged)
 {
     //[UserlabelTextChanged_Pre]
     //[/UserlabelTextChanged_Pre]
@@ -1018,7 +1019,7 @@ void MainComponent::labelTextChanged (Label* labelThatHasChanged)
     //[/UserlabelTextChanged_Post]
 }
 
-void MainComponent::mouseEnter (const MouseEvent& e)
+void MainComponent::mouseEnter (const juce::MouseEvent& e)
 {
     //[UserCode_mouseEnter] -- Add your code here...
 
@@ -1031,7 +1032,7 @@ void MainComponent::mouseEnter (const MouseEvent& e)
     //[/UserCode_mouseEnter]
 }
 
-void MainComponent::mouseExit (const MouseEvent& e)
+void MainComponent::mouseExit (const juce::MouseEvent& e)
 {
     //[UserCode_mouseExit] -- Add your code here...
 
@@ -1045,7 +1046,17 @@ void MainComponent::mouseExit (const MouseEvent& e)
     //[/UserCode_mouseExit]
 }
 
-void MainComponent::mouseUp (const MouseEvent& e)
+void MainComponent::mouseDown (const juce::MouseEvent& e)
+{
+    //[UserCode_mouseDown] -- Add your code here...
+
+    if (e.eventComponent == bpmValuesLabel.get())
+        Logger::writeToLog ("Dog");
+
+    //[/UserCode_mouseDown]
+}
+
+void MainComponent::mouseUp (const juce::MouseEvent& e)
 {
     //[UserCode_mouseUp] -- Add your code here...
 
@@ -1055,7 +1066,7 @@ void MainComponent::mouseUp (const MouseEvent& e)
     //[/UserCode_mouseUp]
 }
 
-bool MainComponent::keyPressed (const KeyPress& key)
+bool MainComponent::keyPressed (const juce::KeyPress& key)
 {
     //[UserCode_keyPressed] -- Add your code here...
 
@@ -1365,6 +1376,7 @@ BEGIN_JUCER_METADATA
     <METHOD name="mouseEnter (const MouseEvent&amp; e)"/>
     <METHOD name="mouseExit (const MouseEvent&amp; e)"/>
     <METHOD name="keyPressed (const KeyPress&amp; key)"/>
+    <METHOD name="mouseDown (const MouseEvent&amp; e)"/>
   </METHODS>
   <BACKGROUND backgroundColour="ff353535"/>
   <TEXTBUTTON name="doubleTempoButton" id="74a1161b6a8bd75d" memberName="doubleTempoButton"

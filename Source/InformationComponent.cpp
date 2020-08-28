@@ -7,12 +7,12 @@
   the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
   and re-saved.
 
-  Created with Projucer version: 5.4.5
+  Created with Projucer version: 6.0.1
 
   ------------------------------------------------------------------------------
 
   The Projucer is part of the JUCE library.
-  Copyright (c) 2017 - ROLI Ltd.
+  Copyright (c) 2020 - Raw Material Software Limited.
 
   ==============================================================================
 */
@@ -32,31 +32,31 @@ InformationComponent::InformationComponent ()
     //[Constructor_pre] You can add your own custom stuff here..
     //[/Constructor_pre]
 
-    informationLabel.reset (new Label ("informationLabel",
-                                       TRANS("Information")));
+    informationLabel.reset (new juce::Label ("informationLabel",
+                                             TRANS("Information")));
     addAndMakeVisible (informationLabel.get());
-    informationLabel->setFont (Font ("Arial", 47.40f, Font::plain).withTypefaceStyle ("Regular").withExtraKerningFactor (0.043f));
-    informationLabel->setJustificationType (Justification::centred);
+    informationLabel->setFont (juce::Font ("Arial", 47.40f, juce::Font::plain).withTypefaceStyle ("Regular").withExtraKerningFactor (0.043f));
+    informationLabel->setJustificationType (juce::Justification::centred);
     informationLabel->setEditable (false, false, false);
-    informationLabel->setColour (Label::textColourId, Colour (0xffadaaaa));
-    informationLabel->setColour (TextEditor::textColourId, Colours::black);
-    informationLabel->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    informationLabel->setColour (juce::Label::textColourId, juce::Colour (0xffadaaaa));
+    informationLabel->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    informationLabel->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     informationLabel->setBounds (0, 0, 240, 50);
 
-    versionNumberLabelOutput.reset (new Label ("versionNumberLabel",
-                                               String()));
+    versionNumberLabelOutput.reset (new juce::Label ("versionNumberLabel",
+                                                     juce::String()));
     addAndMakeVisible (versionNumberLabelOutput.get());
-    versionNumberLabelOutput->setFont (Font (15.00f, Font::plain).withTypefaceStyle ("Regular"));
-    versionNumberLabelOutput->setJustificationType (Justification::centred);
+    versionNumberLabelOutput->setFont (juce::Font (15.00f, juce::Font::plain).withTypefaceStyle ("Regular"));
+    versionNumberLabelOutput->setJustificationType (juce::Justification::centred);
     versionNumberLabelOutput->setEditable (false, false, false);
-    versionNumberLabelOutput->setColour (Label::textColourId, Colour (0xffadaaaa));
-    versionNumberLabelOutput->setColour (TextEditor::textColourId, Colours::black);
-    versionNumberLabelOutput->setColour (TextEditor::backgroundColourId, Colour (0x00000000));
+    versionNumberLabelOutput->setColour (juce::Label::textColourId, juce::Colour (0xffadaaaa));
+    versionNumberLabelOutput->setColour (juce::TextEditor::textColourId, juce::Colours::black);
+    versionNumberLabelOutput->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0x00000000));
 
     versionNumberLabelOutput->setBounds (0, 341, 240, 40);
 
-    informationTextEditor.reset (new TextEditor ("informationTextEditor"));
+    informationTextEditor.reset (new juce::TextEditor ("informationTextEditor"));
     addAndMakeVisible (informationTextEditor.get());
     informationTextEditor->setMultiLine (true);
     informationTextEditor->setReturnKeyStartsNewLine (true);
@@ -64,49 +64,49 @@ InformationComponent::InformationComponent ()
     informationTextEditor->setScrollbarsShown (true);
     informationTextEditor->setCaretVisible (false);
     informationTextEditor->setPopupMenuEnabled (true);
-    informationTextEditor->setColour (TextEditor::backgroundColourId, Colour (0xff353535));
-    informationTextEditor->setColour (TextEditor::outlineColourId, Colour (0xff353535));
-    informationTextEditor->setText (String());
+    informationTextEditor->setColour (juce::TextEditor::backgroundColourId, juce::Colour (0xff353535));
+    informationTextEditor->setColour (juce::TextEditor::outlineColourId, juce::Colour (0xff353535));
+    informationTextEditor->setText (juce::String());
 
     informationTextEditor->setBounds (0, 121, 240, 220);
 
-    facebookButton.reset (new TextButton ("facebookButton"));
+    facebookButton.reset (new juce::TextButton ("facebookButton"));
     addAndMakeVisible (facebookButton.get());
     facebookButton->setButtonText (TRANS("Facebook"));
     facebookButton->addListener (this);
-    facebookButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
-    facebookButton->setColour (TextButton::buttonOnColourId, Colour (0xffadaaaa));
-    facebookButton->setColour (TextButton::textColourOffId, Colours::black);
+    facebookButton->setColour (juce::TextButton::buttonColourId, juce::Colour (0xffadaaaa));
+    facebookButton->setColour (juce::TextButton::buttonOnColourId, juce::Colour (0xffadaaaa));
+    facebookButton->setColour (juce::TextButton::textColourOffId, juce::Colours::black);
 
     facebookButton->setBounds (0, 61, 120, 30);
 
-    emailMeButton.reset (new TextButton ("emailMeButton"));
+    emailMeButton.reset (new juce::TextButton ("emailMeButton"));
     addAndMakeVisible (emailMeButton.get());
     emailMeButton->setButtonText (TRANS("Email Me"));
     emailMeButton->addListener (this);
-    emailMeButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
-    emailMeButton->setColour (TextButton::buttonOnColourId, Colour (0xffadaaaa));
-    emailMeButton->setColour (TextButton::textColourOffId, Colours::black);
+    emailMeButton->setColour (juce::TextButton::buttonColourId, juce::Colour (0xffadaaaa));
+    emailMeButton->setColour (juce::TextButton::buttonOnColourId, juce::Colour (0xffadaaaa));
+    emailMeButton->setColour (juce::TextButton::textColourOffId, juce::Colours::black);
 
     emailMeButton->setBounds (120, 61, 120, 30);
 
-    theCodeButton.reset (new TextButton ("theCodeButton"));
+    theCodeButton.reset (new juce::TextButton ("theCodeButton"));
     addAndMakeVisible (theCodeButton.get());
     theCodeButton->setButtonText (TRANS("The Code"));
     theCodeButton->addListener (this);
-    theCodeButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
-    theCodeButton->setColour (TextButton::buttonOnColourId, Colour (0xffadaaaa));
-    theCodeButton->setColour (TextButton::textColourOffId, Colours::black);
+    theCodeButton->setColour (juce::TextButton::buttonColourId, juce::Colour (0xffadaaaa));
+    theCodeButton->setColour (juce::TextButton::buttonOnColourId, juce::Colour (0xffadaaaa));
+    theCodeButton->setColour (juce::TextButton::textColourOffId, juce::Colours::black);
 
     theCodeButton->setBounds (0, 91, 120, 30);
 
-    donateButton.reset (new TextButton ("donateButton"));
+    donateButton.reset (new juce::TextButton ("donateButton"));
     addAndMakeVisible (donateButton.get());
     donateButton->setButtonText (TRANS("Donate"));
     donateButton->addListener (this);
-    donateButton->setColour (TextButton::buttonColourId, Colour (0xffadaaaa));
-    donateButton->setColour (TextButton::buttonOnColourId, Colour (0xffadaaaa));
-    donateButton->setColour (TextButton::textColourOffId, Colours::black);
+    donateButton->setColour (juce::TextButton::buttonColourId, juce::Colour (0xffadaaaa));
+    donateButton->setColour (juce::TextButton::buttonOnColourId, juce::Colour (0xffadaaaa));
+    donateButton->setColour (juce::TextButton::textColourOffId, juce::Colours::black);
 
     donateButton->setBounds (120, 91, 120, 30);
 
@@ -181,12 +181,12 @@ InformationComponent::~InformationComponent()
 }
 
 //==============================================================================
-void InformationComponent::paint (Graphics& g)
+void InformationComponent::paint (juce::Graphics& g)
 {
     //[UserPrePaint] Add your own custom painting code here..
     //[/UserPrePaint]
 
-    g.fillAll (Colour (0xff353535));
+    g.fillAll (juce::Colour (0xff353535));
 
     //[UserPaint] Add your own custom painting code here..
 
@@ -208,7 +208,7 @@ void InformationComponent::resized()
     //[/UserResized]
 }
 
-void InformationComponent::buttonClicked (Button* buttonThatWasClicked)
+void InformationComponent::buttonClicked (juce::Button* buttonThatWasClicked)
 {
     //[UserbuttonClicked_Pre]
     //[/UserbuttonClicked_Pre]
