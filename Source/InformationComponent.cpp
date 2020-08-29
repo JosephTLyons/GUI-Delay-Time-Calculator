@@ -132,23 +132,23 @@ InformationComponent::InformationComponent ()
     informationTextEditorString = "Key Commands:\n";
 
     // Add information to text string
-    informationTextEditorString += "-'C': coarse resolution\n";
-    informationTextEditorString += "-'S': standard resolution\n";
-    informationTextEditorString += "-'F': fine resolution\n\n";
+    informationTextEditorString += "c: Coarse Resolution\n";
+    informationTextEditorString += "s: Standard Resolution\n";
+    informationTextEditorString += "f: Fine Resolution\n\n";
 
-    informationTextEditorString += "-'1': triggers (1/2)x\n";
-    informationTextEditorString += "-'2': triggers 2x\n";
-    informationTextEditorString += "-'T': triggers Tap Tempo\n";
-    informationTextEditorString += "-'R': reset Tap Tempo\n\n";
+    informationTextEditorString += "1: (1/2)x\n";
+    informationTextEditorString += "2: 2x\n";
+    informationTextEditorString += "t: Tap Tempo\n";
+    informationTextEditorString += "r: Reset Tap Tempo\n\n";
 
-    informationTextEditorString += "-'M': enable ms\n";
-    informationTextEditorString += "-'H': enable Hz\n\n";
+    informationTextEditorString += "m: ms\n";
+    informationTextEditorString += "h: Hz\n\n";
 
-    informationTextEditorString += "-Spacebar: round tempo\n";
-    informationTextEditorString += "-Right Arrow: +5 BPM\n";
-    informationTextEditorString += "-Left Arrow: -5 BPM\n";
-    informationTextEditorString += "-Up Arrow: +1 BPM\n";
-    informationTextEditorString += "-Down Arrow: -1 BPM";
+    informationTextEditorString += "Spacebar: Round Tempo\n";
+    informationTextEditorString += "Right Arrow: +5 BPM\n";
+    informationTextEditorString += "Left Arrow: -5 BPM\n";
+    informationTextEditorString += "Up Arrow: +1 BPM\n";
+    informationTextEditorString += "Down Arrow: -1 BPM";
 
     // Add string to textEditor
     informationTextEditor->setText(informationTextEditorString);
