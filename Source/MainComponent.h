@@ -79,7 +79,6 @@ public:
     void labelTextChanged (juce::Label* labelThatHasChanged) override;
     void mouseEnter (const juce::MouseEvent& e) override;
     void mouseExit (const juce::MouseEvent& e) override;
-    void mouseDown (const juce::MouseEvent& e) override;
     void mouseUp (const juce::MouseEvent& e) override;
     bool keyPressed (const juce::KeyPress& key) override;
 

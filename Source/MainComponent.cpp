@@ -1046,16 +1046,6 @@ void MainComponent::mouseExit (const juce::MouseEvent& e)
     //[/UserCode_mouseExit]
 }
 
-void MainComponent::mouseDown (const juce::MouseEvent& e)
-{
-    //[UserCode_mouseDown] -- Add your code here...
-
-    if (e.eventComponent == bpmValuesLabel.get())
-        Logger::writeToLog ("Dog");
-
-    //[/UserCode_mouseDown]
-}
-
 void MainComponent::mouseUp (const juce::MouseEvent& e)
 {
     //[UserCode_mouseUp] -- Add your code here...
@@ -1376,7 +1366,6 @@ BEGIN_JUCER_METADATA
     <METHOD name="mouseEnter (const MouseEvent&amp; e)"/>
     <METHOD name="mouseExit (const MouseEvent&amp; e)"/>
     <METHOD name="keyPressed (const KeyPress&amp; key)"/>
-    <METHOD name="mouseDown (const MouseEvent&amp; e)"/>
   </METHODS>
   <BACKGROUND backgroundColour="ff353535"/>
   <TEXTBUTTON name="doubleTempoButton" id="74a1161b6a8bd75d" memberName="doubleTempoButton"
