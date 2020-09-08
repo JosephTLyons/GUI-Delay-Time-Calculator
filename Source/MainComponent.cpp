@@ -1307,8 +1307,7 @@ void MainComponent::setTempoFromLabelValue (const std::unique_ptr<Label>& label,
 {
     // Work around code to forbid strings of text from being entered into the fields.  This is done
     // in place of creating a new Label class that inherits from JUCE Label that restricts the input
-    // to only numbers.  This should be implemented in the future.  The Start of the work resides on
-    // the branch "Add-numberic-label".
+    // to only numbers.  This should be implemented in the future.
 
     const double labelValue = label->getText().getDoubleValue();
     double tempo = 0;
