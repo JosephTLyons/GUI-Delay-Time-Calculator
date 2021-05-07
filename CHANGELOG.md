@@ -69,4 +69,5 @@
 5. Repositioned all controls to be in close proximity and left room for tap to set delay button
 6. App is now code signed (I'm officially an Apple Developer)
 
-## April 15, 2017 - V 1.0.0 initial release:
+## April 15, 2017 - V 1.0.0:
+1. Initial release
